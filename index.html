@@ -110,10 +110,6 @@
       50% { opacity: 0.6; transform: scale(1.3); }
     }
 
-    .hero-gradient {
-      background: linear-gradient(135deg, #1a2744 0%, #243656 40%, #2d4a75 100%);
-    }
-
     .nav-blur {
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -130,71 +126,81 @@
     .nav-link:active {
       transform: scale(0.92);
     }
+    
+    .image-container img {
+      display: block;
+    }
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full font-body text-slate bg-white">
-  <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- NAV -->
+  <div id="app-wrapper" class="w-full h-full overflow-auto">
+   <!-- NAV -->
    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 nav-blur bg-white border-b border-slate/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
      <div class="flex items-center gap-2">
-      <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-       <span class="font-heading font-700 text-white text-sm">JP</span>
+      <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center"><span class="font-heading font-700 text-white text-sm">JP</span>
       </div><span class="font-heading font-600 text-slate text-sm inline tracking-tight">juanpeco</span>
      </div>
-     <div class="hidden sm:flex items-center gap-6 text-sm text-slate-700"><a href="#materias" class="nav-link">Materias</a> <a href="#experiencia" class="nav-link">Experiencia</a> <a href="#aula" class="nav-link">En clase</a> <a href="#impacto" class="nav-link">Impacto</a> <a href="#contacto" class="bg-accent hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition font-medium">Contactar</a>
+     <div class="hidden sm:flex items-center gap-6 text-sm text-slate-700">
+      <a href="#materias" class="nav-link">Materias</a> <a href="#experiencia" class="nav-link">Experiencia</a> <a href="#aula" class="nav-link">En clase</a> <a href="#impacto" class="nav-link">Impacto</a> <a href="#contacto" class="bg-accent hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition font-medium">Contactar</a>
      </div><button id="mobile-menu-btn" class="sm:hidden text-slate-700"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
     </div>
-    <div id="mobile-menu" class="hidden sm:hidden bg-white border-t border-slate/10 px-4 py-4 space-y-3"><a href="#materias" class="block text-slate hover:text-slate/70 transition text-sm">Materias</a> <a href="#experiencia" class="block text-slate hover:text-slate/70 transition text-sm">Experiencia</a> <a href="#aula" class="block text-slate hover:text-slate/70 transition text-sm">En clase</a> <a href="#impacto" class="block text-slate hover:text-slate/70 transition text-sm">Impacto</a> <a href="#contacto" class="block bg-accent text-white px-4 py-2 rounded-lg text-center text-sm font-medium">Contactar</a>
+    <div id="mobile-menu" class="hidden sm:hidden bg-white border-t border-slate/10 px-4 py-4 space-y-3">
+     <a href="#materias" class="block text-slate hover:text-slate/70 transition text-sm">Materias</a> <a href="#experiencia" class="block text-slate hover:text-slate/70 transition text-sm">Experiencia</a> <a href="#aula" class="block text-slate hover:text-slate/70 transition text-sm">En clase</a> <a href="#impacto" class="block text-slate hover:text-slate/70 transition text-sm">Impacto</a> <a href="#contacto" class="block bg-accent text-white px-4 py-2 rounded-lg text-center text-sm font-medium">Contactar</a>
     </div>
    </nav><!-- HERO -->
-   <header class="hero-gradient w-full pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs>
-       <pattern id="grid" width="40" height="40" patternunits="userSpaceOnUse">
-        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" />
-       </pattern>
-      </defs> <rect width="100%" height="100%" fill="url(#grid)" />
-     </svg>
+   <header class="w-full pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 relative overflow-hidden bg-navy">
+    <div class="absolute inset-0">
+     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&amp;q=80" alt="Aula colaborativa con alumnos trabajando en equipos" class="w-full h-full object-cover opacity-25" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#1a2744'; this.alt='Imagen no disponible';">
+     <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/70"></div>
     </div>
     <div class="max-w-4xl mx-auto relative z-10">
-     <div class="flex items-center gap-2 mb-4"><span class="pulse-dot inline-block w-2.5 h-2.5 rounded-full bg-green-400"></span> <span class="text-green-300 text-sm font-medium">Disponible para incorporación inmediata</span>
+     <div class="flex items-center gap-2 mb-4">
+      <span class="pulse-dot inline-block w-2.5 h-2.5 rounded-full bg-green-400"></span> <span class="text-green-300 text-sm font-medium">Disponible para incorporación inmediata</span>
      </div>
-     <h1 id="hero-title" class="font-heading text-3xl sm:text-5xl lg:text-6xl font-700 text-white leading-tight mb-4">Docente de Economía, Empresa y FP con experiencia real en aula en +15 centros educativos</h1>
-     <p id="hero-subtitle" class="text-lg sm:text-xl text-white font-semibold mb-6 max-w-3xl">Experiencia probada en más de 15 centros educativos. Implementación de proyectos reales desde el primer día en el aula.</p>
-     <div class="flex flex-col sm:flex-row gap-4"><a href="mailto:hola@juanpeco.es" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition text-base shadow-lg shadow-accent/30"> <i data-lucide="send" class="w-4 h-4"></i> SOLICITAR ENTREVISTA </a>
+     <h1 id="hero-title" class="font-heading text-3xl sm:text-5xl lg:text-6xl font-700 text-white leading-tight mb-4">Docente de Economía, Empresa y FP. Proyectos reales en el aula con resultados visibles en pocas sesiones.</h1>
+     <p id="hero-subtitle" class="text-lg sm:text-xl text-white font-semibold mb-6 max-w-3xl">15+ centros educativos. Metodología basada en aplicación práctica donde el alumnado comprende desde el primer proyecto.</p>
+     <div class="flex flex-col sm:flex-row gap-4">
+      <a href="mailto:hola@juanpeco.es" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition text-base shadow-lg shadow-accent/30"> <i data-lucide="send" class="w-4 h-4"></i> SOLICITAR ENTREVISTA </a>
      </div>
     </div>
    </header><!-- QUÉ PUEDO IMPARTIR -->
    <section id="materias" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
     <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-12 fade-up"><span class="text-accent font-semibold text-sm uppercase tracking-widest">Especialización</span>
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Especialización</span>
       <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Asignaturas y áreas que puedo impartir</h2>
      </div>
      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
       <div class="bg-light rounded-2xl p-6 fade-up stagger-1 border-2 border-accent/20 text-center">
-       <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 mx-auto"><i data-lucide="bar-chart-3" class="w-6 h-6 text-accent"></i>
+       <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="bar-chart-3" class="w-6 h-6 text-accent"></i>
        </div>
        <h3 class="font-heading font-600 text-navy text-base">Empresa e Iniciativa Emprendedora</h3>
       </div>
       <div class="bg-light rounded-2xl p-6 fade-up stagger-2 border-2 border-accent/20 text-center">
-       <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 mx-auto"><i data-lucide="trending-up" class="w-6 h-6 text-emerald-600"></i>
+       <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="trending-up" class="w-6 h-6 text-emerald-600"></i>
        </div>
        <h3 class="font-heading font-600 text-navy text-base">Economía (ESO y Bachillerato)</h3>
       </div>
       <div class="bg-light rounded-2xl p-6 fade-up stagger-3 border-2 border-accent/20 text-center">
-       <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4 mx-auto"><i data-lucide="megaphone" class="w-6 h-6 text-violet-600"></i>
+       <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="megaphone" class="w-6 h-6 text-violet-600"></i>
        </div>
        <h3 class="font-heading font-600 text-navy text-base">Marketing y Digitalización (FP)</h3>
       </div>
       <div class="bg-light rounded-2xl p-6 fade-up stagger-4 border-2 border-accent/20 text-center">
-       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 mx-auto"><i data-lucide="laptop" class="w-6 h-6 text-blue-600"></i>
+       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="laptop" class="w-6 h-6 text-blue-600"></i>
        </div>
        <h3 class="font-heading font-600 text-navy text-base">Competencia Digital</h3>
       </div>
       <div class="bg-light rounded-2xl p-6 fade-up stagger-1 border-2 border-accent/20 text-center">
-       <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4 mx-auto"><i data-lucide="rocket" class="w-6 h-6 text-amber-600"></i>
+       <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="rocket" class="w-6 h-6 text-amber-600"></i>
        </div>
        <h3 class="font-heading font-600 text-navy text-base">Proyectos STEAM</h3>
       </div>
@@ -203,54 +209,62 @@
    </section><!-- QUÉ APORTO AL CENTRO -->
    <section class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-light">
     <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-12 fade-up"><span class="text-accent font-semibold text-sm uppercase tracking-widest">Propuesta de valor</span>
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Propuesta de valor</span>
       <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Qué aporto al centro</h2>
      </div>
      <div class="grid sm:grid-cols-2 gap-5">
       <div class="bg-surface rounded-2xl p-6 fade-up stagger-1 border border-slate/10">
-       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="building-2" class="w-6 h-6 text-blue-600"></i>
+       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="building-2" class="w-6 h-6 text-blue-600"></i>
        </div>
-       <h3 id="value-item-1" class="font-heading font-600 text-navy text-base mb-3">Experiencia real en distintos contextos educativos</h3>
-       <p class="text-slate/70 text-sm">Trabajo en centros públicos, concertados y privados. Adaptación comprobada a diferentes niveles y perfiles de alumnado.</p>
+       <h3 id="value-item-1" class="font-heading font-600 text-navy text-base mb-3">Experiencia en distintos contextos educativos</h3>
+       <p class="text-slate/70 text-sm">Centros públicos, concertados y privados. Adaptación a diferentes niveles y perfiles de alumnado.</p>
       </div>
       <div class="bg-surface rounded-2xl p-6 fade-up stagger-2 border border-slate/10">
-       <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="lightbulb" class="w-6 h-6 text-emerald-600"></i>
+       <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="lightbulb" class="w-6 h-6 text-emerald-600"></i>
        </div>
-       <h3 id="value-item-2" class="font-heading font-600 text-navy text-base mb-3">Metodología práctica en el aula</h3>
-       <p class="text-slate/70 text-sm">Actividades basadas en situaciones reales que mejoran la comprensión e implicación del alumnado.</p>
+       <h3 id="value-item-2" class="font-heading font-600 text-navy text-base mb-3">Metodología aplicada</h3>
+       <p class="text-slate/70 text-sm">Las clases se estructuran en torno a proyectos reales donde el alumnado aplica los contenidos desde el primer momento.</p>
       </div>
       <div class="bg-surface rounded-2xl p-6 fade-up stagger-3 border border-slate/10">
-       <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="zap" class="w-6 h-6 text-purple-600"></i>
+       <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="zap" class="w-6 h-6 text-purple-600"></i>
        </div>
-       <h3 id="value-item-3" class="font-heading font-600 text-navy text-base mb-3">Integración efectiva de tecnología</h3>
-       <p class="text-slate/70 text-sm">Herramientas digitales, IA y proyectos STEAM como parte integral del aprendizaje.</p>
+       <h3 id="value-item-3" class="font-heading font-600 text-navy text-base mb-3">Uso funcional de tecnología</h3>
+       <p class="text-slate/70 text-sm">Herramientas digitales, IA y recursos STEAM integrados como parte del aprendizaje, no como complemento.</p>
       </div>
       <div class="bg-surface rounded-2xl p-6 fade-up stagger-4 border border-slate/10">
-       <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="users" class="w-6 h-6 text-amber-600"></i>
+       <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="users" class="w-6 h-6 text-amber-600"></i>
        </div>
-       <h3 id="value-item-4" class="font-heading font-600 text-navy text-base mb-3">Colaboración con el equipo docente</h3>
-       <p class="text-slate/70 text-sm">Disponibilidad para compartir metodologías, recursos y formación interna con otros profesores.</p>
+       <h3 id="value-item-4" class="font-heading font-600 text-navy text-base mb-3">Trabajo con el equipo docente</h3>
+       <p class="text-slate/70 text-sm">Colaboración en metodologías, recursos y formación interna cuando el centro lo necesita.</p>
       </div>
      </div>
     </div>
    </section><!-- EXPERIENCIA -->
    <section id="experiencia" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
     <div class="max-w-4xl mx-auto">
-     <div class="text-center mb-12 fade-up"><span class="text-accent font-semibold text-sm uppercase tracking-widest">Experiencia</span>
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Experiencia</span>
       <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Trayectoria docente</h2>
      </div>
      <div class="relative pl-12 space-y-6">
       <div class="timeline-line"></div>
       <div class="relative fade-up stagger-1">
-       <div class="absolute -left-12 top-1 w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30"><i data-lucide="building" class="w-5 h-5 text-white"></i>
+       <div class="absolute -left-12 top-1 w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30">
+        <i data-lucide="building" class="w-5 h-5 text-white"></i>
        </div>
        <div class="bg-light rounded-xl p-5">
         <h3 class="font-heading font-600 text-navy text-base mb-1">Más de 15 centros educativos</h3>
-        <p class="text-slate/70 text-sm">Experiencia en contextos públicos, concertados y privados. Adaptación probada a diferentes estructuras organizativas y perfiles de alumnado.</p>
+        <p class="text-slate/70 text-sm">Experiencia en contextos públicos, concertados y privados. Adaptación a diferentes estructuras organizativas y perfiles de alumnado.</p>
        </div>
       </div>
       <div class="relative fade-up stagger-2">
-       <div class="absolute -left-12 top-1 w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30"><i data-lucide="rocket" class="w-5 h-5 text-white"></i>
+       <div class="absolute -left-12 top-1 w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30">
+        <i data-lucide="rocket" class="w-5 h-5 text-white"></i>
        </div>
        <div class="bg-light rounded-xl p-5">
         <h3 class="font-heading font-600 text-navy text-base mb-1">Metodologías innovadoras en aula</h3>
@@ -258,7 +272,8 @@
        </div>
       </div>
       <div class="relative fade-up stagger-3">
-       <div class="absolute -left-12 top-1 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30"><i data-lucide="users" class="w-5 h-5 text-white"></i>
+       <div class="absolute -left-12 top-1 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
+        <i data-lucide="users" class="w-5 h-5 text-white"></i>
        </div>
        <div class="bg-light rounded-xl p-5">
         <h3 class="font-heading font-600 text-navy text-base mb-1">Integración de tecnología y IA</h3>
@@ -270,12 +285,14 @@
    </section><!-- FORMACIÓN -->
    <section class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
     <div class="max-w-4xl mx-auto">
-     <div class="text-center mb-12 fade-up"><span class="text-accent font-semibold text-sm uppercase tracking-widest">Formación académica</span>
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Formación académica</span>
       <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Formación</h2>
      </div>
      <div class="space-y-4 max-w-2xl mx-auto">
       <div class="flex items-start gap-4 bg-light rounded-xl p-5 fade-up stagger-1">
-       <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="book-open" class="w-5 h-5 text-accent"></i>
+       <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="book-open" class="w-5 h-5 text-accent"></i>
        </div>
        <div>
         <h3 class="font-heading font-600 text-navy">Máster de Profesorado</h3>
@@ -283,7 +300,8 @@
        </div>
       </div>
       <div class="flex items-start gap-4 bg-light rounded-xl p-5 fade-up stagger-2">
-       <div class="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="megaphone" class="w-5 h-5 text-violet-600"></i>
+       <div class="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="megaphone" class="w-5 h-5 text-violet-600"></i>
        </div>
        <div>
         <h3 class="font-heading font-600 text-navy">Máster en Marketing Digital</h3>
@@ -291,7 +309,8 @@
        </div>
       </div>
       <div class="flex items-start gap-4 bg-light rounded-xl p-5 fade-up stagger-3">
-       <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="bar-chart-3" class="w-5 h-5 text-emerald-600"></i>
+       <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="bar-chart-3" class="w-5 h-5 text-emerald-600"></i>
        </div>
        <div>
         <h3 class="font-heading font-600 text-navy">Diplomatura en Ciencias Empresariales</h3>
@@ -303,17 +322,524 @@
    </section><!-- ASÍ ES UNA CLASE REAL -->
    <section id="aula" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-light">
     <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-12 fade-up"><span class="text-accent font-semibold text-sm uppercase tracking-widest">En el aula</span>
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">En el aula</span>
       <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Así es una clase real</h2>
-      <p class="text-slate/60 mt-3 text-base">Metodología práctica aplicada directamente en el aula</p>
+      <p class="text-slate/60 mt-3 text-base">Proyectos con resultados visibles en pocas sesiones</p>
      </div><!-- GALLERY GRID -->
-     <div class="grid sm:grid-cols-3 gap-5 mb-8 fade-up">
-      <!-- PROJECT 1: BRAND DESIGN -->
+     <div class="grid sm:grid-cols-3 gap-5 mb-8 fade-up"><!-- PROJECT 1: BRAND DESIGN -->
+      <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-slate/10 card-hover group">
+       <div class="relative w-full h-48 bg-violet-100 flex items-center justify-center overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&amp;q=80" alt="Alumno diseñando identidad visual en ordenador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.parentElement.style.background='#ede9fe'; this.style.display='none';">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+       </div>
+       <div class="p-5">
+        <h3 class="font-heading font-600 text-navy text-sm mb-2">Proyecto: Identidad visual startup</h3>
+        <p class="text-slate/70 text-xs leading-relaxed">Alumnos diseñan logotipo, paleta de colores y guía visual para su proyecto de emprendimiento usando Canva.</p>
+       </div>
+      </div><!-- PROJECT 2: PITCH PRESENTATION -->
+      <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-slate/10 card-hover group">
+       <div class="relative w-full h-48 bg-blue-100 flex items-center justify-center overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&amp;q=80" alt="Equipo de alumnos presentando proyecto en aula" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.parentElement.style.background='#dbeafe'; this.style.display='none';">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+       </div>
+       <div class="p-5">
+        <h3 class="font-heading font-600 text-navy text-sm mb-2">Proyecto: Elevator pitch de 90 segundos</h3>
+        <p class="text-slate/70 text-xs leading-relaxed">Equipos presentan su idea de negocio ante docentes y compañeros, trabajando comunicación y confianza.</p>
+       </div>
+      </div><!-- PROJECT 3: PROTOTYPE -->
+      <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-slate/10 card-hover group">
+       <div class="relative w-full h-48 bg-emerald-100 flex items-center justify-center overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&amp;q=80" alt="Alumnos colaborando en proyecto con portátil en grupo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.parentElement.style.background='#d1fae5'; this.style.display='none';">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+       </div>
+       <div class="p-5">
+        <h3 class="font-heading font-600 text-navy text-sm mb-2">Proyecto: Prototipo digital de app o web</h3>
+        <p class="text-slate/70 text-xs leading-relaxed">Mockups visuales de la solución usando Canva e IA para generación de contenido.</p>
+       </div>
+      </div>
+     </div><!-- EVIDENCE BOX -->
+     <div class="bg-gradient-to-r from-accent/5 to-blue-50 rounded-2xl p-8 border border-accent/20 fade-up">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+       <div class="flex-shrink-0">
+        <div class="flex items-center justify-center h-16 w-16 rounded-2xl bg-accent/10"><i data-lucide="check-circle" class="h-8 w-8 text-accent"></i>
+        </div>
+       </div>
+       <div class="flex-1">
+        <h3 class="font-heading font-600 text-navy text-lg mb-2">En 4–5 sesiones, resultado completo</h3>
+        <p class="text-slate/70 mb-4">Los alumnos desarrollan un proyecto que pueden presentar y defender. Trabajan con herramientas reales y comprenden los conceptos a través de su aplicación directa.</p>
+        <div class="flex flex-wrap gap-3">
+         <div class="flex items-center gap-2 text-sm"><i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Proyecto completo</span>
+         </div>
+         <div class="flex items-center gap-2 text-sm"><i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Presentación profesional</span>
+         </div>
+         <div class="flex items-center gap-2 text-sm"><i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Aprendizaje aplicado</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- IMPACTO EN EL AULA -->
+   <section id="impacto" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
+    <div class="max-w-5xl mx-auto">
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Impacto en el aula</span>
+      <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Caso práctico: Proyecto de emprendimiento digital con IA</h2>
+      <p class="text-slate/60 mt-3 text-base">Aplicado en alumnado de secundaria y formación profesional</p>
+     </div><!-- ANTES / DURANTE / RESULTADO -->
+     <div class="grid sm:grid-cols-3 gap-6 fade-up">
+      <!-- ANTES -->
+      <div class="bg-light rounded-2xl p-8 border border-slate/10 shadow-sm">
+       <div class="flex items-center gap-3 mb-5">
+        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+         <i data-lucide="alert-circle" class="w-6 h-6 text-red-600"></i>
+        </div>
+        <h3 class="font-heading font-600 text-navy text-lg">Antes</h3>
+       </div>
+       <div class="space-y-3">
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+         <p class="text-slate/70 text-sm">Poco conocimiento práctico sobre desarrollo de ideas de negocio</p>
+        </div>
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+         <p class="text-slate/70 text-sm">Dificultad para aplicar herramientas digitales en contextos reales</p>
+        </div>
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+         <p class="text-slate/70 text-sm">Desconexión entre teoría y práctica</p>
+        </div>
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+         <p class="text-slate/70 text-sm">Participación pasiva en clase</p>
+        </div>
+       </div>
+      </div><!-- DURANTE -->
+      <div class="bg-surface rounded-2xl p-8 border border-emerald-200 shadow-sm bg-gradient-to-br from-surface to-emerald-50">
+       <div class="flex items-center gap-3 mb-5">
+        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+         <i data-lucide="zap" class="w-6 h-6 text-emerald-600"></i>
+        </div>
+        <h3 class="font-heading font-600 text-navy text-lg">Durante</h3>
+       </div>
+       <div class="space-y-2">
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Trabajo en equipo simulando una startup real</p>
+        </div>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Identificación de problemas reales del mercado</p>
+        </div>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Propuesta de valor basada en datos</p>
+        </div>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Diseño de marca y prototipo con Canva</p>
+        </div>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Validación de ideas con IA</p>
+        </div>
+       </div>
+      </div><!-- RESULTADO -->
+      <div class="bg-light rounded-2xl p-8 border border-slate/10 shadow-sm">
+       <div class="flex items-center gap-3 mb-5">
+        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+         <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
+        </div>
+        <h3 class="font-heading font-600 text-navy text-lg">Resultado</h3>
+       </div>
+       <div class="space-y-2">
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+         <p class="text-slate/70 text-sm">Presentación de proyectos con estructura profesional tipo pitch</p>
+        </div>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+         <p class="text-slate/70 text-sm">Prototipos visuales funcionales</p>
+        </div>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+         <p class="text-slate/70 text-sm">Mayor implicación y participación activa</p>
+        </div>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+         <p class="text-slate/70 text-sm">Comprensión práctica de empresa, marketing e IA</p>
+        </div>
+       </div>
+      </div>
+     </div><!-- PUNTO CLAVE -->
+     <div class="mt-8 bg-accent/5 rounded-2xl p-6 border border-accent/20 fade-up">
+      <div class="flex items-start gap-4">
+       <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="lightbulb" class="w-5 h-5 text-accent"></i>
+       </div>
+       <div>
+        <h4 class="font-heading font-600 text-navy mb-2">¿Por qué funciona?</h4>
+        <p class="text-slate/70 text-sm">Los alumnos trabajan con herramientas y flujos reales. Aprenden conceptos clave aplicándolos directamente. En pocas sesiones ven un resultado tangible que pueden presentar. La desconexión entre teoría y práctica desaparece.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- CONCLUSIÓN FINAL -->
+   <section class="w-full py-12 sm:py-16 px-4 sm:px-6 bg-light">
+    <div class="max-w-4xl mx-auto text-center fade-up">
+     <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
+      <i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i> <span class="text-sm font-medium text-accent">Perfil docente</span>
+     </div>
+     <h2 class="font-heading text-2xl sm:text-3xl font-700 text-navy mb-3">Experiencia adaptable a distintos contextos y niveles educativos</h2>
+     <p class="text-slate/70 max-w-2xl mx-auto">Trayectoria en centros públicos, concertados y privados en ESO, Bachillerato y FP. Enfoque basado en metodologías activas donde el alumnado aprende aplicando, no memorizando.</p>
+    </div>
+   </section><!-- CONTACTO -->
+   <section id="contacto" class="w-full py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden bg-navy">
+    <div class="absolute inset-0">
+     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&amp;q=80" alt="Fondo de aula" class="w-full h-full object-cover opacity-10" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#1a2744'; this.alt='Imagen no disponible';">
+     <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/80"></div>
+    </div>
+    <div class="max-w-3xl mx-auto text-center relative z-10 fade-up">
+     <h2 class="font-heading text-2xl sm:text-4xl font-700 text-white mb-3">Contacto directo</h2>
+     <p class="text-white/60 mb-8 max-w-md mx-auto">FP, centros concertados y privados. Disponibilidad inmediata para entrevistas.</p>
+     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+      <a id="email-link" href="mailto:hola@juanpeco.es" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-blue-700 text-white rounded-xl px-6 py-4 transition font-medium"> <i data-lucide="send" class="w-5 h-5"></i> SOLICITAR ENTREVISTA </a> <a id="whatsapp-link" href="https://wa.me/34647033746?text=Hola%2C%20he%20visto%20tu%20perfil%20docente%20y%20me%20gustaría%20concertar%20una%20entrevista" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white rounded-xl px-6 py-4 transition font-medium">
+       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+       </svg> SOLICITAR POR WHATSAPP </a>
+     </div>
+     <div class="flex items-center justify-center gap-4 pt-4 border-t border-white/10"><a href="https://linkedin.com/in/juanpeco" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a> <a href="https://instagram.com/juanpeco" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+     </div>
+    </div>
+   </section><!-- FOOTER -->
+   <footer class="w-full bg-navy py-6 px-4 text-center">
+    <p class="text-white/40 text-sm">© 2025 Juan Peco · Docente de Economía, Empresa y FP</p>
+   </footer>
+  </div>
+  <script>
+    // Data (shared across all handlers)
+    const defaultConfig = {
+      hero_title: 'Docente de Economía, Empresa y Formación Profesional',
+      hero_subtitle: 'Experiencia en más de 15 centros educativos con implementación real de proyectos y formación a docentes',
+      contact_email: 'hola@juanpeco.es',
+      whatsapp_number: '647033746',
+      portfolio_url: 'https://juanpeco.es',
+      background_color: '#1a2744',
+      surface_color: '#ffffff',
+      text_color: '#334766',
+      accent_color: '#8b5cf6',
+      secondary_color: '#f0f4f8',
+      font_family: 'DM Sans',
+      font_size: 16
+    };
+
+    function applyConfig(config) {
+      const c = Object.assign({}, defaultConfig, config);
+
+      // Text content
+      const heroTitle = document.getElementById('hero-title');
+      if (heroTitle) heroTitle.textContent = c.hero_title;
+
+      const heroSubtitle = document.getElementById('hero-subtitle');
+      if (heroSubtitle) heroSubtitle.textContent = c.hero_subtitle;
+
+      const emailDisplay = document.getElementById('email-display');
+      if (emailDisplay) emailDisplay.textContent = c.contact_email;
+
+      const emailLink = document.getElementById('email-link');
+      if (emailLink) emailLink.href = 'mailto:' + c.contact_email;
+
+      const waLink = document.getElementById('whatsapp-link');
+      if (waLink) {
+        const num = c.whatsapp_number.replace(/\s/g, '').replace('+34', '').replace('+', '');
+        waLink.href = 'https://wa.me/34' + num + '?text=Hola%2C%20he%20visto%20tu%20perfil%20docente%20y%20me%20gustaría%20concertar%20una%20entrevista';
+      }
+
+      const portLink = document.getElementById('portfolio-link');
+      if (portLink) portLink.href = c.portfolio_url.startsWith('http') ? c.portfolio_url : 'https://' + c.portfolio_url;
+      const portText = document.getElementById('portfolio-link-text');
+      if (portText) portText.textContent = c.portfolio_url;
+
+      // Colors
+      document.documentElement.style.setProperty('--bg', c.background_color);
+      document.querySelectorAll('.bg-navy').forEach(el => { el.style.backgroundColor = c.background_color; });
+
+      // Font
+      const fontStack = `${c.font_family}, DM Sans, system-ui, sans-serif`;
+      document.body.style.fontFamily = fontStack;
+
+      // Font size
+      const base = c.font_size || 16;
+      document.body.style.fontSize = base + 'px';
+    }
+
+    // Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => { applyConfig(config); },
+        mapToCapabilities: (config) => {
+          const c = Object.assign({}, defaultConfig, config);
+          return {
+            recolorables: [
+              { get: () => c.background_color, set: (v) => { c.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+              { get: () => c.surface_color, set: (v) => { c.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+              { get: () => c.text_color, set: (v) => { c.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+              { get: () => c.accent_color, set: (v) => { c.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
+              { get: () => c.secondary_color, set: (v) => { c.secondary_color = v; window.elementSdk.setConfig({ secondary_color: v }); } }
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => c.font_family || defaultConfig.font_family,
+              set: (v) => { c.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+            },
+            fontSizeable: {
+              get: () => c.font_size || defaultConfig.font_size,
+              set: (v) => { c.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+            }
+          };
+        },
+        mapToEditPanelValues: (config) => {
+          const c = Object.assign({}, defaultConfig, config);
+          return new Map([
+            ['hero_title', c.hero_title],
+            ['hero_subtitle', c.hero_subtitle],
+            ['contact_email', c.contact_email],
+            ['whatsapp_number', c.whatsapp_number],
+            ['portfolio_url', c.portfolio_url]
+          ]);
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // Init icons
+    lucide.createIcons();
+  </script>
+  <div id="app-wrapper" class="w-full h-full overflow-auto">
+   <!-- NAV -->
+   <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 nav-blur bg-white border-b border-slate/10 backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center"><span class="font-heading font-700 text-white text-sm">JP</span>
+      </div><span class="font-heading font-600 text-slate text-sm inline tracking-tight">juanpeco</span>
+     </div>
+     <div class="hidden sm:flex items-center gap-6 text-sm text-slate-700">
+      <a href="#materias" class="nav-link">Materias</a> <a href="#experiencia" class="nav-link">Experiencia</a> <a href="#aula" class="nav-link">En clase</a> <a href="#impacto" class="nav-link">Impacto</a> <a href="#contacto" class="bg-accent hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition font-medium">Contactar</a>
+     </div><button id="mobile-menu-btn" class="sm:hidden text-slate-700"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
+    </div>
+    <div id="mobile-menu" class="hidden sm:hidden bg-white border-t border-slate/10 px-4 py-4 space-y-3">
+     <a href="#materias" class="block text-slate hover:text-slate/70 transition text-sm">Materias</a> <a href="#experiencia" class="block text-slate hover:text-slate/70 transition text-sm">Experiencia</a> <a href="#aula" class="block text-slate hover:text-slate/70 transition text-sm">En clase</a> <a href="#impacto" class="block text-slate hover:text-slate/70 transition text-sm">Impacto</a> <a href="#contacto" class="block bg-accent text-white px-4 py-2 rounded-lg text-center text-sm font-medium">Contactar</a>
+    </div>
+   </nav><!-- HERO -->
+   <header class="hero-gradient w-full pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+       <pattern id="grid" width="40" height="40" patternunits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" />
+       </pattern>
+      </defs> <rect width="100%" height="100%" fill="url(#grid)" />
+     </svg>
+    </div>
+    <div class="max-w-4xl mx-auto relative z-10">
+     <div class="flex items-center gap-2 mb-4">
+      <span class="pulse-dot inline-block w-2.5 h-2.5 rounded-full bg-green-400"></span> <span class="text-green-300 text-sm font-medium">Disponible para incorporación inmediata</span>
+     </div>
+     <h1 id="hero-title" class="font-heading text-3xl sm:text-5xl lg:text-6xl font-700 text-white leading-tight mb-4">Docente de Economía, Empresa y FP. Proyectos reales en el aula con resultados visibles en pocas sesiones.</h1>
+     <p id="hero-subtitle" class="text-lg sm:text-xl text-white font-semibold mb-6 max-w-3xl">15+ centros educativos. Metodología basada en aplicación práctica donde el alumnado comprende desde el primer proyecto.</p>
+     <div class="flex flex-col sm:flex-row gap-4">
+      <a href="mailto:hola@juanpeco.es" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition text-base shadow-lg shadow-accent/30"> <i data-lucide="send" class="w-4 h-4"></i> SOLICITAR ENTREVISTA </a>
+     </div>
+    </div>
+   </header><!-- QUÉ PUEDO IMPARTIR -->
+   <section id="materias" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Especialización</span>
+      <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Asignaturas y áreas que puedo impartir</h2>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="bg-light rounded-2xl p-6 fade-up stagger-1 border-2 border-accent/20 text-center">
+       <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="bar-chart-3" class="w-6 h-6 text-accent"></i>
+       </div>
+       <h3 class="font-heading font-600 text-navy text-base">Empresa e Iniciativa Emprendedora</h3>
+      </div>
+      <div class="bg-light rounded-2xl p-6 fade-up stagger-2 border-2 border-accent/20 text-center">
+       <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="trending-up" class="w-6 h-6 text-emerald-600"></i>
+       </div>
+       <h3 class="font-heading font-600 text-navy text-base">Economía (ESO y Bachillerato)</h3>
+      </div>
+      <div class="bg-light rounded-2xl p-6 fade-up stagger-3 border-2 border-accent/20 text-center">
+       <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="megaphone" class="w-6 h-6 text-violet-600"></i>
+       </div>
+       <h3 class="font-heading font-600 text-navy text-base">Marketing y Digitalización (FP)</h3>
+      </div>
+      <div class="bg-light rounded-2xl p-6 fade-up stagger-4 border-2 border-accent/20 text-center">
+       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="laptop" class="w-6 h-6 text-blue-600"></i>
+       </div>
+       <h3 class="font-heading font-600 text-navy text-base">Competencia Digital</h3>
+      </div>
+      <div class="bg-light rounded-2xl p-6 fade-up stagger-1 border-2 border-accent/20 text-center">
+       <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="rocket" class="w-6 h-6 text-amber-600"></i>
+       </div>
+       <h3 class="font-heading font-600 text-navy text-base">Proyectos STEAM</h3>
+      </div>
+     </div>
+    </div>
+   </section><!-- QUÉ APORTO AL CENTRO -->
+   <section class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-light">
+    <div class="max-w-5xl mx-auto">
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Propuesta de valor</span>
+      <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Qué aporto al centro</h2>
+     </div>
+     <div class="grid sm:grid-cols-2 gap-5">
+      <div class="bg-surface rounded-2xl p-6 fade-up stagger-1 border border-slate/10">
+       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="building-2" class="w-6 h-6 text-blue-600"></i>
+       </div>
+       <h3 id="value-item-1" class="font-heading font-600 text-navy text-base mb-3">Experiencia en distintos contextos educativos</h3>
+       <p class="text-slate/70 text-sm">Centros públicos, concertados y privados. Adaptación a diferentes niveles y perfiles de alumnado.</p>
+      </div>
+      <div class="bg-surface rounded-2xl p-6 fade-up stagger-2 border border-slate/10">
+       <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="lightbulb" class="w-6 h-6 text-emerald-600"></i>
+       </div>
+       <h3 id="value-item-2" class="font-heading font-600 text-navy text-base mb-3">Metodología aplicada</h3>
+       <p class="text-slate/70 text-sm">Las clases se estructuran en torno a proyectos reales donde el alumnado aplica los contenidos desde el primer momento.</p>
+      </div>
+      <div class="bg-surface rounded-2xl p-6 fade-up stagger-3 border border-slate/10">
+       <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="zap" class="w-6 h-6 text-purple-600"></i>
+       </div>
+       <h3 id="value-item-3" class="font-heading font-600 text-navy text-base mb-3">Uso funcional de tecnología</h3>
+       <p class="text-slate/70 text-sm">Herramientas digitales, IA y recursos STEAM integrados como parte del aprendizaje, no como complemento.</p>
+      </div>
+      <div class="bg-surface rounded-2xl p-6 fade-up stagger-4 border border-slate/10">
+       <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+        <i data-lucide="users" class="w-6 h-6 text-amber-600"></i>
+       </div>
+       <h3 id="value-item-4" class="font-heading font-600 text-navy text-base mb-3">Trabajo con el equipo docente</h3>
+       <p class="text-slate/70 text-sm">Colaboración en metodologías, recursos y formación interna cuando el centro lo necesita.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- EXPERIENCIA -->
+   <section id="experiencia" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
+    <div class="max-w-4xl mx-auto">
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Experiencia</span>
+      <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Trayectoria docente</h2>
+     </div>
+     <div class="relative pl-12 space-y-6">
+      <div class="timeline-line"></div>
+      <div class="relative fade-up stagger-1">
+       <div class="absolute -left-12 top-1 w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30">
+        <i data-lucide="building" class="w-5 h-5 text-white"></i>
+       </div>
+       <div class="bg-light rounded-xl p-5">
+        <h3 class="font-heading font-600 text-navy text-base mb-1">Más de 15 centros educativos</h3>
+        <p class="text-slate/70 text-sm">Experiencia en contextos públicos, concertados y privados. Adaptación a diferentes estructuras organizativas y perfiles de alumnado.</p>
+       </div>
+      </div>
+      <div class="relative fade-up stagger-2">
+       <div class="absolute -left-12 top-1 w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30">
+        <i data-lucide="rocket" class="w-5 h-5 text-white"></i>
+       </div>
+       <div class="bg-light rounded-xl p-5">
+        <h3 class="font-heading font-600 text-navy text-base mb-1">Metodologías innovadoras en aula</h3>
+        <p class="text-slate/70 text-sm">Proyectos STEAM, metodologías activas y aprendizaje basado en problemas. Experiencia con todos los niveles: ESO, Bachillerato y FP.</p>
+       </div>
+      </div>
+      <div class="relative fade-up stagger-3">
+       <div class="absolute -left-12 top-1 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
+        <i data-lucide="users" class="w-5 h-5 text-white"></i>
+       </div>
+       <div class="bg-light rounded-xl p-5">
+        <h3 class="font-heading font-600 text-navy text-base mb-1">Integración de tecnología y IA</h3>
+        <p class="text-slate/70 text-sm">Uso de herramientas digitales, IA generativa y recursos multimedia como parte de las dinámicas de clase.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- FORMACIÓN -->
+   <section class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
+    <div class="max-w-4xl mx-auto">
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Formación académica</span>
+      <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Formación</h2>
+     </div>
+     <div class="space-y-4 max-w-2xl mx-auto">
+      <div class="flex items-start gap-4 bg-light rounded-xl p-5 fade-up stagger-1">
+       <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="book-open" class="w-5 h-5 text-accent"></i>
+       </div>
+       <div>
+        <h3 class="font-heading font-600 text-navy">Máster de Profesorado</h3>
+        <p class="text-slate/60 text-sm">Finalización: junio 2025</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-4 bg-light rounded-xl p-5 fade-up stagger-2">
+       <div class="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="megaphone" class="w-5 h-5 text-violet-600"></i>
+       </div>
+       <div>
+        <h3 class="font-heading font-600 text-navy">Máster en Marketing Digital</h3>
+        <p class="text-slate/60 text-sm">Estrategia digital, analítica y comunicación online</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-4 bg-light rounded-xl p-5 fade-up stagger-3">
+       <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="bar-chart-3" class="w-5 h-5 text-emerald-600"></i>
+       </div>
+       <div>
+        <h3 class="font-heading font-600 text-navy">Diplomatura en Ciencias Empresariales</h3>
+        <p class="text-slate/60 text-sm">Gestión, economía y administración de empresas</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- ASÍ ES UNA CLASE REAL -->
+   <section id="aula" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-light">
+    <div class="max-w-5xl mx-auto">
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">En el aula</span>
+      <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Así es una clase real</h2>
+      <p class="text-slate/60 mt-3 text-base">Proyectos con resultados visibles en pocas sesiones</p>
+     </div><!-- GALLERY GRID -->
+     <div class="grid sm:grid-cols-3 gap-5 mb-8 fade-up"><!-- PROJECT 1: BRAND DESIGN -->
       <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-slate/10 card-hover group">
        <div class="relative w-full h-48 bg-gradient-to-br from-violet-100 to-purple-200 flex items-center justify-center overflow-hidden">
         <div class="text-center">
-         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
-          <i data-lucide="palette" class="w-8 h-8 text-violet-600"></i>
+         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md"><i data-lucide="palette" class="w-8 h-8 text-violet-600"></i>
          </div>
          <p class="text-sm font-semibold text-violet-900">Diseño de marca</p>
          <p class="text-xs text-violet-700 mt-1">Canva + Creative Brief</p>
@@ -321,14 +847,13 @@
        </div>
        <div class="p-5">
         <h3 class="font-heading font-600 text-navy text-sm mb-2">Proyecto: Identidad visual startup</h3>
-        <p class="text-slate/70 text-xs leading-relaxed">Alumnos diseñan logotipo, paleta de colores y guía visual completa para su proyecto de emprendimiento.</p>
+        <p class="text-slate/70 text-xs leading-relaxed">Alumnos diseñan logotipo, paleta de colores y guía visual para su proyecto de emprendimiento usando Canva.</p>
        </div>
       </div><!-- PROJECT 2: PITCH PRESENTATION -->
       <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-slate/10 card-hover group">
        <div class="relative w-full h-48 bg-gradient-to-br from-blue-100 to-cyan-200 flex items-center justify-center overflow-hidden">
         <div class="text-center">
-         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
-          <i data-lucide="presentation" class="w-8 h-8 text-blue-600"></i>
+         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md"><i data-lucide="presentation" class="w-8 h-8 text-blue-600"></i>
          </div>
          <p class="text-sm font-semibold text-blue-900">Presentación de Pitch</p>
          <p class="text-xs text-blue-700 mt-1">Presentación + Argumentación</p>
@@ -342,38 +867,33 @@
       <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-slate/10 card-hover group">
        <div class="relative w-full h-48 bg-gradient-to-br from-emerald-100 to-teal-200 flex items-center justify-center overflow-hidden">
         <div class="text-center">
-         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
-          <i data-lucide="code" class="w-8 h-8 text-emerald-600"></i>
+         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md"><i data-lucide="code" class="w-8 h-8 text-emerald-600"></i>
          </div>
          <p class="text-sm font-semibold text-emerald-900">Prototipo digital</p>
          <p class="text-xs text-emerald-700 mt-1">Canva + Herramientas digitales + IA</p>
         </div>
        </div>
        <div class="p-5">
-        <h3 class="font-heading font-600 text-navy text-sm mb-2">Proyecto: Prototipo de app o web</h3>
-        <p class="text-slate/70 text-xs leading-relaxed">Mockups visuales de la solución propuesta, usando herramientas accesibles como Canva y generación de contenido con IA.</p>
+        <h3 class="font-heading font-600 text-navy text-sm mb-2">Proyecto: Prototipo digital de app o web</h3>
+        <p class="text-slate/70 text-xs leading-relaxed">Mockups visuales de la solución usando Canva e IA para generación de contenido.</p>
        </div>
       </div>
      </div><!-- EVIDENCE BOX -->
      <div class="bg-gradient-to-r from-accent/5 to-blue-50 rounded-2xl p-8 border border-accent/20 fade-up">
       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
        <div class="flex-shrink-0">
-        <div class="flex items-center justify-center h-16 w-16 rounded-2xl bg-accent/10">
-         <i data-lucide="check-circle" class="h-8 w-8 text-accent"></i>
+        <div class="flex items-center justify-center h-16 w-16 rounded-2xl bg-accent/10"><i data-lucide="check-circle" class="h-8 w-8 text-accent"></i>
         </div>
        </div>
        <div class="flex-1">
-        <h3 class="font-heading font-600 text-navy text-lg mb-2">Resultados prácticos y aplicables en el aula</h3>
-        <p class="text-slate/70 mb-4">Estos proyectos no son ejercicios académicos. Los alumnos trabajan con herramientas reales (Canva, Figma, IA) bajo metodología de startup. En 4–5 sesiones, tienen un resultado tangible que pueden defender en presentación estructurada tipo pitch ante docentes y compañeros.</p>
+        <h3 class="font-heading font-600 text-navy text-lg mb-2">En 4–5 sesiones, resultado completo</h3>
+        <p class="text-slate/70 mb-4">Los alumnos desarrollan un proyecto que pueden presentar y defender. Trabajan con herramientas reales y comprenden los conceptos a través de su aplicación directa.</p>
         <div class="flex flex-wrap gap-3">
-         <div class="flex items-center gap-2 text-sm">
-          <i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Trabajo en equipo real</span>
+         <div class="flex items-center gap-2 text-sm"><i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Proyecto completo</span>
          </div>
-         <div class="flex items-center gap-2 text-sm">
-          <i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Herramientas profesionales</span>
+         <div class="flex items-center gap-2 text-sm"><i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Presentación profesional</span>
          </div>
-         <div class="flex items-center gap-2 text-sm">
-          <i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Presentación formal</span>
+         <div class="flex items-center gap-2 text-sm"><i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> <span class="text-slate/80">Aprendizaje aplicado</span>
          </div>
         </div>
        </div>
@@ -383,85 +903,104 @@
    </section><!-- IMPACTO EN EL AULA -->
    <section id="impacto" class="w-full py-16 sm:py-20 px-4 sm:px-6 bg-surface">
     <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-12 fade-up"><span class="text-accent font-semibold text-sm uppercase tracking-widest">Impacto en el aula</span>
+     <div class="text-center mb-12 fade-up">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">Impacto en el aula</span>
       <h2 class="font-heading text-2xl sm:text-4xl font-700 text-navy mt-2">Caso práctico: Proyecto de emprendimiento digital con IA</h2>
       <p class="text-slate/60 mt-3 text-base">Aplicado en alumnado de secundaria y formación profesional</p>
      </div><!-- ANTES / DURANTE / RESULTADO -->
-     <div class="grid sm:grid-cols-3 gap-6 fade-up"><!-- ANTES -->
+     <div class="grid sm:grid-cols-3 gap-6 fade-up">
+      <!-- ANTES -->
       <div class="bg-light rounded-2xl p-8 border border-slate/10 shadow-sm">
        <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="alert-circle" class="w-6 h-6 text-red-600"></i>
+        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+         <i data-lucide="alert-circle" class="w-6 h-6 text-red-600"></i>
         </div>
         <h3 class="font-heading font-600 text-navy text-lg">Antes</h3>
        </div>
        <div class="space-y-3">
-        <div class="flex items-start gap-3"><span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
-         <p class="text-slate/70 text-sm">Bajo conocimiento práctico sobre desarrollo de ideas de negocio</p>
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+         <p class="text-slate/70 text-sm">Poco conocimiento práctico sobre desarrollo de ideas de negocio</p>
         </div>
-        <div class="flex items-start gap-3"><span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
          <p class="text-slate/70 text-sm">Dificultad para aplicar herramientas digitales en contextos reales</p>
         </div>
-        <div class="flex items-start gap-3"><span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
-         <p class="text-slate/70 text-sm">Desconexión entre teoría y práctica en la asignatura</p>
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+         <p class="text-slate/70 text-sm">Desconexión entre teoría y práctica</p>
         </div>
-        <div class="flex items-start gap-3"><span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
-         <p class="text-slate/70 text-sm">Participación pasiva en dinámicas de aula</p>
+        <div class="flex items-start gap-3">
+         <span class="text-slate/40 font-bold text-lg flex-shrink-0">–</span>
+         <p class="text-slate/70 text-sm">Participación pasiva en clase</p>
         </div>
        </div>
       </div><!-- DURANTE -->
       <div class="bg-surface rounded-2xl p-8 border border-emerald-200 shadow-sm bg-gradient-to-br from-surface to-emerald-50">
        <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="zap" class="w-6 h-6 text-emerald-600"></i>
+        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+         <i data-lucide="zap" class="w-6 h-6 text-emerald-600"></i>
         </div>
         <h3 class="font-heading font-600 text-navy text-lg">Durante</h3>
        </div>
        <div class="space-y-2">
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
-         <p class="text-slate/70 text-sm">Trabajo en equipos simulando una startup</p>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Trabajo en equipo simulando una startup real</p>
         </div>
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
          <p class="text-slate/70 text-sm">Identificación de problemas reales del mercado</p>
         </div>
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
-         <p class="text-slate/70 text-sm">Creación de propuesta de valor basada en datos</p>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Propuesta de valor basada en datos</p>
         </div>
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
          <p class="text-slate/70 text-sm">Diseño de marca y prototipo con Canva</p>
         </div>
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
-         <p class="text-slate/70 text-sm">Uso de IA para generar contenido y validar ideas</p>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">•</span>
+         <p class="text-slate/70 text-sm">Validación de ideas con IA</p>
         </div>
        </div>
       </div><!-- RESULTADO -->
       <div class="bg-light rounded-2xl p-8 border border-slate/10 shadow-sm">
        <div class="flex items-center gap-3 mb-5">
-        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
+        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+         <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
         </div>
         <h3 class="font-heading font-600 text-navy text-lg">Resultado</h3>
        </div>
        <div class="space-y-2">
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
-         <p class="text-slate/70 text-sm">Presentación de proyectos en formato pitch</p>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+         <p class="text-slate/70 text-sm">Presentación de proyectos con estructura profesional tipo pitch</p>
         </div>
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
-         <p class="text-slate/70 text-sm">Desarrollo de prototipos visuales funcionales</p>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+         <p class="text-slate/70 text-sm">Prototipos visuales funcionales</p>
         </div>
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
          <p class="text-slate/70 text-sm">Mayor implicación y participación activa</p>
         </div>
-        <div class="flex items-start gap-2"><span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
-         <p class="text-slate/70 text-sm">Comprensión práctica de empresa, marketing y IA</p>
+        <div class="flex items-start gap-2">
+         <span class="text-emerald-600 font-bold text-sm flex-shrink-0">✓</span>
+         <p class="text-slate/70 text-sm">Comprensión práctica de empresa, marketing e IA</p>
         </div>
        </div>
       </div>
      </div><!-- PUNTO CLAVE -->
      <div class="mt-8 bg-accent/5 rounded-2xl p-6 border border-accent/20 fade-up">
       <div class="flex items-start gap-4">
-       <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="lightbulb" class="w-5 h-5 text-accent"></i>
+       <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+        <i data-lucide="lightbulb" class="w-5 h-5 text-accent"></i>
        </div>
        <div>
-        <h4 class="font-heading font-600 text-navy mb-2">¿Por qué genera resultados?</h4>
-        <p class="text-slate/70 text-sm">Los alumnos trabajan con herramientas y flujos reales (Canva, IA, análisis de datos). Aprenden conceptos clave (propuesta de valor, identidad visual, comunicación) aplicándolos directamente. En 4 sesiones ven un resultado tangible que pueden presentar y defender. La desconexión entre teoría y práctica desaparece.</p>
+        <h4 class="font-heading font-600 text-navy mb-2">¿Por qué funciona?</h4>
+        <p class="text-slate/70 text-sm">Los alumnos trabajan con herramientas y flujos reales. Aprenden conceptos clave aplicándolos directamente. En pocas sesiones ven un resultado tangible que pueden presentar. La desconexión entre teoría y práctica desaparece.</p>
        </div>
       </div>
      </div>
@@ -469,15 +1008,17 @@
    </section><!-- CONCLUSIÓN FINAL -->
    <section class="w-full py-12 sm:py-16 px-4 sm:px-6 bg-light">
     <div class="max-w-4xl mx-auto text-center fade-up">
-     <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20"><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i> <span class="text-sm font-medium text-accent">Perfil docente</span>
+     <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
+      <i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i> <span class="text-sm font-medium text-accent">Perfil docente</span>
      </div>
-     <h2 class="font-heading text-2xl sm:text-3xl font-700 text-navy mb-3">Experiencia adaptable a distintos contextos educativos y perfiles de alumnado.</h2>
-     <p class="text-slate/70 max-w-2xl mx-auto">Trayectoria en diferentes tipos de centros educativos (públicos, concertados, privados) y niveles (ESO, Bachillerato, FP). Metodologías activas y actividades prácticas diseñadas para que el alumnado comprenda conceptos desde la aplicación real, no desde la teoría.</p>
+     <h2 class="font-heading text-2xl sm:text-3xl font-700 text-navy mb-3">Experiencia adaptable a distintos contextos y niveles educativos</h2>
+     <p class="text-slate/70 max-w-2xl mx-auto">Trayectoria en centros públicos, concertados y privados en ESO, Bachillerato y FP. Enfoque basado en metodologías activas donde el alumnado aprende aplicando, no memorizando.</p>
     </div>
    </section><!-- CONTACTO -->
    <section id="contacto" class="w-full py-16 sm:py-20 px-4 sm:px-6 hero-gradient relative overflow-hidden">
     <div class="absolute inset-0 opacity-5">
-     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs>
+     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
        <pattern id="grid2" width="60" height="60" patternunits="userSpaceOnUse">
         <circle cx="30" cy="30" r="1" fill="white" />
        </pattern>
@@ -487,13 +1028,12 @@
     <div class="max-w-3xl mx-auto text-center relative z-10 fade-up">
      <h2 class="font-heading text-2xl sm:text-4xl font-700 text-white mb-3">Contacto directo</h2>
      <p class="text-white/60 mb-8 max-w-md mx-auto">FP, centros concertados y privados. Disponibilidad inmediata para entrevistas.</p>
-     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8"><a id="email-link" href="mailto:hola@juanpeco.es" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-blue-700 text-white rounded-xl px-6 py-4 transition font-medium"> <i data-lucide="send" class="w-5 h-5"></i> SOLICITAR ENTREVISTA </a> <a id="whatsapp-link" href="https://wa.me/34647033746?text=Hola%2C%20he%20visto%20tu%20perfil%20docente%20y%20me%20gustaría%20concertar%20una%20entrevista" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white rounded-xl px-6 py-4 transition font-medium">
-       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+      <a id="email-link" href="mailto:hola@juanpeco.es" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-blue-700 text-white rounded-xl px-6 py-4 transition font-medium"> <i data-lucide="send" class="w-5 h-5"></i> SOLICITAR ENTREVISTA </a> <a id="whatsapp-link" href="https://wa.me/34647033746?text=Hola%2C%20he%20visto%20tu%20perfil%20docente%20y%20me%20gustaría%20concertar%20una%20entrevista" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white rounded-xl px-6 py-4 transition font-medium">
+       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
        </svg> SOLICITAR POR WHATSAPP </a>
      </div>
-     <div class="flex items-center justify-center gap-4 pt-4 border-t border-white/10">
-      <a href="https://linkedin.com/in/juanpeco" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a> <a href="https://instagram.com/juanpeco" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+     <div class="flex items-center justify-center gap-4 pt-4 border-t border-white/10"><a href="https://linkedin.com/in/juanpeco" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a> <a href="https://instagram.com/juanpeco" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
      </div>
     </div>
    </section><!-- FOOTER -->
@@ -726,5 +1266,5 @@
     // Init icons
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9df8e3200053cbc6',t:'MTc3NDA1MzQzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e0f8932b7e30376',t:'MTc3NDI5MDkyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
