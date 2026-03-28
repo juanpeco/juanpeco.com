@@ -29,7 +29,7 @@
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; box-sizing: border-box; }
     body { box-sizing: border-box; }
 
     .fade-up {
@@ -51,11 +51,12 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      background: #8b5cf6;
       transition: all 0.3s ease;
       font-weight: 600;
     }
     .btn-primary:hover {
+      background: #7c3aed;
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
     }
@@ -67,10 +68,10 @@
 
     .nav-link {
       transition: all 0.15s ease;
+      position: relative;
     }
     .nav-link:hover {
       color: #8b5cf6;
-      font-weight: 500;
     }
 
     .section-divider {
@@ -96,38 +97,136 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Project Tabs - Limpio */
+    .project-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border: 2px solid #e5e7eb;
+      background: white;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #334766;
+      font-size: 15px;
+    }
+    .project-tab:hover {
+      border-color: #8b5cf6;
+      color: #8b5cf6;
+    }
+    .project-tab.active {
+      background: #8b5cf6;
+      color: white;
+      border-color: #8b5cf6;
+    }
+    .project-tab i {
+      color: currentColor;
+    }
+
+    .project-content {
+      animation: fadeInContent 0.4s ease forwards;
+    }
+    .project-content.hidden {
+      display: none;
+    }
+
+    @keyframes fadeInContent {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Fondo sutil con patrón */
+    .hero-pattern {
+      background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(139, 92, 246, 0.03) 39px, rgba(139, 92, 246, 0.03) 40px),
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(139, 92, 246, 0.03) 39px, rgba(139, 92, 246, 0.03) 40px);
+    }
   </style>
   <script src="/_sdk/element_sdk.js"></script>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full font-body text-slate bg-white">
-  <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- NAVEGACIÓN -->
-   <nav class="sticky top-0 z-50 nav-blur bg-white/80 border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+  <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- NAVEGACIÓN MEJORADA -->
+   <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"><!-- LOGO -->
      <div class="flex items-center gap-3">
       <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
        <span class="font-heading font-bold text-xl text-white">JP</span>
-      </div><span class="font-heading font-bold text-xl text-navy">juanpeco</span>
-     </div>
-     <div class="hidden md:flex gap-8"><a href="#especialization" class="nav-link text-sm">Especialización</a> <a href="#propuesta" class="nav-link text-sm">Propuesta</a> <a href="#aula" class="nav-link text-sm">En el aula</a> <a href="#caso" class="nav-link text-sm">Caso práctico</a> <a href="#experiencia" class="nav-link text-sm">Experiencia</a> <a href="#contacto" class="nav-link text-sm">Contacto</a>
+      </div><span class="font-heading font-bold text-lg text-navy">Juan Peco</span>
+     </div><!-- MENÚ DESKTOP -->
+     <div class="hidden md:flex gap-10 items-center"><a href="#especialization" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Especialización</a> <a href="#propuesta" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Propuesta</a> <a href="#aula" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">En el aula</a> <a href="#caso" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Caso práctico</a> <a href="#experiencia" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Experiencia</a> <a href="#contacto" class="inline-block bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm hover:shadow-md">Contacto</a>
      </div>
     </div>
-   </nav><!-- HERO -->
-   <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-light to-white">
-    <div class="max-w-4xl mx-auto text-center space-y-8">
-     <div class="space-y-4">
-      <h1 class="font-heading text-5xl sm:text-6xl font-bold text-navy leading-tight">Docente de Empresa, Economía y Marketing Digital</h1>
-      <p class="text-xl sm:text-2xl font-heading text-slate leading-relaxed">Proyectos reales en el aula con resultados visibles desde las primeras sesiones</p>
-     </div>
-     <div class="pt-4 space-y-6">
-      <p class="text-lg text-slate max-w-2xl mx-auto">Gracias al programa <span class="font-semibold text-accent">Código Escuela 4.0</span>, he podido llevar metodologías innovadoras a más de 15 centros educativos. El alumnado crea empresas, desarrolla estrategias de marketing real y aplica inteligencia artificial en proyectos educativos prácticos.</p>
-      <div class="pt-8"><a href="#contacto" class="inline-block btn-primary text-white px-8 py-4 rounded-lg text-lg">Solicitar entrevista</a>
+   </nav><!-- HERO CON IMPACTO VISUAL - UNA COLUMNA -->
+   <section class="w-full bg-white relative overflow-hidden hero-pattern">
+    <div class="py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
+     <div class="max-w-4xl mx-auto"><!-- CONTENIDO PRINCIPAL CENTRADO -->
+      <div class="space-y-8 text-center mb-16">
+       <h1 class="font-heading text-6xl sm:text-7xl lg:text-7xl font-bold text-navy leading-tight">Docente de Empresa, Economía y Marketing Digital</h1>
+       <div class="space-y-6">
+        <p class="text-2xl sm:text-3xl font-heading font-bold text-accent">Proyectos reales en el aula con resultados visibles desde las primeras sesiones</p>
+        <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">El alumnado crea empresas, desarrolla estrategias de marketing real y aplica inteligencia artificial en proyectos educativos prácticos. Más de 15 centros educativos públicos, concertados y privados.</p>
+       </div><!-- CTA -->
+       <div class="pt-6"><a href="#contacto" class="inline-block btn-primary text-white px-10 py-5 rounded-lg text-lg font-semibold hover:shadow-xl transition-all">Solicitar entrevista</a>
+       </div>
+      </div><!-- STATS BANNER -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-20">
+       <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow card-hover">
+        <p class="text-4xl sm:text-5xl font-heading font-bold text-accent">+15</p>
+        <p class="text-sm text-slate mt-3 font-semibold">Centros educativos</p>
+        <p class="text-xs text-slate mt-2">Contextos público, concertado y privado</p>
+       </div>
+       <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow card-hover">
+        <p class="text-4xl sm:text-5xl font-heading font-bold text-accent">4–5</p>
+        <p class="text-sm text-slate mt-3 font-semibold">Sesiones por proyecto</p>
+        <p class="text-xs text-slate mt-2">Resultado completo y funcional</p>
+       </div>
+       <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow card-hover">
+        <p class="text-4xl sm:text-5xl font-heading font-bold text-accent">100%</p>
+        <p class="text-sm text-slate mt-3 font-semibold">Aplicado desde el inicio</p>
+        <p class="text-xs text-slate mt-2">Sin teoría desconectada</p>
+       </div>
+      </div><!-- TARJETAS DE IMPACTO -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
+       <div class="bg-accent/10 border border-accent/20 rounded-xl p-6 hover:shadow-md transition-shadow card-hover">
+        <div class="flex gap-3 items-start"><i data-lucide="briefcase" class="w-6 h-6 text-accent flex-shrink-0"></i>
+         <div class="text-left">
+          <p class="font-heading font-bold text-navy text-sm mb-2">Proyectos en equipo</p>
+          <p class="text-xs text-slate">Startups reales desde 4–5 sesiones</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-accent/10 border border-accent/20 rounded-xl p-6 hover:shadow-md transition-shadow card-hover">
+        <div class="flex gap-3 items-start"><i data-lucide="presentation" class="w-6 h-6 text-accent flex-shrink-0"></i>
+         <div class="text-left">
+          <p class="font-heading font-bold text-navy text-sm mb-2">Presentaciones profesionales</p>
+          <p class="text-xs text-slate">Pitch, prototipo y estrategia</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-accent/10 border border-accent/20 rounded-xl p-6 hover:shadow-md transition-shadow card-hover">
+        <div class="flex gap-3 items-start"><i data-lucide="cpu" class="w-6 h-6 text-accent flex-shrink-0"></i>
+         <div class="text-left">
+          <p class="font-heading font-bold text-navy text-sm mb-2">Uso aplicado de IA</p>
+          <p class="text-xs text-slate">Herramienta para validación y mejora</p>
+         </div>
+        </div>
+       </div>
       </div>
      </div>
     </div>
    </section><!-- DIVIDER -->
-   <div class="section-divider"></div><!-- ESPECIALIZACIÓN - ESTILO SAAS EDUCATIVO -->
-   <section id="especialization" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50/30">
+   <div class="section-divider"></div><!-- ESPECIALIZACIÓN -->
+   <section id="especialization" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50/30">
     <div class="max-w-6xl mx-auto">
      <div class="text-center mb-20 space-y-4">
       <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Especialización</p>
@@ -135,27 +234,27 @@
      </div>
      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5"><!-- Card 1: Empresa e Iniciativa -->
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="briefcase" class="w-10 h-10 text-purple-600"></i>
+       <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="briefcase" class="w-10 h-10 text-purple-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Empresa e Iniciativa Emprendedora</h3>
       </div><!-- Card 2: Economía -->
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="bar-chart-3" class="w-10 h-10 text-blue-600"></i>
+       <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="bar-chart-3" class="w-10 h-10 text-blue-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Economía (ESO y Bachillerato)</h3>
       </div><!-- Card 3: Marketing -->
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="trending-up" class="w-10 h-10 text-green-600"></i>
+       <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="trending-up" class="w-10 h-10 text-green-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Marketing y Digitalización (FP)</h3>
       </div><!-- Card 4: Competencia Digital -->
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-gradient-to-br from-yellow-100 to-yellow-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="monitor" class="w-10 h-10 text-yellow-600"></i>
+       <div class="w-20 h-20 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="monitor" class="w-10 h-10 text-yellow-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Competencia Digital</h3>
       </div><!-- Card 5: STEAM -->
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="rocket" class="w-10 h-10 text-purple-600"></i>
+       <div class="w-20 h-20 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="rocket" class="w-10 h-10 text-pink-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Proyectos STEAM</h3>
       </div>
@@ -163,7 +262,7 @@
     </div>
    </section><!-- DIVIDER -->
    <div class="section-divider"></div><!-- PROPUESTA DE VALOR -->
-   <section id="propuesta" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50/30 to-white">
+   <section id="propuesta" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-5xl mx-auto">
      <div class="text-center mb-16 space-y-4">
       <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Propuesta de Valor</p>
@@ -171,97 +270,299 @@
      </div>
      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"><!-- Card 1 -->
       <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="graduation-cap" class="w-8 h-8 text-blue-600"></i>
+       <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="graduation-cap" class="w-8 h-8 text-blue-600"></i>
        </div>
        <h3 class="font-heading text-lg font-bold text-navy mb-3">Experiencia en distintos contextos</h3>
        <p class="text-slate text-sm leading-relaxed">Más de 15 centros educativos (públicos, concertados, privados). Adaptación a diferentes niveles y perfiles de alumnado.</p>
       </div><!-- Card 2 -->
       <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-16 h-16 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="lightbulb" class="w-8 h-8 text-green-600"></i>
+       <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="lightbulb" class="w-8 h-8 text-green-600"></i>
        </div>
        <h3 class="font-heading text-lg font-bold text-navy mb-3">Metodología aplicada</h3>
        <p class="text-slate text-sm leading-relaxed">Las clases se estructuran en torno a proyectos reales donde el alumnado aplica los contenidos desde el primer momento.</p>
       </div><!-- Card 3 -->
       <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="zap" class="w-8 h-8 text-purple-600"></i>
+       <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="zap" class="w-8 h-8 text-purple-600"></i>
        </div>
        <h3 class="font-heading text-lg font-bold text-navy mb-3">Uso funcional de tecnología</h3>
        <p class="text-slate text-sm leading-relaxed">Herramientas digitales, IA y recursos STEAM integrados como parte del aprendizaje, no como complemento.</p>
       </div>
      </div>
-     <div class="mt-12 p-8 bg-gradient-to-r from-accent/5 to-purple-50/30 rounded-2xl border border-accent/10">
+     <div class="mt-12 p-8 bg-gray-50 rounded-2xl border border-gray-200">
       <p class="text-slate text-center text-base leading-relaxed"><span class="font-semibold">Colaboración</span> con el equipo docente en metodologías, recursos y formación interna cuando el centro lo necesita.</p>
      </div>
     </div>
    </section><!-- DIVIDER -->
-   <div class="section-divider"></div><!-- EN EL AULA -->
-   <section id="aula" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50/30">
-    <div class="max-w-5xl mx-auto">
+   <div class="section-divider"></div><!-- EN EL AULA - METODOLOGÍA CLARA -->
+   <section id="aula" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
      <div class="text-center mb-16 space-y-4">
       <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Metodología</p>
-      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">En el aula</h2>
-      <p class="text-slate text-lg">Así es una clase real</p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12"><!-- Proyecto 1 -->
-      <div class="card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-14 h-14 bg-gradient-to-br from-pink-100 to-pink-50 rounded-2xl flex items-center justify-center mb-5"><i data-lucide="palette" class="w-7 h-7 text-pink-600"></i>
-       </div>
-       <h3 class="font-heading text-lg font-bold text-navy mb-3">Identidad visual startup</h3>
-       <p class="text-slate text-sm leading-relaxed mb-4">Alumnos diseñan logotipo, paleta de colores y guía visual para su proyecto de emprendimiento usando Canva.</p>
-       <p class="text-xs text-accent font-semibold">📅 En 4–5 sesiones, resultado completo</p>
-      </div><!-- Proyecto 2 -->
-      <div class="card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl flex items-center justify-center mb-5"><i data-lucide="mic2" class="w-7 h-7 text-orange-600"></i>
-       </div>
-       <h3 class="font-heading text-lg font-bold text-navy mb-3">Elevator pitch 90 seg</h3>
-       <p class="text-slate text-sm leading-relaxed mb-4">Equipos presentan su idea de negocio ante docentes y compañeros, trabajando comunicación y confianza.</p>
-       <p class="text-xs text-accent font-semibold">📅 En 4–5 sesiones, resultado completo</p>
-      </div><!-- Proyecto 3 -->
-      <div class="card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-14 h-14 bg-gradient-to-br from-cyan-100 to-cyan-50 rounded-2xl flex items-center justify-center mb-5"><i data-lucide="code2" class="w-7 h-7 text-cyan-600"></i>
-       </div>
-       <h3 class="font-heading text-lg font-bold text-navy mb-3">Prototipo app o web</h3>
-       <p class="text-slate text-sm leading-relaxed mb-4">Mockups visuales de la solución usando Canva e IA para generación de contenido.</p>
-       <p class="text-xs text-accent font-semibold">📅 En 4–5 sesiones, resultado completo</p>
-      </div>
-     </div>
-     <div class="bg-gradient-to-br from-accent/5 to-purple-50/30 rounded-2xl p-8 border border-accent/10">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-       <div class="text-center">
-        <div class="text-3xl mb-3">
-         📊
+      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Así es una clase real</h2>
+      <p class="text-slate text-lg">Selecciona un proyecto para ver qué aprende el alumnado y qué produce</p>
+     </div><!-- TAB BUTTONS - HORIZONTAL LIMPIO -->
+     <div class="flex flex-col sm:flex-row gap-3 mb-12 justify-center flex-wrap">
+      <button class="project-tab active" data-tab="proyecto-1" onclick="switchProjectTab(event, 'proyecto-1')"> <i data-lucide="palette" style="width: 20px; height: 20px;"></i> <span>Identidad Visual</span> </button> <button class="project-tab" data-tab="proyecto-2" onclick="switchProjectTab(event, 'proyecto-2')"> <i data-lucide="mic2" style="width: 20px; height: 20px;"></i> <span>Elevator Pitch</span> </button> <button class="project-tab" data-tab="proyecto-3" onclick="switchProjectTab(event, 'proyecto-3')"> <i data-lucide="video" style="width: 20px; height: 20px;"></i> <span>Contenido con IA</span> </button> <button class="project-tab" data-tab="proyecto-4" onclick="switchProjectTab(event, 'proyecto-4')"> <i data-lucide="file-text" style="width: 20px; height: 20px;"></i> <span>Documentos de Empresa</span> </button>
+     </div><!-- TAB CONTENTS - GRID 2 COLUMNAS -->
+     <div class="space-y-6">
+      <!-- Proyecto 1: Identidad Visual -->
+      <div id="proyecto-1" class="project-content active">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- CONTENIDO IZQUIERDA -->
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Identidad Visual</h3>
+         <p class="text-slate text-lg mb-8">El alumnado crea la marca visual de su proyecto desde cero: logotipo, colores y diseño que comuniquen quién son.</p><!-- QUÉ APRENDE -->
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo una marca comunica valores y diferencia</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Psicología del color en decisiones de compra</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Coherencia visual en todos los materiales</span></li>
+          </ul>
+         </div><!-- QUÉ PRODUCE -->
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Logotipo único y memorable</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Paleta de colores justificada</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Guía básica de marca (listo para usar)</span></li>
+          </ul>
+         </div><!-- HERRAMIENTAS -->
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Canva</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA generativa</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Feedback visual</span>
+          </div>
+         </div><!-- DURACIÓN -->
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Resultado profesional listo</p>
+         </div>
+        </div><!-- VISUALIZACIÓN DERECHA -->
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            🎨
+           </div>
+           <div class="space-y-4">
+            <div class="text-center">
+             <div class="text-4xl font-bold text-accent mb-2">
+              JP
+             </div>
+             <p class="text-sm text-slate font-semibold">Logotipo del proyecto</p>
+            </div>
+            <div class="flex gap-2 justify-center">
+             <div class="w-10 h-10 bg-accent rounded"></div>
+             <div class="w-10 h-10 bg-blue-400 rounded"></div>
+             <div class="w-10 h-10 bg-purple-300 rounded"></div>
+            </div>
+            <p class="text-xs text-slate">Paleta de marca</p>
+           </div>
+          </div>
+         </div>
         </div>
-        <p class="text-sm text-slate font-semibold">Proyecto completo</p>
        </div>
-       <div class="text-center">
-        <div class="text-3xl mb-3">
+      </div><!-- Proyecto 2: Elevator Pitch -->
+      <div id="proyecto-2" class="project-content hidden">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Elevator Pitch</h3>
+         <p class="text-slate text-lg mb-8">El alumnado presenta su idea en 90 segundos. Aprende a comunicar con claridad, seguridad y persuasión ante una audiencia real.</p>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Estructurar una idea de forma clara y atractiva</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Hablar en público con seguridad</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Responder a preguntas en tiempo real</span></li>
+          </ul>
+         </div>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Presentación visual (diapositivas o poster)</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Pitch grabado o presentado en vivo</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Feedback de la audiencia anotado</span></li>
+          </ul>
+         </div>
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Presentaciones</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Grabación</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Feedback directo</span>
+          </div>
+         </div>
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Presentación profesional</p>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            🎤
+           </div>
+           <div class="space-y-4 w-full">
+            <div class="bg-white rounded p-3 text-center">
+             <p class="text-xs text-slate font-semibold mb-2">Presentación visual</p>
+             <div class="h-6 bg-gray-200 rounded"></div>
+            </div>
+            <div class="text-sm text-slate">
+             <p class="font-semibold mb-1">Estructura del pitch:</p>
+             <p class="text-xs">✓ Problema</p>
+             <p class="text-xs">✓ Solución</p>
+             <p class="text-xs">✓ Diferencial</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Proyecto 3: Contenido con IA -->
+      <div id="proyecto-3" class="project-content hidden">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Contenido con IA</h3>
+         <p class="text-slate text-lg mb-8">El alumnado crea un vídeo corto de su proyecto usando inteligencia artificial. Aprende comunicación digital moderna y herramientas reales de marketing.</p>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo usar IA para crear contenido visual</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Narración y estructura de contenido de redes sociales</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Comunicación breve, directa y visual</span></li>
+          </ul>
+         </div>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Vídeo corto tipo redes sociales (30-60 seg)</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Guion y plan de contenido escrito</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Material listo para publicar</span></li>
+          </ul>
+         </div>
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA generativa</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Canva</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Editor de vídeo</span>
+          </div>
+         </div>
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Vídeo listo para redes</p>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            🎬
+           </div>
+           <div class="space-y-4 w-full">
+            <div class="bg-gradient-to-b from-blue-400 to-purple-500 rounded h-32 flex items-end justify-center pb-2">
+             <div class="text-white text-2xl">
+              ▶
+             </div>
+            </div>
+            <div class="text-sm text-slate">
+             <p class="font-semibold mb-2">Contenido creado:</p>
+             <p class="text-xs">✓ Guion con IA</p>
+             <p class="text-xs">✓ Imágenes/vídeos generados</p>
+             <p class="text-xs">✓ Montaje profesional</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Proyecto 4: Documentos de Empresa -->
+      <div id="proyecto-4" class="project-content hidden">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Documentos de Empresa</h3>
+         <p class="text-slate text-lg mb-8">El alumnado redacta documentos reales de su empresa: normas internas, políticas y comunicaciones profesionales. Aprende estructura y lenguaje empresarial.</p>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Redacción profesional y estructura formal</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo funcionan políticas y reglamentos internos</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Claridad, precisión y tono en comunicación empresarial</span></li>
+          </ul>
+         </div>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Reglamento interno y normas de equipo</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Política de atención al cliente</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Carta profesional, comunicados y documentos base</span></li>
+          </ul>
+         </div>
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA (revisión)</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Word</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Templates</span>
+          </div>
+         </div>
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Documentos listos para usar</p>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            📄
+           </div>
+           <div class="space-y-3 w-full">
+            <div class="bg-white rounded p-2 border-l-4 border-accent">
+             <p class="text-xs text-slate font-semibold">Reglamento interno</p>
+            </div>
+            <div class="bg-white rounded p-2 border-l-4 border-blue-400">
+             <p class="text-xs text-slate font-semibold">Política de cliente</p>
+            </div>
+            <div class="bg-white rounded p-2 border-l-4 border-purple-400">
+             <p class="text-xs text-slate font-semibold">Comunicaciones</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- RESUMEN COMÚN -->
+     <div class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-200">
+      <h3 class="font-heading text-xl font-bold text-navy mb-8 text-center">Lo que caracteriza todos los proyectos</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
          🎯
         </div>
-        <p class="text-sm text-slate font-semibold">Presentación profesional</p>
+        <p class="text-sm text-slate font-semibold">Objetivo claro desde el inicio</p>
        </div>
-       <div class="text-center">
-        <div class="text-3xl mb-3">
-         💡
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
+         🤝
         </div>
-        <p class="text-sm text-slate font-semibold">Aprendizaje aplicado</p>
+        <p class="text-sm text-slate font-semibold">Trabajo en equipo</p>
        </div>
-       <div class="text-center">
-        <div class="text-3xl mb-3">
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
          ✨
         </div>
-        <p class="text-sm text-slate font-semibold">Impacto en el aula</p>
+        <p class="text-sm text-slate font-semibold">Resultado visible e inmediato</p>
+       </div>
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
+         📊
+        </div>
+        <p class="text-sm text-slate font-semibold">Presentación profesional</p>
        </div>
       </div>
      </div>
     </div>
    </section><!-- DIVIDER -->
    <div class="section-divider"></div><!-- CASO PRÁCTICO -->
-   <section id="caso" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50/30 to-white">
+   <section id="caso" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-5xl mx-auto">
      <div class="text-center mb-16 space-y-4">
       <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Caso Práctico</p>
       <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Proyecto de emprendimiento digital con IA</h2>
-      <p class="text-slate text-lg">En el aula</p>
      </div>
      <div class="case-grid mb-8"><!-- ANTES -->
       <div class="bg-white rounded-2xl p-8 border-l-4 border-red-400 shadow-sm hover:shadow-lg transition-shadow">
@@ -281,7 +582,7 @@
        </ul>
       </div>
      </div><!-- RESULTADO -->
-     <div class="bg-gradient-to-r from-accent/5 to-purple-50/30 rounded-2xl p-8 border border-accent/10">
+     <div class="bg-white rounded-2xl p-8 border border-gray-200">
       <h3 class="font-heading text-2xl font-bold text-navy mb-8 text-center">Resultado</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
        <div class="text-center">
@@ -308,40 +609,52 @@
     </div>
    </section><!-- DIVIDER -->
    <div class="section-divider"></div><!-- EXPERIENCIA Y FORMACIÓN -->
-   <section id="experiencia" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50/30">
+   <section id="experiencia" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50/30">
     <div class="max-w-5xl mx-auto">
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-16 text-center">Experiencia</h2>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-12"><!-- Trayectoria Docente -->
+     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-16 text-center">Experiencia y Formación</h2>
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12"><!-- Experiencia -->
       <div>
        <h3 class="font-heading text-2xl font-bold text-navy mb-8">Trayectoria docente</h3>
-       <div class="space-y-6">
+       <div class="space-y-6"><!-- Item 1 -->
         <div class="pb-6 border-b border-gray-200">
-         <p class="text-slate font-semibold text-sm">Más de 15 centros educativos</p>
-         <p class="text-slate text-sm mt-2">Experiencia en contextos públicos, concertados y privados. Adaptación a diferentes estructuras organizativas y perfiles de alumnado.</p>
-        </div>
+         <div class="flex gap-3 mb-3"><i data-lucide="briefcase" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+          <div>
+           <p class="text-slate font-semibold text-base">Más de 15 centros educativos</p>
+           <p class="text-slate text-sm mt-2">Experiencia en contextos públicos, concertados y privados. Adaptación a diferentes estructuras organizativas y perfiles de alumnado.</p>
+          </div>
+         </div>
+        </div><!-- Item 2 -->
         <div class="pb-6 border-b border-gray-200">
-         <p class="text-slate font-semibold text-sm">Metodologías innovadoras en aula</p>
-         <p class="text-slate text-sm mt-2">Proyectos STEAM, metodologías activas y aprendizaje basado en problemas. Experiencia con todos los niveles: ESO, Bachillerato y FP.</p>
-        </div>
+         <div class="flex gap-3 mb-3"><i data-lucide="sparkles" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+          <div>
+           <p class="text-slate font-semibold text-base">Metodologías innovadoras en aula</p>
+           <p class="text-slate text-sm mt-2">Proyectos STEAM, metodologías activas y aprendizaje basado en problemas. Experiencia con ESO, Bachillerato y FP.</p>
+          </div>
+         </div>
+        </div><!-- Item 3 -->
         <div>
-         <p class="text-slate font-semibold text-sm">Integración de tecnología e IA</p>
-         <p class="text-slate text-sm mt-2">Uso de herramientas digitales, IA generativa y recursos multimedia como parte de las dinámicas de clase.</p>
+         <div class="flex gap-3 mb-3"><i data-lucide="cpu" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+          <div>
+           <p class="text-slate font-semibold text-base">Integración de tecnología e IA</p>
+           <p class="text-slate text-sm mt-2">Herramientas digitales, IA generativa y recursos multimedia como parte del aprendizaje.</p>
+          </div>
+         </div>
         </div>
        </div>
-      </div><!-- Formación Académica -->
+      </div><!-- Formación -->
       <div>
        <h3 class="font-heading text-2xl font-bold text-navy mb-8">Formación académica</h3>
-       <div class="space-y-4">
-        <div class="bg-gradient-to-br from-purple-50 to-purple-100/30 rounded-2xl p-6 border border-purple-200/50 shadow-sm">
+       <div class="space-y-4"><!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
          <h4 class="font-heading font-bold text-navy mb-2">Máster de Profesorado</h4>
-         <p class="text-slate text-sm">Especialidad: Economía, Empresa y Turismo</p>
-         <p class="text-xs text-accent font-semibold mt-3">✓ Finalización: junio 2025</p>
-        </div>
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100/30 rounded-2xl p-6 border border-blue-200/50 shadow-sm">
+         <p class="text-slate text-sm mb-3">Especialidad: Economía, Empresa y Turismo</p>
+         <p class="text-xs text-accent font-semibold">✓ Finalización: junio 2025</p>
+        </div><!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
          <h4 class="font-heading font-bold text-navy mb-2">Máster en Marketing Digital</h4>
          <p class="text-slate text-sm">Estrategia digital, analítica y comunicación online</p>
-        </div>
-        <div class="bg-gradient-to-br from-green-50 to-green-100/30 rounded-2xl p-6 border border-green-200/50 shadow-sm">
+        </div><!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
          <h4 class="font-heading font-bold text-navy mb-2">Diplomatura en Ciencias Empresariales</h4>
          <p class="text-slate text-sm">Gestión, economía y administración de empresas</p>
         </div>
@@ -351,18 +664,18 @@
     </div>
    </section><!-- DIVIDER -->
    <div class="section-divider"></div><!-- PERFIL DOCENTE -->
-   <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-navy via-slate to-navy text-white">
+   <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-navy text-white">
     <div class="max-w-4xl mx-auto text-center">
      <h2 class="font-heading text-4xl sm:text-5xl font-bold mb-8">Perfil docente</h2>
      <p class="text-lg sm:text-xl leading-relaxed text-gray-100">Docente orientado a <span class="text-accent font-semibold">aprendizaje aplicado</span>, <span class="text-accent font-semibold">metodologías activas</span> y <span class="text-accent font-semibold">desarrollo de competencias reales</span> en empresa, economía y marketing digital. Experiencia probada en innovación educativa, integración de tecnología e IA, y trabajo colaborativo con equipos docentes.</p>
     </div>
    </section><!-- DIVIDER -->
    <div class="section-divider"></div><!-- CONTACTO -->
-   <section id="contacto" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50/30 to-white">
+   <section id="contacto" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-4xl mx-auto text-center">
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-8">Abierto a nuevas oportunidades</h2>
-     <p class="text-lg text-slate mb-12 max-w-2xl mx-auto leading-relaxed">Abierto a nuevas oportunidades en centros educativos donde aportar innovación, experiencia en empresa y metodologías activas que generan resultados visibles en el alumnado.</p>
-     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"><a href="mailto:contacto@juanpeco.com" class="btn-primary text-white px-8 py-4 rounded-lg text-lg">Solicitar entrevista</a> <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer" class="border-2 border-accent text-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent hover:text-white transition-all">WhatsApp</a>
+     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-8">Abierto a colaborar</h2>
+     <p class="text-lg text-slate mb-12 max-w-2xl mx-auto leading-relaxed">Buscando centros educativos donde aplicar metodologías activas, aprendizaje práctico y uso innovador de la tecnología. Disponible para entrevista, presentación de proyectos y colaboración educativa.</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"><a href="mailto:contacto@juanpeco.com" class="btn-primary text-white px-8 py-4 rounded-lg text-lg">Solicitar entrevista</a> <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer" class="border-2 border-accent text-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent hover:text-white transition-all">Enviar WhatsApp</a>
      </div>
      <p class="text-sm text-slate">contacto@juanpeco.com</p>
     </div>
@@ -372,26 +685,33 @@
    </footer>
   </div>
   <script>
-    // Intersection Observer para animaciones fade-up
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    // Tabs interactivos mejorados
+    function switchProjectTab(event, tabName) {
+      event.preventDefault();
 
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+      // Ocultar todos los contenidos
+      const contents = document.querySelectorAll('.project-content');
+      contents.forEach(content => {
+        content.classList.add('hidden');
       });
-    }, observerOptions);
 
-    document.querySelectorAll('.fade-up').forEach(el => {
-      observer.observe(el);
-    });
+      // Desactivar todos los botones
+      const buttons = document.querySelectorAll('.project-tab');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Mostrar contenido seleccionado
+      const selectedContent = document.getElementById(tabName);
+      if (selectedContent) {
+        selectedContent.classList.remove('hidden');
+      }
+      
+      event.target.closest('.project-tab').classList.add('active');
+    }
 
     // Inicializar iconos Lucide
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e35cb0e911f03c9',t:'MTc3NDY5MjA4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e3846da739ed119',t:'MTc3NDcxODEyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
