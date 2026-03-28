@@ -159,11 +159,9 @@
    <!-- NAVEGACIÓN MEJORADA -->
    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-     <!-- LOGO -->
-     <div class="flex items-center gap-3">
+     <!-- LOGO CLICABLE --> <a href="#app-wrapper" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
       <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center"><span class="font-heading font-bold text-xl text-white">JP</span>
-      </div><span class="font-heading font-bold text-lg text-navy">Juan Peco</span>
-     </div><!-- MENÚ DESKTOP -->
+      </div><span class="font-heading font-bold text-lg text-navy">Juan Peco</span> </a><!-- MENÚ DESKTOP -->
      <div class="hidden md:flex gap-10 items-center">
       <a href="#especialization" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Especialización</a> <a href="#propuesta" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Propuesta</a> <a href="#aula" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">En el aula</a> <a href="#caso" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Caso práctico</a> <a href="#experiencia" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Experiencia</a> <a href="#contacto" class="inline-block bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm hover:shadow-md">Contacto</a>
      </div>
@@ -699,10 +697,42 @@
     </div>
    </section><!-- FOOTER -->
    <footer class="w-full py-12 px-4 sm:px-6 lg:px-8 bg-navy text-gray-400 text-center text-sm">
-    <p>© 2026 Juan Peco. Docente de Empresa, Economía y Marketing Digital.</p>
+    <p>© 2024 Juan Peco. Docente de Empresa, Economía y Marketing Digital.</p>
    </footer>
   </div>
   <script>
+    // Botón flotante Subir arriba
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.id = 'scroll-top-btn';
+    scrollTopBtn.setAttribute('aria-label', 'Subir arriba');
+    scrollTopBtn.innerHTML = '<i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>';
+    scrollTopBtn.className = 'fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-12 h-12 sm:w-14 sm:h-14 bg-slate hover:bg-navy text-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 opacity-0 pointer-events-none flex items-center justify-center cursor-pointer z-40';
+    document.body.appendChild(scrollTopBtn);
+
+    // Control de visibilidad del botón
+    const appWrapper = document.getElementById('app-wrapper');
+    
+    function updateScrollTopBtn() {
+      if (appWrapper.scrollTop > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollTopBtn.classList.add('opacity-100');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollTopBtn.classList.remove('opacity-100');
+      }
+    }
+
+    // Evento scroll
+    appWrapper.addEventListener('scroll', updateScrollTopBtn);
+
+    // Click en el botón
+    scrollTopBtn.addEventListener('click', () => {
+      appWrapper.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
     // Tabs interactivos mejorados
     function switchProjectTab(event, tabName) {
       event.preventDefault();
@@ -731,5 +761,5 @@
     // Inicializar iconos Lucide
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e384b6955ffd119',t:'MTc3NDcxODMxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e385a05e09bd119',t:'MTc3NDcxODkxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
