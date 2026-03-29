@@ -234,7 +234,7 @@
       <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
        <span class="font-heading font-bold text-xl text-white">JP</span>
       </div><span class="font-heading font-bold text-lg text-navy">Juan Peco</span> </a>
-     <div class="hidden md:flex gap-10 items-center"><a href="#especialization" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Especialización</a> <a href="#propuesta" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Propuesta</a> <a href="#aula" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">En el aula</a> <a href="#caso" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Caso práctico</a> <a href="#experiencia" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Experiencia</a> <a href="#contacto" class="inline-block bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm hover:shadow-md">Contacto</a>
+     <div class="hidden md:flex gap-10 items-center"><button onclick="scrollToSection(event, 'especialization')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Especialización</button> <button onclick="scrollToSection(event, 'propuesta')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Propuesta</button> <button onclick="scrollToSection(event, 'aula')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">En el aula</button> <button onclick="scrollToSection(event, 'caso')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Caso práctico</button> <button onclick="scrollToSection(event, 'experiencia')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Experiencia</button> <button onclick="scrollToSection(event, 'contacto')" class="inline-block bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm hover:shadow-md border-none cursor-pointer">Contacto</button>
      </div>
     </div>
    </nav><!-- HERO - SIMPLIFICADO Y OPTIMIZADO SEO -->
@@ -971,926 +971,577 @@
    </section><!-- FOOTER -->
    <footer class="w-full py-12 px-4 sm:px-6 lg:px-8 bg-navy text-gray-400 text-center text-sm">
     <p>© 2024 Juan Peco. Docente de Empresa, Economía y Marketing Digital.</p>
+   </footer><!-- DIVIDER -->
+   <div class="section-divider"></div><!-- PROPUESTA DE VALOR -->
+   <section id="propuesta" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-5xl mx-auto">
+     <div class="text-center mb-16 space-y-4">
+      <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Propuesta de Valor</p>
+      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Qué aporto al centro</h2>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"><!-- Card 1 -->
+      <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
+       <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="graduation-cap" class="w-8 h-8 text-blue-600"></i>
+       </div>
+       <h3 class="font-heading text-lg font-bold text-navy mb-3">Experiencia en distintos contextos</h3>
+       <p class="text-slate text-sm leading-relaxed">Más de 15 centros educativos (públicos, concertados, privados). Adaptación a diferentes niveles y perfiles de alumnado.</p>
+      </div><!-- Card 2 -->
+      <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
+       <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="lightbulb" class="w-8 h-8 text-green-600"></i>
+       </div>
+       <h3 class="font-heading text-lg font-bold text-navy mb-3">Metodología aplicada</h3>
+       <p class="text-slate text-sm leading-relaxed">Las clases se estructuran en torno a proyectos reales donde el alumnado aplica los contenidos desde el primer momento.</p>
+      </div><!-- Card 3 -->
+      <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
+       <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="zap" class="w-8 h-8 text-purple-600"></i>
+       </div>
+       <h3 class="font-heading text-lg font-bold text-navy mb-3">Uso funcional de tecnología</h3>
+       <p class="text-slate text-sm leading-relaxed">Herramientas digitales, IA y recursos STEAM integrados como parte del aprendizaje, no como complemento.</p>
+      </div>
+     </div>
+     <div class="mt-12 p-8 bg-gray-50 rounded-2xl border border-gray-200">
+      <p class="text-slate text-center text-base leading-relaxed"><span class="font-semibold">Colaboración</span> con el equipo docente en metodologías, recursos y formación interna cuando el centro lo necesita.</p>
+     </div>
+    </div>
+   </section><!-- DIVIDER -->
+   <div class="section-divider"></div><!-- EN EL AULA - METODOLOGÍA CLARA -->
+   <section id="aula" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-20 space-y-4">
+      <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Cómo trabajo</p>
+      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy leading-tight">En el aula: metodología y ejemplos</h2>
+      <p class="text-slate text-lg">Selecciona un proyecto para ver qué aprende el alumnado y qué produce</p>
+     </div><!-- TAB BUTTONS - HORIZONTAL LIMPIO -->
+     <div class="flex flex-col sm:flex-row gap-3 mb-12 justify-center flex-wrap">
+      <button class="project-tab active" data-tab="proyecto-1" onclick="switchProjectTab(event, 'proyecto-1')"> <i data-lucide="palette" style="width: 20px; height: 20px;"></i> <span>Identidad Visual</span> </button> <button class="project-tab" data-tab="proyecto-2" onclick="switchProjectTab(event, 'proyecto-2')"> <i data-lucide="mic2" style="width: 20px; height: 20px;"></i> <span>Elevator Pitch</span> </button> <button class="project-tab" data-tab="proyecto-3" onclick="switchProjectTab(event, 'proyecto-3')"> <i data-lucide="video" style="width: 20px; height: 20px;"></i> <span>Contenido con IA</span> </button> <button class="project-tab" data-tab="proyecto-4" onclick="switchProjectTab(event, 'proyecto-4')"> <i data-lucide="file-text" style="width: 20px; height: 20px;"></i> <span>Documentos de Empresa</span> </button>
+     </div><!-- TAB CONTENTS - GRID 2 COLUMNAS -->
+     <div class="space-y-6">
+      <!-- Proyecto 1: Identidad Visual -->
+      <div id="proyecto-1" class="project-content active">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- CONTENIDO IZQUIERDA -->
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Identidad Visual</h3>
+         <p class="text-slate text-lg mb-8">El alumnado crea la marca visual de su proyecto desde cero: logotipo, colores y diseño que comuniquen quién son.</p><!-- QUÉ APRENDE -->
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo una marca comunica valores y diferencia</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Psicología del color en decisiones de compra</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Coherencia visual en todos los materiales</span></li>
+          </ul>
+         </div><!-- QUÉ PRODUCE -->
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Logotipo único y memorable</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Paleta de colores justificada</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Guía básica de marca (listo para usar)</span></li>
+          </ul>
+         </div><!-- HERRAMIENTAS -->
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Canva</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA generativa</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Feedback visual</span>
+          </div>
+         </div><!-- DURACIÓN -->
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Resultado profesional listo</p>
+         </div>
+        </div><!-- VISUALIZACIÓN DERECHA -->
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            🎨
+           </div>
+           <div class="space-y-4">
+            <div class="text-center">
+             <div class="text-4xl font-bold text-accent mb-2">
+              JP
+             </div>
+             <p class="text-sm text-slate font-semibold">Logotipo del proyecto</p>
+            </div>
+            <div class="flex gap-2 justify-center">
+             <div class="w-10 h-10 bg-accent rounded"></div>
+             <div class="w-10 h-10 bg-blue-400 rounded"></div>
+             <div class="w-10 h-10 bg-purple-300 rounded"></div>
+            </div>
+            <p class="text-xs text-slate">Paleta de marca</p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Proyecto 2: Elevator Pitch -->
+      <div id="proyecto-2" class="project-content hidden">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Elevator Pitch</h3>
+         <p class="text-slate text-lg mb-8">El alumnado presenta su idea en 90 segundos. Aprende a comunicar con claridad, seguridad y persuasión ante una audiencia real.</p>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Estructurar una idea de forma clara y atractiva</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Hablar en público con seguridad</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Responder a preguntas en tiempo real</span></li>
+          </ul>
+         </div>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Presentación visual (diapositivas o poster)</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Pitch grabado o presentado en vivo</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Feedback de la audiencia anotado</span></li>
+          </ul>
+         </div>
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Presentaciones</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Grabación</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Feedback directo</span>
+          </div>
+         </div>
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Presentación profesional</p>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            🎤
+           </div>
+           <div class="space-y-4 w-full">
+            <div class="bg-white rounded p-3 text-center">
+             <p class="text-xs text-slate font-semibold mb-2">Presentación visual</p>
+             <div class="h-6 bg-gray-200 rounded"></div>
+            </div>
+            <div class="text-sm text-slate">
+             <p class="font-semibold mb-1">Estructura del pitch:</p>
+             <p class="text-xs">✓ Problema</p>
+             <p class="text-xs">✓ Solución</p>
+             <p class="text-xs">✓ Diferencial</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Proyecto 3: Contenido con IA -->
+      <div id="proyecto-3" class="project-content hidden">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Contenido con IA</h3>
+         <p class="text-slate text-lg mb-8">El alumnado crea un vídeo corto de su proyecto usando inteligencia artificial. Aprende comunicación digital moderna y herramientas reales de marketing.</p>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo usar IA para crear contenido visual</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Narración y estructura de contenido de redes sociales</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Comunicación breve, directa y visual</span></li>
+          </ul>
+         </div>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Vídeo corto tipo redes sociales (30-60 seg)</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Guion y plan de contenido escrito</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Material listo para publicar</span></li>
+          </ul>
+         </div>
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA generativa</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Canva</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Editor de vídeo</span>
+          </div>
+         </div>
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Vídeo listo para redes</p>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            🎬
+           </div>
+           <div class="space-y-4 w-full">
+            <div class="bg-gradient-to-b from-blue-400 to-purple-500 rounded h-32 flex items-end justify-center pb-2">
+             <div class="text-white text-2xl">
+              ▶
+             </div>
+            </div>
+            <div class="text-sm text-slate">
+             <p class="font-semibold mb-2">Contenido creado:</p>
+             <p class="text-xs">✓ Guion con IA</p>
+             <p class="text-xs">✓ Imágenes/vídeos generados</p>
+             <p class="text-xs">✓ Montaje profesional</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Proyecto 4: Documentos de Empresa -->
+      <div id="proyecto-4" class="project-content hidden">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+         <h3 class="font-heading text-3xl font-bold text-navy mb-4">Documentos de Empresa</h3>
+         <p class="text-slate text-lg mb-8">El alumnado redacta documentos reales de su empresa: normas internas, políticas y comunicaciones profesionales. Aprende estructura y lenguaje empresarial.</p>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Redacción profesional y estructura formal</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo funcionan políticas y reglamentos internos</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Claridad, precisión y tono en comunicación empresarial</span></li>
+          </ul>
+         </div>
+         <div class="mb-8">
+          <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
+          <ul class="space-y-3">
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Reglamento interno y normas de equipo</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Política de atención al cliente</span></li>
+           <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Carta profesional, comunicados y documentos base</span></li>
+          </ul>
+         </div>
+         <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
+          <div class="flex flex-wrap gap-2">
+           <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA (revisión)</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Word</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Templates</span>
+          </div>
+         </div>
+         <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Documentos listos para usar</p>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
+          <div class="text-center">
+           <div class="text-6xl mb-6">
+            📄
+           </div>
+           <div class="space-y-3 w-full">
+            <div class="bg-white rounded p-2 border-l-4 border-accent">
+             <p class="text-xs text-slate font-semibold">Reglamento interno</p>
+            </div>
+            <div class="bg-white rounded p-2 border-l-4 border-blue-400">
+             <p class="text-xs text-slate font-semibold">Política de cliente</p>
+            </div>
+            <div class="bg-white rounded p-2 border-l-4 border-purple-400">
+             <p class="text-xs text-slate font-semibold">Comunicaciones</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- RESUMEN COMÚN -->
+     <div class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-200">
+      <h3 class="font-heading text-xl font-bold text-navy mb-8 text-center">Lo que caracteriza todos los proyectos</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
+         🎯
+        </div>
+        <p class="text-sm text-slate font-semibold">Objetivo claro desde el inicio</p>
+       </div>
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
+         🤝
+        </div>
+        <p class="text-sm text-slate font-semibold">Trabajo en equipo</p>
+       </div>
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
+         ✨
+        </div>
+        <p class="text-sm text-slate font-semibold">Resultado visible e inmediato</p>
+       </div>
+       <div class="flex flex-col items-center">
+        <div class="text-4xl mb-3">
+         📊
+        </div>
+        <p class="text-sm text-slate font-semibold">Presentación profesional</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- DIVIDER -->
+   <div class="section-divider"></div><!-- CASO PRÁCTICO -->
+   <section id="caso" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-5xl mx-auto">
+     <div class="text-center mb-16 space-y-4">
+      <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Caso Práctico</p>
+      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Proyecto de emprendimiento digital con IA</h2>
+     </div>
+     <div class="case-grid mb-8"><!-- ANTES -->
+      <div class="bg-white rounded-2xl p-8 border-l-4 border-red-400 shadow-sm hover:shadow-lg transition-shadow">
+       <h3 class="font-heading text-2xl font-bold text-navy mb-6">Antes</h3>
+       <ul class="space-y-3">
+        <li class="flex gap-3 items-start"><span class="text-red-500 text-xl font-bold">×</span> <span class="text-slate">Baja conexión entre teoría y práctica</span></li>
+        <li class="flex gap-3 items-start"><span class="text-red-500 text-xl font-bold">×</span> <span class="text-slate">Participación pasiva del alumnado</span></li>
+        <li class="flex gap-3 items-start"><span class="text-red-500 text-xl font-bold">×</span> <span class="text-slate">Poca motivación en asignaturas de empresa</span></li>
+       </ul>
+      </div><!-- TRANSFORMACIÓN -->
+      <div class="bg-white rounded-2xl p-8 border-l-4 border-accent shadow-sm hover:shadow-lg transition-shadow">
+       <h3 class="font-heading text-2xl font-bold text-navy mb-6">Transformación</h3>
+       <ul class="space-y-3">
+        <li class="flex gap-3 items-start"><span class="text-accent text-xl font-bold">→</span> <span class="text-slate">Trabajo en equipo tipo startup real</span></li>
+        <li class="flex gap-3 items-start"><span class="text-accent text-xl font-bold">→</span> <span class="text-slate">Diseño de marca, producto y estrategia</span></li>
+        <li class="flex gap-3 items-start"><span class="text-accent text-xl font-bold">→</span> <span class="text-slate">IA para validación e innovación continua</span></li>
+       </ul>
+      </div>
+     </div><!-- RESULTADO -->
+     <div class="bg-white rounded-2xl p-8 border border-gray-200">
+      <h3 class="font-heading text-2xl font-bold text-navy mb-8 text-center">Resultado</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+       <div class="text-center">
+        <div class="text-4xl mb-3">
+         📊
+        </div>
+        <p class="text-slate font-medium">Presentaciones tipo pitch profesional</p>
+       </div>
+       <div class="text-center">
+        <div class="text-4xl mb-3">
+         ✨
+        </div>
+        <p class="text-slate font-medium">Prototipos funcionales y validables</p>
+       </div>
+       <div class="text-center">
+        <div class="text-4xl mb-3">
+         🎯
+        </div>
+        <p class="text-slate font-medium">Mayor implicación y aprendizaje visible</p>
+       </div>
+      </div>
+     </div>
+     <p class="text-center text-navy font-heading text-lg font-bold mt-8">El alumnado aprende aplicando desde el primer momento</p>
+    </div>
+   </section><!-- DIVIDER -->
+   <div class="section-divider"></div><!-- EXPERIENCIA Y FORMACIÓN -->
+   <section id="experiencia" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50/30">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-16 text-center">Experiencia y Formación</h2>
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12"><!-- Experiencia -->
+      <div>
+       <h3 class="font-heading text-2xl font-bold text-navy mb-8">Trayectoria docente</h3>
+       <div class="space-y-6"><!-- Item 1 -->
+        <div class="pb-6 border-b border-gray-200">
+         <div class="flex gap-3 mb-3"><i data-lucide="briefcase" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+          <div>
+           <p class="text-slate font-semibold text-base">Más de 15 centros educativos</p>
+           <p class="text-slate text-sm mt-2">Experiencia en contextos públicos y concertados. Adaptación a diferentes estructuras organizativas y perfiles de alumnado.</p>
+          </div>
+         </div>
+        </div><!-- Item 2 -->
+        <div class="pb-6 border-b border-gray-200">
+         <div class="flex gap-3 mb-3"><i data-lucide="sparkles" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+          <div>
+           <p class="text-slate font-semibold text-base">Metodologías innovadoras en aula</p>
+           <p class="text-slate text-sm mt-2">Proyectos STEAM, metodologías activas y aprendizaje basado en problemas. Experiencia con ESO, Bachillerato y FP.</p>
+          </div>
+         </div>
+        </div><!-- Item 3 -->
+        <div>
+         <div class="flex gap-3 mb-3"><i data-lucide="cpu" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+          <div>
+           <p class="text-slate font-semibold text-base">Integración de tecnología e IA</p>
+           <p class="text-slate text-sm mt-2">Herramientas digitales, IA generativa y recursos multimedia como parte del aprendizaje.</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Formación -->
+      <div>
+       <h3 class="font-heading text-2xl font-bold text-navy mb-8">Formación académica</h3>
+       <div class="space-y-4"><!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
+         <h4 class="font-heading font-bold text-navy mb-2">Máster de Profesorado</h4>
+         <p class="text-slate text-sm mb-3">Especialidad: Economía, Empresa y Turismo</p>
+         <p class="text-xs text-accent font-semibold">✓ Finalización: junio 2025</p>
+        </div><!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
+         <h4 class="font-heading font-bold text-navy mb-2">Máster en Marketing Digital</h4>
+         <p class="text-slate text-sm">Estrategia digital, analítica y comunicación online</p>
+        </div><!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
+         <h4 class="font-heading font-bold text-navy mb-2">Diplomatura en Ciencias Empresariales</h4>
+         <p class="text-slate text-sm">Gestión, economía y administración de empresas</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- DIVIDER -->
+   <div class="section-divider"></div><!-- PERFIL DOCENTE -->
+   <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-navy text-white">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="font-heading text-4xl sm:text-5xl font-bold mb-8">Perfil docente</h2>
+     <p class="text-lg sm:text-xl leading-relaxed text-gray-100">Docente orientado a <span class="text-accent font-semibold">aprendizaje aplicado</span>, <span class="text-accent font-semibold">metodologías activas</span> y <span class="text-accent font-semibold">desarrollo de competencias reales</span> en empresa, economía y marketing digital. Experiencia probada en innovación educativa, integración de tecnología e IA, y trabajo colaborativo con equipos docentes.</p>
+    </div>
+   </section><!-- DIVIDER -->
+   <div class="section-divider"></div><!-- DECISIONES EN EL AULA -->
+   <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16 space-y-4">
+      <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Práctica real</p>
+      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Cómo tomo decisiones en el aula</h2>
+      <p class="text-slate text-lg">Selecciona una situación real y observa cómo se aborda en clase</p>
+     </div>
+     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- SELECTOR IZQUIERDA -->
+      <div class="flex flex-col gap-3 lg:col-span-1">
+       <button class="decision-btn active" data-case="caso-1" onclick="switchDecisionCase(event, 'caso-1')">
+        <div class="flex items-start gap-3">
+         <div class="text-2xl pt-1">
+          📉
+         </div>
+         <div class="text-left">
+          <p class="font-heading font-bold text-navy text-sm">Baja motivación</p>
+          <p class="text-xs text-slate">Alumnado desenganchado</p>
+         </div>
+        </div></button> <button class="decision-btn" data-case="caso-2" onclick="switchDecisionCase(event, 'caso-2')">
+        <div class="flex items-start gap-3">
+         <div class="text-2xl pt-1">
+          🤐
+         </div>
+         <div class="text-left">
+          <p class="font-heading font-bold text-navy text-sm">Grupo pasivo</p>
+          <p class="text-xs text-slate">Solo escuchan, no participan</p>
+         </div>
+        </div></button> <button class="decision-btn" data-case="caso-3" onclick="switchDecisionCase(event, 'caso-3')">
+        <div class="flex items-start gap-3">
+         <div class="text-2xl pt-1">
+          🔗
+         </div>
+         <div class="text-left">
+          <p class="font-heading font-bold text-navy text-sm">Teoría sin aplicar</p>
+          <p class="text-xs text-slate">"Esto no sirve para nada"</p>
+         </div>
+        </div></button> <button class="decision-btn" data-case="caso-4" onclick="switchDecisionCase(event, 'caso-4')">
+        <div class="flex items-start gap-3">
+         <div class="text-2xl pt-1">
+          📊
+         </div>
+         <div class="text-left">
+          <p class="font-heading font-bold text-navy text-sm">Niveles distintos</p>
+          <p class="text-xs text-slate">Heterogeneidad en el grupo</p>
+         </div>
+        </div></button>
+      </div><!-- CONTENIDO DERECHA -->
+      <div class="lg:col-span-2">
+       <!-- CASO 1 -->
+       <div id="caso-1" class="decision-content active space-y-6">
+        <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
+         <p class="text-slate text-base">El alumnado no muestra interés. Asisten a clase pero no hay conexión con los contenidos ni con los compañeros.</p>
+        </div>
+        <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Proyecto desde el primer día (no espero a que "aprendan teoría")</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Formo equipos pequeños con rol claro para cada uno</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Objetivo tangible en 4–5 sesiones: algo real que puedan ver terminado</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Los contenidos surgen durante el proyecto, no antes</span></li>
+         </ul>
+        </div>
+        <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Implicación crece cuando ven un resultado posible</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El equipo genera responsabilidad compartida</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">La motivación crece en las últimas sesiones (cuando ven avance)</span></li>
+         </ul>
+        </div>
+       </div><!-- CASO 2 -->
+       <div id="caso-2" class="decision-content hidden space-y-6">
+        <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
+         <p class="text-slate text-base">Pregunto y no contestan. Propongo trabajo en grupo y se quedan en segundo plano. Participación nula o mínima.</p>
+        </div>
+        <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Dinámica tipo startup: asigno roles específicos (CEO, marketing, finanzas, RR.HH.)</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Cada rol tiene responsabilidades claras y visibles</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Las decisiones las toman ellos, no yo. Yo solo pregunto "¿por qué?"</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Presentan cada sesión lo que decidieron y por qué</span></li>
+         </ul>
+        </div>
+        <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El rol genera responsabilidad personal</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Participación activa porque tienen que defender sus decisiones</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El equipo exige que cada uno haga su parte</span></li>
+         </ul>
+        </div>
+       </div><!-- CASO 3 -->
+       <div id="caso-3" class="decision-content hidden space-y-6">
+        <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
+         <p class="text-slate text-base">Explico un concepto (estructura de costos, análisis de competencia, etc.) y alumnado dice "Esto no me sirve" o "¿Cuándo voy a usar esto?"</p>
+        </div>
+        <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">No separo teoría de práctica: el concepto surge en el proyecto</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Ejemplo: necesitan calcular costos porque deben fijar precio en su empresa. Ahí enseño.</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Contexto real: "Si no sabes tus costos, tu empresa quiebra en una semana"</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Usan la herramienta porque la necesitan, no porque sea obligatorio</span></li>
+         </ul>
+        </div>
+        <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">La teoría se recuerda porque la aplicaron, no porque la estudiaran</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Comprensión real: entienden el "por qué" antes que el concepto</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Trasferencia a otras situaciones de forma natural</span></li>
+         </ul>
+        </div>
+       </div><!-- CASO 4 -->
+       <div id="caso-4" class="decision-content hidden space-y-6">
+        <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
+         <p class="text-slate text-base">Hay estudiantes avanzados, otros con dificultades, algunos desconectados. Explicar a todos con el mismo ritmo es imposible.</p>
+        </div>
+        <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Equipos heterogéneos: mezclo niveles deliberadamente</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Tareas adaptadas por rol: unos diseñan la marca, otros el plan financiero, etc.</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Cada tarea tiene complejidad variable pero mismo peso en el proyecto</span></li>
+          <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Todos aportan algo visible, todos necesitan del trabajo del otro</span></li>
+         </ul>
+        </div>
+        <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
+         <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
+         <ul class="space-y-2">
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Todos encuentran su nivel sin sentirse excluidos</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Apoyo entre compañeros: los más avanzados ayudan sin que lo pida</span></li>
+          <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El proyecto final es responsabilidad compartida, no solo de algunos</span></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- DIVIDER -->
+   <div class="section-divider"></div><!-- CONTACTO -->
+   <section id="contacto" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-8">Abierto a colaborar</h2>
+     <p class="text-lg text-slate mb-12 max-w-2xl mx-auto leading-relaxed">Buscando centros educativos donde aplicar metodologías activas, aprendizaje práctico y uso innovador de la tecnología. Disponible para entrevista, presentación de proyectos y colaboración educativa.</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"><button onclick="scrollToSection(event, 'contacto')" class="btn-primary text-white px-8 py-4 rounded-lg text-lg border-none cursor-pointer">Solicitar entrevista</button> <a href="https://wa.me/34647033746" target="_blank" rel="noopener noreferrer" class="border-2 border-accent text-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent hover:text-white transition-all">Enviar WhatsApp</a>
+     </div>
+     <p class="text-sm text-slate">hola@juanpeco.es</p>
+    </div>
+   </section><!-- FOOTER -->
+   <footer class="w-full py-12 px-4 sm:px-6 lg:px-8 bg-navy text-gray-400 text-center text-sm">
+    <p>© 2024 Juan Peco. Docente de Empresa, Economía y Marketing Digital.</p>
    </footer>
-  </div>
-  <script>
-    // Botón flotante Subir arriba
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.id = 'scroll-top-btn';
-    scrollTopBtn.setAttribute('aria-label', 'Subir arriba');
-    scrollTopBtn.innerHTML = '<i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>';
-    scrollTopBtn.className = 'fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-12 h-12 sm:w-14 sm:h-14 bg-accent hover:bg-purple-700 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 pointer-events-none flex items-center justify-center cursor-pointer z-40 font-semibold';
-    document.body.appendChild(scrollTopBtn);
-
-    const appWrapper = document.getElementById('app-wrapper');
-    
-    function updateScrollTopBtn() {
-      if (appWrapper.scrollTop > 300) {
-        scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-        scrollTopBtn.classList.add('opacity-100');
-      } else {
-        scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
-        scrollTopBtn.classList.remove('opacity-100');
-      }
-    }
-
-    appWrapper.addEventListener('scroll', updateScrollTopBtn);
-    scrollTopBtn.addEventListener('click', () => {
-      appWrapper.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Tabs interactivos
-    function switchProjectTab(event, tabName) {
-      event.preventDefault();
-      const contents = document.querySelectorAll('.project-content');
-      contents.forEach(content => content.classList.add('hidden'));
-      const buttons = document.querySelectorAll('.project-tab');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      const selectedContent = document.getElementById(tabName);
-      if (selectedContent) selectedContent.classList.remove('hidden');
-      event.target.closest('.project-tab').classList.add('active');
-    }
-
-    function switchWorkCase(event, caseName) {
-      event.preventDefault();
-      const contents = document.querySelectorAll('.work-content');
-      contents.forEach(content => content.classList.add('hidden'));
-      const buttons = document.querySelectorAll('.work-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      const selectedContent = document.getElementById(caseName);
-      if (selectedContent) selectedContent.classList.remove('hidden');
-      event.target.closest('.work-btn').classList.add('active');
-    }
-
-    lucide.createIcons();
-  </script>
-  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"><!-- LOGO CLICABLE --> <a href="#app-wrapper" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
-     <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-      <span class="font-heading font-bold text-xl text-white">JP</span>
-     </div><span class="font-heading font-bold text-lg text-navy">Juan Peco</span> </a><!-- MENÚ DESKTOP -->
-    <div class="hidden md:flex gap-10 items-center"><a href="#especialization" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Especialización</a> <a href="#propuesta" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Propuesta</a> <a href="#aula" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">En el aula</a> <a href="#caso" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Caso práctico</a> <a href="#experiencia" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors">Experiencia</a> <a href="#contacto" class="inline-block bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm hover:shadow-md">Contacto</a>
-    </div>
-   </div>
-  </nav><!-- HERO CON IMPACTO VISUAL - UNA COLUMNA -->
-  <section class="w-full bg-white relative overflow-hidden hero-pattern">
-   <div class="py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto"><!-- CONTENIDO PRINCIPAL CENTRADO -->
-     <div class="space-y-8 text-center mb-16">
-      <h1 class="font-heading text-6xl sm:text-7xl lg:text-7xl font-bold text-navy leading-tight">Docente de Empresa, Economía y Marketing Digital</h1>
-      <div class="space-y-6">
-       <p class="text-2xl sm:text-3xl font-heading font-bold text-accent">Proyectos reales en el aula con resultados visibles desde las primeras sesiones</p>
-       <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">El alumnado crea empresas, desarrolla estrategias de marketing real y aplica inteligencia artificial en proyectos educativos prácticos. Más de 15 centros educativos públicos, concertados y privados.</p>
-      </div><!-- CTA -->
-      <div class="pt-6"><a href="#contacto" class="inline-block btn-primary text-white px-10 py-5 rounded-lg text-lg font-semibold hover:shadow-xl transition-all">Solicitar entrevista</a>
-      </div>
-     </div><!-- STATS BANNER -->
-     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-20">
-      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow card-hover">
-       <p class="text-4xl sm:text-5xl font-heading font-bold text-accent">+15</p>
-       <p class="text-sm text-slate mt-3 font-semibold">Centros educativos</p>
-       <p class="text-xs text-slate mt-2">Contextos público y concertado</p>
-      </div>
-      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow card-hover">
-       <p class="text-4xl sm:text-5xl font-heading font-bold text-accent">4–5</p>
-       <p class="text-sm text-slate mt-3 font-semibold">Sesiones por proyecto</p>
-       <p class="text-xs text-slate mt-2">Resultado completo y funcional</p>
-      </div>
-      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow card-hover">
-       <p class="text-4xl sm:text-5xl font-heading font-bold text-accent">100%</p>
-       <p class="text-sm text-slate mt-3 font-semibold">Aplicado desde el inicio</p>
-       <p class="text-xs text-slate mt-2">Sin teoría desconectada</p>
-      </div>
-     </div><!-- TARJETAS DE IMPACTO -->
-     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
-      <div class="bg-accent/10 border border-accent/20 rounded-xl p-6 hover:shadow-md transition-shadow card-hover">
-       <div class="flex gap-3 items-start"><i data-lucide="briefcase" class="w-6 h-6 text-accent flex-shrink-0"></i>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm mb-2">Proyectos en equipo</p>
-         <p class="text-xs text-slate">Startups reales desde 4–5 sesiones</p>
-        </div>
-       </div>
-      </div>
-      <div class="bg-accent/10 border border-accent/20 rounded-xl p-6 hover:shadow-md transition-shadow card-hover">
-       <div class="flex gap-3 items-start"><i data-lucide="presentation" class="w-6 h-6 text-accent flex-shrink-0"></i>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm mb-2">Presentaciones profesionales</p>
-         <p class="text-xs text-slate">Pitch, prototipo y estrategia</p>
-        </div>
-       </div>
-      </div>
-      <div class="bg-accent/10 border border-accent/20 rounded-xl p-6 hover:shadow-md transition-shadow card-hover">
-       <div class="flex gap-3 items-start"><i data-lucide="cpu" class="w-6 h-6 text-accent flex-shrink-0"></i>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm mb-2">Uso aplicado de IA</p>
-         <p class="text-xs text-slate">Herramienta para validación y mejora</p>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- CÓMO TRABAJO EN EL AULA - SITUACIONES REALES -->
-  <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16 space-y-4">
-     <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Situaciones reales</p>
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Cómo trabajo en el aula</h2>
-     <p class="text-slate text-lg">Ejemplos reales de situaciones y cómo se abordan</p>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-     <!-- SELECTOR IZQUIERDA -->
-     <div class="flex flex-col gap-3 lg:col-span-1"><button class="work-btn active" data-work="trabajo-1" onclick="switchWorkCase(event, 'trabajo-1')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         🤐
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Grupo poco participativo</p>
-         <p class="text-xs text-slate">Cuesta que se impliquen</p>
-        </div>
-       </div></button> <button class="work-btn" data-work="trabajo-2" onclick="switchWorkCase(event, 'trabajo-2')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         📊
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Diferentes niveles</p>
-         <p class="text-xs text-slate">Heterogeneidad en el aula</p>
-        </div>
-       </div></button> <button class="work-btn" data-work="trabajo-3" onclick="switchWorkCase(event, 'trabajo-3')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         🔗
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Dificultad para aplicar</p>
-         <p class="text-xs text-slate">Contenido teórico desconectado</p>
-        </div>
-       </div></button> <button class="work-btn" data-work="trabajo-4" onclick="switchWorkCase(event, 'trabajo-4')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         🗣️
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Comunicación insegura</p>
-         <p class="text-xs text-slate">Evitan expresarse o presentar</p>
-        </div>
-       </div></button> <button class="work-btn" data-work="trabajo-5" onclick="switchWorkCase(event, 'trabajo-5')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         🧩
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Bloqueo ante tareas</p>
-         <p class="text-xs text-slate">No saben por dónde empezar</p>
-        </div>
-       </div></button> <button class="work-btn" data-work="trabajo-6" onclick="switchWorkCase(event, 'trabajo-6')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         ⏱️
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Organización y tiempos</p>
-         <p class="text-xs text-slate">Dificultad para gestionar tareas</p>
-        </div>
-       </div></button>
-     </div><!-- CONTENIDO DERECHA -->
-     <div class="lg:col-span-2">
-      <!-- TRABAJO 1: Grupo poco participativo -->
-      <div id="trabajo-1" class="work-content active space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">El grupo participa poco. Le cuesta implicarse, hay pasividad en las dinámicas y las respuestas son mínimas.</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Cómo se trabaja</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Se introduce trabajo en equipo desde el inicio con tareas claras</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Cada persona tiene un rol específico (no es trabajo "en grupo" genérico)</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Las tareas son progresivas: empiezan sencillas, se van haciendo más complejas</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Se pide presentación de decisiones (no solo ejecución)</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-orange-400 bg-orange-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué suele ocurrir</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Parte del grupo empieza a implicarse más conforme avanzan sesiones</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">La responsabilidad del rol genera engagement progresivo</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Algunos siguen siendo más pasivos, pero la dinámica de equipo los "arrastra"</span></li>
-        </ul>
-       </div>
-      </div><!-- TRABAJO 2: Diferentes niveles -->
-      <div id="trabajo-2" class="work-content hidden space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">El aula tiene estudiantes avanzados, otros con dificultades, algunos desconectados. Explicar a todos con el mismo ritmo es casi imposible.</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Cómo se trabaja</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Equipos heterogéneos: mezclo deliberadamente diferentes niveles</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Las tareas se adaptan por rol, no por nivel (no hay alumnado "de segundo nivel")</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Cada rol tiene complejidad variable pero el mismo peso en el resultado final</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Todos necesitan del trabajo de los otros (interdependencia positiva)</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-orange-400 bg-orange-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué suele ocurrir</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Cada uno encuentra un nivel donde puede contribuir sin frustrarse</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Los estudiantes avanzados ayudan naturalmente sin que se lo pida</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">La participación es más equitativa, aunque algunos siguen siendo más pasivos</span></li>
-        </ul>
-       </div>
-      </div><!-- TRABAJO 3: Dificultad para aplicar -->
-      <div id="trabajo-3" class="work-content hidden space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">Se explica un concepto (estructura de costos, análisis de competencia, etc.) pero el alumnado no ve cómo aplicarlo. Desconexión entre teoría y realidad.</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Cómo se trabaja</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">El concepto surge cuando lo necesitan en el proyecto, no antes</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Ejemplo: aprenden a calcular costos porque tienen que fijar un precio en su empresa</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">El contexto realista ayuda: "Si no sabes tus costos, tu empresa quiebra"</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Se enseña la herramienta en el momento en que la necesitan</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-orange-400 bg-orange-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué suele ocurrir</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">La teoría se recuerda mejor porque la aplicaron, no porque la estudiaran</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Entienden el "por qué" antes que el concepto formal</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Transferencia más natural a otras situaciones (aunque no siempre)</span></li>
-        </ul>
-       </div>
-      </div><!-- TRABAJO 4: Falta de motivación -->
-      <div id="trabajo-4" class="work-content hidden space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">El alumnado llega desenganchado. No ve conexión con la asignatura, la considera poco relevante o "aburrida".</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Cómo se trabaja</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Se introduce un proyecto práctico desde la sesión 1 (no esperar a "preparar el terreno")</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">El objetivo es visible: algo que puedan terminar en 4–5 sesiones</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Los roles en equipo dan responsabilidad y protagonismo desde el inicio</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Se celebra el progreso visible, aunque sea pequeño</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-orange-400 bg-orange-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué suele ocurrir</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">La motivación crece progresivamente cuando ven que algo funciona</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Hacia la mitad del proyecto suele haber un "click" en parte del grupo</span></li>
-         <li class="flex gap-3 items-start"><span class="text-orange-500 text-lg">→</span> <span class="text-slate text-sm">Algunos mantienen distancia, pero incluso ellos suelen terminar implicándose algo</span></li>
-        </ul>
-       </div>
-      </div>
-     </div>
-    </div><!-- RESUMEN COMÚN -->
-    <div class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-200">
-     <h3 class="font-heading text-xl font-bold text-navy mb-8 text-center">Lo que caracteriza este enfoque</h3>
-     <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        🎯
-       </div>
-       <p class="text-sm text-slate font-semibold">Objetivo claro desde el inicio</p>
-      </div>
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        🤝
-       </div>
-       <p class="text-sm text-slate font-semibold">Equipo con roles definidos</p>
-      </div>
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        ✨
-       </div>
-       <p class="text-sm text-slate font-semibold">Resultado observable en corto plazo</p>
-      </div>
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        📍
-       </div>
-       <p class="text-sm text-slate font-semibold">Lenguaje realista: "suele ocurrir"</p>
-      </div>
-     </div>
-     <p class="text-center text-slate text-sm mt-8 italic">No promete transformaciones mágicas. Los resultados dependen también del grupo, el contexto y la disposición inicial.</p>
-    </div>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- ESPECIALIZACIÓN -->
-  <section id="especialization" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50/30">
-   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-20 space-y-4">
-     <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Especialización</p>
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy leading-tight">Asignaturas y contextos</h2>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5"><!-- Card 1: Empresa e Iniciativa -->
-     <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-      <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="briefcase" class="w-10 h-10 text-purple-600"></i>
-      </div>
-      <h3 class="font-heading text-base font-bold text-navy">Empresa e Iniciativa Emprendedora</h3>
-     </div><!-- Card 2: Economía -->
-     <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-      <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="bar-chart-3" class="w-10 h-10 text-blue-600"></i>
-      </div>
-      <h3 class="font-heading text-base font-bold text-navy">Economía (ESO y Bachillerato)</h3>
-     </div><!-- Card 3: Marketing -->
-     <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-      <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="trending-up" class="w-10 h-10 text-green-600"></i>
-      </div>
-      <h3 class="font-heading text-base font-bold text-navy">Marketing y Digitalización (FP)</h3>
-     </div><!-- Card 4: Competencia Digital -->
-     <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-      <div class="w-20 h-20 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="monitor" class="w-10 h-10 text-yellow-600"></i>
-      </div>
-      <h3 class="font-heading text-base font-bold text-navy">Competencia Digital</h3>
-     </div><!-- Card 5: STEAM -->
-     <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-      <div class="w-20 h-20 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="rocket" class="w-10 h-10 text-pink-600"></i>
-      </div>
-      <h3 class="font-heading text-base font-bold text-navy">Proyectos STEAM</h3>
-     </div>
-    </div>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- PROPUESTA DE VALOR -->
-  <section id="propuesta" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-   <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-16 space-y-4">
-     <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Propuesta de Valor</p>
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Qué aporto al centro</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"><!-- Card 1 -->
-     <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-      <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="graduation-cap" class="w-8 h-8 text-blue-600"></i>
-      </div>
-      <h3 class="font-heading text-lg font-bold text-navy mb-3">Experiencia en distintos contextos</h3>
-      <p class="text-slate text-sm leading-relaxed">Más de 15 centros educativos (públicos, concertados, privados). Adaptación a diferentes niveles y perfiles de alumnado.</p>
-     </div><!-- Card 2 -->
-     <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-      <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="lightbulb" class="w-8 h-8 text-green-600"></i>
-      </div>
-      <h3 class="font-heading text-lg font-bold text-navy mb-3">Metodología aplicada</h3>
-      <p class="text-slate text-sm leading-relaxed">Las clases se estructuran en torno a proyectos reales donde el alumnado aplica los contenidos desde el primer momento.</p>
-     </div><!-- Card 3 -->
-     <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-      <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="zap" class="w-8 h-8 text-purple-600"></i>
-      </div>
-      <h3 class="font-heading text-lg font-bold text-navy mb-3">Uso funcional de tecnología</h3>
-      <p class="text-slate text-sm leading-relaxed">Herramientas digitales, IA y recursos STEAM integrados como parte del aprendizaje, no como complemento.</p>
-     </div>
-    </div>
-    <div class="mt-12 p-8 bg-gray-50 rounded-2xl border border-gray-200">
-     <p class="text-slate text-center text-base leading-relaxed"><span class="font-semibold">Colaboración</span> con el equipo docente en metodologías, recursos y formación interna cuando el centro lo necesita.</p>
-    </div>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- EN EL AULA - METODOLOGÍA CLARA -->
-  <section id="aula" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-20 space-y-4">
-     <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Cómo trabajo</p>
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy leading-tight">En el aula: metodología y ejemplos</h2>
-     <p class="text-slate text-lg">Selecciona un proyecto para ver qué aprende el alumnado y qué produce</p>
-    </div><!-- TAB BUTTONS - HORIZONTAL LIMPIO -->
-    <div class="flex flex-col sm:flex-row gap-3 mb-12 justify-center flex-wrap">
-     <button class="project-tab active" data-tab="proyecto-1" onclick="switchProjectTab(event, 'proyecto-1')"> <i data-lucide="palette" style="width: 20px; height: 20px;"></i> <span>Identidad Visual</span> </button> <button class="project-tab" data-tab="proyecto-2" onclick="switchProjectTab(event, 'proyecto-2')"> <i data-lucide="mic2" style="width: 20px; height: 20px;"></i> <span>Elevator Pitch</span> </button> <button class="project-tab" data-tab="proyecto-3" onclick="switchProjectTab(event, 'proyecto-3')"> <i data-lucide="video" style="width: 20px; height: 20px;"></i> <span>Contenido con IA</span> </button> <button class="project-tab" data-tab="proyecto-4" onclick="switchProjectTab(event, 'proyecto-4')"> <i data-lucide="file-text" style="width: 20px; height: 20px;"></i> <span>Documentos de Empresa</span> </button>
-    </div><!-- TAB CONTENTS - GRID 2 COLUMNAS -->
-    <div class="space-y-6">
-     <!-- Proyecto 1: Identidad Visual -->
-     <div id="proyecto-1" class="project-content active">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-       <!-- CONTENIDO IZQUIERDA -->
-       <div>
-        <h3 class="font-heading text-3xl font-bold text-navy mb-4">Identidad Visual</h3>
-        <p class="text-slate text-lg mb-8">El alumnado crea la marca visual de su proyecto desde cero: logotipo, colores y diseño que comuniquen quién son.</p><!-- QUÉ APRENDE -->
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo una marca comunica valores y diferencia</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Psicología del color en decisiones de compra</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Coherencia visual en todos los materiales</span></li>
-         </ul>
-        </div><!-- QUÉ PRODUCE -->
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Logotipo único y memorable</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Paleta de colores justificada</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Guía básica de marca (listo para usar)</span></li>
-         </ul>
-        </div><!-- HERRAMIENTAS -->
-        <div class="mb-8 p-4 bg-gray-50 rounded-lg">
-         <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
-         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Canva</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA generativa</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Feedback visual</span>
-         </div>
-        </div><!-- DURACIÓN -->
-        <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-         <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Resultado profesional listo</p>
-        </div>
-       </div><!-- VISUALIZACIÓN DERECHA -->
-       <div class="flex items-center justify-center">
-        <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
-         <div class="text-center">
-          <div class="text-6xl mb-6">
-           🎨
-          </div>
-          <div class="space-y-4">
-           <div class="text-center">
-            <div class="text-4xl font-bold text-accent mb-2">
-             JP
-            </div>
-            <p class="text-sm text-slate font-semibold">Logotipo del proyecto</p>
-           </div>
-           <div class="flex gap-2 justify-center">
-            <div class="w-10 h-10 bg-accent rounded"></div>
-            <div class="w-10 h-10 bg-blue-400 rounded"></div>
-            <div class="w-10 h-10 bg-purple-300 rounded"></div>
-           </div>
-           <p class="text-xs text-slate">Paleta de marca</p>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div><!-- Proyecto 2: Elevator Pitch -->
-     <div id="proyecto-2" class="project-content hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-       <div>
-        <h3 class="font-heading text-3xl font-bold text-navy mb-4">Elevator Pitch</h3>
-        <p class="text-slate text-lg mb-8">El alumnado presenta su idea en 90 segundos. Aprende a comunicar con claridad, seguridad y persuasión ante una audiencia real.</p>
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Estructurar una idea de forma clara y atractiva</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Hablar en público con seguridad</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Responder a preguntas en tiempo real</span></li>
-         </ul>
-        </div>
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Presentación visual (diapositivas o poster)</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Pitch grabado o presentado en vivo</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Feedback de la audiencia anotado</span></li>
-         </ul>
-        </div>
-        <div class="mb-8 p-4 bg-gray-50 rounded-lg">
-         <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
-         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Presentaciones</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Grabación</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Feedback directo</span>
-         </div>
-        </div>
-        <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-         <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Presentación profesional</p>
-        </div>
-       </div>
-       <div class="flex items-center justify-center">
-        <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
-         <div class="text-center">
-          <div class="text-6xl mb-6">
-           🎤
-          </div>
-          <div class="space-y-4 w-full">
-           <div class="bg-white rounded p-3 text-center">
-            <p class="text-xs text-slate font-semibold mb-2">Presentación visual</p>
-            <div class="h-6 bg-gray-200 rounded"></div>
-           </div>
-           <div class="text-sm text-slate">
-            <p class="font-semibold mb-1">Estructura del pitch:</p>
-            <p class="text-xs">✓ Problema</p>
-            <p class="text-xs">✓ Solución</p>
-            <p class="text-xs">✓ Diferencial</p>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div><!-- Proyecto 3: Contenido con IA -->
-     <div id="proyecto-3" class="project-content hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-       <div>
-        <h3 class="font-heading text-3xl font-bold text-navy mb-4">Contenido con IA</h3>
-        <p class="text-slate text-lg mb-8">El alumnado crea un vídeo corto de su proyecto usando inteligencia artificial. Aprende comunicación digital moderna y herramientas reales de marketing.</p>
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo usar IA para crear contenido visual</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Narración y estructura de contenido de redes sociales</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Comunicación breve, directa y visual</span></li>
-         </ul>
-        </div>
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Vídeo corto tipo redes sociales (30-60 seg)</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Guion y plan de contenido escrito</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Material listo para publicar</span></li>
-         </ul>
-        </div>
-        <div class="mb-8 p-4 bg-gray-50 rounded-lg">
-         <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
-         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA generativa</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Canva</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Editor de vídeo</span>
-         </div>
-        </div>
-        <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-         <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Vídeo listo para redes</p>
-        </div>
-       </div>
-       <div class="flex items-center justify-center">
-        <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
-         <div class="text-center">
-          <div class="text-6xl mb-6">
-           🎬
-          </div>
-          <div class="space-y-4 w-full">
-           <div class="bg-gradient-to-b from-blue-400 to-purple-500 rounded h-32 flex items-end justify-center pb-2">
-            <div class="text-white text-2xl">
-             ▶
-            </div>
-           </div>
-           <div class="text-sm text-slate">
-            <p class="font-semibold mb-2">Contenido creado:</p>
-            <p class="text-xs">✓ Guion con IA</p>
-            <p class="text-xs">✓ Imágenes/vídeos generados</p>
-            <p class="text-xs">✓ Montaje profesional</p>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div><!-- Proyecto 4: Documentos de Empresa -->
-     <div id="proyecto-4" class="project-content hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-       <div>
-        <h3 class="font-heading text-3xl font-bold text-navy mb-4">Documentos de Empresa</h3>
-        <p class="text-slate text-lg mb-8">El alumnado redacta documentos reales de su empresa: normas internas, políticas y comunicaciones profesionales. Aprende estructura y lenguaje empresarial.</p>
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué aprende</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Redacción profesional y estructura formal</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Cómo funcionan políticas y reglamentos internos</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">•</span> <span class="text-slate">Claridad, precisión y tono en comunicación empresarial</span></li>
-         </ul>
-        </div>
-        <div class="mb-8">
-         <p class="text-sm font-heading font-bold text-navy mb-4 uppercase tracking-wide">→ Qué produce</p>
-         <ul class="space-y-3">
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Reglamento interno y normas de equipo</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Política de atención al cliente</span></li>
-          <li class="flex gap-3 items-start"><span class="text-accent text-lg">✓</span> <span class="text-slate">Carta profesional, comunicados y documentos base</span></li>
-         </ul>
-        </div>
-        <div class="mb-8 p-4 bg-gray-50 rounded-lg">
-         <p class="text-xs font-heading font-bold text-navy mb-3 uppercase tracking-wide">Herramientas</p>
-         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">IA (revisión)</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Word</span> <span class="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm text-slate">Templates</span>
-         </div>
-        </div>
-        <div class="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-         <p class="text-sm font-semibold text-navy">📅 4–5 sesiones | Documentos listos para usar</p>
-        </div>
-       </div>
-       <div class="flex items-center justify-center">
-        <div class="w-full bg-gray-100 rounded-2xl p-10 aspect-square flex flex-col items-center justify-center">
-         <div class="text-center">
-          <div class="text-6xl mb-6">
-           📄
-          </div>
-          <div class="space-y-3 w-full">
-           <div class="bg-white rounded p-2 border-l-4 border-accent">
-            <p class="text-xs text-slate font-semibold">Reglamento interno</p>
-           </div>
-           <div class="bg-white rounded p-2 border-l-4 border-blue-400">
-            <p class="text-xs text-slate font-semibold">Política de cliente</p>
-           </div>
-           <div class="bg-white rounded p-2 border-l-4 border-purple-400">
-            <p class="text-xs text-slate font-semibold">Comunicaciones</p>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div><!-- RESUMEN COMÚN -->
-    <div class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-200">
-     <h3 class="font-heading text-xl font-bold text-navy mb-8 text-center">Lo que caracteriza todos los proyectos</h3>
-     <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        🎯
-       </div>
-       <p class="text-sm text-slate font-semibold">Objetivo claro desde el inicio</p>
-      </div>
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        🤝
-       </div>
-       <p class="text-sm text-slate font-semibold">Trabajo en equipo</p>
-      </div>
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        ✨
-       </div>
-       <p class="text-sm text-slate font-semibold">Resultado visible e inmediato</p>
-      </div>
-      <div class="flex flex-col items-center">
-       <div class="text-4xl mb-3">
-        📊
-       </div>
-       <p class="text-sm text-slate font-semibold">Presentación profesional</p>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- CASO PRÁCTICO -->
-  <section id="caso" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-   <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-16 space-y-4">
-     <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Caso Práctico</p>
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Proyecto de emprendimiento digital con IA</h2>
-    </div>
-    <div class="case-grid mb-8"><!-- ANTES -->
-     <div class="bg-white rounded-2xl p-8 border-l-4 border-red-400 shadow-sm hover:shadow-lg transition-shadow">
-      <h3 class="font-heading text-2xl font-bold text-navy mb-6">Antes</h3>
-      <ul class="space-y-3">
-       <li class="flex gap-3 items-start"><span class="text-red-500 text-xl font-bold">×</span> <span class="text-slate">Baja conexión entre teoría y práctica</span></li>
-       <li class="flex gap-3 items-start"><span class="text-red-500 text-xl font-bold">×</span> <span class="text-slate">Participación pasiva del alumnado</span></li>
-       <li class="flex gap-3 items-start"><span class="text-red-500 text-xl font-bold">×</span> <span class="text-slate">Poca motivación en asignaturas de empresa</span></li>
-      </ul>
-     </div><!-- TRANSFORMACIÓN -->
-     <div class="bg-white rounded-2xl p-8 border-l-4 border-accent shadow-sm hover:shadow-lg transition-shadow">
-      <h3 class="font-heading text-2xl font-bold text-navy mb-6">Transformación</h3>
-      <ul class="space-y-3">
-       <li class="flex gap-3 items-start"><span class="text-accent text-xl font-bold">→</span> <span class="text-slate">Trabajo en equipo tipo startup real</span></li>
-       <li class="flex gap-3 items-start"><span class="text-accent text-xl font-bold">→</span> <span class="text-slate">Diseño de marca, producto y estrategia</span></li>
-       <li class="flex gap-3 items-start"><span class="text-accent text-xl font-bold">→</span> <span class="text-slate">IA para validación e innovación continua</span></li>
-      </ul>
-     </div>
-    </div><!-- RESULTADO -->
-    <div class="bg-white rounded-2xl p-8 border border-gray-200">
-     <h3 class="font-heading text-2xl font-bold text-navy mb-8 text-center">Resultado</h3>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="text-center">
-       <div class="text-4xl mb-3">
-        📊
-       </div>
-       <p class="text-slate font-medium">Presentaciones tipo pitch profesional</p>
-      </div>
-      <div class="text-center">
-       <div class="text-4xl mb-3">
-        ✨
-       </div>
-       <p class="text-slate font-medium">Prototipos funcionales y validables</p>
-      </div>
-      <div class="text-center">
-       <div class="text-4xl mb-3">
-        🎯
-       </div>
-       <p class="text-slate font-medium">Mayor implicación y aprendizaje visible</p>
-      </div>
-     </div>
-    </div>
-    <p class="text-center text-navy font-heading text-lg font-bold mt-8">El alumnado aprende aplicando desde el primer momento</p>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- EXPERIENCIA Y FORMACIÓN -->
-  <section id="experiencia" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50/30">
-   <div class="max-w-5xl mx-auto">
-    <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-16 text-center">Experiencia y Formación</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12"><!-- Experiencia -->
-     <div>
-      <h3 class="font-heading text-2xl font-bold text-navy mb-8">Trayectoria docente</h3>
-      <div class="space-y-6"><!-- Item 1 -->
-       <div class="pb-6 border-b border-gray-200">
-        <div class="flex gap-3 mb-3"><i data-lucide="briefcase" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
-         <div>
-          <p class="text-slate font-semibold text-base">Más de 15 centros educativos</p>
-          <p class="text-slate text-sm mt-2">Experiencia en contextos públicos y concertados. Adaptación a diferentes estructuras organizativas y perfiles de alumnado.</p>
-         </div>
-        </div>
-       </div><!-- Item 2 -->
-       <div class="pb-6 border-b border-gray-200">
-        <div class="flex gap-3 mb-3"><i data-lucide="sparkles" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
-         <div>
-          <p class="text-slate font-semibold text-base">Metodologías innovadoras en aula</p>
-          <p class="text-slate text-sm mt-2">Proyectos STEAM, metodologías activas y aprendizaje basado en problemas. Experiencia con ESO, Bachillerato y FP.</p>
-         </div>
-        </div>
-       </div><!-- Item 3 -->
-       <div>
-        <div class="flex gap-3 mb-3"><i data-lucide="cpu" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
-         <div>
-          <p class="text-slate font-semibold text-base">Integración de tecnología e IA</p>
-          <p class="text-slate text-sm mt-2">Herramientas digitales, IA generativa y recursos multimedia como parte del aprendizaje.</p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div><!-- Formación -->
-     <div>
-      <h3 class="font-heading text-2xl font-bold text-navy mb-8">Formación académica</h3>
-      <div class="space-y-4"><!-- Card 1 -->
-       <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
-        <h4 class="font-heading font-bold text-navy mb-2">Máster de Profesorado</h4>
-        <p class="text-slate text-sm mb-3">Especialidad: Economía, Empresa y Turismo</p>
-        <p class="text-xs text-accent font-semibold">✓ Finalización: junio 2025</p>
-       </div><!-- Card 2 -->
-       <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
-        <h4 class="font-heading font-bold text-navy mb-2">Máster en Marketing Digital</h4>
-        <p class="text-slate text-sm">Estrategia digital, analítica y comunicación online</p>
-       </div><!-- Card 3 -->
-       <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow card-hover">
-        <h4 class="font-heading font-bold text-navy mb-2">Diplomatura en Ciencias Empresariales</h4>
-        <p class="text-slate text-sm">Gestión, economía y administración de empresas</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- PERFIL DOCENTE -->
-  <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-navy text-white">
-   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="font-heading text-4xl sm:text-5xl font-bold mb-8">Perfil docente</h2>
-    <p class="text-lg sm:text-xl leading-relaxed text-gray-100">Docente orientado a <span class="text-accent font-semibold">aprendizaje aplicado</span>, <span class="text-accent font-semibold">metodologías activas</span> y <span class="text-accent font-semibold">desarrollo de competencias reales</span> en empresa, economía y marketing digital. Experiencia probada en innovación educativa, integración de tecnología e IA, y trabajo colaborativo con equipos docentes.</p>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- DECISIONES EN EL AULA -->
-  <section class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16 space-y-4">
-     <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Práctica real</p>
-     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Cómo tomo decisiones en el aula</h2>
-     <p class="text-slate text-lg">Selecciona una situación real y observa cómo se aborda en clase</p>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-     <!-- SELECTOR IZQUIERDA -->
-     <div class="flex flex-col gap-3 lg:col-span-1">
-      <button class="decision-btn active" data-case="caso-1" onclick="switchDecisionCase(event, 'caso-1')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         📉
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Baja motivación</p>
-         <p class="text-xs text-slate">Alumnado desenganchado</p>
-        </div>
-       </div></button> <button class="decision-btn" data-case="caso-2" onclick="switchDecisionCase(event, 'caso-2')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         🤐
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Grupo pasivo</p>
-         <p class="text-xs text-slate">Solo escuchan, no participan</p>
-        </div>
-       </div></button> <button class="decision-btn" data-case="caso-3" onclick="switchDecisionCase(event, 'caso-3')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         🔗
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Teoría sin aplicar</p>
-         <p class="text-xs text-slate">"Esto no sirve para nada"</p>
-        </div>
-       </div></button> <button class="decision-btn" data-case="caso-4" onclick="switchDecisionCase(event, 'caso-4')">
-       <div class="flex items-start gap-3">
-        <div class="text-2xl pt-1">
-         📊
-        </div>
-        <div class="text-left">
-         <p class="font-heading font-bold text-navy text-sm">Niveles distintos</p>
-         <p class="text-xs text-slate">Heterogeneidad en el grupo</p>
-        </div>
-       </div></button>
-     </div><!-- CONTENIDO DERECHA -->
-     <div class="lg:col-span-2">
-      <!-- CASO 1 -->
-      <div id="caso-1" class="decision-content active space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">El alumnado no muestra interés. Asisten a clase pero no hay conexión con los contenidos ni con los compañeros.</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Proyecto desde el primer día (no espero a que "aprendan teoría")</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Formo equipos pequeños con rol claro para cada uno</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Objetivo tangible en 4–5 sesiones: algo real que puedan ver terminado</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Los contenidos surgen durante el proyecto, no antes</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Implicación crece cuando ven un resultado posible</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El equipo genera responsabilidad compartida</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">La motivación crece en las últimas sesiones (cuando ven avance)</span></li>
-        </ul>
-       </div>
-      </div><!-- CASO 2 -->
-      <div id="caso-2" class="decision-content hidden space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">Pregunto y no contestan. Propongo trabajo en grupo y se quedan en segundo plano. Participación nula o mínima.</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Dinámica tipo startup: asigno roles específicos (CEO, marketing, finanzas, RR.HH.)</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Cada rol tiene responsabilidades claras y visibles</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Las decisiones las toman ellos, no yo. Yo solo pregunto "¿por qué?"</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Presentan cada sesión lo que decidieron y por qué</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El rol genera responsabilidad personal</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Participación activa porque tienen que defender sus decisiones</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El equipo exige que cada uno haga su parte</span></li>
-        </ul>
-       </div>
-      </div><!-- CASO 3 -->
-      <div id="caso-3" class="decision-content hidden space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">Explico un concepto (estructura de costos, análisis de competencia, etc.) y alumnado dice "Esto no me sirve" o "¿Cuándo voy a usar esto?"</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">No separo teoría de práctica: el concepto surge en el proyecto</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Ejemplo: necesitan calcular costos porque deben fijar precio en su empresa. Ahí enseño.</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Contexto real: "Si no sabes tus costos, tu empresa quiebra en una semana"</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Usan la herramienta porque la necesitan, no porque sea obligatorio</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">La teoría se recuerda porque la aplicaron, no porque la estudiaran</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Comprensión real: entienden el "por qué" antes que el concepto</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Trasferencia a otras situaciones de forma natural</span></li>
-        </ul>
-       </div>
-      </div><!-- CASO 4 -->
-      <div id="caso-4" class="decision-content hidden space-y-6">
-       <div class="border-l-4 border-accent bg-accent/5 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-2 uppercase tracking-wide">Situación</p>
-        <p class="text-slate text-base">Hay estudiantes avanzados, otros con dificultades, algunos desconectados. Explicar a todos con el mismo ritmo es imposible.</p>
-       </div>
-       <div class="border-l-4 border-blue-400 bg-blue-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Qué hago en clase</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Equipos heterogéneos: mezclo niveles deliberadamente</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Tareas adaptadas por rol: unos diseñan la marca, otros el plan financiero, etc.</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Cada tarea tiene complejidad variable pero mismo peso en el proyecto</span></li>
-         <li class="flex gap-3 items-start"><span class="text-blue-400 font-bold">▸</span> <span class="text-slate text-sm">Todos aportan algo visible, todos necesitan del trabajo del otro</span></li>
-        </ul>
-       </div>
-       <div class="border-l-4 border-green-400 bg-green-50 p-6 rounded-r-lg">
-        <p class="text-sm font-heading font-bold text-navy mb-3 uppercase tracking-wide">Resultado en el aula</p>
-        <ul class="space-y-2">
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Todos encuentran su nivel sin sentirse excluidos</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">Apoyo entre compañeros: los más avanzados ayudan sin que lo pida</span></li>
-         <li class="flex gap-3 items-start"><span class="text-green-500 text-lg">✓</span> <span class="text-slate text-sm">El proyecto final es responsabilidad compartida, no solo de algunos</span></li>
-        </ul>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- DIVIDER -->
-  <div class="section-divider"></div><!-- CONTACTO -->
-  <section id="contacto" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-8">Abierto a colaborar</h2>
-    <p class="text-lg text-slate mb-12 max-w-2xl mx-auto leading-relaxed">Buscando centros educativos donde aplicar metodologías activas, aprendizaje práctico y uso innovador de la tecnología. Disponible para entrevista, presentación de proyectos y colaboración educativa.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"><a href="mailto:hola@juanpeco.es" class="btn-primary text-white px-8 py-4 rounded-lg text-lg">Solicitar entrevista</a> <a href="https://wa.me/34647033746" target="_blank" rel="noopener noreferrer" class="border-2 border-accent text-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent hover:text-white transition-all">Enviar WhatsApp</a>
-    </div>
-    <p class="text-sm text-slate">hola@juanpeco.es</p>
-   </div>
-  </section><!-- FOOTER -->
-  <footer class="w-full py-12 px-4 sm:px-6 lg:px-8 bg-navy text-gray-400 text-center text-sm">
-   <p>© 2026 Juan Peco. Docente de Empresa, Economía y Marketing Digital.</p>
-  </footer>
-  <script>
+   <script>
     // Botón flotante Subir arriba
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.id = 'scroll-top-btn';
@@ -2001,5 +1652,6 @@
     // Inicializar iconos Lucide
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e3a9d10e76903c9',t:'MTc3NDc0MjYyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </div>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e40f382f3adbd38',t:'MTc3NDgwOTA4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html><!-- NAVEGACIÓN MEJORADA -->
