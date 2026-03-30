@@ -72,13 +72,15 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full font-body text-slate bg-white">
-  <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- NAVEGACIÓN -->
+  <div id="app-wrapper" class="w-full h-full overflow-auto">
+   <!-- NAVEGACIÓN -->
    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"><a href="#app-wrapper" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
-      <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-       <span class="font-heading font-bold text-xl text-white">JP</span>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+     <a href="#app-wrapper" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+      <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center"><span class="font-heading font-bold text-xl text-white">JP</span>
       </div><span class="font-heading font-bold text-lg text-navy">Juan Peco</span> </a>
-     <div class="hidden md:flex gap-10 items-center"><button onclick="scrollToSection(event, 'especialization')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Qué enseño</button> <button onclick="scrollToSection(event, 'metodologia')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Cómo trabajo</button> <button onclick="scrollToSection(event, 'caso')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Resultados</button> <button onclick="scrollToSection(event, 'proyectos')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Ejemplos</button> <button onclick="scrollToSection(event, 'experiencia')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Experiencia</button> <button onclick="scrollToSection(event, 'contacto')" class="inline-block bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm hover:shadow-md border-none cursor-pointer">Contacto</button>
+     <div class="hidden md:flex gap-10 items-center">
+      <button onclick="scrollToSection(event, 'especialization')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Qué enseño</button> <button onclick="scrollToSection(event, 'metodologia')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Cómo trabajo</button> <button onclick="scrollToSection(event, 'caso')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Resultados</button> <button onclick="scrollToSection(event, 'proyectos')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Ejemplos</button> <button onclick="scrollToSection(event, 'experiencia')" class="nav-link text-sm font-medium text-slate hover:text-accent transition-colors bg-none border-none p-0 cursor-pointer">Experiencia</button> <button onclick="scrollToSection(event, 'contacto')" class="inline-block bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-sm hover:shadow-md border-none cursor-pointer">Contacto</button>
      </div>
     </div>
    </nav><!-- HERO -->
@@ -90,7 +92,8 @@
        <div class="space-y-6">
         <p class="text-xl sm:text-2xl text-slate leading-relaxed max-w-3xl mx-auto">Docente especializado en <span class="font-semibold text-navy">empresa, economía y marketing digital</span>. Metodología basada en <span class="font-semibold text-accent">aprendizaje por proyectos reales</span> con herramientas e IA integradas. Probado en +15 centros educativos (contextos público y concertado).</p>
        </div>
-       <div class="pt-6"><a href="#contacto" class="inline-block btn-primary text-white px-10 py-5 rounded-lg text-lg font-semibold hover:shadow-xl transition-all">Solicitar entrevista</a>
+       <div class="pt-6">
+        <a href="#contacto" class="inline-block btn-primary text-white px-10 py-5 rounded-lg text-lg font-semibold hover:shadow-xl transition-all">Solicitar entrevista</a>
        </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-20">
@@ -122,32 +125,27 @@
      </div>
      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-        <i data-lucide="briefcase" class="w-10 h-10 text-purple-600"></i>
+       <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="briefcase" class="w-10 h-10 text-purple-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Empresa e Iniciativa Emprendedora</h3>
       </div>
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-        <i data-lucide="bar-chart-3" class="w-10 h-10 text-blue-600"></i>
+       <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="bar-chart-3" class="w-10 h-10 text-blue-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Economía (ESO y Bachillerato)</h3>
       </div>
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-        <i data-lucide="trending-up" class="w-10 h-10 text-green-600"></i>
+       <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="trending-up" class="w-10 h-10 text-green-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Marketing y Digitalización (FP)</h3>
       </div>
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-        <i data-lucide="monitor" class="w-10 h-10 text-yellow-600"></i>
+       <div class="w-20 h-20 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="monitor" class="w-10 h-10 text-yellow-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Competencia Digital</h3>
       </div>
       <div class="group card-hover bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
-       <div class="w-20 h-20 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-        <i data-lucide="rocket" class="w-10 h-10 text-pink-600"></i>
+       <div class="w-20 h-20 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"><i data-lucide="rocket" class="w-10 h-10 text-pink-600"></i>
        </div>
        <h3 class="font-heading text-base font-bold text-navy">Proyectos STEAM</h3>
       </div>
@@ -163,7 +161,8 @@
       <p class="text-slate text-lg">Respuestas reales a desafíos comunes del aula</p>
      </div>
      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div class="flex flex-col gap-3 lg:col-span-1"><button class="work-btn active" data-work="trabajo-1" onclick="switchWorkCase(event, 'trabajo-1')">
+      <div class="flex flex-col gap-3 lg:col-span-1">
+       <button class="work-btn active" data-work="trabajo-1" onclick="switchWorkCase(event, 'trabajo-1')">
         <div class="flex items-start gap-3">
          <div class="text-2xl pt-1">
           🤐
@@ -361,11 +360,11 @@
      <div class="text-center mb-8">
       <p class="text-slate text-lg">Mismo objetivo. Proceso diferente según el grupo.</p>
      </div>
-     <div class="space-y-8"><!-- RITMO -->
+     <div class="space-y-8">
+      <!-- RITMO -->
       <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
        <div class="flex items-center gap-3 mb-6">
-        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-         <i data-lucide="gauge" class="w-6 h-6 text-blue-600"></i>
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"><i data-lucide="gauge" class="w-6 h-6 text-blue-600"></i>
         </div>
         <h3 class="font-heading text-xl font-bold text-navy">Ritmo de trabajo</h3>
        </div>
@@ -382,8 +381,7 @@
       </div><!-- EXIGENCIA -->
       <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
        <div class="flex items-center gap-3 mb-6">
-        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-         <i data-lucide="layers" class="w-6 h-6 text-green-600"></i>
+        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"><i data-lucide="layers" class="w-6 h-6 text-green-600"></i>
         </div>
         <h3 class="font-heading text-xl font-bold text-navy">Nivel de exigencia</h3>
        </div>
@@ -400,8 +398,7 @@
       </div><!-- ACOMPAÑAMIENTO -->
       <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
        <div class="flex items-center gap-3 mb-6">
-        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-         <i data-lucide="hand-helping" class="w-6 h-6 text-purple-600"></i>
+        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"><i data-lucide="hand-helping" class="w-6 h-6 text-purple-600"></i>
         </div>
         <h3 class="font-heading text-xl font-bold text-navy">Acompañamiento</h3>
        </div>
@@ -431,22 +428,19 @@
      </div>
      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-        <i data-lucide="check-circle-2" class="w-8 h-8 text-blue-600"></i>
+       <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="check-circle-2" class="w-8 h-8 text-blue-600"></i>
        </div>
        <h3 class="font-heading text-lg font-bold text-navy mb-3">Experiencia probada</h3>
        <p class="text-slate text-sm leading-relaxed">+15 centros educativos con contextos distintos. Adaptación a diferentes niveles, estructuras y perfiles de alumnado.</p>
       </div>
       <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
-        <i data-lucide="target" class="w-8 h-8 text-green-600"></i>
+       <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="target" class="w-8 h-8 text-green-600"></i>
        </div>
        <h3 class="font-heading text-lg font-bold text-navy mb-3">Resultados visibles</h3>
        <p class="text-slate text-sm leading-relaxed">El alumnado produce proyectos reales y aplicables. Desde la primera clase trabajan en situaciones verdaderas. El ritmo varía según el grupo.</p>
       </div>
       <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
-       <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
-        <i data-lucide="zap" class="w-8 h-8 text-purple-600"></i>
+       <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="zap" class="w-8 h-8 text-purple-600"></i>
        </div>
        <h3 class="font-heading text-lg font-bold text-navy mb-3">Tecnología integrada</h3>
        <p class="text-slate text-sm leading-relaxed">Herramientas digitales e IA como parte del aprendizaje, no como complemento. El alumnado aprende usándolas desde el inicio.</p>
@@ -462,7 +456,8 @@
       <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Proyectos que el alumnado realiza</h2>
       <p class="text-slate text-lg">Selecciona un proyecto para ver qué aprende y qué produce en 4–5 sesiones</p>
      </div>
-     <div class="flex flex-col sm:flex-row gap-3 mb-12 justify-center flex-wrap"><button class="project-tab active" data-tab="proyecto-1" onclick="switchProjectTab(event, 'proyecto-1')"><i data-lucide="palette" style="width: 20px; height: 20px;"></i> <span>Identidad Visual</span></button> <button class="project-tab" data-tab="proyecto-2" onclick="switchProjectTab(event, 'proyecto-2')"><i data-lucide="mic2" style="width: 20px; height: 20px;"></i> <span>Elevator Pitch</span></button> <button class="project-tab" data-tab="proyecto-3" onclick="switchProjectTab(event, 'proyecto-3')"><i data-lucide="video" style="width: 20px; height: 20px;"></i> <span>Contenido con IA</span></button> <button class="project-tab" data-tab="proyecto-4" onclick="switchProjectTab(event, 'proyecto-4')"><i data-lucide="file-text" style="width: 20px; height: 20px;"></i> <span>Documentos de Empresa</span></button>
+     <div class="flex flex-col sm:flex-row gap-3 mb-12 justify-center flex-wrap">
+      <button class="project-tab active" data-tab="proyecto-1" onclick="switchProjectTab(event, 'proyecto-1')"><i data-lucide="palette" style="width: 20px; height: 20px;"></i> <span>Identidad Visual</span></button> <button class="project-tab" data-tab="proyecto-2" onclick="switchProjectTab(event, 'proyecto-2')"><i data-lucide="mic2" style="width: 20px; height: 20px;"></i> <span>Elevator Pitch</span></button> <button class="project-tab" data-tab="proyecto-3" onclick="switchProjectTab(event, 'proyecto-3')"><i data-lucide="video" style="width: 20px; height: 20px;"></i> <span>Contenido con IA</span></button> <button class="project-tab" data-tab="proyecto-4" onclick="switchProjectTab(event, 'proyecto-4')"><i data-lucide="file-text" style="width: 20px; height: 20px;"></i> <span>Documentos de Empresa</span></button>
      </div>
      <div class="space-y-6">
       <div id="proyecto-1" class="project-content active">
@@ -716,6 +711,74 @@
    </section>
    <div class="section-divider"></div>
   </div>
+  <div class="section-divider"></div><!-- EJEMPLO REAL EN AULA -->
+  <section id="ejemplo-real" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+   <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16 space-y-4">
+     <p class="text-xs font-body font-semibold text-accent uppercase tracking-widest">Caso en FP</p>
+     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy">Ejemplo real en aula</h2>
+     <p class="text-slate text-lg">Cómo funciona la metodología en Formación Profesional</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8"><!-- CONTEXTO -->
+     <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center"><i data-lucide="alert-circle" class="w-6 h-6 text-red-600"></i>
+       </div>
+       <h3 class="font-heading text-xl font-bold text-navy">Contexto</h3>
+      </div>
+      <div class="space-y-4">
+       <div>
+        <p class="text-sm font-semibold text-slate mb-2">1º FP Administración</p>
+        <p class="text-xs text-slate">Módulo de gestión administrativa</p>
+       </div>
+       <div class="pt-4 border-t border-gray-100">
+        <p class="text-xs font-heading font-bold text-navy uppercase tracking-wide mb-2">Punto de partida</p>
+        <p class="text-sm text-slate">Alumnado bloqueado ante documentos reales. Dificultad para conectar procedimientos con casos prácticos. Respuestas sin justificación clara.</p>
+       </div>
+      </div>
+     </div><!-- INTERVENCIÓN -->
+     <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"><i data-lucide="zap" class="w-6 h-6 text-blue-600"></i>
+       </div>
+       <h3 class="font-heading text-xl font-bold text-navy">Intervención</h3>
+      </div>
+      <div class="space-y-3">
+       <div class="flex gap-3 items-start"><span class="text-blue-600 font-bold text-lg">→</span>
+        <p class="text-sm text-slate">Equipos con roles definidos: dirección, gestión, comunicación</p>
+       </div>
+       <div class="flex gap-3 items-start"><span class="text-blue-600 font-bold text-lg">→</span>
+        <p class="text-sm text-slate">Proyecto: documentación administrativa de una pyme simulada</p>
+       </div>
+       <div class="flex gap-3 items-start"><span class="text-blue-600 font-bold text-lg">→</span>
+        <p class="text-sm text-slate">Trabajo en Drive y plantillas reutilizables con criterios claros</p>
+       </div>
+      </div>
+     </div><!-- RESULTADO -->
+     <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"><i data-lucide="check-circle-2" class="w-6 h-6 text-green-600"></i>
+       </div>
+       <h3 class="font-heading text-xl font-bold text-navy">Resultado</h3>
+      </div>
+      <div class="space-y-3">
+       <div class="flex gap-3 items-start"><span class="text-green-600 font-bold text-lg">✓</span>
+        <p class="text-sm text-slate">Producen documentación funcional con criterios profesionales definidos</p>
+       </div>
+       <div class="flex gap-3 items-start"><span class="text-green-600 font-bold text-lg">✓</span>
+        <p class="text-sm text-slate">Mayor autonomía: reducen la dependencia del docente</p>
+       </div>
+       <div class="flex gap-3 items-start"><span class="text-green-600 font-bold text-lg">✓</span>
+        <p class="text-sm text-slate">Presentan propuestas con criterios definidos y justificados</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="mt-12 bg-accent/10 border border-accent/30 rounded-2xl p-8 text-center">
+     <p class="text-navy font-heading text-base font-bold">La diferencia: pasan de ejercicios aislados a documentación profesional aplicable</p>
+    </div>
+   </div>
+  </section>
   <div class="section-divider"></div><!-- CASO PRÁCTICO - AHORA LLAMADO RESULTADOS -->
   <section id="experiencia" class="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50/30">
    <div class="max-w-5xl mx-auto">
@@ -725,7 +788,8 @@
       <h3 class="font-heading text-2xl font-bold text-navy mb-8">Experiencia docente</h3>
       <div class="space-y-6">
        <div class="pb-6 border-b border-gray-200">
-        <div class="flex gap-3 mb-3"><i data-lucide="briefcase" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+        <div class="flex gap-3 mb-3">
+         <i data-lucide="briefcase" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
          <div>
           <p class="text-slate font-semibold text-base">+15 centros educativos</p>
           <p class="text-slate text-sm mt-2">Contextos público, concertado y privado. Adaptación a diferentes estructuras y perfiles.</p>
@@ -733,7 +797,8 @@
         </div>
        </div>
        <div class="pb-6 border-b border-gray-200">
-        <div class="flex gap-3 mb-3"><i data-lucide="sparkles" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+        <div class="flex gap-3 mb-3">
+         <i data-lucide="sparkles" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
          <div>
           <p class="text-slate font-semibold text-base">Metodologías activas e innovación</p>
           <p class="text-slate text-sm mt-2">Proyectos STEAM, aprendizaje basado en problemas y experiencias reales. ESO, Bachillerato y FP.</p>
@@ -741,7 +806,8 @@
         </div>
        </div>
        <div>
-        <div class="flex gap-3 mb-3"><i data-lucide="cpu" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+        <div class="flex gap-3 mb-3">
+         <i data-lucide="cpu" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
          <div>
           <p class="text-slate font-semibold text-base">Tecnología e inteligencia artificial</p>
           <p class="text-slate text-sm mt-2">Herramientas digitales e IA generativa integradas como parte del aprendizaje funcional.</p>
@@ -776,7 +842,8 @@
    <div class="max-w-4xl mx-auto text-center">
     <h2 class="font-heading text-4xl sm:text-5xl font-bold text-navy mb-8">Abierto a colaborar</h2>
     <p class="text-lg text-slate mb-12 max-w-2xl mx-auto leading-relaxed">Buscando centros educativos donde aplicar proyectos reales, metodologías activas y usar tecnología de forma funcional. Disponible para entrevista, presentación de proyectos y colaboración educativa.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"><button onclick="scrollToSection(event, 'contacto')" class="btn-primary text-white px-8 py-4 rounded-lg text-lg border-none cursor-pointer">Solicitar entrevista</button> <a href="https://wa.me/34647033746" target="_blank" rel="noopener noreferrer" class="border-2 border-accent text-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent hover:text-white transition-all">Enviar por WhatsApp</a>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+     <button onclick="scrollToSection(event, 'contacto')" class="btn-primary text-white px-8 py-4 rounded-lg text-lg border-none cursor-pointer">Solicitar entrevista</button> <a href="https://wa.me/34647033746" target="_blank" rel="noopener noreferrer" class="border-2 border-accent text-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent hover:text-white transition-all">Enviar por WhatsApp</a>
     </div>
     <p class="text-sm text-slate">hola@juanpeco.es</p>
    </div>
@@ -868,5 +935,5 @@
 
     lucide.createIcons();
    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e487f00809702d4',t:'MTc3NDg4ODE5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e489675059202d4',t:'MTc3NDg4OTE1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
