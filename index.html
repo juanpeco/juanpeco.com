@@ -585,7 +585,36 @@ section { padding: 5rem 2rem; }
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 1.5rem;
 }
+#toTopBtn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  color: #1F2937;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  z-index: 999;
+}
 
+#toTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#toTopBtn:hover {
+  transform: translateY(-2px);
+  border-color: #C4B5FD;
+  background: #F5F3FF;
+}
 /* ── FOOTER ──────────────────────────────────────────── */
 footer {
   background: #111827;
@@ -1338,6 +1367,27 @@ function switchProj(btn, panelId) {
   document.getElementById(panelId).classList.add('active');
 }
 </script>
+<button id="toTopBtn" aria-label="Volver arriba">
+  ↑
+</button>
 
+<script>
+const toTopBtn = document.getElementById('toTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 700) {
+    toTopBtn.classList.add('show');
+  } else {
+    toTopBtn.classList.remove('show');
+  }
+});
+
+toTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+</script>
 </body>
 </html>
