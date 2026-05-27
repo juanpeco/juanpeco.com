@@ -98,6 +98,25 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
   transition: all 0.3s;
 }
 
+  html {
+  scroll-behavior: smooth;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.nav-logo:hover {
+  opacity: 0.75;
+}
+  
 /* ── HERO ────────────────────────────────────────────── */
 #hero {
   background: linear-gradient(135deg, var(--white) 0%, var(--bg-soft) 100%);
