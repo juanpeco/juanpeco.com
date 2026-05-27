@@ -98,25 +98,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
   transition: all 0.3s;
 }
 
-  html {
-  scroll-behavior: smooth;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-h);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--navy);
-  text-decoration: none;
-}
-
-.nav-logo:hover {
-  opacity: 0.75;
-}
-  
 /* ── HERO ────────────────────────────────────────────── */
 #hero {
   background: linear-gradient(135deg, var(--white) 0%, var(--bg-soft) 100%);
@@ -658,16 +639,13 @@ footer {
 </style>
 </head>
 <body>
-<!-- TOP ANCHOR -->
-<div id="top"></div>
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#top" class="nav-logo">
+  <div class="nav-logo">
     <div class="nav-logo-badge">JP</div>
     Juan Peco
-  </a>
-
+  </div>
   <ul class="nav-links">
     <li><button onclick="goto('perfil')">Perfil</button></li>
     <li><button onclick="goto('galeria')">Galería</button></li>
@@ -676,11 +654,7 @@ footer {
     <li><button onclick="goto('experiencia')">Experiencia</button></li>
     <li><button onclick="goto('contacto')">Contacto</button></li>
   </ul>
-
-  <a href="mailto:hola@juanpeco.com" class="nav-contact" style="display:none;list-style:none;" id="nav-cta">
-    hola@juanpeco.com
-  </a>
-
+  <a href="mailto:hola@juanpeco.com" class="nav-contact" style="display:none;list-style:none;" id="nav-cta">hola@juanpeco.com</a>
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
@@ -690,6 +664,7 @@ footer {
 <div class="mobile-menu" id="mobile-menu">
   <button class="mob-link" onclick="goto('perfil')">Perfil profesional</button>
   <button class="mob-link" onclick="goto('galeria')">Galería de proyectos</button>
+  <button class="mob-link" onclick="goto('especialidades')">Especialidades</button>
   <button class="mob-link" onclick="goto('metodologia')">Metodología</button>
   <button class="mob-link" onclick="goto('proyectos')">Proyectos</button>
   <button class="mob-link" onclick="goto('experiencia')">Experiencia</button>
@@ -699,16 +674,16 @@ footer {
 <!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Proyectos reales de Empresa, Economía y Tecnología aplicados en Formación Profesional, ESO y Bachillerato.</div>
+    <div class="hero-eyebrow">Docente de FP · Murcia · Disponible para incorporación</div>
     <h1 class="hero-h1">
       El alumnado<br>
       <em>crea, decide y presenta</em>
     </h1>
     <p class="hero-sub">
-      Docente de Formación Profesional especializado en Empresa, Economía y Tecnología educativa. Metodología basada en aprendizaje por proyectos reales con uso aplicado de herramientas de IA. Experiencia en aula y participación en más de 15 centros educativos de la Región de Murcia mediante el programa Código Escuela 4.0.
+      Docente de Formación Profesional especializado en Empresa, Economía y Marketing Digital. Metodología basada en aprendizaje por proyectos reales con integración funcional de IA. Experiencia directa en aula y en más de 15 centros educativos de la Región de Murcia.
     </p>
     <div class="hero-actions">
-      <a href="mailto:hola@juanpeco.com" class="btn-primary">Solicitar entrevista →</a>
+      <a href="mailto:hola@juanpeco.com" class="btn-primary">Contactar →</a>
       <a href="CV_Juan_Peco.pdf" target="_blank" class="btn-ghost">↓ Descargar CV</a>
     </div>
     <div class="hero-evidence">
@@ -718,9 +693,9 @@ footer {
         <div class="ev-sub">Programa Código Escuela 4.0, Región de Murcia</div>
       </div>
       <div class="ev-card">
-        <div class="ev-num">Aula</div>
-        <div class="ev-label">Experiencia docente directa</div>
-        <div class="ev-sub">Gestión autónoma de grupos y proyectos educativos</div>
+        <div class="ev-num">260h</div>
+        <div class="ev-label">Prácticum de aula</div>
+        <div class="ev-sub">Gestión autónoma de grupo en IES Pedro Guillén</div>
       </div>
       <div class="ev-card">
         <div class="ev-num">MAES</div>
@@ -739,7 +714,7 @@ footer {
     <div class="reveal">
       <div class="sec-label">Evidencia profesional</div>
       <h2 class="sec-title">Trabajo real en el aula</h2>
-      <p class="sec-desc">Proyectos desarrollados en contexto real de aula: robótica, documentación de empresa, presentaciones y trabajo colaborativo en Formación Profesional.</p>
+      <p class="sec-desc">Metodología aplicada, proyectos auténticos y tecnología educativa en contexto. Robótica, programación, competencia digital y aprendizaje activo.</p>
     </div>
 
     <!-- BLOQUE 1: VIDEO PRINCIPAL -->
