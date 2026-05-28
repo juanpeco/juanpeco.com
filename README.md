@@ -1,61 +1,73 @@
-# Juan Peco — Docente de Economía, Empresa y FP
+# Juan Peco — Docente de Formación Profesional
 
-Landing profesional desarrollada como portfolio docente y herramienta de presentación para centros educativos (FP, secundaria, concertados y privados).
+Portfolio profesional y web de presentación docente orientada a centros educativos de Formación Profesional, ESO y Bachillerato.
 
-## 🎯 Objetivo
+## Objetivo
 
-Mostrar de forma clara y directa:
+Mostrar de forma clara y profesional:
 
 * Experiencia real en aula
-* Capacidad de implementación inmediata
-* Enfoque práctico orientado a empleabilidad
-* Integración real de tecnología y competencias digitales
+* Aplicación práctica de metodología activa
+* Integración funcional de tecnología educativa
+* Capacidad de incorporación e integración rápida en centros educativos
 
-## 🧩 Perfil
+---
 
-Docente con experiencia en más de 15 centros educativos dentro del programa Código Escuela 4.0, trabajando en:
+## Perfil docente
+
+Docente especializado en:
+
+* Empresa y Economía
+* Formación Profesional
+* Tecnología educativa
+* Proyectos aplicados y metodología práctica
+
+Experiencia en más de 15 centros educativos dentro del programa Código Escuela 4.0, trabajando en:
 
 * Robótica educativa
 * Programación
 * Pensamiento computacional
 * Competencia digital
 
-Especialización en:
+---
 
-* Economía (ESO y Bachillerato)
-* Empresa e Iniciativa Emprendedora
-* Marketing y Digitalización (FP)
+## Metodología
 
-## 🚀 Enfoque metodológico
+Aprendizaje basado en proyectos reales y situaciones aplicadas al entorno profesional:
 
-Aprendizaje basado en proyectos reales:
+* Empresa simulada
+* Comunicación y presentaciones tipo pitch
+* Creación de marca y contenidos digitales
+* Uso de herramientas digitales e IA con criterio educativo
 
-* Creación de marca y estrategia digital con IA
-* Desarrollo de modelos de negocio aplicados
-* Uso de herramientas digitales profesionales (Canva, IA, hojas de cálculo, presentaciones)
-
-Objetivo: que el alumnado genere resultados tangibles y aplicables.
-
-## 💻 Tecnologías utilizadas
-
-* HTML
-* Tailwind CSS
-* JavaScript
-* GitHub Pages (hosting)
-
-## 🌐 Acceso
-
-👉 https://juanpeco.com
-
-## 📂 Portfolio ampliado
-
-👉 https://juanpeco.es
-
-## 📬 Contacto
-
-* Email: [hola@juanpeco.es](mailto:hola@juanpeco.es)
-* Teléfono: 647033746
+Objetivo:
+desarrollar competencias prácticas y resultados aplicables en contexto real.
 
 ---
 
-Este proyecto no es solo una web, sino una herramienta de comunicación profesional orientada a facilitar la toma de decisión de centr
+## Tecnologías utilizadas
+
+* HTML
+* CSS
+* JavaScript
+* GitHub Pages
+
+---
+
+## Acceso
+
+🌐 https://juanpeco.com
+
+Portfolio ampliado:
+👉 https://juanpeco.es
+
+---
+
+## Contacto
+
+✉ [hola@juanpeco.com](mailto:hola@juanpeco.com)
+📍 Murcia, España
+
+---
+
+Este proyecto funciona como herramienta de presentación profesional orientada a facilitar procesos de selección e incorporación docente en centros educativos.
