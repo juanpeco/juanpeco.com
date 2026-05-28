@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="es" class="h-full">
 <head>
-  <meta name="description" content="Juan Peco | Docente de Formación Profesional especializado en Empresa, Economía y Marketing Digital. Experiencia en aulas de FP, metodologías activas, proyectos reales e integración funcional de IA en el aula.">
+  <meta name="description" content="Juan Peco | Docente de Formación Profesional, ESO y Bachillerato. Empresa, Economía y Tecnología Educativa. Habilitado MAES. Disponible para incorporación en centros concertados y privados de la Región de Murcia.">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Peco | Docente FP — Empresa, Economía y Tecnología</title>
+  <title>Juan Peco | Docente FP, ESO y Bachillerato — Empresa, Economía y Tecnología</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='32' fill='%231a2744'/><text x='96' y='122' font-family='Georgia,serif' font-size='88' font-weight='700' fill='white' text-anchor='middle'>JP</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script async src="https://www.instagram.com/embed.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 
 <style>
@@ -69,581 +70,341 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
 }
 .nav-links button {
   padding: 0.45rem 0.85rem;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--muted);
-  border-radius: 7px;
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--muted); border-radius: 7px;
   transition: all 0.15s;
 }
 .nav-links button:hover { color: var(--navy); background: var(--bg-soft); }
 
 .nav-contact {
   padding: 0.5rem 1.2rem;
-  background: var(--navy);
-  color: #fff;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
+  background: var(--navy); color: #fff;
+  border-radius: 8px; font-size: 0.82rem; font-weight: 600;
   transition: all 0.2s;
 }
 .nav-contact:hover { background: var(--accent); transform: translateY(-1px); }
 
-.hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  padding: 6px;
-}
-.hamburger span {
-  display: block; width: 22px; height: 2px;
-  background: var(--navy); border-radius: 2px;
-  transition: all 0.3s;
-}
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
 
 /* ── HERO ────────────────────────────────────────────── */
 #hero {
   background: linear-gradient(135deg, var(--white) 0%, var(--bg-soft) 100%);
-  padding: 5rem 2rem 4rem;
-  position: relative;
-  overflow: hidden;
+  padding: 6rem 2rem 5rem;
+  position: relative; overflow: hidden;
 }
-
 #hero::before {
-  content: '';
-  position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0;
   background-image:
     repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(79,110,247,0.04) 59px, rgba(79,110,247,0.04) 60px),
     repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(79,110,247,0.04) 59px, rgba(79,110,247,0.04) 60px);
   pointer-events: none;
 }
 
+/* Hero layout: texto izquierda / imagen derecha */
 .hero-inner {
-  max-width: 860px; margin: 0 auto; text-align: center; position: relative;
+  max-width: 1060px; margin: 0 auto; position: relative;
+  display: grid; grid-template-columns: 1fr 0.9fr; gap: 4rem; align-items: center;
 }
+.hero-text { text-align: left; }
 
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 0.5rem;
   padding: 0.35rem 1rem;
-  background: var(--light);
-  border: 1px solid rgba(79,110,247,0.2);
-  border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.6px;
-  margin-bottom: 1.5rem;
+  background: var(--light); border: 1px solid rgba(79,110,247,0.2);
+  border-radius: 100px; font-size: 0.75rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 0.6px; margin-bottom: 1.8rem;
   animation: fadeUp 0.5s var(--ease) both;
 }
 .hero-eyebrow::before {
-  content: '';
-  width: 7px; height: 7px;
-  background: var(--accent2);
-  border-radius: 50%;
+  content: ''; width: 7px; height: 7px;
+  background: var(--accent2); border-radius: 50%;
   animation: blink 2s infinite;
 }
-@keyframes blink {
-  0%,100% { opacity:1; }
-  50% { opacity: 0.3; }
-}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity: 0.3; } }
 
 .hero-h1 {
   font-family: var(--font-h);
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.1;
-  letter-spacing: -1px;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700; color: var(--navy);
+  line-height: 1.1; letter-spacing: -1px;
   margin-bottom: 1.4rem;
   animation: fadeUp 0.55s 0.08s var(--ease) both;
 }
 .hero-h1 em {
   font-style: normal;
   background: linear-gradient(120deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
 .hero-sub {
-  font-size: 1.08rem;
-  color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  line-height: 1.75;
-  font-weight: 400;
+  font-size: 1rem; color: var(--muted); max-width: 480px;
+  margin: 0 0 2rem; line-height: 1.75; font-weight: 400;
   animation: fadeUp 0.55s 0.15s var(--ease) both;
 }
 
 .hero-actions {
-  display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 3.5rem;
+  display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 3rem;
   animation: fadeUp 0.55s 0.22s var(--ease) both;
 }
 
+.hero-evidence {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem;
+  animation: fadeUp 0.55s 0.3s var(--ease) both;
+}
+
+/* Hero image column */
+.hero-image-col {
+  animation: fadeUp 0.65s 0.2s var(--ease) both;
+}
+.hero-photo-frame {
+  position: relative; border-radius: 18px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 64px rgba(26,39,68,0.12);
+  aspect-ratio: 4/5;
+  background: var(--bg-soft);
+}
+.hero-photo-frame img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+/* Placeholder cuando no hay foto real */
+.hero-photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; padding: 2rem; text-align: center;
+  background: linear-gradient(160deg, var(--light) 0%, var(--bg-soft) 100%);
+}
+.hero-photo-placeholder .ph-icon { font-size: 3rem; opacity: 0.4; }
+.hero-photo-placeholder .ph-text {
+  font-size: 0.78rem; color: var(--muted); line-height: 1.5;
+  border: 1px dashed var(--border); border-radius: 8px; padding: 0.8rem 1rem;
+}
+.hero-photo-badge {
+  position: absolute; bottom: 1.2rem; left: 1.2rem; right: 1.2rem;
+  background: rgba(26,39,68,0.85); backdrop-filter: blur(8px);
+  border-radius: 10px; padding: 0.75rem 1rem;
+  color: white; font-size: 0.78rem; font-weight: 500;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.hero-photo-badge::before {
+  content: ''; width: 6px; height: 6px; background: var(--accent2);
+  border-radius: 50%; flex-shrink: 0; animation: blink 2s infinite;
+}
+
 .btn-primary {
-  padding: 0.8rem 1.8rem;
-  background: var(--navy);
-  color: #fff;
-  border-radius: 9px;
-  font-weight: 600;
-  font-size: 0.88rem;
+  padding: 0.8rem 1.8rem; background: var(--navy); color: #fff;
+  border-radius: 9px; font-weight: 600; font-size: 0.88rem;
   display: inline-flex; align-items: center; gap: 0.5rem;
   transition: all 0.25s var(--ease);
 }
 .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,110,247,0.3); }
 
 .btn-ghost {
-  padding: 0.8rem 1.8rem;
-  border: 1.5px solid var(--border);
-  color: var(--slate);
-  border-radius: 9px;
-  font-weight: 500;
-  font-size: 0.88rem;
+  padding: 0.8rem 1.8rem; border: 1.5px solid var(--border);
+  color: var(--slate); border-radius: 9px; font-weight: 500; font-size: 0.88rem;
   transition: all 0.2s;
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Hero evidence cards */
-.hero-evidence {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-  max-width: 700px; margin: 0 auto;
-  animation: fadeUp 0.55s 0.3s var(--ease) both;
-}
 .ev-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 1.3rem 1rem;
-  text-align: center;
-  transition: all 0.25s var(--ease);
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.1rem 0.9rem;
+  text-align: center; transition: all 0.25s var(--ease);
 }
 .ev-card:hover { border-color: rgba(79,110,247,0.3); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,39,68,0.07); }
-.ev-num {
-  font-family: var(--font-h);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-.ev-label { font-size: 0.78rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
-.ev-sub { font-size: 0.7rem; color: var(--muted); line-height: 1.4; }
+.ev-num { font-family: var(--font-h); font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+.ev-label { font-size: 0.75rem; font-weight: 600; color: var(--navy); margin-bottom: 0.15rem; }
+.ev-sub { font-size: 0.68rem; color: var(--muted); line-height: 1.4; }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ── DIVIDER ─────────────────────────────────────────── */
-.divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border), transparent);
-  margin: 0 2rem;
-}
+.divider { height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent); margin: 0 2rem; }
 
 /* ── SECTIONS SHARED ─────────────────────────────────── */
-section { padding: 5rem 2rem; }
+section { padding: 6rem 2rem; }
 .container { max-width: 1060px; margin: 0 auto; }
 
-.sec-label {
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 0.7rem;
-}
-.sec-title {
-  font-family: var(--font-h);
-  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
-  font-weight: 700; color: var(--navy);
-  line-height: 1.15; letter-spacing: -0.5px;
-  margin-bottom: 0.8rem;
-}
-.sec-desc {
-  font-size: 0.95rem; color: var(--muted);
-  max-width: 520px; line-height: 1.7;
-}
+.sec-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem; }
+.sec-title { font-family: var(--font-h); font-size: clamp(1.7rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 0.8rem; }
+.sec-desc { font-size: 0.95rem; color: var(--muted); max-width: 520px; line-height: 1.7; }
 
-/* scroll reveal */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 0.1s; }
-.d2 { transition-delay: 0.18s; }
-.d3 { transition-delay: 0.26s; }
-.d4 { transition-delay: 0.34s; }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.18s; } .d3 { transition-delay: 0.26s; } .d4 { transition-delay: 0.34s; }
 
-/* ── GALERÍA DE INSTAGRAM ────────────────────────────── */
-#galeria {
-  background: var(--white);
-}
+/* ── GALERÍA ─────────────────────────────────────────── */
+#galeria { background: var(--white); }
 
-.gallery-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
-  margin-top: 2.5rem;
-}
+/* ── ENCAJE INSTITUCIONAL ────────────────────────────── */
+#encaje { background: var(--bg-soft); }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--r);
-  aspect-ratio: 1;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  transition: all 0.3s var(--ease);
-  cursor: pointer;
+.encaje-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin-top: 3rem;
 }
-
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(26,39,68,0.12);
-  border-color: var(--accent);
+.encaje-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.8rem 1.5rem;
+  transition: all 0.25s var(--ease);
 }
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s var(--ease);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
-
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(79,110,247,0.8), rgba(6,182,160,0.8));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s var(--ease);
-  font-size: 2.5rem;
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gallery-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(26,39,68,0.9), transparent);
-  color: white;
-  padding: 1.5rem 1rem 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s var(--ease);
-}
-
-.gallery-item:hover .gallery-caption {
-  opacity: 1;
-}
+.encaje-card:hover { border-color: rgba(79,110,247,0.25); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,39,68,0.07); }
+.encaje-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.encaje-title { font-family: var(--font-h); font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.8rem; }
+.encaje-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+.encaje-list li { font-size: 0.82rem; color: var(--slate); position: relative; padding-left: 1rem; line-height: 1.5; }
+.encaje-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); font-size: 0.75rem; top: 2px; }
 
 /* ── PERFIL ──────────────────────────────────────────── */
-#perfil { background: var(--bg-soft); }
+#perfil { background: var(--white); }
 
-.perfil-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-  margin-top: 2.5rem; align-items: start;
-}
+.perfil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
 
-.perfil-text {
-  font-size: 0.92rem; color: var(--slate); line-height: 1.8;
-  margin-bottom: 1rem;
-}
+.perfil-text { font-size: 0.92rem; color: var(--slate); line-height: 1.8; margin-bottom: 1rem; }
 .perfil-text strong { color: var(--navy); font-weight: 600; }
 
-.credentials-list { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 0.5rem; }
-.cred-item {
-  display: flex; gap: 0.9rem; align-items: flex-start;
-  padding: 1rem 1.1rem;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 11px;
-  transition: all 0.2s;
+/* Bullets ejecutivos */
+.exec-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+.exec-bullets li {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-size: 0.88rem; font-weight: 500; color: var(--navy);
+  padding: 0.6rem 0.9rem;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 8px; transition: all 0.2s;
 }
+.exec-bullets li:hover { border-color: rgba(79,110,247,0.25); background: var(--light); }
+.exec-bullets li::before { content: '✓'; color: var(--accent2); font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
+
+.credentials-list { display: flex; flex-direction: column; gap: 0.7rem; }
+.cred-item { display: flex; gap: 0.9rem; align-items: flex-start; padding: 1rem 1.1rem; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 11px; transition: all 0.2s; }
 .cred-item:hover { border-color: rgba(79,110,247,0.25); box-shadow: 0 4px 16px rgba(26,39,68,0.06); }
 .cred-icon { font-size: 1.3rem; flex-shrink: 0; }
-.cred-body {}
 .cred-title { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.15rem; }
 .cred-sub { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
-.cred-badge {
-  display: inline-block; margin-top: 0.3rem;
-  padding: 0.15rem 0.55rem;
-  background: rgba(6,182,160,0.1);
-  color: var(--accent2); border-radius: 100px;
-  font-size: 0.65rem; font-weight: 700;
-}
+.cred-badge { display: inline-block; margin-top: 0.3rem; padding: 0.15rem 0.55rem; background: rgba(6,182,160,0.1); color: var(--accent2); border-radius: 100px; font-size: 0.65rem; font-weight: 700; }
 
 /* ── ESPECIALIZACIÓN ─────────────────────────────────── */
-#especialidades { background: var(--white); }
-
-.esp-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
-  margin-top: 2.5rem;
-}
-.esp-card {
-  padding: 1.6rem 1rem;
-  background: var(--bg-soft);
-  border: 1.5px solid var(--border);
-  border-radius: var(--r);
-  text-align: center;
-  transition: all 0.25s var(--ease);
-  cursor: default;
-}
-.esp-card:hover {
-  border-color: rgba(79,110,247,0.3);
-  background: var(--white);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(26,39,68,0.08);
-}
+#especialidades { background: var(--bg-soft); }
+.esp-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2.5rem; }
+.esp-card { padding: 1.6rem 1rem; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); text-align: center; transition: all 0.25s var(--ease); cursor: default; }
+.esp-card:hover { border-color: rgba(79,110,247,0.3); background: var(--white); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,39,68,0.08); }
 .esp-icon { font-size: 2rem; margin-bottom: 0.7rem; }
 .esp-name { font-size: 0.8rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
 
 /* ── METODOLOGÍA ─────────────────────────────────────── */
-#metodologia { background: var(--bg-soft); }
-
-.met-layout {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-  margin-top: 2.5rem; align-items: start;
-}
-
-/* Interactive cases */
+#metodologia { background: var(--white); }
+.met-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
 .cases-nav { display: flex; flex-direction: column; gap: 0.5rem; }
-.case-btn {
-  display: flex; align-items: flex-start; gap: 0.8rem;
-  padding: 0.9rem 1rem;
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  background: var(--white);
-  text-align: left;
-  transition: all 0.2s;
-  color: var(--slate);
-}
+.case-btn { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.9rem 1rem; border: 1.5px solid var(--border); border-radius: 10px; background: var(--bg-soft); text-align: left; transition: all 0.2s; color: var(--slate); }
 .case-btn:hover { border-color: rgba(79,110,247,0.3); background: var(--light); }
 .case-btn.active { border-color: var(--accent); background: var(--navy); color: var(--white); }
 .case-btn.active .cb-sub { color: rgba(255,255,255,0.65); }
 .cb-emoji { font-size: 1.3rem; flex-shrink: 0; }
 .cb-title { font-size: 0.83rem; font-weight: 600; }
 .cb-sub { font-size: 0.72rem; color: var(--muted); }
-
 .case-panel { display: none; animation: fadeInPanel 0.35s var(--ease) both; }
 .case-panel.active { display: block; }
-@keyframes fadeInPanel {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.panel-block {
-  padding: 1rem 1.1rem;
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-  border-left: 3px solid transparent;
-}
+@keyframes fadeInPanel { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.panel-block { padding: 1rem 1.1rem; border-radius: 10px; margin-bottom: 0.8rem; border-left: 3px solid transparent; }
 .pb-situation { background: rgba(79,110,247,0.05); border-left-color: var(--accent); }
-.pb-method    { background: rgba(6,182,160,0.05);  border-left-color: var(--accent2); }
-.pb-result    { background: rgba(26,39,68,0.04);    border-left-color: var(--navy); }
-
-.pb-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+.pb-method    { background: rgba(6,182,160,0.05); border-left-color: var(--accent2); }
+.pb-result    { background: rgba(107,122,153,0.05); border-left-color: var(--muted); }
+.pb-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+.pb-situation .pb-label { color: var(--accent); } .pb-method .pb-label { color: var(--accent2); } .pb-result .pb-label { color: var(--muted); }
 .pb-text { font-size: 0.83rem; color: var(--slate); }
-.pb-list { list-style: none; }
-.pb-list li { font-size: 0.82rem; color: var(--slate); padding: 0.2rem 0; display: flex; gap: 0.5rem; }
-.pb-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+.pb-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.pb-list li { font-size: 0.83rem; position: relative; padding-left: 0.9rem; color: var(--slate); }
+.pb-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); }
 
 /* ── PROYECTOS ───────────────────────────────────────── */
-#proyectos { background: var(--white); }
-
-.proj-tabs {
-  display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; margin-top: 2rem;
-}
-.proj-tab {
-  padding: 0.55rem 1.1rem;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-size: 0.82rem; font-weight: 500; color: var(--slate);
-  background: var(--white);
-  display: flex; align-items: center; gap: 0.4rem;
-  transition: all 0.2s;
-}
+#proyectos { background: var(--bg-soft); }
+.proj-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem; }
+.proj-tab { padding: 0.6rem 1.1rem; border: 1px solid var(--border); border-radius: 8px; font-size: 0.82rem; font-weight: 600; color: var(--muted); transition: all 0.2s; }
 .proj-tab:hover { border-color: var(--accent); color: var(--accent); }
-.proj-tab.active { background: var(--navy); color: white; border-color: var(--navy); }
-
-.proj-panel { display: none; }
-.proj-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; animation: fadeInPanel 0.35s var(--ease) both; }
-
-.proj-title { font-family: var(--font-h); font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
-.proj-desc { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
-
-.proj-col-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; margin-top: 1.2rem; }
-.proj-col-title:first-child { margin-top: 0; }
-.proj-items { list-style: none; }
-.pi-learn, .pi-produce {
-  font-size: 0.82rem; color: var(--slate);
-  padding: 0.5rem 0; display: flex; gap: 0.5rem;
-}
-.pi-learn::before, .pi-produce::before { content: '✓'; color: var(--accent2); flex-shrink: 0; font-weight: 700; }
-
-.proj-visual {
-  min-height: 300px;
-  background: linear-gradient(135deg, rgba(79,110,247,0.1), rgba(6,182,160,0.1));
-  border-radius: var(--r);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed var(--border);
-}
+.proj-tab.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.proj-panel { display: none; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; animation: fadeInPanel 0.35s var(--ease) both; }
+.proj-panel.active { display: grid; }
+.proj-title { font-family: var(--font-h); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+.proj-desc { font-size: 0.9rem; color: var(--slate); margin-bottom: 1.5rem; line-height: 1.6; }
+.proj-col-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 0.5rem; }
+.proj-items { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
+.proj-items li { font-size: 0.83rem; position: relative; padding-left: 1.1rem; color: var(--slate); }
+.proj-items li::before { position: absolute; left: 0; font-weight: 700; }
+.pi-learn::before { content: '✓'; color: var(--accent2); }
+.pi-produce::before { content: '⎋'; color: var(--accent); }
+.proj-visual { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); aspect-ratio: 1.4; display: flex; align-items: center; justify-content: center; padding: 2rem; }
 
 /* ── EXPERIENCIA ─────────────────────────────────────── */
-#experiencia { background: var(--bg-soft); }
-
-.exp-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-  margin-top: 2.5rem;
-}
-
+#experiencia { background: var(--white); }
+.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; }
 .exp-timeline { display: flex; flex-direction: column; gap: 1.5rem; }
-.exp-item {
-  display: flex; gap: 1rem; padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
+.exp-item { display: flex; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 .exp-item:last-child { border-bottom: none; }
-.exp-dot {
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 700;
-  flex-shrink: 0;
-  width: 20px;
-  text-align: center;
-  padding-top: 2px;
-}
+.exp-dot { font-size: 0.8rem; color: var(--accent); font-weight: 700; flex-shrink: 0; width: 20px; text-align: center; padding-top: 2px; }
 .exp-item.exp-active .exp-dot { color: var(--accent2); }
 .exp-year { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
 .exp-role { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin: 0.3rem 0; }
 .exp-place { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem; }
 .exp-desc { font-size: 0.8rem; color: var(--slate); line-height: 1.6; }
-
 .academic-list { display: flex; flex-direction: column; gap: 0.8rem; }
-.acad-item {
-  padding: 1.1rem 1.3rem;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 11px;
-  transition: all 0.2s;
-}
+.acad-item { padding: 1.1rem 1.3rem; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 11px; transition: all 0.2s; }
 .acad-item:hover { border-color: rgba(79,110,247,0.25); transform: translateX(4px); }
 .acad-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
 .acad-sub { font-size: 0.77rem; color: var(--muted); line-height: 1.4; }
-.acad-badge {
-  display: inline-block; margin-top: 0.35rem;
-  padding: 0.15rem 0.55rem;
-  border-radius: 100px; font-size: 0.65rem; font-weight: 700;
-}
+.acad-badge { display: inline-block; margin-top: 0.35rem; padding: 0.15rem 0.55rem; border-radius: 100px; font-size: 0.65rem; font-weight: 700; }
 .ab-green { background: rgba(6,182,160,0.1); color: var(--accent2); }
 .ab-gray  { background: rgba(107,122,153,0.1); color: var(--muted); }
 
 /* ── CONTACTO ────────────────────────────────────────── */
 #contacto { background: var(--navy); color: white; }
-
-.contacto-inner {
-  max-width: 780px; margin: 0 auto; text-align: center;
-}
+.contacto-inner { max-width: 780px; margin: 0 auto; text-align: center; }
 .contacto-inner .sec-title { color: white; }
-.contacto-sub {
-  font-size: 0.95rem; color: rgba(255,255,255,0.6);
-  margin: 0 auto 2.5rem; max-width: 500px; line-height: 1.7;
-}
-.contacto-email {
-  display: inline-block;
-  font-family: var(--font-h);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
-  border-bottom: 2px solid rgba(79,110,247,0.5);
-  padding-bottom: 0.2rem;
-  margin-bottom: 2.5rem;
-  transition: border-color 0.2s;
-}
+.contacto-sub { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin: 0 auto 2.5rem; max-width: 500px; line-height: 1.7; }
+.contacto-email { display: inline-block; font-family: var(--font-h); font-size: 1.5rem; font-weight: 600; color: white; border-bottom: 2px solid rgba(79,110,247,0.5); padding-bottom: 0.2rem; margin-bottom: 2.5rem; transition: border-color 0.2s; }
 .contacto-email:hover { border-color: var(--accent); }
-
-.contacto-links {
-  display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 2.5rem;
-}
-.clink {
-  padding: 0.7rem 1.4rem;
-  border: 1.5px solid rgba(255,255,255,0.15);
-  border-radius: 9px;
-  font-size: 0.83rem; font-weight: 500; color: rgba(255,255,255,0.75);
-  display: flex; align-items: center; gap: 0.5rem;
-  transition: all 0.2s;
-}
+.contacto-links { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.clink { padding: 0.7rem 1.4rem; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 9px; font-size: 0.83rem; font-weight: 500; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
 .clink:hover { border-color: rgba(255,255,255,0.4); color: white; background: rgba(255,255,255,0.06); }
+.contacto-note { font-size: 0.78rem; color: rgba(255,255,255,0.35); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; }
 
-.contacto-note {
-  font-size: 0.78rem; color: rgba(255,255,255,0.35);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 1.5rem;
-}
+/* ── BOTÓN FLOTANTE (elegante) ───────────────────────── */
 #toTopBtn {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 52px;
-  height: 52px;
-  border-radius: 999px;
-  border: 1px solid #E5E7EB;
-  background: rgba(255,255,255,.92);
-  backdrop-filter: blur(10px);
-  color: #1F2937;
-  font-size: 18px;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: all .3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  position: fixed; right: 20px; bottom: 20px;
+  width: 40px; height: 40px; border-radius: 999px;
+  border: 1px solid rgba(79,110,247,0.2);
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(12px);
+  color: var(--navy); font-size: 15px;
+  cursor: pointer; opacity: 0; pointer-events: none;
+  transition: all 0.3s var(--ease);
+  box-shadow: 0 4px 16px rgba(26,39,68,0.08);
   z-index: 999;
 }
+#toTopBtn.show { opacity: 1; pointer-events: auto; }
+#toTopBtn:hover { transform: translateY(-2px); border-color: rgba(196,181,253,0.6); background: rgba(245,243,255,0.95); box-shadow: 0 6px 20px rgba(79,110,247,0.15); }
 
-#toTopBtn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#toTopBtn:hover {
-  transform: translateY(-2px);
-  border-color: #C4B5FD;
-  background: #F5F3FF;
-}
-/* ── FOOTER ──────────────────────────────────────────── */
+/* ── FOOTER INSTITUCIONAL ────────────────────────────── */
 footer {
   background: #111827;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2.5rem;
   display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 0.5rem;
+  flex-wrap: wrap; gap: 1rem;
 }
-.footer-text { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+.footer-left {}
+.footer-name { font-family: var(--font-h); font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.75); margin-bottom: 0.3rem; }
+.footer-role { font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.3px; }
+.footer-links { display: flex; align-items: center; gap: 1rem; }
+.footer-link {
+  font-size: 0.75rem; color: rgba(255,255,255,0.4);
+  display: flex; align-items: center; gap: 0.35rem;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: rgba(255,255,255,0.75); }
 
 /* ── MOBILE MENU ─────────────────────────────────────── */
-.mobile-menu {
-  position: fixed; top: 64px; inset-x: 0;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 1.5rem;
-  display: none; flex-direction: column; gap: 0.3rem;
-  z-index: 99;
-  box-shadow: 0 8px 24px rgba(26,39,68,0.1);
-}
+.mobile-menu { position: fixed; top: 64px; inset-x: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; display: none; flex-direction: column; gap: 0.3rem; z-index: 99; box-shadow: 0 8px 24px rgba(26,39,68,0.1); }
 .mobile-menu.open { display: flex; }
-.mob-link {
-  padding: 0.7rem 0.5rem;
-  font-size: 0.95rem; font-weight: 500; color: var(--slate);
-  border-bottom: 1px solid var(--border);
-  cursor: pointer; background: none; border-top: none; border-left: none; border-right: none;
-  text-align: left;
-  transition: color 0.15s;
-  font-family: inherit;
-}
+.mob-link { padding: 0.7rem 0.5rem; font-size: 0.95rem; font-weight: 500; color: var(--slate); border-bottom: 1px solid var(--border); cursor: pointer; background: none; border-top: none; border-left: none; border-right: none; text-align: left; transition: color 0.15s; font-family: inherit; }
 .mob-link:hover { color: var(--accent); }
 .mob-link:last-child { border-bottom: none; }
 
@@ -651,19 +412,24 @@ footer {
 @media (max-width: 880px) {
   .nav-links, .nav-contact { display: none; }
   .hamburger { display: flex; }
-
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-text { text-align: center; }
+  .hero-sub { margin: 0 auto 2rem; }
+  .hero-actions { justify-content: center; }
   .hero-evidence { grid-template-columns: repeat(3, 1fr); }
+  .hero-image-col { max-width: 380px; margin: 0 auto; }
   .perfil-grid, .met-layout, .exp-grid { grid-template-columns: 1fr; }
   .esp-grid { grid-template-columns: repeat(3, 1fr); }
   .proj-panel.active { grid-template-columns: 1fr; }
   .proj-visual { min-height: 160px; }
+  .encaje-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  section { padding: 3.5rem 1.2rem; }
+  section { padding: 4rem 1.2rem; }
   .hero-evidence { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
   .ev-num { font-size: 1.5rem; }
   .esp-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-grid { grid-template-columns: 1fr; }
+  .encaje-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -677,13 +443,14 @@ footer {
   </div>
   <ul class="nav-links">
     <li><button onclick="goto('perfil')">Perfil</button></li>
-    <li><button onclick="goto('galeria')">Galería</button></li>
+    <li><button onclick="goto('encaje')">Encaje Institucional</button></li>
+    <li><button onclick="goto('galeria')">Evidencia</button></li>
     <li><button onclick="goto('metodologia')">Metodología</button></li>
     <li><button onclick="goto('proyectos')">Proyectos</button></li>
     <li><button onclick="goto('experiencia')">Experiencia</button></li>
     <li><button onclick="goto('contacto')">Contacto</button></li>
   </ul>
-  <a href="mailto:hola@juanpeco.com" class="nav-contact" style="display:none;list-style:none;" id="nav-cta">hola@juanpeco.com</a>
+  <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="nav-contact" style="display:none;list-style:none;" id="nav-cta">Solicitar entrevista</a>
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
@@ -692,7 +459,8 @@ footer {
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <button class="mob-link" onclick="goto('perfil')">Perfil profesional</button>
-  <button class="mob-link" onclick="goto('galeria')">Galería de proyectos</button>
+  <button class="mob-link" onclick="goto('encaje')">Encaje institucional</button>
+  <button class="mob-link" onclick="goto('galeria')">Evidencia de aula</button>
   <button class="mob-link" onclick="goto('especialidades')">Especialidades</button>
   <button class="mob-link" onclick="goto('metodologia')">Metodología</button>
   <button class="mob-link" onclick="goto('proyectos')">Proyectos</button>
@@ -703,35 +471,73 @@ footer {
 <!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Proyectos reales de Empresa, Economía y Tecnología aplicados en Formación Profesional, ESO y Bachillerato.</div>
-    <h1 class="hero-h1">
-      Juan Peco<br>
-      <em>Docente de Formación Profesional, ESO y Bachillerato</em>
-    </h1>
-        <p class="hero-sub">
-      Experiencia profesional de varios años en empresa y marketing, trasladada al aula. 
-      Trabajo con el alumnado en el desarrollo de competencias aplicadas, combinando contenidos curriculares, con situaciones reales de aprendizaje.
-      Mi enfoque se basa en la gestión del aula, la integración curricular y la colaboración con el proyecto educativo del centro.
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:hola@juanpeco.com" class="btn-primary">Contactar para entrevista →</a>
-      <a href="CV_Juan_Peco.pdf" target="_blank" class="btn-ghost">↓ Descargar CV</a>
+    <!-- Columna texto -->
+    <div class="hero-text">
+      <div class="hero-eyebrow">Habilitado FP · ESO · Bachillerato · Murcia · Disponible para incorporación</div>
+      <h1 class="hero-h1">
+        Empresa, Economía<br>
+        y Tecnología<br>
+        <em>aplicadas en aula real</em>
+      </h1>
+      <p class="hero-sub">
+        Docente habilitado (MAES) especializado en Empresa, Economía y Tecnología Educativa. Metodología de aprendizaje práctico por proyectos reales. Dieciocho años de experiencia corporativa aplicada directamente al aula de FP, ESO y Bachillerato.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="btn-primary">Solicitar entrevista docente →</a>
+        <a href="CV_Juan_Peco.pdf" target="_blank" class="btn-ghost">↓ Descargar CV</a>
+      </div>
+      <div class="hero-evidence">
+        <div class="ev-card">
+          <div class="ev-num">+15</div>
+          <div class="ev-label">Centros educativos</div>
+          <div class="ev-sub">Código Escuela 4.0, Murcia</div>
+        </div>
+        <div class="ev-card">
+          <div class="ev-num">260h</div>
+          <div class="ev-label">Prácticum de aula</div>
+          <div class="ev-sub">IES Pedro Guillén, FP</div>
+        </div>
+        <div class="ev-card">
+          <div class="ev-num">MAES</div>
+          <div class="ev-label">Habilitación jun. 2026</div>
+          <div class="ev-sub">Economía, Empresa y Turismo</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-evidence">
-      <div class="ev-card">
-        <div class="ev-num">+15</div>
-        <div class="ev-label">Centros educativos</div>
-        <div class="ev-sub">Programa Código Escuela 4.0, Región de Murcia</div>
-      </div>
-      <div class="ev-card">
-        <div class="ev-num">Aula</div>
-        <div class="ev-label">Experiencia docente directa</div>
-        <div class="ev-sub">Gestión autónoma de grupos y proyectos educativos</div>
-      </div>
-      <div class="ev-card">
-        <div class="ev-num">MAES</div>
-        <div class="ev-label">Finalización jun. 2026</div>
-        <div class="ev-sub">Esp. Economía, Empresa y Turismo</div>
+
+    <!-- Columna imagen -->
+    <div class="hero-image-col">
+      <div class="hero-photo-frame">
+        <!--
+          ══════════════════════════════════════════════════
+          INSTRUCCIÓN PARA AÑADIR TU FOTO REAL:
+
+          1. Guarda tu foto en la misma carpeta que este index.html
+             (ej: foto_aula.jpg)
+
+          2. Sustituye TODO este bloque <div class="hero-photo-placeholder">...</div>
+             por esta línea:
+
+             <img src="foto_aula.jpg" alt="Juan Peco en el aula">
+
+          La foto debe mostrar: docente explicando, interactuando
+          con alumnado o con tecnología/proyecto visible.
+          Formato recomendado: vertical (4:5), mínimo 800px de alto.
+          ══════════════════════════════════════════════════
+        -->
+        <div class="hero-photo-placeholder">
+          <div class="ph-icon">📷</div>
+          <div class="ph-text">
+            <strong>Aquí va tu foto real de aula</strong><br><br>
+            Guarda tu imagen en la misma carpeta<br>
+            y sustituye este bloque por:<br><br>
+            <code style="font-size:0.72rem;background:rgba(79,110,247,0.08);padding:0.3rem 0.5rem;border-radius:4px;display:inline-block;margin-top:0.3rem">&lt;img src="foto_aula.jpg"&gt;</code><br><br>
+            Formato: vertical 4:5 · mín. 800px
+          </div>
+        </div>
+        <div class="hero-photo-badge">
+          Docente en activo · Región de Murcia
+        </div>
       </div>
     </div>
   </div>
@@ -739,7 +545,58 @@ footer {
 
 <div class="divider"></div>
 
-<!-- ── TRABAJO REAL ── -->
+<!-- ── ENCAJE INSTITUCIONAL ── -->
+<section id="encaje">
+  <div class="container">
+    <div class="reveal" style="max-width: 600px;">
+      <div class="sec-label">Para el equipo directivo</div>
+      <h2 class="sec-title">Encaje institucional en el centro</h2>
+      <p class="sec-desc">Integración real en el claustro, compromiso con el proyecto educativo y rigor en la gestión docente del día a día.</p>
+    </div>
+
+    <div class="encaje-grid reveal d1">
+      <!-- Tarjeta 1 -->
+      <div class="encaje-card">
+        <div class="encaje-icon">🤝</div>
+        <div class="encaje-title">Integración en claustro</div>
+        <ul class="encaje-list">
+          <li>Coordinación activa con departamentos de Economía, Tecnología y FP</li>
+          <li>Participación en comisiones, proyectos de innovación y actividades complementarias</li>
+          <li>Rigor documental y seriedad administrativa en la gestión del puesto</li>
+          <li>Compromiso de estabilidad y permanencia a largo plazo en el centro</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="encaje-card">
+        <div class="encaje-icon">📋</div>
+        <div class="encaje-title">Gestión de aula y tutoría</div>
+        <ul class="encaje-list">
+          <li>Liderazgo del grupo-clase con límites claros y resolución pacífica de conflictos</li>
+          <li>Tutoría como acompañamiento académico y personal del alumnado</li>
+          <li>Comunicación sistemática y constructiva con las familias</li>
+          <li>Atención a la diversidad e inclusión real en el aula ordinaria</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="encaje-card">
+        <div class="encaje-icon">📐</div>
+        <div class="encaje-title">Programación y LOMLOE</div>
+        <ul class="encaje-list">
+          <li>Diseño de unidades didácticas y situaciones de aprendizaje bajo LOMLOE</li>
+          <li>Evaluación por competencias con rúbricas y criterios ponderados</li>
+          <li>Adaptación a la nueva ordenación de la FP y los ciclos formativos</li>
+          <li>Integración de IA con criterio pedagógico, no como sustituto del aprendizaje</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── EVIDENCIA DE AULA ── -->
 <section id="galeria">
   <div class="container">
     <div class="reveal">
@@ -748,83 +605,57 @@ footer {
       <p class="sec-desc">Metodología aplicada, proyectos auténticos y tecnología educativa en contexto. Robótica, programación, competencia digital y aprendizaje activo.</p>
     </div>
 
-    <!-- BLOQUE 1: VIDEO PRINCIPAL -->
-    <div class="reveal d1" style="margin-top: 2.5rem; margin-bottom: 3rem;">
-      <div style="position:relative;width:100%;max-width:720px;margin:0 auto;">
-        <iframe src="https://www.instagram.com/reel/DXZv7IEjZl0/embed/captioned/" width="100%" height="700" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
+    <!-- REEL PRINCIPAL -->
+    <div class="reveal d1" style="margin-top: 3rem; margin-bottom: 3.5rem;">
+      <div style="position:relative;width:100%;max-width:680px;margin:0 auto;">
+        <iframe src="https://www.instagram.com/reel/DXZv7IEjZl0/embed/captioned/" width="100%" height="680" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
       </div>
       <div style="margin-top:1.2rem;text-align:center;">
-        <div style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;">Robótica educativa</div>
-        <div style="font-size:0.9rem;color:var(--muted);line-height:1.6;max-width:600px;margin:0 auto;">Alumnado de 2º construyendo historias desde cero con mTiny. Pensamiento computacional, creatividad y resolución de problemas aplicados en contexto real de aula.</div>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;">Robótica educativa · Pensamiento computacional</div>
+        <div style="font-size:0.88rem;color:var(--muted);line-height:1.6;max-width:560px;margin:0 auto;">Alumnado de 2.º construyendo historias con mTiny. Creatividad, resolución de problemas y trabajo cooperativo en contexto real de aula.</div>
       </div>
     </div>
 
-    <!-- BLOQUE 2: GRID DE PIEZAS REALES -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin-top:3rem;margin-bottom:3rem;">
-      <!-- REEL 2 -->
-      <div class="reveal d2" style="">
-        <div style="position:relative;width:100%;">
-          <iframe src="https://www.instagram.com/reel/DW0hmtgjZf2/embed/captioned/" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        </div>
+    <!-- DOS REELS SECUNDARIOS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:3.5rem;">
+      <div class="reveal d2">
+        <iframe src="https://www.instagram.com/reel/DW0hmtgjZf2/embed/captioned/" width="100%" height="560" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
         <div style="margin-top:1rem;">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Aprendizaje activo</div>
-          <div style="font-size:0.85rem;color:var(--muted);line-height:1.5;">Trabajo colaborativo en equipo dentro de proyectos de empresa simulada.</div>
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Aprendizaje activo</div>
+          <div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Trabajo colaborativo en proyectos de empresa simulada con roles profesionales reales.</div>
         </div>
       </div>
-
-      <!-- REEL 3 -->
-      <div class="reveal d3" style="">
-        <div style="position:relative;width:100%;">
-          <iframe src="https://www.instagram.com/reel/DUULWyoDKnk/embed/captioned/" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        </div>
+      <div class="reveal d3">
+        <iframe src="https://www.instagram.com/reel/DUULWyoDKnk/embed/captioned/" width="100%" height="560" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
         <div style="margin-top:1rem;">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Tecnología educativa</div>
-          <div style="font-size:0.85rem;color:var(--muted);line-height:1.5;">Integración de herramientas digitales y pensamiento computacional en el aula de FP.</div>
-        </div>
-      </div>
-
-      <!-- REEL 4 -->
-      <div class="reveal d1" style="">
-        <div style="position:relative;width:100%;">
-          <iframe src="https://www.instagram.com/reel/DPuYmnCjDSn/embed/captioned/" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        </div>
-        <div style="margin-top:1rem;">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Presentaciones profesionales</div>
-          <div style="font-size:0.85rem;color:var(--muted);line-height:1.5;">El alumnado presenta sus proyectos ante audiencias reales o simuladas.</div>
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Tecnología educativa</div>
+          <div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Integración de herramientas digitales y pensamiento computacional en el aula de FP.</div>
         </div>
       </div>
     </div>
 
-    <!-- BLOQUE 3: CONTENIDO ADICIONAL -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;align-items:start;">
-      <!-- REEL 5 -->
-      <div class="reveal d2" style="">
-        <div style="position:relative;width:100%;">
-          <iframe src="https://www.instagram.com/reel/DPuXoU2DEqA/embed/captioned/" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        </div>
-        <div style="margin-top:1rem;">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Competencia digital</div>
-          <div style="font-size:0.85rem;color:var(--muted);line-height:1.5;">Desarrollo de habilidades digitales aplicadas en contexto profesional de FP.</div>
-        </div>
+    <!-- EVIDENCIA ESTÁTICA: 3 bloques documentales -->
+    <div class="reveal d1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem;">
+      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Presentaciones profesionales</div>
+        <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">El alumnado defiende sus proyectos ante audiencias reales o simuladas, desarrollando comunicación oral formal y capacidad de síntesis técnica.</div>
       </div>
-
-      <!-- POST 1 -->
-      <div class="reveal d3" style="">
-        <div style="position:relative;width:100%;">
-          <iframe src="https://www.instagram.com/p/DPO373xjI5c/embed/captioned/" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        </div>
-        <div style="margin-top:1rem;">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Documentación de proyectos</div>
-          <div style="font-size:0.85rem;color:var(--muted);line-height:1.5;">Registro visual del trabajo desarrollado dentro de actividades de empresa y FP.</div>
-        </div>
+      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Competencia digital aplicada</div>
+        <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Habilidades digitales integradas en contexto profesional de FP: herramientas de productividad, IA generativa con criterio y documentación técnica.</div>
+      </div>
+      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Documentación de proyectos</div>
+        <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Registro sistemático del trabajo desarrollado en actividades de empresa simulada, ciclos formativos y programas de innovación educativa.</div>
       </div>
     </div>
 
     <!-- CIERRE -->
-    <div class="reveal" style="margin-top:3rem;padding:2rem;background:var(--bg-soft);border-radius:var(--r);border-left:3px solid var(--accent);text-align:center;">
-      <div style="font-size:0.9rem;color:var(--slate);line-height:1.7;">
-        <strong>Más contenido en Instagram:</strong> Sígueme en <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);">@juanpeco</a> para ver más proyectos, metodología aplicada y momentos de aula.
+    <div class="reveal" style="padding:1.5rem 2rem;background:var(--bg-soft);border-radius:var(--r);border-left:3px solid var(--accent);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;flex:1;min-width:200px;">
+        Más evidencia de aula en <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">@juanpeco</a> en Instagram.
       </div>
+      <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="padding:0.55rem 1.2rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.8rem;font-weight:600;color:var(--slate);white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--slate)';">Ver Instagram →</a>
     </div>
   </div>
 </section>
@@ -841,14 +672,21 @@ footer {
     <div class="perfil-grid">
       <div class="reveal d1">
         <p class="perfil-text">
-          Soy docente de Formación Profesional, ESO y Bachillerato con experiencia en aula y una trayectoria previa de unos 18 años en gestión empresarial y marketing. <strong>He impartido clase como profesor en prácticas en IES Pedro Guillén</strong>, con gestión autónoma de grupo, planificación de sesiones y evaluación del alumnado.
+          Docente de FP, ESO y Bachillerato habilitado (MAES) con experiencia directa en aula en Economía, Empresa y Tecnología Educativa. <strong>Más de 260 horas lectivas autónomas en IES Pedro Guillén</strong>, con planificación de unidades didácticas, evaluación competencial y coordinación con el departamento.
         </p>
         <p class="perfil-text">
-          Aporto una visión práctica del mundo profesional al aula,  <strong>especialmente en los ámbitos de </strong> Empresa, Economía y Tecnología aplicada.
+          Trayectoria previa de <strong>casi dos décadas en el sector corporativo</strong> (gestión comercial, administración y marketing digital). Esa experiencia es el activo diferencial en el aula: los contenidos de Empresa, EIE y Marketing se trabajan desde la práctica real, no desde el manual.
         </p>
-        <p class="perfil-text">
-          Mi trabajo se centra en la gestión efectiva del aula,  <strong>la integración curricular y la adaptación al proyecto educativo del centro, </strong> colaborando activamente con el equipo docente.
-        </p>
+
+        <!-- Bullets ejecutivos -->
+        <ul class="exec-bullets">
+          <li>Más de 15 centros educativos en la Región de Murcia</li>
+          <li>260 h de prácticum con gestión autónoma de aula</li>
+          <li>Empresa + tecnología + metodología activa (ABP)</li>
+          <li>Evaluación por competencias y programación LOMLOE</li>
+          <li>Integración funcional de IA con criterio pedagógico</li>
+          <li>Disponibilidad para incorporación inmediata</li>
+        </ul>
       </div>
       <div class="reveal d2">
         <div class="credentials-list">
@@ -856,7 +694,7 @@ footer {
             <div class="cred-icon">🏫</div>
             <div class="cred-body">
               <div class="cred-title">Programa Código Escuela 4.0</div>
-              <div class="cred-sub">Profesor auxiliar en más de 15 centros educativos de la Región de Murcia. Talleres de robótica, programación y competencia digital con alumnado y profesorado.</div>
+              <div class="cred-sub">Profesor auxiliar en más de 15 centros de la Región de Murcia. Robótica, programación y competencia digital.</div>
               <span class="cred-badge">2025 – Actualidad</span>
             </div>
           </div>
@@ -864,15 +702,15 @@ footer {
             <div class="cred-icon">🏛️</div>
             <div class="cred-body">
               <div class="cred-title">Jurado — Prisma Challenge 2026</div>
-              <div class="cred-sub">Competición educativa regional de robótica y programación. Evaluación de proyectos del alumnado participante.</div>
+              <div class="cred-sub">Competición educativa regional de robótica y programación.</div>
               <span class="cred-badge">2026</span>
             </div>
           </div>
           <div class="cred-item">
             <div class="cred-icon">🎓</div>
             <div class="cred-body">
-              <div class="cred-title">Experiencia docente en IES Pedro Guillén</div>
-              <div class="cred-sub">Impartición de módulos de Empresa y Economía, planificación de sesiones y evaluación del alumnado.</div>
+              <div class="cred-title">Prácticum MAES — IES Pedro Guillén</div>
+              <div class="cred-sub">260 h lectivas. Módulos de Economía y Empresa. Evaluación competencial y coordinación con el departamento.</div>
               <span class="cred-badge">2026</span>
             </div>
           </div>
@@ -880,8 +718,8 @@ footer {
             <div class="cred-icon">💼</div>
             <div class="cred-body">
               <div class="cred-title">Trayectoria profesional previa</div>
-              <div class="cred-sub">Gestión comercial, administración y consultoría de marketing digital (2004–2022). Base directa para módulos de Gestión Empresarial, EIE y Marketing Digital.</div>
-              <span class="cred-badge">18 años de experiencia</span>
+              <div class="cred-sub">Gestión comercial, administración y marketing digital (2004–2022). Base directa para EIE, Gestión Empresarial y Marketing.</div>
+              <span class="cred-badge">18 años</span>
             </div>
           </div>
         </div>
@@ -897,29 +735,14 @@ footer {
   <div class="container">
     <div class="reveal" style="text-align:center">
       <div class="sec-label">Qué enseño</div>
-      <h2 class="sec-title">Etapas educativas y materias que imparto</h2>
+      <h2 class="sec-title">Especialidades curriculares y áreas docentes</h2>
     </div>
     <div class="esp-grid">
-      <div class="esp-card reveal d1">
-        <div class="esp-icon">🏢</div>
-        <div class="esp-name">Empresa e Iniciativa Emprendedora</div>
-      </div>
-      <div class="esp-card reveal d2">
-        <div class="esp-icon">📊</div>
-        <div class="esp-name">Economía ESO y Bachillerato</div>
-      </div>
-      <div class="esp-card reveal d3">
-        <div class="esp-icon">📣</div>
-        <div class="esp-name">Marketing y Digitalización FP</div>
-      </div>
-      <div class="esp-card reveal d1">
-        <div class="esp-icon">💻</div>
-        <div class="esp-name">Competencia Digital</div>
-      </div>
-      <div class="esp-card reveal d2">
-        <div class="esp-icon">🤖</div>
-        <div class="esp-name">Robótica y Programación Educativa</div>
-      </div>
+      <div class="esp-card reveal d1"><div class="esp-icon">🏢</div><div class="esp-name">Empresa e Iniciativa Emprendedora</div></div>
+      <div class="esp-card reveal d2"><div class="esp-icon">📊</div><div class="esp-name">Economía ESO y Bachillerato</div></div>
+      <div class="esp-card reveal d3"><div class="esp-icon">📣</div><div class="esp-name">Marketing y Digitalización FP</div></div>
+      <div class="esp-card reveal d1"><div class="esp-icon">💻</div><div class="esp-name">Competencia Digital Docente</div></div>
+      <div class="esp-card reveal d2"><div class="esp-icon">🤖</div><div class="esp-name">Robótica y Programación Educativa</div></div>
     </div>
   </div>
 </section>
@@ -932,141 +755,57 @@ footer {
     <div class="reveal">
       <div class="sec-label">Cómo trabajo</div>
       <h2 class="sec-title">Respuestas concretas a situaciones reales de aula</h2>
-      <p class="sec-desc">La metodología no es un modelo fijo. Se adapta al grupo, al módulo y al momento.</p>
+      <p class="sec-desc">La metodología se adapta al grupo, al módulo y al momento. Siempre dentro del marco curricular y la programación del departamento.</p>
     </div>
     <div class="met-layout">
       <div class="cases-nav reveal d1">
         <button class="case-btn active" onclick="switchCase(this,'c1')">
           <span class="cb-emoji">🤐</span>
-          <div><div class="cb-title">Grupo poco participativo</div><div class="cb-sub">Cuesta que se impliquen</div></div>
+          <div><div class="cb-title">Grupo poco participativo</div><div class="cb-sub">Falta de implicación activa</div></div>
         </button>
         <button class="case-btn" onclick="switchCase(this,'c2')">
           <span class="cb-emoji">📊</span>
-          <div><div class="cb-title">Diferentes niveles</div><div class="cb-sub">Heterogeneidad en el aula</div></div>
+          <div><div class="cb-title">Diferentes niveles</div><div class="cb-sub">Heterogeneidad y diversidad</div></div>
         </button>
         <button class="case-btn" onclick="switchCase(this,'c3')">
           <span class="cb-emoji">🔗</span>
-          <div><div class="cb-title">Teoría desconectada</div><div class="cb-sub">No ven cómo aplicar los contenidos</div></div>
+          <div><div class="cb-title">Teoría desconectada</div><div class="cb-sub">Contenidos sin aplicación real</div></div>
         </button>
         <button class="case-btn" onclick="switchCase(this,'c4')">
           <span class="cb-emoji">🗣️</span>
-          <div><div class="cb-title">Comunicación insegura</div><div class="cb-sub">Evitan expresarse o presentar</div></div>
+          <div><div class="cb-title">Comunicación insegura</div><div class="cb-sub">Dificultad para exponer</div></div>
         </button>
         <button class="case-btn" onclick="switchCase(this,'c5')">
           <span class="cb-emoji">🧩</span>
-          <div><div class="cb-title">Bloqueo ante tareas abiertas</div><div class="cb-sub">No saben por dónde empezar</div></div>
+          <div><div class="cb-title">Bloqueo ante tareas abiertas</div><div class="cb-sub">Dificultad para iniciar proyectos</div></div>
         </button>
       </div>
 
       <div class="reveal d2">
         <div id="c1" class="case-panel active">
-          <div class="panel-block pb-situation">
-            <div class="pb-label">Situación</div>
-            <div class="pb-text">Participación pasiva. Respuestas mínimas. Dificultad para implicarse en dinámicas colectivas.</div>
-          </div>
-          <div class="panel-block pb-method">
-            <div class="pb-label">Cómo se trabaja</div>
-            <ul class="pb-list">
-              <li>Trabajo en equipo con roles definidos desde el inicio</li>
-              <li>Tareas progresivas: de simple a complejo</li>
-              <li>Las decisiones se presentan, no solo se ejecutan</li>
-            </ul>
-          </div>
-          <div class="panel-block pb-result">
-            <div class="pb-label">Resultado observado</div>
-            <ul class="pb-list">
-              <li>Implicación progresiva conforme avanza el proyecto</li>
-              <li>El rol asignado genera responsabilidad compartida</li>
-            </ul>
-          </div>
+          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Participación pasiva. Respuestas mínimas. Dificultad para implicarse en dinámicas colectivas.</div></div>
+          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Trabajo cooperativo con roles definidos desde el inicio</li><li>Hitos progresivos: de tareas simples a proyectos complejos</li><li>Toma de decisiones justificada y presentada al grupo</li></ul></div>
+          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Implicación progresiva conforme avanza el proyecto</li><li>El rol asignado genera responsabilidad compartida</li></ul></div>
         </div>
-
         <div id="c2" class="case-panel">
-          <div class="panel-block pb-situation">
-            <div class="pb-label">Situación</div>
-            <div class="pb-text">Alumnado con ritmos muy diferentes. Algunos avanzan rápido, otros necesitan más tiempo o apoyo.</div>
-          </div>
-          <div class="panel-block pb-method">
-            <div class="pb-label">Cómo se trabaja</div>
-            <ul class="pb-list">
-              <li>Tareas con niveles de profundidad escalables</li>
-              <li>Equipos heterogéneos con roles que aprovechan fortalezas</li>
-              <li>Recursos diferenciados según ritmo de aprendizaje</li>
-            </ul>
-          </div>
-          <div class="panel-block pb-result">
-            <div class="pb-label">Resultado observado</div>
-            <ul class="pb-list">
-              <li>Todos avanzan sin esperar ni sentirse rezagados</li>
-              <li>Aprendizaje entre iguales dentro del equipo</li>
-            </ul>
-          </div>
+          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Aula heterogénea con diferentes ritmos, niveles de motivación y competencias de partida.</div></div>
+          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Diseño Universal para el Aprendizaje (DUA) con múltiples opciones de expresión</li><li>Grupos heterogéneos para fomentar el aprendizaje cooperativo</li><li>Actividades multinivel y andamiaje en el aula</li></ul></div>
+          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Integración real del alumnado con necesidades específicas</li><li>Progreso individualizado respetando los ritmos de cada alumno</li></ul></div>
         </div>
-
         <div id="c3" class="case-panel">
-          <div class="panel-block pb-situation">
-            <div class="pb-label">Situación</div>
-            <div class="pb-text">El alumnado aprende contenidos pero no ve cómo aplicarlos en contextos reales.</div>
-          </div>
-          <div class="panel-block pb-method">
-            <div class="pb-label">Cómo se trabaja</div>
-            <ul class="pb-list">
-              <li>Proyectos basados en problemas empresariales reales</li>
-              <li>Documentación y procesos que usan en la práctica</li>
-              <li>Presentaciones a audiencias reales o simuladas</li>
-            </ul>
-          </div>
-          <div class="panel-block pb-result">
-            <div class="pb-label">Resultado observado</div>
-            <ul class="pb-list">
-              <li>Comprensión profunda del para qué de cada contenido</li>
-              <li>Mayor motivación y retención del aprendizaje</li>
-            </ul>
-          </div>
+          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">El alumnado percibe los contenidos como abstractos y desconectados del entorno profesional real.</div></div>
+          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>ABP contextualizado en problemas empresariales reales</li><li>Documentación administrativa, planes comerciales y proyectos viables</li><li>Presentación de resultados bajo criterios de evaluación profesionales</li></ul></div>
+          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Comprensión profunda de la utilidad real de cada contenido</li><li>Mayor motivación y retención significativa del aprendizaje</li></ul></div>
         </div>
-
         <div id="c4" class="case-panel">
-          <div class="panel-block pb-situation">
-            <div class="pb-label">Situación</div>
-            <div class="pb-text">Inseguridad a la hora de expresarse o presentar ante el grupo o ante personas externas.</div>
-          </div>
-          <div class="panel-block pb-method">
-            <div class="pb-label">Cómo se trabaja</div>
-            <ul class="pb-list">
-              <li>Presentaciones progresivas: primero en pequeño grupo, luego en grande</li>
-              <li>Feedback constructivo y normalización del error</li>
-              <li>Entrenamiento en comunicación profesional</li>
-            </ul>
-          </div>
-          <div class="panel-block pb-result">
-            <div class="pb-label">Resultado observado</div>
-            <ul class="pb-list">
-              <li>Ganancia de confianza observable en cada presentación</li>
-              <li>Mejora en habilidades de comunicación profesional</li>
-            </ul>
-          </div>
+          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Inseguridad y miedo escénico al presentar proyectos ante el grupo o evaluadores.</div></div>
+          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Entrenamiento progresivo: de pequeño grupo a gran grupo</li><li>Feedback constructivo y normalización del error</li><li>Pautas de comunicación verbal y no verbal para el ámbito profesional</li></ul></div>
+          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Ganancia progresiva de confianza en la expresión oral</li><li>Mejora cualitativa en la calidad de las presentaciones</li></ul></div>
         </div>
-
         <div id="c5" class="case-panel">
-          <div class="panel-block pb-situation">
-            <div class="pb-label">Situación</div>
-            <div class="pb-text">Parálisis ante tareas abiertas o proyectos sin estructura clara. No saben por dónde empezar.</div>
-          </div>
-          <div class="panel-block pb-method">
-            <div class="pb-label">Cómo se trabaja</div>
-            <ul class="pb-list">
-              <li>Plantillas y guías que estructuran el proceso</li>
-              <li>Hitos intermedios con retroalimentación</li>
-              <li>Ejemplos reales de proyectos completados</li>
-            </ul>
-          </div>
-          <div class="panel-block pb-result">
-            <div class="pb-label">Resultado observado</div>
-            <ul class="pb-list">
-              <li>Autonomía progresiva en la ejecución de proyectos</li>
-              <li>Reducción de la dependencia del docente</li>
-            </ul>
-          </div>
+          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Bloqueo y falta de iniciativa ante tareas abiertas que exigen autonomía.</div></div>
+          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Plantillas estructuradas, guías de proceso y rúbricas desde el inicio</li><li>Hitos intermedios de supervisión con retroalimentación inmediata</li><li>Análisis guiado de proyectos completados de referencia</li></ul></div>
+          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Autonomía progresiva en la ejecución de proyectos</li><li>Reducción de la ansiedad ante tareas complejas</li></ul></div>
         </div>
       </div>
     </div>
@@ -1079,117 +818,59 @@ footer {
 <section id="proyectos">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label">Portfolio / Proyectos</div>
-      <h2 class="sec-title">Evidencias de aprendizaje en el aula</h2>
-      <p class="sec-desc">Ejemplos de proyectos reales que los estudiantes crean, deciden y presentan.</p>
+      <div class="sec-label">Portfolio</div>
+      <h2 class="sec-title">Proyectos que realiza el alumnado</h2>
+      <p class="sec-desc">Ejemplos de proyectos curriculares reales que el alumnado crea, decide y presenta en el marco de los módulos.</p>
     </div>
-
     <div class="proj-tabs">
       <button class="proj-tab active" onclick="switchProj(this,'p1')">🏢 Empresa simulada</button>
       <button class="proj-tab" onclick="switchProj(this,'p2')">💡 Pitch de negocio</button>
       <button class="proj-tab" onclick="switchProj(this,'p3')">▶ Contenido con IA</button>
       <button class="proj-tab" onclick="switchProj(this,'p4')">📄 Documentos de Empresa</button>
     </div>
-
     <div id="p1" class="proj-panel active">
       <div>
         <div class="proj-title">Empresa simulada</div>
-        <div class="proj-desc">El alumnado crea una empresa ficticia desde cero. Definen producto, mercado, estructura organizativa y presentan ante la clase.</div>
+        <div class="proj-desc">El alumnado constituye una empresa ficticia desde cero: modelo de negocio, análisis de mercado, estructura organizativa y defensa de resultados.</div>
         <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items">
-          <li class="pi-learn">Estructura y funcionamiento de una empresa real</li>
-          <li class="pi-learn">Toma de decisiones en contexto empresarial</li>
-          <li class="pi-learn">Trabajo en equipo con roles diferenciados</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-learn">Estructura organizativa y áreas funcionales de una empresa</li><li class="pi-learn">Toma de decisiones estratégicas en contexto simulado</li><li class="pi-learn">Trabajo cooperativo con roles profesionales diferenciados</li></ul>
         <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items">
-          <li class="pi-produce">Plan de empresa documentado</li>
-          <li class="pi-produce">Presentación profesional (diapositivas + oral)</li>
-          <li class="pi-produce">Organigrama y descripción de roles</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-produce">Plan de empresa estructurado (análisis, marketing, operaciones)</li><li class="pi-produce">Presentación técnica de defensa del proyecto</li><li class="pi-produce">Organigrama corporativo y manual de funciones</li></ul>
       </div>
-      <div class="proj-visual">
-        <div style="text-align:center">
-          <div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:140px;height:100px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1rem">🏢</div>
-          <div style="font-size:0.75rem;color:var(--muted)">Estructura · Decisiones · Presentación</div>
-        </div>
-      </div>
+      <div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">🏢</div><div style="font-size:0.72rem;color:var(--muted)">Estructura · Decisiones · Presentación</div></div></div>
     </div>
-
     <div id="p2" class="proj-panel">
       <div>
         <div class="proj-title">Pitch de negocio</div>
-        <div class="proj-desc">Equipos presentan una idea de negocio en 5 minutos. Deben convencer con propuesta de valor clara, mercado identificado y diferencial.</div>
+        <div class="proj-desc">Los equipos defienden su propuesta de valor en 5 minutos ante una audiencia técnica o potenciales colaboradores.</div>
         <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items">
-          <li class="pi-learn">Desarrollo de competencias de comunicación oral</li>
-          <li class="pi-learn">Toma de decisiones y trabajo en equipo mediante simulación empresarial</li>
-          <li class="pi-learn">Presentación profesional ante audiencia</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-learn">Comunicación sintética y persuasiva de alto impacto</li><li class="pi-learn">Propuesta de valor y ventaja competitiva diferencial</li><li class="pi-learn">Presentación técnica ante tribunal de evaluación</li></ul>
         <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items">
-          <li class="pi-produce">Pitch oral de 5 minutos grabado</li>
-          <li class="pi-produce">Presentación visual (máx. 10 diapositivas)</li>
-          <li class="pi-produce">Documento con análisis de viabilidad</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-produce">Pitch grabado de 5 minutos de duración máxima</li><li class="pi-produce">Soporte visual optimizado (máximo 10 diapositivas)</li><li class="pi-produce">Ficha técnica con análisis de viabilidad básico</li></ul>
       </div>
-      <div class="proj-visual">
-        <div style="text-align:center">
-          <div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:140px;height:100px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1rem">💡</div>
-          <div style="font-size:0.75rem;color:var(--muted)">Idea · Mercado · Diferencial</div>
-        </div>
-      </div>
+      <div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">💡</div><div style="font-size:0.72rem;color:var(--muted)">Idea · Mercado · Diferencial</div></div></div>
     </div>
-
     <div id="p3" class="proj-panel">
       <div>
         <div class="proj-title">Contenido con IA</div>
-        <div class="proj-desc">Crean un vídeo corto para redes sociales usando herramientas de IA generativa. Aprenden a usar la IA con criterio propio, no como atajo.</div>
+        <div class="proj-desc">Producción de contenido audiovisual para canales digitales usando IA generativa, con enfoque de uso ético, crítico y productivo.</div>
         <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items">
-          <li class="pi-learn">Cómo usar IA generativa para crear contenido visual</li>
-          <li class="pi-learn">Storytelling para comunicación en redes sociales</li>
-          <li class="pi-learn">Criterio editorial: qué publicar, cómo y por qué</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-learn">Uso funcional de herramientas de IA generativa aplicadas a la producción</li><li class="pi-learn">Estructura narrativa y guionización para comunicación digital</li><li class="pi-learn">Criterio ético y de calidad en la curación de contenidos generados</li></ul>
         <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items">
-          <li class="pi-produce">Vídeo corto tipo redes sociales (30–60 segundos)</li>
-          <li class="pi-produce">Guion y plan de contenido documentado</li>
-          <li class="pi-produce">Material listo para publicar o presentar</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-produce">Vídeo de comunicación corporativa (30–60 segundos)</li><li class="pi-produce">Guion literario, técnico y plan de producción documentado</li><li class="pi-produce">Dossier justificativo del uso y criterios aplicados con IA</li></ul>
       </div>
-      <div class="proj-visual">
-        <div style="text-align:center">
-          <div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:140px;height:100px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1rem">▶</div>
-          <div style="font-size:0.75rem;color:var(--muted)">Guion · IA · Montaje profesional</div>
-        </div>
-      </div>
+      <div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">▶</div><div style="font-size:0.72rem;color:var(--muted)">Guion · IA · Montaje profesional</div></div></div>
     </div>
-
     <div id="p4" class="proj-panel">
       <div>
         <div class="proj-title">Documentos de Empresa</div>
-        <div class="proj-desc">Redactan documentación real de su empresa simulada: normas internas, políticas y comunicaciones profesionales. Aprenden que la claridad escrita es una competencia profesional.</div>
+        <div class="proj-desc">Redacción y formalización de la documentación interna oficial de la empresa simulada, con rigor administrativo y comunicación escrita profesional.</div>
         <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items">
-          <li class="pi-learn">Redacción profesional con estructura y tono adecuados</li>
-          <li class="pi-learn">Cómo funcionan las políticas internas en organizaciones reales</li>
-          <li class="pi-learn">Claridad y precisión en comunicación empresarial escrita</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-learn">Redacción administrativa formal y tono corporativo</li><li class="pi-learn">Diseño y aplicación de políticas y reglamentos internos</li><li class="pi-learn">Claridad y precisión en la comunicación empresarial escrita</li></ul>
         <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items">
-          <li class="pi-produce">Reglamento interno y normas de equipo</li>
-          <li class="pi-produce">Política de atención al cliente</li>
-          <li class="pi-produce">Comunicados y cartas profesionales funcionales</li>
-        </ul>
+        <ul class="proj-items"><li class="pi-produce">Reglamento de régimen interno y normas de funcionamiento</li><li class="pi-produce">Manual de política de atención al cliente</li><li class="pi-produce">Modelos de comunicación externa, circulares e informes</li></ul>
       </div>
-      <div class="proj-visual">
-        <div style="width:100%;max-width:220px">
-          <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.8rem;margin-bottom:0.5rem;border-left:3px solid var(--accent);font-size:0.78rem;font-weight:600;color:var(--navy)">Reglamento interno</div>
-          <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.8rem;margin-bottom:0.5rem;border-left:3px solid var(--accent2);font-size:0.78rem;font-weight:600;color:var(--navy)">Política de cliente</div>
-          <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.8rem;border-left:3px solid var(--muted);font-size:0.78rem;font-weight:600;color:var(--navy)">Comunicaciones oficiales</div>
-        </div>
-      </div>
+      <div class="proj-visual"><div style="width:100%;max-width:200px"><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent);font-size:0.75rem;font-weight:600;color:var(--navy)">Reglamento interno</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent2);font-size:0.75rem;font-weight:600;color:var(--navy)">Política de cliente</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;border-left:3px solid var(--muted);font-size:0.75rem;font-weight:600;color:var(--navy)">Comunicaciones oficiales</div></div></div>
     </div>
   </div>
 </section>
@@ -1207,74 +888,21 @@ footer {
       <div class="reveal d1">
         <h3 style="font-family:var(--font-h);font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:1.5rem">Experiencia docente y formativa</h3>
         <div class="exp-timeline">
-          <div class="exp-item exp-active">
-            <div class="exp-dot">▶</div>
-            <div class="exp-body">
-              <div class="exp-year">2025 – Actualidad</div>
-              <div class="exp-role">Profesor auxiliar — Código Escuela 4.0</div>
-              <div class="exp-place">Consejería de Educación, Región de Murcia</div>
-              <div class="exp-desc">Talleres de robótica, programación y pensamiento computacional en más de 15 centros educativos. Diseño de materiales propios y colaboración con los equipos docentes de cada centro.</div>
-            </div>
-          </div>
-          <div class="exp-item exp-active">
-            <div class="exp-dot">▶</div>
-            <div class="exp-body">
-              <div class="exp-year">2026</div>
-              <div class="exp-role">Docente (Prácticum MAES) — IES Pedro Guillén</div>
-              <div class="exp-place">260 horas · FP Economía y Empresa</div>
-              <div class="exp-desc">Gestión autónoma de grupo, planificación de sesiones, evaluación por competencias y coordinación con el equipo docente.</div>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-dot">◎</div>
-            <div class="exp-body">
-              <div class="exp-year">2015 – 2018</div>
-              <div class="exp-role">Formador FPE</div>
-              <div class="exp-place">Formación Profesional para el Empleo</div>
-              <div class="exp-desc">Formación en competencias digitales orientada a la inserción laboral. Diseño y dinamización de acciones formativas con seguimiento del alumnado.</div>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-dot">◎</div>
-            <div class="exp-body">
-              <div class="exp-year">2004 – 2022</div>
-              <div class="exp-role">Gestión Comercial, Administración y Marketing Digital</div>
-              <div class="exp-place">Trayectoria profesional en empresa</div>
-              <div class="exp-desc">Casi dos décadas en gestión comercial, administración y consultoría de marketing digital. Base directa para módulos de EIE, Gestión Empresarial y Marketing.</div>
-            </div>
-          </div>
+          <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2025 – Actualidad</div><div class="exp-role">Profesor auxiliar — Código Escuela 4.0</div><div class="exp-place">Consejería de Educación, Región de Murcia</div><div class="exp-desc">Talleres de robótica, programación y pensamiento computacional en más de 15 centros. Diseño de materiales curriculares propios y coordinación con los equipos docentes.</div></div></div>
+          <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2026</div><div class="exp-role">Docente (Prácticum MAES) — IES Pedro Guillén</div><div class="exp-place">260 horas lectivas · FP Economía y Empresa</div><div class="exp-desc">Gestión autónoma de grupo-clase, planificación de unidades didácticas, evaluación por competencias (LOMLOE) y coordinación con el departamento.</div></div></div>
+          <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2015 – 2018</div><div class="exp-role">Formador FPE</div><div class="exp-place">Formación Profesional para el Empleo</div><div class="exp-desc">Acciones formativas oficiales en competencias digitales orientadas a la inserción laboral. Programación, tutorización y evaluación del alumnado.</div></div></div>
+          <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2004 – 2022</div><div class="exp-role">Gestión Comercial, Administración y Marketing Digital</div><div class="exp-place">Trayectoria profesional en empresa privada</div><div class="exp-desc">Casi dos décadas en gestión comercial, administración y consultoría de marketing digital. Base directa para EIE, Gestión Empresarial y Marketing.</div></div></div>
         </div>
       </div>
       <div class="reveal d2">
         <h3 style="font-family:var(--font-h);font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:1.5rem">Formación académica y certificaciones</h3>
         <div class="academic-list">
-          <div class="acad-item">
-            <div class="acad-title">Máster en Formación del Profesorado (MAES)</div>
-            <div class="acad-sub">Esp. Economía, Empresa y Turismo</div>
-            <span class="acad-badge ab-green">Finalización: junio 2026</span>
-          </div>
-          <div class="acad-item">
-            <div class="acad-title">Máster en Marketing & Digital Business</div>
-            <div class="acad-sub">Estrategia digital, analítica, SEO/SEM, negocio digital — Tago Estudios, 2015</div>
-            <span class="acad-badge ab-gray">Completado</span>
-          </div>
-          <div class="acad-item">
-            <div class="acad-title">Diplomatura en Ciencias Empresariales / ADE Turísticas</div>
-            <div class="acad-sub">Homologada en España</div>
-            <span class="acad-badge ab-gray">Completado</span>
-          </div>
-          <div class="acad-item">
-            <div class="acad-title">Docencia para FPE</div>
-            <div class="acad-sub">Certificación oficial para Formación Profesional para el Empleo</div>
-          </div>
-          <div class="acad-item">
-            <div class="acad-title">IA aplicada en educación</div>
-            <div class="acad-sub">Microsoft Learn · Herramientas de IA generativa para el aula</div>
-          </div>
-          <div class="acad-item">
-            <div class="acad-title">Competencias digitales y transformación digital</div>
-            <div class="acad-sub">Google Digital Academy · Comercio electrónico y transformación digital</div>
-          </div>
+          <div class="acad-item"><div class="acad-title">Máster en Formación del Profesorado (MAES)</div><div class="acad-sub">Esp. Economía, Empresa y Turismo</div><span class="acad-badge ab-green">Finalización: junio 2026</span></div>
+          <div class="acad-item"><div class="acad-title">Máster en Marketing & Digital Business</div><div class="acad-sub">Estrategia digital, analítica, SEO/SEM — Tago Estudios, 2015</div><span class="acad-badge ab-gray">Completado</span></div>
+          <div class="acad-item"><div class="acad-title">Diplomatura en Ciencias Empresariales / ADE Turísticas</div><div class="acad-sub">Homologada en España</div><span class="acad-badge ab-gray">Completado</span></div>
+          <div class="acad-item"><div class="acad-title">Docencia para FPE</div><div class="acad-sub">Certificación oficial para Formación Profesional para el Empleo</div></div>
+          <div class="acad-item"><div class="acad-title">IA aplicada en educación</div><div class="acad-sub">Microsoft Learn · Herramientas de IA generativa para el aula</div></div>
+          <div class="acad-item"><div class="acad-title">Competencias digitales y transformación digital</div><div class="acad-sub">Google Certifications · Competencia digital aplicada</div></div>
         </div>
       </div>
     </div>
@@ -1287,73 +915,75 @@ footer {
 <section id="contacto">
   <div class="container">
     <div class="contacto-inner reveal">
-      <div class="sec-label" style="color:rgba(255,255,255,0.4)">Contacto</div>
-      <h2 class="sec-title">Disponible para incorporación<br>o colaboración</h2>
+      <div class="sec-label" style="color:rgba(255,255,255,0.4)">Contacto y Selección</div>
+      <h2 class="sec-title">Disponible para incorporación inmediata<br>o procesos de selección</h2>
       <p class="contacto-sub">
-        Para incorporación a centros educativos, proyectos de innovación o colaboración docente en FP, Bachillerato o competencia digital.
+        Abierto a entrevistas docentes, incorporaciones y sustituciones en centros educativos de la Región de Murcia para puestos de FP, ESO y Bachillerato.
       </p>
-      <a href="mailto:hola@juanpeco.com" class="contacto-email">hola@juanpeco.com</a>
+      <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="contacto-email">hola@juanpeco.com</a>
       <div class="contacto-links">
-        <a href="https://wa.me/34647033746" target="_blank" rel="noopener" class="clink">
-          <span>💬</span> WhatsApp
-        </a>
-        <a href="CV_Juan_Peco.pdf" target="_blank" class="clink">
-          <span>↓</span> Descargar CV
-        </a>
-        <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" class="clink">
-          <span>📸</span> Instagram
-        </a>
-        <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="clink">
-          <span>🔗</span> LinkedIn
-        </a>
+        <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="clink"><span>📧</span> Solicitar entrevista docente</a>
+        <a href="CV_Juan_Peco.pdf" target="_blank" class="clink"><span>↓</span> Descargar CV</a>
+        <a href="https://wa.me/34647033746" target="_blank" rel="noopener" class="clink"><span>💬</span> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="clink"><span>🔗</span> LinkedIn</a>
       </div>
-      <div class="contacto-note">
-        Juan Peco · Murcia, España · juanpeco.com
-      </div>
+      <div class="contacto-note">Juan Peco · Murcia, España · juanpeco.com</div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── FOOTER INSTITUCIONAL ── -->
 <footer>
-  <span class="footer-text">© 2026 Juan Peco · Docente de Empresa, Economía y Tecnología</span>
-  <span class="footer-text">juanpeco.com</span>
+  <div class="footer-left">
+    <div class="footer-name">Juan Peco</div>
+    <div class="footer-role">Docente de Formación Profesional · Empresa · Economía · Tecnología educativa</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="footer-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" class="footer-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      Instagram
+    </a>
+    <a href="mailto:hola@juanpeco.com" class="footer-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+    <a href="CV_Juan_Peco.pdf" target="_blank" class="footer-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      CV PDF
+    </a>
+  </div>
 </footer>
 
+<button id="toTopBtn" aria-label="Volver arriba">↑</button>
+
 <script>
-// ── NAV SCROLL ──────────────────────────────────────
 const nav = document.getElementById('main-nav');
 const navCta = document.getElementById('nav-cta');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
-    nav.classList.add('scrolled');
-    navCta.style.display = 'inline-block';
-  } else {
-    nav.classList.remove('scrolled');
-    navCta.style.display = 'none';
-  }
+  if (window.scrollY > 60) { nav.classList.add('scrolled'); navCta.style.display = 'inline-block'; }
+  else { nav.classList.remove('scrolled'); navCta.style.display = 'none'; }
 });
 
-// ── HAMBURGER ──────────────────────────────────────
 const burger = document.getElementById('hamburger');
 const mob = document.getElementById('mobile-menu');
 burger.addEventListener('click', () => mob.classList.toggle('open'));
 document.querySelectorAll('.mob-link').forEach(b => b.addEventListener('click', () => mob.classList.remove('open')));
 
-// ── SMOOTH SCROLL ──────────────────────────────────
 function goto(id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth' });
   mob.classList.remove('open');
 }
 
-// ── SCROLL REVEAL ──────────────────────────────────
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// ── CASE SWITCHER ──────────────────────────────────
 function switchCase(btn, panelId) {
   document.querySelectorAll('.case-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.case-panel').forEach(p => p.classList.remove('active'));
@@ -1361,35 +991,22 @@ function switchCase(btn, panelId) {
   document.getElementById(panelId).classList.add('active');
 }
 
-// ── PROJECT SWITCHER ──────────────────────────────
 function switchProj(btn, panelId) {
   document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById(panelId).classList.add('active');
 }
-</script>
-<button id="toTopBtn" aria-label="Volver arriba">
-  ↑
-</button>
 
-<script>
 const toTopBtn = document.getElementById('toTopBtn');
-
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 700) {
-    toTopBtn.classList.add('show');
-  } else {
-    toTopBtn.classList.remove('show');
-  }
+  if (window.scrollY > 700) toTopBtn.classList.add('show');
+  else toTopBtn.classList.remove('show');
 });
+toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-toTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
+// Reinicializar embeds de Instagram si el script ya cargó
+if (window.instgrm) window.instgrm.Embeds.process();
 </script>
 </body>
 </html>
