@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ProyectoFP es una plataforma basada en inteligencia artificial para docentes de Formación Profesional. Genera situaciones de aprendizaje, ABP, rúbricas, programaciones y auditorías pedagógicas." />
+  <title>ProyectoFP | IA para Formación Profesional</title>
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --card:#ffffff;
+      --text:#172033;
+      --muted:#5c6b85;
+      --line:#dbe3f1;
+      --primary:#355cff;
+      --primary2:#0ea5a4;
+      --shadow:0 18px 50px rgba(21, 32, 58, .10);
+      --radius:22px;
+      --max:1120px;
+      --font: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(53,92,255,.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(14,165,164,.10), transparent 28%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 0 24px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:700;
+      letter-spacing:-.02em;
+    }
+    .mark{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      color:#fff;box-shadow:var(--shadow);
+    }
+    .navlinks{display:flex;gap:14px;flex-wrap:wrap}
+    .chip{
+      padding:10px 14px;border:1px solid var(--line);border-radius:999px;
+      background:rgba(255,255,255,.7);backdrop-filter: blur(8px);
+      font-size:.95rem;color:var(--muted);transition:.2s ease;
+    }
+    .chip:hover{transform:translateY(-1px);border-color:#bfcbea;color:var(--text)}
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;
+      padding:18px 0 28px;
+    }
+    .panel{
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(219,227,241,.8);
+      backdrop-filter: blur(12px);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-main{padding:34px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--primary);
+      background:#eef3ff;border:1px solid #dbe4ff;
+      padding:8px 12px;border-radius:999px;
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(2.2rem,5vw,4.2rem);
+      line-height:1.02;margin:0 0 16px;
+      letter-spacing:-.04em;
+    }
+    .lead{
+      font-size:1.08rem;color:var(--muted);
+      max-width:58ch;margin:0 0 24px;
+    }
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:13px 18px;border-radius:14px;border:1px solid transparent;
+      font-weight:700;transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background:linear-gradient(135deg,var(--primary),#5c7bff);
+      color:#fff;box-shadow:0 14px 24px rgba(53,92,255,.20);
+    }
+    .btn.ghost{
+      background:#fff;border-color:var(--line);color:var(--text);
+    }
+    .stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;
+    }
+    .stat{
+      padding:16px;border-radius:18px;background:#fff;border:1px solid var(--line);
+    }
+    .num{font-size:1.8rem;font-weight:800;letter-spacing:-.04em}
+    .label{font-size:.82rem;color:var(--muted);margin-top:4px}
+    .hero-side{
+      padding:24px;display:flex;flex-direction:column;gap:18px;
+    }
+    .shot{
+      border-radius:18px;overflow:hidden;border:1px solid var(--line);
+      aspect-ratio: 4 / 4.35;
+      background:
+        linear-gradient(180deg, rgba(53,92,255,.08), transparent 30%),
+        #fff;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:22px;
+    }
+    .shotbox{
+      width:100%;
+      border-radius:18px;
+      border:1px dashed #cbd6ea;
+      padding:26px 18px;
+      background:linear-gradient(180deg,#fbfcff, #f4f7fd);
+    }
+    .shotbox h3{margin:0 0 10px;font-size:1.1rem}
+    .shotbox p{margin:0;color:var(--muted);font-size:.95rem}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      margin-top:14px;padding:8px 12px;border-radius:999px;
+      background:#eefaf8;color:#117a74;font-size:.84rem;font-weight:700;
+    }
+    .section{padding:18px 0 0}
+    .title{
+      font-size:1.05rem;text-transform:uppercase;letter-spacing:.12em;
+      color:var(--primary);font-weight:800;margin:0 0 10px;
+    }
+    .h2{
+      font-size:clamp(1.5rem,3vw,2.4rem);
+      line-height:1.08;margin:0 0 12px;letter-spacing:-.03em;
+    }
+    .sub{color:var(--muted);max-width:70ch;margin:0}
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;
+    }
+    .card{
+      padding:22px;background:rgba(255,255,255,.9);
+      border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 22px rgba(20,32,58,.05);
+    }
+    .card h3{margin:0 0 10px;font-size:1.06rem}
+    .card p{margin:0;color:var(--muted);font-size:.96rem}
+    .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .tag{
+      padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);
+      color:var(--muted);font-size:.86rem;
+    }
+    .featurelist{
+      list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px;
+    }
+    .featurelist li{
+      display:flex;gap:10px;align-items:flex-start;
+      color:var(--text);font-size:.96rem;
+    }
+    .dot{
+      width:9px;height:9px;border-radius:50%;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      margin-top:8px;flex:0 0 auto;
+    }
+    .cta{
+      margin:28px 0 0;
+      padding:26px;
+      border-radius:var(--radius);
+      background:linear-gradient(135deg,#111d38,#22355f 60%, #1c9f98);
+      color:#fff;
+      box-shadow:var(--shadow);
+      display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    }
+    .cta p{margin:6px 0 0;color:rgba(255,255,255,.78)}
+    .cta .btn.ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff}
+    footer{
+      padding:26px 0 12px;
+      color:var(--muted);font-size:.92rem;
+      display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .nav{flex-direction:column;align-items:flex-start;gap:14px}
+      .hero-main{padding:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="mark">FP</div>
+        <div>
+          <div>ProyectoFP</div>
+          <div style="font-size:.85rem;color:var(--muted);font-weight:600">IA para Formación Profesional</div>
+        </div>
+      </div>
+      <nav class="navlinks">
+        <a class="chip" href="#que-es">Qué es</a>
+        <a class="chip" href="#funciones">Funciones</a>
+        <a class="chip" href="#impacto">Impacto</a>
+        <a class="chip" href="https://github.com/juanpeco/ProyectoFP" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="panel hero-main">
+        <div class="eyebrow">Proyecto propio · Juan Peco</div>
+        <h1>Una herramienta de IA para crear recursos de FP con criterio pedagógico.</h1>
+        <p class="lead">
+          ProyectoFP genera situaciones de aprendizaje, ABP, rúbricas, debates, casos prácticos, programaciones y auditorías curriculares alineadas con la LOMLOE.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/juanpeco/ProyectoFP" target="_blank" rel="noopener">Ver código</a>
+          <a class="btn ghost" href="https://proyectofp-jbqylxe3.manus.space" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="num">SA</div>
+            <div class="label">Situaciones de aprendizaje</div>
+          </div>
+          <div class="stat">
+            <div class="num">ABP</div>
+            <div class="label">Proyectos y retos reales</div>
+          </div>
+          <div class="stat">
+            <div class="num">INS</div>
+            <div class="label">Modo Inspección Educativa</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel hero-side">
+        <div class="shot">
+          <div class="shotbox">
+            <h3>ProyectoFP</h3>
+            <p>Plataforma para docentes de Formación Profesional.</p>
+            <div class="badge">IA · LOMLOE · Evaluación competencial</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Lo que aporta</h3>
+          <p>Reduce tiempo de preparación, mejora la calidad de los materiales y ayuda a auditar la coherencia entre resultados de aprendizaje, criterios de evaluación y actividades.</p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="que-es" class="section">
+      <div class="title">Qué es</div>
+      <h2 class="h2">Una plataforma creada para docentes de FP</h2>
+      <p class="sub">
+        No es un generador genérico. Está enfocada en Formación Profesional y en los documentos reales que un docente necesita preparar en el día a día.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Diseño instruccional</h3>
+          <p>Genera recursos con estructura pedagógica clara y contexto profesional realista.</p>
+        </div>
+        <div class="card">
+          <h3>Evaluación competencial</h3>
+          <p>Ayuda a vincular actividades, evidencias y criterios de evaluación con coherencia.</p>
+        </div>
+        <div class="card">
+          <h3>Productividad docente</h3>
+          <p>Acelera la preparación de recursos y mejora la calidad del material entregado al alumnado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="funciones" class="section">
+      <div class="title">Funciones</div>
+      <h2 class="h2">Qué puede hacer ProyectoFP</h2>
+      <ul class="featurelist">
+        <li><span class="dot"></span>Generar situaciones de aprendizaje y proyectos ABP.</li>
+        <li><span class="dot"></span>Crear rúbricas, pruebas de evaluación y actividades de refuerzo o ampliación.</li>
+        <li><span class="dot"></span>Diseñar programaciones didácticas, unidades y casos prácticos.</li>
+        <li><span class="dot"></span>Auditar la coherencia curricular con el Modo Inspección Educativa.</li>
+        <li><span class="dot"></span>Trabajar en equipo desde el Modo Departamento.</li>
+      </ul>
+      <div class="tagrow">
+        <span class="tag">FP</span>
+        <span class="tag">LOMLOE</span>
+        <span class="tag">IA educativa</span>
+        <span class="tag">ABP</span>
+        <span class="tag">Inspección</span>
+        <span class="tag">Departamento</span>
+      </div>
+    </section>
+
+    <section id="impacto" class="cta">
+      <div>
+        <div style="font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.82">Impacto docente</div>
+        <h2 style="margin:8px 0 0;font-size:clamp(1.35rem,3vw,2rem);line-height:1.08;">Más calidad pedagógica y menos tiempo perdido.</h2>
+        <p>Una herramienta propia para mostrar tu perfil como docente de FP, innovador y con capacidad real de crear producto educativo.</p>
+      </div>
+      <div class="actions" style="margin:0">
+        <a class="btn primary" href="mailto:hola@juanpeco.com?subject=ProyectoFP">Contactar</a>
+        <a class="btn ghost" href="/">Volver a la web</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>Juan Peco · Formación Profesional · Región de Murcia</div>
+      <div>ProyectoFP · página propia en <strong>/proyectofp</strong></div>
+    </footer>
+  </div>
+</body>
+</html>
