@@ -294,177 +294,254 @@ section { padding: 6rem 2rem; }
 #metodologia { background: var(--white); }
 .met-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
 .cases-nav { display: flex; flex-direction: column; gap: 0.5rem; }
-.case-btn { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.9rem 1rem; border: 1.5px solid var(--border); border-radius: 10px; background: var(--bg-soft); text-align: left; transition: all 0.2s; color: var(--slate); }
-.case-btn:hover { border-color: rgba(79,110,247,0.3); background: var(--light); }
-.case-btn.active { border-color: var(--accent); background: var(--navy); color: var(--white); }
-.case-btn.active .cb-sub { color: rgba(255,255,255,0.65); }
-.cb-emoji { font-size: 1.3rem; flex-shrink: 0; }
-.cb-title { font-size: 0.83rem; font-weight: 600; }
-.cb-sub { font-size: 0.72rem; color: var(--muted); }
-.case-panel { display: none; animation: fadeInPanel 0.35s var(--ease) both; }
-.case-panel.active { display: block; }
-@keyframes fadeInPanel { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-.panel-block { padding: 1rem 1.1rem; border-radius: 10px; margin-bottom: 0.8rem; border-left: 3px solid transparent; }
-.pb-situation { background: rgba(79,110,247,0.05); border-left-color: var(--accent); }
-.pb-method    { background: rgba(6,182,160,0.05); border-left-color: var(--accent2); }
-.pb-result    { background: rgba(107,122,153,0.05); border-left-color: var(--muted); }
-.pb-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
-.pb-situation .pb-label { color: var(--accent); } .pb-method .pb-label { color: var(--accent2); } .pb-result .pb-label { color: var(--muted); }
-.pb-text { font-size: 0.83rem; color: var(--slate); }
-.pb-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
-.pb-list li { font-size: 0.83rem; position: relative; padding-left: 0.9rem; color: var(--slate); }
-.pb-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); }
+.case-btn { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.9rem 1rem; border: 1.5px solid var(--border); border-radius: 10px; background: var(--bg-soft); text-align: left; transition: all 0.2s; }
+.case-btn.active { border-color: var(--accent); background: var(--white); box-shadow: 0 4px 12px rgba(79,110,247,0.1); }
+.cb-emoji { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+.cb-title { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.1rem; }
+.cb-sub { font-size: 0.75rem; color: var(--muted); }
 
-/* ── PROYECTOS ───────────────────────────────────────── */
-#proyectos { background: var(--bg-soft); }
-.proj-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem; }
-.proj-tab { padding: 0.6rem 1.1rem; border: 1px solid var(--border); border-radius: 8px; font-size: 0.82rem; font-weight: 600; color: var(--muted); transition: all 0.2s; }
-.proj-tab:hover { border-color: var(--accent); color: var(--accent); }
-.proj-tab.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
-.proj-panel { display: none; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; animation: fadeInPanel 0.35s var(--ease) both; }
-.proj-panel.active { display: grid; }
-.proj-title { font-family: var(--font-h); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
-.proj-desc { font-size: 0.9rem; color: var(--slate); margin-bottom: 1.5rem; line-height: 1.6; }
-.proj-col-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 0.5rem; }
-.proj-items { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
-.proj-items li { font-size: 0.83rem; position: relative; padding-left: 1.1rem; color: var(--slate); }
-.proj-items li::before { position: absolute; left: 0; font-weight: 700; }
-.pi-learn::before { content: '✓'; color: var(--accent2); }
-.pi-produce::before { content: '⎋'; color: var(--accent); }
-.proj-visual { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); aspect-ratio: 1.4; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.case-content { position: relative; min-height: 300px; }
+.case-panel { position: absolute; inset: 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s var(--ease); }
+.case-panel.active { opacity: 1; visibility: visible; transform: translateY(0); }
+.cp-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.2rem; }
+.cp-label { font-size: 0.72rem; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 1px; }
+.cp-title { font-family: var(--font-h); font-size: 1.4rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
+.cp-desc { font-size: 0.9rem; color: var(--slate); line-height: 1.7; margin-bottom: 1.5rem; }
 
-/* ── EXPERIENCIA ─────────────────────────────────────── */
-#experiencia { background: var(--white); }
-.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; }
-.exp-timeline { display: flex; flex-direction: column; gap: 1.5rem; }
-.exp-item { display: flex; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-.exp-item:last-child { border-bottom: none; }
-.exp-dot { font-size: 0.8rem; color: var(--accent); font-weight: 700; flex-shrink: 0; width: 20px; text-align: center; padding-top: 2px; }
-.exp-item.exp-active .exp-dot { color: var(--accent2); }
-.exp-year { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
-.exp-role { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin: 0.3rem 0; }
-.exp-place { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem; }
-.exp-desc { font-size: 0.8rem; color: var(--slate); line-height: 1.6; }
-.academic-list { display: flex; flex-direction: column; gap: 0.8rem; }
-.acad-item { padding: 1.1rem 1.3rem; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 11px; transition: all 0.2s; }
-.acad-item:hover { border-color: rgba(79,110,247,0.25); transform: translateX(4px); }
-.acad-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
-.acad-sub { font-size: 0.77rem; color: var(--muted); line-height: 1.4; }
-.acad-badge { display: inline-block; margin-top: 0.35rem; padding: 0.15rem 0.55rem; border-radius: 100px; font-size: 0.65rem; font-weight: 700; }
-.ab-green { background: rgba(6,182,160,0.1); color: var(--accent2); }
-.ab-gray  { background: rgba(107,122,153,0.1); color: var(--muted); }
+.cp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.cp-box { padding: 1.1rem; border-radius: 12px; border: 1px solid var(--border); }
+.cp-box-title { font-size: 0.75rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem; }
+.cp-box-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.cp-box-list li { font-size: 0.78rem; color: var(--slate); position: relative; padding-left: 0.9rem; line-height: 1.4; }
+.cp-box-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
 
-/* ── CONTACTO ────────────────────────────────────────── */
-#contacto { background: var(--navy); color: white; }
-.contacto-inner { max-width: 780px; margin: 0 auto; text-align: center; }
-.contacto-inner .sec-title { color: white; }
-.contacto-sub { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin: 0 auto 2.5rem; max-width: 500px; line-height: 1.7; }
-.contacto-email { display: inline-block; font-family: var(--font-h); font-size: 1.5rem; font-weight: 600; color: white; border-bottom: 2px solid rgba(79,110,247,0.5); padding-bottom: 0.2rem; margin-bottom: 2.5rem; transition: border-color 0.2s; }
-.contacto-email:hover { border-color: var(--accent); }
-.contacto-links { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
-.clink { padding: 0.7rem 1.4rem; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 9px; font-size: 0.83rem; font-weight: 500; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
-.clink:hover { border-color: rgba(255,255,255,0.4); color: white; background: rgba(255,255,255,0.06); }
-.contacto-note { font-size: 0.78rem; color: rgba(255,255,255,0.35); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; }
+/* ── NAV MOBILE ──────────────────────────────────────── */
+#mobile-menu {
+  position: fixed; inset: 0; z-index: 200;
+  background: var(--white);
+  display: flex; flex-direction: column; padding: 2rem;
+  transform: translateX(100%); transition: transform 0.4s var(--ease);
+}
+#mobile-menu.open { transform: translateX(0); }
+.mob-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+.mob-links { display: flex; flex-direction: column; gap: 1rem; }
+.mob-link { text-align: left; font-family: var(--font-h); font-size: 1.8rem; font-weight: 700; color: var(--navy); padding: 0.5rem 0; }
 
-/* ── BOTÓN FLOTANTE (elegante) ───────────────────────── */
+/* ── FOOTER ─────────────────────────────────────────── */
+footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+.footer-name { font-family: var(--font-h); font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
+.footer-role { font-size: 0.8rem; max-width: 300px; line-height: 1.5; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-link { font-size: 0.8rem; font-weight: 500; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+.footer-link:hover { color: #fff; }
+
 #toTopBtn {
-  position: fixed; right: 20px; bottom: 20px;
-  width: 40px; height: 40px; border-radius: 999px;
-  border: 1px solid rgba(79,110,247,0.2);
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(12px);
-  color: var(--navy); font-size: 15px;
-  cursor: pointer; opacity: 0; pointer-events: none;
-  transition: all 0.3s var(--ease);
-  box-shadow: 0 4px 16px rgba(26,39,68,0.08);
-  z-index: 999;
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 44px; height: 44px; background: var(--navy); color: #fff;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 90;
 }
-#toTopBtn.show { opacity: 1; pointer-events: auto; }
-#toTopBtn:hover { transform: translateY(-2px); border-color: rgba(196,181,253,0.6); background: rgba(245,243,255,0.95); box-shadow: 0 6px 20px rgba(79,110,247,0.15); }
+#toTopBtn.show { opacity: 1; visibility: visible; }
 
-/* ── FOOTER INSTITUCIONAL ────────────────────────────── */
-footer {
-  background: #111827;
-  padding: 2rem 2.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 1rem;
-}
-.footer-left {}
-.footer-name { font-family: var(--font-h); font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.75); margin-bottom: 0.3rem; }
-.footer-role { font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.3px; }
-.footer-links { display: flex; align-items: center; gap: 1rem; }
-.footer-link {
-  font-size: 0.75rem; color: rgba(255,255,255,0.4);
-  display: flex; align-items: center; gap: 0.35rem;
-  transition: color 0.2s;
-}
-.footer-link:hover { color: rgba(255,255,255,0.75); }
-
-/* ── MOBILE MENU ─────────────────────────────────────── */
-.mobile-menu { position: fixed; top: 64px; inset-x: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; display: none; flex-direction: column; gap: 0.3rem; z-index: 99; box-shadow: 0 8px 24px rgba(26,39,68,0.1); }
-.mobile-menu.open { display: flex; }
-.mob-link { padding: 0.7rem 0.5rem; font-size: 0.95rem; font-weight: 500; color: var(--slate); border-bottom: 1px solid var(--border); cursor: pointer; background: none; border-top: none; border-left: none; border-right: none; text-align: left; transition: color 0.15s; font-family: inherit; }
-.mob-link:hover { color: var(--accent); }
-.mob-link:last-child { border-bottom: none; }
-
-/* ── RESPONSIVE ──────────────────────────────────────── */
-@media (max-width: 880px) {
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+  .hero-text { display: flex; flex-direction: column; align-items: center; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .perfil-grid, .met-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .esp-grid { grid-template-columns: repeat(3, 1fr); }
   .nav-links, .nav-contact { display: none; }
   .hamburger { display: flex; }
-  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .hero-text { text-align: center; }
-  .hero-sub { margin: 0 auto 2rem; }
-  .hero-actions { justify-content: center; }
-  .hero-evidence { grid-template-columns: repeat(3, 1fr); }
-  .hero-image-col { max-width: 380px; margin: 0 auto; }
-  .perfil-grid, .met-layout, .exp-grid { grid-template-columns: 1fr; }
-  .esp-grid { grid-template-columns: repeat(3, 1fr); }
-  .proj-panel.active { grid-template-columns: 1fr; }
-  .proj-visual { min-height: 160px; }
-  .encaje-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; }
 }
-@media (max-width: 560px) {
-  section { padding: 4rem 1.2rem; }
-  .hero-evidence { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
-  .ev-num { font-size: 1.5rem; }
+@media (max-width: 600px) {
   .esp-grid { grid-template-columns: repeat(2, 1fr); }
   .encaje-grid { grid-template-columns: 1fr; }
+  .hero-evidence { grid-template-columns: 1fr; }
+  .cp-grid { grid-template-columns: 1fr; }
 }
+
+/* ── CONTACTO SECTION ───────────────────────────────── */
+#contacto { background: var(--navy); padding: 6rem 2rem; }
+.contacto-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.contacto-inner .sec-title { color: #fff; margin-bottom: 1.5rem; }
+.contacto-email { font-family: var(--font-h); font-size: clamp(1.5rem, 5vw, 2.8rem); color: #fff; font-weight: 700; display: block; margin-bottom: 2.5rem; transition: color 0.3s; }
+.contacto-email:hover { color: var(--accent2); }
+.contacto-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.clink { padding: 0.7rem 1.4rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #fff; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+.clink:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); border-color: rgba(255,255,255,0.3); }
+.contacto-note { margin-top: 3rem; font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── PORTFOLIO / PROYECTOS ──────────────────────────── */
+.proj-tabs { display: flex; gap: 0.5rem; margin-top: 2.5rem; margin-bottom: 2rem; overflow-x: auto; padding-bottom: 0.5rem; }
+.proj-tab { padding: 0.6rem 1.2rem; border: 1.5px solid var(--border); border-radius: 100px; font-size: 0.82rem; font-weight: 600; color: var(--muted); white-space: nowrap; transition: all 0.2s; }
+.proj-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.proj-panel { display: none; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; align-items: center; }
+.proj-panel.active { display: grid; animation: fadeIn 0.4s ease; }
+.proj-title { font-family: var(--font-h); font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 0.8rem; }
+.proj-desc { font-size: 0.92rem; color: var(--slate); line-height: 1.7; margin-bottom: 1.8rem; }
+.proj-col-title { font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+.proj-items { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.8rem; }
+.proj-items li { font-size: 0.85rem; color: var(--navy); font-weight: 500; position: relative; padding-left: 1.2rem; }
+.proj-items li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); }
+.proj-visual { background: var(--white); border: 1px solid var(--border); border-radius: 15px; padding: 2rem; display: flex; align-items: center; justify-content: center; height: 100%; min-height: 200px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 800px) { .proj-panel { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; } .proj-visual { min-height: 150px; } }
+
+/* ── EXPERIENCIA TIMELINE ───────────────────────────── */
+.exp-timeline { position: relative; padding-left: 1.5rem; border-left: 1px solid var(--border); display: flex; flex-direction: column; gap: 2.5rem; }
+.exp-item { position: relative; }
+.exp-dot { position: absolute; left: -1.5rem; transform: translateX(-50%); width: 24px; height: 24px; background: var(--white); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--muted); z-index: 2; }
+.exp-item.exp-active .exp-dot { border-color: var(--accent); color: var(--accent); font-weight: 900; box-shadow: 0 0 0 4px var(--light); }
+.exp-year { font-size: 0.75rem; font-weight: 700; color: var(--accent); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exp-role { font-family: var(--font-h); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.15rem; }
+.exp-place { font-size: 0.85rem; font-weight: 600; color: var(--slate); margin-bottom: 0.6rem; }
+.exp-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+.academic-list { display: flex; flex-direction: column; gap: 1rem; }
+.acad-item { padding: 1.2rem; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; transition: all 0.2s; }
+.acad-item:hover { border-color: rgba(79,110,247,0.2); background: var(--white); box-shadow: 0 4px 12px rgba(26,39,68,0.05); }
+.acad-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+.acad-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+.acad-badge { display: inline-block; margin-top: 0.6rem; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; }
+.ab-green { background: #e6f7f4; color: #069684; }
+.ab-gray { background: #f0f2f5; color: #64748b; }
+
+/* ── PREMIUM CARD (PROYECTOFP) ───────────────────────── */
+.premium-card {
+  background: var(--white);
+  border: 2px solid var(--accent);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(79,110,247,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.premium-card::before {
+  content: 'PROYECTO DESTACADO';
+  position: absolute;
+  top: 1rem;
+  right: -2.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.4rem 3rem;
+  transform: rotate(45deg);
+  letter-spacing: 1px;
+}
+.premium-title {
+  font-family: var(--font-h);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.premium-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+.premium-desc {
+  font-size: 0.95rem;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+.premium-features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+.premium-features li {
+  font-size: 0.85rem;
+  color: var(--navy);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.premium-features li::before {
+  content: '✦';
+  color: var(--accent);
+}
+.premium-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.premium-visual {
+  background: var(--light);
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+.premium-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 10px 15px rgba(79,110,247,0.2));
+}
+
+@media (max-width: 800px) {
+  .premium-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+  .premium-features { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
-<body>
+<body class="h-full">
 
-<!-- NAV -->
 <nav id="main-nav">
   <div class="nav-logo">
     <div class="nav-logo-badge">JP</div>
-    Juan Peco
+    <span>Juan Peco</span>
   </div>
   <ul class="nav-links">
+    <li><button onclick="goto('hero')">Inicio</button></li>
+    <li><button onclick="goto('encaje')">Institucional</button></li>
+    <li><button onclick="goto('galeria')">Aula</button></li>
     <li><button onclick="goto('perfil')">Perfil</button></li>
-    <li><button onclick="goto('encaje')">Encaje Institucional</button></li>
-    <li><button onclick="goto('galeria')">Evidencia</button></li>
-    <li><button onclick="goto('metodologia')">Metodología</button></li>
-    <li><button onclick="goto('proyectos')">Proyectos</button></li>
+    <li><button onclick="goto('proyectos')">Portfolio</button></li>
+    <li><button onclick="goto('tech-proyectos')">IA Educativa</button></li>
     <li><button onclick="goto('experiencia')">Experiencia</button></li>
-    <li><button onclick="goto('contacto')">Contacto</button></li>
   </ul>
-  <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="nav-contact" style="display:none;list-style:none;" id="nav-cta">Solicitar entrevista</a>
+  <button id="nav-cta" class="nav-contact" onclick="goto('contacto')" style="display:none">Contactar</button>
+  
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobile-menu">
-  <button class="mob-link" onclick="goto('perfil')">Perfil profesional</button>
-  <button class="mob-link" onclick="goto('encaje')">Encaje institucional</button>
-  <button class="mob-link" onclick="goto('galeria')">Evidencia de aula</button>
-  <button class="mob-link" onclick="goto('especialidades')">Especialidades</button>
-  <button class="mob-link" onclick="goto('metodologia')">Metodología</button>
-  <button class="mob-link" onclick="goto('proyectos')">Proyectos</button>
-  <button class="mob-link" onclick="goto('experiencia')">Experiencia</button>
-  <button class="mob-link" onclick="goto('contacto')">Contacto</button>
+<div id="mobile-menu">
+  <div class="mob-header">
+    <div class="nav-logo"><div class="nav-logo-badge">JP</div><span>Juan Peco</span></div>
+    <button onclick="this.parentElement.parentElement.classList.remove('open')" style="font-size:2rem;color:var(--navy)">×</button>
+  </div>
+  <div class="mob-links">
+    <button class="mob-link" onclick="goto('hero')">Inicio</button>
+    <button class="mob-link" onclick="goto('encaje')">Institucional</button>
+    <button class="mob-link" onclick="goto('galeria')">Aula</button>
+    <button class="mob-link" onclick="goto('perfil')">Perfil</button>
+    <button class="mob-link" onclick="goto('proyectos')">Portfolio</button>
+    <button class="mob-link" onclick="goto('tech-proyectos')">Proyectos Tech</button>
+    <button class="mob-link" onclick="goto('experiencia')">Experiencia</button>
+    <button class="mob-link" onclick="goto('contacto')" style="color:var(--accent)">Contacto</button>
+  </div>
 </div>
 
 <!-- ── HERO ── -->
@@ -472,30 +549,20 @@ footer {
   <div class="hero-inner">
     <!-- Columna texto -->
     <div class="hero-text">
-      <div class="hero-eyebrow">Formación Profesional · Empresa · EIE · Marketing · Digitalización</div>
-      <h1 class="hero-h1">
-        Empresa, Economía<br>
-        y Marketing Digital<br>
-        <em>en Formación Profesional</em>
-      </h1>
-      <p class="hero-sub">
-        Varios años de experiencia en empresa aplicados directamente a los módulos de FP. MAES en Economía, Empresa y Turismo (jun. 2026). Participación profesional en más de 15 centros educativos de la Región de Murcia mediante el programa Código Escuela 4.0.
-      </p>
+      <div class="hero-eyebrow">DOCENTE DE FORMACIÓN PROFESIONAL</div>
+      <h1 class="hero-h1">Formación Profesional, <em>empresa</em> e <em>inteligencia artificial</em> aplicadas al aprendizaje</h1>
+      <p class="hero-sub">Docente de Formación Profesional especializado en Empresa, Economía, Marketing Digital e Inteligencia Artificial aplicada a la educación. Experiencia corporativa real trasladada al aula mediante metodologías activas y tecnología educativa.</p>
+      
       <div class="hero-actions">
-        <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="btn-primary">Contactar →</a>
-        <a href="CV_Juan_Peco.pdf" target="_blank" class="btn-ghost">↓ Descargar CV</a>
-        <a href="Portfolio_FP_Empresa_Simulada_Juan_Peco.pdf"
-   target="_blank"
-   class="btn-ghost">
-   Proyecto FP
-</a>
-  </a>
+        <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
+        <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
       </div>
+
       <div class="hero-evidence">
         <div class="ev-card">
-          <div class="ev-num">18</div>
-          <div class="ev-label">Años en empresa</div>
-          <div class="ev-sub">Gestión · Administración · Marketing</div>
+          <div class="ev-num">+15</div>
+          <div class="ev-label">Centros educativos</div>
+          <div class="ev-sub">Región de Murcia</div>
         </div>
         <div class="ev-card">
           <div class="ev-num">260h</div>
@@ -747,44 +814,34 @@ footer {
           <div><div class="cb-title">Diferentes niveles</div><div class="cb-sub">Heterogeneidad y diversidad</div></div>
         </button>
         <button class="case-btn" onclick="switchCase(this,'c3')">
-          <span class="cb-emoji">🔗</span>
-          <div><div class="cb-title">Teoría desconectada</div><div class="cb-sub">Contenidos sin aplicación real</div></div>
-        </button>
-        <button class="case-btn" onclick="switchCase(this,'c4')">
-          <span class="cb-emoji">🗣️</span>
-          <div><div class="cb-title">Comunicación insegura</div><div class="cb-sub">Dificultad para exponer</div></div>
-        </button>
-        <button class="case-btn" onclick="switchCase(this,'c5')">
-          <span class="cb-emoji">🧩</span>
-          <div><div class="cb-title">Bloqueo ante tareas abiertas</div><div class="cb-sub">Dificultad para iniciar proyectos</div></div>
+          <span class="cb-emoji">🏗️</span>
+          <div><div class="cb-title">Contenido muy denso</div><div class="cb-sub">Abstracción y complejidad</div></div>
         </button>
       </div>
-
-      <div class="reveal d2">
+      <div class="case-content reveal d2">
         <div id="c1" class="case-panel active">
-          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Participación pasiva. Respuestas mínimas. Dificultad para implicarse en dinámicas colectivas.</div></div>
-          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Trabajo cooperativo con roles definidos desde el inicio</li><li>Hitos progresivos: de tareas simples a proyectos complejos</li><li>Toma de decisiones justificada y presentada al grupo</li></ul></div>
-          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Implicación progresiva conforme avanza el proyecto</li><li>El rol asignado genera responsabilidad compartida</li></ul></div>
+          <div class="cp-header"><span class="cp-label">Escenario 01</span><h3 class="cp-title">Dinamización y gamificación</h3></div>
+          <p class="cp-desc">Cuando el grupo muestra apatía, rompo la inercia con dinámicas de impacto inmediato y herramientas digitales que fomentan la participación anónima inicial para ganar confianza.</p>
+          <div class="cp-grid">
+            <div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Gamificación con herramientas tipo Quizziz/Kahoot</li><li>Debates rápidos con roles asignados</li><li>Retos por equipos con recompensa simbólica</li></ul></div>
+            <div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Aumento del 40% en participación espontánea</li><li>Mejora del clima de aula y cohesión</li><li>Feedback inmediato del nivel de comprensión</li></ul></div>
+          </div>
         </div>
         <div id="c2" class="case-panel">
-          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Aula heterogénea con diferentes ritmos, niveles de motivación y competencias de partida.</div></div>
-          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Diseño Universal para el Aprendizaje (DUA) con múltiples opciones de expresión</li><li>Grupos heterogéneos para fomentar el aprendizaje cooperativo</li><li>Actividades multinivel y andamiaje en el aula</li></ul></div>
-          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Integración real del alumnado con necesidades específicas</li><li>Progreso individualizado respetando los ritmos de cada alumno</li></ul></div>
+          <div class="cp-header"><span class="cp-label">Escenario 02</span><h3 class="cp-title">Inclusión y Multinivel</h3></div>
+          <p class="cp-desc">En aulas heterogéneas, aplico el Diseño Universal para el Aprendizaje (DUA), ofreciendo diferentes vías de entrada al contenido y múltiples formas de expresar lo aprendido.</p>
+          <div class="cp-grid">
+            <div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Materiales en diversos formatos (visual, audio, texto)</li><li>Andamiaje específico para alumnado con dificultades</li><li>Proyectos con tareas de complejidad escalonada</li></ul></div>
+            <div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Reducción de la frustración y el abandono</li><li>Alumnado motivado según su propio ritmo</li><li>Cumplimiento de objetivos mínimos por el 100%</li></ul></div>
+          </div>
         </div>
         <div id="c3" class="case-panel">
-          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">El alumnado percibe los contenidos como abstractos y desconectados del entorno profesional real.</div></div>
-          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>ABP contextualizado en problemas empresariales reales</li><li>Documentación administrativa, planes comerciales y proyectos viables</li><li>Presentación de resultados bajo criterios de evaluación profesionales</li></ul></div>
-          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Comprensión profunda de la utilidad real de cada contenido</li><li>Mayor motivación y retención significativa del aprendizaje</li></ul></div>
-        </div>
-        <div id="c4" class="case-panel">
-          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Inseguridad y miedo escénico al presentar proyectos ante el grupo o evaluadores.</div></div>
-          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Entrenamiento progresivo: de pequeño grupo a gran grupo</li><li>Feedback constructivo y normalización del error</li><li>Pautas de comunicación verbal y no verbal para el ámbito profesional</li></ul></div>
-          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Ganancia progresiva de confianza en la expresión oral</li><li>Mejora cualitativa en la calidad de las presentaciones</li></ul></div>
-        </div>
-        <div id="c5" class="case-panel">
-          <div class="panel-block pb-situation"><div class="pb-label">Situación</div><div class="pb-text">Bloqueo y falta de iniciativa ante tareas abiertas que exigen autonomía.</div></div>
-          <div class="panel-block pb-method"><div class="pb-label">Cómo se trabaja</div><ul class="pb-list"><li>Plantillas estructuradas, guías de proceso y rúbricas desde el inicio</li><li>Hitos intermedios de supervisión con retroalimentación inmediata</li><li>Análisis guiado de proyectos completados de referencia</li></ul></div>
-          <div class="panel-block pb-result"><div class="pb-label">Resultado observado</div><ul class="pb-list"><li>Autonomía progresiva en la ejecución de proyectos</li><li>Reducción de la ansiedad ante tareas complejas</li></ul></div>
+          <div class="cp-header"><span class="cp-label">Escenario 03</span><h3 class="cp-title">Aprendizaje Basado en Proyectos</h3></div>
+          <p class="cp-desc">Para conceptos abstractos de empresa o economía, aterrizamos la teoría en un proyecto real (ABP) donde el alumnado "hace" para "entender", conectando con su realidad.</p>
+          <div class="cp-grid">
+            <div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Simulación de entornos empresariales reales</li><li>Uso de software profesional en el aula</li><li>Creación de productos finales tangibles</li></ul></div>
+            <div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Aprendizaje significativo y duradero</li><li>Desarrollo de soft skills (liderazgo, tiempo)</li><li>Portfolio de trabajo para el mercado laboral</li></ul></div>
+          </div>
         </div>
       </div>
     </div>
@@ -856,6 +913,55 @@ footer {
 
 <div class="divider"></div>
 
+<!-- ── PROYECTOS TECNOLÓGICOS ── -->
+<section id="tech-proyectos">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Innovación Educativa</div>
+      <h2 class="sec-title">IA aplicada a la Formación Profesional</h2>
+      <p class="sec-desc">Desarrollo de soluciones educativas propias orientadas a la generación de recursos didácticos, evaluación competencial y mejora de la productividad docente.</p>
+    </div>
+
+    <div class="premium-card reveal d1" style="margin-top: 3rem;">
+      <div class="premium-info">
+        <h3 class="premium-title">ProyectoFP</h3>
+        <p class="premium-subtitle">Generación y auditoría inteligente de recursos didácticos para Formación Profesional.</p>
+        <p class="premium-desc">ProyectoFP permite generar situaciones de aprendizaje, proyectos ABP, rúbricas, debates, casos prácticos, programaciones didácticas y pruebas de evaluación alineadas con la LOMLOE. Incluye auditoría curricular mediante IA, modo departamento y exportación profesional de documentos.</p>
+        
+        <div class="proj-col-title">Características destacadas</div>
+        <ul class="premium-features">
+          <li>Generación automática de recursos FP</li>
+          <li>Modo Inspección Educativa</li>
+          <li>Modo Departamento</li>
+          <li>Exportación PDF y DOCX</li>
+          <li>IA especializada en Formación Profesional</li>
+        </ul>
+
+        <div style="margin-top:1.5rem;padding:1rem;background:#f8f9fc;border-radius:10px;border-left:4px solid #4f6ef7;">
+          <strong>Impacto docente:</strong><br>
+          Reducción significativa del tiempo de elaboración de recursos educativos y mejora de la coherencia curricular bajo el marco LOMLOE.
+        </div>
+
+        <div class="premium-actions">
+          <a href="https://proyectofp-jbqylxe3.manus.space" target="_blank" rel="noopener" class="btn-primary">
+            <span>🌐</span> Ver Demo
+          </a>
+          <a href="https://github.com/juanpeco/ProyectoFP" target="_blank" rel="noopener" class="btn-ghost">
+            <span>💻</span> Ver Código
+          </a>
+        </div>
+      </div>
+      <div class="premium-visual">
+        <div class="premium-icon">🎓</div>
+        <div style="font-size:0.85rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">IA + Educación FP</div>
+        <div style="font-size:0.75rem; color:var(--muted); line-height:1.5;">Solución integral para la<br>nueva normativa educativa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ── EXPERIENCIA ── -->
 <section id="experiencia">
   <div class="container">
@@ -898,7 +1004,7 @@ footer {
     <div class="contacto-inner reveal">
       <div class="sec-label" style="color:rgba(255,255,255,0.4)">Contacto</div>
       <h2 class="sec-title">¿Buscas un docente?</h2>
-      <p class="contacto-sub">
+      <p style="color:rgba(255,255,255,0.7);font-size:1.1rem;margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6">
         Si tu centro necesita incorporar profesorado en las áreas de Empresa, Economía, Emprendimiento, Marketing o Digitalización, estaré encantado de conversar contigo.
       </p>
       <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="contacto-email">hola@juanpeco.com</a>
@@ -921,7 +1027,7 @@ footer {
   </div>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="footer-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       LinkedIn
     </a>
     <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" class="footer-link">
