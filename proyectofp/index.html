@@ -1,317 +1,1077 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ProyectoFP es una plataforma basada en inteligencia artificial para docentes de Formación Profesional. Genera situaciones de aprendizaje, ABP, rúbricas, programaciones y auditorías pedagógicas." />
-  <title>ProyectoFP | IA para Formación Profesional</title>
-  <style>
-    :root{
-      --bg:#f6f8fc;
-      --card:#ffffff;
-      --text:#172033;
-      --muted:#5c6b85;
-      --line:#dbe3f1;
-      --primary:#355cff;
-      --primary2:#0ea5a4;
-      --shadow:0 18px 50px rgba(21, 32, 58, .10);
-      --radius:22px;
-      --max:1120px;
-      --font: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:var(--font);
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(53,92,255,.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(14,165,164,.10), transparent 28%),
-        var(--bg);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-    .nav{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:12px 0 24px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px;font-weight:700;
-      letter-spacing:-.02em;
-    }
-    .mark{
-      width:42px;height:42px;border-radius:14px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--primary),var(--primary2));
-      color:#fff;box-shadow:var(--shadow);
-    }
-    .navlinks{display:flex;gap:14px;flex-wrap:wrap}
-    .chip{
-      padding:10px 14px;border:1px solid var(--line);border-radius:999px;
-      background:rgba(255,255,255,.7);backdrop-filter: blur(8px);
-      font-size:.95rem;color:var(--muted);transition:.2s ease;
-    }
-    .chip:hover{transform:translateY(-1px);border-color:#bfcbea;color:var(--text)}
-    .hero{
-      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;
-      padding:18px 0 28px;
-    }
-    .panel{
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(219,227,241,.8);
-      backdrop-filter: blur(12px);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .hero-main{padding:34px}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-      color:var(--primary);
-      background:#eef3ff;border:1px solid #dbe4ff;
-      padding:8px 12px;border-radius:999px;
-      margin-bottom:18px;
-    }
-    h1{
-      font-size:clamp(2.2rem,5vw,4.2rem);
-      line-height:1.02;margin:0 0 16px;
-      letter-spacing:-.04em;
-    }
-    .lead{
-      font-size:1.08rem;color:var(--muted);
-      max-width:58ch;margin:0 0 24px;
-    }
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:13px 18px;border-radius:14px;border:1px solid transparent;
-      font-weight:700;transition:.2s ease;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{
-      background:linear-gradient(135deg,var(--primary),#5c7bff);
-      color:#fff;box-shadow:0 14px 24px rgba(53,92,255,.20);
-    }
-    .btn.ghost{
-      background:#fff;border-color:var(--line);color:var(--text);
-    }
-    .stats{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;
-    }
-    .stat{
-      padding:16px;border-radius:18px;background:#fff;border:1px solid var(--line);
-    }
-    .num{font-size:1.8rem;font-weight:800;letter-spacing:-.04em}
-    .label{font-size:.82rem;color:var(--muted);margin-top:4px}
-    .hero-side{
-      padding:24px;display:flex;flex-direction:column;gap:18px;
-    }
-    .shot{
-      border-radius:18px;overflow:hidden;border:1px solid var(--line);
-      aspect-ratio: 4 / 4.35;
-      background:
-        linear-gradient(180deg, rgba(53,92,255,.08), transparent 30%),
-        #fff;
-      display:flex;align-items:center;justify-content:center;
-      text-align:center;padding:22px;
-    }
-    .shotbox{
-      width:100%;
-      border-radius:18px;
-      border:1px dashed #cbd6ea;
-      padding:26px 18px;
-      background:linear-gradient(180deg,#fbfcff, #f4f7fd);
-    }
-    .shotbox h3{margin:0 0 10px;font-size:1.1rem}
-    .shotbox p{margin:0;color:var(--muted);font-size:.95rem}
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      margin-top:14px;padding:8px 12px;border-radius:999px;
-      background:#eefaf8;color:#117a74;font-size:.84rem;font-weight:700;
-    }
-    .section{padding:18px 0 0}
-    .title{
-      font-size:1.05rem;text-transform:uppercase;letter-spacing:.12em;
-      color:var(--primary);font-weight:800;margin:0 0 10px;
-    }
-    .h2{
-      font-size:clamp(1.5rem,3vw,2.4rem);
-      line-height:1.08;margin:0 0 12px;letter-spacing:-.03em;
-    }
-    .sub{color:var(--muted);max-width:70ch;margin:0}
-    .grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;
-    }
-    .card{
-      padding:22px;background:rgba(255,255,255,.9);
-      border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 22px rgba(20,32,58,.05);
-    }
-    .card h3{margin:0 0 10px;font-size:1.06rem}
-    .card p{margin:0;color:var(--muted);font-size:.96rem}
-    .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .tag{
-      padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);
-      color:var(--muted);font-size:.86rem;
-    }
-    .featurelist{
-      list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px;
-    }
-    .featurelist li{
-      display:flex;gap:10px;align-items:flex-start;
-      color:var(--text);font-size:.96rem;
-    }
-    .dot{
-      width:9px;height:9px;border-radius:50%;
-      background:linear-gradient(135deg,var(--primary),var(--primary2));
-      margin-top:8px;flex:0 0 auto;
-    }
-    .cta{
-      margin:28px 0 0;
-      padding:26px;
-      border-radius:var(--radius);
-      background:linear-gradient(135deg,#111d38,#22355f 60%, #1c9f98);
-      color:#fff;
-      box-shadow:var(--shadow);
-      display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
-    }
-    .cta p{margin:6px 0 0;color:rgba(255,255,255,.78)}
-    .cta .btn.ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff}
-    footer{
-      padding:26px 0 12px;
-      color:var(--muted);font-size:.92rem;
-      display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-    }
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr}
-      .nav{flex-direction:column;align-items:flex-start;gap:14px}
-      .hero-main{padding:24px}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProyectoFP — Gestión curricular con IA para Formación Profesional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --white:   #ffffff;
+  --paper:   #f8f7f5;
+  --paper2:  #f1efe9;
+  --paper3:  #e8e5dc;
+  --line:    #dedad2;
+  --line2:   #ccc9be;
+  --ink:     #111110;
+  --ink2:    #3c3b37;
+  --ink3:    #6b6860;
+  --ink4:    #9c9890;
+  --ink5:    #c5c2ba;
+  --blue:    #1d4ed8;
+  --blue2:   #2563eb;
+  --blue3:   #3b82f6;
+  --blue-bg: #eff4ff;
+  --blue-bd: #bfcffe;
+  --green:   #15803d;
+  --green-bg:#f0fdf4;
+  --green-bd:#bbf7d0;
+  --amber:   #b45309;
+  --amber-bg:#fffbeb;
+  --amber-bd:#fde68a;
+  --red:     #b91c1c;
+  --red-bg:  #fef2f2;
+  --red-bd:  #fecaca;
+  --fd: 'Bricolage Grotesque', system-ui, sans-serif;
+  --fb: 'Bricolage Grotesque', system-ui, sans-serif;
+}
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--fb);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-family:var(--fd);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.logo-mark{width:26px;height:26px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;letter-spacing:-.02em}
+.nav-links{display:flex;gap:1px;list-style:none}
+.nav-links a{color:var(--ink3);font-size:13px;text-decoration:none;padding:5px 12px;border-radius:6px;font-weight:500;transition:all .12s}
+.nav-links a:hover{color:var(--ink);background:var(--paper)}
+.nav-right{display:flex;gap:8px;align-items:center}
+.btn-ghost{color:var(--ink2);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line2);border-radius:7px;background:transparent;cursor:pointer;font-family:var(--fb);transition:all .12s;text-decoration:none}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink3)}
+.btn-primary{background:var(--blue);color:white;font-size:13px;font-weight:600;padding:7px 16px;border-radius:7px;border:none;cursor:pointer;font-family:var(--fb);transition:all .15s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 4px 12px rgba(29,78,216,.25)}
+
+/* ── LAYOUT ── */
+section{padding:88px 24px}
+.container{max-width:1080px;margin:0 auto}
+.csm{max-width:680px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.eyebrow::before{content:'';width:20px;height:1.5px;background:var(--blue);flex-shrink:0}
+.stitle{font-family:var(--fd);font-size:clamp(28px,3.8vw,46px);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin-bottom:14px;color:var(--ink)}
+.ssub{font-size:17px;color:var(--ink3);font-weight:300;line-height:1.75;max-width:480px;font-family:var(--fb)}
+.fade-s{opacity:1;transform:none}
+
+/* ── TAGS ── */
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid;white-space:nowrap}
+.tag.bl{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-bd)}
+.tag.gn{background:var(--green-bg);color:var(--green);border-color:var(--green-bd)}
+.tag.am{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-bd)}
+.tag.rd{background:var(--red-bg);color:var(--red);border-color:var(--red-bd)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:104px 24px 72px;text-align:center;background:var(--white);position:relative;overflow:hidden}
+.hero-rule{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;opacity:.35;mask-image:radial-gradient(ellipse 80% 65% at 50% 30%,black 30%,transparent 100%)}
+.hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:300px;background:radial-gradient(ellipse,rgba(29,78,216,.06) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:5px 14px 5px 9px;font-size:12px;color:var(--ink3);font-weight:500;margin-bottom:26px;position:relative}
+.badge-live{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px var(--green-bd);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--fd);font-size:clamp(40px,6.5vw,76px);font-weight:800;line-height:1.04;letter-spacing:-.03em;max-width:840px;margin-bottom:20px;color:var(--ink);position:relative}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-sub{font-size:clamp(16px,2vw,19px);color:var(--ink3);font-weight:300;max-width:520px;line-height:1.75;margin-bottom:36px;position:relative;font-family:var(--fb)}
+.hero-ctas{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;position:relative}
+.btn-hero{background:var(--blue);color:white;font-size:15px;font-weight:600;padding:12px 26px;border-radius:9px;border:none;cursor:pointer;font-family:var(--fb);transition:all .18s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(29,78,216,.2),0 1px 2px rgba(0,0,0,.08)}
+.btn-hero:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(29,78,216,.3)}
+.btn-hero-out{color:var(--ink2);font-size:15px;font-weight:500;padding:12px 20px;border:1px solid var(--line2);border-radius:9px;background:transparent;cursor:pointer;font-family:var(--fb);transition:all .18s;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.btn-hero-out:hover{color:var(--ink);border-color:var(--ink3);background:var(--paper)}
+
+/* FLOW PILLS */
+.hero-flow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;position:relative}
+.fpill{display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--line);border-radius:7px;padding:6px 13px;font-size:13px;color:var(--ink2);font-weight:500}
+.fpill-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.fpill-dot.bl{background:var(--blue)}.fpill-dot.gn{background:var(--green)}.fpill-dot.cy{background:#0891b2}.fpill-dot.am{background:var(--amber)}
+.farrow{color:var(--ink5);font-size:14px;font-weight:300}
+
+/* ── HERO MOCKUP ── */
+.hero-mockup{width:100%;max-width:960px;position:relative}
+.mockup{border:1px solid var(--line);border-radius:12px;background:var(--white);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 30px rgba(0,0,0,.08),0 30px 80px rgba(0,0,0,.06)}
+.mbar{display:flex;align-items:center;gap:6px;padding:11px 16px;background:var(--paper);border-bottom:1px solid var(--line)}
+.md{width:10px;height:10px;border-radius:50%}.md.r{background:#ff5f57}.md.y{background:#febc2e}.md.g{background:#28c840}
+.mtabs{display:flex;gap:3px;margin-left:12px}
+.mtab{padding:3px 11px;border-radius:5px;font-size:11px;font-weight:600;color:var(--ink4);cursor:default}
+.mtab.on{background:var(--blue-bg);color:var(--blue)}
+.mbody{display:grid;grid-template-columns:260px 1fr;min-height:340px}
+.ml{padding:20px;border-right:1px solid var(--line);background:var(--paper)}
+.mr{padding:20px;background:var(--white)}
+.mlbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-bottom:12px}
+.mf{margin-bottom:10px}
+.mf label{display:block;font-size:11px;color:var(--ink3);margin-bottom:3px;font-weight:500}
+.mfv{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-size:12px;color:var(--ink)}
+.mfv.on{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-bg)}
+.mbtn{width:100%;margin-top:10px;background:var(--blue);color:white;border:none;border-radius:7px;padding:9px;font-size:12px;font-weight:600;cursor:default;font-family:var(--fb);display:flex;align-items:center;justify-content:center;gap:6px}
+.ritem{border:1px solid var(--line);border-radius:8px;padding:11px 13px;margin-bottom:7px;background:var(--white);position:relative;overflow:hidden}
+.ritem::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:0}
+.ritem.bl::before{background:var(--blue)}.ritem.gn::before{background:var(--green)}.ritem.am::before{background:var(--amber)}.ritem.rd::before{background:var(--red)}
+.ritem-t{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.ritem-b{font-size:11px;color:var(--ink3);line-height:1.55;font-weight:400}
+
+/* ── SECTION BG VARIANTS ── */
+.bg-paper{background:var(--paper)}
+.bg-blue{background:var(--blue-bg);border-top:1px solid var(--blue-bd);border-bottom:1px solid var(--blue-bd)}
+
+/* ── 4 PILLARS ── */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:48px}
+.pillar{padding:28px 24px;border-right:1px solid var(--line);background:var(--white);transition:background .15s}
+.pillar:last-child{border-right:none}
+.pillar:hover{background:var(--paper)}
+.p-num{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:14px;color:var(--line2)}
+.pillar:hover .p-num{color:var(--blue)}
+.pillar h3{font-family:var(--fd);font-size:16px;font-weight:700;margin-bottom:8px;color:var(--ink)}
+.pillar p{font-size:13px;color:var(--ink3);line-height:1.6;font-weight:400;margin-bottom:14px}
+.plist{list-style:none;display:flex;flex-direction:column;gap:5px}
+.plist li{font-size:12px;color:var(--ink4);display:flex;align-items:center;gap:6px}
+.plist li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--line2);flex-shrink:0}
+.pillar:hover .plist li::before{background:var(--blue-bd)}
+
+/* ── FEATURES ── */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-bottom:80px}
+.feat.rev{direction:rtl}.feat.rev>*{direction:ltr}
+.f-icon{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px}
+.feat h3{font-family:var(--fd);font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px;color:var(--ink)}
+.feat p{font-size:15px;color:var(--ink3);font-weight:300;line-height:1.75;margin-bottom:18px;font-family:var(--fb)}
+.flist{list-style:none;display:flex;flex-direction:column;gap:9px}
+.flist li{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);line-height:1.5;font-weight:500}
+.flist li::before{content:'→';color:var(--blue);font-weight:700;flex-shrink:0;font-size:12px;margin-top:1px}
+.feat-panel{border:1px solid var(--line);border-radius:11px;background:var(--white);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.fp-hdr{padding:10px 15px;background:var(--paper);border-bottom:1px solid var(--line);font-size:11px;color:var(--ink3);font-weight:500;display:flex;align-items:center;gap:7px}
+.fp-body{padding:18px}
+
+/* COV */
+.cov-grid{display:flex;flex-direction:column;gap:7px}
+.cov-ra{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--white)}
+.cov-hdr{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--paper);font-size:11px;font-weight:600;color:var(--ink2)}
+.cov-bar{height:3px;background:var(--paper3)}
+.cov-fill{height:100%}
+.cov-fill.full{background:var(--green)}.cov-fill.part{background:var(--amber)}.cov-fill.none{background:var(--red)}
+.ce-chips{padding:8px 12px;display:flex;flex-wrap:wrap;gap:4px}
+.ce-chip{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;border:1px solid}
+.ce-chip.ok{background:var(--green-bg);color:var(--green);border-color:var(--green-bd)}
+.ce-chip.am{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-bd)}
+.ce-chip.rd{background:var(--red-bg);color:var(--red);border-color:var(--red-bd)}
+
+/* TRACE TABLE */
+.ttbl{width:100%;border-collapse:collapse;font-size:11px;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+.ttbl th{padding:7px 10px;background:var(--paper);color:var(--ink3);font-weight:700;font-size:10px;letter-spacing:.06em;text-align:left;border-bottom:1px solid var(--line);text-transform:uppercase}
+.ttbl td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top;line-height:1.4}
+.ttbl tr:last-child td{border-bottom:none}
+.ttbl tr:hover td{background:var(--paper)}
+
+/* ── DEMO ── */
+.demo-wrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.06),0 20px 60px rgba(0,0,0,.05);margin-top:48px}
+.dbar{display:flex;align-items:center;gap:6px;padding:12px 18px;background:var(--paper);border-bottom:1px solid var(--line)}
+.dtabs{display:flex;gap:3px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--paper);flex-wrap:wrap}
+.dtab{padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink3);border:1px solid transparent;background:transparent;font-family:var(--fb);transition:all .12s}
+.dtab:hover{color:var(--ink);background:var(--white);border-color:var(--line)}
+.dtab.on{color:var(--blue);background:var(--blue-bg);border-color:var(--blue-bd)}
+.dbody{display:grid;grid-template-columns:320px 1fr;min-height:580px}
+.dl{padding:22px;border-right:1px solid var(--line);display:flex;flex-direction:column;background:var(--paper)}
+.dr{display:flex;flex-direction:column;background:var(--white)}
+.dr-hdr{padding:12px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:var(--paper)}
+.drstatus{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink3);font-weight:500}
+.sdot{width:7px;height:7px;border-radius:50%}
+.sdot.idle{background:var(--ink5)}.sdot.ok{background:var(--green)}.sdot.spin{background:var(--amber);animation:pulse 1s infinite}
+.expbtn{font-size:11px;color:var(--ink3);background:var(--white);border:1px solid var(--line);border-radius:6px;padding:5px 11px;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;gap:5px;font-weight:500;transition:all .12s}
+.expbtn:hover:not(:disabled){color:var(--ink);border-color:var(--ink3)}.expbtn:disabled{opacity:.35;cursor:not-allowed}
+.drout{flex:1;overflow-y:auto;padding:20px}
+.drout::-webkit-scrollbar{width:4px}.drout::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
+
+/* form */
+.fgrp{margin-bottom:14px}
+.fgrp label{display:flex;justify-content:space-between;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);margin-bottom:6px}
+.fgrp label span{font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink5)}
+.fsel,.finp,.ftxt{width:100%;background:var(--white);border:1px solid var(--line2);border-radius:7px;color:var(--ink);font-family:var(--fb);font-size:13px;padding:9px 11px;outline:none;transition:border-color .12s,box-shadow .12s;-webkit-appearance:none;font-weight:400}
+.fsel:focus,.finp:focus,.ftxt:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-bg)}
+.fsel option{background:white}
+.ftxt{resize:vertical;min-height:72px;line-height:1.5}
+.run-btn{width:100%;background:var(--blue);color:white;border:none;border-radius:8px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;justify-content:center;gap:8px;transition:all .15s;margin-top:4px;box-shadow:0 1px 3px rgba(29,78,216,.2)}
+.run-btn:hover{background:var(--blue2);box-shadow:0 4px 12px rgba(29,78,216,.25);transform:translateY(-1px)}.run-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.upload-zone{border:2px dashed var(--line2);border-radius:9px;padding:22px;text-align:center;cursor:pointer;transition:all .15s;margin-bottom:12px;background:var(--white)}
+.upload-zone:hover{border-color:var(--blue);background:var(--blue-bg)}
+.uz-icon{font-size:26px;margin-bottom:7px}
+.uz-txt{font-size:12px;color:var(--ink3);line-height:1.5;font-weight:400}
+.uz-txt strong{color:var(--blue)}
+
+/* placeholders & skeleton */
+.dph{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:36px}
+.dph-icon{width:50px;height:50px;background:var(--paper);border:1px solid var(--line);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:6px}
+.dph h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink2)}
+.dph p{font-size:12px;color:var(--ink4);max-width:220px;line-height:1.6}
+.sk{background:linear-gradient(90deg,var(--paper) 25%,var(--paper2) 50%,var(--paper) 75%);background-size:200% 100%;animation:shim 1.5s infinite;border-radius:5px}
+@keyframes shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* result sections */
+.rsec{margin-bottom:18px;animation:fadeUp .4s ease both}
+.rsec:nth-child(2){animation-delay:.04s}.rsec:nth-child(3){animation-delay:.08s}.rsec:nth-child(4){animation-delay:.12s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.rsec-t{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.rsec-t::after{content:'';flex:1;height:1px;background:var(--line)}
+.rcard{border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:7px;background:var(--white);position:relative;overflow:hidden}
+.rcard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.rcard.bl::before{background:var(--blue)}.rcard.gn::before{background:var(--green)}.rcard.am::before{background:var(--amber)}.rcard.rd::before{background:var(--red)}
+.rcard-t{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.rcard-b{font-size:12px;color:var(--ink3);line-height:1.6;font-weight:400}
+
+/* ── COMPARATIVA ── */
+.ctbl{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:48px;font-size:13px}
+.ctbl th{padding:12px 18px;font-size:11px;font-weight:700;letter-spacing:.04em;text-align:left;background:var(--paper);border-bottom:1px solid var(--line);border-right:1px solid var(--line);color:var(--ink2)}
+.ctbl th.hl{background:var(--blue);color:white}
+.ctbl td{padding:12px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);color:var(--ink3);vertical-align:middle;background:var(--white)}
+.ctbl td.hl{background:var(--blue-bg)}
+.ctbl td:last-child,.ctbl th:last-child{border-right:none}
+.ctbl tr:last-child td{border-bottom:none}
+.ctbl tr:hover td{background:var(--paper)}.ctbl tr:hover td.hl{background:#e5eeff}
+.ck{color:var(--green);font-weight:700;font-size:15px}.cx{color:var(--ink5)}.cp{color:var(--amber);font-size:12px;font-weight:600}
+
+/* ── SOBRE ── */
+.sobre-grid{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start;margin-top:48px}
+.sobre-ava{border:1px solid var(--line);border-radius:11px;aspect-ratio:3/4;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:52px}
+.sobre-bio p{font-size:15px;color:var(--ink2);font-weight:300;line-height:1.8;margin-bottom:16px;font-family:var(--fb)}
+.sobre-bio strong{color:var(--ink);font-weight:600;font-family:var(--fb)}
+.sobre-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+.sobre-tag{font-size:11px;font-weight:500;padding:4px 11px;border-radius:100px;border:1px solid var(--line2);color:var(--ink3);background:var(--white)}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:19px 0;cursor:pointer;font-family:var(--fd);font-size:17px;font-weight:700;gap:18px;letter-spacing:-.01em;user-select:none;color:var(--ink)}
+.faq-q:hover{color:var(--blue)}
+.faq-icon{width:24px;height:24px;border-radius:50%;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all .18s;color:var(--ink3)}
+.faq-item.open .faq-icon{background:var(--blue);color:white;border-color:var(--blue);transform:rotate(45deg)}
+.faq-a{display:none;padding-bottom:20px;font-size:14px;color:var(--ink3);line-height:1.8;font-weight:400;font-family:var(--fb)}
+.faq-item.open .faq-a{display:block}
+
+/* ── CTA FINAL ── */
+.cta-fin{text-align:center;background:var(--blue);color:white;padding:88px 24px}
+.cta-fin h2{font-family:var(--fd);font-size:clamp(30px,4.5vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;color:white}
+.cta-fin p{font-size:17px;font-weight:300;margin-bottom:34px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.7;color:rgba(255,255,255,.8);font-family:var(--fb)}
+.btn-white{background:white;color:var(--blue);font-size:15px;font-weight:700;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .15s;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.btn-white:hover{background:var(--blue-bg);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.btn-white-out{color:rgba(255,255,255,.85);font-size:15px;font-weight:500;padding:13px 20px;border:1px solid rgba(255,255,255,.3);border-radius:9px;background:transparent;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .15s}
+.btn-white-out:hover{color:white;border-color:rgba(255,255,255,.6)}
+
+/* ── FOOTER ── */
+footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white)}
+.foot{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot-links{display:flex;gap:18px;list-style:none}
+.foot-links a{font-size:12px;color:var(--ink4);text-decoration:none;font-weight:500;transition:color .12s}
+.foot-links a:hover{color:var(--ink2)}
+.foot-copy{font-size:12px;color:var(--ink4)}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  nav{padding:0 16px}.nav-links{display:none}
+  .hero{padding:84px 18px 52px}
+  .hero-ctas,.hero-flow{flex-direction:column;width:100%}
+  .btn-hero,.btn-hero-out{width:100%;justify-content:center}
+  .fpill{width:100%;justify-content:flex-start}
+  .farrow{transform:rotate(90deg)}
+  .mbody{grid-template-columns:1fr}.mr{display:none}
+  section{padding:60px 18px}
+  .pillars{grid-template-columns:1fr 1fr}
+  .feat,.feat.rev{grid-template-columns:1fr;gap:36px;direction:ltr}
+  .dbody{grid-template-columns:1fr}.dr{min-height:360px}
+  .sobre-grid{grid-template-columns:1fr;gap:36px}.sobre-ava{display:none}
+  .ctbl{font-size:11px}.ctbl th,.ctbl td{padding:9px 11px}
+  .foot{flex-direction:column;text-align:center}.foot-links{flex-wrap:wrap;justify-content:center}
+  .cta-fin .hero-ctas{flex-direction:row}
+}
+@media(max-width:480px){
+  .hero h1{font-size:34px}.pillars{grid-template-columns:1fr}
+  .dtabs{overflow-x:auto;flex-wrap:nowrap}.dtab{white-space:nowrap}
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="nav">
-      <div class="brand">
-        <div class="mark">FP</div>
-        <div>
-          <div>ProyectoFP</div>
-          <div style="font-size:.85rem;color:var(--muted);font-weight:600">IA para Formación Profesional</div>
-        </div>
-      </div>
-      <nav class="navlinks">
-        <a class="chip" href="#que-es">Qué es</a>
-        <a class="chip" href="#funciones">Funciones</a>
-        <a class="chip" href="#impacto">Impacto</a>
-        <a class="chip" href="https://github.com/juanpeco/ProyectoFP" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-    </header>
 
-    <main class="hero">
-      <section class="panel hero-main">
-        <div class="eyebrow">Proyecto propio · Juan Peco</div>
-        <h1>Una herramienta de IA para crear recursos de FP con criterio pedagógico.</h1>
-        <p class="lead">
-          ProyectoFP genera situaciones de aprendizaje, ABP, rúbricas, debates, casos prácticos, programaciones y auditorías curriculares alineadas con la LOMLOE.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="https://github.com/juanpeco/ProyectoFP" target="_blank" rel="noopener">Ver código</a>
-          <a class="btn ghost" href="https://proyectofp-jbqylxe3.manus.space" target="_blank" rel="noopener">Ver demo</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <div class="num">SA</div>
-            <div class="label">Situaciones de aprendizaje</div>
-          </div>
-          <div class="stat">
-            <div class="num">ABP</div>
-            <div class="label">Proyectos y retos reales</div>
-          </div>
-          <div class="stat">
-            <div class="num">INS</div>
-            <div class="label">Modo Inspección Educativa</div>
-          </div>
-        </div>
-      </section>
-
-      <aside class="panel hero-side">
-        <div class="shot">
-          <div class="shotbox">
-            <h3>ProyectoFP</h3>
-            <p>Plataforma para docentes de Formación Profesional.</p>
-            <div class="badge">IA · LOMLOE · Evaluación competencial</div>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Lo que aporta</h3>
-          <p>Reduce tiempo de preparación, mejora la calidad de los materiales y ayuda a auditar la coherencia entre resultados de aprendizaje, criterios de evaluación y actividades.</p>
-        </div>
-      </aside>
-    </main>
-
-    <section id="que-es" class="section">
-      <div class="title">Qué es</div>
-      <h2 class="h2">Una plataforma creada para docentes de FP</h2>
-      <p class="sub">
-        No es un generador genérico. Está enfocada en Formación Profesional y en los documentos reales que un docente necesita preparar en el día a día.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h3>Diseño instruccional</h3>
-          <p>Genera recursos con estructura pedagógica clara y contexto profesional realista.</p>
-        </div>
-        <div class="card">
-          <h3>Evaluación competencial</h3>
-          <p>Ayuda a vincular actividades, evidencias y criterios de evaluación con coherencia.</p>
-        </div>
-        <div class="card">
-          <h3>Productividad docente</h3>
-          <p>Acelera la preparación de recursos y mejora la calidad del material entregado al alumnado.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="funciones" class="section">
-      <div class="title">Funciones</div>
-      <h2 class="h2">Qué puede hacer ProyectoFP</h2>
-      <ul class="featurelist">
-        <li><span class="dot"></span>Generar situaciones de aprendizaje y proyectos ABP.</li>
-        <li><span class="dot"></span>Crear rúbricas, pruebas de evaluación y actividades de refuerzo o ampliación.</li>
-        <li><span class="dot"></span>Diseñar programaciones didácticas, unidades y casos prácticos.</li>
-        <li><span class="dot"></span>Auditar la coherencia curricular con el Modo Inspección Educativa.</li>
-        <li><span class="dot"></span>Trabajar en equipo desde el Modo Departamento.</li>
-      </ul>
-      <div class="tagrow">
-        <span class="tag">FP</span>
-        <span class="tag">LOMLOE</span>
-        <span class="tag">IA educativa</span>
-        <span class="tag">ABP</span>
-        <span class="tag">Inspección</span>
-        <span class="tag">Departamento</span>
-      </div>
-    </section>
-
-    <section id="impacto" class="cta">
-      <div>
-        <div style="font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.82">Impacto docente</div>
-        <h2 style="margin:8px 0 0;font-size:clamp(1.35rem,3vw,2rem);line-height:1.08;">Más calidad pedagógica y menos tiempo perdido.</h2>
-        <p>Una herramienta propia para mostrar tu perfil como docente de FP, innovador y con capacidad real de crear producto educativo.</p>
-      </div>
-      <div class="actions" style="margin:0">
-        <a class="btn primary" href="mailto:hola@juanpeco.com?subject=ProyectoFP">Contactar</a>
-        <a class="btn ghost" href="/">Volver a la web</a>
-      </div>
-    </section>
-
-    <footer>
-      <div>Juan Peco · Formación Profesional · Región de Murcia</div>
-      <div>ProyectoFP · página propia en <strong>/proyectofp</strong></div>
-    </footer>
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo"><div class="logo-mark">FP</div>ProyectoFP</a>
+  <ul class="nav-links">
+    <li><a href="#que-hace">Qué hace</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#caracteristicas">Características</a></li>
+    <li><a href="#sobre">Sobre el proyecto</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contacto" class="btn-ghost">Contactar</a>
+    <a href="#demo" class="btn-primary">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ver demo
+    </a>
   </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-rule"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-badge"><div class="badge-live"></div>IA especializada en FP · LOMLOE · Región de Murcia</div>
+  <h1>Genera, audita y defiende<br>tu documentación <em>FP.</em></h1>
+  <p class="hero-sub">Plataforma especializada en Formación Profesional para crear recursos, verificar cobertura curricular y preparar documentación alineada con la LOMLOE, la Ley Orgánica 3/2022 y el currículo oficial de cada módulo.</p>
+  <p style="font-size:12px;color:var(--ink4);margin-top:-16px;margin-bottom:36px;position:relative">Basado en el marco curricular de la LOMLOE y la Ley Orgánica 3/2022 de ordenación e integración de la Formación Profesional.</p>
+  <div class="hero-ctas">
+    <a href="#demo" class="btn-hero">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ver demo en vivo
+    </a>
+    <a href="#que-hace" class="btn-hero-out">Qué puede hacer →</a>
+  </div>
+  <div class="hero-flow">
+    <div class="fpill"><span class="fpill-dot bl"></span>Genera SdA, ABP, rúbricas</div>
+    <span class="farrow">→</span>
+    <div class="fpill"><span class="fpill-dot gn"></span>Audita CE y trazabilidad</div>
+    <span class="farrow">→</span>
+    <div class="fpill"><span class="fpill-dot cy"></span>Visualiza cobertura</div>
+    <span class="farrow">→</span>
+    <div class="fpill"><span class="fpill-dot am"></span>Prepara la defensa</div>
+  </div>
+  <div class="hero-mockup">
+    <div class="mockup">
+      <div class="mbar">
+        <div class="md r"></div><div class="md y"></div><div class="md g"></div>
+        <div class="mtabs">
+          <div class="mtab on">Diagnóstico</div>
+          <div class="mtab">Generar SdA</div>
+          <div class="mtab">Cobertura</div>
+          <div class="mtab">Tribunal IA</div>
+        </div>
+      </div>
+      <div class="mbody">
+        <div class="ml">
+          <div class="mlbl">Analizar programación</div>
+          <div class="mf"><label>Familia profesional</label><div class="mfv">Administración y Gestión</div></div>
+          <div class="mf"><label>Módulo</label><div class="mfv on">Empresa en el Aula (0437)</div></div>
+          <div class="mf"><label>Documento subido</label><div class="mfv" style="color:var(--green);display:flex;align-items:center;gap:5px"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>PD_EmpresaAula_2526.pdf</div></div>
+          <div class="mbtn"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" style="animation:spin .8s linear infinite"><path d="M8 1a7 7 0 0 1 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Analizando…</div>
+        </div>
+        <div class="mr">
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+            <span class="tag gn">✓ 26 CE cubiertos</span>
+            <span class="tag am">⚡ 3 sin instrumento</span>
+            <span class="tag rd">⚠ 2 sin cobertura</span>
+            <span style="margin-left:auto;font-size:11px;color:var(--ink4)">RD 1631/2009 · 38 CE</span>
+          </div>
+          <div class="ritem rd" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--red)">⚠ CE3e sin cobertura — Seguridad documental y RGPD</div><div class="ritem-b">Sin actividad ni instrumento asociado. Riesgo directo ante inspección. RD 1631/2009, Art. 8.3.</div></div>
+          <div class="ritem am" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--amber)">⚡ CE5d sin instrumento — Liquidación de impuestos</div><div class="ritem-b">Hay actividad asociada pero ningún instrumento de evaluación definido para CE5d y CE5e.</div></div>
+          <div class="ritem bl"><div class="ritem-t">Trazabilidad generada automáticamente</div><div class="ritem-b">26 CE con mapa RA→CE→actividad→instrumento. 5 requieren atención antes de la próxima evaluación.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ HACE -->
+<section id="que-hace" class="bg-paper fade-s" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="eyebrow">Plataforma integral para la gestión curricular en FP</div>
+    <h2 class="stitle">Documentación curricular integrada.</h2>
+    <p class="ssub">Un flujo completo para gestionar la documentación curricular de FP: desde la generación de recursos alineados con los Resultados de Aprendizaje y Criterios de Evaluación, hasta la verificación de cobertura y la preparación de la defensa pedagógica ante revisión educativa.</p>
+    <div style="background:var(--white);border:1px solid var(--line);border-radius:11px;padding:24px 28px;margin-bottom:48px;margin-top:32px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px"><span style="display:block;width:18px;height:1.5px;background:var(--blue)"></span>Diseñado para la nueva Formación Profesional</div>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:14px">ProyectoFP se ha concebido específicamente para trabajar con el marco curricular de la <strong>LOMLOE</strong> y la <strong>Ley Orgánica 3/2022 de ordenación e integración de la Formación Profesional</strong>. Cada funcionalidad opera sobre la estructura real de los títulos: Resultados de Aprendizaje, Criterios de Evaluación, competencias profesionales, personales y sociales, competencias clave y perfil de salida del ciclo.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--blue-bd);background:var(--blue-bg);color:var(--blue)">LOMLOE</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--blue-bd);background:var(--blue-bg);color:var(--blue)">LO 3/2022</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Resultados de Aprendizaje</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Criterios de Evaluación</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Competencias profesionales</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Competencias clave</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">FP Dual</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Perfil de salida</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Trazabilidad curricular</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">DUA</span>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="p-num">01</div>
+        <h3>Generar</h3>
+        <p>Recursos desde los RA y CE oficiales. En minutos, no en horas.</p>
+        <ul class="plist">
+          <li>Situaciones de Aprendizaje</li>
+          <li>ABP y ABR</li>
+          <li>Rúbricas analíticas</li>
+          <li>Debates y casos prácticos</li>
+          <li>Programaciones Didácticas</li>
+          <li>Proyectos FP Dual</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="p-num">02</div>
+        <h3>Auditar</h3>
+        <p>Identifica vacíos en la cobertura de RA, CE y competencias antes de una revisión educativa.</p>
+        <ul class="plist">
+          <li>CE sin cobertura</li>
+          <li>RA insuficientes</li>
+          <li>Competencias sin trabajar</li>
+          <li>Incoherencias internas</li>
+          <li>Deficiencias DUA</li>
+          <li>Referencias normativas orientativas</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="p-num">03</div>
+        <h3>Visualizar</h3>
+        <p>El estado de cobertura curricular del departamento, sin buscar en carpetas.</p>
+        <ul class="plist">
+          <li>Cobertura por módulo</li>
+          <li>Estado por RA y CE</li>
+          <li>Trazabilidad completa</li>
+          <li>Vacíos curriculares</li>
+          <li>Solapamientos</li>
+          <li>Informe exportable PDF</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="p-num">04</div>
+        <h3>Defender</h3>
+        <p>Preparación para la defensa curricular y la justificación metodológica ante revisión educativa.</p>
+        <ul class="plist">
+          <li>Simulación de defensa curricular</li>
+          <li>Preguntas sobre tu PD y SdA</li>
+          <li>Justificación metodológica</li>
+          <li>Coherencia con el perfil de salida</li>
+          <li>Informe de puntos débiles</li>
+          <li>Referencias normativas orientativas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo" class="fade-s">
+  <div class="container">
+    <div class="eyebrow">Demo interactiva</div>
+    <h2 class="stitle">Pruébalo ahora mismo.</h2>
+    <p class="ssub">Selecciona tu módulo y tipo de recurso. RA y CE obtenidos del currículo oficial de cada módulo. Sin registro.</p>
+    <div class="demo-wrap">
+      <div class="dbar">
+        <div class="md r"></div><div class="md y"></div><div class="md g"></div>
+        <div style="margin-left:12px;background:var(--white);border:1px solid var(--line);border-radius:5px;padding:3px 12px;font-size:11px;color:var(--ink3);font-weight:500">Demo interactiva · ProyectoFP</div>
+      </div>
+      <div class="dtabs">
+        <button class="dtab on" onclick="setTab(this,'diag')">Diagnóstico</button>
+        <button class="dtab" onclick="setTab(this,'sda')">Generar SdA</button>
+        <button class="dtab" onclick="setTab(this,'rubrica')">Rúbrica</button>
+        <button class="dtab" onclick="setTab(this,'tribunal')">Tribunal IA</button>
+        <button class="dtab" onclick="setTab(this,'cob')">Cobertura</button>
+      </div>
+      <div class="dbody">
+        <div class="dl">
+          <div id="f-diag">
+            <div class="fgrp"><label>Familia profesional</label>
+              <select class="fsel" id="d-fam" onchange="loadMods('d-mod',this.value,()=>{document.getElementById('d-upld').style.display='block'})">
+                <option value="">Selecciona familia…</option>
+                <option value="ADG">Administración y Gestión</option>
+                <option value="IFC">Informática y Comunicaciones</option>
+                <option value="COM">Comercio y Marketing</option>
+                <option value="SAN">Sanidad</option>
+                <option value="HOT">Hostelería y Turismo</option>
+              </select>
+            </div>
+            <div class="fgrp"><label>Módulo</label>
+              <select class="fsel" id="d-mod" disabled><option>Selecciona familia…</option></select>
+            </div>
+            <div id="d-upld" style="display:none">
+              <label style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);display:block;margin-bottom:6px">Documento (PDF o DOCX)</label>
+              <div class="upload-zone" id="d-zone" onclick="simUpload('d-zone','d-ztxt','d-run')">
+                <div class="uz-icon" id="d-zicon">📄</div>
+                <div class="uz-txt" id="d-ztxt"><strong>Clic para subir tu PD</strong><br>PDF o DOCX · máx. 10 MB</div>
+              </div>
+            </div>
+            <button class="run-btn" id="d-run" onclick="runDiag()" disabled>
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Analizar programación
+            </button>
+          </div>
+
+          <div id="f-sda" style="display:none">
+            <div class="fgrp"><label>Familia profesional</label>
+              <select class="fsel" onchange="loadMods('sda-mod',this.value,()=>{},true,'sda-ra','sda-ra-g')">
+                <option value="">Selecciona…</option>
+                <option value="ADG">Administración y Gestión</option>
+                <option value="IFC">Informática y Comunicaciones</option>
+                <option value="COM">Comercio y Marketing</option>
+                <option value="SAN">Sanidad</option>
+              </select>
+            </div>
+            <div class="fgrp"><label>Módulo</label><select class="fsel" id="sda-mod" disabled><option>Selecciona familia…</option></select></div>
+            <div id="sda-ra-g" style="display:none">
+              <div class="fgrp"><label>Resultado de Aprendizaje <span>obligatorio</span></label>
+                <select class="fsel" id="sda-ra"><option value="">Selecciona RA…</option></select>
+              </div>
+            </div>
+            <div class="fgrp"><label>Contexto del grupo <span>opcional</span></label>
+              <textarea class="ftxt" id="sda-ctx" placeholder="Ej: 24 alumnos, 2.º GM, modalidad dual, enfoque ABP…"></textarea>
+            </div>
+            <button class="run-btn" onclick="runSdA()">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Generar SdA
+            </button>
+          </div>
+
+          <div id="f-rubrica" style="display:none">
+            <div class="fgrp"><label>Familia profesional</label>
+              <select class="fsel" onchange="loadMods('rub-mod',this.value,()=>loadRAs('rub-ra','rub-mod',this.value))">
+                <option value="">Selecciona…</option>
+                <option value="ADG">Administración y Gestión</option>
+                <option value="IFC">Informática y Comunicaciones</option>
+                <option value="COM">Comercio y Marketing</option>
+              </select>
+            </div>
+            <div class="fgrp"><label>Módulo</label><select class="fsel" id="rub-mod" disabled><option>Selecciona familia…</option></select></div>
+            <div class="fgrp"><label>RA a evaluar</label><select class="fsel" id="rub-ra" disabled><option>Selecciona módulo…</option></select></div>
+            <button class="run-btn" onclick="runRubrica()">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Generar rúbrica
+            </button>
+          </div>
+
+          <div id="f-tribunal" style="display:none">
+            <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:8px;padding:12px;margin-bottom:14px">
+              <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:4px">Modo Tribunal IA</div>
+              <div style="font-size:11px;color:var(--ink3);line-height:1.5">Simulación de revisión curricular basada en el módulo seleccionado y sus criterios de evaluación.</div>
+            </div>
+            <div class="fgrp"><label>Módulo a defender</label>
+              <select class="fsel" id="trib-mod">
+                <option>Empresa en el Aula (0437)</option>
+                <option>Programación DAM (0483)</option>
+                <option>Marketing Punto de Venta (0926)</option>
+                <option>Soporte Vital (0491)</option>
+              </select>
+            </div>
+            <div class="fgrp"><label>Tipo de defensa</label>
+              <select class="fsel">
+                <option>Programación didáctica completa</option>
+                <option>Situación de Aprendizaje</option>
+                <option>Sistema de calificación</option>
+              </select>
+            </div>
+            <button class="run-btn" onclick="runTribunal()">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5l3.5-.5L8 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+              Iniciar sesión
+            </button>
+          </div>
+
+          <div id="f-cob" style="display:none">
+            <div class="fgrp"><label>Familia profesional</label>
+              <select class="fsel" onchange="loadMods('cov-mod',this.value)">
+                <option value="">Selecciona…</option>
+                <option value="ADG">Administración y Gestión</option>
+                <option value="IFC">Informática y Comunicaciones</option>
+                <option value="COM">Comercio y Marketing</option>
+              </select>
+            </div>
+            <div class="fgrp"><label>Módulo</label><select class="fsel" id="cov-mod" disabled><option>Selecciona familia…</option></select></div>
+            <div class="fgrp"><label>Curso académico</label>
+              <select class="fsel"><option>2025-2026</option><option>2024-2025</option></select>
+            </div>
+            <button class="run-btn" onclick="runCob()">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Ver cobertura
+            </button>
+          </div>
+        </div>
+
+        <div class="dr">
+          <div class="dr-hdr">
+            <div class="drstatus">
+              <div class="sdot idle" id="sdot"></div>
+              <span id="stext">Selecciona módulo y pulsa generar</span>
+            </div>
+            <button class="expbtn" id="expbtn" disabled>
+              <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Exportar
+            </button>
+          </div>
+          <div class="drout" id="demo-out">
+            <div class="dph">
+              <div class="dph-icon">📋</div>
+              <h3>Base curricular real</h3>
+              <p>RA y CE obtenidos del currículo oficial del módulo seleccionado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section id="caracteristicas" class="bg-paper fade-s" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="eyebrow">Características</div>
+    <h2 class="stitle">Cada funcionalidad resuelve<br>un problema real.</h2>
+
+    <div class="feat" style="margin-top:56px">
+      <div>
+        <div class="f-icon">🔍</div>
+        <h3>Diagnóstico en 60 segundos que ningún inspector espera que hagas</h3>
+        <p>Sube tu programación. El sistema la analiza contra los RA y CE oficiales del módulo y te dice exactamente qué falta, qué no tiene instrumento y qué señalaría primero un inspector.</p>
+        <ul class="flist">
+          <li>CE sin cobertura con referencia normativa orientativa</li>
+          <li>Incoherencias entre criterios de calificación y RA declarados</li>
+          <li>Riesgos ordenados por criticidad: alto, medio, bajo</li>
+          <li>Un clic en CE rojo abre directamente el generador</li>
+        </ul>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/></svg>Diagnóstico · Empresa en el Aula · 38 CE analizados</div>
+        <div class="fp-body">
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px">
+            <span class="tag gn">✓ 26 cubiertos</span><span class="tag am">⚡ 3 sin instrumento</span><span class="tag rd">⚠ 2 sin cobertura</span>
+          </div>
+          <div class="ritem rd" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--red)">CE3e — Sin cobertura</div><div class="ritem-b">Seguridad documental y RGPD. Sin actividad ni instrumento. RD 1631/2009, Art. 8.3.</div></div>
+          <div class="ritem am" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--amber)">CE5d — Sin instrumento de evaluación</div><div class="ritem-b">Liquidación de impuestos. Hay actividad pero ningún instrumento definido.</div></div>
+          <div class="ritem bl"><div class="ritem-t">Acción sugerida</div><div class="ritem-b">Pulsa CE3e para generar una SdA que lo cubra. La cobertura se actualiza automáticamente.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div>
+        <div class="f-icon">📋</div>
+        <h3>Genera en minutos lo que antes tardabas horas</h3>
+        <p>SdAs, ABP, debates, rúbricas, programaciones completas. Todo desde los RA y CE oficiales del módulo. La trazabilidad se construye sola mientras generas.</p>
+        <ul class="flist">
+          <li>SdA completa con actividades y rúbrica integrada en una sola operación</li>
+          <li>ABP con fases, roles, criterios de evaluación y temporalización</li>
+          <li>Cada actividad etiqueta los CE que cubre (revisable antes de exportar)</li>
+          <li>Edición inline y exportación DOCX/PDF</li>
+        </ul>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>SdA generada · RA3 · Empresa en el Aula</div>
+        <div class="fp-body">
+          <div style="font-family:var(--fd);font-size:14px;font-weight:700;margin-bottom:10px;line-height:1.3;color:var(--ink)">«La Empresa que Aprende: Gestión Documental Real»</div>
+          <div class="ritem bl" style="margin-bottom:7px"><div class="ritem-t">Act. 1 — Auditoría documental empresarial</div><div class="ritem-b">Clasificación y archivo de documentación real de empresa simulada.</div><div class="tags"><span class="tag bl">CE3a</span><span class="tag bl">CE3b</span><span class="tag gn">Grupal</span><span class="tag am">Lista cotejo</span></div></div>
+          <div class="ritem gn"><div class="ritem-t">Act. 2 — Protocolo RGPD en archivo digital</div><div class="ritem-b">Medidas de seguridad y confidencialidad en gestión documental.</div><div class="tags"><span class="tag gn">CE3e ✓</span><span class="tag gn">Individual</span><span class="tag am">Rúbrica</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div>
+        <div class="f-icon">📊</div>
+        <h3>El estado de cobertura curricular de tu departamento de un vistazo</h3>
+        <p>Verde, ámbar, rojo. Sin buscar en carpetas, sin preguntar a los docentes. El jefe de departamento ve el estado de cobertura curricular de todos sus módulos y puede actuar antes de una revisión educativa.</p>
+        <ul class="flist">
+          <li>Vista por RA con estado de cada CE</li>
+          <li>Informe de departamento generado en un clic</li>
+          <li>Exportación PDF lista para presentar a dirección</li>
+          <li>Historial por módulo y curso académico</li>
+        </ul>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>Cobertura · Empresa en el Aula · 2025-2026</div>
+        <div class="fp-body">
+          <div style="display:flex;gap:10px;margin-bottom:14px;text-align:center">
+            <div style="flex:1;padding:9px;background:var(--green-bg);border-radius:7px;border:1px solid var(--green-bd)"><div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--green)">26</div><div style="font-size:10px;color:var(--green);font-weight:600">Cubiertos</div></div>
+            <div style="flex:1;padding:9px;background:var(--amber-bg);border-radius:7px;border:1px solid var(--amber-bd)"><div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--amber)">3</div><div style="font-size:10px;color:var(--amber);font-weight:600">Sin instrumento</div></div>
+            <div style="flex:1;padding:9px;background:var(--red-bg);border-radius:7px;border:1px solid var(--red-bd)"><div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--red)">2</div><div style="font-size:10px;color:var(--red);font-weight:600">Sin cobertura</div></div>
+          </div>
+          <div class="cov-grid">
+            <div class="cov-ra"><div class="cov-hdr"><span>RA1 · Gestión de recursos</span><span style="color:var(--green)">6/6</span></div><div class="cov-bar"><div class="cov-fill full" style="width:100%"></div></div><div class="ce-chips"><span class="ce-chip ok">CE1a</span><span class="ce-chip ok">CE1b</span><span class="ce-chip ok">CE1c</span><span class="ce-chip ok">CE1d</span><span class="ce-chip ok">CE1e</span><span class="ce-chip ok">CE1f</span></div></div>
+            <div class="cov-ra"><div class="cov-hdr"><span>RA3 · Gestión documental</span><span style="color:var(--red)">4/6</span></div><div class="cov-bar"><div class="cov-fill part" style="width:66%"></div></div><div class="ce-chips"><span class="ce-chip ok">CE3a</span><span class="ce-chip ok">CE3b</span><span class="ce-chip am">CE3c</span><span class="ce-chip ok">CE3d</span><span class="ce-chip rd">CE3e</span><span class="ce-chip rd">CE3f</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div>
+        <div class="f-icon">⚖️</div>
+        <h3>El Tribunal IA que te hace las preguntas incómodas primero</h3>
+        <p>Simulación de defensa docente: el sistema genera preguntas contextualizadas al módulo y a los criterios de evaluación seleccionados. Útil para preparar la justificación metodológica y curricular antes de una revisión educativa.</p>
+        <ul class="flist">
+          <li>Preguntas específicas basadas en tu documentación, no en plantillas</li>
+          <li>Tres niveles: cobertura, coherencia y fundamentación metodológica</li>
+          <li>Informe final con puntos débiles y solución concreta para cada uno</li>
+          <li>Válido para docentes individuales y para jefes de departamento</li>
+        </ul>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5l3.5-.5L8 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Tribunal IA · Sesión activa · Empresa en el Aula</div>
+        <div class="fp-body" style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:10px 12px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px">Inspector</div><div style="font-size:12px;color:var(--ink2);line-height:1.55">En su SdA relaciona la actividad de archivo con CE3a y CE3b, pero no hay instrumento para CE3e. ¿Cómo justifica la calificación de ese criterio?</div></div>
+          <div style="background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:7px;padding:10px 12px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:4px">Docente</div><div style="font-size:12px;color:var(--ink2);line-height:1.55">Lo trabajo de forma implícita en la actividad 2, aunque no lo he documentado con un instrumento específico…</div></div>
+          <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:7px;padding:10px 12px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:4px">Diagnóstico</div><div style="font-size:12px;color:var(--red);line-height:1.5">«Implícito» no es válido ante inspección. El CE necesita instrumento explícito. Añade una lista de cotejo para CE3e en Actividad 2.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARATIVA -->
+<section class="fade-s">
+  <div class="container">
+    <div class="eyebrow">Diferenciación</div>
+    <h2 class="stitle">¿Por qué no usar ChatGPT?</h2>
+    <p class="ssub">ChatGPT genera texto. ProyectoFP trabaja sobre estructuras curriculares de FP: resultados de aprendizaje, criterios de evaluación y trazabilidad documental. No son comparables en este contexto.</p>
+    <table class="ctbl">
+      <thead>
+        <tr><th>Capacidad</th><th class="hl">ProyectoFP</th><th>ChatGPT / Claude genérico</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>RA y CE oficiales precargados por módulo</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">Hay que introducirlos manualmente</span></td></tr>
+        <tr><td>Identifica CE sin evidencia de cobertura en el documento</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">No analiza documentación propia</span></td></tr>
+        <tr><td>Trazabilidad generada automáticamente y revisable</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Requiere construcción manual</span></td></tr>
+        <tr><td>Riesgos detectados con referencias normativas orientativas</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Respuestas de carácter general</span></td></tr>
+        <tr><td>Memoria entre sesiones y módulos</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">Cada conversación empieza desde cero</span></td></tr>
+        <tr><td>Simulación de defensa contextualizada al módulo</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">Sin contexto curricular propio</span></td></tr>
+        <tr><td>Exportación con estructura documental de FP</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Requiere formateo posterior</span></td></tr>
+        <tr><td>Especializado en FP española y normativa LOMLOE</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Uso general, sin especialización</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="fade-s" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 24px">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div style="padding:28px;background:var(--white);border:1px solid var(--line);border-radius:11px">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="display:block;width:18px;height:1.5px;background:var(--blue)"></span>Construido sobre normativa educativa real</div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.75;font-weight:400">ProyectoFP trabaja sobre la normativa estatal y autonómica de Formación Profesional: LOMLOE, Ley Orgánica 3/2022, Reales Decretos de títulos de FP y currículos oficiales de cada módulo. Cubre la estructura completa: Resultados de Aprendizaje, Criterios de Evaluación, competencias profesionales, personales y sociales, competencias clave y perfil de salida del ciclo formativo.</p>
+      </div>
+      <div style="padding:28px;background:var(--white);border:1px solid var(--line);border-radius:11px">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="display:block;width:18px;height:1.5px;background:var(--blue)"></span>La IA no sustituye el criterio docente</div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.75;font-weight:400">ProyectoFP genera propuestas y análisis para facilitar el trabajo docente. La revisión profesional sigue siendo necesaria para garantizar la adecuación pedagógica y normativa de cualquier documento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="bg-paper fade-s" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="eyebrow">Sobre el proyecto</div>
+    <h2 class="stitle">Construido por alguien<br>que trabaja en FP.</h2>
+    <div class="sobre-grid">
+      <div class="sobre-ava" style="padding:0;overflow:hidden;border-radius:11px;border:1px solid var(--line);background:var(--paper)">
+        <img src="foto_juan.jpg" alt="Juan Peco — Docente FP Murcia" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+      </div>
+      <div class="sobre-bio">
+        <p>Soy <strong>Juan Peco</strong>, docente especializado en Formación Profesional en la Región de Murcia. Imparto digitalización, empresa y marketing, y termino el <strong>Máster en Formación del Profesorado</strong> con especialidad en Economía, Empresa y Turismo.</p>
+        <p>Trabajo también como docente auxiliar en el programa <strong>Código Escuela 4.0</strong> y acumulo casi dos décadas de experiencia en consultoría de marketing digital y administración de empresas antes de incorporarme a la docencia.</p>
+        <p>ProyectoFP nace de la experiencia directa en educación y del trabajo realizado durante el Máster de Formación del Profesorado (MAES), con el objetivo de reducir la carga documental y mejorar la coherencia curricular en Formación Profesional.
+        <br><br>
+        Su desarrollo está fundamentado en el análisis de las necesidades reales de los departamentos de FP en la Región de Murcia y en la normativa curricular vigente: LOMLOE, Ley Orgánica 3/2022, Reales Decretos de títulos de FP e instrucciones de la Consejería de Educación de la Región de Murcia.
+        <br><br>
+        ProyectoFP está siendo utilizado y validado con docentes de FP en la Región de Murcia. Su desarrollo incorpora el conocimiento directo del aula, la normativa curricular vigente y las necesidades reales de los departamentos de Formación Profesional.</p>
+        <div class="sobre-tags">
+          <span class="sobre-tag">Docente FP · Murcia</span>
+          <span class="sobre-tag">MAES Economía y Empresa</span>
+          <span class="sobre-tag">FP Dual</span>
+          <span class="sobre-tag">Código Escuela 4.0</span>
+          <span class="sobre-tag">IA aplicada a educación</span>
+          <span class="sobre-tag">18 años en empresa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="fade-s">
+  <div class="csm">
+    <div class="eyebrow">Preguntas frecuentes</div>
+    <h2 class="stitle">Lo que suelen preguntar.</h2>
+    <div style="margin-top:40px">
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿ProyectoFP sustituye al docente?<div class="faq-icon">+</div></div><div class="faq-a">No. ProyectoFP automatiza el trabajo mecánico: verificar cobertura de CE, detectar incoherencias, generar borradores estructurados. El criterio pedagógico, la adaptación al grupo real y la decisión final son siempre del docente. Lo que hace es reducir el tiempo que dedicas al trabajo que no requiere tu criterio para que puedas dedicarlo al que sí lo requiere.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Los documentos generados son válidos para uso oficial?<div class="faq-icon">+</div></div><div class="faq-a">Son un punto de partida riguroso, no un producto final listo para presentar. Están basados en los RA y CE del currículo oficial del módulo y en el marco LOMLOE, pero requieren revisión y adaptación por parte del docente antes de cualquier uso oficial. ProyectoFP genera borradores pedagógicamente fundamentados — la validación final es siempre responsabilidad del docente.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Está alineado con LOMLOE?<div class="faq-icon">+</div></div><div class="faq-a">La base curricular utiliza los Resultados de Aprendizaje y Criterios de Evaluación de los Reales Decretos que desarrollan la LOMLOE para FP, incluyendo las competencias profesionales, personales y sociales y las competencias clave de cada título. El sistema trabaja sobre la estructura completa del currículo oficial: RA, CE, competencias y perfil de salida del ciclo. La interpretación pedagógica y la validación final corresponden siempre al docente.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Sirve para cualquier ciclo de FP?<div class="faq-icon">+</div></div><div class="faq-a">La versión actual cubre los módulos más cursados de Administración y Gestión, Informática y Comunicaciones, Comercio y Marketing, Sanidad y Hostelería y Turismo. La cobertura se amplía progresivamente. Si tu módulo no está disponible, puedes solicitarlo escribiendo a hola@juanpeco.com.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Funciona solo para la Región de Murcia?<div class="faq-icon">+</div></div><div class="faq-a">El currículo de FP en España es mayoritariamente estatal — los RA y CE están fijados por Reales Decretos nacionales — por lo que el sistema es válido para docentes de cualquier comunidad autónoma en los módulos cubiertos. El sistema está actualmente optimizado para la Región de Murcia, con cobertura de la normativa estatal aplicable a todos los ciclos de FP.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Qué analiza exactamente el diagnóstico?<div class="faq-icon">+</div></div><div class="faq-a">Analiza tu programación didáctica contra los RA y CE oficiales del módulo. Detecta: CE sin evidencia de cobertura, CE con actividad pero sin instrumento de evaluación, incoherencias internas (criterios de calificación que no corresponden a los RA declarados) y riesgos detectados con referencia normativa orientativa. El análisis es conservador: si la cobertura es ambigua, lo reporta como dudoso en lugar de darlo por cubierto.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="fade-s" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="csm" style="text-align:center">
+    <div class="eyebrow" style="justify-content:center">Contacto</div>
+    <h2 class="stitle">¿Tu módulo no está?<br>¿Tienes alguna pregunta?</h2>
+    <p class="ssub" style="max-width:400px;margin:0 auto 36px;text-align:center">Escríbeme directamente si quieres explorar el uso de ProyectoFP en tu departamento o centro.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="mailto:hola@juanpeco.com" class="btn-hero">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5M2 4h12v8H2V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        hola@juanpeco.com
+      </a>
+      <a href="https://juanpeco.com" target="_blank" class="btn-hero-out">juanpeco.com →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-fin fade-s">
+  <div class="container">
+    <h2>Genera, audita y defiende<br>documentación FP.</h2>
+    <p>Diseñado para docentes, jefes de departamento y centros de Formación Profesional.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="#demo" class="btn-white">Probar la demo gratis</a>
+      <a href="#contacto" class="btn-white-out">Hablar con Juan</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot">
+    <div class="logo"><div class="logo-mark">FP</div>ProyectoFP</div>
+    <ul class="foot-links">
+      <li><a href="#que-hace">Qué hace</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#caracteristicas">Características</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://juanpeco.com">juanpeco.com</a></li>
+    </ul>
+    <div class="foot-copy">Herramienta de gestión curricular para Formación Profesional · Región de Murcia · 2026</div>
+  </div>
+</footer>
+
+<script>
+const M={ADG:[{id:'0437',n:'Empresa en el Aula',ra:['RA1 — Gestión de recursos humanos, económicos y materiales','RA2 — Gestión de tesorería y medios de cobro y pago','RA3 — Gestión documental y sistemas de archivo','RA4 — Aprovisionamiento y control de almacén','RA5 — Documentación contable y fiscal']},{id:'0438',n:'Comunicación Empresarial y Atención al Cliente',ra:['RA1 — Principios de comunicación empresarial','RA2 — Comunicación oral en la empresa','RA3 — Comunicación escrita empresarial','RA4 — Atención al cliente y técnicas de negociación']},{id:'0648',n:'Contabilidad y Fiscalidad',ra:['RA1 — Patrimonio empresarial y Plan General Contable','RA2 — Registro contable por partida doble','RA3 — Elaboración de cuentas anuales','RA4 — Gestión fiscal y tributaria de la empresa']}],IFC:[{id:'0483',n:'Programación (DAM)',ra:['RA1 — Estructura y sintaxis del programa informático','RA2 — Estructuras de control iterativas y condicionales','RA3 — Programación orientada a objetos básica','RA4 — Programación orientada a objetos avanzada']},{id:'0616',n:'Desarrollo Web en Entorno Cliente',ra:['RA1 — Arquitecturas y tecnologías web cliente','RA2 — Sintaxis JavaScript y tipos de datos','RA3 — DOM, eventos y funciones','RA4 — Frameworks JS y patrón MVC']},{id:'0617',n:'Desarrollo Web en Entorno Servidor',ra:['RA1 — Modelos de ejecución en servidor','RA2 — Gestión de información en servidor','RA3 — Desarrollo de aplicaciones web','RA4 — Servicios web y APIs REST']}],COM:[{id:'0926',n:'Marketing en el Punto de Venta',ra:['RA1 — Imagen y distribución comercial','RA2 — Gestión del espacio y lineal','RA3 — Escaparatismo y merchandising visual']},{id:'1012',n:'Investigación Comercial',ra:['RA1 — Estructura y variables del mercado','RA2 — Diseño de investigación comercial','RA3 — Análisis e informe de resultados']}],SAN:[{id:'0491',n:'Soporte Vital y Primeros Auxilios',ra:['RA1 — Valoración inicial y triaje','RA2 — Soporte vital básico (SVB) y DEA','RA3 — Inmovilización y movilización de pacientes']},{id:'0050',n:'Técnicas Auxiliares de Enfermería',ra:['RA1 — Organización de materiales e instrumental','RA2 — Técnicas de asistencia al profesional sanitario','RA3 — Historia clínica y documentación sanitaria']}],HOT:[{id:'0155',n:'Preelaboración y Conservación de Alimentos',ra:['RA1 — Recepción de materias primas','RA2 — Técnicas de preelaboración culinaria','RA3 — Métodos de conservación y seguridad alimentaria APPCC']}]};
+
+let upDone=false;
+
+function loadMods(selId,fam,cb,withRA,raSelId,raGrpId){
+  const sel=document.getElementById(selId);
+  if(!sel)return;
+  sel.innerHTML='<option value="">Selecciona módulo…</option>';
+  sel.disabled=!fam;
+  if(!fam)return;
+  (M[fam]||[]).forEach(m=>{const o=document.createElement('option');o.value=m.id;o.textContent=`${m.n} (${m.id})`;sel.appendChild(o);});
+  sel.disabled=false;
+  if(withRA&&raSelId){
+    sel.onchange=()=>{
+      const mod=(M[fam]||[]).find(m=>m.id===sel.value);
+      if(!mod)return;
+      const rs=document.getElementById(raSelId);
+      if(rs){rs.innerHTML='<option value="">Selecciona RA…</option>';mod.ra.forEach((r,i)=>{const o=document.createElement('option');o.value='RA'+(i+1);o.textContent=r;rs.appendChild(o);});rs.disabled=false;}
+      if(raGrpId)document.getElementById(raGrpId).style.display='block';
+    };
+  } else if(selId==='rub-mod'){
+    sel.onchange=()=>loadRAs('rub-ra',selId,fam);
+  }
+  if(cb)cb();
+}
+
+function loadRAs(raId,modId,fam){
+  const ms=document.getElementById(modId);
+  const rs=document.getElementById(raId);
+  if(!ms||!rs)return;
+  const mod=(M[fam]||[]).find(m=>m.id===ms.value);
+  if(!mod)return;
+  rs.innerHTML='';
+  mod.ra.forEach((r,i)=>{const o=document.createElement('option');o.value='RA'+(i+1);o.textContent=r;rs.appendChild(o);});
+  rs.disabled=false;
+}
+
+function simUpload(zId,tId,btnId){
+  upDone=true;
+  const z=document.getElementById(zId);
+  z.style.borderColor='var(--green)';z.style.background='var(--green-bg)';
+  document.getElementById(zId).querySelector('.uz-icon').textContent='✓';
+  document.getElementById(tId).innerHTML='<strong style="color:var(--green)">PD_Modulo_2526.pdf listo</strong><br><span style="font-size:11px">Clic para cambiar</span>';
+  if(btnId)document.getElementById(btnId).disabled=false;
+}
+
+function setTab(el,tab){
+  document.querySelectorAll('.dtab').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  document.querySelectorAll('[id^="f-"]').forEach(f=>f.style.display='none');
+  document.getElementById('f-'+tab).style.display='block';
+  resetOut('Configura y pulsa generar');
+}
+
+function resetOut(m){
+  document.getElementById('sdot').className='sdot idle';
+  document.getElementById('stext').textContent=m;
+  document.getElementById('expbtn').disabled=true;
+  document.getElementById('demo-out').innerHTML=`<div class="dph"><div class="dph-icon">📋</div><h3>${m}</h3><p>RA y CE del currículo oficial del módulo.</p></div>`;
+}
+function setLoad(m){
+  document.getElementById('sdot').className='sdot spin';
+  document.getElementById('stext').textContent=m;
+  document.getElementById('demo-out').innerHTML=`<div style="padding:4px 0;display:flex;flex-direction:column;gap:9px">${[55,88,70,82,60,75].map(w=>`<div class="sk" style="height:13px;width:${w}%"></div>`).join('')}<div class="sk" style="height:70px;margin-top:5px"></div><div class="sk" style="height:13px;width:60%"></div><div class="sk" style="height:70px;margin-top:5px"></div></div>`;
+}
+function setDone(m){
+  document.getElementById('sdot').className='sdot ok';
+  document.getElementById('stext').textContent=m;
+  document.getElementById('expbtn').disabled=false;
+}
+function addDisclaimer(){
+  const out=document.getElementById('demo-out');
+  if(out&&!out.querySelector('.demo-disclaimer')){
+    const d=document.createElement('div');
+    d.className='demo-disclaimer';
+    d.style.cssText='margin-top:16px;padding:10px 12px;background:var(--paper);border:1px solid var(--line);border-radius:7px;font-size:11px;color:var(--ink4);line-height:1.6;font-weight:400';
+    d.textContent='Las referencias normativas y sugerencias curriculares tienen carácter orientativo y requieren revisión profesional antes de su utilización.';
+    out.appendChild(d);
+  }
+}
+
+async function callAI(sys,usr){
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:sys,messages:[{role:'user',content:usr}]})});
+  const d=await r.json();
+  const txt=d.content?.map(b=>b.text||'').join('')||'';
+  const c=txt.replace(/```json|```/g,'').trim();
+  const s=c.indexOf('{'),e=c.lastIndexOf('}');
+  return JSON.parse(s>=0?c.substring(s,e+1):c);
+}
+
+async function runDiag(){
+  const fam=document.getElementById('d-fam').value;
+  const modId=document.getElementById('d-mod').value;
+  if(!fam||!modId){alert('Selecciona familia y módulo');return;}
+  const mod=(M[fam]||[]).find(m=>m.id===modId);
+  setLoad('Analizando programación…');
+  try{
+    const d=await callAI('Eres inspector experto en FP española y LOMLOE. Responde SOLO en JSON sin markdown.',
+      `Módulo: ${mod.n} (${modId}). RAs: ${mod.ra.join(', ')}.
+Simula análisis de PD real. JSON: {"resumen":{"cubiertos":26,"sin_instrumento":3,"sin_cobertura":2},"problemas":[{"codigo":"CE3e","ra":"RA3","estado":"sin_cobertura","texto":"descripción oficial del CE","motivo":"por qué es riesgo"},{"codigo":"CE5d","ra":"RA5","estado":"sin_instrumento","texto":"descripción","motivo":"explicación"}],"riesgos":[{"nivel":"alto","titulo":"título breve","detalle":"explicación","normativa":"referencia normativa orientativa","accion":"qué hacer"},{"nivel":"medio","titulo":"título","detalle":"explicación","normativa":"referencia","accion":"acción"}],"incoherencias":[{"descripcion":"descripción breve","detalle":"explicación"}]}`);
+    renderDiag(d);
+  }catch(e){renderErr();}
+}
+
+function renderDiag(d){
+  setDone(`Análisis completado · ${(d.resumen?.cubiertos||0)+(d.resumen?.sin_instrumento||0)+(d.resumen?.sin_cobertura||0)} CE`);
+  let h=`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px"><span class="tag gn">✓ ${d.resumen?.cubiertos||0} cubiertos</span><span class="tag am">⚡ ${d.resumen?.sin_instrumento||0} sin instrumento</span><span class="tag rd">⚠ ${d.resumen?.sin_cobertura||0} sin cobertura</span></div>`;
+  if(d.problemas?.length){h+=`<div class="rsec"><div class="rsec-t">CE con problemas</div>`;d.problemas.forEach(p=>{h+=`<div class="rcard ${p.estado==='sin_cobertura'?'rd':'am'}"><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span class="tag ${p.estado==='sin_cobertura'?'rd':'am'}">${p.codigo}</span><span class="tag bl">${p.ra}</span><span class="tag ${p.estado==='sin_cobertura'?'rd':'am'}" style="margin-left:auto">${p.estado==='sin_cobertura'?'Sin cobertura':'Sin instrumento'}</span></div><div class="rcard-b">${p.texto}</div><div style="font-size:10px;color:var(--ink4);margin-top:5px">⚠ ${p.motivo}</div></div>`;});h+='</div>';}
+  if(d.riesgos?.length){h+=`<div class="rsec"><div class="rsec-t">Riesgos ante inspección</div>`;d.riesgos.forEach(r=>{h+=`<div class="rcard ${r.nivel==='alto'?'rd':'am'}"><div class="rcard-t" style="color:var(--${r.nivel==='alto'?'red':'amber'})">${r.nivel==='alto'?'⚠':'⚡'} ${r.titulo}</div><div class="rcard-b">${r.detalle}</div><div style="font-size:10px;color:var(--ink4);margin-top:5px">📋 ${r.normativa} · ${r.accion}</div></div>`;});h+='</div>';}
+  if(d.incoherencias?.length){h+=`<div class="rsec"><div class="rsec-t">Incoherencias detectadas</div>`;d.incoherencias.forEach(i=>{h+=`<div class="rcard bl"><div class="rcard-t">${i.descripcion}</div><div class="rcard-b">${i.detalle}</div></div>`;});h+='</div>';}
+  document.getElementById('demo-out').innerHTML=h;
+  addDisclaimer();
+}
+
+async function runSdA(){
+  const fam=document.querySelector('#f-sda .fsel')?.value;
+  const modId=document.getElementById('sda-mod')?.value;
+  const raId=document.getElementById('sda-ra')?.value;
+  const ctx=document.getElementById('sda-ctx')?.value||'';
+  if(!modId||!raId){alert('Selecciona módulo y RA');return;}
+  const mod=(M[fam||'ADG']||[]).find(m=>m.id===modId);
+  const raIdx=parseInt(raId.replace('RA',''))-1;
+  const raT=mod?.ra[raIdx]||raId;
+  setLoad('Generando Situación de Aprendizaje…');
+  try{
+    const d=await callAI('Eres experto en didáctica de FP española. Genera SdAs con trazabilidad. Responde SOLO en JSON sin markdown.',
+      `Módulo: ${mod?.n}. RA: ${raT}. Contexto: ${ctx||'Grupo estándar FP'}.
+JSON: {"titulo":"título creativo del sector","descripcion":"2 frases","duracion_sesiones":4,"actividades":[{"num":1,"titulo":"nombre","descripcion":"descripción","tipo":"individual|grupal|exposición","ce":["CE1a","CE1b"],"instrumento":"tipo"},{"num":2,"titulo":"nombre","descripcion":"descripción","tipo":"grupal","ce":["CE1c"],"instrumento":"tipo"},{"num":3,"titulo":"nombre","descripcion":"descripción","tipo":"individual","ce":["CE1d","CE1e"],"instrumento":"tipo"}],"trazabilidad":[{"ra":"RA1","ce":"CE1a","act":1,"inst":"instrumento"}]}`);
+    renderSdA(d);
+  }catch(e){renderErr();}
+}
+
+function renderSdA(d){
+  setDone('SdA generada · trazabilidad revisable');
+  const cols={individual:'bl',grupal:'gn',exposición:'am',exposicion:'am'};
+  let h=`<div style="font-family:var(--fd);font-size:17px;font-weight:700;letter-spacing:-.01em;margin-bottom:7px;line-height:1.25;color:var(--ink)">${d.titulo}</div><div style="font-size:13px;color:var(--ink3);margin-bottom:14px;line-height:1.6;font-family:var(--fb)">${d.descripcion}</div><div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:16px"><span class="tag bl">${d.duracion_sesiones} sesiones</span>${(d.actividades||[]).flatMap(a=>a.ce||[]).filter((v,i,ar)=>ar.indexOf(v)===i).map(c=>`<span class="tag gn">${c}</span>`).join('')}</div>`;
+  h+=`<div class="rsec"><div class="rsec-t">Actividades</div>`;
+  (d.actividades||[]).forEach(a=>{const c=cols[a.tipo]||'bl';h+=`<div class="rcard ${c}" style="margin-bottom:7px"><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="font-size:9px;font-weight:700;color:var(--ink4)">A${a.num}</span><div class="rcard-t" style="margin:0">${a.titulo}</div><span class="tag ${c}" style="margin-left:auto">${a.tipo}</span></div><div class="rcard-b">${a.descripcion}</div><div class="tags">${(a.ce||[]).map(ce=>`<span class="tag gn">${ce}</span>`).join('')}${a.instrumento?`<span class="tag am">${a.instrumento}</span>`:''}</div></div>`;});
+  h+='</div>';
+  if(d.trazabilidad?.length){h+=`<div class="rsec"><div class="rsec-t">Trazabilidad RA → CE → Actividad → Instrumento</div><table class="ttbl"><thead><tr><th>RA</th><th>CE</th><th>Act.</th><th>Instrumento</th></tr></thead><tbody>${d.trazabilidad.map(t=>`<tr><td style="color:var(--blue);font-weight:700">${t.ra}</td><td style="color:var(--blue)">${t.ce}</td><td>A${t.act}</td><td style="color:var(--amber)">${t.inst}</td></tr>`).join('')}</tbody></table></div>`;}
+  document.getElementById('demo-out').innerHTML=h;
+  addDisclaimer();
+}
+
+async function runRubrica(){
+  const modId=document.getElementById('rub-mod')?.value;
+  const raId=document.getElementById('rub-ra')?.value||'RA1';
+  if(!modId){alert('Selecciona módulo');return;}
+  setLoad('Generando rúbrica analítica…');
+  try{
+    const d=await callAI('Eres experto en evaluación FP española. Genera rúbricas desde CE oficiales. Responde SOLO en JSON sin markdown.',
+      `Módulo: ${modId}. RA: ${raId}.
+JSON: {"titulo":"Rúbrica de Evaluación — descripción","criterios":[{"ce_id":"CE1a","ce_texto":"texto oficial","peso":"25%","excelente":"descriptor 9-10","notable":"descriptor 7-8","suficiente":"descriptor 5-6","insuficiente":"descriptor 0-4"}]}
+4 criterios reales. Pesos suman 100%.`);
+    renderRubrica(d);
+  }catch(e){renderErr();}
+}
+
+function renderRubrica(d){
+  setDone('Rúbrica generada desde CE oficiales');
+  document.getElementById('demo-out').innerHTML=`<div style="font-family:var(--fd);font-size:15px;font-weight:700;margin-bottom:14px;color:var(--ink)">${d.titulo}</div><div style="overflow-x:auto"><table class="ttbl"><thead><tr><th>CE</th><th>Excelente 9-10</th><th>Notable 7-8</th><th>Suficiente 5-6</th><th>Insuficiente</th><th>Peso</th></tr></thead><tbody>${(d.criterios||[]).map(c=>`<tr><td><span class="tag bl">${c.ce_id}</span><div style="font-size:10px;color:var(--ink4);margin-top:3px;line-height:1.4">${c.ce_texto}</div></td><td style="color:var(--green)">${c.excelente}</td><td style="color:var(--blue)">${c.notable}</td><td style="color:var(--amber)">${c.suficiente}</td><td style="color:var(--red)">${c.insuficiente}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+async function runTribunal(){
+  const mod=document.getElementById('trib-mod')?.value||'Empresa en el Aula';
+  setLoad('El inspector está revisando tu documentación…');
+  try{
+    const d=await callAI('Eres inspector de educación experto en FP con 20 años de experiencia. Haces preguntas incómodas y específicas. Responde SOLO en JSON sin markdown.',
+      `Módulo: ${mod}.
+JSON: {"modulo":"${mod}","preguntas":[{"tipo":"cobertura","pregunta":"pregunta específica sobre CE concreto sin cubrir","punto_debil":"qué falla","normativa":"RD o artículo exacto"},{"tipo":"coherencia","pregunta":"pregunta sobre incoherencia entre criterios","punto_debil":"descripción","normativa":"referencia"},{"tipo":"metodologia","pregunta":"pregunta sobre fundamentación metodológica","punto_debil":"qué no está fundamentado","normativa":"referencia"}],"diagnostico":"valoración honesta en 2 frases"}`);
+    renderTribunal(d);
+  }catch(e){renderErr();}
+}
+
+function renderTribunal(d){
+  setDone('Sesión de tribunal completada');
+  const tipos={cobertura:'Cobertura curricular',coherencia:'Coherencia interna',metodologia:'Fundamentación metodológica'};
+  let h=`<div style="display:flex;align-items:center;gap:7px;margin-bottom:16px"><span class="tag rd">Tribunal activo</span><span style="font-size:12px;color:var(--ink3)">${d.modulo}</span></div>`;
+  (d.preguntas||[]).forEach((p,i)=>{h+=`<div class="rcard rd" style="margin-bottom:9px"><div style="font-size:9px;font-weight:700;color:var(--red);margin-bottom:5px;letter-spacing:.07em;text-transform:uppercase">${tipos[p.tipo]||'Pregunta'} ${i+1}</div><div style="font-size:13px;color:var(--ink);font-style:italic;margin-bottom:7px;line-height:1.55;font-family:var(--fb)">"${p.pregunta}"</div><div style="font-size:10px;color:var(--ink4)">Punto débil: ${p.punto_debil} · ${p.normativa}</div></div>`;});
+  if(d.diagnostico){h+=`<div class="rcard bl"><div class="rcard-t">Diagnóstico general</div><div class="rcard-b">${d.diagnostico}</div></div>`;}
+  document.getElementById('demo-out').innerHTML=h;
+  addDisclaimer();
+}
+
+async function runCob(){
+  const modId=document.getElementById('cov-mod')?.value;
+  if(!modId){alert('Selecciona módulo');return;}
+  setLoad('Calculando cobertura curricular…');
+  try{
+    const d=await callAI('Eres sistema de gestión curricular FP. Genera datos de cobertura realistas. Responde SOLO en JSON sin markdown.',
+      `Módulo: ${modId}.
+JSON: {"stats":{"cubiertos":number,"sin_instrumento":number,"sin_cobertura":number,"total":number},"ra_cobertura":[{"ra":"RA1","texto":"descripción breve","total_ce":6,"cubiertos":6,"estado":"completo","ces":[{"c":"CE1a","e":"ok"},{"c":"CE1b","e":"ok"},{"c":"CE1c","e":"ok"},{"c":"CE1d","e":"ok"},{"c":"CE1e","e":"ok"},{"c":"CE1f","e":"ok"}]},{"ra":"RA3","texto":"descripción breve","total_ce":6,"cubiertos":4,"estado":"parcial","ces":[{"c":"CE3a","e":"ok"},{"c":"CE3b","e":"ok"},{"c":"CE3c","e":"am"},{"c":"CE3d","e":"ok"},{"c":"CE3e","e":"rd"},{"c":"CE3f","e":"rd"}]}]}`);
+    renderCob(d);
+  }catch(e){renderErr();}
+}
+
+function renderCob(d){
+  setDone(`Cobertura calculada · ${d.stats?.total||0} CE`);
+  let h=`<div style="display:flex;gap:9px;margin-bottom:16px;text-align:center"><div style="flex:1;padding:9px;background:var(--green-bg);border-radius:7px;border:1px solid var(--green-bd)"><div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--green)">${d.stats?.cubiertos||0}</div><div style="font-size:10px;color:var(--green);font-weight:600">Cubiertos</div></div><div style="flex:1;padding:9px;background:var(--amber-bg);border-radius:7px;border:1px solid var(--amber-bd)"><div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--amber)">${d.stats?.sin_instrumento||0}</div><div style="font-size:10px;color:var(--amber);font-weight:600">Sin instrumento</div></div><div style="flex:1;padding:9px;background:var(--red-bg);border-radius:7px;border:1px solid var(--red-bd)"><div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--red)">${d.stats?.sin_cobertura||0}</div><div style="font-size:10px;color:var(--red);font-weight:600">Sin cobertura</div></div></div><div class="rsec"><div class="rsec-t">Por Resultado de Aprendizaje</div><div class="cov-grid">`;
+  (d.ra_cobertura||[]).forEach(ra=>{
+    const pct=Math.round((ra.cubiertos/ra.total_ce)*100);
+    const cls=pct===100?'full':pct>=50?'part':'none';
+    const col=pct===100?'var(--green)':pct>=50?'var(--amber)':'var(--red)';
+    h+=`<div class="cov-ra"><div class="cov-hdr"><span>${ra.ra} · ${ra.texto}</span><span style="color:${col}">${ra.cubiertos}/${ra.total_ce}</span></div><div class="cov-bar"><div class="cov-fill ${cls}" style="width:${pct}%"></div></div><div class="ce-chips">${(ra.ces||[]).map(c=>`<span class="ce-chip ${c.e==='ok'?'ok':c.e==='am'?'am':'rd'}">${c.c}</span>`).join('')}</div></div>`;
+  });
+  h+='</div></div>';
+  document.getElementById('demo-out').innerHTML=h;
+}
+
+function afterRender(){addDisclaimer();}
+
+function renderErr(){
+  document.getElementById('sdot').className='sdot idle';
+  document.getElementById('stext').textContent='Error de conexión';
+  document.getElementById('demo-out').innerHTML=`<div class="dph"><div class="dph-icon">⚠</div><h3>Error al conectar</h3><p>Comprueba tu conexión e inténtalo de nuevo.</p></div>`;
+}
+
+function tFaq(el){
+  const i=el.parentElement;
+  const w=i.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(x=>x.classList.remove('open'));
+  if(!w)i.classList.add('open');
+}
+
+// scroll animations removed - content visible by default
+</script>
 </body>
 </html>
