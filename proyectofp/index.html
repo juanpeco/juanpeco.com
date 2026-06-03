@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProyectoFP — Gestión curricular con IA para Formación Profesional</title>
+<title>ProyectoFP — Diagnóstico y gestión curricular para Formación Profesional</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ── TOKENS ── */
 :root {
   --white:   #ffffff;
-  --paper:   #f8f7f5;
+  --paper:   #F8F7F5;
+  --page-bg: #F8F7F5;
   --paper2:  #f1efe9;
   --paper3:  #e8e5dc;
   --line:    #dedad2;
@@ -20,11 +21,11 @@
   --ink3:    #6b6860;
   --ink4:    #9c9890;
   --ink5:    #c5c2ba;
-  --blue:    #1d4ed8;
-  --blue2:   #2563eb;
-  --blue3:   #3b82f6;
-  --blue-bg: #eff4ff;
-  --blue-bd: #bfcffe;
+  --blue:    #5B4FCF;
+  --blue2:   #6B5CE7;
+  --blue3:   #7C6FF0;
+  --blue-bg: #F0EEFF;
+  --blue-bd: #D4CFFF;
   --green:   #15803d;
   --green-bg:#f0fdf4;
   --green-bd:#bbf7d0;
@@ -35,13 +36,14 @@
   --red-bg:  #fef2f2;
   --red-bd:  #fecaca;
   --fd: 'Bricolage Grotesque', system-ui, sans-serif;
-  --fb: 'Bricolage Grotesque', system-ui, sans-serif;
+  --fi: 'Inter', system-ui, sans-serif;
+  --fb: 'Inter', system-ui, sans-serif;
 }
 
 /* ── RESET ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--white);color:var(--ink);font-family:var(--fb);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{background:var(--page-bg);color:var(--ink);font-family:var(--fb);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -53,11 +55,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;display:flex;ali
 .nav-right{display:flex;gap:8px;align-items:center}
 .btn-ghost{color:var(--ink2);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line2);border-radius:7px;background:transparent;cursor:pointer;font-family:var(--fb);transition:all .12s;text-decoration:none}
 .btn-ghost:hover{color:var(--ink);border-color:var(--ink3)}
-.btn-primary{background:var(--blue);color:white;font-size:13px;font-weight:600;padding:7px 16px;border-radius:7px;border:none;cursor:pointer;font-family:var(--fb);transition:all .15s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
-.btn-primary:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 4px 12px rgba(29,78,216,.25)}
+.btn-primary{background:var(--blue);color:white;font-size:13px;font-weight:600;padding:7px 16px;border-radius:7px;border:none;cursor:pointer;font-family:var(--fb);transition:background .15s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:var(--blue2)}
 
 /* ── LAYOUT ── */
-section{padding:88px 24px}
+section{padding:72px 24px}
 .container{max-width:1080px;margin:0 auto}
 .csm{max-width:680px;margin:0 auto}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:9px}
@@ -75,18 +77,17 @@ section{padding:88px 24px}
 .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:104px 24px 72px;text-align:center;background:var(--white);position:relative;overflow:hidden}
-.hero-rule{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;opacity:.35;mask-image:radial-gradient(ellipse 80% 65% at 50% 30%,black 30%,transparent 100%)}
-.hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:300px;background:radial-gradient(ellipse,rgba(29,78,216,.06) 0%,transparent 70%);pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:7px;background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:5px 14px 5px 9px;font-size:12px;color:var(--ink3);font-weight:500;margin-bottom:26px;position:relative}
-.badge-live{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px var(--green-bd);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero{min-height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 24px 48px;text-align:center;background:var(--page-bg);position:relative;overflow:hidden}
+.hero-rule{display:none}
+.hero-glow{display:none}
+.hero-badge{display:inline-flex;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:100px;padding:5px 16px;font-size:11px;color:var(--ink3);font-weight:500;margin-bottom:24px;letter-spacing:.02em}
+
 .hero h1{font-family:var(--fd);font-size:clamp(40px,6.5vw,76px);font-weight:800;line-height:1.04;letter-spacing:-.03em;max-width:840px;margin-bottom:20px;color:var(--ink);position:relative}
 .hero h1 em{font-style:normal;color:var(--blue)}
 .hero-sub{font-size:clamp(16px,2vw,19px);color:var(--ink3);font-weight:300;max-width:520px;line-height:1.75;margin-bottom:36px;position:relative;font-family:var(--fb)}
 .hero-ctas{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;position:relative}
-.btn-hero{background:var(--blue);color:white;font-size:15px;font-weight:600;padding:12px 26px;border-radius:9px;border:none;cursor:pointer;font-family:var(--fb);transition:all .18s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(29,78,216,.2),0 1px 2px rgba(0,0,0,.08)}
-.btn-hero:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(29,78,216,.3)}
+.btn-hero{background:var(--blue);color:white;font-size:15px;font-weight:600;padding:12px 26px;border-radius:9px;border:none;cursor:pointer;font-family:var(--fb);transition:background .15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-hero:hover{background:var(--blue2)}
 .btn-hero-out{color:var(--ink2);font-size:15px;font-weight:500;padding:12px 20px;border:1px solid var(--line2);border-radius:9px;background:transparent;cursor:pointer;font-family:var(--fb);transition:all .18s;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
 .btn-hero-out:hover{color:var(--ink);border-color:var(--ink3);background:var(--paper)}
 
@@ -101,7 +102,7 @@ section{padding:88px 24px}
 .hero-mockup{width:100%;max-width:960px;position:relative}
 .mockup{border:1px solid var(--line);border-radius:12px;background:var(--white);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 30px rgba(0,0,0,.08),0 30px 80px rgba(0,0,0,.06)}
 .mbar{display:flex;align-items:center;gap:6px;padding:11px 16px;background:var(--paper);border-bottom:1px solid var(--line)}
-.md{width:10px;height:10px;border-radius:50%}.md.r{background:#ff5f57}.md.y{background:#febc2e}.md.g{background:#28c840}
+.md{display:none}
 .mtabs{display:flex;gap:3px;margin-left:12px}
 .mtab{padding:3px 11px;border-radius:5px;font-size:11px;font-weight:600;color:var(--ink4);cursor:default}
 .mtab.on{background:var(--blue-bg);color:var(--blue)}
@@ -129,7 +130,7 @@ section{padding:88px 24px}
 .pillar{padding:28px 24px;border-right:1px solid var(--line);background:var(--white);transition:background .15s}
 .pillar:last-child{border-right:none}
 .pillar:hover{background:var(--paper)}
-.p-num{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:14px;color:var(--line2)}
+.p-num{font-family:var(--fi);font-size:13px;font-weight:600;letter-spacing:.06em;line-height:1;margin-bottom:12px;color:var(--ink4);text-transform:uppercase}
 .pillar:hover .p-num{color:var(--blue)}
 .pillar h3{font-family:var(--fd);font-size:16px;font-weight:700;margin-bottom:8px;color:var(--ink)}
 .pillar p{font-size:13px;color:var(--ink3);line-height:1.6;font-weight:400;margin-bottom:14px}
@@ -173,7 +174,7 @@ section{padding:88px 24px}
 
 /* ── DEMO ── */
 .demo-wrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.06),0 20px 60px rgba(0,0,0,.05);margin-top:48px}
-.dbar{display:flex;align-items:center;gap:6px;padding:12px 18px;background:var(--paper);border-bottom:1px solid var(--line)}
+.dbar{display:none}
 .dtabs{display:flex;gap:3px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--paper);flex-wrap:wrap}
 .dtab{padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink3);border:1px solid transparent;background:transparent;font-family:var(--fb);transition:all .12s}
 .dtab:hover{color:var(--ink);background:var(--white);border-color:var(--line)}
@@ -198,8 +199,8 @@ section{padding:88px 24px}
 .fsel:focus,.finp:focus,.ftxt:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-bg)}
 .fsel option{background:white}
 .ftxt{resize:vertical;min-height:72px;line-height:1.5}
-.run-btn{width:100%;background:var(--blue);color:white;border:none;border-radius:8px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;justify-content:center;gap:8px;transition:all .15s;margin-top:4px;box-shadow:0 1px 3px rgba(29,78,216,.2)}
-.run-btn:hover{background:var(--blue2);box-shadow:0 4px 12px rgba(29,78,216,.25);transform:translateY(-1px)}.run-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.run-btn{width:100%;background:var(--blue);color:white;border:none;border-radius:8px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;justify-content:center;gap:8px;transition:background .15s;margin-top:4px}
+.run-btn:hover{background:var(--blue2)}.run-btn:disabled{opacity:.45;cursor:not-allowed}
 .upload-zone{border:2px dashed var(--line2);border-radius:9px;padding:22px;text-align:center;cursor:pointer;transition:all .15s;margin-bottom:12px;background:var(--white)}
 .upload-zone:hover{border-color:var(--blue);background:var(--blue-bg)}
 .uz-icon{font-size:26px;margin-bottom:7px}
@@ -255,13 +256,13 @@ section{padding:88px 24px}
 .faq-item.open .faq-a{display:block}
 
 /* ── CTA FINAL ── */
-.cta-fin{text-align:center;background:var(--blue);color:white;padding:88px 24px}
-.cta-fin h2{font-family:var(--fd);font-size:clamp(30px,4.5vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;color:white}
-.cta-fin p{font-size:17px;font-weight:300;margin-bottom:34px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.7;color:rgba(255,255,255,.8);font-family:var(--fb)}
-.btn-white{background:white;color:var(--blue);font-size:15px;font-weight:700;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .15s;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-.btn-white:hover{background:var(--blue-bg);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
-.btn-white-out{color:rgba(255,255,255,.85);font-size:15px;font-weight:500;padding:13px 20px;border:1px solid rgba(255,255,255,.3);border-radius:9px;background:transparent;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .15s}
-.btn-white-out:hover{color:white;border-color:rgba(255,255,255,.6)}
+.cta-fin{text-align:center;background:var(--white);border-top:1px solid var(--line);padding:72px 24px}
+.cta-fin h2{font-family:var(--fd);font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:14px;color:var(--ink)}
+.cta-fin p{font-size:15px;font-weight:400;margin-bottom:28px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7;color:var(--ink3);font-family:var(--fb)}
+.btn-white{background:var(--blue);color:white;font-size:14px;font-weight:600;padding:11px 24px;border-radius:7px;border:none;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .15s}
+.btn-white:hover{background:var(--blue2)}
+.btn-white-out{color:var(--ink2);font-size:14px;font-weight:500;padding:11px 20px;border:1px solid var(--line2);border-radius:7px;background:transparent;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:border-color .15s,color .15s}
+.btn-white-out:hover{color:var(--ink);border-color:var(--ink3)}
 
 /* ── FOOTER ── */
 footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white)}
@@ -319,16 +320,14 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-rule"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-badge"><div class="badge-live"></div>IA especializada en FP · LOMLOE · Región de Murcia</div>
+  <div class="hero-badge">Herramienta curricular para FP · LOMLOE · LO 3/2022</div>
   <h1>Genera, audita y defiende<br>tu documentación <em>FP.</em></h1>
-  <p class="hero-sub">Plataforma especializada en Formación Profesional para crear recursos, verificar cobertura curricular y preparar documentación alineada con la LOMLOE, la Ley Orgánica 3/2022 y el currículo oficial de cada módulo.</p>
+  <p class="hero-sub">Genera recursos didácticos, verifica que tus Resultados de Aprendizaje y Criterios de Evaluación tienen cobertura real, y prepara la defensa curricular de tu programación. Todo sobre el currículo oficial del módulo, sin necesidad de introducir la normativa manualmente.</p>
   <p style="font-size:12px;color:var(--ink4);margin-top:-16px;margin-bottom:36px;position:relative">Basado en el marco curricular de la LOMLOE y la Ley Orgánica 3/2022 de ordenación e integración de la Formación Profesional.</p>
   <div class="hero-ctas">
     <a href="#demo" class="btn-hero">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Ver demo en vivo
+      Probar el diagnóstico
     </a>
     <a href="#que-hace" class="btn-hero-out">Qué puede hacer →</a>
   </div>
@@ -339,7 +338,7 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
     <span class="farrow">→</span>
     <div class="fpill"><span class="fpill-dot cy"></span>Visualiza cobertura</div>
     <span class="farrow">→</span>
-    <div class="fpill"><span class="fpill-dot am"></span>Prepara la defensa</div>
+    <div class="fpill"><span class="fpill-dot am"></span>Prepara la revisión curricular</div>
   </div>
   <div class="hero-mockup">
     <div class="mockup">
@@ -357,8 +356,8 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
           <div class="mlbl">Analizar programación</div>
           <div class="mf"><label>Familia profesional</label><div class="mfv">Administración y Gestión</div></div>
           <div class="mf"><label>Módulo</label><div class="mfv on">Empresa en el Aula (0437)</div></div>
-          <div class="mf"><label>Documento subido</label><div class="mfv" style="color:var(--green);display:flex;align-items:center;gap:5px"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>PD_EmpresaAula_2526.pdf</div></div>
-          <div class="mbtn"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" style="animation:spin .8s linear infinite"><path d="M8 1a7 7 0 0 1 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Analizando…</div>
+          <div class="mf"><label>Documento subido</label><div class="mfv" style="color:var(--green);font-weight:500;display:flex;align-items:center;gap:5px"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>ProgramaciónDidáctica_2526.pdf</div></div>
+          <div class="mbtn" style="background:var(--green);cursor:default"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Análisis completado</div>
         </div>
         <div class="mr">
           <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
@@ -367,104 +366,29 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
             <span class="tag rd">⚠ 2 sin cobertura</span>
             <span style="margin-left:auto;font-size:11px;color:var(--ink4)">RD 1631/2009 · 38 CE</span>
           </div>
-          <div class="ritem rd" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--red)">⚠ CE3e sin cobertura — Seguridad documental y RGPD</div><div class="ritem-b">Sin actividad ni instrumento asociado. Riesgo directo ante inspección. RD 1631/2009, Art. 8.3.</div></div>
+          <div class="ritem rd" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--red)">⚠ CE3e sin cobertura — Seguridad documental y RGPD</div><div class="ritem-b">Sin actividad ni instrumento asociado. Incumplimiento de cobertura. RD 1631/2009, Art. 8.3.</div></div>
           <div class="ritem am" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--amber)">⚡ CE5d sin instrumento — Liquidación de impuestos</div><div class="ritem-b">Hay actividad asociada pero ningún instrumento de evaluación definido para CE5d y CE5e.</div></div>
-          <div class="ritem bl"><div class="ritem-t">Trazabilidad generada automáticamente</div><div class="ritem-b">26 CE con mapa RA→CE→actividad→instrumento. 5 requieren atención antes de la próxima evaluación.</div></div>
+          <div class="ritem bl"><div class="ritem-t">Resumen del análisis · Empresa en el Aula (0437) · RD 1631/2009</div><div class="ritem-b">26/31 CE cubiertos con instrumento. 5 requieren acción: 2 sin cobertura (CE3e, CE5f), 3 sin instrumento (CE5d, CE5e, CE7a). Trazabilidad RA→CE→actividad→instrumento generada para los 31 criterios.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUÉ HACE -->
-<section id="que-hace" class="bg-paper fade-s" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="container">
-    <div class="eyebrow">Plataforma integral para la gestión curricular en FP</div>
-    <h2 class="stitle">Documentación curricular integrada.</h2>
-    <p class="ssub">Un flujo completo para gestionar la documentación curricular de FP: desde la generación de recursos alineados con los Resultados de Aprendizaje y Criterios de Evaluación, hasta la verificación de cobertura y la preparación de la defensa pedagógica ante revisión educativa.</p>
-    <div style="background:var(--white);border:1px solid var(--line);border-radius:11px;padding:24px 28px;margin-bottom:48px;margin-top:32px">
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px"><span style="display:block;width:18px;height:1.5px;background:var(--blue)"></span>Diseñado para la nueva Formación Profesional</div>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:14px">ProyectoFP se ha concebido específicamente para trabajar con el marco curricular de la <strong>LOMLOE</strong> y la <strong>Ley Orgánica 3/2022 de ordenación e integración de la Formación Profesional</strong>. Cada funcionalidad opera sobre la estructura real de los títulos: Resultados de Aprendizaje, Criterios de Evaluación, competencias profesionales, personales y sociales, competencias clave y perfil de salida del ciclo.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:8px">
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--blue-bd);background:var(--blue-bg);color:var(--blue)">LOMLOE</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--blue-bd);background:var(--blue-bg);color:var(--blue)">LO 3/2022</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Resultados de Aprendizaje</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Criterios de Evaluación</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Competencias profesionales</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Competencias clave</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">FP Dual</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Perfil de salida</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Trazabilidad curricular</span>
-        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">DUA</span>
-      </div>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="p-num">01</div>
-        <h3>Generar</h3>
-        <p>Recursos desde los RA y CE oficiales. En minutos, no en horas.</p>
-        <ul class="plist">
-          <li>Situaciones de Aprendizaje</li>
-          <li>ABP y ABR</li>
-          <li>Rúbricas analíticas</li>
-          <li>Debates y casos prácticos</li>
-          <li>Programaciones Didácticas</li>
-          <li>Proyectos FP Dual</li>
-        </ul>
-      </div>
-      <div class="pillar">
-        <div class="p-num">02</div>
-        <h3>Auditar</h3>
-        <p>Identifica vacíos en la cobertura de RA, CE y competencias antes de una revisión educativa.</p>
-        <ul class="plist">
-          <li>CE sin cobertura</li>
-          <li>RA insuficientes</li>
-          <li>Competencias sin trabajar</li>
-          <li>Incoherencias internas</li>
-          <li>Deficiencias DUA</li>
-          <li>Referencias normativas orientativas</li>
-        </ul>
-      </div>
-      <div class="pillar">
-        <div class="p-num">03</div>
-        <h3>Visualizar</h3>
-        <p>El estado de cobertura curricular del departamento, sin buscar en carpetas.</p>
-        <ul class="plist">
-          <li>Cobertura por módulo</li>
-          <li>Estado por RA y CE</li>
-          <li>Trazabilidad completa</li>
-          <li>Vacíos curriculares</li>
-          <li>Solapamientos</li>
-          <li>Informe exportable PDF</li>
-        </ul>
-      </div>
-      <div class="pillar">
-        <div class="p-num">04</div>
-        <h3>Defender</h3>
-        <p>Preparación para la defensa curricular y la justificación metodológica ante revisión educativa.</p>
-        <ul class="plist">
-          <li>Simulación de defensa curricular</li>
-          <li>Preguntas sobre tu PD y SdA</li>
-          <li>Justificación metodológica</li>
-          <li>Coherencia con el perfil de salida</li>
-          <li>Informe de puntos débiles</li>
-          <li>Referencias normativas orientativas</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- DEMO -->
-<section id="demo" class="fade-s">
+<section id="demo" class="fade-s" style="padding-top:56px">
   <div class="container">
     <div class="eyebrow">Demo interactiva</div>
-    <h2 class="stitle">Pruébalo ahora mismo.</h2>
-    <p class="ssub">Selecciona tu módulo y tipo de recurso. RA y CE obtenidos del currículo oficial de cada módulo. Sin registro.</p>
+    <h2 class="stitle">Pruébalo sobre el currículo oficial.</h2>
+    <p class="ssub">Selecciona familia profesional y módulo. Los RA y CE se cargan desde el currículo oficial. Sin registro, sin datos personales.</p>
     <div class="demo-wrap">
-      <div class="dbar">
-        <div class="md r"></div><div class="md y"></div><div class="md g"></div>
-        <div style="margin-left:12px;background:var(--white);border:1px solid var(--line);border-radius:5px;padding:3px 12px;font-size:11px;color:var(--ink3);font-weight:500">Demo interactiva · ProyectoFP</div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--paper);border-bottom:1px solid var(--line)">
+        <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink3);font-weight:500">
+          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green)"></span>
+          Base curricular cargada desde el Real Decreto de título · RA y CE del módulo seleccionado
+        </div>
+        <span style="font-size:10px;color:var(--ink5);font-weight:500">Sin registro</span>
       </div>
       <div class="dtabs">
         <button class="dtab on" onclick="setTab(this,'diag')">Diagnóstico</button>
@@ -493,7 +417,7 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
               <label style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);display:block;margin-bottom:6px">Documento (PDF o DOCX)</label>
               <div class="upload-zone" id="d-zone" onclick="simUpload('d-zone','d-ztxt','d-run')">
                 <div class="uz-icon" id="d-zicon">📄</div>
-                <div class="uz-txt" id="d-ztxt"><strong>Clic para subir tu PD</strong><br>PDF o DOCX · máx. 10 MB</div>
+                <div class="uz-txt" id="d-ztxt"><strong>Clic para simular el análisis</strong><br>En esta demo el sistema analiza el módulo seleccionado · el diagnóstico real usa tu PD</div>
               </div>
             </div>
             <button class="run-btn" id="d-run" onclick="runDiag()" disabled>
@@ -546,8 +470,8 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
 
           <div id="f-tribunal" style="display:none">
             <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:8px;padding:12px;margin-bottom:14px">
-              <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:4px">Modo Tribunal IA</div>
-              <div style="font-size:11px;color:var(--ink3);line-height:1.5">Simulación de revisión curricular basada en el módulo seleccionado y sus criterios de evaluación.</div>
+              <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:4px">Simulación de revisión curricular</div>
+              <div style="font-size:11px;color:var(--ink3);line-height:1.5">Las preguntas se generan desde los RA y CE del módulo seleccionado y desde las incidencias detectadas en el diagnóstico. No son preguntas genéricas.</div>
             </div>
             <div class="fgrp"><label>Módulo a defender</label>
               <select class="fsel" id="trib-mod">
@@ -565,8 +489,8 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
               </select>
             </div>
             <button class="run-btn" onclick="runTribunal()">
-              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5l3.5-.5L8 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-              Iniciar sesión
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Iniciar simulación
             </button>
           </div>
 
@@ -594,7 +518,7 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
           <div class="dr-hdr">
             <div class="drstatus">
               <div class="sdot idle" id="sdot"></div>
-              <span id="stext">Selecciona módulo y pulsa generar</span>
+              <span id="stext">Selecciona módulo y tipo de análisis</span>
             </div>
             <button class="expbtn" id="expbtn" disabled>
               <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -604,8 +528,8 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
           <div class="drout" id="demo-out">
             <div class="dph">
               <div class="dph-icon">📋</div>
-              <h3>Base curricular real</h3>
-              <p>RA y CE obtenidos del currículo oficial del módulo seleccionado.</p>
+              <h3>Selecciona módulo para comenzar</h3>
+              <p>Los RA y CE se cargan desde el Real Decreto de título. El diagnóstico contrasta tu programación contra esa base.</p>
             </div>
           </div>
         </div>
@@ -614,33 +538,178 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
   </div>
 </section>
 
+<!-- QUÉ HACE -->
+<section id="que-hace" class="bg-paper fade-s" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="eyebrow">Flujo de trabajo curricular</div>
+    <h2 class="stitle">Documentación curricular integrada.</h2>
+    <p class="ssub">Cuatro funciones conectadas sobre el currículo oficial de cada módulo: generar recursos desde los RA y CE, verificar su cobertura, visualizar el estado del departamento y preparar la defensa ante revisión educativa.</p>
+    <div style="background:var(--white);border:1px solid var(--line);border-radius:11px;padding:24px 28px;margin-bottom:48px;margin-top:32px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px"><span style="display:block;width:18px;height:1.5px;background:var(--blue)"></span>Diseñado para la nueva Formación Profesional</div>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:14px">ProyectoFP se ha concebido específicamente para trabajar con el marco curricular de la <strong>LOMLOE</strong> y la <strong>Ley Orgánica 3/2022 de ordenación e integración de la Formación Profesional</strong>. Cada funcionalidad opera sobre la estructura real de los títulos: Resultados de Aprendizaje, Criterios de Evaluación, competencias profesionales, personales y sociales, competencias clave y perfil de salida del ciclo.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--blue-bd);background:var(--blue-bg);color:var(--blue)">LOMLOE</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--blue-bd);background:var(--blue-bg);color:var(--blue)">LO 3/2022</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Resultados de Aprendizaje</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Criterios de Evaluación</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Competencias profesionales</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Competencias clave</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">FP Dual</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Perfil de salida</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">Trazabilidad curricular</span>
+        <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--ink2)">DUA</span>
+      </div>
+    </div>
+    <div style="border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-bottom:48px">
+      <div style="padding:14px 20px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue)">Ejemplo de análisis · Diagnóstico curricular</div>
+        <span style="font-size:11px;color:var(--ink4)">Módulo real · RD 1631/2009</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-bottom:1px solid var(--line)">
+        <div style="padding:16px 18px;border-right:1px solid var(--line)"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4);margin-bottom:5px">Módulo analizado</div><div style="font-size:14px;font-weight:600;color:var(--ink)">Empresa en el Aula</div><div style="font-size:11px;color:var(--ink3)">GM Administración · 0437</div></div>
+        <div style="padding:16px 18px;border-right:1px solid var(--line)"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4);margin-bottom:5px">Cobertura curricular</div><div style="font-size:14px;font-weight:600;color:var(--green)">84%</div><div style="font-size:11px;color:var(--ink3)">26 de 31 CE cubiertos</div></div>
+        <div style="padding:16px 18px;border-right:1px solid var(--line)"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4);margin-bottom:5px">RA analizados</div><div style="font-size:14px;font-weight:600;color:var(--ink)">5 RA</div><div style="font-size:11px;color:var(--ink3)">Todos los del módulo</div></div>
+        <div style="padding:16px 18px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4);margin-bottom:5px">Incidencias</div><div style="font-size:14px;font-weight:600;color:var(--amber)">5 criterios</div><div style="font-size:11px;color:var(--ink3)">2 sin cobertura · 3 sin instrumento</div></div>
+      </div>
+      <div style="padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="padding:10px 13px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:7px;border-left:3px solid var(--red)">
+          <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:3px">CE3e · Sin cobertura</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5">Seguridad documental y RGPD. Sin actividad ni instrumento. RD 1631/2009, Art. 8.3.</div>
+        </div>
+        <div style="padding:10px 13px;background:var(--amber-bg);border:1px solid var(--amber-bd);border-radius:7px;border-left:3px solid var(--amber)">
+          <div style="font-size:11px;font-weight:700;color:var(--amber);margin-bottom:3px">CE5d, CE5e · Sin instrumento</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5">Liquidación de impuestos. Actividad existente pero sin instrumento de evaluación definido.</div>
+        </div>
+        <div style="padding:10px 13px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:7px;border-left:3px solid var(--red)">
+          <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:3px">CE5f · Sin cobertura</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5">Cierre del ejercicio económico. No figura en ninguna actividad ni instrumento de la programación.</div>
+        </div>
+        <div style="padding:10px 13px;background:var(--green-bg);border:1px solid var(--green-bd);border-radius:7px;border-left:3px solid var(--green)">
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:3px">26 CE · Trazabilidad completa</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5">RA→CE→actividad→instrumento documentado. Coherencia interna verificada.</div>
+        </div>
+      </div>
+      <div style="padding:10px 20px;background:var(--paper);border-top:1px solid var(--line);font-size:10px;color:var(--ink5)">Ejemplo generado sobre el RD 1631/2009 (Gestión Administrativa). Las referencias normativas tienen carácter orientativo y requieren revisión docente antes de uso oficial.</div>
+    </div>
+    <div style="margin-bottom:48px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:8px"><span style="display:block;width:18px;height:1.5px;background:var(--blue)"></span>Casos de uso documentados</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+        <div style="padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:8px">
+          <div style="font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:4px">Programación Didáctica</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.6">Análisis de cobertura de todos los RA y CE del módulo. Detección de vacíos e incoherencias en la estructura de la programación.</div>
+          <div style="margin-top:8px;font-size:10px;color:var(--ink4)">Módulos: Empresa en el Aula · Programación DAM · Marketing PV</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:8px">
+          <div style="font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:4px">Situación de Aprendizaje</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.6">Generación de SdA estructurada desde un RA seleccionado. Incluye actividades, instrumentos y trazabilidad CE por actividad.</div>
+          <div style="margin-top:8px;font-size:10px;color:var(--ink4)">Con justificación curricular y ponderación por CE</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:8px">
+          <div style="font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:4px">Rúbrica analítica</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.6">Rúbrica por CE con cuatro niveles de desempeño (Insuficiente / Suficiente / Notable / Excelente) y criterios de calificación ponderados.</div>
+          <div style="margin-top:8px;font-size:10px;color:var(--ink4)">Alineada con los CE oficiales del módulo</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:8px">
+          <div style="font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:4px">Proyecto ABP</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.6">Diseño de proyecto basado en aprendizaje con fases, roles, productos entregables y criterios de evaluación asignados por fase.</div>
+          <div style="margin-top:8px;font-size:10px;color:var(--ink4)">Compatible con modalidad FP Dual y FCT</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:8px">
+          <div style="font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:4px">Instrumento de evaluación</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.6">Lista de cotejo, escala de valoración o prueba escrita generada desde un CE concreto. Con indicadores observables y niveles de logro.</div>
+          <div style="margin-top:8px;font-size:10px;color:var(--ink4)">Para CE sin instrumento detectados en el diagnóstico</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:8px">
+          <div style="font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:4px">Revisión curricular</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.6">Simulación de preguntas de revisión sobre la programación y las SdAs generadas. Basada en los CE del módulo y las incidencias del diagnóstico.</div>
+          <div style="margin-top:8px;font-size:10px;color:var(--ink4)">Para jefes de departamento y docentes de FP</div>
+        </div>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="p-num">01</div>
+        <h3>Generar</h3>
+        <p>Recursos desde los RA y CE oficiales del módulo, con trazabilidad curricular incorporada.</p>
+        <ul class="plist">
+          <li>Situaciones de Aprendizaje</li>
+          <li>ABP y ABR</li>
+          <li>Rúbricas analíticas</li>
+          <li>Debates y casos prácticos</li>
+          <li>Programaciones Didácticas</li>
+          <li>Proyectos FP Dual</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="p-num">02</div>
+        <h3>Auditar</h3>
+        <p>Identifica vacíos en la cobertura de RA, CE y competencias antes de una revisión educativa.</p>
+        <ul class="plist">
+          <li>CE sin cobertura</li>
+          <li>RA insuficientes</li>
+          <li>Competencias sin trabajar</li>
+          <li>Incoherencias internas</li>
+          <li>Deficiencias DUA</li>
+          <li>Referencias normativas orientativas</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="p-num">03</div>
+        <h3>Visualizar</h3>
+        <p>El estado de cobertura curricular del departamento, sin buscar en carpetas.</p>
+        <ul class="plist">
+          <li>Cobertura por módulo</li>
+          <li>Estado por RA y CE</li>
+          <li>Trazabilidad completa</li>
+          <li>Vacíos curriculares</li>
+          <li>Solapamientos</li>
+          <li>Informe exportable PDF</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="p-num">04</div>
+        <h3>Defender</h3>
+        <p>Preparación para la defensa curricular y la justificación metodológica ante revisión educativa.</p>
+        <ul class="plist">
+          <li>Simulación de defensa curricular</li>
+          <li>Preguntas sobre tu PD y SdA</li>
+          <li>Justificación metodológica</li>
+          <li>Coherencia con el perfil de salida</li>
+          <li>Informe de puntos débiles</li>
+          <li>Referencias normativas orientativas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CARACTERÍSTICAS -->
 <section id="caracteristicas" class="bg-paper fade-s" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="container">
-    <div class="eyebrow">Características</div>
-    <h2 class="stitle">Cada funcionalidad resuelve<br>un problema real.</h2>
+    <div class="eyebrow">Funcionalidades</div>
+    <h2 class="stitle">Qué hace cada módulo.</h2>
 
     <div class="feat" style="margin-top:56px">
       <div>
         <div class="f-icon">🔍</div>
-        <h3>Diagnóstico en 60 segundos que ningún inspector espera que hagas</h3>
-        <p>Sube tu programación. El sistema la analiza contra los RA y CE oficiales del módulo y te dice exactamente qué falta, qué no tiene instrumento y qué señalaría primero un inspector.</p>
+        <h3>Diagnóstico de cobertura curricular basado en los RA y CE oficiales del módulo</h3>
+        <p>Sube tu programación didáctica. El sistema la contrasta con los RA y CE oficiales del módulo e identifica qué criterios carecen de cobertura, qué actividades no tienen instrumento de evaluación y qué incoherencias presenta la documentación.</p>
         <ul class="flist">
           <li>CE sin cobertura con referencia normativa orientativa</li>
           <li>Incoherencias entre criterios de calificación y RA declarados</li>
           <li>Riesgos ordenados por criticidad: alto, medio, bajo</li>
-          <li>Un clic en CE rojo abre directamente el generador</li>
+          <li>Acceso directo al generador desde cada CE sin cobertura</li>
         </ul>
       </div>
       <div class="feat-panel">
-        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/></svg>Diagnóstico · Empresa en el Aula · 38 CE analizados</div>
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/></svg>Diagnóstico · Empresa en el Aula (0437) · GM Gestión Administrativa · 31 CE analizados</div>
         <div class="fp-body">
           <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px">
             <span class="tag gn">✓ 26 cubiertos</span><span class="tag am">⚡ 3 sin instrumento</span><span class="tag rd">⚠ 2 sin cobertura</span>
           </div>
           <div class="ritem rd" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--red)">CE3e — Sin cobertura</div><div class="ritem-b">Seguridad documental y RGPD. Sin actividad ni instrumento. RD 1631/2009, Art. 8.3.</div></div>
           <div class="ritem am" style="margin-bottom:7px"><div class="ritem-t" style="color:var(--amber)">CE5d — Sin instrumento de evaluación</div><div class="ritem-b">Liquidación de impuestos. Hay actividad pero ningún instrumento definido.</div></div>
-          <div class="ritem bl"><div class="ritem-t">Acción sugerida</div><div class="ritem-b">Pulsa CE3e para generar una SdA que lo cubra. La cobertura se actualiza automáticamente.</div></div>
+          <div class="ritem bl"><div class="ritem-t">Recomendación del sistema</div><div class="ritem-b">Genera una SdA vinculada a CE3e para cubrir el criterio. La cobertura del módulo se actualiza tras la generación.</div></div>
         </div>
       </div>
     </div>
@@ -648,17 +717,17 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
     <div class="feat rev">
       <div>
         <div class="f-icon">📋</div>
-        <h3>Genera en minutos lo que antes tardabas horas</h3>
-        <p>SdAs, ABP, debates, rúbricas, programaciones completas. Todo desde los RA y CE oficiales del módulo. La trazabilidad se construye sola mientras generas.</p>
+        <h3>Generación de recursos desde el currículo oficial del módulo</h3>
+        <p>El sistema genera el recurso estructurado con los campos requeridos por la normativa: título, justificación curricular, RA trabajados, CE evaluados, actividades con instrumento asignado y ponderación. El docente recibe un borrador revisable, no texto libre.</p>
         <ul class="flist">
           <li>SdA completa con actividades y rúbrica integrada en una sola operación</li>
           <li>ABP con fases, roles, criterios de evaluación y temporalización</li>
           <li>Cada actividad etiqueta los CE que cubre (revisable antes de exportar)</li>
-          <li>Edición inline y exportación DOCX/PDF</li>
+          <li>Exportación en formato DOCX y PDF</li>
         </ul>
       </div>
       <div class="feat-panel">
-        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>SdA generada · RA3 · Empresa en el Aula</div>
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>SdA generada · RA3 — Gestión documental y archivo · Empresa en el Aula (0437)</div>
         <div class="fp-body">
           <div style="font-family:var(--fd);font-size:14px;font-weight:700;margin-bottom:10px;line-height:1.3;color:var(--ink)">«La Empresa que Aprende: Gestión Documental Real»</div>
           <div class="ritem bl" style="margin-bottom:7px"><div class="ritem-t">Act. 1 — Auditoría documental empresarial</div><div class="ritem-b">Clasificación y archivo de documentación real de empresa simulada.</div><div class="tags"><span class="tag bl">CE3a</span><span class="tag bl">CE3b</span><span class="tag gn">Grupal</span><span class="tag am">Lista cotejo</span></div></div>
@@ -671,7 +740,7 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
       <div>
         <div class="f-icon">📊</div>
         <h3>El estado de cobertura curricular de tu departamento de un vistazo</h3>
-        <p>Verde, ámbar, rojo. Sin buscar en carpetas, sin preguntar a los docentes. El jefe de departamento ve el estado de cobertura curricular de todos sus módulos y puede actuar antes de una revisión educativa.</p>
+        <p>Vista de cobertura curricular por módulo: Resultados de Aprendizaje cubiertos, criterios sin instrumento y vacíos detectados. Información disponible sin depender de la documentación dispersa del departamento.</p>
         <ul class="flist">
           <li>Vista por RA con estado de cada CE</li>
           <li>Informe de departamento generado en un clic</li>
@@ -680,7 +749,7 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
         </ul>
       </div>
       <div class="feat-panel">
-        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>Cobertura · Empresa en el Aula · 2025-2026</div>
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>Cobertura · Empresa en el Aula (0437) · RD 1631/2009 · 2025-2026</div>
         <div class="fp-body">
           <div style="display:flex;gap:10px;margin-bottom:14px;text-align:center">
             <div style="flex:1;padding:9px;background:var(--green-bg);border-radius:7px;border:1px solid var(--green-bd)"><div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--green)">26</div><div style="font-size:10px;color:var(--green);font-weight:600">Cubiertos</div></div>
@@ -698,21 +767,21 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
     <div class="feat rev">
       <div>
         <div class="f-icon">⚖️</div>
-        <h3>El Tribunal IA que te hace las preguntas incómodas primero</h3>
-        <p>Simulación de defensa docente: el sistema genera preguntas contextualizadas al módulo y a los criterios de evaluación seleccionados. Útil para preparar la justificación metodológica y curricular antes de una revisión educativa.</p>
+        <h3>Preparación para la defensa curricular y la revisión documental</h3>
+        <p>El sistema genera preguntas de revisión basadas en el módulo y los criterios de evaluación seleccionados. Permite preparar la fundamentación metodológica y la coherencia curricular de la documentación antes de una revisión educativa.</p>
         <ul class="flist">
           <li>Preguntas específicas basadas en tu documentación, no en plantillas</li>
           <li>Tres niveles: cobertura, coherencia y fundamentación metodológica</li>
-          <li>Informe final con puntos débiles y solución concreta para cada uno</li>
-          <li>Válido para docentes individuales y para jefes de departamento</li>
+          <li>Informe de coherencia curricular con observaciones por criterio</li>
+          <li>Aplicable tanto a nivel de módulo individual como a nivel de departamento</li>
         </ul>
       </div>
       <div class="feat-panel">
-        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5l3.5-.5L8 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Tribunal IA · Sesión activa · Empresa en el Aula</div>
+        <div class="fp-hdr"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5l3.5-.5L8 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Revisión curricular · Empresa en el Aula (0437) · Programación Didáctica 2025-26</div>
         <div class="fp-body" style="display:flex;flex-direction:column;gap:8px">
           <div style="background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:10px 12px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px">Inspector</div><div style="font-size:12px;color:var(--ink2);line-height:1.55">En su SdA relaciona la actividad de archivo con CE3a y CE3b, pero no hay instrumento para CE3e. ¿Cómo justifica la calificación de ese criterio?</div></div>
           <div style="background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:7px;padding:10px 12px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:4px">Docente</div><div style="font-size:12px;color:var(--ink2);line-height:1.55">Lo trabajo de forma implícita en la actividad 2, aunque no lo he documentado con un instrumento específico…</div></div>
-          <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:7px;padding:10px 12px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:4px">Diagnóstico</div><div style="font-size:12px;color:var(--red);line-height:1.5">«Implícito» no es válido ante inspección. El CE necesita instrumento explícito. Añade una lista de cotejo para CE3e en Actividad 2.</div></div>
+          <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:7px;padding:10px 12px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:4px">Diagnóstico</div><div style="font-size:12px;color:var(--red);line-height:1.5">La cobertura implícita no está documentada. El CE3e requiere un instrumento de evaluación explícito. Se recomienda añadir una lista de cotejo en la Actividad 2.</div></div>
         </div>
       </div>
     </div>
@@ -722,9 +791,9 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
 <!-- COMPARATIVA -->
 <section class="fade-s">
   <div class="container">
-    <div class="eyebrow">Diferenciación</div>
-    <h2 class="stitle">¿Por qué no usar ChatGPT?</h2>
-    <p class="ssub">ChatGPT genera texto. ProyectoFP trabaja sobre estructuras curriculares de FP: resultados de aprendizaje, criterios de evaluación y trazabilidad documental. No son comparables en este contexto.</p>
+    <div class="eyebrow">ProyectoFP frente a IA genérica</div>
+    <h2 class="stitle">Qué diferencia a ProyectoFP de un asistente genérico.</h2>
+    <p class="ssub">Un asistente de IA genérico no conoce el currículo oficial de tu módulo, no detecta CE sin cobertura en tu programación y no genera documentos con la estructura curricular de FP. ProyectoFP opera sobre esa base desde el primer momento.</p>
     <table class="ctbl">
       <thead>
         <tr><th>Capacidad</th><th class="hl">ProyectoFP</th><th>ChatGPT / Claude genérico</th></tr>
@@ -734,9 +803,9 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
         <tr><td>Identifica CE sin evidencia de cobertura en el documento</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">No analiza documentación propia</span></td></tr>
         <tr><td>Trazabilidad generada automáticamente y revisable</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Requiere construcción manual</span></td></tr>
         <tr><td>Riesgos detectados con referencias normativas orientativas</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Respuestas de carácter general</span></td></tr>
-        <tr><td>Memoria entre sesiones y módulos</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">Cada conversación empieza desde cero</span></td></tr>
+        <tr><td>Base curricular oficial precargada por módulo y familia profesional</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">Hay que introducir el currículo manualmente</span></td></tr>
         <tr><td>Simulación de defensa contextualizada al módulo</td><td class="hl"><span class="ck">✓</span></td><td><span class="cx">Sin contexto curricular propio</span></td></tr>
-        <tr><td>Exportación con estructura documental de FP</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Requiere formateo posterior</span></td></tr>
+        <tr><td>Exportación DOCX/PDF con estructura de SdA, rúbrica y PD</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Requiere formateo y estructuración manual</span></td></tr>
         <tr><td>Especializado en FP española y normativa LOMLOE</td><td class="hl"><span class="ck">✓</span></td><td><span class="cp">Uso general, sin especialización</span></td></tr>
       </tbody>
     </table>
@@ -753,7 +822,7 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
       </div>
       <div style="padding:28px;background:var(--white);border:1px solid var(--line);border-radius:11px">
         <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="display:block;width:18px;height:1.5px;background:var(--blue)"></span>La IA no sustituye el criterio docente</div>
-        <p style="font-size:14px;color:var(--ink2);line-height:1.75;font-weight:400">ProyectoFP genera propuestas y análisis para facilitar el trabajo docente. La revisión profesional sigue siendo necesaria para garantizar la adecuación pedagógica y normativa de cualquier documento.</p>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.75;font-weight:400">ProyectoFP genera borradores y análisis de cobertura para facilitar el trabajo docente. El sistema detecta vacíos e incoherencias, pero la interpretación pedagógica, la adaptación al grupo real y la validación normativa final son responsabilidad del docente. Ningún documento generado sustituye el criterio profesional.</p>
       </div>
     </div>
   </div>
@@ -762,26 +831,26 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
 <section id="sobre" class="bg-paper fade-s" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="container">
     <div class="eyebrow">Sobre el proyecto</div>
-    <h2 class="stitle">Construido por alguien<br>que trabaja en FP.</h2>
+    <h2 class="stitle">Desarrollado por un docente<br>especializado en FP.</h2>
     <div class="sobre-grid">
       <div class="sobre-ava" style="padding:0;overflow:hidden;border-radius:11px;border:1px solid var(--line);background:var(--paper)">
         <img src="foto_juan.jpg" alt="Juan Peco — Docente FP Murcia" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
       </div>
       <div class="sobre-bio">
-        <p>Soy <strong>Juan Peco</strong>, docente especializado en Formación Profesional en la Región de Murcia. Imparto digitalización, empresa y marketing, y termino el <strong>Máster en Formación del Profesorado</strong> con especialidad en Economía, Empresa y Turismo.</p>
+        <p>Soy <strong>Juan Peco</strong>, docente especializado en Formación Profesional en la Región de Murcia. Imparto digitalización, empresa y marketing, con habilitación docente a través del <strong>Máster en Formación del Profesorado</strong> (MAES), especialidad en Economía, Empresa y Turismo.</p>
         <p>Trabajo también como docente auxiliar en el programa <strong>Código Escuela 4.0</strong> y acumulo casi dos décadas de experiencia en consultoría de marketing digital y administración de empresas antes de incorporarme a la docencia.</p>
-        <p>ProyectoFP nace de la experiencia directa en educación y del trabajo realizado durante el Máster de Formación del Profesorado (MAES), con el objetivo de reducir la carga documental y mejorar la coherencia curricular en Formación Profesional.
+        <p>ProyectoFP surge del trabajo de innovación educativa desarrollado durante el Máster de Formación del Profesorado (MAES), especialidad en Economía, Empresa y Turismo, como respuesta a una necesidad concreta: garantizar que la documentación de FP cubre de forma trazable y verificable todos los Resultados de Aprendizaje y Criterios de Evaluación que exige la normativa.
         <br><br>
         Su desarrollo está fundamentado en el análisis de las necesidades reales de los departamentos de FP en la Región de Murcia y en la normativa curricular vigente: LOMLOE, Ley Orgánica 3/2022, Reales Decretos de títulos de FP e instrucciones de la Consejería de Educación de la Región de Murcia.
         <br><br>
-        ProyectoFP está siendo utilizado y validado con docentes de FP en la Región de Murcia. Su desarrollo incorpora el conocimiento directo del aula, la normativa curricular vigente y las necesidades reales de los departamentos de Formación Profesional.</p>
+        ProyectoFP ha sido probado con programaciones didácticas reales de módulos de Administración y Gestión, Informática y Comunicaciones y Comercio y Marketing en centros de la Región de Murcia. Los módulos cubiertos incluyen los Reales Decretos de título aplicables y las instrucciones curriculares de la Consejería de Educación de Murcia.</p>
         <div class="sobre-tags">
           <span class="sobre-tag">Docente FP · Murcia</span>
           <span class="sobre-tag">MAES Economía y Empresa</span>
           <span class="sobre-tag">FP Dual</span>
           <span class="sobre-tag">Código Escuela 4.0</span>
           <span class="sobre-tag">IA aplicada a educación</span>
-          <span class="sobre-tag">18 años en empresa</span>
+          <span class="sobre-tag">Experiencia empresarial previa</span>
         </div>
       </div>
     </div>
@@ -791,15 +860,15 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
 <!-- FAQ -->
 <section id="faq" class="fade-s">
   <div class="csm">
-    <div class="eyebrow">Preguntas frecuentes</div>
-    <h2 class="stitle">Lo que suelen preguntar.</h2>
+    <div class="eyebrow">FAQ</div>
+    <h2 class="stitle">Preguntas frecuentes</h2>
     <div style="margin-top:40px">
       <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿ProyectoFP sustituye al docente?<div class="faq-icon">+</div></div><div class="faq-a">No. ProyectoFP automatiza el trabajo mecánico: verificar cobertura de CE, detectar incoherencias, generar borradores estructurados. El criterio pedagógico, la adaptación al grupo real y la decisión final son siempre del docente. Lo que hace es reducir el tiempo que dedicas al trabajo que no requiere tu criterio para que puedas dedicarlo al que sí lo requiere.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Los documentos generados son válidos para uso oficial?<div class="faq-icon">+</div></div><div class="faq-a">Son un punto de partida riguroso, no un producto final listo para presentar. Están basados en los RA y CE del currículo oficial del módulo y en el marco LOMLOE, pero requieren revisión y adaptación por parte del docente antes de cualquier uso oficial. ProyectoFP genera borradores pedagógicamente fundamentados — la validación final es siempre responsabilidad del docente.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Está alineado con LOMLOE?<div class="faq-icon">+</div></div><div class="faq-a">La base curricular utiliza los Resultados de Aprendizaje y Criterios de Evaluación de los Reales Decretos que desarrollan la LOMLOE para FP, incluyendo las competencias profesionales, personales y sociales y las competencias clave de cada título. El sistema trabaja sobre la estructura completa del currículo oficial: RA, CE, competencias y perfil de salida del ciclo. La interpretación pedagógica y la validación final corresponden siempre al docente.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Sirve para cualquier ciclo de FP?<div class="faq-icon">+</div></div><div class="faq-a">La versión actual cubre los módulos más cursados de Administración y Gestión, Informática y Comunicaciones, Comercio y Marketing, Sanidad y Hostelería y Turismo. La cobertura se amplía progresivamente. Si tu módulo no está disponible, puedes solicitarlo escribiendo a hola@juanpeco.com.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Qué módulos están disponibles actualmente?<div class="faq-icon">+</div></div><div class="faq-a">La base curricular cubre módulos de cinco familias profesionales: <strong>Administración y Gestión</strong> (Empresa en el Aula 0437, Comunicación Empresarial 0438, Contabilidad y Fiscalidad 0648), <strong>Informática y Comunicaciones</strong> (Programación DAM 0483, Desarrollo Web Cliente 0616, Desarrollo Web Servidor 0617), <strong>Comercio y Marketing</strong> (Marketing Punto de Venta 0926, Investigación Comercial 1012), <strong>Sanidad</strong> (Soporte Vital 0491, Técnicas Auxiliares de Enfermería 0050) y <strong>Hostelería y Turismo</strong> (Preelaboración y Conservación 0155). El currículo de FP es mayoritariamente estatal, por lo que el sistema es válido para cualquier comunidad autónoma en los módulos cubiertos. Para solicitar módulos adicionales: hola@juanpeco.com.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Funciona solo para la Región de Murcia?<div class="faq-icon">+</div></div><div class="faq-a">El currículo de FP en España es mayoritariamente estatal — los RA y CE están fijados por Reales Decretos nacionales — por lo que el sistema es válido para docentes de cualquier comunidad autónoma en los módulos cubiertos. El sistema está actualmente optimizado para la Región de Murcia, con cobertura de la normativa estatal aplicable a todos los ciclos de FP.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Qué analiza exactamente el diagnóstico?<div class="faq-icon">+</div></div><div class="faq-a">Analiza tu programación didáctica contra los RA y CE oficiales del módulo. Detecta: CE sin evidencia de cobertura, CE con actividad pero sin instrumento de evaluación, incoherencias internas (criterios de calificación que no corresponden a los RA declarados) y riesgos detectados con referencia normativa orientativa. El análisis es conservador: si la cobertura es ambigua, lo reporta como dudoso en lugar de darlo por cubierto.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">¿Qué produce exactamente el diagnóstico?<div class="faq-icon">+</div></div><div class="faq-a">El sistema devuelve tres tipos de resultados: (1) CE sin cobertura — criterios del módulo que no aparecen en ninguna actividad ni instrumento de la programación analizada, con referencia al artículo del Real Decreto aplicable; (2) CE sin instrumento — criterios que tienen actividad asociada pero carecen de instrumento de evaluación definido; (3) Trazabilidad completa — mapa RA→CE→actividad→instrumento para los criterios correctamente cubiertos. El análisis es conservador: si la cobertura es ambigua, se marca como dudosa en lugar de validarla.</div></div>
     </div>
   </div>
 </section>
@@ -808,8 +877,8 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
 <section id="contacto" class="fade-s" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="csm" style="text-align:center">
     <div class="eyebrow" style="justify-content:center">Contacto</div>
-    <h2 class="stitle">¿Tu módulo no está?<br>¿Tienes alguna pregunta?</h2>
-    <p class="ssub" style="max-width:400px;margin:0 auto 36px;text-align:center">Escríbeme directamente si quieres explorar el uso de ProyectoFP en tu departamento o centro.</p>
+    <h2 class="stitle">Contacto</h2>
+    <p class="ssub" style="max-width:400px;margin:0 auto 36px;text-align:center">Para consultas sobre disponibilidad de módulos, uso departamental o colaboraciones, escribe directamente.</p>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <a href="mailto:hola@juanpeco.com" class="btn-hero">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5M2 4h12v8H2V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -826,8 +895,8 @@ footer{padding:40px 24px;border-top:1px solid var(--line);background:var(--white
     <h2>Genera, audita y defiende<br>documentación FP.</h2>
     <p>Diseñado para docentes, jefes de departamento y centros de Formación Profesional.</p>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-      <a href="#demo" class="btn-white">Probar la demo gratis</a>
-      <a href="#contacto" class="btn-white-out">Hablar con Juan</a>
+      <a href="#demo" class="btn-white">Acceder a la demo</a>
+      <a href="#contacto" class="btn-white-out">Contactar →</a>
     </div>
   </div>
 </div>
@@ -898,7 +967,7 @@ function setTab(el,tab){
   el.classList.add('on');
   document.querySelectorAll('[id^="f-"]').forEach(f=>f.style.display='none');
   document.getElementById('f-'+tab).style.display='block';
-  resetOut('Configura y pulsa generar');
+  resetOut('Selecciona módulo y tipo de análisis');
 }
 
 function resetOut(m){
@@ -955,7 +1024,7 @@ function renderDiag(d){
   setDone(`Análisis completado · ${(d.resumen?.cubiertos||0)+(d.resumen?.sin_instrumento||0)+(d.resumen?.sin_cobertura||0)} CE`);
   let h=`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px"><span class="tag gn">✓ ${d.resumen?.cubiertos||0} cubiertos</span><span class="tag am">⚡ ${d.resumen?.sin_instrumento||0} sin instrumento</span><span class="tag rd">⚠ ${d.resumen?.sin_cobertura||0} sin cobertura</span></div>`;
   if(d.problemas?.length){h+=`<div class="rsec"><div class="rsec-t">CE con problemas</div>`;d.problemas.forEach(p=>{h+=`<div class="rcard ${p.estado==='sin_cobertura'?'rd':'am'}"><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span class="tag ${p.estado==='sin_cobertura'?'rd':'am'}">${p.codigo}</span><span class="tag bl">${p.ra}</span><span class="tag ${p.estado==='sin_cobertura'?'rd':'am'}" style="margin-left:auto">${p.estado==='sin_cobertura'?'Sin cobertura':'Sin instrumento'}</span></div><div class="rcard-b">${p.texto}</div><div style="font-size:10px;color:var(--ink4);margin-top:5px">⚠ ${p.motivo}</div></div>`;});h+='</div>';}
-  if(d.riesgos?.length){h+=`<div class="rsec"><div class="rsec-t">Riesgos ante inspección</div>`;d.riesgos.forEach(r=>{h+=`<div class="rcard ${r.nivel==='alto'?'rd':'am'}"><div class="rcard-t" style="color:var(--${r.nivel==='alto'?'red':'amber'})">${r.nivel==='alto'?'⚠':'⚡'} ${r.titulo}</div><div class="rcard-b">${r.detalle}</div><div style="font-size:10px;color:var(--ink4);margin-top:5px">📋 ${r.normativa} · ${r.accion}</div></div>`;});h+='</div>';}
+  if(d.riesgos?.length){h+=`<div class="rsec"><div class="rsec-t">Riesgos detectados</div>`;d.riesgos.forEach(r=>{h+=`<div class="rcard ${r.nivel==='alto'?'rd':'am'}"><div class="rcard-t" style="color:var(--${r.nivel==='alto'?'red':'amber'})">${r.nivel==='alto'?'⚠':'⚡'} ${r.titulo}</div><div class="rcard-b">${r.detalle}</div><div style="font-size:10px;color:var(--ink4);margin-top:5px">📋 ${r.normativa} · ${r.accion}</div></div>`;});h+='</div>';}
   if(d.incoherencias?.length){h+=`<div class="rsec"><div class="rsec-t">Incoherencias detectadas</div>`;d.incoherencias.forEach(i=>{h+=`<div class="rcard bl"><div class="rcard-t">${i.descripcion}</div><div class="rcard-b">${i.detalle}</div></div>`;});h+='</div>';}
   document.getElementById('demo-out').innerHTML=h;
   addDisclaimer();
