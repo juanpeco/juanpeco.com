@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="es" class="h-full">
 <head>
-  <meta name="description" content="Juan Peco. Docente de Formación Profesional en Empresa, Economía y Marketing Digital. Aprendizaje basado en proyectos con herramientas reales. Dieciocho años de experiencia corporativa aplicada al aula. MAES (Economía, Empresa y Turismo). Región de Murcia.">
+  <meta name="description" content="Juan Peco. Docente de Formación Profesional especializado en Empresa, Economía y Marketing Digital. Diseño curricular bajo LOMLOE y Ley Orgánica 3/2022. Experiencia corporativa real trasladada al aula. MAES (Economía, Empresa y Turismo). Región de Murcia.">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Peco | Docente de Formación Profesional — Empresa, EIE, Marketing y Digitalización</title>
+  <title>Juan Peco | Docente de FP — Empresa, Economía e Innovación Curricular</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='32' fill='%231a2744'/><text x='96' y='122' font-family='Georgia,serif' font-size='88' font-weight='700' fill='white' text-anchor='middle'>JP</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -100,7 +100,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
   pointer-events: none;
 }
 
-/* Hero layout: texto izquierda / imagen derecha */
 .hero-inner {
   max-width: 1060px; margin: 0 auto; position: relative;
   display: grid; grid-template-columns: 1fr 0.9fr; gap: 4rem; align-items: center;
@@ -152,7 +151,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
   animation: fadeUp 0.55s 0.3s var(--ease) both;
 }
 
-/* Hero image column */
 .hero-image-col {
   animation: fadeUp 0.65s 0.2s var(--ease) both;
 }
@@ -165,18 +163,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
 }
 .hero-photo-frame img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-}
-/* Placeholder cuando no hay foto real */
-.hero-photo-placeholder {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 1rem; padding: 2rem; text-align: center;
-  background: linear-gradient(160deg, var(--light) 0%, var(--bg-soft) 100%);
-}
-.hero-photo-placeholder .ph-icon { font-size: 3rem; opacity: 0.4; }
-.hero-photo-placeholder .ph-text {
-  font-size: 0.78rem; color: var(--muted); line-height: 1.5;
-  border: 1px dashed var(--border); border-radius: 8px; padding: 0.8rem 1rem;
 }
 .hero-photo-badge {
   position: absolute; bottom: 1.2rem; left: 1.2rem; right: 1.2rem;
@@ -232,9 +218,6 @@ section { padding: 6rem 2rem; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.18s; } .d3 { transition-delay: 0.26s; } .d4 { transition-delay: 0.34s; }
 
-/* ── GALERÍA ─────────────────────────────────────────── */
-#galeria { background: var(--white); }
-
 /* ── ENCAJE INSTITUCIONAL ────────────────────────────── */
 #encaje { background: var(--bg-soft); }
 
@@ -262,7 +245,6 @@ section { padding: 6rem 2rem; }
 .perfil-text { font-size: 0.92rem; color: var(--slate); line-height: 1.8; margin-bottom: 1rem; }
 .perfil-text strong { color: var(--navy); font-weight: 600; }
 
-/* Bullets ejecutivos */
 .exec-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
 .exec-bullets li {
   display: flex; align-items: center; gap: 0.7rem;
@@ -284,7 +266,7 @@ section { padding: 6rem 2rem; }
 
 /* ── ESPECIALIZACIÓN ─────────────────────────────────── */
 #especialidades { background: var(--bg-soft); }
-.esp-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2.5rem; }
+.esp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
 .esp-card { padding: 1.6rem 1rem; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); text-align: center; transition: all 0.25s var(--ease); cursor: default; }
 .esp-card:hover { border-color: rgba(79,110,247,0.3); background: var(--white); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,39,68,0.08); }
 .esp-icon { font-size: 2rem; margin-bottom: 0.7rem; }
@@ -350,7 +332,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
   .hero-sub { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
   .perfil-grid, .met-layout { grid-template-columns: 1fr; gap: 3rem; }
-  .esp-grid { grid-template-columns: repeat(3, 1fr); }
+  .esp-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-contact { display: none; }
   .hamburger { display: flex; }
   footer { flex-direction: column; text-align: center; }
@@ -391,6 +373,8 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 @media (max-width: 800px) { .proj-panel { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; } .proj-visual { min-height: 150px; } }
 
 /* ── EXPERIENCIA TIMELINE ───────────────────────────── */
+.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+@media (max-width: 900px) { .exp-grid { grid-template-columns: 1fr; } }
 .exp-timeline { position: relative; padding-left: 1.5rem; border-left: 1px solid var(--border); display: flex; flex-direction: column; gap: 2.5rem; }
 .exp-item { position: relative; }
 .exp-dot { position: absolute; left: -1.5rem; transform: translateX(-50%); width: 24px; height: 24px; background: var(--white); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--muted); z-index: 2; }
@@ -444,36 +428,17 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
   margin-bottom: 0.5rem;
 }
 .premium-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 1.2rem;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .premium-desc {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--slate);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 1.8rem;
-}
-.premium-features {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
-}
-.premium-features li {
-  font-size: 0.85rem;
-  color: var(--navy);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.premium-features li::before {
-  content: '✦';
-  color: var(--accent);
 }
 .premium-actions {
   display: flex;
@@ -499,7 +464,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 @media (max-width: 800px) {
   .premium-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-  .premium-features { grid-template-columns: 1fr; }
 }
 
 </style>
@@ -517,7 +481,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
     <li><button onclick="goto('galeria')">Aula</button></li>
     <li><button onclick="goto('perfil')">Perfil</button></li>
     <li><button onclick="goto('proyectos')">Portfolio</button></li>
-    <li><button onclick="goto('tech-proyectos')">IA Educativa</button></li>
+    <li><button onclick="goto('tech-proyectos')">Innovación FP</button></li>
     <li><button onclick="goto('experiencia')">Experiencia</button></li>
   </ul>
   <button id="nav-cta" class="nav-contact" onclick="goto('contacto')" style="display:none">Contactar</button>
@@ -538,7 +502,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
     <button class="mob-link" onclick="goto('galeria')">Aula</button>
     <button class="mob-link" onclick="goto('perfil')">Perfil</button>
     <button class="mob-link" onclick="goto('proyectos')">Portfolio</button>
-    <button class="mob-link" onclick="goto('tech-proyectos')">Proyectos Tech</button>
+    <button class="mob-link" onclick="goto('tech-proyectos')">Innovación FP</button>
     <button class="mob-link" onclick="goto('experiencia')">Experiencia</button>
     <button class="mob-link" onclick="goto('contacto')" style="color:var(--accent)">Contacto</button>
   </div>
@@ -547,44 +511,24 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 <!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-inner">
-    <!-- Columna texto -->
     <div class="hero-text">
       <div class="hero-eyebrow">DOCENTE DE FORMACIÓN PROFESIONAL</div>
       <h1 class="hero-h1">Formación Profesional, <em>empresa</em> e <em>inteligencia artificial</em> aplicadas al aprendizaje</h1>
-      <p class="hero-sub">Docente de Formación Profesional especializado en Empresa, Economía, Marketing Digital e Inteligencia Artificial aplicada a la educación. Experiencia corporativa real trasladada al aula mediante metodologías activas y tecnología educativa.</p>
-      
+      <p class="hero-sub">Docente de Formación Profesional especializado en Empresa, Economía y Marketing Digital. Diseño curricular bajo LOMLOE y Ley Orgánica 3/2022. Experiencia corporativa real de casi dos décadas trasladada al aula mediante metodologías activas, evaluación competencial y tecnología educativa.</p>
       <div class="hero-actions">
         <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
         <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
       </div>
-
       <div class="hero-evidence">
-        <div class="ev-card">
-          <div class="ev-num">+15</div>
-          <div class="ev-label">Centros educativos</div>
-          <div class="ev-sub">Región de Murcia</div>
-        </div>
-        <div class="ev-card">
-          <div class="ev-num">260h</div>
-          <div class="ev-label">Prácticum de aula</div>
-          <div class="ev-sub">IES Pedro Guillén, FP</div>
-        </div>
-        <div class="ev-card">
-          <div class="ev-num">MAES</div>
-          <div class="ev-label">Habilitación jun. 2026</div>
-          <div class="ev-sub">Economía, Empresa y Turismo</div>
-        </div>
+        <div class="ev-card"><div class="ev-num">+15</div><div class="ev-label">Centros educativos</div><div class="ev-sub">Región de Murcia</div></div>
+        <div class="ev-card"><div class="ev-num">260h</div><div class="ev-label">Prácticum de aula</div><div class="ev-sub">IES Pedro Guillén, FP</div></div>
+        <div class="ev-card"><div class="ev-num">MAES</div><div class="ev-label">Habilitación jun. 2026</div><div class="ev-sub">Economía, Empresa y Turismo</div></div>
       </div>
     </div>
-
-    <!-- Columna imagen -->
     <div class="hero-image-col">
       <div class="hero-photo-frame">
-        <!-- Sustituir por: <img src="foto_aula.jpg" alt="Juan Peco — Docente de FP"> -->
         <img src="foto_aula.jpg" alt="Juan Peco — Docente de FP" onerror="this.style.display='none'">
-        <div class="hero-photo-badge">
-          Docente en activo · Región de Murcia
-        </div>
+        <div class="hero-photo-badge">Docente en activo · Región de Murcia</div>
       </div>
     </div>
   </div>
@@ -600,9 +544,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
       <h2 class="sec-title">Encaje institucional en el centro</h2>
       <p class="sec-desc">Integración real en el claustro, compromiso con el proyecto educativo y rigor en la gestión docente del día a día.</p>
     </div>
-
     <div class="encaje-grid reveal d1">
-      <!-- Tarjeta 1 -->
       <div class="encaje-card">
         <div class="encaje-icon">🤝</div>
         <div class="encaje-title">Integración en claustro</div>
@@ -613,8 +555,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
           <li>Compromiso de estabilidad y permanencia a largo plazo en el centro</li>
         </ul>
       </div>
-
-      <!-- Tarjeta 2 -->
       <div class="encaje-card">
         <div class="encaje-icon">📋</div>
         <div class="encaje-title">Gestión de aula y tutoría</div>
@@ -625,22 +565,21 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
           <li>Atención a la diversidad e inclusión real en el aula ordinaria</li>
         </ul>
       </div>
-
-      <!-- Tarjeta 3 -->
       <div class="encaje-card">
         <div class="encaje-icon">📐</div>
         <div class="encaje-title">Programación y LOMLOE</div>
         <ul class="encaje-list">
-          <li>Diseño de unidades didácticas y situaciones de aprendizaje bajo LOMLOE</li>
-          <li>Evaluación por competencias con rúbricas y criterios ponderados</li>
-          <li>Adaptación a la nueva ordenación de la FP y los ciclos formativos</li>
-          <li>Integración de IA con criterio pedagógico, no como sustituto del aprendizaje</li>
+          <li>Diseño de situaciones de aprendizaje con trazabilidad explícita RA-CE bajo LOMLOE y Ley Orgánica 3/2022</li>
+          <li>Evaluación competencial con rúbricas analíticas: Resultados de Aprendizaje, Criterios de Evaluación y competencias profesionales, personales y sociales</li>
+          <li>Conocimiento del marco de la FP Dual y los modelos de alternancia empresa-centro</li>
+          <li>Diseño Universal para el Aprendizaje (DUA) aplicado a la programación y los materiales didácticos</li>
+          <li>Desarrollo de herramientas propias de diagnóstico curricular para FP</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-  
+
 <div class="divider"></div>
 
 <!-- ── EVIDENCIA DE AULA ── -->
@@ -651,8 +590,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
       <h2 class="sec-title">Trabajo real en el aula</h2>
       <p class="sec-desc">Metodología aplicada, proyectos auténticos y tecnología educativa en contexto. Robótica, programación, competencia digital y aprendizaje activo.</p>
     </div>
-
-    <!-- REEL PRINCIPAL -->
     <div class="reveal d1" style="margin-top: 3rem; margin-bottom: 3.5rem;">
       <div style="position:relative;width:100%;max-width:680px;margin:0 auto;">
         <iframe src="https://www.instagram.com/reel/DXZv7IEjZl0/embed/captioned/" width="100%" height="680" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
@@ -662,46 +599,23 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
         <div style="font-size:0.88rem;color:var(--muted);line-height:1.6;max-width:560px;margin:0 auto;">Alumnado de 2.º construyendo historias con mTiny. Creatividad, resolución de problemas y trabajo cooperativo en contexto real de aula.</div>
       </div>
     </div>
-
-    <!-- DOS REELS SECUNDARIOS -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:3.5rem;">
       <div class="reveal d2">
         <iframe src="https://www.instagram.com/reel/DW0hmtgjZf2/embed/captioned/" width="100%" height="560" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        <div style="margin-top:1rem;">
-          <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Aprendizaje activo</div>
-          <div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Trabajo colaborativo en proyectos de empresa simulada con roles profesionales reales.</div>
-        </div>
+        <div style="margin-top:1rem;"><div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Aprendizaje activo</div><div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Trabajo colaborativo en proyectos de empresa simulada con roles profesionales reales.</div></div>
       </div>
       <div class="reveal d3">
         <iframe src="https://www.instagram.com/reel/DUULWyoDKnk/embed/captioned/" width="100%" height="560" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        <div style="margin-top:1rem;">
-          <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Tecnología educativa</div>
-          <div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Integración de herramientas digitales y pensamiento computacional en el aula de FP.</div>
-        </div>
+        <div style="margin-top:1rem;"><div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Tecnología educativa</div><div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Integración de herramientas digitales y pensamiento computacional en el aula de FP.</div></div>
       </div>
     </div>
-
-    <!-- EVIDENCIA ESTÁTICA: 3 bloques documentales -->
     <div class="reveal d1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem;">
-      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Presentaciones profesionales</div>
-        <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">El alumnado defiende sus proyectos ante audiencias reales o simuladas, desarrollando comunicación oral formal y capacidad de síntesis técnica.</div>
-      </div>
-      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Competencia digital aplicada</div>
-        <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Habilidades digitales integradas en contexto profesional de FP: herramientas de productividad, IA generativa con criterio y documentación técnica.</div>
-      </div>
-      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Documentación de proyectos</div>
-        <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Registro sistemático del trabajo desarrollado en actividades de empresa simulada, ciclos formativos y programas de innovación educativa.</div>
-      </div>
+      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';"><div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Presentaciones profesionales</div><div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">El alumnado defiende sus proyectos ante audiencias reales o simuladas, desarrollando comunicación oral formal y capacidad de síntesis técnica.</div></div>
+      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';"><div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Competencia digital aplicada</div><div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Habilidades digitales integradas en contexto profesional de FP: herramientas de productividad, IA generativa con criterio y documentación técnica.</div></div>
+      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';"><div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Documentación de proyectos</div><div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Registro sistemático del trabajo desarrollado en actividades de empresa simulada, ciclos formativos y programas de innovación educativa.</div></div>
     </div>
-
-    <!-- CIERRE -->
     <div class="reveal" style="padding:1.5rem 2rem;background:var(--bg-soft);border-radius:var(--r);border-left:3px solid var(--accent);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-      <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;flex:1;min-width:200px;">
-        Más evidencia de aula en <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">@juanpeco</a> en Instagram.
-      </div>
+      <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;flex:1;min-width:200px;">Más evidencia de aula en <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">@juanpeco</a> en Instagram.</div>
       <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="padding:0.55rem 1.2rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.8rem;font-weight:600;color:var(--slate);white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--slate)';">Ver Instagram →</a>
     </div>
   </div>
@@ -718,56 +632,24 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
     </div>
     <div class="perfil-grid">
       <div class="reveal d1">
-        <p class="perfil-text">
-          Docente de FP, ESO y Bachillerato habilitado (MAES) con experiencia directa en aula en Economía, Empresa y Tecnología Educativa. <strong>Más de 260 horas lectivas autónomas en IES Pedro Guillén</strong>, con planificación de unidades didácticas, evaluación competencial y coordinación con el departamento.
-        </p>
-        <p class="perfil-text">
-          Trayectoria previa de <strong>casi dos décadas en el sector corporativo</strong> (gestión comercial, administración y marketing digital). Esa experiencia es el activo diferencial en el aula: los contenidos de Empresa, EIE y Marketing se trabajan desde la práctica real, no desde el manual.
-        </p>
-
-        <!-- Bullets ejecutivos -->
+        <p class="perfil-text">Docente de FP, ESO y Bachillerato habilitado (MAES) con experiencia directa en aula en Economía, Empresa y Tecnología Educativa. <strong>Más de 260 horas lectivas autónomas en IES Pedro Guillén</strong>, con planificación de unidades didácticas, evaluación competencial y coordinación con el departamento.</p>
+        <p class="perfil-text">Trayectoria previa de <strong>casi dos décadas en el sector corporativo</strong> (gestión comercial, administración y marketing digital). Esa experiencia es el activo diferencial en el aula: los contenidos de Empresa, EIE y Marketing se trabajan desde la práctica real, no desde el manual.</p>
         <ul class="exec-bullets">
           <li>Más de 15 centros educativos en la Región de Murcia</li>
           <li>260 h de prácticum con gestión autónoma de aula</li>
-          <li>Empresa + tecnología + metodología activa (ABP)</li>
-          <li>Evaluación por competencias y programación LOMLOE</li>
-          <li>Integración funcional de IA con criterio pedagógico</li>
-          </ul>
+          <li>Empresa, tecnología y metodología activa (ABP) integrados en cada módulo</li>
+          <li>Evaluación competencial: Resultados de Aprendizaje, Criterios de Evaluación y competencias profesionales, personales y sociales</li>
+          <li>Diseño curricular bajo LOMLOE y Ley Orgánica 3/2022, incluyendo FP Dual</li>
+          <li>Aplicación del Diseño Universal para el Aprendizaje (DUA)</li>
+          <li>Desarrollo de herramientas propias de gestión curricular con IA para FP</li>
+        </ul>
       </div>
       <div class="reveal d2">
         <div class="credentials-list">
-          <div class="cred-item">
-            <div class="cred-icon">🏫</div>
-            <div class="cred-body">
-              <div class="cred-title">Programa Código Escuela 4.0</div>
-              <div class="cred-sub">Profesor auxiliar en más de 15 centros de la Región de Murcia. Robótica, programación y competencia digital.</div>
-              <span class="cred-badge">2025 – Actualidad</span>
-            </div>
-          </div>
-          <div class="cred-item">
-            <div class="cred-icon">🏛️</div>
-            <div class="cred-body">
-              <div class="cred-title">Jurado — Prisma Challenge 2026</div>
-              <div class="cred-sub">Competición educativa regional de robótica y programación.</div>
-              <span class="cred-badge">2026</span>
-            </div>
-          </div>
-          <div class="cred-item">
-            <div class="cred-icon">🎓</div>
-            <div class="cred-body">
-              <div class="cred-title">Prácticum MAES — IES Pedro Guillén</div>
-              <div class="cred-sub">260 h lectivas. Módulos de Economía y Empresa. Evaluación competencial y coordinación con el departamento.</div>
-              <span class="cred-badge">2026</span>
-            </div>
-          </div>
-          <div class="cred-item">
-            <div class="cred-icon">💼</div>
-            <div class="cred-body">
-              <div class="cred-title">Trayectoria profesional previa</div>
-              <div class="cred-sub">Gestión comercial, administración y marketing digital (2004–2022). Base directa para EIE, Gestión Empresarial y Marketing.</div>
-              <span class="cred-badge">18 años</span>
-            </div>
-          </div>
+          <div class="cred-item"><div class="cred-icon">🏫</div><div class="cred-body"><div class="cred-title">Programa Código Escuela 4.0</div><div class="cred-sub">Profesor auxiliar en más de 15 centros de la Región de Murcia. Robótica, programación y competencia digital.</div><span class="cred-badge">2025 – Actualidad</span></div></div>
+          <div class="cred-item"><div class="cred-icon">🏛️</div><div class="cred-body"><div class="cred-title">Jurado — Prisma Challenge 2026</div><div class="cred-sub">Competición educativa regional de robótica y programación.</div><span class="cred-badge">2026</span></div></div>
+          <div class="cred-item"><div class="cred-icon">🎓</div><div class="cred-body"><div class="cred-title">Prácticum MAES — IES Pedro Guillén</div><div class="cred-sub">260 h lectivas. Módulos de Economía y Empresa. Evaluación competencial y coordinación con el departamento.</div><span class="cred-badge">2026</span></div></div>
+          <div class="cred-item"><div class="cred-icon">💼</div><div class="cred-body"><div class="cred-title">Trayectoria profesional previa</div><div class="cred-sub">Gestión comercial, administración y marketing digital (2004–2022). Base directa para EIE, Gestión Empresarial y Marketing.</div><span class="cred-badge">18 años</span></div></div>
         </div>
       </div>
     </div>
@@ -789,6 +671,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
       <div class="esp-card reveal d3"><div class="esp-icon">📣</div><div class="esp-name">Marketing y Digitalización FP</div></div>
       <div class="esp-card reveal d1"><div class="esp-icon">💻</div><div class="esp-name">Competencia Digital Docente</div></div>
       <div class="esp-card reveal d2"><div class="esp-icon">🤖</div><div class="esp-name">Robótica y Programación Educativa</div></div>
+      <div class="esp-card reveal d3"><div class="esp-icon">📐</div><div class="esp-name">Diseño curricular FP — LOMLOE, FP Dual y evaluación competencial</div></div>
     </div>
   </div>
 </section>
@@ -805,44 +688,14 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
     </div>
     <div class="met-layout">
       <div class="cases-nav reveal d1">
-        <button class="case-btn active" onclick="switchCase(this,'c1')">
-          <span class="cb-emoji">🤐</span>
-          <div><div class="cb-title">Grupo poco participativo</div><div class="cb-sub">Falta de implicación activa</div></div>
-        </button>
-        <button class="case-btn" onclick="switchCase(this,'c2')">
-          <span class="cb-emoji">📊</span>
-          <div><div class="cb-title">Diferentes niveles</div><div class="cb-sub">Heterogeneidad y diversidad</div></div>
-        </button>
-        <button class="case-btn" onclick="switchCase(this,'c3')">
-          <span class="cb-emoji">🏗️</span>
-          <div><div class="cb-title">Contenido muy denso</div><div class="cb-sub">Abstracción y complejidad</div></div>
-        </button>
+        <button class="case-btn active" onclick="switchCase(this,'c1')"><span class="cb-emoji">🤐</span><div><div class="cb-title">Grupo poco participativo</div><div class="cb-sub">Falta de implicación activa</div></div></button>
+        <button class="case-btn" onclick="switchCase(this,'c2')"><span class="cb-emoji">📊</span><div><div class="cb-title">Diferentes niveles</div><div class="cb-sub">Heterogeneidad y diversidad</div></div></button>
+        <button class="case-btn" onclick="switchCase(this,'c3')"><span class="cb-emoji">🏗️</span><div><div class="cb-title">Contenido muy denso</div><div class="cb-sub">Abstracción y complejidad</div></div></button>
       </div>
       <div class="case-content reveal d2">
-        <div id="c1" class="case-panel active">
-          <div class="cp-header"><span class="cp-label">Escenario 01</span><h3 class="cp-title">Dinamización y gamificación</h3></div>
-          <p class="cp-desc">Cuando el grupo muestra apatía, rompo la inercia con dinámicas de impacto inmediato y herramientas digitales que fomentan la participación anónima inicial para ganar confianza.</p>
-          <div class="cp-grid">
-            <div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Gamificación con herramientas tipo Quizziz/Kahoot</li><li>Debates rápidos con roles asignados</li><li>Retos por equipos con recompensa simbólica</li></ul></div>
-            <div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Aumento del 40% en participación espontánea</li><li>Mejora del clima de aula y cohesión</li><li>Feedback inmediato del nivel de comprensión</li></ul></div>
-          </div>
-        </div>
-        <div id="c2" class="case-panel">
-          <div class="cp-header"><span class="cp-label">Escenario 02</span><h3 class="cp-title">Inclusión y Multinivel</h3></div>
-          <p class="cp-desc">En aulas heterogéneas, aplico el Diseño Universal para el Aprendizaje (DUA), ofreciendo diferentes vías de entrada al contenido y múltiples formas de expresar lo aprendido.</p>
-          <div class="cp-grid">
-            <div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Materiales en diversos formatos (visual, audio, texto)</li><li>Andamiaje específico para alumnado con dificultades</li><li>Proyectos con tareas de complejidad escalonada</li></ul></div>
-            <div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Reducción de la frustración y el abandono</li><li>Alumnado motivado según su propio ritmo</li><li>Cumplimiento de objetivos mínimos por el 100%</li></ul></div>
-          </div>
-        </div>
-        <div id="c3" class="case-panel">
-          <div class="cp-header"><span class="cp-label">Escenario 03</span><h3 class="cp-title">Aprendizaje Basado en Proyectos</h3></div>
-          <p class="cp-desc">Para conceptos abstractos de empresa o economía, aterrizamos la teoría en un proyecto real (ABP) donde el alumnado "hace" para "entender", conectando con su realidad.</p>
-          <div class="cp-grid">
-            <div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Simulación de entornos empresariales reales</li><li>Uso de software profesional en el aula</li><li>Creación de productos finales tangibles</li></ul></div>
-            <div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Aprendizaje significativo y duradero</li><li>Desarrollo de soft skills (liderazgo, tiempo)</li><li>Portfolio de trabajo para el mercado laboral</li></ul></div>
-          </div>
-        </div>
+        <div id="c1" class="case-panel active"><div class="cp-header"><span class="cp-label">Escenario 01</span><h3 class="cp-title">Dinamización y gamificación</h3></div><p class="cp-desc">Cuando el grupo muestra apatía, rompo la inercia con dinámicas de impacto inmediato y herramientas digitales que fomentan la participación anónima inicial para ganar confianza.</p><div class="cp-grid"><div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Gamificación con herramientas tipo Quizziz/Kahoot</li><li>Debates rápidos con roles asignados</li><li>Retos por equipos con recompensa simbólica</li></ul></div><div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Aumento del 40% en participación espontánea</li><li>Mejora del clima de aula y cohesión</li><li>Feedback inmediato del nivel de comprensión</li></ul></div></div></div>
+        <div id="c2" class="case-panel"><div class="cp-header"><span class="cp-label">Escenario 02</span><h3 class="cp-title">Inclusión y Multinivel</h3></div><p class="cp-desc">En aulas heterogéneas, aplico el Diseño Universal para el Aprendizaje (DUA), ofreciendo diferentes vías de entrada al contenido y múltiples formas de expresar lo aprendido.</p><div class="cp-grid"><div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Materiales en diversos formatos (visual, audio, texto)</li><li>Andamiaje específico para alumnado con dificultades</li><li>Proyectos con tareas de complejidad escalonada</li></ul></div><div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Reducción de la frustración y el abandono</li><li>Alumnado motivado según su propio ritmo</li><li>Cumplimiento de objetivos mínimos por el 100%</li></ul></div></div></div>
+        <div id="c3" class="case-panel"><div class="cp-header"><span class="cp-label">Escenario 03</span><h3 class="cp-title">Aprendizaje Basado en Proyectos</h3></div><p class="cp-desc">Para conceptos abstractos de empresa o economía, aterrizamos la teoría en un proyecto real (ABP) donde el alumnado "hace" para "entender", conectando con su realidad.</p><div class="cp-grid"><div class="cp-box"><div class="cp-box-title">⚡ Acción</div><ul class="cp-box-list"><li>Simulación de entornos empresariales reales</li><li>Uso de software profesional en el aula</li><li>Creación de productos finales tangibles</li></ul></div><div class="cp-box"><div class="cp-box-title">🎯 Logro</div><ul class="cp-box-list"><li>Aprendizaje significativo y duradero</li><li>Desarrollo de soft skills (liderazgo, tiempo)</li><li>Portfolio de trabajo para el mercado laboral</li></ul></div></div></div>
       </div>
     </div>
   </div>
@@ -864,50 +717,10 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
       <button class="proj-tab" onclick="switchProj(this,'p3')">▶ Contenido con IA</button>
       <button class="proj-tab" onclick="switchProj(this,'p4')">📄 Documentos de Empresa</button>
     </div>
-    <div id="p1" class="proj-panel active">
-      <div>
-        <div class="proj-title">Empresa simulada</div>
-        <div class="proj-desc">El alumnado constituye una empresa ficticia desde cero: modelo de negocio, análisis de mercado, estructura organizativa y defensa de resultados.</div>
-        <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items"><li class="pi-learn">Estructura organizativa y áreas funcionales de una empresa</li><li class="pi-learn">Toma de decisiones estratégicas en contexto simulado</li><li class="pi-learn">Trabajo cooperativo con roles profesionales diferenciados</li></ul>
-        <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items"><li class="pi-produce">Plan de empresa estructurado (análisis, marketing, operaciones)</li><li class="pi-produce">Presentación técnica de defensa del proyecto</li><li class="pi-produce">Organigrama corporativo y manual de funciones</li></ul>
-      </div>
-      <div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">🏢</div><div style="font-size:0.72rem;color:var(--muted)">Estructura · Decisiones · Presentación</div></div></div>
-    </div>
-    <div id="p2" class="proj-panel">
-      <div>
-        <div class="proj-title">Pitch de negocio</div>
-        <div class="proj-desc">Los equipos defienden su propuesta de valor en 5 minutos ante una audiencia técnica o potenciales colaboradores.</div>
-        <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items"><li class="pi-learn">Comunicación sintética y persuasiva de alto impacto</li><li class="pi-learn">Propuesta de valor y ventaja competitiva diferencial</li><li class="pi-learn">Presentación técnica ante tribunal de evaluación</li></ul>
-        <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items"><li class="pi-produce">Pitch grabado de 5 minutos de duración máxima</li><li class="pi-produce">Soporte visual optimizado (máximo 10 diapositivas)</li><li class="pi-produce">Ficha técnica con análisis de viabilidad básico</li></ul>
-      </div>
-      <div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">💡</div><div style="font-size:0.72rem;color:var(--muted)">Idea · Mercado · Diferencial</div></div></div>
-    </div>
-    <div id="p3" class="proj-panel">
-      <div>
-        <div class="proj-title">Marketing digital e IA aplicada</div>
-        <div class="proj-desc">Producción de contenido audiovisual para canales digitales usando IA generativa, con enfoque de uso ético, crítico y productivo.</div>
-        <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items"><li class="pi-learn">Uso funcional de herramientas de IA generativa aplicadas a la producción</li><li class="pi-learn">Estructura narrativa y guionización para comunicación digital</li><li class="pi-learn">Criterio ético y de calidad en la curación de contenidos generados</li></ul>
-        <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items"><li class="pi-produce">Vídeo de comunicación corporativa (30–60 segundos)</li><li class="pi-produce">Guion literario, técnico y plan de producción documentado</li><li class="pi-produce">Dossier justificativo del uso y criterios aplicados con IA</li></ul>
-      </div>
-      <div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">▶</div><div style="font-size:0.72rem;color:var(--muted)">Guion · IA · Montaje profesional</div></div></div>
-    </div>
-    <div id="p4" class="proj-panel">
-      <div>
-        <div class="proj-title">Documentos de Empresa</div>
-        <div class="proj-desc">Redacción y formalización de la documentación interna oficial de la empresa simulada, con rigor administrativo y comunicación escrita profesional.</div>
-        <div class="proj-col-title">Qué aprende</div>
-        <ul class="proj-items"><li class="pi-learn">Redacción administrativa formal y tono corporativo</li><li class="pi-learn">Diseño y aplicación de políticas y reglamentos internos</li><li class="pi-learn">Claridad y precisión en la comunicación empresarial escrita</li></ul>
-        <div class="proj-col-title">Qué produce</div>
-        <ul class="proj-items"><li class="pi-produce">Reglamento de régimen interno y normas de funcionamiento</li><li class="pi-produce">Manual de política de atención al cliente</li><li class="pi-produce">Modelos de comunicación externa, circulares e informes</li></ul>
-      </div>
-      <div class="proj-visual"><div style="width:100%;max-width:200px"><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent);font-size:0.75rem;font-weight:600;color:var(--navy)">Reglamento interno</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent2);font-size:0.75rem;font-weight:600;color:var(--navy)">Política de cliente</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;border-left:3px solid var(--muted);font-size:0.75rem;font-weight:600;color:var(--navy)">Comunicaciones oficiales</div></div></div>
-    </div>
+    <div id="p1" class="proj-panel active"><div><div class="proj-title">Empresa simulada</div><div class="proj-desc">El alumnado constituye una empresa ficticia desde cero: modelo de negocio, análisis de mercado, estructura organizativa y defensa de resultados.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Estructura organizativa y áreas funcionales de una empresa</li><li>Toma de decisiones estratégicas en contexto simulado</li><li>Trabajo cooperativo con roles profesionales diferenciados</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Plan de empresa estructurado (análisis, marketing, operaciones)</li><li>Presentación técnica de defensa del proyecto</li><li>Organigrama corporativo y manual de funciones</li></ul></div><div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">🏢</div><div style="font-size:0.72rem;color:var(--muted)">Estructura · Decisiones · Presentación</div></div></div></div>
+    <div id="p2" class="proj-panel"><div><div class="proj-title">Pitch de negocio</div><div class="proj-desc">Los equipos defienden su propuesta de valor en 5 minutos ante una audiencia técnica o potenciales colaboradores.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Comunicación sintética y persuasiva de alto impacto</li><li>Propuesta de valor y ventaja competitiva diferencial</li><li>Presentación técnica ante tribunal de evaluación</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Pitch grabado de 5 minutos de duración máxima</li><li>Soporte visual optimizado (máximo 10 diapositivas)</li><li>Ficha técnica con análisis de viabilidad básico</li></ul></div><div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">💡</div><div style="font-size:0.72rem;color:var(--muted)">Idea · Mercado · Diferencial</div></div></div></div>
+    <div id="p3" class="proj-panel"><div><div class="proj-title">Marketing digital e IA aplicada</div><div class="proj-desc">Producción de contenido audiovisual para canales digitales usando IA generativa, con enfoque de uso ético, crítico y productivo.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Uso funcional de herramientas de IA generativa aplicadas a la producción</li><li>Estructura narrativa y guionización para comunicación digital</li><li>Criterio ético y de calidad en la curación de contenidos generados</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Vídeo de comunicación corporativa (30–60 segundos)</li><li>Guion literario, técnico y plan de producción documentado</li><li>Dossier justificativo del uso y criterios aplicados con IA</li></ul></div><div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">▶</div><div style="font-size:0.72rem;color:var(--muted)">Guion · IA · Montaje profesional</div></div></div></div>
+    <div id="p4" class="proj-panel"><div><div class="proj-title">Documentos de Empresa</div><div class="proj-desc">Redacción y formalización de la documentación interna oficial de la empresa simulada, con rigor administrativo y comunicación escrita profesional.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Redacción administrativa formal y tono corporativo</li><li>Diseño y aplicación de políticas y reglamentos internos</li><li>Claridad y precisión en la comunicación empresarial escrita</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Reglamento de régimen interno y normas de funcionamiento</li><li>Manual de política de atención al cliente</li><li>Modelos de comunicación externa, circulares e informes</li></ul></div><div class="proj-visual"><div style="width:100%;max-width:200px"><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent);font-size:0.75rem;font-weight:600;color:var(--navy)">Reglamento interno</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent2);font-size:0.75rem;font-weight:600;color:var(--navy)">Política de cliente</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;border-left:3px solid var(--muted);font-size:0.75rem;font-weight:600;color:var(--navy)">Comunicaciones oficiales</div></div></div></div>
   </div>
 </section>
 
@@ -917,44 +730,25 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 <section id="tech-proyectos">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label">Innovación Educativa</div>
-      <h2 class="sec-title">IA aplicada a la Formación Profesional</h2>
-      <p class="sec-desc">Desarrollo de soluciones educativas propias orientadas a la generación de recursos didácticos, evaluación competencial y mejora de la productividad docente.</p>
+      <div class="sec-label">Innovación curricular en FP</div>
+      <h2 class="sec-title">Innovación curricular en Formación Profesional</h2>
+      <p class="sec-desc">Herramientas de trabajo curricular propias desarrolladas desde la práctica docente real y el conocimiento directo de la normativa de Formación Profesional.</p>
     </div>
-
     <div class="premium-card reveal d1" style="margin-top: 3rem;">
       <div class="premium-info">
         <h3 class="premium-title">ProyectoFP</h3>
-        <p class="premium-subtitle">Generación y auditoría inteligente de recursos didácticos para Formación Profesional.</p>
-        <p class="premium-desc">ProyectoFP permite generar situaciones de aprendizaje, proyectos ABP, rúbricas, debates, casos prácticos, programaciones didácticas y pruebas de evaluación alineadas con la LOMLOE. Incluye auditoría curricular mediante IA, modo departamento y exportación profesional de documentos.</p>
-        
-        <div class="proj-col-title">Características destacadas</div>
-        <ul class="premium-features">
-          <li>Generación automática de recursos FP</li>
-          <li>Modo Inspección Educativa</li>
-          <li>Modo Departamento</li>
-          <li>Exportación PDF y DOCX</li>
-          <li>IA especializada en Formación Profesional</li>
-        </ul>
-
-        <div style="margin-top:1.5rem;padding:1rem;background:#f8f9fc;border-radius:10px;border-left:4px solid #4f6ef7;">
-          <strong>Impacto docente:</strong><br>
-          Reducción significativa del tiempo de elaboración de recursos educativos y mejora de la coherencia curricular bajo el marco LOMLOE.
-        </div>
-
-        <div class="premium-actions">
-          <a href="/proyectofp/" target="_blank" rel="noopener" class="btn-primary">
-            <span>🌐</span> Ver Demo
-          </a>
-          <a href="https://github.com/juanpeco/ProyectoFP" target="_blank" rel="noopener" class="btn-ghost">
-            <span>💻</span> Ver Código
-          </a>
+        <p class="premium-subtitle">Herramienta de diagnóstico y gestión curricular para departamentos de FP.</p>
+        <p class="premium-desc">La nueva Formación Profesional exige una gestión curricular precisa: los Resultados de Aprendizaje, los Criterios de Evaluación, las competencias profesionales, personales y sociales, las competencias clave y el perfil de salida del ciclo deben estar trazados de forma coherente en toda la documentación didáctica del módulo.</p>
+        <p class="premium-desc">ProyectoFP es una herramienta de apoyo al trabajo curricular del docente de FP. Permite generar situaciones de aprendizaje, rúbricas analíticas, programaciones didácticas y casos prácticos directamente desde el currículo oficial de cada módulo, y verificar que la cobertura de Resultados de Aprendizaje y Criterios de Evaluación es coherente y defendible ante cualquier revisión educativa.</p>
+        <p class="premium-desc" style="font-size:0.85rem;color:var(--muted);">Ha sido construida con conocimiento directo del marco normativo de la FP española: LOMLOE, Ley Orgánica 3/2022, Reales Decretos de títulos de FP e instrucciones de la Consejería de Educación de la Región de Murcia.</p>
+        <div class="premium-actions" style="margin-top:1.5rem;">
+          <a href="/proyectofp/" target="_blank" rel="noopener" class="btn-primary"><span>🌐</span> Consultar la herramienta</a>
         </div>
       </div>
       <div class="premium-visual">
         <div class="premium-icon">🎓</div>
-        <div style="font-size:0.85rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">IA + Educación FP</div>
-        <div style="font-size:0.75rem; color:var(--muted); line-height:1.5;">Solución integral para la<br>nueva normativa educativa</div>
+        <div style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Diagnóstico curricular · FP</div>
+        <div style="font-size:0.75rem;color:var(--muted);line-height:1.5;">LOMLOE · LO 3/2022<br>Reales Decretos de FP</div>
       </div>
     </div>
   </div>
@@ -974,6 +768,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
         <h3 style="font-family:var(--font-h);font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:1.5rem">Experiencia docente y formativa</h3>
         <div class="exp-timeline">
           <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2025 – Actualidad</div><div class="exp-role">Profesor auxiliar — Código Escuela 4.0</div><div class="exp-place">Consejería de Educación, Región de Murcia</div><div class="exp-desc">Talleres de robótica, programación y pensamiento computacional en más de 15 centros. Diseño de materiales curriculares propios y coordinación con los equipos docentes.</div></div></div>
+          <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2025 – Actualidad</div><div class="exp-role">ProyectoFP — Investigación e innovación curricular en FP</div><div class="exp-place">Proyecto propio · Región de Murcia</div><div class="exp-desc">Desarrollo de herramienta de diagnóstico y gestión curricular para departamentos de Formación Profesional. Trabajo en profundidad con la estructura de Resultados de Aprendizaje, Criterios de Evaluación, competencias profesionales y perfil de salida de los ciclos formativos. Basado en LOMLOE, Ley Orgánica 3/2022 y Reales Decretos de títulos de FP.</div></div></div>
           <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2026</div><div class="exp-role">Docente (Prácticum MAES) — IES Pedro Guillén</div><div class="exp-place">260 horas lectivas · FP Economía y Empresa</div><div class="exp-desc">Gestión autónoma de grupo-clase, planificación de unidades didácticas, evaluación por competencias (LOMLOE) y coordinación con el departamento.</div></div></div>
           <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2010 – 2018</div><div class="exp-role">Formador — FPE y FPO</div><div class="exp-place">SERVEF · Generalitat Valenciana</div><div class="exp-desc">Acciones formativas oficiales en competencias digitales orientadas a la inserción laboral. Certificaciones SERVEF verificables: Formador Ocupacional (2010, 389 h) y Docencia FPE SSCE0110 (2017, 100 h, nota 9,3/10).</div></div></div>
           <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2004 – 2022</div><div class="exp-role">Gestión Comercial, Administración y Marketing Digital</div><div class="exp-place">Trayectoria profesional en empresa privada</div><div class="exp-desc">Casi dos décadas en gestión comercial, administración y consultoría de marketing digital. Base directa para EIE, Gestión Empresarial y Marketing.</div></div></div>
@@ -1005,7 +800,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
       <div class="sec-label" style="color:rgba(255,255,255,0.4)">Contacto</div>
       <h2 class="sec-title">¿Buscas un docente?</h2>
       <p style="color:rgba(255,255,255,0.7);font-size:1.1rem;margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6">
-        Si tu centro necesita incorporar profesorado en las áreas de Empresa, Economía, Emprendimiento, Marketing o Digitalización, estaré encantado de conversar contigo.
+        Si tu centro necesita incorporar profesorado en las áreas de Empresa, Economía, Emprendimiento, Marketing o Digitalización, estaré encantado de conversar contigo.<br><br>Si eres jefe de departamento de FP y quieres explorar el uso de herramientas de gestión curricular con IA en tu departamento, también puedes escribirme.
       </p>
       <a href="mailto:hola@juanpeco.com?subject=Solicitud%20de%20entrevista%20docente%20-%20Juan%20Peco" class="contacto-email">hola@juanpeco.com</a>
       <div class="contacto-links">
@@ -1014,34 +809,21 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
         <a href="https://wa.me/34647033746" target="_blank" rel="noopener" class="clink"><span>💬</span> WhatsApp</a>
         <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="clink"><span>🔗</span> LinkedIn</a>
       </div>
-      <div class="contacto-note">Juan Peco · Murcia · Formación Profesional, Empresa y Digitalización</div>
+      <div class="contacto-note">Juan Peco · Murcia · Formación Profesional · LOMLOE · Innovación curricular</div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER INSTITUCIONAL ── -->
 <footer>
   <div class="footer-left">
     <div class="footer-name">Juan Peco</div>
     <div class="footer-role">Docente de Formación Profesional · Empresa · Economía · Tecnología educativa</div>
   </div>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="footer-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      LinkedIn
-    </a>
-    <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" class="footer-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      Instagram
-    </a>
-    <a href="mailto:hola@juanpeco.com" class="footer-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Email
-    </a>
-    <a href="CV_Juan_Peco.pdf" target="_blank" class="footer-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      CV PDF
-    </a>
+    <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+    <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
+    <a href="mailto:hola@juanpeco.com" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a>
+    <a href="CV_Juan_Peco.pdf" target="_blank" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>CV PDF</a>
   </div>
 </footer>
 
@@ -1054,45 +836,18 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 60) { nav.classList.add('scrolled'); navCta.style.display = 'inline-block'; }
   else { nav.classList.remove('scrolled'); navCta.style.display = 'none'; }
 });
-
 const burger = document.getElementById('hamburger');
 const mob = document.getElementById('mobile-menu');
 burger.addEventListener('click', () => mob.classList.toggle('open'));
 document.querySelectorAll('.mob-link').forEach(b => b.addEventListener('click', () => mob.classList.remove('open')));
-
-function goto(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-  mob.classList.remove('open');
-}
-
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
+function goto(id) { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); mob.classList.remove('open'); }
+const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-function switchCase(btn, panelId) {
-  document.querySelectorAll('.case-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.case-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(panelId).classList.add('active');
-}
-
-function switchProj(btn, panelId) {
-  document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(panelId).classList.add('active');
-}
-
+function switchCase(btn, panelId) { document.querySelectorAll('.case-btn').forEach(b => b.classList.remove('active')); document.querySelectorAll('.case-panel').forEach(p => p.classList.remove('active')); btn.classList.add('active'); document.getElementById(panelId).classList.add('active'); }
+function switchProj(btn, panelId) { document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active')); document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active')); btn.classList.add('active'); document.getElementById(panelId).classList.add('active'); }
 const toTopBtn = document.getElementById('toTopBtn');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 700) toTopBtn.classList.add('show');
-  else toTopBtn.classList.remove('show');
-});
+window.addEventListener('scroll', () => { if (window.scrollY > 700) toTopBtn.classList.add('show'); else toTopBtn.classList.remove('show'); });
 toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-// Reinicializar embeds de Instagram si el script ya cargó
 if (window.instgrm) window.instgrm.Embeds.process();
 </script>
   <script defer src="https://www.instagram.com/embed.js"></script>
