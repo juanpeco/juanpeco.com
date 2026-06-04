@@ -327,10 +327,9 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-  .hero-text { display: flex; flex-direction: column; align-items: center; }
+  .hero-inner > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .hero-evidence { grid-template-columns: 1fr !important; }
   .hero-sub { margin-left: auto; margin-right: auto; }
-  .hero-actions { justify-content: center; }
   .perfil-grid, .met-layout { grid-template-columns: 1fr; gap: 3rem; }
   .esp-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-contact { display: none; }
@@ -510,41 +509,59 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 <!-- ── HERO ── -->
 <section id="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-eyebrow">DOCENTE DE FP · 18 AÑOS EN EMPRESA · MAES HABILITADO</div>
-      <h1 class="hero-h1">No llegué a la docencia por vocación. Llegué por <em>accidente</em>. Y me quedé porque es <em>lo mío</em>.</h1>
-      <p class="hero-sub">Dieciocho años en empresa —comercial, director comercial, distintos sectores— hasta que me llamaron para colaborar en Código Escuela 4.0. No lo tenía planeado. Lo probé, y en esas aulas encontré algo que no sabía que me faltaba. Desde entonces me he formado para hacerlo bien: MAES habilitado, especialidad Economía, Empresa y Turismo.</p>
-      <div class="hero-modulos reveal" style="margin-bottom:1.8rem;padding:1.2rem 1.4rem;background:var(--light);border:1px solid rgba(79,110,247,0.2);border-radius:12px;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Disponible para impartir · Curso 2026-2027</div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
-          <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Economía ESO y Bachillerato</span>
-          <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Empresa e Iniciativa Emprendedora</span>
-          <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Empresa en el Aula</span>
-          <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Marketing y Publicidad</span>
-          <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Digitalización aplicada</span>
-          <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Comercio y Gestión Empresarial</span>
-          <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">IPE</span>
+  <div class="hero-inner" style="display:block;max-width:1060px;margin:0 auto;position:relative;">
+
+    <!-- EYEBROW -->
+    <div class="hero-eyebrow" style="animation: fadeUp 0.5s var(--ease) both;">DOCENTE DE FP · 18 AÑOS EN EMPRESA · MAES HABILITADO</div>
+
+    <!-- TÍTULO ANCHO COMPLETO -->
+    <h1 class="hero-h1" style="animation: fadeUp 0.55s 0.08s var(--ease) both;">No llegué a la docencia por vocación. Llegué por <em>accidente</em>. Y me quedé porque es <em>lo mío</em>.</h1>
+
+    <!-- DOS COLUMNAS: TEXTO + FOTO -->
+    <div style="display:grid;grid-template-columns:1fr 0.85fr;gap:3.5rem;align-items:start;margin-bottom:2.5rem;animation: fadeUp 0.55s 0.15s var(--ease) both;">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div>
+        <p class="hero-sub" style="margin-bottom:1.5rem;">Dieciocho años en empresa —comercial, director comercial, distintos sectores— hasta que me llamaron para colaborar en Código Escuela 4.0. No lo tenía planeado. Lo probé, y en esas aulas encontré algo que no sabía que me faltaba. Desde entonces me he formado para hacerlo bien: MAES habilitado, especialidad Economía, Empresa y Turismo.</p>
+
+        <div style="margin-bottom:1.5rem;padding:1.2rem 1.4rem;background:var(--light);border:1px solid rgba(79,110,247,0.2);border-radius:12px;">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Disponible para impartir · Curso 2026-2027</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Economía ESO y Bachillerato</span>
+            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Empresa e Iniciativa Emprendedora</span>
+            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Empresa en el Aula</span>
+            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Marketing y Publicidad</span>
+            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Digitalización aplicada</span>
+            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Comercio y Gestión Empresarial</span>
+            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">IPE</span>
+          </div>
+          <div style="margin-top:0.7rem;font-size:0.75rem;color:var(--muted);">Región de Murcia · Jornada completa · Incorporación inmediata</div>
         </div>
-        <div style="margin-top:0.7rem;font-size:0.75rem;color:var(--muted);">Región de Murcia · Jornada completa · Incorporación inmediata</div>
+
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
+          <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
+        </div>
       </div>
-      <div class="hero-actions">
-        <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
-        <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
+
+      <!-- COLUMNA DERECHA: FOTO -->
+      <div class="hero-image-col">
+        <div class="hero-photo-frame">
+          <img src="foto_aula.jpg" alt="Juan Peco — Docente de FP" onerror="this.style.display='none'">
+          <div class="hero-photo-badge">Docente en activo · Región de Murcia</div>
+        </div>
       </div>
-      <div class="hero-evidence">
-        <div class="ev-card"><div class="ev-num">+15</div><div class="ev-label">Centros educativos</div><div class="ev-sub">Región de Murcia</div></div>
-        <div class="ev-card"><div class="ev-num">260h</div><div class="ev-label">Prácticum de aula</div><div class="ev-sub">IES Pedro Guillén, FP</div></div>
-        <div class="ev-card"><div class="ev-num">MAES</div><div class="ev-label">Habilitado · jun. 2026</div><div class="ev-sub">Esp. Economía y Empresa</div></div>
-      </div>
+
+    </div><!-- fin dos columnas -->
+
+    <!-- MÉTRICAS ANCHO COMPLETO -->
+    <div class="hero-evidence" style="animation: fadeUp 0.55s 0.3s var(--ease) both;">
+      <div class="ev-card"><div class="ev-num">+15</div><div class="ev-label">Centros educativos</div><div class="ev-sub">Región de Murcia</div></div>
+      <div class="ev-card"><div class="ev-num">260h</div><div class="ev-label">Prácticum de aula</div><div class="ev-sub">IES Pedro Guillén, FP</div></div>
+      <div class="ev-card"><div class="ev-num">MAES</div><div class="ev-label">Habilitado · jun. 2026</div><div class="ev-sub">Esp. Economía y Empresa</div></div>
     </div>
-    <div class="hero-image-col">
-      <div class="hero-photo-frame">
-        <img src="foto_aula.jpg" alt="Juan Peco — Docente de FP" onerror="this.style.display='none'">
-        <div class="hero-photo-badge">Docente en activo · Región de Murcia</div>
-      </div>
-    </div>
-  </div>
+
+  </div><!-- fin hero-inner -->
 </section>
 
 <div class="divider"></div>
