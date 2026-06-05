@@ -327,9 +327,10 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 900px) {
-  .hero-inner > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
-  .hero-evidence { grid-template-columns: 1fr !important; }
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+  .hero-text { display: flex; flex-direction: column; align-items: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
   .perfil-grid, .met-layout { grid-template-columns: 1fr; gap: 3rem; }
   .esp-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-contact { display: none; }
@@ -509,59 +510,28 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 <!-- ── HERO ── -->
 <section id="hero">
-  <div class="hero-inner" style="display:block;max-width:1060px;margin:0 auto;position:relative;">
-
-    <!-- EYEBROW -->
-    <div class="hero-eyebrow" style="animation: fadeUp 0.5s var(--ease) both;">DOCENTE DE FP · 18 AÑOS EN EMPRESA · MAES HABILITADO</div>
-
-    <!-- TÍTULO ANCHO COMPLETO -->
-    <h1 class="hero-h1" style="animation: fadeUp 0.55s 0.08s var(--ease) both;">No llegué a la docencia por vocación. Llegué por <em>accidente</em>. Y me quedé porque es <em>lo mío</em>.</h1>
-
-    <!-- DOS COLUMNAS: TEXTO + FOTO -->
-    <div style="display:grid;grid-template-columns:1fr 0.85fr;gap:3.5rem;align-items:start;margin-bottom:2.5rem;animation: fadeUp 0.55s 0.15s var(--ease) both;">
-
-      <!-- COLUMNA IZQUIERDA -->
-      <div>
-        <p class="hero-sub" style="margin-bottom:1.5rem;">Dieciocho años en empresa —comercial, director comercial, distintos sectores— hasta que me llamaron para colaborar en Código Escuela 4.0. No lo tenía planeado. Lo probé, y en esas aulas encontré algo que no sabía que me faltaba. Desde entonces me he formado para hacerlo bien: MAES habilitado, especialidad Economía, Empresa y Turismo.</p>
-
-        <div style="margin-bottom:1.5rem;padding:1.2rem 1.4rem;background:var(--light);border:1px solid rgba(79,110,247,0.2);border-radius:12px;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Disponible para impartir · Curso 2026-2027</div>
-          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
-            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Economía ESO y Bachillerato</span>
-            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Empresa e Iniciativa Emprendedora</span>
-            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Empresa en el Aula</span>
-            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Marketing y Publicidad</span>
-            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Digitalización aplicada</span>
-            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">Comercio y Gestión Empresarial</span>
-            <span style="padding:0.3rem 0.75rem;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--navy);">IPE</span>
-          </div>
-          <div style="margin-top:0.7rem;font-size:0.75rem;color:var(--muted);">Región de Murcia · Jornada completa · Incorporación inmediata</div>
-        </div>
-
-        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
-          <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
-          <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
-        </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">DOCENTE DE FP · 18 AÑOS EN EMPRESA · MAES HABILITADO</div>
+      <h1 class="hero-h1">No llegué a la docencia por vocación. Llegué por <em>accidente</em>. Y me quedé porque es <em>lo mío</em>.</h1>
+      <p class="hero-sub">Dieciocho años en empresa —comercial, director comercial, distintos sectores— hasta que me llamaron para colaborar en Código Escuela 4.0. No lo tenía planeado. Lo probé, y en esas aulas encontré algo que no sabía que me faltaba. Desde entonces me he formado para hacerlo bien: MAES habilitado, especialidad Economía, Empresa y Turismo.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
+        <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
       </div>
-
-      <!-- COLUMNA DERECHA: FOTO -->
-      <div class="hero-image-col">
-        <div class="hero-photo-frame">
-          <img src="foto_aula.jpg" alt="Juan Peco — Docente de FP" onerror="this.style.display='none'">
-          <div class="hero-photo-badge">Docente en activo · Región de Murcia</div>
-        </div>
+      <div class="hero-evidence">
+        <div class="ev-card"><div class="ev-num">+15</div><div class="ev-label">Centros educativos</div><div class="ev-sub">Región de Murcia</div></div>
+        <div class="ev-card"><div class="ev-num">260h</div><div class="ev-label">Prácticum de aula</div><div class="ev-sub">IES Pedro Guillén, FP</div></div>
+        <div class="ev-card"><div class="ev-num">MAES</div><div class="ev-label">Habilitado · jun. 2026</div><div class="ev-sub">Esp. Economía y Empresa</div></div>
       </div>
-
-    </div><!-- fin dos columnas -->
-
-    <!-- MÉTRICAS ANCHO COMPLETO -->
-    <div class="hero-evidence" style="animation: fadeUp 0.55s 0.3s var(--ease) both;">
-      <div class="ev-card"><div class="ev-num">+15</div><div class="ev-label">Centros educativos</div><div class="ev-sub">Región de Murcia</div></div>
-      <div class="ev-card"><div class="ev-num">260h</div><div class="ev-label">Prácticum de aula</div><div class="ev-sub">IES Pedro Guillén, FP</div></div>
-      <div class="ev-card"><div class="ev-num">MAES</div><div class="ev-label">Habilitado · jun. 2026</div><div class="ev-sub">Esp. Economía y Empresa</div></div>
     </div>
-
-  </div><!-- fin hero-inner -->
+    <div class="hero-image-col">
+      <div class="hero-photo-frame">
+        <img src="foto_aula.jpg" alt="Juan Peco — Docente de FP" onerror="this.style.display='none'">
+        <div class="hero-photo-badge">Docente en activo · Región de Murcia</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -665,28 +635,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
         <p class="perfil-text">Soy docente de FP, ESO y Bachillerato habilitado (MAES, especialidad Economía, Empresa y Turismo, junio 2026). Imparto Empresa, EIE, Economía y Marketing. Pero antes de ser docente fui comercial, director comercial en el sector financiero —del que me fui cuando mis principios y la forma de trabajar de ese entorno dejaron de ser compatibles— y después trabajé en sitios muy distintos hasta que llegué a la enseñanza casi sin buscarlo.</p>
         <p class="perfil-text">Esa trayectoria no es el adorno del CV. Es lo que hace diferente lo que pasa en mi aula. Cuando explico qué es una cartera de clientes, lo explico desde dentro. Cuando hablo de toma de decisiones, de ética empresarial, de por qué fracasan los negocios, no estoy leyendo un caso práctico. Estoy contando algo que viví. <strong>Un alumno de FP que aprende empresa de alguien que ha gestionado empresas reales aprende diferente.</strong> Lo nota.</p>
         <p class="perfil-text">También fui tartamudo de pequeño. Lo cuento porque explica por qué tardé tanto en plantearme enseñar, y porque la forma en que lo resolví —buscando sinónimos, aprendiendo a ir más despacio cuando el cerebro va más rápido que la boca— es exactamente el tipo de gestión personal que intento transmitir en el aula.</p>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;margin-bottom:1.5rem;">
-          <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center;">
-            <div style="font-family:var(--font-h);font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1;">+15</div>
-            <div style="font-size:0.75rem;font-weight:600;color:var(--navy);margin-top:0.2rem;">Centros educativos</div>
-            <div style="font-size:0.68rem;color:var(--muted);">Región de Murcia</div>
-          </div>
-          <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center;">
-            <div style="font-family:var(--font-h);font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1;">260h</div>
-            <div style="font-size:0.75rem;font-weight:600;color:var(--navy);margin-top:0.2rem;">Prácticum autónomo</div>
-            <div style="font-size:0.68rem;color:var(--muted);">IES Pedro Guillén · FP</div>
-          </div>
-          <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center;">
-            <div style="font-family:var(--font-h);font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1;">18</div>
-            <div style="font-size:0.75rem;font-weight:600;color:var(--navy);margin-top:0.2rem;">Años en empresa real</div>
-            <div style="font-size:0.68rem;color:var(--muted);">Comercial · Dirección · Marketing</div>
-          </div>
-          <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center;">
-            <div style="font-family:var(--font-h);font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1;">2026</div>
-            <div style="font-size:0.75rem;font-weight:600;color:var(--navy);margin-top:0.2rem;">Jurado Prisma Challenge</div>
-            <div style="font-size:0.68rem;color:var(--muted);">Robótica y programación</div>
-          </div>
-        </div>
         <ul class="exec-bullets">
           <li>Diseño de programaciones didácticas y situaciones de aprendizaje bajo LOMLOE y LO 3/2022</li>
           <li>Evaluación competencial: RA, CE y competencias profesionales, personales y sociales</li>
@@ -826,7 +774,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
           <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2025 – Actualidad</div><div class="exp-role">ProyectoFP — Innovación curricular en Formación Profesional</div><div class="exp-place">Investigación aplicada · Región de Murcia</div><div class="exp-desc">Desarrollo de herramienta de diagnóstico y gestión curricular para departamentos de FP. Requirió trabajar en profundidad con RA, CE, competencias y perfil de salida de los ciclos formativos, y contrastar el funcionamiento con programaciones didácticas reales de módulos de Administración, Informática y Comercio. Basado en LOMLOE, LO 3/2022 y Reales Decretos de títulos de FP.</div></div></div>
           <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2026</div><div class="exp-role">Docente (Prácticum MAES) — IES Pedro Guillén</div><div class="exp-place">260 horas lectivas · FP Economía y Empresa</div><div class="exp-desc">Gestión autónoma de grupo-clase en módulos de Economía y Empresa. Diseño y aplicación de situaciones de aprendizaje con evaluación por competencias bajo LOMLOE. Acompañamiento al alumnado en la realización de proyectos de empresa simulada, comunicación con familias y coordinación con el jefe de departamento.</div></div></div>
           <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2010 – 2018</div><div class="exp-role">Formador — FPE y FPO</div><div class="exp-place">SERVEF · Generalitat Valenciana</div><div class="exp-desc">Acciones formativas oficiales en competencias digitales orientadas a la inserción laboral. Certificaciones SERVEF verificables: Formador Ocupacional (2010, 389 h) y Docencia FPE SSCE0110 (2017, 100 h, nota 9,3/10).</div></div></div>
-          <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2004 – 2022</div><div class="exp-role">Comercial · Director comercial · Administración y marketing</div><div class="exp-place">Sector privado · España y Venezuela</div><div class="exp-desc">Dieciocho años que abarcan desde la venta directa hasta la dirección comercial en el sector financiero, pasando por administración de empresas y consultoría de marketing digital. Tras dejar el sector financiero, trabajé en distintos entornos profesionales —entre ellos Correos y servicios funerarios— antes de incorporarme al programa Código Escuela 4.0, experiencia que terminó orientando mi carrera hacia la educación. Experiencia directamente aplicable a los módulos de Empresa e Iniciativa Emprendedora, Empresa en el Aula, Gestión Empresarial y Marketing y Publicidad.</div></div></div>
+          <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2004 – 2022</div><div class="exp-role">Comercial · Director comercial · Administración y marketing</div><div class="exp-place">Sector privado · España y Venezuela</div><div class="exp-desc">Dieciocho años que abarcan desde la venta directa hasta la dirección comercial en el sector financiero, pasando por administración de empresas, consultoría de marketing digital y distintos entornos laborales. Experiencia directamente aplicable a los módulos de Empresa e Iniciativa Emprendedora, Empresa en el Aula, Gestión Empresarial y Marketing y Publicidad.</div></div></div>
         </div>
       </div>
       <div class="reveal d2">
@@ -834,7 +782,8 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
         <div class="academic-list">
           <div class="acad-item"><div class="acad-title">Máster en Formación del Profesorado (MAES)</div><div class="acad-sub">Esp. Economía, Empresa y Turismo</div><span class="acad-badge ab-green">Habilitación docente · junio 2026</span></div>
           <div class="acad-item"><div class="acad-title">Diplomado en Ciencias Empresariales</div><div class="acad-sub">Homologado por el Ministerio de Educación de España · 2012 · Expediente: MEC<br><span style="color:var(--muted)">Licenciado en Administración de Empresas Turísticas · Universidad Alejandro de Humboldt, Venezuela</span></div><span class="acad-badge ab-gray">Homologado MEC · 2012</span></div>
-<div class="acad-item"><div class="acad-title">Certificado de Profesionalidad en Docencia de la FPE — SSCE0110</div><div class="acad-sub">SERVEF · Generalitat Valenciana · 2017 · 100 h · Nota: 9,3/10 · Clave verificable: 14011D83</div></div>
+          <div class="acad-item"><div class="acad-title">Especialización en Agente de Igualdad de Género</div><div class="acad-sub">Universidad Europea Miguel de Cervantes (UEMC) · 2020 · 16 ECTS · 400 h</div><span class="acad-badge ab-gray">Título universitario propio</span></div>
+          <div class="acad-item"><div class="acad-title">Certificado de Profesionalidad en Docencia de la FPE — SSCE0110</div><div class="acad-sub">SERVEF · Generalitat Valenciana · 2017 · 100 h · Nota: 9,3/10 · Clave verificable: 14011D83</div></div>
           <div class="acad-item"><div class="acad-title">Certificado de Profesionalidad — Formador Ocupacional</div><div class="acad-sub">SERVEF · Generalitat Valenciana · 2010 · 389 h lectivas + 90 h prácticas · Clave: CTI023DC2145D3EF5A2190</div></div>
           <div class="acad-item"><div class="acad-title">Inglés — Nivel B1 (MCER)</div><div class="acad-sub">Academia Magister / Prueba institucional MAES · julio 2025</div></div>
           <div class="acad-item"><div class="acad-title">IA educativa y competencia digital docente</div><div class="acad-sub">Microsoft Learn · Herramientas de IA generativa para el aula · Aplicación metodológica con criterio pedagógico</div></div>
@@ -863,7 +812,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
         <a href="https://wa.me/34647033746" target="_blank" rel="noopener" class="clink"><span>💬</span> WhatsApp</a>
         <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="clink"><span>🔗</span> LinkedIn</a>
       </div>
-      <div style="margin-top:1.5rem;font-size:0.82rem;color:rgba(255,255,255,0.55);">Referencias de centros educativos disponibles a petición.</div>
       <div class="contacto-note">Juan Peco · Murcia · Formación Profesional · LOMLOE · Innovación curricular</div>
     </div>
   </div>
