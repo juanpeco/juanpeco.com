@@ -818,6 +818,144 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 <div class="divider"></div>
 
+<!-- ── MAPA CENTROS ── -->
+<section id="mapa-centros" style="padding:5rem 2rem;background:#F5F4FE;">
+<div class="container">
+
+<style>
+.mp-lbl2{font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.5rem;text-align:center;}
+.mp-heading2{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#26215C;text-align:center;margin:0 0 0.6rem;letter-spacing:-0.5px;}
+.mp-sub2{font-size:0.9rem;color:#7F77DD;text-align:center;max-width:520px;margin:0 auto 2.5rem;line-height:1.7;}
+.mp-layout2{display:grid;grid-template-columns:1fr 260px;gap:1.5rem;align-items:start;}
+.mp-svg-wrap2{background:#ffffff;border:1.5px solid #AFA9EC;border-radius:16px;overflow:hidden;}
+.mp-panel{background:#ffffff;border:1.5px solid #AFA9EC;border-radius:14px;padding:1.2rem;}
+.mp-panel-default{font-size:0.82rem;color:#7F77DD;line-height:1.6;}
+.mp-panel-title{font-size:0.95rem;font-weight:700;color:#26215C;margin-bottom:3px;}
+.mp-panel-muni{font-size:0.78rem;color:#534AB7;font-weight:600;margin-bottom:10px;}
+.mp-panel-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #EEEDFE;}
+.mp-panel-row:last-child{border-bottom:none;}
+.mp-panel-key{font-size:0.75rem;color:#7F77DD;}
+.mp-panel-val{font-size:0.75rem;font-weight:700;color:#26215C;}
+.mp-ver-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:0.75rem;color:#534AB7;font-weight:600;text-decoration:none;padding:5px 10px;border:1px solid #AFA9EC;border-radius:7px;transition:all 0.2s;}
+.mp-ver-btn:hover{background:#EEEDFE;border-color:#534AB7;}
+.mp-total2{background:#EEEDFE;border-radius:8px;padding:7px 10px;font-size:0.72rem;color:#3C3489;margin-top:10px;text-align:center;font-weight:600;}
+.mp-legend2{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;justify-content:center;}
+.mp-leg2{display:flex;align-items:center;gap:5px;font-size:0.72rem;color:#7F77DD;}
+.mp-leg2-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.mp-list2{margin-top:12px;max-height:320px;overflow-y:auto;}
+.mp-list2::-webkit-scrollbar{width:3px;}
+.mp-list2::-webkit-scrollbar-thumb{background:#AFA9EC;border-radius:2px;}
+.mp-list-item2{display:flex;align-items:flex-start;gap:7px;padding:5px 4px;border-bottom:1px solid #EEEDFE;cursor:pointer;border-radius:6px;transition:background 0.15s;}
+.mp-list-item2:last-child{border-bottom:none;}
+.mp-list-item2:hover{background:#EEEDFE;}
+.mp-list-dot2{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.mp-list-name2{font-size:0.75rem;color:#26215C;font-weight:600;line-height:1.3;}
+.mp-list-muni2{font-size:0.68rem;color:#7F77DD;}
+@media(max-width:800px){.mp-layout2{grid-template-columns:1fr;}}
+@keyframes mpPulse2{0%,100%{opacity:0.25}50%{opacity:0}}
+</style>
+
+  <div class="reveal">
+    <p class="mp-lbl2">Presencia educativa</p>
+    <h2 class="mp-heading2">Mis centros en la Región de Murcia</h2>
+    <p class="mp-sub2">Haz clic en cualquier punto para ver el centro. Datos reales del programa Código Escuela 4.0 · Consejería de Educación de la Región de Murcia.</p>
+  </div>
+
+  <div class="mp-layout2 reveal d1">
+    <div class="mp-svg-wrap2">
+      <svg id="mapa2" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+        <rect width="500" height="380" fill="transparent"/>
+        <path d="M 60,80 L 80,60 L 120,50 L 160,45 L 200,42 L 250,40 L 300,42 L 350,38 L 400,45 L 440,55 L 460,75 L 470,100 L 465,130 L 455,160 L 440,190 L 420,220 L 400,250 L 370,280 L 340,300 L 310,320 L 280,335 L 250,340 L 220,335 L 190,320 L 165,300 L 140,275 L 115,245 L 90,210 L 70,175 L 55,140 L 50,110 Z"
+          fill="rgba(83,74,183,0.05)" stroke="#AFA9EC" stroke-width="1.5"/>
+        <text x="250" y="190" text-anchor="middle" font-size="9" fill="#AFA9EC" font-family="Arial">Región de Murcia</text>
+      </svg>
+    </div>
+
+    <div>
+      <div class="mp-panel" id="mp-panel2">
+        <div class="mp-panel-default">
+          <strong style="color:#26215C;font-size:0.85rem;">+25 centros visitados</strong><br><br>
+          Haz clic en cualquier punto del mapa o en la lista para ver los detalles del centro.
+        </div>
+        <div class="mp-total2">Enero 2025 – Actualidad · Código Escuela 4.0</div>
+      </div>
+
+      <div class="mp-legend2">
+        <div class="mp-leg2"><div class="mp-leg2-dot" style="background:#534AB7;"></div>Este curso</div>
+        <div class="mp-leg2"><div class="mp-leg2-dot" style="background:#1D9E75;"></div>Curso anterior</div>
+        <div class="mp-leg2"><div class="mp-leg2-dot" style="background:#7F77DD;"></div>Ambos cursos</div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script>
+  var mpCentros=[
+    {nombre:'CE Ntra. Sra. de los Remedios',municipio:'Albudeite',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipremedios',x:148,y:195},
+    {nombre:'CE Monte Anaor',municipio:'Alguazas',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipmonteanaor',x:198,y:182},
+    {nombre:'CE Ntra. Sra. del Carmen',municipio:'Alguazas',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipntrasdadelcarmenalguazas',x:205,y:190},
+    {nombre:'CE Miguel Medina',municipio:'Archena',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipmigelmedina',x:240,y:165},
+    {nombre:'CE José Alcolea Lacal',municipio:'Archena',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipjosealcolealacal',x:248,y:158},
+    {nombre:'CE San Juan Bautista',municipio:'Campos del Río',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipsanjuanbautistacamposdelrio',x:175,y:172},
+    {nombre:'CE Campo de Molina de Segura',municipio:'Fenazar · Molina de Segura',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://www.murciaeduca.es/ceipampomolina',x:220,y:205},
+    {nombre:'CE Ntra. Sra. de la Consolación',municipio:'Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipconsolacion',x:228,y:213},
+    {nombre:'CE Gregorio Miñano',municipio:'Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipgregoriominiano',x:236,y:218},
+    {nombre:'CE Vega del Segura',municipio:'Ribera de Molina · Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipvegadelsegura',x:243,y:202},
+    {nombre:'CPEIBas Arteaga',municipio:'Sucina · Murcia',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://www.murciaeduca.es/cpeibasarteaga',x:340,y:285},
+    {nombre:'CPR Severo Ochoa',municipio:'Los Garres · Murcia',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://colegioseveroochoa.net',x:290,y:252},
+    {nombre:'CE Francisco Cobacho',municipio:'Algezares · Murcia',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://www.murciaeduca.es/ceipfranciscocobacho',x:272,y:258},
+    {nombre:'CE El Sifón',municipio:'Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipelsifonmolina',x:230,y:222},
+    {nombre:'CPR Colegio El OPE',municipio:'Archena',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.colegioelOPE.es',x:255,y:160},
+    {nombre:'CES Vega Media',municipio:'Alguazas',curso:'Curso 2024-2025',fechas:'Curso 2024-2025',color:'#1D9E75',web:'https://www.murciaeduca.es/cesvegamedia',x:193,y:186},
+    {nombre:'CE Ntra. Sra. de Fátima',municipio:'Murcia',curso:'Curso 2024-2025',fechas:'Curso 2024-2025',color:'#1D9E75',web:'https://www.murciaeduca.es/ceipfatimamurcia',x:275,y:245},
+  ];
+
+  var svg2=document.getElementById('mapa2');
+  var panel=document.getElementById('mp-panel2');
+
+
+  function mpShow(c){
+    panel.innerHTML='<div class="mp-panel-title">'+c.nombre+'</div>'
+      +'<div class="mp-panel-muni">'+c.municipio+'</div>'
+      +'<div class="mp-panel-row"><span class="mp-panel-key">Curso</span><span class="mp-panel-val" style="color:'+c.color+'">'+c.curso+'</span></div>'
+      +'<div class="mp-panel-row"><span class="mp-panel-key">Fechas</span><span class="mp-panel-val">'+c.fechas+'</span></div>'
+      +'<div class="mp-panel-row"><span class="mp-panel-key">Programa</span><span class="mp-panel-val">Código Escuela 4.0</span></div>'
+      +'<div class="mp-panel-row"><span class="mp-panel-key">Entidad</span><span class="mp-panel-val">Consejería de Educación</span></div>'
+      +'<a href="'+c.web+'" target="_blank" rel="noopener" class="mp-ver-btn">Ver centro →</a>'
+      +'<div class="mp-total2" style="margin-top:8px;">Región de Murcia · Acreditado</div>';
+  }
+
+  mpCentros.forEach(function(c){
+    var g=document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.style.cursor='pointer';
+
+    var pulse=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    pulse.setAttribute('cx',c.x);pulse.setAttribute('cy',c.y);
+    pulse.setAttribute('r','10');pulse.setAttribute('fill',c.color);
+    pulse.setAttribute('opacity','0.2');
+    pulse.style.animation='mpPulse2 '+(1.8+Math.random()*0.8)+'s ease-in-out infinite';
+
+    var dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx',c.x);dot.setAttribute('cy',c.y);
+    dot.setAttribute('r','5');dot.setAttribute('fill',c.color);
+    dot.setAttribute('stroke','white');dot.setAttribute('stroke-width','1.5');
+
+    g.appendChild(pulse);g.appendChild(dot);
+    g.addEventListener('click',function(){mpShow(c);});
+    g.addEventListener('mouseenter',function(){dot.setAttribute('r','7');});
+    g.addEventListener('mouseleave',function(){dot.setAttribute('r','5');});
+    svg2.appendChild(g);
+  });
+
+
+  </script>
+
+</div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ── EN EL AULA ── -->
 <section id="en-el-aula" style="padding:5rem 2rem;background:#F5F4FE;">
 <div class="container">
