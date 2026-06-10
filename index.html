@@ -466,6 +466,90 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
   .premium-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
 }
 
+
+  /* ── MOVIMIENTO PREMIUM ─────────────────────── */
+  * { -webkit-font-smoothing: antialiased; }
+
+  /* Cursor personalizado */
+  html { cursor: default; }
+  a, button, .nav-links button, .case-btn, .proj-tab, .encaje-card, .ev-card,
+  .cred-item, .acad-item, .ac-card, .bc-card, .aula-card, .premium-card,
+  .footer-link, #toTopBtn, .btn-primary, .btn-ghost, .clink, .nav-contact { cursor: pointer; }
+
+  /* Transiciones suaves globales */
+  .encaje-card, .cred-item, .acad-item, .ev-card, .case-btn,
+  .proj-tab, .exec-bullets li, .exp-dot, .footer-link {
+    transition: all 0.28s cubic-bezier(0.22,1,0.36,1) !important;
+  }
+
+  /* Cards se elevan */
+  .encaje-card:hover { transform:translateY(-5px);box-shadow:0 14px 36px rgba(79,110,247,0.1);border-color:rgba(79,110,247,0.3) !important; }
+  .cred-item:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(79,110,247,0.08); }
+  .acad-item:hover { transform:translateX(5px);border-color:rgba(79,110,247,0.25) !important; }
+  .ev-card:hover { transform:translateY(-5px) scale(1.03);box-shadow:0 14px 36px rgba(79,110,247,0.13);border-color:rgba(79,110,247,0.35) !important; }
+
+  /* Bullets se deslizan */
+  .exec-bullets li:hover { transform:translateX(6px);background:var(--light) !important;border-color:rgba(79,110,247,0.3) !important; }
+
+  /* Timeline hover */
+  .exp-item:hover .exp-dot { transform:translateX(-50%) scale(1.4);border-color:var(--accent) !important;box-shadow:0 0 0 6px rgba(79,110,247,0.12) !important; }
+  .exp-item:hover .exp-role { color:var(--accent) !important; }
+
+  /* Botones */
+  .btn-primary { overflow:hidden;position:relative; }
+  .btn-primary::after { content:'';position:absolute;inset:0;background:rgba(255,255,255,0);transition:background 0.3s; }
+  .btn-primary:hover::after { background:rgba(255,255,255,0.12); }
+  .btn-ghost:hover { transform:translateY(-2px) !important;background:rgba(79,110,247,0.05) !important; }
+
+  /* Nav links underline */
+  .nav-links button { position:relative;overflow:hidden; }
+  .nav-links button::after { content:'';position:absolute;bottom:2px;left:50%;width:0;height:2px;background:var(--accent);transition:all 0.3s;transform:translateX(-50%);border-radius:2px; }
+  .nav-links button:hover::after { width:65%; }
+
+  /* Foto hero */
+  .hero-photo-frame { transition:all 0.4s cubic-bezier(0.22,1,0.36,1) !important; }
+  .hero-photo-frame:hover { transform:scale(1.025) rotate(0.4deg);box-shadow:0 32px 80px rgba(79,110,247,0.18) !important; }
+
+  /* Contact links */
+  .clink { position:relative;overflow:hidden;transition:all 0.25s !important; }
+  .clink:hover { transform:translateY(-3px) !important;box-shadow:0 8px 20px rgba(0,0,0,0.18) !important;border-color:rgba(255,255,255,0.3) !important; }
+
+  /* ProyectoFP */
+  .premium-card { transition:all 0.35s cubic-bezier(0.22,1,0.36,1) !important; }
+  .premium-card:hover { transform:translateY(-6px);box-shadow:0 24px 60px rgba(79,110,247,0.16) !important; }
+
+  /* ToTop */
+  #toTopBtn { transition:all 0.3s !important; }
+  #toTopBtn:hover { transform:translateY(-4px) scale(1.1);box-shadow:0 8px 20px rgba(79,110,247,0.25) !important; }
+
+  /* Proj tabs */
+  .proj-tab:hover:not(.active) { border-color:var(--accent) !important;color:var(--accent) !important;transform:translateY(-2px); }
+
+  /* Case buttons */
+  .case-btn:hover:not(.active) { transform:translateX(4px);border-color:rgba(79,110,247,0.3) !important;background:var(--light) !important; }
+
+  /* Footer links */
+  .footer-link:hover { color:#fff !important;transform:translateY(-2px); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width:5px; }
+  ::-webkit-scrollbar-track { background:var(--bg-soft); }
+  ::-webkit-scrollbar-thumb { background:var(--accent);border-radius:3px;opacity:0.7; }
+  ::-webkit-scrollbar-thumb:hover { opacity:1; }
+
+  /* Selection */
+  ::selection { background:rgba(79,110,247,0.18);color:var(--navy); }
+
+  /* Smooth page entry */
+  @keyframes pageIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+  body { animation:pageIn 0.5s ease both; }
+
+  /* Dividers animados */
+  .divider { position:relative;overflow:hidden; }
+  .divider::after { content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(79,110,247,0.15),transparent);animation:shimmer 3s infinite; }
+  @keyframes shimmer { to{left:200%;} }
+
+
 </style>
 </head>
 <body class="h-full">
@@ -582,223 +666,232 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 <div class="divider"></div>
 
-<!-- ── IMPACTO VISUAL ── -->
-<section id="impacto" style="background:var(--navy);padding:6rem 2rem;overflow:hidden;position:relative;">
+<!-- ── JUAN PECO · BLOQUE CENTRAL ── -->
+<section id="bloque-central" style="padding:5rem 2rem;background:#ffffff;">
+<div class="container">
 
-  <!-- Fondo con efecto de puntos -->
-  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(79,110,247,0.15) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;"></div>
+<style>
+.bc-label { font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:1rem; }
+.bc-stats { display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3.5rem; }
+.bc-stat { background:#EEEDFE;border-radius:12px;padding:1.4rem 1rem;text-align:center; }
+.bc-num { font-family:var(--font-h);font-size:2.2rem;font-weight:700;color:#534AB7;line-height:1;margin-bottom:0.3rem; }
+.bc-stat-label { font-size:0.78rem;font-weight:600;color:#26215C; }
+.bc-stat-sub { font-size:0.68rem;color:#7F77DD;margin-top:2px; }
+.bc-story { display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:3.5rem; }
+.bc-card { background:#ffffff;border:1.5px solid #AFA9EC;border-radius:14px;padding:1.6rem;position:relative;overflow:hidden;transition:all 0.3s; }
+.bc-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(83,74,183,0.12); }
+.bc-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px; }
+.bc-card.purple::before { background:#534AB7; }
+.bc-card.teal::before { background:linear-gradient(90deg,#534AB7,#1D9E75); }
+.bc-card-year { font-size:0.68rem;font-weight:700;color:#534AB7;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem; }
+.bc-card.teal .bc-card-year { color:#1D9E75; }
+.bc-card-title { font-family:var(--font-h);font-size:1rem;font-weight:700;color:#26215C;margin-bottom:0.5rem; }
+.bc-card-desc { font-size:0.8rem;color:#7F77DD;line-height:1.6; }
+.bc-panel { background:#EEEDFE;border:1.5px solid #AFA9EC;border-radius:16px;padding:2.5rem; }
+.bc-panel-grid { display:grid;grid-template-columns:1fr 1fr;gap:2.5rem; }
+.bc-modulo { display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0.9rem;background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;margin-bottom:0.5rem;transition:all 0.2s; }
+.bc-modulo:hover { border-color:#534AB7;transform:translateX(4px); }
+.bc-modulo-name { font-size:0.82rem;color:#26215C;font-weight:500; }
+.bc-tag { font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:100px;white-space:nowrap; }
+.bc-tag.green { background:#e1f5ee;color:#0F6E56; }
+.bc-tag.purple { background:#EEEDFE;color:#3C3489; }
+.bc-tag.amber { background:#faeeda;color:#633806; }
+.bc-disponible { display:flex;flex-direction:column;justify-content:center;height:100%; }
+.bc-status { display:flex;align-items:center;gap:0.7rem;margin-bottom:1.4rem; }
+.bc-dot { width:11px;height:11px;border-radius:50%;background:#1D9E75;animation:blink 2s infinite;flex-shrink:0; }
+.bc-status-text { font-family:var(--font-h);font-size:1.4rem;font-weight:700;color:#26215C; }
+.bc-item { display:flex;align-items:center;gap:0.65rem;margin-bottom:0.65rem; }
+.bc-bullet { width:6px;height:6px;border-radius:50%;background:#534AB7;flex-shrink:0; }
+.bc-item span { font-size:0.83rem;color:#3C3489; }
+.bc-cta { display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.85rem 1.8rem;background:#534AB7;color:#fff;border-radius:10px;font-weight:700;font-size:0.85rem;text-decoration:none;transition:all 0.25s; }
+.bc-cta:hover { background:#26215C;transform:translateY(-2px);box-shadow:0 8px 20px rgba(83,74,183,0.3); }
+@media(max-width:900px){
+  .bc-stats{grid-template-columns:repeat(2,1fr);}
+  .bc-story{grid-template-columns:1fr;}
+  .bc-panel-grid{grid-template-columns:1fr;}
+}
+</style>
 
-  <div class="container" style="position:relative;">
-
-    <!-- TÍTULO -->
-    <div style="text-align:center;margin-bottom:4rem;" class="reveal">
-      <div style="font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(167,139,250,0.8);margin-bottom:1rem;">Trayectoria en números</div>
-      <h2 style="font-family:var(--font-h);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-1px;">Dos décadas de empresa.<br><span style="background:linear-gradient(120deg,#A78BFA,#06b6a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Una decisión que lo cambió todo.</span></h2>
+  <!-- STATS -->
+  <div class="bc-label" style="text-align:center;">Trayectoria en números</div>
+  <div class="bc-stats reveal">
+    <div class="bc-stat">
+      <div class="bc-num bc-counter" data-target="18">18</div>
+      <div class="bc-stat-label">Años en empresa</div>
+      <div class="bc-stat-sub">Comercial · Dirección · Marketing</div>
     </div>
-
-    <!-- CONTADORES ANIMADOS -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:5rem;" class="reveal d1">
-      <div class="stat-card" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;cursor:default;" onmouseover="this.style.background='rgba(167,139,250,0.1)';this.style.borderColor='rgba(167,139,250,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform='translateY(0)'">
-        <div class="counter" data-target="18" style="font-family:var(--font-h);font-size:3.5rem;font-weight:700;color:#A78BFA;line-height:1;margin-bottom:0.5rem;">0</div>
-        <div style="font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:0.25rem;">Años en empresa</div>
-        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);">Comercial · Dirección · Marketing</div>
-      </div>
-      <div class="stat-card" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;cursor:default;" onmouseover="this.style.background='rgba(167,139,250,0.1)';this.style.borderColor='rgba(167,139,250,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform='translateY(0)'">
-        <div class="counter" data-target="25" style="font-family:var(--font-h);font-size:3.5rem;font-weight:700;color:#A78BFA;line-height:1;margin-bottom:0.5rem;">0</div>
-        <div style="font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:0.25rem;">Centros educativos</div>
-        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);">Región de Murcia</div>
-      </div>
-      <div class="stat-card" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;cursor:default;" onmouseover="this.style.background='rgba(167,139,250,0.1)';this.style.borderColor='rgba(167,139,250,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform='translateY(0)'">
-        <div class="counter" data-target="260" style="font-family:var(--font-h);font-size:3.5rem;font-weight:700;color:#A78BFA;line-height:1;margin-bottom:0.5rem;">0</div>
-        <div style="font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:0.25rem;">Horas de prácticum</div>
-        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);">IES Pedro Guillén · FP</div>
-      </div>
-      <div class="stat-card" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;cursor:default;" onmouseover="this.style.background='rgba(167,139,250,0.1)';this.style.borderColor='rgba(167,139,250,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform='translateY(0)'">
-        <div class="counter" data-target="2026" style="font-family:var(--font-h);font-size:3.5rem;font-weight:700;color:#A78BFA;line-height:1;margin-bottom:0.5rem;">0</div>
-        <div style="font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:0.25rem;">MAES Habilitado</div>
-        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);">Economía · Empresa · Turismo</div>
-      </div>
+    <div class="bc-stat">
+      <div class="bc-num bc-counter" data-target="25">25</div>
+      <div class="bc-stat-label">Centros educativos</div>
+      <div class="bc-stat-sub">Región de Murcia</div>
     </div>
-
-    <!-- MAPA REGIÓN DE MURCIA -->
-    <div class="reveal d2" style="margin-bottom:5rem;">
-      <div style="text-align:center;margin-bottom:2rem;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(167,139,250,0.8);margin-bottom:0.5rem;">Presencia docente</div>
-        <h3 style="font-family:var(--font-h);font-size:1.6rem;font-weight:700;color:#fff;">Municipios donde he trabajado</h3>
-      </div>
-      <div style="position:relative;max-width:700px;margin:0 auto;">
-        <svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.4));">
-          <!-- Fondo del mapa estilizado -->
-          <defs>
-            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" style="stop-color:#A78BFA;stop-opacity:0.3"/>
-              <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:0"/>
-            </radialGradient>
-            <filter id="blur">
-              <feGaussianBlur stdDeviation="3"/>
-            </filter>
-          </defs>
-
-          <!-- Silueta simplificada Región de Murcia -->
-          <path d="M 80 120 L 130 80 L 200 70 L 280 60 L 360 75 L 440 65 L 520 80 L 580 110 L 620 160 L 610 220 L 590 280 L 560 330 L 520 380 L 470 420 L 410 440 L 350 445 L 290 430 L 240 400 L 190 360 L 150 310 L 110 260 L 80 200 Z" 
-                fill="rgba(79,110,247,0.08)" stroke="rgba(167,139,250,0.3)" stroke-width="1.5"/>
-
-          <!-- Líneas internas decorativas -->
-          <path d="M 150 200 L 350 180 L 500 210" stroke="rgba(167,139,250,0.1)" stroke-width="1" fill="none" stroke-dasharray="4,8"/>
-          <path d="M 200 300 L 400 280 L 550 300" stroke="rgba(167,139,250,0.1)" stroke-width="1" fill="none" stroke-dasharray="4,8"/>
-
-          <!-- PUNTOS DE MUNICIPIOS con animación -->
-          <!-- Alguazas -->
-          <circle cx="280" cy="195" r="10" fill="rgba(167,139,250,0.2)" class="map-pulse"/>
-          <circle cx="280" cy="195" r="6" fill="#A78BFA"/>
-          <circle cx="280" cy="195" r="3" fill="white"/>
-          <text x="280" y="175" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="Arial" font-weight="600">Alguazas</text>
-
-          <!-- Archena -->
-          <circle cx="320" cy="165" r="10" fill="rgba(167,139,250,0.2)" class="map-pulse"/>
-          <circle cx="320" cy="165" r="6" fill="#A78BFA"/>
-          <circle cx="320" cy="165" r="3" fill="white"/>
-          <text x="320" y="148" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="Arial" font-weight="600">Archena</text>
-
-          <!-- Molina de Segura -->
-          <circle cx="260" cy="230" r="12" fill="rgba(6,182,160,0.2)" class="map-pulse"/>
-          <circle cx="260" cy="230" r="7" fill="#06b6a0"/>
-          <circle cx="260" cy="230" r="3" fill="white"/>
-          <text x="260" y="258" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="Arial" font-weight="600">Molina de Segura</text>
-
-          <!-- Murcia capital -->
-          <circle cx="310" cy="280" r="14" fill="rgba(167,139,250,0.25)" class="map-pulse"/>
-          <circle cx="310" cy="280" r="8" fill="#A78BFA"/>
-          <circle cx="310" cy="280" r="4" fill="white"/>
-          <text x="310" y="308" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12" font-family="Arial" font-weight="700">Murcia</text>
-
-          <!-- Campos del Río -->
-          <circle cx="235" cy="175" r="8" fill="rgba(167,139,250,0.2)" class="map-pulse"/>
-          <circle cx="235" cy="175" r="5" fill="#A78BFA"/>
-          <circle cx="235" cy="175" r="2.5" fill="white"/>
-          <text x="195" y="170" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Arial">Campos del Río</text>
-
-          <!-- Albudeite -->
-          <circle cx="195" cy="200" r="8" fill="rgba(167,139,250,0.2)" class="map-pulse"/>
-          <circle cx="195" cy="200" r="5" fill="#A78BFA"/>
-          <circle cx="195" cy="200" r="2.5" fill="white"/>
-          <text x="155" y="195" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Arial">Albudeite</text>
-
-          <!-- Sucina / Murcia sur -->
-          <circle cx="390" cy="330" r="8" fill="rgba(167,139,250,0.2)" class="map-pulse"/>
-          <circle cx="390" cy="330" r="5" fill="#A78BFA"/>
-          <circle cx="390" cy="330" r="2.5" fill="white"/>
-          <text x="420" y="325" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Arial">Sucina</text>
-
-          <!-- Etiqueta total -->
-          <rect x="510" y="150" width="150" height="60" rx="10" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
-          <text x="585" y="172" text-anchor="middle" fill="#A78BFA" font-size="22" font-family="Georgia" font-weight="700">+25</text>
-          <text x="585" y="192" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Arial">centros visitados</text>
-
-        </svg>
-        <!-- Leyenda -->
-        <div style="display:flex;justify-content:center;gap:2rem;margin-top:1.5rem;flex-wrap:wrap;">
-          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:rgba(255,255,255,0.6);">
-            <div style="width:10px;height:10px;border-radius:50%;background:#A78BFA;"></div>
-            Centros Código Escuela 4.0
-          </div>
-          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:rgba(255,255,255,0.6);">
-            <div style="width:10px;height:10px;border-radius:50%;background:#06b6a0;"></div>
-            Mayor concentración
-          </div>
-        </div>
-      </div>
+    <div class="bc-stat">
+      <div class="bc-num bc-counter" data-target="260">260</div>
+      <div class="bc-stat-label">Horas de prácticum</div>
+      <div class="bc-stat-sub">IES Pedro Guillén · FP</div>
     </div>
-
-    <!-- TRES MOMENTOS CLAVE -->
-    <div class="reveal d3">
-      <div style="text-align:center;margin-bottom:2.5rem;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(167,139,250,0.8);margin-bottom:0.5rem;">El recorrido</div>
-        <h3 style="font-family:var(--font-h);font-size:1.6rem;font-weight:700;color:#fff;">Tres momentos que explican este perfil</h3>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto;">
-
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem 1.5rem;text-align:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#A78BFA,transparent);"></div>
-          <div style="font-family:var(--font-h);font-size:2rem;font-weight:700;color:#A78BFA;margin-bottom:0.5rem;">18 años</div>
-          <div style="font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:0.75rem;">En empresa real</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.6;">Gestión comercial, dirección de equipos, administración y marketing. El contenido de los módulos, vivido desde dentro.</div>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(167,139,250,0.25);border-radius:16px;padding:2rem 1.5rem;text-align:center;position:relative;overflow:hidden;transform:translateY(-8px);">
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#A78BFA,#06b6a0);"></div>
-          <div style="font-family:var(--font-h);font-size:2rem;font-weight:700;color:#06b6a0;margin-bottom:0.5rem;">2025</div>
-          <div style="font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:0.75rem;">Código Escuela 4.0</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.6;">Lo que empezó como una colaboración se convirtió en vocación. Más de 25 centros. El aula encajó desde el primer día.</div>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem 1.5rem;text-align:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#06b6a0,transparent);"></div>
-          <div style="font-family:var(--font-h);font-size:2rem;font-weight:700;color:#A78BFA;margin-bottom:0.5rem;">2026</div>
-          <div style="font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:0.75rem;">MAES habilitado</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.6;">Formación seria para ejercer bien lo que ya funcionaba. Disponible para jornada completa desde septiembre.</div>
-        </div>
-
-      </div>
+    <div class="bc-stat">
+      <div class="bc-num bc-counter" data-target="17">17</div>
+      <div class="bc-stat-label">Meses en Código Escuela</div>
+      <div class="bc-stat-sub">Enero 2025 – Actualidad</div>
     </div>
-
   </div>
 
-  <style>
-    @keyframes mapPulse {
-      0%, 100% { r: 10; opacity: 0.3; }
-      50% { r: 18; opacity: 0; }
-    }
-    .map-pulse {
-      animation: mapPulse 2.5s ease-in-out infinite;
-    }
-    .counter-done {
-      color: #A78BFA;
-    }
-    @media (max-width: 600px) {
-      #impacto [style*="grid-template-columns:repeat(4"] {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-      .tl-item > div:first-child:empty,
-      .tl-item > div:last-child:empty {
-        display: none;
-      }
-    }
-  </style>
+  <!-- TRES MOMENTOS -->
+  <div class="bc-label" style="text-align:center;">El recorrido</div>
+  <div class="bc-story reveal d1">
+    <div class="bc-card purple">
+      <div class="bc-card-year">2004 – 2022</div>
+      <div class="bc-card-title">18 años en empresa</div>
+      <div class="bc-card-desc">Gestión comercial, dirección de equipos, administración y marketing. El contenido de los módulos, vivido desde dentro.</div>
+    </div>
+    <div class="bc-card teal">
+      <div class="bc-card-year">Enero 2025</div>
+      <div class="bc-card-title">Código Escuela 4.0</div>
+      <div class="bc-card-desc">Lo que empezó como colaboración se convirtió en vocación. Más de 25 centros. El aula encajó desde el primer día.</div>
+    </div>
+    <div class="bc-card purple">
+      <div class="bc-card-year">Junio 2026</div>
+      <div class="bc-card-title">MAES habilitado</div>
+      <div class="bc-card-desc">Formación seria para ejercer bien lo que ya funcionaba. Disponible jornada completa desde septiembre 2026.</div>
+    </div>
+  </div>
+
+  <!-- MÓDULOS + DISPONIBILIDAD -->
+  <div class="bc-panel reveal d2">
+    <div class="bc-panel-grid">
+      <div>
+        <div class="bc-label">Módulos disponibles · Curso 2026-2027</div>
+        <div class="bc-modulo"><span class="bc-modulo-name">Empresa e Iniciativa Emprendedora</span><span class="bc-tag green">FP · ESO · BACH</span></div>
+        <div class="bc-modulo"><span class="bc-modulo-name">Economía</span><span class="bc-tag green">ESO · BACH</span></div>
+        <div class="bc-modulo"><span class="bc-modulo-name">Gestión Administrativa</span><span class="bc-tag purple">FP GM</span></div>
+        <div class="bc-modulo"><span class="bc-modulo-name">Administración y Finanzas</span><span class="bc-tag purple">FP GS</span></div>
+        <div class="bc-modulo"><span class="bc-modulo-name">Marketing y Publicidad</span><span class="bc-tag purple">FP GS</span></div>
+        <div class="bc-modulo"><span class="bc-modulo-name">Digitalización · IPE · Sostenibilidad</span><span class="bc-tag amber">Transversal</span></div>
+      </div>
+      <div class="bc-disponible">
+        <div class="bc-label">Estado actual</div>
+        <div class="bc-status">
+          <div class="bc-dot"></div>
+          <div class="bc-status-text">Disponible</div>
+        </div>
+        <div class="bc-item"><div class="bc-bullet"></div><span>Incorporación septiembre 2026</span></div>
+        <div class="bc-item"><div class="bc-bullet"></div><span>Jornada completa</span></div>
+        <div class="bc-item"><div class="bc-bullet"></div><span>Región de Murcia</span></div>
+        <div class="bc-item"><div class="bc-bullet"></div><span>Referencias verificables disponibles</span></div>
+        <a href="#contacto" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'});return false;" class="bc-cta">Contactar ahora →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('.bc-counter').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const dur = target > 100 ? 1800 : 1200;
+        const t0 = performance.now();
+        function tick(now) {
+          const p = Math.min((now-t0)/dur,1);
+          const ease = 1-Math.pow(1-p,3);
+          el.textContent = Math.round(ease*target);
+          if(p<1) requestAnimationFrame(tick);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(tick);
+      });
+      obs.unobserve(e.target);
+    });
+  },{threshold:0.2});
+  document.addEventListener('DOMContentLoaded',()=>{
+    const s = document.getElementById('bloque-central');
+    if(s) obs.observe(s);
+  });
+})();
+</script>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- ── EN EL AULA ── -->
+<section id="en-el-aula" style="padding:5rem 2rem;background:#F5F4FE;">
+<div class="container">
+
+<style>
+.aula-label2{font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.5rem;}
+.aula-heading2{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#26215C;margin:0 0 2.5rem;letter-spacing:-0.5px;}
+.ac-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:1.5rem;}
+.ac-card{background:#ffffff;border:1px solid #AFA9EC;border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.25s;}
+.ac-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(83,74,183,0.12);}
+.ac-card.ac-active{border:2px solid #534AB7;box-shadow:0 8px 24px rgba(83,74,183,0.15);}
+.ac-head{padding:1.2rem;display:flex;align-items:center;gap:12px;}
+.ac-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;}
+.ac-ico.p{background:#EEEDFE;}
+.ac-ico.t{background:#E1F5EE;}
+.ac-name{font-size:0.88rem;font-weight:700;color:#26215C;}
+.ac-sub{font-size:0.72rem;color:#7F77DD;margin-top:2px;}
+.ac-bar{height:3px;background:transparent;transition:background 0.25s;}
+.ac-active .ac-bar.p{background:#534AB7;}
+.ac-active .ac-bar.t{background:#1D9E75;}
+.ac-detail{background:#ffffff;border:1px solid #AFA9EC;border-radius:14px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;min-height:180px;}
+.ac-dtag{display:inline-block;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+.ac-dtag.p{background:#EEEDFE;color:#3C3489;}
+.ac-dtag.t{background:#E1F5EE;color:#0F6E56;}
+.ac-dtitle{font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:#26215C;margin:0 0 8px;}
+.ac-ddesc{font-size:0.82rem;color:#7F77DD;line-height:1.6;margin:0;}
+.ac-items{display:flex;flex-direction:column;gap:8px;}
+.ac-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#F5F4FE;border:1px solid #AFA9EC;border-radius:9px;transition:all 0.2s;}
+.ac-item:hover{border-color:#534AB7;background:#EEEDFE;transform:translateX(4px);}
+.ac-iico{font-size:1rem;flex-shrink:0;margin-top:1px;}
+.ac-iico.p{color:#534AB7;}
+.ac-iico.t{color:#1D9E75;}
+.ac-itext{font-size:0.82rem;font-weight:600;color:#26215C;}
+.ac-isub{font-size:0.72rem;color:#7F77DD;margin-top:2px;}
+@media(max-width:700px){.ac-grid{grid-template-columns:1fr;}.ac-detail{grid-template-columns:1fr;}}
+</style>
+
+  <div class="reveal">
+    <p class="aula-label2">En el aula</p>
+    <h2 class="aula-heading2">Lo que ocurre en mis clases</h2>
+  </div>
+
+  <div class="ac-grid reveal d1">
+    <div class="ac-card ac-active" id="ac0" onclick="acSelect(0)">
+      <div class="ac-head"><div class="ac-ico p">🏢</div><div><div class="ac-name">Empresa simulada</div><div class="ac-sub">ABP · Roles profesionales</div></div></div>
+      <div class="ac-bar p"></div>
+    </div>
+    <div class="ac-card" id="ac1" onclick="acSelect(1)">
+      <div class="ac-head"><div class="ac-ico t">💡</div><div><div class="ac-name">Pitch de negocio</div><div class="ac-sub">Comunicación · Presión real</div></div></div>
+      <div class="ac-bar t"></div>
+    </div>
+    <div class="ac-card" id="ac2" onclick="acSelect(2)">
+      <div class="ac-head"><div class="ac-ico p">🤖</div><div><div class="ac-name">IA con criterio</div><div class="ac-sub">Herramienta · No atajo</div></div></div>
+      <div class="ac-bar p"></div>
+    </div>
+  </div>
+
+  <div class="ac-detail reveal d2" id="ac-detail"></div>
 
   <script>
-    // Contadores animados
-    function animateCounter(el) {
-      const target = parseInt(el.dataset.target);
-      const duration = target > 100 ? 2000 : 1200;
-      const start = performance.now();
-      function update(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target);
-        if (progress < 1) requestAnimationFrame(update);
-        else el.textContent = target;
-      }
-      requestAnimationFrame(update);
-    }
-
-    // Disparar cuando la sección es visible
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.counter').forEach(animateCounter);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const impacto = document.getElementById('impacto');
-      if (impacto) counterObserver.observe(impacto);
-    });
+  var acData=[
+    {tag:'Aprendizaje basado en proyectos',tcls:'p',title:'Empresa simulada',desc:'El alumnado constituye y gestiona una empresa ficticia desde cero: toma decisiones reales de negocio, resuelve conflictos internos y defiende los resultados ante el grupo.',items:[{ico:'📄',cls:'p',text:'Plan de empresa estructurado',sub:'Análisis · Marketing · Operaciones'},{ico:'👥',cls:'p',text:'Roles profesionales diferenciados',sub:'CEO · CFO · Marketing · Ventas'},{ico:'🎤',cls:'p',text:'Defensa ante tribunal',sub:'Comunicación oral formal'}]},
+    {tag:'Comunicación profesional',tcls:'t',title:'Pitch de negocio',desc:'5 minutos para convencer a una audiencia real o simulada. El alumnado aprende a sintetizar, gestionar la presión y defender su propuesta de valor con claridad.',items:[{ico:'💡',cls:'t',text:'Propuesta de valor clara',sub:'Diferenciación · Mercado · Ventaja'},{ico:'🎬',cls:'t',text:'Vídeo grabado y analizado',sub:'Retroalimentación objetiva'},{ico:'📊',cls:'t',text:'Ficha de viabilidad básica',sub:'Números reales sobre la idea'}]},
+    {tag:'Competencia digital crítica',tcls:'p',title:'IA con criterio',desc:'IA generativa como herramienta profesional, no como atajo. El alumnado produce contenido real y justifica cada decisión con criterio propio.',items:[{ico:'🎥',cls:'p',text:'Vídeo corporativo 30-60 seg.',sub:'Guion · Producción · Montaje'},{ico:'⚖️',cls:'p',text:'Criterio ético y pedagógico',sub:'Qué delegar · Qué no delegar'},{ico:'📋',cls:'p',text:'Dossier justificativo propio',sub:'Decisiones documentadas'}]}
+  ];
+  function acSelect(i){
+    [0,1,2].forEach(function(j){document.getElementById('ac'+j).classList.toggle('ac-active',j===i);});
+    var d=acData[i];
+    document.getElementById('ac-detail').innerHTML='<div><span class="ac-dtag '+d.tcls+'">'+d.tag+'</span><h3 class="ac-dtitle">'+d.title+'</h3><p class="ac-ddesc">'+d.desc+'</p></div><div class="ac-items">'+d.items.map(function(it){return'<div class="ac-item"><span class="ac-iico '+it.cls+'">'+it.ico+'</span><div><div class="ac-itext">'+it.text+'</div><div class="ac-isub">'+it.sub+'</div></div></div>';}).join('')+'</div>';
+  }
+  acSelect(0);
   </script>
 
+</div>
 </section>
 
 <div class="divider"></div>
@@ -882,183 +975,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 
 <div class="divider"></div>
 
-<!-- ── ESPECIALIDADES ── -->
-<section id="especialidades">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="sec-label">Qué enseño</div>
-      <h2 class="sec-title">Módulos y áreas curriculares</h2>
-    </div>
-    <div class="esp-grid">
-      <div class="esp-card reveal d1"><div class="esp-icon">🏢</div><div class="esp-name">Empresa e Iniciativa Emprendedora</div></div>
-      <div class="esp-card reveal d2"><div class="esp-icon">📊</div><div class="esp-name">Economía ESO y Bachillerato</div></div>
-      <div class="esp-card reveal d3"><div class="esp-icon">📣</div><div class="esp-name">Marketing y Digitalización FP</div></div>
-      <div class="esp-card reveal d1"><div class="esp-icon">💻</div><div class="esp-name">Tecnología educativa e IA en el aula</div></div>
-      <div class="esp-card reveal d2"><div class="esp-icon">🤖</div><div class="esp-name">Robótica, programación y pensamiento computacional</div></div>
-      <div class="esp-card reveal d3"><div class="esp-icon">📐</div><div class="esp-name">Diseño curricular FP — LOMLOE, FP Dual y evaluación competencial</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── MÓDULO PRO: LO QUE HAGO EN EL AULA + DISPONIBILIDAD ── -->
-<section id="aula-pro" style="background:var(--white);padding:6rem 2rem;">
-  <div class="container">
-
-    <!-- B: CARDS INTERACTIVAS -->
-    <div class="reveal" style="text-align:center;margin-bottom:3.5rem;">
-      <div style="font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:0.7rem;">En el aula</div>
-      <h2 style="font-family:var(--font-h);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.1;letter-spacing:-0.5px;">Lo que ocurre en mis clases</h2>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:6rem;" class="reveal d1">
-
-      <!-- Card 1 -->
-      <div class="pro-card" style="position:relative;border-radius:18px;overflow:hidden;cursor:default;height:320px;background:var(--navy);"
-        onmouseover="this.querySelector('.pro-back').style.opacity='1';this.querySelector('.pro-front').style.opacity='0'"
-        onmouseout="this.querySelector('.pro-back').style.opacity='0';this.querySelector('.pro-front').style.opacity='1'">
-        <!-- Frente -->
-        <div class="pro-front" style="position:absolute;inset:0;padding:2rem;display:flex;flex-direction:column;justify-content:flex-end;transition:opacity 0.4s;background:linear-gradient(135deg,#1a2744 60%,#2d1b6e);">
-          <div style="font-size:2.5rem;margin-bottom:1rem;">🏢</div>
-          <div style="font-family:var(--font-h);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Empresa simulada</div>
-          <div style="font-size:0.8rem;color:var(--muted);">Pasa el cursor para ver más</div>
-        </div>
-        <!-- Dorso -->
-        <div class="pro-back" style="position:absolute;inset:0;padding:2rem;display:flex;flex-direction:column;justify-content:center;opacity:0;transition:opacity 0.4s;background:linear-gradient(135deg,#4a4580,#2d1b6e);">
-          <div style="font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1rem;">El alumnado constituye y gestiona una empresa ficticia desde cero.</div>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Plan de empresa estructurado</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Roles profesionales diferenciados</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Defensa ante tribunal</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="pro-card" style="position:relative;border-radius:18px;overflow:hidden;cursor:default;height:320px;background:var(--navy);transform:translateY(-12px);"
-        onmouseover="this.querySelector('.pro-back').style.opacity='1';this.querySelector('.pro-front').style.opacity='0'"
-        onmouseout="this.querySelector('.pro-back').style.opacity='0';this.querySelector('.pro-front').style.opacity='1'">
-        <div class="pro-front" style="position:absolute;inset:0;padding:2rem;display:flex;flex-direction:column;justify-content:flex-end;transition:opacity 0.4s;background:linear-gradient(135deg,#1a2744 60%,#064e3b);">
-          <div style="font-size:2.5rem;margin-bottom:1rem;">💡</div>
-          <div style="font-family:var(--font-h);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Pitch de negocio</div>
-          <div style="font-size:0.8rem;color:var(--muted);">Pasa el cursor para ver más</div>
-        </div>
-        <div class="pro-back" style="position:absolute;inset:0;padding:2rem;display:flex;flex-direction:column;justify-content:center;opacity:0;transition:opacity 0.4s;background:linear-gradient(135deg,#065f46,#1a2744);">
-          <div style="font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1rem;">5 minutos para convencer. Audiencia real o simulada.</div>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Propuesta de valor clara</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Comunicación bajo presión</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Vídeo grabado y analizado</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="pro-card" style="position:relative;border-radius:18px;overflow:hidden;cursor:default;height:320px;background:var(--navy);"
-        onmouseover="this.querySelector('.pro-back').style.opacity='1';this.querySelector('.pro-front').style.opacity='0'"
-        onmouseout="this.querySelector('.pro-back').style.opacity='0';this.querySelector('.pro-front').style.opacity='1'">
-        <div class="pro-front" style="position:absolute;inset:0;padding:2rem;display:flex;flex-direction:column;justify-content:flex-end;transition:opacity 0.4s;background:linear-gradient(135deg,#1a2744 60%,#1e3a5f);">
-          <div style="font-size:2.5rem;margin-bottom:1rem;">🤖</div>
-          <div style="font-family:var(--font-h);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">IA con criterio</div>
-          <div style="font-size:0.8rem;color:var(--muted);">Pasa el cursor para ver más</div>
-        </div>
-        <div class="pro-back" style="position:absolute;inset:0;padding:2rem;display:flex;flex-direction:column;justify-content:center;opacity:0;transition:opacity 0.4s;background:linear-gradient(135deg,#1e3a5f,#4a4580);">
-          <div style="font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1rem;">IA generativa como herramienta, no como atajo.</div>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Producción de contenido real</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Criterio ético y pedagógico</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);padding:0.4rem 0.8rem;background:rgba(255,255,255,0.08);border-radius:8px;">→ Dossier justificativo propio</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- C: DISPONIBILIDAD DASHBOARD -->
-    <div class="reveal d2">
-      <div style="background:var(--light);border:1.5px solid rgba(124,111,205,0.2);border-radius:20px;padding:3rem;position:relative;overflow:hidden;">
-
-        <!-- Fondo decorativo -->
-        <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(167,139,250,0.06);pointer-events:none;"></div>
-        <div style="position:absolute;bottom:-60px;left:-20px;width:280px;height:280px;border-radius:50%;background:rgba(6,182,160,0.04);pointer-events:none;"></div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;position:relative;">
-
-          <!-- Columna izquierda: módulos -->
-          <div>
-            <div style="font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;">Módulos disponibles</div>
-
-            <div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem;">
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;background:var(--white);border-radius:10px;border:1px solid var(--border);">
-                <span style="font-size:0.85rem;color:var(--navy);font-weight:500);">Empresa e Iniciativa Emprendedora</span>
-                <span style="font-size:0.7rem;font-weight:700;color:#06b6a0;background:rgba(6,182,160,0.1);padding:0.2rem 0.6rem;border-radius:100px;">FP · ESO · BACH</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;background:var(--white);border-radius:10px;border:1px solid var(--border);">
-                <span style="font-size:0.85rem;color:var(--navy);font-weight:500);">Economía</span>
-                <span style="font-size:0.7rem;font-weight:700;color:#06b6a0;background:rgba(6,182,160,0.1);padding:0.2rem 0.6rem;border-radius:100px;">ESO · BACH</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;background:var(--white);border-radius:10px;border:1px solid var(--border);">
-                <span style="font-size:0.85rem;color:var(--navy);font-weight:500);">Gestión Administrativa</span>
-                <span style="font-size:0.7rem;font-weight:700;color:#A78BFA;background:rgba(167,139,250,0.1);padding:0.2rem 0.6rem;border-radius:100px;">FP GM</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;background:var(--white);border-radius:10px;border:1px solid var(--border);">
-                <span style="font-size:0.85rem;color:var(--navy);font-weight:500);">Administración y Finanzas</span>
-                <span style="font-size:0.7rem;font-weight:700;color:#A78BFA;background:rgba(167,139,250,0.1);padding:0.2rem 0.6rem;border-radius:100px;">FP GS</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;background:var(--white);border-radius:10px;border:1px solid var(--border);">
-                <span style="font-size:0.85rem;color:var(--navy);font-weight:500);">Marketing y Publicidad</span>
-                <span style="font-size:0.7rem;font-weight:700;color:#A78BFA;background:rgba(167,139,250,0.1);padding:0.2rem 0.6rem;border-radius:100px;">FP GS</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;background:var(--white);border-radius:10px;border:1px solid var(--border);">
-                <span style="font-size:0.85rem;color:var(--navy);font-weight:500);">Digitalización · IPE · Sostenibilidad</span>
-                <span style="font-size:0.7rem;font-weight:700;color:#06b6a0;background:rgba(6,182,160,0.1);padding:0.2rem 0.6rem;border-radius:100px;">TRANSVERSAL</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Columna derecha: estado disponibilidad -->
-          <div style="display:flex;flex-direction:column;justify-content:center;">
-            <div style="font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;">Estado actual</div>
-
-            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
-              <div style="width:12px;height:12px;border-radius:50%;background:#06b6a0;animation:blink 2s infinite;flex-shrink:0;"></div>
-              <div style="font-family:var(--font-h);font-size:1.4rem;font-weight:700;color:var(--navy);">Disponible</div>
-            </div>
-
-            <div style="display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem;">
-              <div style="display:flex;align-items:center;gap:0.75rem;">
-                <div style="width:6px;height:6px;border-radius:50%;background:#A78BFA;flex-shrink:0;"></div>
-                <span style="font-size:0.85rem;color:var(--slate);">Incorporación: septiembre 2026</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;">
-                <div style="width:6px;height:6px;border-radius:50%;background:#A78BFA;flex-shrink:0;"></div>
-                <span style="font-size:0.85rem;color:var(--slate);">Jornada completa</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;">
-                <div style="width:6px;height:6px;border-radius:50%;background:#A78BFA;flex-shrink:0;"></div>
-                <span style="font-size:0.85rem;color:var(--slate);">Región de Murcia</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;">
-                <div style="width:6px;height:6px;border-radius:50%;background:#A78BFA;flex-shrink:0;"></div>
-                <span style="font-size:0.85rem;color:var(--slate);">Referencias verificables disponibles</span>
-              </div>
-            </div>
-
-            <a href="#contacto" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.9rem 1.8rem;background:linear-gradient(135deg,#7C6FCD,#A78BFA);border-radius:10px;font-weight:700;font-size:0.88rem;color:#fff;text-decoration:none;transition:all 0.25s;width:fit-content;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(124,111,205,0.4)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-              Contactar ahora →
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- ── METODOLOGÍA ── -->
 <section id="metodologia">
   <div class="container">
@@ -1085,24 +1001,209 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 <div class="divider"></div>
 
 <!-- ── PROYECTOS ── -->
-<section id="proyectos">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Portfolio</div>
-      <h2 class="sec-title">Proyectos que realiza el alumnado</h2>
-      <p class="sec-desc">Proyectos curriculares reales: el alumnado diseña, desarrolla y defiende sus trabajos en el marco de los módulos, con situaciones que simulan entornos profesionales reales.</p>
-    </div>
-    <div class="proj-tabs">
-      <button class="proj-tab active" onclick="switchProj(this,'p1')">🏢 Empresa simulada</button>
-      <button class="proj-tab" onclick="switchProj(this,'p2')">💡 Pitch de negocio</button>
-      <button class="proj-tab" onclick="switchProj(this,'p3')">▶ Contenido con IA</button>
-      <button class="proj-tab" onclick="switchProj(this,'p4')">📄 Documentos de Empresa</button>
-    </div>
-    <div id="p1" class="proj-panel active"><div><div class="proj-title">Empresa simulada</div><div class="proj-desc">El alumnado constituye y gestiona una empresa ficticia desde cero: toma decisiones reales de negocio, resuelve conflictos internos y defiende los resultados ante el grupo.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Estructura organizativa y áreas funcionales de una empresa</li><li>Toma de decisiones estratégicas en contexto simulado</li><li>Trabajo cooperativo con roles profesionales diferenciados</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Plan de empresa estructurado (análisis, marketing, operaciones)</li><li>Presentación técnica de defensa del proyecto</li><li>Organigrama corporativo y manual de funciones</li></ul></div><div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">🏢</div><div style="font-size:0.72rem;color:var(--muted)">Estructura · Decisiones · Presentación</div></div></div></div>
-    <div id="p2" class="proj-panel"><div><div class="proj-title">Pitch de negocio</div><div class="proj-desc">Los equipos defienden su propuesta de valor en 5 minutos ante una audiencia técnica o potenciales colaboradores.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Comunicación sintética y persuasiva de alto impacto</li><li>Propuesta de valor y ventaja competitiva diferencial</li><li>Presentación técnica ante tribunal de evaluación</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Pitch grabado de 5 minutos de duración máxima</li><li>Soporte visual optimizado (máximo 10 diapositivas)</li><li>Ficha técnica con análisis de viabilidad básico</li></ul></div><div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">💡</div><div style="font-size:0.72rem;color:var(--muted)">Idea · Mercado · Diferencial</div></div></div></div>
-    <div id="p3" class="proj-panel"><div><div class="proj-title">Marketing digital e IA aplicada</div><div class="proj-desc">Producción de contenido audiovisual para canales digitales usando IA generativa, con enfoque de uso ético, crítico y productivo.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Uso funcional de herramientas de IA generativa aplicadas a la producción</li><li>Estructura narrativa y guionización para comunicación digital</li><li>Criterio ético y de calidad en la curación de contenidos generados</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Vídeo de comunicación corporativa (30–60 segundos)</li><li>Guion literario, técnico y plan de producción documentado</li><li>Dossier justificativo del uso y criterios aplicados con IA</li></ul></div><div class="proj-visual"><div style="text-align:center"><div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;width:120px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem">▶</div><div style="font-size:0.72rem;color:var(--muted)">Guion · IA · Montaje profesional</div></div></div></div>
-    <div id="p4" class="proj-panel"><div><div class="proj-title">Documentos de Empresa</div><div class="proj-desc">Redacción y formalización de la documentación interna oficial de la empresa simulada, con rigor administrativo y comunicación escrita profesional.</div><div class="proj-col-title">Qué aprende</div><ul class="proj-items"><li>Redacción administrativa formal y tono corporativo</li><li>Diseño y aplicación de políticas y reglamentos internos</li><li>Claridad y precisión en la comunicación empresarial escrita</li></ul><div class="proj-col-title">Qué produce</div><ul class="proj-items"><li>Reglamento de régimen interno y normas de funcionamiento</li><li>Manual de política de atención al cliente</li><li>Modelos de comunicación externa, circulares e informes</li></ul></div><div class="proj-visual"><div style="width:100%;max-width:200px"><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent);font-size:0.75rem;font-weight:600;color:var(--navy)">Reglamento interno</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;margin-bottom:0.5rem;border-left:3px solid var(--accent2);font-size:0.75rem;font-weight:600;color:var(--navy)">Política de cliente</div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.75rem;border-left:3px solid var(--muted);font-size:0.75rem;font-weight:600;color:var(--navy)">Comunicaciones oficiales</div></div></div></div>
+<section id="proyectos" style="padding:5rem 2rem;background:#ffffff;">
+<div class="container">
+
+<style>
+.pf-label{font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.5rem;text-align:center;}
+.pf-title{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#26215C;text-align:center;margin:0 0 0.6rem;letter-spacing:-0.5px;}
+.pf-sub{font-size:0.9rem;color:#7F77DD;text-align:center;max-width:520px;margin:0 auto 3rem;line-height:1.7;}
+.pf-tabs{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;}
+.pf-tab{padding:0.55rem 1.2rem;border:1.5px solid #AFA9EC;border-radius:100px;font-size:0.82rem;font-weight:600;color:#7F77DD;cursor:pointer;transition:all 0.2s;background:#ffffff;}
+.pf-tab:hover{border-color:#534AB7;color:#534AB7;transform:translateY(-2px);}
+.pf-tab.pf-active{background:#534AB7;color:#ffffff;border-color:#534AB7;box-shadow:0 4px 14px rgba(83,74,183,0.25);}
+.pf-panel{display:none;animation:pfIn 0.35s ease;}
+.pf-panel.pf-show{display:grid;grid-template-columns:1.1fr 0.9fr;gap:2.5rem;align-items:start;}
+@keyframes pfIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.pf-content{}
+.pf-ptag{display:inline-block;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;background:#EEEDFE;color:#3C3489;margin-bottom:10px;}
+.pf-ptitle{font-family:var(--font-h);font-size:1.4rem;font-weight:700;color:#26215C;margin:0 0 0.8rem;}
+.pf-pdesc{font-size:0.88rem;color:#7F77DD;line-height:1.7;margin:0 0 1.5rem;}
+.pf-section-label{font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.6rem;}
+.pf-list{list-style:none;display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem;}
+.pf-list li{font-size:0.85rem;color:#26215C;font-weight:500;padding-left:1rem;position:relative;}
+.pf-list li::before{content:'→';position:absolute;left:0;color:#1D9E75;font-size:0.78rem;top:1px;}
+.pf-visual{background:#F5F4FE;border:1.5px solid #AFA9EC;border-radius:16px;padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;text-align:center;position:relative;overflow:hidden;transition:all 0.3s;}
+.pf-visual:hover{border-color:#534AB7;box-shadow:0 12px 32px rgba(83,74,183,0.1);}
+.pf-visual-icon{font-size:3.5rem;margin-bottom:1rem;filter:drop-shadow(0 4px 12px rgba(83,74,183,0.15));}
+.pf-visual-title{font-size:0.85rem;font-weight:700;color:#26215C;margin-bottom:0.3rem;}
+.pf-visual-sub{font-size:0.75rem;color:#7F77DD;line-height:1.5;}
+
+.pf-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
+.pf-tag{padding:0.25rem 0.7rem;background:#E1F5EE;border-radius:100px;font-size:0.7rem;font-weight:600;color:#0F6E56;}
+@media(max-width:800px){.pf-panel.pf-show{grid-template-columns:1fr;}}
+</style>
+
+  <div class="reveal">
+    <p class="pf-label">Portfolio</p>
+    <h2 class="pf-title">Proyectos que realiza el alumnado</h2>
+    <p class="pf-sub">Proyectos curriculares reales: el alumnado diseña, desarrolla y defiende sus trabajos en situaciones que simulan entornos profesionales reales.</p>
   </div>
+
+  <div class="pf-tabs reveal d1">
+    <div class="pf-tab pf-active" onclick="pfSelect(this,'pf1')">🏢 Empresa simulada</div>
+    <div class="pf-tab" onclick="pfSelect(this,'pf2')">💡 Pitch de negocio</div>
+    <div class="pf-tab" onclick="pfSelect(this,'pf3')">▶ Contenido con IA</div>
+    <div class="pf-tab" onclick="pfSelect(this,'pf4')">📄 Documentos de empresa</div>
+  </div>
+
+  <!-- PANEL 1 -->
+  <div id="pf1" class="pf-panel pf-show reveal d2">
+    <div class="pf-content">
+      <span class="pf-ptag">Aprendizaje basado en proyectos</span>
+      <h3 class="pf-ptitle">Empresa simulada</h3>
+      <p class="pf-pdesc">El alumnado constituye y gestiona una empresa ficticia desde cero: toma decisiones reales de negocio, resuelve conflictos internos y defiende los resultados ante el grupo.</p>
+      <div class="pf-section-label">Qué aprende</div>
+      <ul class="pf-list">
+        <li>Estructura organizativa y áreas funcionales de una empresa</li>
+        <li>Toma de decisiones estratégicas en contexto simulado</li>
+        <li>Trabajo cooperativo con roles profesionales diferenciados</li>
+      </ul>
+      <div class="pf-section-label">Qué produce</div>
+      <ul class="pf-list">
+        <li>Plan de empresa estructurado (análisis, marketing, operaciones)</li>
+        <li>Presentación técnica de defensa del proyecto</li>
+        <li>Organigrama corporativo y manual de funciones</li>
+      </ul>
+      <div class="pf-tags"><span class="pf-tag">ABP</span><span class="pf-tag">Trabajo en equipo</span><span class="pf-tag">Empresa real</span><span class="pf-tag">Evaluación competencial</span></div>
+    </div>
+    <div class="pf-visual">
+      <div style="width:100%;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;">
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;border-left:3px solid #534AB7;font-size:0.8rem;font-weight:600;color:#26215C;">📋 Plan de empresa · Análisis DAFO · Financiero</div>
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;border-left:3px solid #1D9E75;font-size:0.8rem;font-weight:600;color:#26215C;">👥 CEO · CFO · Dir. Marketing · Dir. Ventas</div>
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;border-left:3px solid #534AB7;font-size:0.8rem;font-weight:600;color:#26215C;">🎤 Defensa ante tribunal · Preguntas reales</div>
+        <div style="background:#EEEDFE;border-radius:9px;padding:0.75rem 1rem;text-align:center;font-size:0.75rem;color:#3C3489;font-weight:600;">Producto final tangible · Evaluación competencial</div>
+      </div>
+      <div class="pf-visual-title">Estructura · Decisiones · Presentación</div>
+      <div class="pf-visual-sub">Empresa simulada desde cero con roles reales</div>
+    </div>
+  </div>
+
+  <!-- PANEL 2 -->
+  <div id="pf2" class="pf-panel">
+    <div class="pf-content">
+      <span class="pf-ptag">Comunicación profesional</span>
+      <h3 class="pf-ptitle">Pitch de negocio</h3>
+      <p class="pf-pdesc">Los equipos defienden su propuesta de valor en 5 minutos ante una audiencia técnica o potenciales colaboradores.</p>
+      <div class="pf-section-label">Qué aprende</div>
+      <ul class="pf-list">
+        <li>Comunicación sintética y persuasiva de alto impacto</li>
+        <li>Propuesta de valor y ventaja competitiva diferencial</li>
+        <li>Presentación técnica ante tribunal de evaluación</li>
+      </ul>
+      <div class="pf-section-label">Qué produce</div>
+      <ul class="pf-list">
+        <li>Pitch grabado de 5 minutos de duración máxima</li>
+        <li>Soporte visual optimizado (máximo 10 diapositivas)</li>
+        <li>Ficha técnica con análisis de viabilidad básico</li>
+      </ul>
+      <div class="pf-tags"><span class="pf-tag">Comunicación oral</span><span class="pf-tag">Presión real</span><span class="pf-tag">Vídeo</span><span class="pf-tag">Propuesta de valor</span></div>
+    </div>
+    <div class="pf-visual">
+      <div style="width:100%;margin-bottom:1rem;">
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:12px;padding:1.2rem;margin-bottom:0.5rem;">
+          <div style="font-size:0.7rem;font-weight:700;color:#534AB7;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Estructura del pitch</div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#534AB7;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">1</span>Problema que resuelve</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#534AB7;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">2</span>Propuesta de valor única</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#1D9E75;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">3</span>Mercado objetivo</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#1D9E75;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">4</span>Modelo de negocio</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#534AB7;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">5</span>Call to action</div>
+          </div>
+        </div>
+        <div style="background:#E1F5EE;border-radius:9px;padding:0.75rem;text-align:center;font-size:0.75rem;color:#0F6E56;font-weight:600;">⏱ 5 minutos · Grabado en vídeo · Analizado en grupo</div>
+      </div>
+      <div class="pf-visual-title">Idea · Mercado · Diferencial</div>
+      <div class="pf-visual-sub">5 minutos para convencer</div>
+    </div>
+  </div>
+
+  <!-- PANEL 3 -->
+  <div id="pf3" class="pf-panel">
+    <div class="pf-content">
+      <span class="pf-ptag">Competencia digital crítica</span>
+      <h3 class="pf-ptitle">Marketing digital e IA aplicada</h3>
+      <p class="pf-pdesc">Producción de contenido audiovisual para canales digitales usando IA generativa, con enfoque de uso ético, crítico y productivo.</p>
+      <div class="pf-section-label">Qué aprende</div>
+      <ul class="pf-list">
+        <li>Uso funcional de herramientas de IA generativa aplicadas a la producción</li>
+        <li>Estructura narrativa y guionización para comunicación digital</li>
+        <li>Criterio ético y de calidad en la curación de contenidos generados</li>
+      </ul>
+      <div class="pf-section-label">Qué produce</div>
+      <ul class="pf-list">
+        <li>Vídeo de comunicación corporativa (30–60 segundos)</li>
+        <li>Guion literario, técnico y plan de producción documentado</li>
+        <li>Dossier justificativo del uso y criterios aplicados con IA</li>
+      </ul>
+      <div class="pf-tags"><span class="pf-tag">IA generativa</span><span class="pf-tag">Vídeo corporativo</span><span class="pf-tag">Ética digital</span><span class="pf-tag">Criterio propio</span></div>
+    </div>
+    <div class="pf-visual">
+      <div style="width:100%;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;">
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.8rem 1rem;">
+          <div style="font-size:0.7rem;font-weight:700;color:#534AB7;margin-bottom:0.4rem;">FLUJO DE PRODUCCIÓN</div>
+          <div style="display:flex;align-items:center;gap:0.3rem;flex-wrap:wrap;">
+            <span style="background:#EEEDFE;color:#3C3489;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Briefing</span>
+            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
+            <span style="background:#EEEDFE;color:#3C3489;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Guion</span>
+            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
+            <span style="background:#EEEDFE;color:#3C3489;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">IA</span>
+            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
+            <span style="background:#E1F5EE;color:#0F6E56;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Revisión</span>
+            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
+            <span style="background:#E1F5EE;color:#0F6E56;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Vídeo final</span>
+          </div>
+        </div>
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;font-size:0.78rem;color:#26215C;"><span style="color:#534AB7;font-weight:700;">⚖️ Criterio ético:</span> El alumnado decide qué delega y qué no. Justifica cada decisión.</div>
+        <div style="background:#EEEDFE;border-radius:9px;padding:0.75rem;text-align:center;font-size:0.75rem;color:#3C3489;font-weight:600;">Producto: vídeo 30-60 seg. + dossier justificativo</div>
+      </div>
+      <div class="pf-visual-title">Guion · IA · Montaje profesional</div>
+      <div class="pf-visual-sub">Contenido real con criterio pedagógico</div>
+    </div>
+  </div>
+
+  <!-- PANEL 4 -->
+  <div id="pf4" class="pf-panel">
+    <div class="pf-content">
+      <span class="pf-ptag">Redacción administrativa</span>
+      <h3 class="pf-ptitle">Documentos de empresa</h3>
+      <p class="pf-pdesc">Redacción y formalización de la documentación interna oficial de la empresa simulada, con rigor administrativo y comunicación escrita profesional.</p>
+      <div class="pf-section-label">Qué aprende</div>
+      <ul class="pf-list">
+        <li>Redacción administrativa formal y tono corporativo</li>
+        <li>Diseño y aplicación de políticas y reglamentos internos</li>
+        <li>Claridad y precisión en la comunicación empresarial escrita</li>
+      </ul>
+      <div class="pf-section-label">Qué produce</div>
+      <ul class="pf-list">
+        <li>Reglamento de régimen interno y normas de funcionamiento</li>
+        <li>Manual de política de atención al cliente</li>
+        <li>Modelos de comunicación externa, circulares e informes</li>
+      </ul>
+      <div class="pf-tags"><span class="pf-tag">Escritura formal</span><span class="pf-tag">Documentación real</span><span class="pf-tag">Corporativo</span><span class="pf-tag">LOMLOE</span></div>
+    </div>
+    <div class="pf-visual">
+      <div style="width:100%;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;">
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;display:flex;align-items:center;gap:0.75rem;border-left:3px solid #534AB7;"><span style="font-size:1.1rem;">📜</span><div><div style="font-size:0.8rem;font-weight:600;color:#26215C;">Reglamento de régimen interno</div><div style="font-size:0.72rem;color:#7F77DD;">Normas · Sanciones · Procedimientos</div></div></div>
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;display:flex;align-items:center;gap:0.75rem;border-left:3px solid #1D9E75;"><span style="font-size:1.1rem;">🤝</span><div><div style="font-size:0.8rem;font-weight:600;color:#26215C;">Manual de atención al cliente</div><div style="font-size:0.72rem;color:#7F77DD;">Protocolos · Tono · Gestión de incidencias</div></div></div>
+        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;display:flex;align-items:center;gap:0.75rem;border-left:3px solid #534AB7;"><span style="font-size:1.1rem;">📧</span><div><div style="font-size:0.8rem;font-weight:600;color:#26215C;">Comunicaciones externas</div><div style="font-size:0.72rem;color:#7F77DD;">Circulares · Informes · Cartas formales</div></div></div>
+        <div style="background:#EEEDFE;border-radius:9px;padding:0.75rem;text-align:center;font-size:0.75rem;color:#3C3489;font-weight:600;">Redacción formal real · Tono corporativo profesional</div>
+      </div>
+      <div class="pf-visual-title">Reglamento · Políticas · Comunicaciones</div>
+      <div class="pf-visual-sub">Documentación corporativa real</div>
+    </div>
+  </div>
+
+  <script>
+  function pfSelect(tab, panelId) {
+    document.querySelectorAll('.pf-tab').forEach(function(t){t.classList.remove('pf-active');});
+    document.querySelectorAll('.pf-panel').forEach(function(p){p.classList.remove('pf-show');});
+    tab.classList.add('pf-active');
+    document.getElementById(panelId).classList.add('pf-show');
+  }
+  </script>
+
+</div>
 </section>
 
 <div class="divider"></div>
