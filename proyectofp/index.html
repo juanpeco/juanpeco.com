@@ -191,27 +191,57 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .mod-hdr-title{font-size:19px;font-weight:800;letter-spacing:-.025em;color:var(--ink);line-height:1.2}
 .mod-hdr-meta{font-size:11px;color:var(--ink4);margin-top:4px}
 
-/* ── TOOLS GRID ── */
-.tools-wrap{padding:24px 28px}
-.tools-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink4);margin-bottom:14px}
-.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.tool-card{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 16px;cursor:pointer;transition:all .15s;display:flex;gap:13px;align-items:flex-start}
-.tool-card:hover{border-color:var(--blue-bd);box-shadow:0 4px 16px rgba(59,91,219,.08);transform:translateY(-1px)}
-.tool-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.tool-card:nth-child(1) .tool-icon{background:var(--violet-bg)}
-.tool-card:nth-child(2) .tool-icon{background:var(--blue-bg)}
-.tool-card:nth-child(3) .tool-icon{background:var(--green-bg)}
-.tool-card:nth-child(4) .tool-icon{background:#FFF0FA}
-.tool-card:nth-child(5) .tool-icon{background:var(--amber-bg)}
-.tool-body{}
-.tool-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
-.tool-desc{font-size:11px;color:var(--ink3);line-height:1.5}
-.tool-tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;margin-top:6px;display:inline-block}
-.tool-card:nth-child(1) .tool-tag{background:var(--violet-bg);color:var(--violet)}
-.tool-card:nth-child(2) .tool-tag{background:var(--blue-bg);color:var(--blue)}
-.tool-card:nth-child(3) .tool-tag{background:var(--green-bg);color:var(--green)}
-.tool-card:nth-child(4) .tool-tag{background:#FFF0FA;color:#B020A0}
-.tool-card:nth-child(5) .tool-tag{background:var(--amber-bg);color:var(--amber)}
+/* ── APP DASHBOARD ── */
+.dash-hdr{padding:20px 28px 16px;border-bottom:1px solid var(--line);background:var(--white);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.dash-pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.dash-pill{font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px}
+.dash-pill.fp{background:var(--blue-bg);color:var(--blue)}
+.dash-pill.bach{background:var(--violet-bg);color:var(--violet)}
+.dash-pill.eso{background:var(--green-bg);color:var(--green)}
+.dash-pill.ciclo{background:var(--paper);color:var(--ink3);border:1px solid var(--line)}
+.dash-pill.rd{background:var(--paper);color:var(--ink4);border:1px solid var(--line);font-weight:500}
+.dash-title{font-size:20px;font-weight:800;letter-spacing:-.025em;color:var(--ink);line-height:1.2}
+.dash-meta{font-size:11px;color:var(--ink4);margin-top:4px}
+.dash-hdr-right{display:flex;gap:10px;flex-shrink:0}
+.dash-stat{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:10px 16px;text-align:center;min-width:72px}
+.dash-stat-num{font-size:20px;font-weight:900;letter-spacing:-.03em;color:var(--ink)}
+.dash-stat-num.ok{color:var(--green)}.dash-stat-num.warn{color:var(--amber)}.dash-stat-num.bad{color:var(--red)}
+.dash-stat-lbl{font-size:9px;color:var(--ink4);margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
+
+/* ── TOOLS (new visual) ── */
+.dash-tools{padding:20px 28px}
+.dash-tools-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink4);margin-bottom:14px}
+.dash-tools-grid{display:flex;flex-direction:column;gap:10px}
+
+.dtool{background:var(--white);border:1.5px solid var(--line);border-radius:14px;cursor:pointer;transition:all .18s;overflow:hidden;position:relative}
+.dtool:hover{border-color:transparent;box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-1px)}
+.dtool-accent{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:14px 0 0 14px}
+.dtool-sda .dtool-accent{background:var(--violet)}
+.dtool-diag .dtool-accent{background:var(--blue)}
+.dtool-cob .dtool-accent{background:var(--green)}
+.dtool-rub .dtool-accent{background:#C026A0}
+.dtool-rev .dtool-accent{background:var(--amber)}
+.dtool-sda:hover{border-color:var(--violet-bd);box-shadow:0 4px 20px rgba(85,67,200,.1)}
+.dtool-diag:hover{border-color:var(--blue-bd);box-shadow:0 4px 20px rgba(59,91,219,.1)}
+.dtool-cob:hover{border-color:var(--green-bd);box-shadow:0 4px 20px rgba(30,158,98,.1)}
+.dtool-rub:hover{border-color:#F5C0F5;box-shadow:0 4px 20px rgba(192,38,160,.08)}
+.dtool-rev:hover{border-color:var(--amber-bd);box-shadow:0 4px 20px rgba(168,95,0,.1)}
+
+.dtool-inner{display:flex;align-items:center;gap:16px;padding:16px 16px 16px 22px}
+.dtool-icon-wrap{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dtool-sda .dtool-icon-wrap{background:var(--violet-bg)}
+.dtool-diag .dtool-icon-wrap{background:var(--blue-bg)}
+.dtool-cob .dtool-icon-wrap{background:var(--green-bg)}
+.dtool-rub .dtool-icon-wrap{background:#FFF0FA}
+.dtool-rev .dtool-icon-wrap{background:var(--amber-bg)}
+.dtool-icon{font-size:20px}
+.dtool-content{flex:1}
+.dtool-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.dtool-desc{font-size:12px;color:var(--ink3);line-height:1.5;margin-bottom:8px}
+.dtool-items{display:flex;gap:6px;flex-wrap:wrap}
+.dtool-item{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--paper);color:var(--ink3);border:1px solid var(--line)}
+.dtool-arrow{font-size:18px;color:var(--line2);flex-shrink:0;transition:all .18s;margin-left:8px}
+.dtool:hover .dtool-arrow{color:var(--ink3);transform:translateX(3px)}
 
 /* ── APP EMPTY STATE ── */
 .app-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - var(--nav-h));padding:40px;text-align:center}
@@ -356,11 +386,12 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
   .app-main{margin-left:0}
   .mob-toggle{display:flex}
   .tools-grid{grid-template-columns:1fr}
+  .dash-hdr{padding:14px 18px;flex-direction:column}
+  .dash-hdr-right{width:100%;justify-content:flex-start}
+  .dash-tools{padding:14px 18px}
+  .dtool-desc{display:none}
   .ws-body{padding:16px 18px}
   .ws-hdr{padding:12px 18px;flex-wrap:wrap;gap:8px}
-  .mod-hdr{padding:14px 18px}
-  .tools-wrap{padding:16px 18px}
-  .diag-summary{grid-template-columns:repeat(3,1fr)}
 }
 @media(min-width:769px) and (max-width:1024px){
   :root{--sw:240px}
@@ -571,104 +602,164 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 
     <!-- MAIN -->
     <main class="app-main" id="app-main">
-      <!-- Empty state -->
-      <div class="app-empty" id="app-empty">
-        <div class="app-empty-icon">📐</div>
-        <div class="app-empty-title">Selecciona un módulo</div>
-        <div class="app-empty-sub">Elige el nivel educativo y el módulo en el panel izquierdo para acceder a las herramientas.</div>
-        <div class="app-empty-arrow">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Panel izquierdo
+
+      <!-- Dashboard (default, carga módulo automáticamente) -->
+      <div id="app-dashboard">
+        <!-- Module header -->
+        <div class="dash-hdr" id="dash-hdr">
+          <div class="dash-hdr-left">
+            <div class="dash-pills" id="dash-pills"></div>
+            <div class="dash-title" id="dash-title">Cargando módulo…</div>
+            <div class="dash-meta" id="dash-meta"></div>
+          </div>
+          <div class="dash-hdr-right" id="dash-stats"></div>
         </div>
+
+        <!-- Tools fullwidth -->
+        <div class="dash-tools" id="tools-wrap">
+          <div class="dash-tools-label">¿Qué quieres hacer hoy?</div>
+          <div class="dash-tools-grid">
+
+            <div class="dtool dtool-sda" onclick="openTool('sda')">
+              <div class="dtool-accent"></div>
+              <div class="dtool-inner">
+                <div class="dtool-icon-wrap"><span class="dtool-icon">✏️</span></div>
+                <div class="dtool-content">
+                  <div class="dtool-title">Generar SdA / ABP</div>
+                  <div class="dtool-desc">Crea situaciones de aprendizaje o proyectos ABP estructurados desde los CE oficiales del módulo activo.</div>
+                  <div class="dtool-items">
+                    <span class="dtool-item">SdA completa</span>
+                    <span class="dtool-item">Proyecto ABP</span>
+                    <span class="dtool-item">Taller práctico</span>
+                  </div>
+                </div>
+                <div class="dtool-arrow">→</div>
+              </div>
+            </div>
+
+            <div class="dtool dtool-diag" onclick="openTool('diagnostico')">
+              <div class="dtool-accent"></div>
+              <div class="dtool-inner">
+                <div class="dtool-icon-wrap"><span class="dtool-icon">🔍</span></div>
+                <div class="dtool-content">
+                  <div class="dtool-title">Auditar CE y trazabilidad</div>
+                  <div class="dtool-desc">Marca qué criterios tienen actividad y cuáles tienen instrumento. Detecta vacíos antes de la revisión.</div>
+                  <div class="dtool-items">
+                    <span class="dtool-item">Actividad por CE</span>
+                    <span class="dtool-item">Instrumento por CE</span>
+                    <span class="dtool-item">Vacíos en tiempo real</span>
+                  </div>
+                </div>
+                <div class="dtool-arrow">→</div>
+              </div>
+            </div>
+
+            <div class="dtool dtool-cob" onclick="openTool('cobertura')">
+              <div class="dtool-accent"></div>
+              <div class="dtool-inner">
+                <div class="dtool-icon-wrap"><span class="dtool-icon">📊</span></div>
+                <div class="dtool-content">
+                  <div class="dtool-title">Visualizar cobertura</div>
+                  <div class="dtool-desc">Mapa visual del estado de cobertura RA por RA. Chips por CE con código de color. Exportable.</div>
+                  <div class="dtool-items">
+                    <span class="dtool-item">Vista por RA</span>
+                    <span class="dtool-item">% cobertura</span>
+                    <span class="dtool-item">Chips por CE</span>
+                  </div>
+                </div>
+                <div class="dtool-arrow">→</div>
+              </div>
+            </div>
+
+            <div class="dtool dtool-rub" onclick="openTool('rubrica')">
+              <div class="dtool-accent"></div>
+              <div class="dtool-inner">
+                <div class="dtool-icon-wrap"><span class="dtool-icon">📋</span></div>
+                <div class="dtool-content">
+                  <div class="dtool-title">Generar rúbrica</div>
+                  <div class="dtool-desc">Rúbrica analítica de 4 niveles o lista de cotejo generada desde los CE oficiales del RA seleccionado.</div>
+                  <div class="dtool-items">
+                    <span class="dtool-item">Rúbrica analítica</span>
+                    <span class="dtool-item">Lista de cotejo</span>
+                    <span class="dtool-item">Export PDF</span>
+                  </div>
+                </div>
+                <div class="dtool-arrow">→</div>
+              </div>
+            </div>
+
+            <div class="dtool dtool-rev" onclick="openTool('revision')">
+              <div class="dtool-accent"></div>
+              <div class="dtool-inner">
+                <div class="dtool-icon-wrap"><span class="dtool-icon">✅</span></div>
+                <div class="dtool-content">
+                  <div class="dtool-title">Revisión curricular</div>
+                  <div class="dtool-desc">Checklist completo calculado desde tu auditoría. Llega preparado a cualquier revisión de inspección.</div>
+                  <div class="dtool-items">
+                    <span class="dtool-item">Estado real</span>
+                    <span class="dtool-item">Normativa</span>
+                    <span class="dtool-item">Export PDF</span>
+                  </div>
+                </div>
+                <div class="dtool-arrow">→</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div><!-- /dashboard -->
+
+      <!-- Workspaces -->
+      <div class="workspace" id="ws-sda">
+        <div class="ws-hdr">
+          <button class="ws-back" onclick="closeTool()">← Herramientas</button>
+          <span class="ws-title">Generar SdA / ABP</span>
+          <span class="ws-spacer"></span>
+          <button class="ws-export" id="btn-sda-exp" onclick="exportarSdA()" disabled>⬇ Exportar PDF</button>
+        </div>
+        <div class="ws-body" id="body-sda"></div>
       </div>
 
-      <!-- Module view -->
-      <div id="app-module" style="display:none;flex-direction:column;min-height:calc(100vh - var(--nav-h))">
-        <!-- Module header -->
-        <div class="mod-hdr">
-          <div class="mod-hdr-pills" id="mod-pills"></div>
-          <div class="mod-hdr-title" id="mod-title" style="margin-top:8px"></div>
-          <div class="mod-hdr-meta" id="mod-meta"></div>
+      <div class="workspace" id="ws-diagnostico">
+        <div class="ws-hdr">
+          <button class="ws-back" onclick="closeTool()">← Herramientas</button>
+          <span class="ws-title">Auditar CE y trazabilidad</span>
+          <span class="ws-spacer"></span>
+          <button class="ws-export" onclick="exportarDiagnostico()">⬇ Exportar PDF</button>
         </div>
+        <div class="ws-body" id="body-diagnostico"></div>
+      </div>
 
-        <!-- Tools grid -->
-        <div class="tools-wrap" id="tools-wrap">
-          <div class="tools-label">Herramientas disponibles</div>
-          <div class="tools-grid">
-            <div class="tool-card" onclick="openTool('sda')">
-              <div class="tool-icon">✏️</div>
-              <div class="tool-body"><div class="tool-title">Generar SdA / ABP</div><div class="tool-desc">Situaciones de aprendizaje y proyectos desde los CE del módulo.</div><span class="tool-tag">Plantilla curricular</span></div>
-            </div>
-            <div class="tool-card" onclick="openTool('diagnostico')">
-              <div class="tool-icon">🔍</div>
-              <div class="tool-body"><div class="tool-title">Auditar CE</div><div class="tool-desc">Marca cobertura de actividad e instrumento por criterio.</div><span class="tool-tag">Diagnóstico</span></div>
-            </div>
-            <div class="tool-card" onclick="openTool('cobertura')">
-              <div class="tool-icon">📊</div>
-              <div class="tool-body"><div class="tool-title">Ver cobertura</div><div class="tool-desc">Mapa visual del estado de cobertura RA por RA.</div><span class="tool-tag">Visual</span></div>
-            </div>
-            <div class="tool-card" onclick="openTool('rubrica')">
-              <div class="tool-icon">📋</div>
-              <div class="tool-body"><div class="tool-title">Generar rúbrica</div><div class="tool-desc">Rúbrica analítica o lista de cotejo desde los CE oficiales.</div><span class="tool-tag">Evaluación</span></div>
-            </div>
-            <div class="tool-card" onclick="openTool('revision')">
-              <div class="tool-icon">✅</div>
-              <div class="tool-body"><div class="tool-title">Revisión curricular</div><div class="tool-desc">Checklist para inspección calculado desde tu auditoría.</div><span class="tool-tag">Checklist</span></div>
-            </div>
-          </div>
+      <div class="workspace" id="ws-cobertura">
+        <div class="ws-hdr">
+          <button class="ws-back" onclick="closeTool()">← Herramientas</button>
+          <span class="ws-title">Visualizar cobertura</span>
+          <span class="ws-spacer"></span>
+          <button class="ws-export" onclick="exportarCobertura()">⬇ Exportar PDF</button>
         </div>
+        <div class="ws-body" id="body-cobertura"></div>
+      </div>
 
-        <!-- Workspaces -->
-        <div class="workspace" id="ws-sda">
-          <div class="ws-hdr">
-            <button class="ws-back" onclick="closeTool()">← Herramientas</button>
-            <span class="ws-title">Generar SdA / ABP</span>
-            <span class="ws-spacer"></span>
-            <button class="ws-export" id="btn-sda-exp" onclick="exportarSdA()" disabled>⬇ Exportar PDF</button>
-          </div>
-          <div class="ws-body" id="body-sda"></div>
+      <div class="workspace" id="ws-rubrica">
+        <div class="ws-hdr">
+          <button class="ws-back" onclick="closeTool()">← Herramientas</button>
+          <span class="ws-title">Generar rúbrica</span>
+          <span class="ws-spacer"></span>
+          <button class="ws-export" id="btn-rub-exp" onclick="exportarRubrica()" disabled>⬇ Exportar PDF</button>
         </div>
+        <div class="ws-body" id="body-rubrica"></div>
+      </div>
 
-        <div class="workspace" id="ws-diagnostico">
-          <div class="ws-hdr">
-            <button class="ws-back" onclick="closeTool()">← Herramientas</button>
-            <span class="ws-title">Auditar CE y trazabilidad</span>
-            <span class="ws-spacer"></span>
-            <button class="ws-export" onclick="exportarDiagnostico()">⬇ Exportar PDF</button>
-          </div>
-          <div class="ws-body" id="body-diagnostico"></div>
+      <div class="workspace" id="ws-revision">
+        <div class="ws-hdr">
+          <button class="ws-back" onclick="closeTool()">← Herramientas</button>
+          <span class="ws-title">Revisión curricular</span>
+          <span class="ws-spacer"></span>
+          <button class="ws-export" onclick="exportarRevision()">⬇ Exportar PDF</button>
         </div>
+        <div class="ws-body" id="body-revision"></div>
+      </div>
 
-        <div class="workspace" id="ws-cobertura">
-          <div class="ws-hdr">
-            <button class="ws-back" onclick="closeTool()">← Herramientas</button>
-            <span class="ws-title">Visualizar cobertura</span>
-            <span class="ws-spacer"></span>
-            <button class="ws-export" onclick="exportarCobertura()">⬇ Exportar PDF</button>
-          </div>
-          <div class="ws-body" id="body-cobertura"></div>
-        </div>
-
-        <div class="workspace" id="ws-rubrica">
-          <div class="ws-hdr">
-            <button class="ws-back" onclick="closeTool()">← Herramientas</button>
-            <span class="ws-title">Generar rúbrica</span>
-            <span class="ws-spacer"></span>
-            <button class="ws-export" id="btn-rub-exp" onclick="exportarRubrica()" disabled>⬇ Exportar PDF</button>
-          </div>
-          <div class="ws-body" id="body-rubrica"></div>
-        </div>
-
-        <div class="workspace" id="ws-revision">
-          <div class="ws-hdr">
-            <button class="ws-back" onclick="closeTool()">← Herramientas</button>
-            <span class="ws-title">Revisión curricular</span>
-            <span class="ws-spacer"></span>
-            <button class="ws-export" onclick="exportarRevision()">⬇ Exportar PDF</button>
-          </div>
-          <div class="ws-body" id="body-revision"></div>
-        </div>
-      </div><!-- /app-module -->
     </main>
   </div>
 
@@ -827,8 +918,13 @@ function entrarApp() {
   document.getElementById('app-nav').style.display = 'flex';
   window.scrollTo(0,0);
   if (!document.getElementById('sidebar-tree').children.length) buildSidebar();
+  // Load saved or default module
   const saved = localStorage.getItem('pfp_last');
-  if (saved) { try { const s=JSON.parse(saved); loadModule(s.nivel,s.ciclo,s.cod); } catch(e){} }
+  if (saved) {
+    try { const s=JSON.parse(saved); loadModule(s.nivel,s.ciclo,s.cod); return; } catch(e){}
+  }
+  // Default: Empresa en el Aula
+  loadModule('FP GM','Gestión Administrativa','0437');
 }
 
 function navHome() {
@@ -891,25 +987,30 @@ function loadModule(nivel, ciclo, cod) {
     mod.ra.forEach(ra => { S.cob[cod][ra.id]={}; ra.ce.forEach(ce => S.cob[cod][ra.id][ce.id]={a:false,i:false}); });
   }
   localStorage.setItem('pfp_last', JSON.stringify({nivel,ciclo,cod}));
-  // Update sidebar
+  // Sidebar active
   document.querySelectorAll('.sidebar-mod').forEach(el=>el.classList.remove('active'));
   const mEl = document.getElementById(`sm-${cod}`);
   if (mEl) { mEl.classList.add('active'); openParents(mEl); }
-  // Update header
+  // Dashboard header
   const nd = DATA[nivel];
-  const cd = nd.ciclos[ciclo];
-  const pillCls = nd.cls==='bach'?'bach':nd.cls==='eso'?'eso':'nivel';
-  document.getElementById('mod-pills').innerHTML =
-    `<span class="mod-hdr-pill ${pillCls}">${nivel}</span><span class="mod-hdr-pill ciclo">${ciclo}</span><span class="mod-hdr-pill rd">${cd.rd}</span>`;
-  document.getElementById('mod-title').textContent = mod.nombre;
-  document.getElementById('mod-meta').textContent = `${cod} · ${mod.horas}h · ${mod.ra.length} RA · ${mod.ra.reduce((s,r)=>s+r.ce.length,0)} CE`;
+  const pillCls = nd.cls==='bach'?'bach':nd.cls==='eso'?'eso':'fp';
+  document.getElementById('dash-pills').innerHTML =
+    `<span class="dash-pill ${pillCls}">${nivel}</span><span class="dash-pill ciclo">${ciclo}</span><span class="dash-pill rd">${DATA[nivel].ciclos[ciclo].rd}</span>`;
+  document.getElementById('dash-title').textContent = mod.nombre;
+  const totalCE = mod.ra.reduce((s,ra)=>s+ra.ce.length,0);
+  document.getElementById('dash-meta').textContent = `${cod} · ${mod.horas}h · ${mod.ra.length} RA · ${totalCE} CE`;
+  // Stats
+  const cob = S.cob[cod];
+  const conA = mod.ra.reduce((s,ra)=>s+ra.ce.filter(ce=>cob[ra.id][ce.id].a).length,0);
+  const conI = mod.ra.reduce((s,ra)=>s+ra.ce.filter(ce=>cob[ra.id][ce.id].i).length,0);
+  const pA = Math.round(conA/totalCE*100);
+  document.getElementById('dash-stats').innerHTML = `
+    <div class="dash-stat"><div class="dash-stat-num">${mod.ra.length}</div><div class="dash-stat-lbl">RA</div></div>
+    <div class="dash-stat"><div class="dash-stat-num">${totalCE}</div><div class="dash-stat-lbl">CE</div></div>
+    <div class="dash-stat"><div class="dash-stat-num ${pA===100?'ok':pA>0?'warn':'bad'}">${pA}%</div><div class="dash-stat-lbl">Auditado</div></div>`;
   // Nav label
   const lbl = document.getElementById('app-mod-label');
   lbl.textContent = mod.nombre; lbl.style.display='block';
-  // Show module
-  document.getElementById('app-empty').style.display = 'none';
-  const appMod = document.getElementById('app-module');
-  appMod.style.display = 'flex';
   closeTool();
 }
 
@@ -927,7 +1028,7 @@ function openParents(el) {
 // ══════════════════════════════════════
 function openTool(tool) {
   S.tool = tool;
-  document.getElementById('tools-wrap').style.display = 'none';
+  document.getElementById('app-dashboard').style.display = 'none';
   document.querySelectorAll('.workspace').forEach(w=>w.classList.remove('active'));
   document.getElementById(`ws-${tool}`).classList.add('active');
   ({sda:renderSdA,diagnostico:renderDiagnostico,cobertura:renderCobertura,rubrica:renderRubrica,revision:renderRevision})[tool]?.();
@@ -935,8 +1036,20 @@ function openTool(tool) {
 
 function closeTool() {
   S.tool = null;
-  document.getElementById('tools-wrap').style.display = '';
+  document.getElementById('app-dashboard').style.display = '';
   document.querySelectorAll('.workspace').forEach(w=>w.classList.remove('active'));
+  // Refresh the % auditado stat
+  if (S.mod) {
+    const cob=S.cob[S.cod], mod=S.mod;
+    const tot=mod.ra.reduce((s,ra)=>s+ra.ce.length,0);
+    const conA=mod.ra.reduce((s,ra)=>s+ra.ce.filter(ce=>cob[ra.id][ce.id].a).length,0);
+    const pA=Math.round(conA/tot*100);
+    const statsEl=document.getElementById('dash-stats');
+    if(statsEl) statsEl.innerHTML=`
+      <div class="dash-stat"><div class="dash-stat-num">${mod.ra.length}</div><div class="dash-stat-lbl">RA</div></div>
+      <div class="dash-stat"><div class="dash-stat-num">${tot}</div><div class="dash-stat-lbl">CE</div></div>
+      <div class="dash-stat"><div class="dash-stat-num ${pA===100?'ok':pA>0?'warn':'bad'}">${pA}%</div><div class="dash-stat-lbl">Auditado</div></div>`;
+  }
 }
 
 // ══════════════════════════════════════
