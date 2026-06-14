@@ -568,7 +568,10 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
     <li><button onclick="goto('tech-proyectos')">Innovación FP</button></li>
     <li><button onclick="goto('experiencia')">Experiencia</button></li>
   </ul>
-  <button id="nav-cta" class="nav-contact" onclick="goto('contacto')" style="display:none">Contactar</button>
+  <div style="display:flex;align-items:center;gap:8px">
+    <a href="proyectofp/" target="_blank" style="font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:#EEEDFE;color:#534AB7;text-decoration:none;border:1.5px solid #AFA9EC;transition:all .15s;white-space:nowrap" onmouseover="this.style.background='#534AB7';this.style.color='white'" onmouseout="this.style.background='#EEEDFE';this.style.color='#534AB7'">⚙ ProyectoFP</a>
+    <button id="nav-cta" class="nav-contact" onclick="goto('contacto')">Contactar</button>
+  </div>
   
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -589,6 +592,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
     <button class="mob-link" onclick="goto('tech-proyectos')">Innovación FP</button>
     <button class="mob-link" onclick="goto('experiencia')">Experiencia</button>
     <button class="mob-link" onclick="goto('contacto')" style="color:var(--accent)">Contacto</button>
+    <a href="proyectofp/" target="_blank" class="mob-link" style="color:#534AB7;font-weight:700;text-decoration:none;display:block">⚙ ProyectoFP</a>
   </div>
 </div>
 
@@ -602,6 +606,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
       <div class="hero-actions">
         <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
         <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
+        <a href="proyectofp/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:10px 18px;border-radius:9px;background:#EEEDFE;color:#534AB7;text-decoration:none;border:1.5px solid #AFA9EC;transition:all .15s" onmouseover="this.style.background='#534AB7';this.style.color='white'" onmouseout="this.style.background='#EEEDFE';this.style.color='#534AB7'">⚙ ProyectoFP →</a>
       </div>
       <div class="hero-evidence">
         <div class="ev-card"><div class="ev-num">+25</div><div class="ev-label">Centros educativos</div><div class="ev-sub">Región de Murcia</div></div>
@@ -1580,8 +1585,8 @@ srLoad2(document.querySelector('.sr-btn2'),'empresa');
 const nav = document.getElementById('main-nav');
 const navCta = document.getElementById('nav-cta');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) { nav.classList.add('scrolled'); navCta.style.display = 'inline-block'; }
-  else { nav.classList.remove('scrolled'); navCta.style.display = 'none'; }
+  if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+  else { nav.classList.remove('scrolled'); }
 });
 const burger = document.getElementById('hamburger');
 const mob = document.getElementById('mobile-menu');
