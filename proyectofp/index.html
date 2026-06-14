@@ -160,6 +160,7 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .sidebar-level.fp .sidebar-level-pill{background:var(--blue-bg);color:var(--blue)}
 .sidebar-level.bach .sidebar-level-pill{background:var(--violet-bg);color:var(--violet)}
 .sidebar-level.eso .sidebar-level-pill{background:var(--green-bg);color:var(--green)}
+.sidebar-level.tx .sidebar-level-pill{background:var(--amber-bg);color:var(--amber)}
 .sidebar-level-name{font-size:12px;font-weight:600;color:var(--ink2);flex:1}
 .sidebar-level .chev{font-size:8px;color:var(--ink4);transition:transform .18s;flex-shrink:0}
 .sidebar-level.open .chev{transform:rotate(90deg)}
@@ -198,6 +199,7 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .dash-pill.fp{background:var(--blue-bg);color:var(--blue)}
 .dash-pill.bach{background:var(--violet-bg);color:var(--violet)}
 .dash-pill.eso{background:var(--green-bg);color:var(--green)}
+.dash-pill.tx{background:var(--amber-bg);color:var(--amber)}
 .dash-pill.ciclo{background:var(--paper);color:var(--ink3);border:1px solid var(--line)}
 .dash-pill.rd{background:var(--paper);color:var(--ink4);border:1px solid var(--line);font-weight:500}
 .dash-title{font-size:20px;font-weight:800;letter-spacing:-.025em;color:var(--ink);line-height:1.2}
@@ -240,6 +242,9 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .dtool-desc{font-size:12px;color:var(--ink3);line-height:1.5;margin-bottom:8px}
 .dtool-items{display:flex;gap:6px;flex-wrap:wrap}
 .dtool-item{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--paper);color:var(--ink3);border:1px solid var(--line)}
+.dtool-norm .dtool-accent{background:#0891B2}
+.dtool-norm:hover{border-color:#A5F3FC;box-shadow:0 4px 20px rgba(8,145,178,.1)}
+.dtool-norm .dtool-icon-wrap{background:#ECFEFF}
 .dtool-arrow{font-size:18px;color:var(--line2);flex-shrink:0;transition:all .18s;margin-left:8px}
 .dtool:hover .dtool-arrow{color:var(--ink3);transform:translateX(3px)}
 
@@ -437,7 +442,7 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
       <button class="btn-secondary" onclick="document.getElementById('ba-section').scrollIntoView({behavior:'smooth'})">Ver ejemplo real</button>
     </div>
     <div class="stats-bar">
-      <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Módulos y materias</div></div>
+      <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">Módulos y materias</div></div>
       <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Herramientas integradas</div></div>
       <div class="stat-item"><div class="stat-num">0€</div><div class="stat-label">Coste, siempre</div></div>
       <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">En tu navegador</div></div>
@@ -551,17 +556,30 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
       <p class="section-sub">Todos los módulos incluyen RA y CE extraídos de los Reales Decretos oficiales.</p>
       <div class="modulos-grid">
         <div class="mod-card"><span class="mod-card-level fp">FP GM</span><div class="mod-card-title">Empresa en el Aula</div><div class="mod-card-ciclo">Gestión Administrativa · 0437</div></div>
-        <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Gestión Documentación Jurídica</div><div class="mod-card-ciclo">Administración y Finanzas · 0647</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GM</span><div class="mod-card-title">Tratamiento Documentación Contable</div><div class="mod-card-ciclo">Gestión Administrativa · 0438</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GM</span><div class="mod-card-title">Comunicación Empresarial y Atención al Cliente</div><div class="mod-card-ciclo">Gestión Administrativa · 0439</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GM</span><div class="mod-card-title">Operaciones Administrativas de RRHH</div><div class="mod-card-ciclo">Gestión Administrativa · 0440</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GM</span><div class="mod-card-title">Técnica Contable</div><div class="mod-card-ciclo">Gestión Administrativa · 0441</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GM</span><div class="mod-card-title">Operaciones Auxiliares de Gestión de Tesorería</div><div class="mod-card-ciclo">Gestión Administrativa · 0442</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Gestión Documentación Jurídica y Empresarial</div><div class="mod-card-ciclo">Administración y Finanzas · 0647</div></div>
         <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Recursos Humanos y RSC</div><div class="mod-card-ciclo">Administración y Finanzas · 0648</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Ofimática y Proceso de la Información</div><div class="mod-card-ciclo">Administración y Finanzas · 0649</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Proceso Integral de la Actividad Comercial</div><div class="mod-card-ciclo">Administración y Finanzas · 0650</div></div>
         <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Gestión Financiera</div><div class="mod-card-ciclo">Administración y Finanzas · 0651</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Contabilidad y Fiscalidad</div><div class="mod-card-ciclo">Administración y Finanzas · 0652</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Gestión Logística y Comercial</div><div class="mod-card-ciclo">Administración y Finanzas · 0653</div></div>
+        <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Planificación de Medios</div><div class="mod-card-ciclo">Marketing y Publicidad · 0925</div></div>
         <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Investigación de Mercados</div><div class="mod-card-ciclo">Marketing y Publicidad · 0923</div></div>
         <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Marketing Digital</div><div class="mod-card-ciclo">Marketing y Publicidad · 0924</div></div>
         <div class="mod-card"><span class="mod-card-level fp">FP GS</span><div class="mod-card-title">Marketing en el Punto de Venta</div><div class="mod-card-ciclo">Gestión de Ventas · 0926</div></div>
         <div class="mod-card"><span class="mod-card-level bach">BACH</span><div class="mod-card-title">Economía</div><div class="mod-card-ciclo">1º Bachillerato · RD 243/2022</div></div>
         <div class="mod-card"><span class="mod-card-level bach">BACH</span><div class="mod-card-title">Economía de la Empresa</div><div class="mod-card-ciclo">2º Bachillerato · RD 243/2022</div></div>
-        <div class="mod-card"><span class="mod-card-level bach">BACH</span><div class="mod-card-title">Fundamentos de Administración</div><div class="mod-card-ciclo">2º Bachillerato · RD 243/2022</div></div>
+        <div class="mod-card"><span class="mod-card-level bach">BACH</span><div class="mod-card-title">Fundamentos de Administración y Gestión</div><div class="mod-card-ciclo">2º Bachillerato · RD 243/2022</div></div>
         <div class="mod-card"><span class="mod-card-level eso">ESO</span><div class="mod-card-title">Economía</div><div class="mod-card-ciclo">4º ESO · RD 217/2022</div></div>
         <div class="mod-card"><span class="mod-card-level eso">ESO</span><div class="mod-card-title">Empresa e Iniciativa Emprendedora</div><div class="mod-card-ciclo">4º ESO · RD 217/2022</div></div>
+        <div class="mod-card" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="mod-card-level" style="background:var(--amber-bg);color:var(--amber)">TX</span><div class="mod-card-title">Digitalización aplicada</div><div class="mod-card-ciclo">Transversal · LO 3/2022</div></div>
+        <div class="mod-card" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="mod-card-level" style="background:var(--amber-bg);color:var(--amber)">TX</span><div class="mod-card-title">IPE I y IPE II</div><div class="mod-card-ciclo">Transversal · RD 659/2023</div></div>
+        <div class="mod-card" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="mod-card-level" style="background:var(--amber-bg);color:var(--amber)">TX</span><div class="mod-card-title">Sostenibilidad aplicada</div><div class="mod-card-ciclo">Transversal · LO 3/2022</div></div>
       </div>
     </div>
   </section>
@@ -705,6 +723,23 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
               </div>
             </div>
 
+            <div class="dtool dtool-norm" onclick="openTool('normativa')">
+              <div class="dtool-accent"></div>
+              <div class="dtool-inner">
+                <div class="dtool-icon-wrap"><span class="dtool-icon">⚖️</span></div>
+                <div class="dtool-content">
+                  <div class="dtool-title">Marco normativo</div>
+                  <div class="dtool-desc">Normativa educativa general y normativa específica del módulo activo. LOMLOE, LO 3/2022, RD del ciclo y decretos de Murcia.</div>
+                  <div class="dtool-items">
+                    <span class="dtool-item">Marco general</span>
+                    <span class="dtool-item">RD del módulo</span>
+                    <span class="dtool-item">Murcia</span>
+                  </div>
+                </div>
+                <div class="dtool-arrow">→</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div><!-- /dashboard -->
@@ -760,6 +795,16 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
         <div class="ws-body" id="body-revision"></div>
       </div>
 
+      <div class="workspace" id="ws-normativa">
+        <div class="ws-hdr">
+          <button class="ws-back" onclick="closeTool()">← Herramientas</button>
+          <span class="ws-title">Marco normativo</span>
+          <span class="ws-spacer"></span>
+          <button class="ws-export" onclick="exportarNormativa()">⬇ Exportar PDF</button>
+        </div>
+        <div class="ws-body" id="body-normativa"></div>
+      </div>
+
     </main>
   </div>
 
@@ -785,6 +830,38 @@ const DATA = {
               {id:"RA3",texto:"Gestiona la contabilidad registrando las operaciones económicas.",ce:[{id:"CE3a",texto:"Reconoce el Plan General de Contabilidad y su estructura."},{id:"CE3b",texto:"Registra asientos contables de operaciones habituales."},{id:"CE3c",texto:"Realiza operaciones de cierre del ejercicio contable."},{id:"CE3d",texto:"Elabora las cuentas anuales básicas."},{id:"CE3e",texto:"Utiliza aplicaciones informáticas de contabilidad."},{id:"CE3f",texto:"Valora la importancia de la información contable para la toma de decisiones."}]},
               {id:"RA4",texto:"Gestiona los recursos humanos aplicando la legislación laboral.",ce:[{id:"CE4a",texto:"Identifica los tipos de contratos laborales más habituales."},{id:"CE4b",texto:"Elabora nóminas con sus elementos y deducciones."},{id:"CE4c",texto:"Realiza los trámites de alta y baja en la Seguridad Social."},{id:"CE4d",texto:"Reconoce la normativa sobre prevención de riesgos laborales."},{id:"CE4e",texto:"Gestiona las obligaciones fiscales relacionadas con los trabajadores."}]},
               {id:"RA5",texto:"Elabora y presenta información de la empresa utilizando herramientas ofimáticas.",ce:[{id:"CE5a",texto:"Elabora informes y memorias con procesadores de texto."},{id:"CE5b",texto:"Crea hojas de cálculo para el análisis de datos empresariales."},{id:"CE5c",texto:"Diseña presentaciones para comunicar resultados."},{id:"CE5d",texto:"Utiliza herramientas de comunicación digital en el entorno empresarial."},{id:"CE5e",texto:"Valora la importancia de la comunicación efectiva en la empresa."}]}
+            ]},
+          "0438": { nombre:"Tratamiento de la Documentación Contable", horas:192,
+            ra:[
+              {id:"RA1",texto:"Elabora documentos contables básicos identificando los elementos que los integran.",ce:[{id:"CE1a",texto:"Reconoce los conceptos de patrimonio, obligaciones y derechos de la empresa."},{id:"CE1b",texto:"Identifica los elementos patrimoniales y los agrupa según su función."},{id:"CE1c",texto:"Distingue las masas patrimoniales del activo, pasivo y patrimonio neto."},{id:"CE1d",texto:"Formaliza el inventario de la empresa en un momento determinado."},{id:"CE1e",texto:"Elabora balances de situación a partir de listados de elementos patrimoniales."}]},
+              {id:"RA2",texto:"Registra operaciones contables aplicando la metodología contable y los principios del PGC.",ce:[{id:"CE2a",texto:"Reconoce el método de partida doble y la ecuación de equilibrio contable."},{id:"CE2b",texto:"Identifica las cuentas contables del PGC aplicable a la empresa."},{id:"CE2c",texto:"Registra en el libro diario las operaciones habituales de compraventa."},{id:"CE2d",texto:"Registra las operaciones de cobros y pagos en efectivo y mediante documentos."},{id:"CE2e",texto:"Aplica el IVA en las operaciones de compraventa registradas contablemente."},{id:"CE2f",texto:"Traslada los asientos del diario al libro mayor."}]},
+              {id:"RA3",texto:"Determina el resultado del ejercicio mediante las operaciones de regularización y cierre.",ce:[{id:"CE3a",texto:"Identifica las cuentas de gastos e ingresos y las relaciona con el resultado."},{id:"CE3b",texto:"Realiza los asientos de regularización de existencias."},{id:"CE3c",texto:"Calcula el resultado del ejercicio mediante la cuenta de pérdidas y ganancias."},{id:"CE3d",texto:"Elabora el asiento de cierre del ejercicio económico."},{id:"CE3e",texto:"Reabre la contabilidad al inicio del ejercicio siguiente."}]},
+              {id:"RA4",texto:"Utiliza aplicaciones informáticas de contabilidad reconociendo sus funciones.",ce:[{id:"CE4a",texto:"Instala y configura una aplicación de contabilidad adaptada a las necesidades de la empresa."},{id:"CE4b",texto:"Introduce el plan de cuentas y los saldos iniciales en la aplicación."},{id:"CE4c",texto:"Registra las operaciones contables utilizando la aplicación informática."},{id:"CE4d",texto:"Obtiene e interpreta los informes y estados contables generados por la aplicación."},{id:"CE4e",texto:"Realiza copias de seguridad y aplica medidas de seguridad en el tratamiento de datos contables."}]}
+            ]},
+          "0439": { nombre:"Comunicación Empresarial y Atención al Cliente", horas:160,
+            ra:[
+              {id:"RA1",texto:"Aplica técnicas de comunicación oral en situaciones profesionales.",ce:[{id:"CE1a",texto:"Identifica los elementos del proceso de comunicación y los factores que lo condicionan."},{id:"CE1b",texto:"Diferencia los tipos de comunicación oral utilizados en el entorno empresarial."},{id:"CE1c",texto:"Aplica técnicas de escucha activa y de retroalimentación en conversaciones profesionales."},{id:"CE1d",texto:"Utiliza el lenguaje verbal y no verbal de forma adecuada al contexto profesional."},{id:"CE1e",texto:"Participa en simulaciones de atención telefónica aplicando los protocolos establecidos."}]},
+              {id:"RA2",texto:"Redacta documentos de comunicación escrita aplicando las normas ortográficas y de estilo.",ce:[{id:"CE2a",texto:"Aplica las normas ortográficas y gramaticales en la redacción de documentos empresariales."},{id:"CE2b",texto:"Redacta cartas comerciales respetando su estructura y formato."},{id:"CE2c",texto:"Elabora informes, memorandos y actas con la estructura adecuada."},{id:"CE2d",texto:"Utiliza procesadores de texto para la producción de documentos empresariales."},{id:"CE2e",texto:"Adapta el registro y tono al tipo de documento y destinatario."}]},
+              {id:"RA3",texto:"Atiende a clientes y usuarios aplicando técnicas de comunicación y protocolos de calidad.",ce:[{id:"CE3a",texto:"Identifica las necesidades y expectativas de los clientes en diferentes situaciones."},{id:"CE3b",texto:"Aplica técnicas de acogida y atención al cliente presencial y telefónica."},{id:"CE3c",texto:"Gestiona reclamaciones y quejas siguiendo los procedimientos establecidos."},{id:"CE3d",texto:"Valora la importancia de la imagen corporativa en la atención al cliente."},{id:"CE3e",texto:"Reconoce los derechos del consumidor y la normativa de protección aplicable."}]},
+              {id:"RA4",texto:"Utiliza sistemas de gestión de la información en los flujos de información empresarial.",ce:[{id:"CE4a",texto:"Identifica los sistemas de información y comunicación utilizados en la empresa."},{id:"CE4b",texto:"Gestiona el correo electrónico corporativo aplicando criterios de organización y seguridad."},{id:"CE4c",texto:"Utiliza herramientas de trabajo colaborativo en entornos digitales."},{id:"CE4d",texto:"Aplica criterios de seguridad y confidencialidad en el tratamiento de la información."},{id:"CE4e",texto:"Organiza y archiva la documentación generada en la actividad administrativa."}]}
+            ]},
+          "0440": { nombre:"Operaciones Administrativas de Recursos Humanos", horas:96,
+            ra:[
+              {id:"RA1",texto:"Participa en la selección de personal aplicando las técnicas y procedimientos establecidos.",ce:[{id:"CE1a",texto:"Identifica las fuentes de reclutamiento externas e internas más utilizadas."},{id:"CE1b",texto:"Elabora ofertas de empleo a partir de la descripción del puesto de trabajo."},{id:"CE1c",texto:"Preselecciona candidatos aplicando los criterios definidos en el perfil."},{id:"CE1d",texto:"Prepara la documentación necesaria para el proceso de selección."},{id:"CE1e",texto:"Reconoce las técnicas de selección: pruebas, entrevistas y dinámicas de grupo."}]},
+              {id:"RA2",texto:"Administra documentación derivada de los procesos de contratación laboral.",ce:[{id:"CE2a",texto:"Identifica los elementos esenciales del contrato de trabajo."},{id:"CE2b",texto:"Reconoce las modalidades de contratación laboral vigentes y sus requisitos."},{id:"CE2c",texto:"Cumplimenta contratos de trabajo de las modalidades más frecuentes."},{id:"CE2d",texto:"Realiza los trámites de alta, baja y variación de datos en la Seguridad Social."},{id:"CE2e",texto:"Gestiona las comunicaciones con los organismos de la Administración Laboral."}]},
+              {id:"RA3",texto:"Elabora nóminas y documentos de cotización aplicando la legislación laboral y fiscal.",ce:[{id:"CE3a",texto:"Identifica los conceptos que integran la nómina: devengos y deducciones."},{id:"CE3b",texto:"Calcula el salario bruto a partir de los conceptos salariales y extrasalariales."},{id:"CE3c",texto:"Aplica las retenciones de IRPF y las cotizaciones a la Seguridad Social."},{id:"CE3d",texto:"Cumplimenta el recibo de salarios con corrección formal y numérica."},{id:"CE3e",texto:"Elabora los documentos de cotización TC1 y TC2."}]}
+            ]},
+          "0441": { nombre:"Técnica Contable", horas:128,
+            ra:[
+              {id:"RA1",texto:"Reconoce los elementos patrimoniales de la empresa clasificándolos según el PGC.",ce:[{id:"CE1a",texto:"Identifica el concepto de patrimonio y sus elementos constitutivos."},{id:"CE1b",texto:"Diferencia el activo corriente y no corriente, y el pasivo corriente y no corriente."},{id:"CE1c",texto:"Reconoce las cuentas del PGC y su estructura en grupos y subgrupos."},{id:"CE1d",texto:"Elabora balances de situación sencillos a partir de datos patrimoniales."},{id:"CE1e",texto:"Valora la importancia del equilibrio patrimonial para la estabilidad de la empresa."}]},
+              {id:"RA2",texto:"Registra en el diario las operaciones económicas más habituales de la empresa.",ce:[{id:"CE2a",texto:"Aplica el método de partida doble en el registro de operaciones contables."},{id:"CE2b",texto:"Registra operaciones de compraventa con y sin IVA."},{id:"CE2c",texto:"Anota en el diario los cobros y pagos en efectivo y mediante documentos bancarios."},{id:"CE2d",texto:"Registra las operaciones de nóminas, amortizaciones y periodificaciones básicas."},{id:"CE2e",texto:"Traslada los apuntes del diario al mayor y obtiene los saldos de las cuentas."}]},
+              {id:"RA3",texto:"Obtiene la información contable básica de la empresa a partir de los libros contables.",ce:[{id:"CE3a",texto:"Elabora balances de comprobación de sumas y saldos."},{id:"CE3b",texto:"Realiza los asientos de regularización y cierre del ejercicio."},{id:"CE3c",texto:"Obtiene el resultado del ejercicio a través de la cuenta de pérdidas y ganancias."},{id:"CE3d",texto:"Interpreta los datos contables para evaluar la situación económico-financiera básica."},{id:"CE3e",texto:"Utiliza hojas de cálculo para el registro y análisis de datos contables."}]}
+            ]},
+          "0442": { nombre:"Operaciones Auxiliares de Gestión de Tesorería", horas:96,
+            ra:[
+              {id:"RA1",texto:"Realiza operaciones auxiliares de cobro y pago reconociendo los documentos utilizados.",ce:[{id:"CE1a",texto:"Identifica los medios de cobro y pago utilizados habitualmente en la empresa."},{id:"CE1b",texto:"Cumplimenta cheques, pagarés y recibos con los datos requeridos."},{id:"CE1c",texto:"Realiza el arqueo de caja y detecta posibles descuadres."},{id:"CE1d",texto:"Gestiona el fondo fijo de caja aplicando los procedimientos establecidos."},{id:"CE1e",texto:"Reconoce las medidas de seguridad aplicables al manejo de efectivo."}]},
+              {id:"RA2",texto:"Tramita documentos bancarios básicos identificando los servicios financieros de uso habitual.",ce:[{id:"CE2a",texto:"Identifica los productos y servicios bancarios básicos utilizados por las empresas."},{id:"CE2b",texto:"Cumplimenta transferencias, remesas y órdenes de pago."},{id:"CE2c",texto:"Realiza la conciliación bancaria comparando el extracto con los registros contables."},{id:"CE2d",texto:"Detecta y corrige errores en los documentos bancarios."},{id:"CE2e",texto:"Utiliza la banca electrónica para la gestión de operaciones de tesorería."}]},
+              {id:"RA3",texto:"Elabora documentación auxiliar de tesorería aplicando herramientas informáticas.",ce:[{id:"CE3a",texto:"Registra los movimientos de caja y bancos en libros auxiliares."},{id:"CE3b",texto:"Elabora el libro de caja con los cobros y pagos del período."},{id:"CE3c",texto:"Utiliza hojas de cálculo para el control de tesorería."},{id:"CE3d",texto:"Archiva la documentación de tesorería siguiendo criterios de orden y seguridad."},{id:"CE3e",texto:"Aplica procedimientos de control interno en la gestión de tesorería."}]}
             ]}
         }}
     }
@@ -807,16 +884,49 @@ const DATA = {
               {id:"RA4",texto:"Aplica técnicas de motivación y gestión del clima laboral.",ce:[{id:"CE4a",texto:"Identifica las principales teorías de la motivación laboral."},{id:"CE4b",texto:"Aplica técnicas de diagnóstico del clima laboral."},{id:"CE4c",texto:"Propone medidas de mejora del clima organizacional."},{id:"CE4d",texto:"Valora los sistemas de incentivos y retribución variable."},{id:"CE4e",texto:"Reconoce la influencia del liderazgo en la motivación del equipo."}]},
               {id:"RA5",texto:"Caracteriza la responsabilidad social corporativa.",ce:[{id:"CE5a",texto:"Define el concepto de RSC y sus dimensiones."},{id:"CE5b",texto:"Identifica los grupos de interés o stakeholders de la empresa."},{id:"CE5c",texto:"Valora las memorias de sostenibilidad como instrumento de transparencia."},{id:"CE5d",texto:"Analiza buenas prácticas de RSC en empresas reales."},{id:"CE5e",texto:"Reconoce la relación entre RSC, reputación corporativa y competitividad."},{id:"CE5f",texto:"Identifica los marcos normativos y estándares internacionales de RSC."}]}
             ]},
+          "0649": { nombre:"Ofimática y Proceso de la Información", horas:192,
+            ra:[
+              {id:"RA1",texto:"Utiliza aplicaciones de tratamiento de textos reconociendo y aplicando las opciones avanzadas.",ce:[{id:"CE1a",texto:"Aplica opciones avanzadas de formato de párrafo, página y sección."},{id:"CE1b",texto:"Crea y aplica estilos y temas para homogeneizar documentos."},{id:"CE1c",texto:"Diseña plantillas adaptadas a las necesidades de la organización."},{id:"CE1d",texto:"Genera documentos combinados vinculando el procesador con bases de datos."},{id:"CE1e",texto:"Utiliza las opciones de revisión, control de cambios y comentarios."},{id:"CE1f",texto:"Inserta y gestiona objetos: tablas, gráficos, imágenes y referencias cruzadas."}]},
+              {id:"RA2",texto:"Elabora hojas de cálculo utilizando las funciones avanzadas para el tratamiento de datos.",ce:[{id:"CE2a",texto:"Aplica funciones avanzadas: lógicas, búsqueda, estadísticas y financieras."},{id:"CE2b",texto:"Crea y gestiona bases de datos en hojas de cálculo con filtros y ordenaciones."},{id:"CE2c",texto:"Elabora gráficos dinámicos representativos de los datos analizados."},{id:"CE2d",texto:"Utiliza tablas dinámicas para el análisis y síntesis de grandes volúmenes de datos."},{id:"CE2e",texto:"Protege hojas y libros y configura el acceso compartido."},{id:"CE2f",texto:"Automatiza tareas repetitivas mediante macros sencillas."}]},
+              {id:"RA3",texto:"Gestiona bases de datos relacionales utilizando las herramientas disponibles.",ce:[{id:"CE3a",texto:"Diseña la estructura de una base de datos relacional identificando tablas y relaciones."},{id:"CE3b",texto:"Crea tablas definiendo campos, tipos de datos y propiedades."},{id:"CE3c",texto:"Establece relaciones entre tablas garantizando la integridad referencial."},{id:"CE3d",texto:"Diseña consultas de selección, acción y referencias cruzadas."},{id:"CE3e",texto:"Elabora formularios e informes para la entrada y presentación de datos."}]},
+              {id:"RA4",texto:"Utiliza aplicaciones de presentación y herramientas de trabajo colaborativo en la nube.",ce:[{id:"CE4a",texto:"Diseña presentaciones con estructura lógica y criterios estéticos profesionales."},{id:"CE4b",texto:"Aplica animaciones, transiciones y elementos multimedia en las presentaciones."},{id:"CE4c",texto:"Utiliza herramientas colaborativas en la nube para la gestión documental compartida."},{id:"CE4d",texto:"Aplica criterios de seguridad en el uso de aplicaciones y servicios en la nube."},{id:"CE4e",texto:"Organiza y comparte información aplicando permisos y niveles de acceso."}]}
+            ]},
+          "0650": { nombre:"Proceso Integral de la Actividad Comercial", horas:96,
+            ra:[
+              {id:"RA1",texto:"Tramita pedidos y albaranes reconociendo los documentos y procesos de compraventa.",ce:[{id:"CE1a",texto:"Identifica las fases del proceso de compraventa y los documentos asociados."},{id:"CE1b",texto:"Cumplimenta solicitudes de oferta, pedidos y albaranes con corrección."},{id:"CE1c",texto:"Controla el estado de los pedidos y gestiona incidencias en el aprovisionamiento."},{id:"CE1d",texto:"Aplica las condiciones comerciales pactadas: descuentos, rappels y portes."},{id:"CE1e",texto:"Utiliza aplicaciones informáticas para la gestión de compras y ventas."}]},
+              {id:"RA2",texto:"Elabora facturas de compraventa aplicando la normativa fiscal vigente.",ce:[{id:"CE2a",texto:"Identifica los elementos obligatorios de la factura según la normativa de facturación."},{id:"CE2b",texto:"Calcula las bases imponibles y aplica los tipos de IVA correspondientes."},{id:"CE2c",texto:"Elabora facturas ordinarias, rectificativas y recapitulativas."},{id:"CE2d",texto:"Gestiona el registro de facturas emitidas y recibidas."},{id:"CE2e",texto:"Reconoce la obligatoriedad de la factura electrónica y sus requisitos."}]},
+              {id:"RA3",texto:"Registra contablemente las operaciones de compraventa aplicando el PGC.",ce:[{id:"CE3a",texto:"Registra las operaciones de compras y ventas con sus correspondientes apuntes contables."},{id:"CE3b",texto:"Contabiliza las devoluciones, descuentos y rappels sobre compras y ventas."},{id:"CE3c",texto:"Registra el IVA soportado y repercutido y calcula la liquidación periódica."},{id:"CE3d",texto:"Contabiliza las existencias al cierre del ejercicio mediante los asientos de regularización."},{id:"CE3e",texto:"Utiliza aplicaciones informáticas de contabilidad para el registro de operaciones comerciales."}]},
+              {id:"RA4",texto:"Gestiona el cobro y pago de las operaciones comerciales utilizando los medios disponibles.",ce:[{id:"CE4a",texto:"Identifica los instrumentos de cobro y pago: efectivo, transferencia, cheque y pagaré."},{id:"CE4b",texto:"Gestiona el descuento de efectos comerciales y calcula sus costes financieros."},{id:"CE4c",texto:"Realiza el seguimiento de cobros pendientes y gestiona los impagados."},{id:"CE4d",texto:"Contabiliza las operaciones de cobro y pago y sus incidencias."},{id:"CE4e",texto:"Aplica procedimientos de control de tesorería y conciliación bancaria."}]}
+            ]},
           "0651": { nombre:"Gestión Financiera", horas:96,
             ra:[
               {id:"RA1",texto:"Selecciona fuentes de financiación empresarial.",ce:[{id:"CE1a",texto:"Identifica las necesidades de financiación según el ciclo de vida de la empresa."},{id:"CE1b",texto:"Diferencia las fuentes de financiación propias y ajenas."},{id:"CE1c",texto:"Caracteriza los productos financieros básicos: préstamos, créditos y leasing."},{id:"CE1d",texto:"Valora las ventajas e inconvenientes de cada fuente de financiación."},{id:"CE1e",texto:"Reconoce las líneas de financiación pública para empresas."}]},
               {id:"RA2",texto:"Elabora presupuestos de tesorería.",ce:[{id:"CE2a",texto:"Reconoce la importancia de la planificación financiera a corto plazo."},{id:"CE2b",texto:"Identifica los cobros y pagos que integran el presupuesto de tesorería."},{id:"CE2c",texto:"Elabora el presupuesto de tesorería con las herramientas disponibles."},{id:"CE2d",texto:"Calcula las necesidades de financiación o posibilidades de inversión."},{id:"CE2e",texto:"Propone medidas correctoras ante las desviaciones detectadas."}]},
               {id:"RA3",texto:"Analiza la viabilidad de inversiones empresariales.",ce:[{id:"CE3a",texto:"Identifica los elementos que determinan la inversión empresarial."},{id:"CE3b",texto:"Calcula el VAN y el TIR de un proyecto de inversión."},{id:"CE3c",texto:"Aplica el método del período de recuperación o payback."},{id:"CE3d",texto:"Compara proyectos de inversión alternativos."},{id:"CE3e",texto:"Valora el riesgo asociado a las decisiones de inversión."}]}
+            ]},
+          "0652": { nombre:"Contabilidad y Fiscalidad", horas:96,
+            ra:[
+              {id:"RA1",texto:"Elabora la documentación contable del inmovilizado aplicando los criterios del PGC.",ce:[{id:"CE1a",texto:"Clasifica el inmovilizado material, intangible e inversiones inmobiliarias."},{id:"CE1b",texto:"Registra las adquisiciones y bajas de inmovilizado con sus correspondientes asientos."},{id:"CE1c",texto:"Calcula y registra la amortización del inmovilizado aplicando los métodos admitidos."},{id:"CE1d",texto:"Contabiliza las pérdidas por deterioro y las provisiones sobre inmovilizado."},{id:"CE1e",texto:"Elabora el cuadro de amortización y los registros auxiliares del inmovilizado."}]},
+              {id:"RA2",texto:"Registra las operaciones de financiación ajena reconociendo los instrumentos financieros.",ce:[{id:"CE2a",texto:"Identifica los instrumentos de financiación ajena y sus características contables."},{id:"CE2b",texto:"Contabiliza la obtención y devolución de préstamos bancarios."},{id:"CE2c",texto:"Registra las operaciones de leasing y renting según los criterios del PGC."},{id:"CE2d",texto:"Contabiliza los gastos financieros derivados de la financiación ajena."},{id:"CE2e",texto:"Elabora cuadros de amortización de préstamos mediante el método francés."}]},
+              {id:"RA3",texto:"Determina el resultado contable y fiscal aplicando las normas del Impuesto de Sociedades.",ce:[{id:"CE3a",texto:"Obtiene el resultado contable antes de impuestos mediante la cuenta de pérdidas y ganancias."},{id:"CE3b",texto:"Realiza los ajustes extracontables por diferencias permanentes y temporarias."},{id:"CE3c",texto:"Calcula la base imponible y la cuota del Impuesto sobre Sociedades."},{id:"CE3d",texto:"Registra contablemente el gasto por impuesto sobre beneficios."},{id:"CE3e",texto:"Cumplimenta el modelo 200 de declaración del Impuesto sobre Sociedades."}]},
+              {id:"RA4",texto:"Liquida el IVA y otros impuestos indirectos cumplimentando las declaraciones fiscales.",ce:[{id:"CE4a",texto:"Identifica los regímenes especiales de IVA y sus obligaciones formales."},{id:"CE4b",texto:"Calcula la prorrata general y especial en empresas con actividades mixtas."},{id:"CE4c",texto:"Cumplimenta los modelos 303 y 390 de liquidación e informativa de IVA."},{id:"CE4d",texto:"Gestiona las declaraciones de IRPF de retenciones: modelos 111 y 190."},{id:"CE4e",texto:"Reconoce el calendario fiscal y las obligaciones periódicas de la empresa."}]}
+            ]},
+          "0653": { nombre:"Gestión Logística y Comercial", horas:96,
+            ra:[
+              {id:"RA1",texto:"Gestiona el aprovisionamiento de la empresa aplicando criterios de optimización.",ce:[{id:"CE1a",texto:"Identifica los objetivos de la función de aprovisionamiento en la cadena de valor."},{id:"CE1b",texto:"Calcula el stock mínimo, máximo, de seguridad y el punto de pedido."},{id:"CE1c",texto:"Aplica el modelo de lote económico de compra (EOQ) para optimizar los pedidos."},{id:"CE1d",texto:"Selecciona proveedores aplicando criterios de calidad, precio y servicio."},{id:"CE1e",texto:"Negocia condiciones comerciales con proveedores en situaciones simuladas."}]},
+              {id:"RA2",texto:"Gestiona el almacén aplicando técnicas de organización y control de existencias.",ce:[{id:"CE2a",texto:"Identifica los tipos de almacén y los sistemas de almacenaje más utilizados."},{id:"CE2b",texto:"Aplica métodos de valoración de existencias: PMP, FIFO y LIFO."},{id:"CE2c",texto:"Realiza inventarios y detecta y justifica las diferencias de inventario."},{id:"CE2d",texto:"Aplica técnicas de gestión visual y organización del almacén (5S, ABC)."},{id:"CE2e",texto:"Utiliza aplicaciones informáticas de gestión de almacén y control de stocks."}]},
+              {id:"RA3",texto:"Gestiona la distribución comercial reconociendo los canales y operadores logísticos.",ce:[{id:"CE3a",texto:"Identifica los canales de distribución y los intermediarios comerciales."},{id:"CE3b",texto:"Selecciona el operador logístico adecuado según el tipo de mercancía y destino."},{id:"CE3c",texto:"Gestiona la documentación del transporte: albarán, carta de porte y CMR."},{id:"CE3d",texto:"Calcula los costes de transporte y distribución aplicando tarifas vigentes."},{id:"CE3e",texto:"Reconoce la normativa de transporte de mercancías por carretera y sus implicaciones."}]}
             ]}
         }
       },
       "Marketing y Publicidad": { rd:"RD 1573/2011",
         modulos: {
+          "0925": { nombre:"Planificación de Medios", horas:96,
+            ra:[
+              {id:"RA1",texto:"Identifica los medios publicitarios convencionales y no convencionales reconociendo sus características.",ce:[{id:"CE1a",texto:"Clasifica los medios publicitarios según su alcance, coste y afinidad con el público objetivo."},{id:"CE1b",texto:"Analiza las características y ventajas de los medios convencionales: TV, radio, prensa y exterior."},{id:"CE1c",texto:"Identifica los medios no convencionales y el marketing directo."},{id:"CE1d",texto:"Reconoce los medios digitales y su papel en la planificación integrada."},{id:"CE1e",texto:"Valora la evolución del consumo de medios y sus implicaciones para la planificación."}]},
+              {id:"RA2",texto:"Elabora el plan de medios publicitarios definiendo objetivos, soportes y presupuesto.",ce:[{id:"CE2a",texto:"Define los objetivos de la campaña: cobertura, frecuencia y GRP."},{id:"CE2b",texto:"Selecciona los soportes publicitarios más adecuados al público objetivo y presupuesto."},{id:"CE2c",texto:"Elabora el calendario de inserciones publicitarias (flowchart)."},{id:"CE2d",texto:"Calcula el coste por impacto útil y el coste por mil (CPM) de los soportes."},{id:"CE2e",texto:"Presenta el plan de medios justificando las decisiones adoptadas."}]},
+              {id:"RA3",texto:"Evalúa la eficacia de las campañas publicitarias analizando los indicadores de rendimiento.",ce:[{id:"CE3a",texto:"Identifica los indicadores de eficacia publicitaria: notoriedad, recuerdo e impacto."},{id:"CE3b",texto:"Analiza los resultados de la campaña comparándolos con los objetivos establecidos."},{id:"CE3c",texto:"Interpreta los informes de audiencia y los datos de seguimiento de medios digitales."},{id:"CE3d",texto:"Propone ajustes y mejoras en la planificación a partir de los resultados obtenidos."},{id:"CE3e",texto:"Elabora informes de evaluación de campaña con conclusiones y recomendaciones."}]}
+            ]},
           "0923": { nombre:"Investigación de Mercados", horas:96,
             ra:[
               {id:"RA1",texto:"Identifica las necesidades de información comercial.",ce:[{id:"CE1a",texto:"Valora la importancia de la información en la toma de decisiones comerciales."},{id:"CE1b",texto:"Identifica las fuentes de información primaria y secundaria."},{id:"CE1c",texto:"Diferencia los tipos de investigación comercial según su finalidad."},{id:"CE1d",texto:"Reconoce los condicionantes éticos y legales de la investigación comercial."},{id:"CE1e",texto:"Valora el papel de los sistemas de información de marketing (SIM)."}]},
@@ -840,6 +950,34 @@ const DATA = {
               {id:"RA2",texto:"Diseña escaparates y zonas de exposición.",ce:[{id:"CE2a",texto:"Identifica los estilos y tipos de escaparates según el sector comercial."},{id:"CE2b",texto:"Aplica los principios de composición, color y luz en el diseño."},{id:"CE2c",texto:"Selecciona los elementos decorativos adecuados al concepto y temporada."},{id:"CE2d",texto:"Elabora bocetos y proyectos de escaparatismo."},{id:"CE2e",texto:"Valora el impacto del escaparate en la atracción de clientes."}]},
               {id:"RA3",texto:"Organiza la superficie de ventas aplicando criterios de merchandising.",ce:[{id:"CE3a",texto:"Clasifica los productos según su rotación y margen comercial."},{id:"CE3b",texto:"Aplica los principios de implantación de lineales."},{id:"CE3c",texto:"Calcula el rendimiento del lineal y del metro lineal."},{id:"CE3d",texto:"Utiliza las herramientas de gestión de categorías."},{id:"CE3e",texto:"Identifica las técnicas de señalización y PLV en el punto de venta."},{id:"CE3f",texto:"Reconoce la importancia del facing y la rotación en la gestión del lineal."}]},
               {id:"RA4",texto:"Aplica estrategias de promoción en el punto de venta.",ce:[{id:"CE4a",texto:"Identifica las técnicas de promoción de ventas en el punto de venta."},{id:"CE4b",texto:"Diseña acciones promocionales adaptadas al público objetivo."},{id:"CE4c",texto:"Calcula los costes y resultados de las acciones promocionales."},{id:"CE4d",texto:"Reconoce la normativa aplicable a las promociones comerciales."},{id:"CE4e",texto:"Valora la eficacia de las promociones mediante indicadores de rendimiento."}]}
+            ]}
+        }
+      }
+    }
+  },
+  "Transversales": { icon:"TX", cls:"tx",
+    ciclos: {
+      "Módulos Transversales FP": { rd:"LO 3/2022 · RD 659/2023",
+        modulos: {
+          "DIG": { nombre:"Digitalización aplicada a los Sectores Productivos", horas:64,
+            ra:[
+              {id:"RA1",texto:"Identifica las tecnologías digitales clave y su impacto en los sectores productivos.",ce:[{id:"CE1a",texto:"Reconoce las tecnologías digitales habilitadoras: IA, Big Data, IoT, cloud y blockchain."},{id:"CE1b",texto:"Analiza el impacto de la transformación digital en el sector de referencia del ciclo."},{id:"CE1c",texto:"Identifica nuevos perfiles profesionales emergentes vinculados a la digitalización."},{id:"CE1d",texto:"Valora las oportunidades y riesgos de la digitalización para las empresas y los trabajadores."}]},
+              {id:"RA2",texto:"Aplica herramientas digitales básicas en el desempeño de tareas profesionales.",ce:[{id:"CE2a",texto:"Utiliza aplicaciones colaborativas en la nube para la gestión de proyectos y documentos."},{id:"CE2b",texto:"Aplica criterios de ciberseguridad básica en el uso de herramientas digitales."},{id:"CE2c",texto:"Gestiona la identidad digital y la privacidad en entornos profesionales."},{id:"CE2d",texto:"Utiliza herramientas de análisis de datos básicas aplicadas al sector de referencia."},{id:"CE2e",texto:"Valora el uso ético y responsable de los datos y las tecnologías digitales."}]}
+            ]},
+          "IPE1": { nombre:"Itinerario Personal para la Empleabilidad I", horas:64,
+            ra:[
+              {id:"RA1",texto:"Diseña su itinerario personal y profesional identificando sus competencias y oportunidades.",ce:[{id:"CE1a",texto:"Realiza un autodiagnóstico de sus competencias, intereses y valores profesionales."},{id:"CE1b",texto:"Identifica las oportunidades de empleo y emprendimiento en su sector de referencia."},{id:"CE1c",texto:"Elabora un plan de desarrollo personal y profesional a corto y medio plazo."},{id:"CE1d",texto:"Reconoce la importancia del aprendizaje continuo y la formación permanente."}]},
+              {id:"RA2",texto:"Aplica técnicas de búsqueda de empleo utilizando los recursos disponibles.",ce:[{id:"CE2a",texto:"Elabora un currículum vitae adaptado al puesto y sector al que se dirige."},{id:"CE2b",texto:"Redacta cartas de presentación y motivación personalizadas."},{id:"CE2c",texto:"Utiliza portales de empleo, redes profesionales y otros recursos de búsqueda."},{id:"CE2d",texto:"Se prepara para entrevistas de selección aplicando técnicas de comunicación."},{id:"CE2e",texto:"Construye y gestiona su marca personal en entornos digitales profesionales."}]}
+            ]},
+          "IPE2": { nombre:"Itinerario Personal para la Empleabilidad II", horas:64,
+            ra:[
+              {id:"RA1",texto:"Desarrolla competencias para el emprendimiento identificando oportunidades de negocio.",ce:[{id:"CE1a",texto:"Identifica las características del emprendedor y las competencias emprendedoras."},{id:"CE1b",texto:"Detecta oportunidades de negocio en el entorno profesional de su sector."},{id:"CE1c",texto:"Elabora un modelo de negocio básico aplicando herramientas como el Business Model Canvas."},{id:"CE1d",texto:"Valora los apoyos institucionales al emprendimiento y la economía social."}]},
+              {id:"RA2",texto:"Gestiona su desarrollo profesional en el marco de las relaciones laborales.",ce:[{id:"CE2a",texto:"Reconoce los derechos y obligaciones derivados de la relación laboral."},{id:"CE2b",texto:"Identifica los organismos de representación de trabajadores y sus funciones."},{id:"CE2c",texto:"Aplica técnicas de gestión del conflicto y negociación en el entorno laboral."},{id:"CE2d",texto:"Valora la igualdad de oportunidades y la no discriminación en el acceso al empleo."},{id:"CE2e",texto:"Gestiona su bienestar laboral y aplica estrategias de conciliación."}]}
+            ]},
+          "SOS": { nombre:"Sostenibilidad Aplicada al Sistema Productivo", horas:64,
+            ra:[
+              {id:"RA1",texto:"Analiza el impacto ambiental de los procesos productivos aplicando criterios de sostenibilidad.",ce:[{id:"CE1a",texto:"Reconoce los ODS y su relación con el sector productivo."},{id:"CE1b",texto:"Identifica los impactos ambientales más significativos de las actividades del sector de referencia."},{id:"CE1c",texto:"Aplica los principios de la economía circular al análisis del ciclo de vida del producto."},{id:"CE1d",texto:"Valora la huella de carbono y propone medidas de reducción aplicables al sector."}]},
+              {id:"RA2",texto:"Aplica criterios de sostenibilidad en el desempeño de tareas profesionales.",ce:[{id:"CE2a",texto:"Identifica buenas prácticas ambientales aplicables al puesto de trabajo."},{id:"CE2b",texto:"Gestiona los residuos generados en la actividad profesional según la normativa vigente."},{id:"CE2c",texto:"Aplica criterios de eficiencia energética y uso responsable de los recursos."},{id:"CE2d",texto:"Valora la responsabilidad social de la empresa y el papel del trabajador en la sostenibilidad."},{id:"CE2e",texto:"Reconoce la normativa ambiental aplicable al sector y sus implicaciones profesionales."}]}
             ]}
         }
       }
@@ -993,7 +1131,7 @@ function loadModule(nivel, ciclo, cod) {
   if (mEl) { mEl.classList.add('active'); openParents(mEl); }
   // Dashboard header
   const nd = DATA[nivel];
-  const pillCls = nd.cls==='bach'?'bach':nd.cls==='eso'?'eso':'fp';
+  const pillCls = nd.cls==='bach'?'bach':nd.cls==='eso'?'eso':nd.cls==='tx'?'tx':'fp';
   document.getElementById('dash-pills').innerHTML =
     `<span class="dash-pill ${pillCls}">${nivel}</span><span class="dash-pill ciclo">${ciclo}</span><span class="dash-pill rd">${DATA[nivel].ciclos[ciclo].rd}</span>`;
   document.getElementById('dash-title').textContent = mod.nombre;
@@ -1031,7 +1169,7 @@ function openTool(tool) {
   document.getElementById('app-dashboard').style.display = 'none';
   document.querySelectorAll('.workspace').forEach(w=>w.classList.remove('active'));
   document.getElementById(`ws-${tool}`).classList.add('active');
-  ({sda:renderSdA,diagnostico:renderDiagnostico,cobertura:renderCobertura,rubrica:renderRubrica,revision:renderRevision})[tool]?.();
+  ({sda:renderSdA,diagnostico:renderDiagnostico,cobertura:renderCobertura,rubrica:renderRubrica,revision:renderRevision,normativa:renderNormativa})[tool]?.();
 }
 
 function closeTool() {
@@ -1328,8 +1466,117 @@ function renderRevision() {
 function exportarRevision() { exportarPDF('Revision_'+S.cod, document.getElementById('body-revision')); }
 
 // ══════════════════════════════════════
-// EXPORT PDF
+// NORMATIVA
 // ══════════════════════════════════════
+const NORMA_GENERAL = [
+  { tipo:'Ley Orgánica', ref:'LO 2/2006, de 3 de mayo', titulo:'Ley Orgánica de Educación (LOE)', ambito:'Marco general del sistema educativo español. Vigente con las modificaciones introducidas por LOMLOE.', url:'https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899' },
+  { tipo:'Ley Orgánica', ref:'LO 3/2020, de 29 de diciembre', titulo:'LOMLOE — Ley Orgánica de Modificación de la LOE', ambito:'Reforma del sistema educativo. Modifica la LOE. Marco normativo vigente para FP, Bach y ESO.', url:'https://www.boe.es/buscar/act.php?id=BOE-A-2020-17264' },
+  { tipo:'Ley Orgánica', ref:'LO 3/2022, de 31 de marzo', titulo:'Ley Orgánica de Ordenación e Integración de la FP', ambito:'Marco específico de la Formación Profesional. Nueva estructura del sistema de FP. Módulos transversales, FP Dual, itinerarios.', url:'https://www.boe.es/buscar/act.php?id=BOE-A-2022-4973' },
+  { tipo:'Real Decreto', ref:'RD 659/2023, de 18 de julio', titulo:'Ordenación del Sistema de Formación Profesional', ambito:'Desarrolla la LO 3/2022. Regula la estructura, organización y funcionamiento del sistema de FP. Módulos transversales: DIG, IPE, SOS.', url:'https://www.boe.es/buscar/act.php?id=BOE-A-2023-16889' },
+  { tipo:'Real Decreto', ref:'RD 243/2022, de 5 de abril', titulo:'Ordenación y enseñanzas mínimas de Bachillerato', ambito:'Currículos de Bachillerato. Materias de Economía (1º), Economía de la Empresa (2º) y Fundamentos de Administración y Gestión (2º).', url:'https://www.boe.es/buscar/act.php?id=BOE-A-2022-5521' },
+  { tipo:'Real Decreto', ref:'RD 217/2022, de 29 de marzo', titulo:'Ordenación y enseñanzas mínimas de ESO', ambito:'Currículos de ESO. Materias de Economía (4º) y Empresa e Iniciativa Emprendedora (4º).', url:'https://www.boe.es/buscar/act.php?id=BOE-A-2022-4975' },
+  { tipo:'Decreto autonómico', ref:'Decreto 220/2015, de 2 de septiembre', titulo:'Currículo de ESO en la Región de Murcia', ambito:'Concreción curricular de la ESO en Murcia. Aplicable a materias de Economía e Iniciativa Emprendedora en 4º ESO.', url:'https://www.borm.es/' },
+  { tipo:'Decreto autonómico', ref:'Decreto 262/2008, de 5 de septiembre', titulo:'Currículo de Bachillerato en la Región de Murcia', ambito:'Concreción curricular de Bachillerato en Murcia. Aplicable a Economía, Economía de la Empresa y FAG.', url:'https://www.borm.es/' },
+  { tipo:'Reglamento UE', ref:'Reglamento (UE) 2024/1689', titulo:'AI Act — Ley Europea de Inteligencia Artificial', ambito:'Marco regulatorio europeo de la IA. Relevante para el módulo de Digitalización y uso de herramientas digitales en FP.', url:'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689' },
+];
+
+const NORMA_MODULO = {
+  // FP GM
+  '0437':[
+    {ref:'RD 1631/2009, de 30 de octubre', titulo:'Título de Técnico en Gestión Administrativa', art:'Módulo 0437 — Empresa en el Aula. Resultados de aprendizaje, criterios de evaluación y contenidos básicos.'},
+    {ref:'Orden de 16 de junio de 2011 (BORM)', titulo:'Concreción curricular en Murcia — Gestión Administrativa', art:'Adaptación del currículo de Gestión Administrativa para centros de la Región de Murcia.'},
+  ],
+  '0438':[{ref:'RD 1631/2009',titulo:'Título de Técnico en Gestión Administrativa',art:'Módulo 0438 — Tratamiento de la Documentación Contable.'}],
+  '0439':[{ref:'RD 1631/2009',titulo:'Título de Técnico en Gestión Administrativa',art:'Módulo 0439 — Comunicación Empresarial y Atención al Cliente.'}],
+  '0440':[{ref:'RD 1631/2009',titulo:'Título de Técnico en Gestión Administrativa',art:'Módulo 0440 — Operaciones Administrativas de Recursos Humanos.'}],
+  '0441':[{ref:'RD 1631/2009',titulo:'Título de Técnico en Gestión Administrativa',art:'Módulo 0441 — Técnica Contable.'}],
+  '0442':[{ref:'RD 1631/2009',titulo:'Título de Técnico en Gestión Administrativa',art:'Módulo 0442 — Operaciones Auxiliares de Gestión de Tesorería.'}],
+  // FP GS AF
+  '0647':[{ref:'RD 1584/2011, de 4 de noviembre',titulo:'Título de Técnico Superior en Administración y Finanzas',art:'Módulo 0647 — Gestión de la Documentación Jurídica y Empresarial.'}],
+  '0648':[{ref:'RD 1584/2011',titulo:'Título de Técnico Superior en Administración y Finanzas',art:'Módulo 0648 — Recursos Humanos y Responsabilidad Social Corporativa.'}],
+  '0649':[{ref:'RD 1584/2011',titulo:'Título de Técnico Superior en Administración y Finanzas',art:'Módulo 0649 — Ofimática y Proceso de la Información.'}],
+  '0650':[{ref:'RD 1584/2011',titulo:'Título de Técnico Superior en Administración y Finanzas',art:'Módulo 0650 — Proceso Integral de la Actividad Comercial.'}],
+  '0651':[{ref:'RD 1584/2011',titulo:'Título de Técnico Superior en Administración y Finanzas',art:'Módulo 0651 — Gestión Financiera.'}],
+  '0652':[{ref:'RD 1584/2011',titulo:'Título de Técnico Superior en Administración y Finanzas',art:'Módulo 0652 — Contabilidad y Fiscalidad.'}],
+  '0653':[{ref:'RD 1584/2011',titulo:'Título de Técnico Superior en Administración y Finanzas',art:'Módulo 0653 — Gestión Logística y Comercial.'}],
+  // FP GS MK
+  '0923':[{ref:'RD 1573/2011, de 4 de noviembre',titulo:'Título de Técnico Superior en Marketing y Publicidad',art:'Módulo 0923 — Investigación de Mercados.'}],
+  '0924':[{ref:'RD 1573/2011',titulo:'Título de Técnico Superior en Marketing y Publicidad',art:'Módulo 0924 — Marketing Digital.'}],
+  '0925':[{ref:'RD 1573/2011',titulo:'Título de Técnico Superior en Marketing y Publicidad',art:'Módulo 0925 — Planificación de Medios.'}],
+  '0926':[{ref:'RD 1573/2011',titulo:'Título de Técnico Superior en Gestión de Ventas y Espacios Comerciales',art:'Módulo 0926 — Marketing en el Punto de Venta.'}],
+  // Bach
+  'ECO1':[{ref:'RD 243/2022, de 5 de abril',titulo:'Ordenación y enseñanzas mínimas de Bachillerato (LOMLOE)',art:'Economía — 1º Bachillerato. Competencias específicas y criterios de evaluación.'},{ref:'Decreto 262/2008 (BORM)',titulo:'Currículo de Bachillerato en Murcia',art:'Concreción curricular de Economía en Bachillerato para la Región de Murcia.'}],
+  'EDE2':[{ref:'RD 243/2022',titulo:'Ordenación y enseñanzas mínimas de Bachillerato',art:'Economía de la Empresa — 2º Bachillerato. Competencias específicas y criterios de evaluación.'},{ref:'Decreto 262/2008 (BORM)',titulo:'Currículo de Bachillerato en Murcia',art:'Concreción curricular de Economía de la Empresa en la Región de Murcia.'}],
+  'FAG2':[{ref:'RD 243/2022',titulo:'Ordenación y enseñanzas mínimas de Bachillerato',art:'Fundamentos de Administración y Gestión — 2º Bachillerato (optativa).'}],
+  // ESO
+  'ECO4':[{ref:'RD 217/2022, de 29 de marzo',titulo:'Ordenación y enseñanzas mínimas de ESO (LOMLOE)',art:'Economía — 4º ESO. Competencias específicas y criterios de evaluación.'},{ref:'Decreto 220/2015 (BORM)',titulo:'Currículo de ESO en Murcia',art:'Concreción curricular de Economía en 4º ESO en la Región de Murcia.'}],
+  'EMP4':[{ref:'RD 217/2022',titulo:'Ordenación y enseñanzas mínimas de ESO',art:'Empresa e Iniciativa Emprendedora — 4º ESO.'},{ref:'Decreto 220/2015 (BORM)',titulo:'Currículo de ESO en Murcia',art:'Concreción curricular en la Región de Murcia.'}],
+  // Transversales
+  'DIG':[{ref:'LO 3/2022, de 31 de marzo',titulo:'Ley Orgánica de Ordenación e Integración de la FP',art:'Módulo transversal de Digitalización. Obligatorio en todos los ciclos de la nueva FP.'},{ref:'RD 659/2023',titulo:'Ordenación del Sistema de Formación Profesional',art:'Regulación específica del módulo de Digitalización aplicada a los sectores productivos.'}],
+  'IPE1':[{ref:'LO 3/2022',titulo:'Ley Orgánica de Ordenación e Integración de la FP',art:'Módulo transversal IPE I — Itinerario Personal para la Empleabilidad.'},{ref:'RD 659/2023',titulo:'Ordenación del Sistema de FP',art:'Regulación del módulo IPE I. Orientación y empleabilidad en FP.'}],
+  'IPE2':[{ref:'LO 3/2022',titulo:'Ley Orgánica de Ordenación e Integración de la FP',art:'Módulo transversal IPE II — Itinerario Personal para la Empleabilidad.'},{ref:'RD 659/2023',titulo:'Ordenación del Sistema de FP',art:'Regulación del módulo IPE II. Emprendimiento y relaciones laborales en FP.'}],
+  'SOS':[{ref:'LO 3/2022',titulo:'Ley Orgánica de Ordenación e Integración de la FP',art:'Módulo transversal de Sostenibilidad. Obligatorio en todos los ciclos de la nueva FP.'},{ref:'RD 659/2023',titulo:'Ordenación del Sistema de FP',art:'Regulación del módulo de Sostenibilidad aplicada al sistema productivo.'}],
+};
+
+function renderNormativa() {
+  const tipoColor = {
+    'Ley Orgánica':'var(--blue)', 'Real Decreto':'var(--violet)',
+    'Decreto autonómico':'var(--green)', 'Reglamento UE':'#0891B2'
+  };
+  const tipoBg = {
+    'Ley Orgánica':'var(--blue-bg)', 'Real Decreto':'var(--violet-bg)',
+    'Decreto autonómico':'var(--green-bg)', 'Reglamento UE':'#ECFEFF'
+  };
+
+  const modNormas = S.cod ? (NORMA_MODULO[S.cod] || []) : [];
+
+  let html = '';
+
+  // Normativa específica del módulo
+  if (modNormas.length) {
+    html += `<div class="result-card">
+      <div class="rs"><div class="rs-title">📌 Normativa específica — ${S.mod?.nombre||''} (${S.cod})</div>
+      <div class="rs-body" style="display:flex;flex-direction:column;gap:10px">
+        ${modNormas.map(n=>`
+          <div style="padding:12px 14px;background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:9px">
+            <div style="font-size:10px;font-weight:700;color:var(--blue);margin-bottom:4px">${n.ref}</div>
+            <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px">${n.titulo}</div>
+            <div style="font-size:11px;color:var(--ink3);line-height:1.55">${n.art}</div>
+          </div>`).join('')}
+      </div></div>
+    </div>`;
+  }
+
+  // Marco general
+  html += `<div class="result-card" style="margin-top:16px">
+    <div class="rs"><div class="rs-title">⚖️ Marco normativo general — FP, Bachillerato y ESO</div>
+    <div class="rs-body" style="display:flex;flex-direction:column;gap:8px">
+      ${NORMA_GENERAL.map(n=>`
+        <div style="padding:11px 14px;background:var(--paper);border:1px solid var(--line);border-radius:9px;display:flex;gap:12px;align-items:flex-start">
+          <div style="flex-shrink:0;margin-top:2px">
+            <span style="font-size:9px;font-weight:800;padding:2px 7px;border-radius:4px;background:${tipoBg[n.tipo]||'var(--paper)'};color:${tipoColor[n.tipo]||'var(--ink3)'};white-space:nowrap">${n.tipo}</span>
+          </div>
+          <div style="flex:1">
+            <div style="font-size:10px;color:var(--ink4);margin-bottom:2px">${n.ref}</div>
+            <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px">${n.titulo}</div>
+            <div style="font-size:11px;color:var(--ink3);line-height:1.55">${n.ambito}</div>
+            <a href="${n.url}" target="_blank" style="font-size:10px;color:var(--blue);display:inline-flex;align-items:center;gap:3px;margin-top:5px;text-decoration:none;font-weight:600">Ver en BOE/EUR-Lex →</a>
+          </div>
+        </div>`).join('')}
+    </div></div>
+    <div style="margin-top:12px;padding:10px 12px;background:var(--paper);border-radius:7px;font-size:11px;color:var(--ink4);line-height:1.6">
+      ℹ️ Verifica siempre la versión vigente en el BOE o BORM. Las normas pueden haber sido modificadas o desarrolladas por disposiciones posteriores.
+    </div>
+  </div>`;
+
+  document.getElementById('body-normativa').innerHTML = html;
+}
+
+function exportarNormativa() {
+  exportarPDF('Normativa_' + (S.cod||'general'), document.getElementById('body-normativa'));
+}
+
+
 function exportarPDF(nombre, el) {
   if (!el) return;
   const fecha=new Date().toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'});
