@@ -11,15 +11,15 @@
    TOKENS
 ══════════════════════════════════════ */
 :root {
-  --blue:#3B5BDB; --blue2:#2F4AC1; --blue3:#1E3A9F;
-  --blue-bg:#EEF2FF; --blue-bd:#C5D0FA;
-  --ink:#0F0F1A; --ink2:#1E1E2E; --ink3:#52526A; --ink4:#9494A8;
-  --paper:#F5F6FA; --white:#FFFFFF;
-  --line:#E4E5EF; --line2:#CED0DC;
-  --green:#1E9E62; --green-bg:#EAFAF3; --green-bd:#A8EDD0;
+  --blue:#C0267A; --blue2:#A81F6A; --blue3:#8E1857;
+  --blue-bg:#FDF0F7; --blue-bd:#F0B8D8;
+  --ink:#0A0A0A; --ink2:#1A1A1A; --ink3:#4A4A4A; --ink4:#8A8A8A;
+  --paper:#F7F7F5; --white:#FFFFFF;
+  --line:#E8E8E4; --line2:#D0D0CC;
+  --green:#1A9E5E; --green-bg:#EAFAF3; --green-bd:#A8EDD0;
   --red:#D13030; --red-bg:#FEF0F0; --red-bd:#F5BFBF;
   --amber:#A85F00; --amber-bg:#FFF7EA; --amber-bd:#F5D480;
-  --violet:#5543C8; --violet-bg:#EEF0FF; --violet-bd:#C4BDFA;
+  --violet:#0F7566; --violet-bg:#EDFAF6; --violet-bd:#A8E8D8;
   --f:'Inter',system-ui,sans-serif;
   --nav-h:58px;
   --sw:272px;
@@ -50,7 +50,7 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:calc(var(--nav-h) + 48px) 24px 80px;text-align:center;background:var(--white);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%, #EEF2FF 0%, transparent 70%);pointer-events:none}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%, #FDF0F7 0%, transparent 70%);pointer-events:none}
 .hero-photo-wrap{margin-bottom:28px;position:relative;display:inline-block}
 .hero-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--white);box-shadow:0 0 0 2px var(--blue-bd),0 8px 24px rgba(59,91,219,.12)}
 .hero-photo-badge{position:absolute;bottom:2px;right:2px;width:22px;height:22px;background:var(--green);border-radius:50%;border:2px solid var(--white);display:flex;align-items:center;justify-content:center;font-size:9px}
@@ -61,8 +61,8 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .hero h1 em{font-style:normal;color:var(--blue)}
 .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--ink3);line-height:1.7;max-width:560px;margin:0 auto 40px}
 .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:64px}
-.btn-primary{background:var(--blue);color:white;border:none;border-radius:10px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--f);display:flex;align-items:center;gap:8px;transition:all .15s;letter-spacing:-.01em;box-shadow:0 4px 20px rgba(59,91,219,.25)}
-.btn-primary:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 6px 24px rgba(59,91,219,.3)}
+.btn-primary{background:var(--blue);color:white;border:none;border-radius:10px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--f);display:flex;align-items:center;gap:8px;transition:all .15s;letter-spacing:-.01em;box-shadow:0 4px 20px rgba(192,38,122,.25)}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 6px 24px rgba(192,38,122,.3)}
 .btn-secondary{background:transparent;color:var(--ink);border:1.5px solid var(--line2);border-radius:10px;padding:13px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--f);transition:all .15s}
 .btn-secondary:hover{border-color:var(--blue);color:var(--blue)}
 
@@ -133,7 +133,7 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .mod-card-ciclo{font-size:10px;color:var(--ink4)}
 
 /* ── CTA SECTION ── */
-.cta-section{padding:96px 24px;background:var(--ink);text-align:center}
+.cta-section{padding:96px 24px;background:#0A0A0A;text-align:center}
 .cta-section h2{font-size:clamp(28px,5vw,52px);font-weight:900;letter-spacing:-.04em;color:var(--white);margin-bottom:16px;line-height:1.1}
 .cta-section p{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.65}
 .btn-white{background:var(--white);color:var(--ink);border:none;border-radius:10px;padding:14px 32px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--f);transition:all .15s;display:inline-flex;align-items:center;gap:8px}
@@ -221,12 +221,12 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .dtool-sda .dtool-accent{background:var(--violet)}
 .dtool-diag .dtool-accent{background:var(--blue)}
 .dtool-cob .dtool-accent{background:var(--green)}
-.dtool-rub .dtool-accent{background:#C026A0}
+.dtool-rub .dtool-accent{background:#9333EA}
 .dtool-rev .dtool-accent{background:var(--amber)}
-.dtool-sda:hover{border-color:var(--violet-bd);box-shadow:0 4px 20px rgba(85,67,200,.1)}
-.dtool-diag:hover{border-color:var(--blue-bd);box-shadow:0 4px 20px rgba(59,91,219,.1)}
-.dtool-cob:hover{border-color:var(--green-bd);box-shadow:0 4px 20px rgba(30,158,98,.1)}
-.dtool-rub:hover{border-color:#F5C0F5;box-shadow:0 4px 20px rgba(192,38,160,.08)}
+.dtool-sda:hover{border-color:var(--violet-bd);box-shadow:0 4px 20px rgba(15,117,102,.1)}
+.dtool-diag:hover{border-color:var(--blue-bd);box-shadow:0 4px 20px rgba(192,38,122,.1)}
+.dtool-cob:hover{border-color:var(--green-bd);box-shadow:0 4px 20px rgba(26,158,94,.1)}
+.dtool-rub:hover{border-color:#E9D5FF;box-shadow:0 4px 20px rgba(147,51,234,.08)}
 .dtool-rev:hover{border-color:var(--amber-bd);box-shadow:0 4px 20px rgba(168,95,0,.1)}
 
 .dtool-inner{display:flex;align-items:center;gap:16px;padding:16px 16px 16px 22px}
@@ -234,7 +234,7 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
 .dtool-sda .dtool-icon-wrap{background:var(--violet-bg)}
 .dtool-diag .dtool-icon-wrap{background:var(--blue-bg)}
 .dtool-cob .dtool-icon-wrap{background:var(--green-bg)}
-.dtool-rub .dtool-icon-wrap{background:#FFF0FA}
+.dtool-rub .dtool-icon-wrap{background:#F3E8FF}
 .dtool-rev .dtool-icon-wrap{background:var(--amber-bg)}
 .dtool-icon{font-size:20px}
 .dtool-content{flex:1}
@@ -592,6 +592,27 @@ body{font-family:var(--f);background:var(--white);color:var(--ink);overflow-x:hi
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Abrir ProyectoFP
     </button>
+  </section>
+
+  <!-- AUTOR -->
+  <section style="padding:72px 24px;background:var(--white);border-top:1px solid var(--line)">
+    <div style="max-width:680px;margin:0 auto;display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+      <div style="flex-shrink:0">
+        <div style="position:relative;display:inline-block">
+          <img src="foto_juan.jpg" alt="Juan Peco" style="width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--white);box-shadow:0 0 0 2px var(--blue-bd),0 8px 24px rgba(192,38,122,.12)">
+          <div style="position:absolute;bottom:3px;right:3px;width:22px;height:22px;background:var(--green);border-radius:50%;border:2px solid var(--white);display:flex;align-items:center;justify-content:center;font-size:10px;color:white">✓</div>
+        </div>
+      </div>
+      <div style="flex:1;min-width:240px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:8px">Quién hay detrás</div>
+        <div style="font-size:19px;font-weight:800;letter-spacing:-.025em;color:var(--ink);margin-bottom:6px">Juan Peco — Docente FP</div>
+        <div style="font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:16px">18 años en gestión comercial y marketing. MAES en Economía, Empresa y Turismo (Murcia, 2026). ACE en el programa Código Escuela 4.0 — 25+ centros públicos. ProyectoFP nace de entender los dos lados: la empresa real y el aula.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://juanpeco.com" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;background:var(--blue);color:white;text-decoration:none;transition:background .12s" onmouseover="this.style.background='var(--blue2)'" onmouseout="this.style.background='var(--blue)'">Ver perfil completo →</a>
+          <a href="https://juanpeco.com#contacto" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:9px 18px;border-radius:8px;background:var(--paper);color:var(--ink);text-decoration:none;border:1.5px solid var(--line);transition:all .12s" onmouseover="this.style.borderColor='var(--blue);this.style.color=var(--blue)'" onmouseout="this.style.borderColor='var(--line)';this.style.color='var(--ink)'">Contactar</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer class="footer">
