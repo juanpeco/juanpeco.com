@@ -7,7 +7,7 @@
   <title>Juan Peco | Profesor de Economía y Empresa — FP y Bachillerato · Región de Murcia</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='32' fill='%231a2744'/><text x='96' y='122' font-family='Georgia,serif' font-size='88' font-weight='700' fill='white' text-anchor='middle'>JP</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ── TOKENS ─────────────────────────────────────────── */
@@ -117,9 +117,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
 .hero-eyebrow::before {
   content: ''; width: 7px; height: 7px;
   background: var(--accent2); border-radius: 50%;
-  animation: blink 2s infinite;
 }
-@keyframes blink { 0%,100% { opacity:1; } 50% { opacity: 0.3; } }
+
 
 .hero-h1 {
   font-family: var(--font-h);
@@ -173,7 +172,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
 }
 .hero-photo-badge::before {
   content: ''; width: 6px; height: 6px; background: var(--accent2);
-  border-radius: 50%; flex-shrink: 0; animation: blink 2s infinite;
+  border-radius: 50%; flex-shrink: 0;
 }
 
 .btn-primary {
@@ -540,16 +539,457 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
   /* Selection */
   ::selection { background:rgba(79,110,247,0.18);color:var(--navy); }
 
-  /* Smooth page entry */
-  @keyframes pageIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
-  body { animation:pageIn 0.5s ease both; }
-
-  /* Dividers animados */
-  .divider { position:relative;overflow:hidden; }
-  .divider::after { content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(79,110,247,0.15),transparent);animation:shimmer 3s infinite; }
-  @keyframes shimmer { to{left:200%;} }
 
 
+
+</style>
+
+<style id="ed-phase1">
+/* ═══ FASE 1 · Sistema editorial (scope .ed) — no afecta al :root global ═══ */
+.ed{
+  --ed-navy:#1A2744; --ed-ink:#1F2230; --ed-ink2:#63697A;
+  --ed-lav:#7C6CF2; --ed-lav-light:#EEEDFE; --ed-lav-mid:#D8D2FA;
+  --ed-border:#E8E8EF; --ed-paper:#FAF9F6;
+  --ed-fh:'Fraunces',Georgia,serif; --ed-fb:'DM Sans',system-ui,sans-serif;
+  --ed-fm:'JetBrains Mono',ui-monospace,monospace;
+  --ed-ease:cubic-bezier(.22,1,.36,1);
+}
+/* Hero — papel editorial, sin gradiente ni retícula */
+#hero.ed{ background:var(--ed-paper); padding:clamp(3rem,10vw,6rem) 0 clamp(3.5rem,9vw,5.5rem); position:relative; overflow:hidden; }
+#hero.ed::before{ content:none !important; }
+.ed .ed-wrap{ max-width:1060px; margin:0 auto; padding:0 clamp(1.4rem,5vw,2rem); }
+.ed .ed-hero-grid{ display:grid; grid-template-columns:1fr; gap:clamp(2.4rem,7vw,3.2rem); align-items:center; }
+@media(min-width:860px){ .ed .ed-hero-grid{ grid-template-columns:1.05fr .82fr; gap:clamp(3rem,5vw,4.5rem); } }
+
+.ed .ed-eyebrow{ font-family:var(--ed-fm); font-size:.72rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--ed-ink2); line-height:1.75; margin-bottom:1.7rem; }
+.ed .ed-eyebrow span{ display:block; color:var(--ed-navy); }
+.ed .ed-title{ font-family:var(--ed-fh); font-weight:500; color:var(--ed-navy); font-size:clamp(1.95rem,4.6vw,3.2rem); line-height:1.1; letter-spacing:-.015em; margin-bottom:1.7rem; max-width:20ch; }
+.ed .ed-title .ed-t2{ display:block; color:var(--ed-ink2); font-weight:400; margin-top:.4em; }
+.ed .ed-sub{ font-family:var(--ed-fb); font-size:clamp(1.02rem,1.6vw,1.15rem); color:var(--ed-ink2); line-height:1.68; max-width:48ch; margin-bottom:2.5rem; }
+.ed .ed-actions{ margin-bottom:3rem; }
+.ed .ed-btn{ font-family:var(--ed-fb); font-size:.98rem; font-weight:600; background:var(--ed-navy); color:var(--ed-paper); border-radius:10px; padding:.9rem 1.7rem; display:inline-flex; align-items:center; gap:.6rem; cursor:pointer; transition:transform .3s var(--ed-ease), box-shadow .3s var(--ed-ease); }
+.ed .ed-btn:hover{ transform:translateY(-2px); box-shadow:0 12px 26px rgba(26,39,68,.14); }
+.ed .ed-btn .arw{ display:inline-flex; color:var(--ed-lav-mid); transition:transform .3s var(--ed-ease); }
+.ed .ed-btn:hover .arw{ transform:translateX(3px); }
+.ed .ed-btn svg{ width:17px; height:17px; }
+
+.ed .ed-stats{ display:grid; grid-template-columns:repeat(3,auto); gap:clamp(1.4rem,4vw,2.8rem); }
+.ed .ed-stats dt{ font-family:var(--ed-fm); font-weight:500; font-size:clamp(1.35rem,3vw,1.8rem); color:var(--ed-navy); line-height:1; letter-spacing:.01em; }
+.ed .ed-stats dd{ font-family:var(--ed-fb); font-size:.78rem; color:var(--ed-ink2); line-height:1.45; margin-top:.55rem; max-width:15ch; }
+@media(max-width:480px){
+  .ed .ed-stats{ grid-template-columns:1fr; gap:0; }
+  .ed .ed-stats>div{ padding:.85rem 0; border-top:1px solid var(--ed-border); display:flex; align-items:baseline; gap:1rem; }
+  .ed .ed-stats>div:last-child{ border-bottom:1px solid var(--ed-border); }
+  .ed .ed-stats dd{ margin-top:0; }
+}
+
+.ed .ed-portrait-frame{ border:1px solid var(--ed-border); border-radius:14px; overflow:hidden; aspect-ratio:4/5; background:var(--ed-lav-light); box-shadow:0 24px 50px rgba(26,39,68,.08); }
+.ed .ed-portrait-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+.ed .ed-portrait-cap{ font-family:var(--ed-fm); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-ink2); margin-top:.95rem; display:flex; align-items:center; gap:.55rem; }
+.ed .ed-portrait-cap::before{ content:''; width:16px; height:1px; background:var(--ed-navy); flex:none; }
+
+@keyframes edUp{ from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:none;} }
+.ed .ed-anim{ opacity:0; animation:edUp .5s var(--ed-ease) forwards; }
+.ed .a1{ animation-delay:.04s; } .ed .a2{ animation-delay:.13s; } .ed .a3{ animation-delay:.22s; } .ed .a4{ animation-delay:.31s; } .ed .a5{ animation-delay:.40s; }
+@media (prefers-reduced-motion:reduce){ .ed .ed-anim{ opacity:1; animation:none; } .ed .ed-btn,.ed .ed-btn .arw{ transition:none; } }
+.ed :focus-visible{ outline:2px solid var(--ed-lav); outline-offset:3px; border-radius:3px; }
+</style>
+
+<style id="ed-phase2">
+/* ═══ FASE 2 · secciones body (scope .ed) ═══ */
+#encaje.ed, #bloque-central.ed{ background:var(--ed-paper); }
+.ed .ed-sec-head{ margin-bottom:clamp(2.6rem,6vw,4rem); }
+.ed .ed-kicker{ font-family:var(--ed-fm); font-size:.72rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--ed-ink2); display:flex; align-items:center; gap:.7rem; margin-bottom:1.3rem; }
+.ed .ed-kicker::before{ content:''; width:24px; height:1px; background:var(--ed-navy); flex:none; }
+.ed .ed-h2{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(1.7rem,4vw,2.4rem); color:var(--ed-navy); letter-spacing:-.015em; line-height:1.12; margin-bottom:.7rem; max-width:20ch; }
+.ed .ed-lead{ font-family:var(--ed-fb); color:var(--ed-ink2); font-size:1.05rem; line-height:1.6; max-width:50ch; }
+
+/* Notas editoriales del hero (antes KPI) */
+.ed .ed-notes{ list-style:none; }
+.ed .ed-notes li{ display:grid; grid-template-columns:1fr; gap:.2rem; padding:.8rem 0; border-top:1px solid var(--ed-border); }
+.ed .ed-notes li:last-child{ border-bottom:1px solid var(--ed-border); }
+@media(min-width:520px){ .ed .ed-notes li{ grid-template-columns:190px 1fr; gap:1.2rem; align-items:baseline; } }
+.ed .ed-notes .k{ font-family:var(--ed-fm); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-ink2); }
+.ed .ed-notes .v{ font-family:var(--ed-fb); font-size:.92rem; color:var(--ed-ink); }
+
+/* Encaje · tres fichas */
+.ed .ed-tri{ display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,2.4rem); }
+@media(min-width:760px){ .ed .ed-tri{ grid-template-columns:repeat(3,1fr); gap:clamp(2rem,4vw,3rem); } }
+.ed .ed-ficha{ padding-top:1.2rem; border-top:1px solid var(--ed-navy); }
+.ed .ed-ficha-k{ font-family:var(--ed-fm); font-size:.74rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ed-navy); margin-bottom:1.1rem; }
+.ed .ed-ficha-k .n{ color:var(--ed-lav); }
+.ed .ed-ficha-list{ list-style:none; }
+.ed .ed-ficha-list li{ font-family:var(--ed-fb); font-size:.92rem; color:var(--ed-ink2); line-height:1.5; padding:.75rem 0; border-bottom:1px solid var(--ed-border); }
+.ed .ed-ficha-list li:last-child{ border-bottom:none; }
+
+/* Bloque central · cronología */
+.ed .ed-chrono{ margin-bottom:clamp(3rem,7vw,4.5rem); }
+.ed .ed-chrono{ position:relative; padding-left:1.4rem; }
+.ed .ed-chrono::before{ content:''; position:absolute; left:0; top:.5rem; bottom:.5rem; width:1px; background:var(--ed-border); }
+.ed .ed-milestone{ position:relative; display:grid; grid-template-columns:1fr; gap:.5rem; padding:1.8rem 0; }
+.ed .ed-milestone::before{ content:''; position:absolute; left:-1.4rem; top:2.15rem; width:8px; height:8px; margin-left:-4px; border-radius:50%; background:var(--ed-lav); box-shadow:0 0 0 4px var(--ed-paper); }
+@media(min-width:680px){ .ed .ed-milestone{ grid-template-columns:160px 1fr; gap:2.4rem; align-items:baseline; } }
+.ed .ed-when{ font-family:var(--ed-fm); font-size:.78rem; font-weight:500; letter-spacing:.06em; color:var(--ed-navy); text-transform:uppercase; }
+.ed .ed-what h3{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(1.2rem,2.6vw,1.5rem); color:var(--ed-navy); margin-bottom:.5rem; letter-spacing:-.01em; }
+.ed .ed-what p{ font-family:var(--ed-fb); font-size:.95rem; color:var(--ed-ink2); line-height:1.62; max-width:54ch; }
+
+/* Bloque central · módulos + estado */
+.ed .ed-split{ display:grid; grid-template-columns:1fr; gap:clamp(2.4rem,6vw,3.2rem); }
+@media(min-width:820px){ .ed .ed-split{ grid-template-columns:1.4fr 1fr; gap:clamp(3rem,5vw,4.5rem); } }
+.ed .ed-mod-list{ list-style:none; }
+.ed .ed-mod-list li{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:.78rem 0; border-bottom:1px solid var(--ed-border); }
+.ed .ed-mod-list li:first-child{ border-top:1px solid var(--ed-border); }
+.ed .ed-mod-list li>span:first-child{ font-family:var(--ed-fb); font-size:.92rem; color:var(--ed-ink); font-weight:500; }
+.ed .ed-mod-list .lvl{ font-family:var(--ed-fm); font-size:.67rem; letter-spacing:.05em; color:var(--ed-ink2); white-space:nowrap; text-transform:uppercase; }
+.ed .ed-estado-lead{ font-family:var(--ed-fh); font-weight:500; font-size:1.55rem; color:var(--ed-navy); margin:.1rem 0 1.2rem; display:flex; align-items:center; gap:.6rem; }
+.ed .ed-estado-lead::before{ content:''; width:8px; height:8px; border-radius:50%; background:var(--ed-lav); flex:none; }
+.ed .ed-estado-list{ list-style:none; margin-bottom:1.8rem; }
+.ed .ed-estado-list li{ font-family:var(--ed-fb); font-size:.92rem; color:var(--ed-ink2); padding:.55rem 0; border-bottom:1px solid var(--ed-border); }
+.ed .ed-estado-list li:first-child{ border-top:1px solid var(--ed-border); }
+
+/* Mapa · solo piel (interacción y datos intactos) */
+#mapa-centros.ed .mp-lbl2{ font-family:var(--ed-fm); color:var(--ed-ink2); letter-spacing:.14em; }
+#mapa-centros.ed .mp-heading2{ font-family:var(--ed-fh); color:var(--ed-navy); font-weight:500; }
+#mapa-centros.ed .mp-sub2{ font-family:var(--ed-fb); color:var(--ed-ink2); }
+#mapa-centros.ed .mp-svg-wrap2, #mapa-centros.ed .mp-panel{ background:var(--ed-paper); border:1px solid var(--ed-border); border-radius:12px; }
+#mapa-centros.ed .mp-panel-default{ color:var(--ed-ink2); }
+#mapa-centros.ed .mp-panel-title{ font-family:var(--ed-fh); color:var(--ed-navy); font-weight:500; }
+#mapa-centros.ed .mp-panel-muni{ color:var(--ed-ink2); font-family:var(--ed-fm); font-size:.72rem; letter-spacing:.04em; }
+#mapa-centros.ed .mp-panel-key{ font-family:var(--ed-fm); color:var(--ed-ink2); }
+#mapa-centros.ed .mp-panel-val{ font-family:var(--ed-fm); color:var(--ed-navy); }
+#mapa-centros.ed .mp-ver-btn{ font-family:var(--ed-fm); color:var(--ed-navy); border:1px solid var(--ed-border); border-radius:8px; }
+#mapa-centros.ed .mp-ver-btn:hover{ border-color:var(--ed-navy); background:transparent; }
+#mapa-centros.ed .mp-total2{ background:var(--ed-lav-light); color:var(--ed-navy); font-family:var(--ed-fm); letter-spacing:.04em; }
+#mapa-centros.ed .mp-leg2{ font-family:var(--ed-fm); color:var(--ed-ink2); font-size:.68rem; letter-spacing:.05em; }
+#mapa-centros.ed .mp-list-name2{ color:var(--ed-navy); }
+#mapa-centros.ed .mp-list-muni2{ color:var(--ed-ink2); }
+</style>
+
+<style id="ed-phase3">
+/* ═══ FASE 3 · En el aula + Sesión real (scope .ed) ═══ */
+#en-el-aula.ed, #sesion-real.ed{ background:var(--ed-paper); }
+
+/* En el aula · dinámicas */
+.ed .ed-dyn-grid{ display:grid; grid-template-columns:1fr; gap:clamp(1.6rem,4vw,2.1rem) clamp(2rem,4vw,3rem); }
+@media(min-width:620px){ .ed .ed-dyn-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:980px){ .ed .ed-dyn-grid{ grid-template-columns:1fr 1fr 1fr; } }
+.ed .ed-dyn{ padding-top:1.1rem; border-top:1px solid var(--ed-border); }
+.ed .ed-dyn .cat{ font-family:var(--ed-fm); font-size:.66rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-lav); margin-bottom:.7rem; }
+.ed .ed-dyn h3{ font-family:var(--ed-fh); font-weight:500; font-size:1.2rem; color:var(--ed-navy); letter-spacing:-.01em; margin-bottom:.4rem; }
+.ed .ed-dyn p{ font-family:var(--ed-fb); font-size:.9rem; color:var(--ed-ink2); line-height:1.55; }
+
+/* Sesión real · fragmento tráiler */
+.ed .ed-scene{ max-width:660px; }
+.ed .ed-scene-time{ font-family:var(--ed-fm); font-size:.85rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--ed-navy); display:flex; align-items:center; gap:.65rem; margin-bottom:1.6rem; }
+.ed .ed-scene-time::before{ content:''; width:8px; height:8px; background:var(--ed-lav); border-radius:2px; flex:none; }
+.ed .ed-scene-lines p{ font-family:var(--ed-fh); font-weight:400; color:var(--ed-ink); font-size:clamp(1.3rem,3vw,1.85rem); line-height:1.32; letter-spacing:-.01em; margin-bottom:.55rem; }
+.ed .ed-scene-lines p.k{ color:var(--ed-navy); font-weight:500; }
+.ed .ed-cut{ height:1px; background:linear-gradient(to right,var(--ed-border),transparent); margin:2.3rem 0; max-width:220px; }
+.ed .ed-scene-hook{ font-family:var(--ed-fb); color:var(--ed-ink2); font-size:1.02rem; line-height:1.6; margin-bottom:1.9rem; max-width:46ch; }
+</style>
+
+<style id="ed-phase3b">
+/* ═══ FASE 3 · Galería como archivo documental (scope .ed) ═══ */
+#galeria.ed{ background:var(--ed-paper); }
+.ed .ed-photos{ display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,3rem); }
+@media(min-width:680px){ .ed .ed-photos{ grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3rem); } }
+.ed figure.ed-photo{ margin:0; }
+.ed .ed-photo img{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block; border-radius:4px; background:var(--ed-lav-light); }
+.ed .ed-photo figcaption{ font-family:var(--ed-fm); font-size:.72rem; letter-spacing:.03em; color:var(--ed-ink2); margin-top:.85rem; display:flex; gap:.65rem; align-items:baseline; line-height:1.45; }
+.ed .ed-photo figcaption .n{ color:var(--ed-lav); font-weight:600; flex:none; }
+
+.ed .ed-reels{ display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,2.5rem); margin-top:clamp(2.5rem,6vw,4rem); }
+@media(min-width:760px){ .ed .ed-reels{ grid-template-columns:1fr 1fr 1fr; } }
+.ed figure.ed-reel{ margin:0; }
+.ed .ed-reel iframe{ width:100%; border:1px solid var(--ed-border); border-radius:8px; display:block; background:var(--ed-lav-light); }
+.ed .ed-reel figcaption{ font-family:var(--ed-fm); font-size:.72rem; letter-spacing:.03em; color:var(--ed-ink2); margin-top:.8rem; line-height:1.5; }
+.ed .ed-reel figcaption b{ color:var(--ed-navy); font-weight:600; display:block; text-transform:uppercase; letter-spacing:.09em; font-size:.66rem; margin-bottom:.3rem; }
+
+.ed .ed-archive-foot{ margin-top:clamp(2.5rem,6vw,3.5rem); padding-top:1.4rem; border-top:1px solid var(--ed-border); display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center; }
+.ed .ed-archive-foot p{ font-family:var(--ed-fb); font-size:.9rem; color:var(--ed-ink2); }
+.ed .ed-archive-foot a.src{ font-family:var(--ed-fm); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ed-navy); border-bottom:1.5px solid var(--ed-lav); padding-bottom:2px; }
+.ed .ed-archive-foot a.src:hover{ color:var(--ed-lav); }
+</style>
+
+<style id="ed-phase3c">
+/* ═══ FASE 3 · Bloque 7 · Lo que queda / ProyectoFP (scope .ed) ═══ */
+#proyectos.ed, #tech-proyectos.ed{ background:var(--ed-paper); }
+#proyectos .ed-sec-head{ margin-bottom:.5rem; }
+.ed .ed-level-k{ font-family:var(--ed-fm); font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--ed-navy); margin:0 0 1.5rem; padding-top:clamp(2.4rem,5.5vw,3.4rem); display:flex; align-items:center; gap:.7rem; }
+.ed .ed-level-k::before{ content:''; width:22px; height:1px; background:var(--ed-lav); flex:none; }
+
+.ed .ed-res{ display:grid; grid-template-columns:1fr; gap:0 clamp(2rem,4vw,3rem); }
+@media(min-width:760px){ .ed .ed-res{ grid-template-columns:1fr 1fr 1fr; } }
+.ed .ed-res-item{ padding:1.2rem 0; border-top:1px solid var(--ed-border); }
+.ed .ed-res-item h3{ font-family:var(--ed-fh); font-weight:500; font-size:1.14rem; color:var(--ed-navy); margin-bottom:.5rem; letter-spacing:-.01em; line-height:1.2; }
+.ed .ed-res-item p{ font-family:var(--ed-fb); font-size:.9rem; color:var(--ed-ink2); line-height:1.55; }
+
+.ed .ed-pfp{ max-width:640px; margin-bottom:.5rem; }
+.ed .ed-pfp-name{ font-family:var(--ed-fh); font-weight:600; font-size:clamp(1.8rem,4vw,2.6rem); color:var(--ed-navy); letter-spacing:-.02em; margin-bottom:.3rem; }
+.ed .ed-pfp-lead{ font-family:var(--ed-fb); font-size:1.05rem; color:var(--ed-ink); margin-bottom:1.4rem; }
+.ed .ed-pfp-body{ font-family:var(--ed-fb); font-size:.95rem; color:var(--ed-ink2); line-height:1.65; margin-bottom:1rem; max-width:56ch; }
+.ed .ed-link{ font-family:var(--ed-fb); font-weight:600; font-size:.92rem; color:var(--ed-navy); display:inline-flex; align-items:center; gap:.45rem; border-bottom:1.5px solid var(--ed-lav); padding-bottom:2px; margin-top:.7rem; transition:gap .25s var(--ed-ease); }
+.ed .ed-link:hover{ gap:.7rem; }
+.ed .ed-link svg{ width:14px; height:14px; }
+.ed .ed-apply{ font-family:var(--ed-fh); font-weight:400; font-size:clamp(1.15rem,2.6vw,1.5rem); color:var(--ed-ink); line-height:1.42; max-width:32ch; letter-spacing:-.01em; }
+</style>
+
+<style id="ed-cap2">
+/* ═══ CAP. 2 · Manifiesto (scope .ed) ═══ */
+#manifiesto.ed{ background:var(--ed-paper); }
+.ed .ed-manifesto{ max-width:720px; margin-bottom:clamp(2.4rem,6vw,3.4rem); }
+.ed .ed-mani-title{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(2rem,5vw,3rem); color:var(--ed-navy); letter-spacing:-.02em; line-height:1.08; margin-bottom:1.8rem; }
+.ed .ed-mani-intro{ font-family:var(--ed-fb); font-size:clamp(1.05rem,2vw,1.2rem); color:var(--ed-ink2); line-height:1.65; max-width:56ch; margin-bottom:1.1rem; }
+.ed .ed-decisions{ max-width:720px; }
+.ed .ed-decision{ font-family:var(--ed-fh); font-weight:400; font-size:clamp(1.3rem,3vw,1.85rem); color:var(--ed-navy); line-height:1.32; letter-spacing:-.01em; margin-bottom:clamp(1.1rem,3vw,1.7rem); max-width:27ch; }
+.ed .ed-decision:last-child{ margin-bottom:0; max-width:36ch; }
+</style>
+
+<style id="ed-cap78">
+/* ═══ CAP. 7 · De la empresa al aula + CAP. 8 · Credenciales (scope .ed) ═══ */
+#perfil.ed, #credenciales.ed{ background:var(--ed-paper); }
+.ed .ed-prose{ max-width:62ch; }
+.ed .ed-prose p{ font-family:var(--ed-fb); font-size:1.05rem; color:var(--ed-ink); line-height:1.75; margin-bottom:1.3rem; }
+.ed .ed-prose p:last-child{ margin-bottom:0; }
+.ed .ed-prose p.ed-strong{ color:var(--ed-navy); font-weight:500; font-size:1.12rem; }
+.ed .ed-pull{ font-family:var(--ed-fh); font-weight:400; color:var(--ed-navy); font-size:clamp(1.5rem,3.6vw,2.2rem); line-height:1.3; letter-spacing:-.015em; max-width:24ch; margin:clamp(2.4rem,6vw,3.4rem) 0; }
+.ed .ed-cred{ border-top:1px solid var(--ed-border); padding-top:1.6rem; max-width:760px; }
+.ed .ed-cred-k{ font-family:var(--ed-fm); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ed-ink2); margin-bottom:.9rem; }
+.ed .ed-cred-list{ font-family:var(--ed-fm); font-size:.78rem; line-height:1.95; color:var(--ed-ink2); letter-spacing:.01em; }
+</style>
+
+<style id="ed-180-ph">
+/* ═══ CAP. 3 · Placeholder 180 minutos (scope .ed) ═══ */
+#modulo-180.ed{ background:var(--ed-paper); }
+.ed .ed-180-mark{ font-family:var(--ed-fm); font-size:.7rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ed-lav); margin-bottom:1.4rem; }
+.ed .ed-180-title{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(2.8rem,9vw,5.5rem); color:var(--ed-navy); letter-spacing:-.03em; line-height:1; margin-bottom:1.4rem; }
+.ed .ed-180-sub{ font-family:var(--ed-fb); font-size:clamp(1.05rem,2vw,1.25rem); color:var(--ed-ink2); line-height:1.6; max-width:44ch; margin-bottom:2.2rem; }
+</style>
+
+<style id="ed-180-full">
+/* ═══ CAP. 3 · 180 minutos · scrollytelling inline (scope .ed) ═══ */
+#modulo-180.ed{ background:var(--ed-paper); }
+.ed .ed180-open-block{ max-width:720px; margin-bottom:clamp(2.5rem,7vw,4.5rem); }
+.ed .ed180-title{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(2.8rem,9vw,5.5rem); color:var(--ed-navy); letter-spacing:-.03em; line-height:1; margin-bottom:1.3rem; }
+.ed .ed180-open{ font-family:var(--ed-fh); font-weight:400; font-size:clamp(1.4rem,3.2vw,2rem); color:var(--ed-navy); line-height:1.3; letter-spacing:-.015em; margin-bottom:1.6rem; max-width:22ch; }
+.ed .ed180-reto{ font-family:var(--ed-fm); font-size:.72rem; letter-spacing:.04em; color:var(--ed-ink2); background:var(--ed-lav-light); border-radius:100px; padding:.5rem 1rem; display:inline-block; }
+.ed .ed180-reto span{ color:var(--ed-navy); font-weight:600; text-transform:uppercase; letter-spacing:.08em; margin-right:.5rem; }
+.ed .ed180-reto em{ font-style:italic; }
+
+.ed .ed180-beats{ max-width:720px; }
+.ed .ed180-beat{ position:relative; border-left:1px solid var(--ed-border); padding:clamp(2.2rem,6vw,3.4rem) 0 clamp(2.2rem,6vw,3.4rem) 2rem; }
+.ed .ed180-beat:last-child{ padding-bottom:0; }
+.ed .ed180-time{ font-family:var(--ed-fm); font-size:.82rem; font-weight:600; letter-spacing:.1em; color:var(--ed-navy); margin-bottom:1.3rem; position:relative; }
+.ed .ed180-time::before{ content:''; position:absolute; left:calc(-2rem - 4.5px); top:50%; transform:translateY(-50%); width:9px; height:9px; border-radius:50%; background:var(--ed-lav); box-shadow:0 0 0 4px var(--ed-paper); }
+.ed .ed180-scene p{ font-family:var(--ed-fh); font-weight:400; color:var(--ed-navy); font-size:clamp(1.25rem,2.8vw,1.7rem); line-height:1.32; letter-spacing:-.01em; margin-bottom:.35rem; }
+.ed .ed180-note{ font-family:var(--ed-fb); font-size:.9rem; color:var(--ed-ink2); line-height:1.6; max-width:54ch; margin-top:1.3rem; }
+.ed .ed180-note .lbl{ font-family:var(--ed-fm); font-size:.6rem; text-transform:uppercase; letter-spacing:.14em; color:var(--ed-lav); margin-right:.55rem; }
+.ed .ed180-ce{ font-family:var(--ed-fm); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ed-ink2); margin-top:.9rem; }
+
+.ed .ed180-close{ max-width:720px; margin-top:clamp(3rem,8vw,5rem); padding-top:clamp(2.5rem,6vw,3.5rem); border-top:1px solid var(--ed-border); }
+.ed .ed180-close-lead{ font-family:var(--ed-fb); font-size:1.05rem; color:var(--ed-ink2); line-height:1.6; max-width:44ch; margin-bottom:1.8rem; }
+.ed .ed180-close-q{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(2rem,6vw,3.4rem); color:var(--ed-navy); letter-spacing:-.02em; line-height:1.12; max-width:16ch; }
+</style>
+
+
+<style id="ed-pin-manifiesto">
+/* ═══ CAP. 2 · Manifiesto · escenario fijo (scroll-pin editorial) ═══ */
+.ed-pin-section{ background:var(--ed-paper); }
+.ed-pin-stage{ position:relative; } /* altura fijada por JS según nº de beats */
+.ed-pin-sticky{ position:sticky; top:0; height:100svh; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; overflow:hidden; padding:0 clamp(1.4rem,7vw,3rem); }
+.ed-pin-inner{ position:relative; width:100%; max-width:820px; margin:0 auto; height:52vh; min-height:280px; }
+.ed-pin-beat{ position:absolute; inset:0; display:flex; align-items:center; opacity:0; will-change:opacity, transform; transform:translateY(8px); }
+.ed-pin-title{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(2.6rem,7vw,4.6rem); color:var(--ed-navy); letter-spacing:-.03em; line-height:1.03; }
+.ed-pin-intro p{ font-family:var(--ed-fb); font-size:clamp(1.15rem,2.4vw,1.5rem); color:var(--ed-ink2); line-height:1.6; max-width:42ch; margin-bottom:1rem; }
+.ed-pin-intro p:last-child{ margin-bottom:0; }
+.ed-pin-dec{ font-family:var(--ed-fh); font-weight:400; color:var(--ed-navy); font-size:clamp(2rem,5.4vw,3.4rem); line-height:1.18; letter-spacing:-.02em; max-width:20ch; }
+.ed-pin-dec-last{ font-size:clamp(2.3rem,6vw,3.9rem); max-width:19ch; }
+
+/* Fallback accesible: sin pin, todo apilado y visible, cuando el usuario pide menos movimiento */
+@media (prefers-reduced-motion: reduce){
+  .ed-pin-stage{ height:auto !important; }
+  .ed-pin-sticky{ position:static; height:auto; padding:clamp(3rem,8vw,5rem) clamp(1.4rem,7vw,3rem); gap:clamp(2.5rem,6vw,4rem); }
+  .ed-pin-inner{ position:static; height:auto; display:flex; flex-direction:column; gap:clamp(2.5rem,6vw,4rem); }
+  .ed-pin-beat{ position:static; opacity:1 !important; transform:none !important; }
+}
+</style>
+
+<style id="ed-x180">
+/* ═══ 180 minutos · la web cambia de ritmo (overlay inmersivo) ═══ */
+
+/* Puerta de entrada, dentro del scroll normal */
+.ed .x180-gate-title{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(2.8rem,9vw,5.5rem); color:var(--ed-navy); letter-spacing:-.03em; line-height:1; margin-bottom:1.3rem; }
+.ed .x180-gate-open{ font-family:var(--ed-fh); font-weight:400; font-size:clamp(1.4rem,3.2vw,2rem); color:var(--ed-navy); line-height:1.3; max-width:24ch; margin-bottom:1.6rem; }
+.ed .x180-gate-note{ font-family:var(--ed-fb); color:var(--ed-ink2); font-size:1rem; max-width:44ch; margin-bottom:2.2rem; }
+.ed .x180-gate-btn{ display:inline-flex; align-items:center; gap:.6rem; font-family:var(--ed-fb); font-weight:600; font-size:1rem; color:#fff; background:var(--ed-navy); padding:.9rem 1.6rem; border-radius:100px; border:none; cursor:pointer; transition:background .25s var(--ed-ease); }
+.ed .x180-gate-btn:hover{ background:var(--ed-lav); }
+.ed .x180-gate-seen{ font-family:var(--ed-fb); color:var(--ed-ink2); font-size:1rem; margin-bottom:1.4rem; }
+.ed .x180-gate-more{ font-family:var(--ed-fb); color:var(--ed-ink2); font-size:.88rem; margin-top:1.1rem; }
+
+/* Overlay: cubre toda la ventana, oculta lo accesorio */
+.x180{ position:fixed; inset:0; z-index:2000; background:#FFFFFF; display:none; font-family:var(--ed-fb); color:var(--ed-ink); }
+.x180.is-active{ display:block; }
+body.x180-lock{ overflow:hidden; }
+
+.x180-skip{ position:fixed; top:1.2rem; right:1.4rem; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(6px); border:1px solid var(--ed-border); border-radius:100px; padding:.5rem 1rem; font-family:var(--ed-fm); font-size:.68rem; letter-spacing:.04em; color:var(--ed-ink2); cursor:pointer; transition:color .2s, border-color .2s; }
+.x180-skip:hover{ color:var(--ed-navy); border-color:var(--ed-navy); }
+
+/* Intro */
+.x180-intro{ display:none; position:absolute; inset:0; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:2rem; background:linear-gradient(180deg,#fff,var(--ed-paper)); }
+.x180.state-intro .x180-intro{ display:flex; }
+.x180-eyebrow{ font-family:var(--ed-fm); font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ed-ink2); margin-bottom:1.6rem; }
+.x180-title{ font-family:var(--ed-fh); font-weight:600; font-size:clamp(2.6rem,7vw,4.4rem); color:var(--ed-navy); letter-spacing:-.02em; margin-bottom:1.6rem; }
+.x180-quote{ font-family:var(--ed-fh); font-weight:300; font-style:italic; font-size:clamp(1.2rem,2.6vw,1.6rem); color:var(--ed-ink); line-height:1.5; max-width:36ch; margin-bottom:1.6rem; }
+.x180-note{ font-family:var(--ed-fb); font-size:.85rem; color:var(--ed-ink2); margin-bottom:2.4rem; }
+.x180-cta{ font-family:var(--ed-fb); font-weight:600; font-size:.95rem; color:#fff; background:var(--ed-navy); border:none; padding:.95rem 1.8rem; border-radius:100px; cursor:pointer; transition:background .25s var(--ed-ease), transform .25s var(--ed-ease); }
+.x180-cta:hover{ background:var(--ed-lav); transform:translateY(-1px); }
+
+/* Escena */
+.x180-scene{ display:none; position:absolute; inset:0; flex-direction:column; padding:clamp(1.4rem,4vw,2.6rem) clamp(1.4rem,5vw,3rem) 7rem; overflow-y:auto; }
+.x180.state-scene .x180-scene{ display:flex; }
+.x180-dots{ font-family:var(--ed-fm); font-size:.85rem; color:var(--ed-ink2); margin-bottom:clamp(1.5rem,4vw,2.5rem); }
+.x180-dots b{ color:var(--ed-navy); margin-right:.8rem; }
+.x180-dots .dot{ letter-spacing:.3em; }
+.x180-dots .dot.on{ color:var(--ed-lav); font-weight:700; }
+.x180-scenegrid{ display:grid; grid-template-columns:1fr; gap:clamp(2rem,4vw,3.5rem); flex:1; max-width:1180px; margin:0 auto; width:100%; align-items:start; }
+@media(min-width:900px){ .x180-scenegrid{ grid-template-columns:6fr 5fr; } }
+.x180-panel{ background:var(--ed-paper); border:1px solid var(--ed-border); border-radius:16px; padding:clamp(1.2rem,3vw,1.8rem); }
+.x180-narrative{ display:flex; flex-direction:column; justify-content:center; min-height:280px; }
+.x180-lines{ font-family:var(--ed-fh); font-weight:400; font-size:clamp(1.5rem,3.4vw,2.3rem); line-height:1.45; color:var(--ed-navy); letter-spacing:-.01em; }
+/* Cada línea ocupa su espacio desde el inicio: NO empuja al aparecer (sin botes) */
+.x180-lines .ln{ opacity:0; transition:opacity .7s var(--ed-ease); margin-bottom:.15em; }
+.x180-lines .ln.on{ opacity:1; }
+.x180-lines .ln.pause{ height:.55em; margin:0; }
+.x180-hint{ margin-top:1.6rem; display:flex; align-items:center; gap:.55rem; font-family:var(--ed-fm); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ed-ink2); opacity:.7; transition:opacity .4s var(--ed-ease); }
+.x180-hint-dot{ width:8px; height:8px; border-radius:50%; background:var(--ed-lav); display:inline-block; animation:x180blink 1.4s ease-in-out infinite; }
+@keyframes x180blink{ 0%,100%{ opacity:1; transform:scale(1);} 50%{ opacity:.25; transform:scale(.7);} }
+.x180-scene.hide-hint .x180-hint{ opacity:0; pointer-events:none; }
+.x180-after{ margin-top:1.6rem; display:flex; gap:1.6rem; flex-wrap:wrap; min-height:1.6em; }
+.x180-after a, .x180-after button{ font-family:var(--ed-fb); font-weight:700; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ed-lav); background:none; border:none; cursor:pointer; opacity:0; animation:x180fade .8s var(--ed-ease) forwards; }
+.x180-after .next{ color:var(--ed-navy); }
+@keyframes x180fade{ from{opacity:0;transform:translateY(4px);} to{opacity:1;transform:none;} }
+
+.x180-panel{ display:flex; flex-direction:column; }
+.x180-panel-label{ font-family:var(--ed-fm); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ed-lav); margin-bottom:1rem; }
+.x180-tabs{ display:flex; border-bottom:1px solid var(--ed-border); margin-bottom:1.2rem; gap:1.5rem; }
+.x180-tab{ background:none; border:none; border-bottom:2px solid transparent; padding-bottom:.7rem; font-family:var(--ed-fm); font-weight:600; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ed-ink2); cursor:pointer; }
+.x180-tab.active{ color:var(--ed-lav); border-color:var(--ed-lav); }
+.x180-tabpane{ font-size:.9rem; }
+
+/* Simulador (dentro de la pestaña) */
+.xsim{ border:1px solid var(--ed-border); border-radius:16px; padding:1.4rem; background:#fff; }
+.xsim-eyebrow{ font-family:var(--ed-fm); font-size:.65rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ed-lav); font-weight:700; margin-bottom:.6rem; display:block; }
+.xsim h4{ font-family:var(--ed-fh); font-weight:500; font-size:1.05rem; color:var(--ed-navy); margin-bottom:.6rem; }
+.xsim p{ font-family:var(--ed-fb); font-size:.85rem; color:var(--ed-ink); line-height:1.6; margin-bottom:.7rem; }
+.xsim .muted{ color:var(--ed-ink2); font-size:.78rem; }
+.xsim-subtabs{ display:flex; gap:.4rem; flex-wrap:wrap; margin-bottom:.9rem; }
+.xsim-subtabs button{ font-family:var(--ed-fb); font-size:.72rem; font-weight:600; border:1px solid var(--ed-border); background:#fff; border-radius:8px; padding:.4rem .7rem; cursor:pointer; color:var(--ed-ink2); }
+.xsim-subtabs button.active{ border-color:var(--ed-lav); color:var(--ed-lav); background:var(--ed-lav-light); }
+.xsim-q{ font-style:italic; color:var(--ed-ink2); }
+.xsim-canvas-grid{ display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+.xsim-crit{ margin-bottom:1rem; }
+.xsim-crit-head{ display:flex; justify-content:space-between; font-family:var(--ed-fb); font-weight:600; font-size:.82rem; color:var(--ed-navy); margin-bottom:.3rem; }
+.xsim-crit input[type=range]{ width:100%; accent-color:var(--ed-lav); }
+.xsim-grade{ margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--ed-border); font-family:var(--ed-fb); font-weight:700; font-size:.85rem; color:var(--ed-navy); }
+
+/* Ficha pedagógica */
+.xped{ background:var(--ed-lav-light); border-radius:16px; padding:1.4rem; }
+.xped-k{ font-family:var(--ed-fm); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-ink2); margin-bottom:.6rem; display:block; }
+.xped p{ font-family:var(--ed-fb); font-size:.88rem; color:var(--ed-ink); line-height:1.6; margin-bottom:1rem; }
+.xped-tags{ display:flex; gap:.4rem; flex-wrap:wrap; }
+.xped-tags span{ font-family:var(--ed-fm); font-size:.65rem; background:#fff; border:1px solid var(--ed-border); border-radius:100px; padding:.3rem .7rem; color:var(--ed-navy); }
+
+/* Pie de reproducción */
+.x180-footer{ position:fixed; bottom:0; left:0; right:0; z-index:10; display:flex; align-items:center; justify-content:center; gap:1rem; padding:1.1rem; background:rgba(255,255,255,.95); backdrop-filter:blur(10px); border-top:1px solid var(--ed-border); }
+.x180-navbtn{ width:36px; height:36px; border-radius:50%; border:1px solid var(--ed-border); background:#fff; cursor:pointer; color:var(--ed-navy); font-size:1rem; }
+.x180-navbtn:hover{ border-color:var(--ed-navy); }
+.x180-playbtn{ font-family:var(--ed-fm); font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--ed-border); background:#fff; border-radius:100px; padding:.55rem 1.1rem; cursor:pointer; color:var(--ed-navy); }
+.x180-status{ font-family:var(--ed-fm); font-size:.62rem; color:var(--ed-ink2); letter-spacing:.05em; text-transform:uppercase; position:absolute; right:1.2rem; }
+
+/* Cajón de evidencia */
+.x180-drawer{ position:fixed; inset:0; z-index:30; display:none; }
+.x180-drawer.open{ display:block; }
+.x180-drawer-veil{ position:absolute; inset:0; background:#000; opacity:.3; }
+.x180-drawer-panel{ position:absolute; right:0; top:0; bottom:0; width:min(480px,100%); background:#fff; padding:2rem; overflow-y:auto; display:flex; flex-direction:column; justify-content:space-between; }
+.x180-drawer-head{ display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--ed-border); padding-bottom:1rem; margin-bottom:1.4rem; font-family:var(--ed-fm); font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-ink2); }
+.x180-drawer-head button{ background:none; border:1px solid var(--ed-border); border-radius:50%; width:28px; height:28px; cursor:pointer; }
+#x180DrawerBody .cat{ font-family:var(--ed-fm); font-size:.62rem; text-transform:uppercase; background:var(--ed-lav-light); color:var(--ed-lav); padding:.25rem .6rem; border-radius:100px; display:inline-block; margin-bottom:.8rem; }
+#x180DrawerBody h3{ font-family:var(--ed-fh); font-weight:600; font-size:1.4rem; color:var(--ed-navy); margin-bottom:.8rem; line-height:1.25; }
+#x180DrawerBody p{ font-family:var(--ed-fb); font-size:.85rem; color:var(--ed-ink); line-height:1.6; margin-bottom:1rem; }
+#x180DrawerBody .lbl{ font-family:var(--ed-fm); font-size:.62rem; text-transform:uppercase; color:var(--ed-ink2); display:block; margin-bottom:.3rem; }
+#x180DrawerBody .ctx{ background:var(--ed-paper); border:1px solid var(--ed-border); border-radius:12px; padding:1rem; font-style:italic; font-size:.78rem; color:var(--ed-ink2); }
+.x180-drawer-link{ display:block; text-align:center; background:var(--ed-navy); color:#fff; font-family:var(--ed-fb); font-weight:600; font-size:.85rem; padding:.85rem; border-radius:10px; text-decoration:none; margin-top:1rem; }
+.x180-drawer-back{ width:100%; text-align:center; background:none; border:none; font-family:var(--ed-fm); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ed-ink2); padding:.8rem; cursor:pointer; }
+
+/* Cierre cinematográfico */
+.x180-final{ display:none; position:absolute; inset:0; align-items:center; justify-content:center; text-align:center; padding:2rem; }
+.x180.state-final .x180-final{ display:flex; }
+.x180-final-line{ font-family:var(--ed-fh); font-weight:400; font-size:clamp(1.8rem,4.5vw,3rem); color:var(--ed-navy); line-height:1.35; max-width:20ch; opacity:0; transition:opacity 1.2s var(--ed-ease); }
+.x180-final-line.on{ opacity:1; }
+.x180-final-exit{ position:absolute; bottom:3rem; background:none; border:none; border-bottom:1px solid var(--ed-ink2); font-family:var(--ed-fm); font-size:.8rem; color:var(--ed-ink2); padding-bottom:2px; cursor:pointer; opacity:0; animation:x180fade 1.5s var(--ed-ease) forwards; }
+
+@media (prefers-reduced-motion: reduce){
+  .x180-lines .ln{ transition:none; }
+  .x180-final-line{ transition:none; }
+  .x180-hint-dot{ animation:none; }
+}
+
+/* ═══ 180 minutos · MÓVIL — la narración manda, el material debajo ═══ */
+@media (max-width: 899px){
+  .x180-scene{ padding:clamp(1.2rem,5vw,1.8rem) clamp(1.1rem,5vw,1.6rem) 6.5rem; }
+  .x180-dots{ font-size:.78rem; margin-bottom:1.4rem; position:sticky; top:0; background:#fff; padding:.6rem 0; z-index:2; }
+  .x180-dots .dot{ letter-spacing:.2em; }
+  .x180-scenegrid{ gap:1.8rem; }
+  .x180-narrative{ min-height:auto; }
+  .x180-lines{ font-size:clamp(1.35rem,5.6vw,1.8rem); line-height:1.4; }
+  /* Separador claro entre "vivir" y "consultar" */
+  .x180-panel{ margin-top:.5rem; }
+  .x180-panel-label{ margin-bottom:.8rem; }
+  .x180-tabs{ gap:1rem; }
+  .x180-tab{ font-size:.66rem; }
+  .xsim, .xped{ padding:1.1rem; }
+  .xsim h4{ font-size:1rem; }
+  /* Pie de controles compacto y legible */
+  .x180-footer{ padding:.8rem 1rem; gap:.7rem; }
+  .x180-status{ position:static; margin-left:0; font-size:.58rem; width:100%; text-align:center; order:3; flex-basis:100%; margin-top:.2rem; }
+  .x180-playbtn{ padding:.5rem .9rem; }
+  .x180-skip{ top:.8rem; right:.9rem; padding:.45rem .8rem; font-size:.62rem; }
+  /* Cajón de evidencia: a pantalla completa en móvil */
+  .x180-drawer-panel{ width:100%; padding:1.4rem 1.2rem 1.2rem; }
+  /* Intro y cierre: márgenes seguros */
+  .x180-intro{ padding:1.5rem; }
+  .x180-title{ font-size:clamp(2.2rem,11vw,3.2rem); }
+  .x180-quote{ font-size:clamp(1.1rem,4.8vw,1.4rem); }
+  .x180-final-line{ font-size:clamp(1.6rem,7vw,2.4rem); }
+  .x180-final-exit{ bottom:2rem; }
+}
+@media (max-width: 380px){
+  .x180-lines{ font-size:1.3rem; }
+  .x180-navbtn{ width:32px; height:32px; }
+}
+</style>
+
+
+<style id="ed-especializacion">
+#especializacion.ed{ background:var(--ed-paper); }
+.ed .ed-amb{ display:grid; grid-template-columns:1fr; gap:0 clamp(2rem,4vw,3rem); }
+@media(min-width:760px){ .ed .ed-amb{ grid-template-columns:1fr 1fr 1fr; } }
+.ed .ed-amb-item{ padding:1rem 0; border-top:1px solid var(--ed-border); }
+.ed .ed-amb-item h4{ font-family:var(--ed-fh); font-weight:500; font-size:1.02rem; color:var(--ed-navy); margin-bottom:.3rem; line-height:1.25; }
+.ed .ed-amb-item p{ font-family:var(--ed-fm); font-size:.72rem; color:var(--ed-ink2); letter-spacing:.02em; }
+.ed .ed-adapt{ display:grid; grid-template-columns:1fr; gap:1.6rem; max-width:820px; }
+@media(min-width:760px){ .ed .ed-adapt{ grid-template-columns:1fr 1fr 1fr; } }
+.ed .ed-adapt-item h4{ font-family:var(--ed-fh); font-weight:500; font-size:1.08rem; color:var(--ed-navy); margin-bottom:.6rem; line-height:1.3; }
+.ed .ed-adapt-item p{ font-family:var(--ed-fb); font-size:.88rem; color:var(--ed-ink2); line-height:1.55; }
+</style>
+
+<style id="ed-referencias">
+#referencias.ed{ background:var(--ed-paper); }
+.ed .ed-refs{ border-top:1px solid var(--ed-border); padding-top:2rem; max-width:640px; }
+.ed .ed-refs-k{ font-family:var(--ed-fm); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ed-ink2); margin-bottom:1.4rem; }
+.ed .ed-refs-quote{ font-family:var(--ed-fh); font-weight:400; font-style:italic; font-size:clamp(1.5rem,4vw,2.1rem); color:var(--ed-navy); line-height:1.35; max-width:22ch; letter-spacing:-.01em; margin-bottom:1.2rem; }
+.ed .ed-refs-who{ font-family:var(--ed-fb); font-weight:600; font-size:.85rem; color:var(--ed-navy); margin-bottom:1.8rem; }
+.ed .ed-refs-more{ font-family:var(--ed-fm); font-size:.72rem; color:var(--ed-ink2); line-height:1.7; letter-spacing:.01em; }
 </style>
 </head>
 <body class="h-full">
@@ -561,12 +1001,11 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
   </div>
   <ul class="nav-links">
     <li><button onclick="goto('hero')">Inicio</button></li>
-    <li><button onclick="goto('encaje')">Institucional</button></li>
-    <li><button onclick="goto('galeria')">Aula</button></li>
-    <li><button onclick="goto('perfil')">Perfil</button></li>
-    <li><button onclick="goto('proyectos')">Portfolio</button></li>
-    <li><button onclick="goto('tech-proyectos')">Innovación FP</button></li>
-    <li><button onclick="goto('experiencia')">Experiencia</button></li>
+    <li><button onclick="goto('en-el-aula')">El aula</button></li>
+    <li><button onclick="goto('modulo-180')">180 minutos</button></li>
+    <li><button onclick="goto('galeria')">Archivo</button></li>
+    <li><button onclick="goto('proyectos')">Recursos</button></li>
+    <li><button onclick="goto('perfil')">Quién soy</button></li>
   </ul>
   <div style="display:flex;align-items:center;gap:8px">
     <a href="proyectofp/" target="_blank" style="font-size:12px;font-weight:500;padding:7px 10px;color:var(--muted);text-decoration:none;white-space:nowrap" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--muted)'">ProyectoFP</a>
@@ -585,249 +1024,210 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
   </div>
   <div class="mob-links">
     <button class="mob-link" onclick="goto('hero')">Inicio</button>
-    <button class="mob-link" onclick="goto('encaje')">Institucional</button>
-    <button class="mob-link" onclick="goto('galeria')">Aula</button>
-    <button class="mob-link" onclick="goto('perfil')">Perfil</button>
-    <button class="mob-link" onclick="goto('proyectos')">Portfolio</button>
-    <button class="mob-link" onclick="goto('tech-proyectos')">Innovación FP</button>
-    <button class="mob-link" onclick="goto('experiencia')">Experiencia</button>
+    <button class="mob-link" onclick="goto('en-el-aula')">El aula</button>
+    <button class="mob-link" onclick="goto('modulo-180')">180 minutos</button>
+    <button class="mob-link" onclick="goto('galeria')">Archivo</button>
+    <button class="mob-link" onclick="goto('proyectos')">Recursos</button>
+    <button class="mob-link" onclick="goto('perfil')">Quién soy</button>
     <button class="mob-link" onclick="goto('contacto')" style="color:var(--accent)">Contacto</button>
     <a href="proyectofp/" target="_blank" class="mob-link" style="color:var(--muted);font-weight:500;font-size:1rem;text-decoration:none;display:block">ProyectoFP</a>
   </div>
 </div>
 
 <!-- ── HERO ── -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h1 class="hero-h1">Profesor de <em>Economía y Empresa</em> para Formación Profesional y Bachillerato.<span style="display:block;font-size:0.78em;color:var(--navy);margin-top:0.4em;font-style:italic;font-weight:600;">Llegué a la docencia <em>sin buscarlo</em>. Y me quedé porque es <em>lo mío</em>.</span></h1>
-      <p class="hero-sub">Diplomado en Ciencias Empresariales y MAES (Economía, Empresa y Turismo). Experiencia empresarial, práctica educativa en centros de la Región de Murcia y enfoque basado en emprendimiento, competencia digital e IA aplicada al aprendizaje.</p>
-      <div class="hero-actions">
-        <button class="btn-primary" onclick="goto('contacto')">Propuesta docente</button>
-        <button class="btn-ghost" onclick="goto('proyectos')">Ver portfolio</button>
-      </div>
-    </div>
-    <div class="hero-image-col">
-      <div class="hero-photo-frame">
-        <img src="foto_aula.jpg" alt="Juan Peco — Profesor de Economía y Empresa" onerror="this.style.display='none'">
-        <div class="hero-photo-badge">Profesor de Economía y Empresa · Región de Murcia</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-evidence" style="max-width:1060px;margin:3rem auto 0;">
-    <div class="ev-card"><div class="ev-num">+25</div><div class="ev-label">Centros educativos</div><div class="ev-sub">Región de Murcia</div></div>
-    <div class="ev-card"><div class="ev-num">260h</div><div class="ev-label">Prácticum de aula</div><div class="ev-sub">IES Pedro Guillén, FP</div></div>
-    <div class="ev-card"><div class="ev-num">MAES</div><div class="ev-label">Habilitado · jun. 2026</div><div class="ev-sub">Esp. Economía y Empresa</div></div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── ENCAJE INSTITUCIONAL ── -->
-<section id="encaje">
-  <div class="container">
-    <div class="reveal" style="max-width: 600px;">
-      <div class="sec-label">Para el equipo directivo</div>
-      <h2 class="sec-title">Si me comprometo, llego hasta el final.</h2>
-      <p class="sec-desc">Me integro, me implico y me quedo.</p>
-    </div>
-    <div class="encaje-grid reveal d1">
-      <div class="encaje-card">
-        <div class="encaje-icon"></div>
-        <div class="encaje-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#EEEDFE;border-radius:10px;margin-bottom:0.8rem;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-
-Con el claustro</div>
-        <ul class="encaje-list">
-          <li>Me adapto rápido</li>
-          <li>Coordinación con el departamento y participación en lo que haga falta</li>
-          <li>Actitud proactiva y disposición para colaborar cuando el centro lo necesita.</li>
-        </ul>
-      </div>
-      <div class="encaje-card">
-        <div class="encaje-icon"></div>
-        <div class="encaje-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#EEEDFE;border-radius:10px;margin-bottom:0.8rem;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M5 4H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><path d="M9 12h6"/><path d="M9 16h4"/></svg></span>
-
-Con el alumnado</div>
-        <ul class="encaje-list">
-          <li>El esfuerzo, la participación y la mejora continua forman parte de la evaluación desde el primer día.</li>
-          <li>Tutoría y acompañamiento real</li>
-          <li>Comunicación con las familias cuando hace falta</li>
-        </ul>
-      </div>
-      <div class="encaje-card">
-        <div class="encaje-icon"></div>
-        <div class="encaje-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#EEEDFE;border-radius:10px;margin-bottom:0.8rem;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
-
-Con la programación</div>
-        <ul class="encaje-list">
-          <li>Programaciones didácticas, situaciones de aprendizaje y rúbricas bajo LOMLOE</li>
-          <li>Lo trabajé en el prácticum en el Pedro Guillén</li>
-          <li>El marco normativo lo conozco. Y lo que no sepa, lo aprendo</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── JUAN PECO · BLOQUE CENTRAL ── -->
-<section id="bloque-central" style="padding:5rem 2rem;background:#ffffff;;position:relative;z-index:1;">
-<div class="container">
-
-<style>
-.bc-label { font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:1rem; }
-.bc-stats { display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3.5rem; }
-.bc-stat { background:#EEEDFE;border-radius:12px;padding:1.4rem 1rem;text-align:center; }
-.bc-num { font-family:var(--font-h);font-size:2.2rem;font-weight:700;color:#534AB7;line-height:1;margin-bottom:0.3rem; }
-.bc-stat-label { font-size:0.78rem;font-weight:600;color:#26215C; }
-.bc-stat-sub { font-size:0.68rem;color:#7F77DD;margin-top:2px; }
-.bc-story { display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:3.5rem; }
-.bc-card { background:#ffffff;border:1.5px solid #AFA9EC;border-radius:14px;padding:1.6rem;position:relative;overflow:hidden;transition:all 0.3s; }
-.bc-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(83,74,183,0.12); }
-.bc-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px; }
-.bc-card.purple::before { background:#534AB7; }
-.bc-card.teal::before { background:linear-gradient(90deg,#534AB7,#1D9E75); }
-.bc-card-year { font-size:0.68rem;font-weight:700;color:#534AB7;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem; }
-.bc-card.teal .bc-card-year { color:#1D9E75; }
-.bc-card-title { font-family:var(--font-h);font-size:1rem;font-weight:700;color:#26215C;margin-bottom:0.5rem; }
-.bc-card-desc { font-size:0.8rem;color:#7F77DD;line-height:1.6; }
-.bc-panel { background:#EEEDFE;border:1.5px solid #AFA9EC;border-radius:16px;padding:2.5rem; }
-.bc-panel-grid { display:grid;grid-template-columns:1fr 1fr;gap:2.5rem; }
-.bc-modulo { display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0.9rem;background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;margin-bottom:0.5rem;transition:all 0.2s; }
-.bc-modulo:hover { border-color:#534AB7;transform:translateX(4px); }
-.bc-modulo-name { font-size:0.82rem;color:#26215C;font-weight:500; }
-.bc-tag { font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:100px;white-space:nowrap; }
-.bc-tag.green { background:#e1f5ee;color:#0F6E56; }
-.bc-tag.purple { background:#EEEDFE;color:#3C3489; }
-.bc-tag.amber { background:#faeeda;color:#633806; }
-.bc-disponible { display:flex;flex-direction:column;justify-content:center;height:100%; }
-.bc-status { display:flex;align-items:center;gap:0.7rem;margin-bottom:1.4rem; }
-.bc-dot { width:11px;height:11px;border-radius:50%;background:#1D9E75;animation:blink 2s infinite;flex-shrink:0; }
-.bc-status-text { font-family:var(--font-h);font-size:1.4rem;font-weight:700;color:#26215C; }
-.bc-item { display:flex;align-items:center;gap:0.65rem;margin-bottom:0.65rem; }
-.bc-bullet { width:6px;height:6px;border-radius:50%;background:#534AB7;flex-shrink:0; }
-.bc-item span { font-size:0.83rem;color:#3C3489; }
-.bc-cta { display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.85rem 1.8rem;background:#534AB7;color:#fff;border-radius:10px;font-weight:700;font-size:0.85rem;text-decoration:none;transition:all 0.25s; }
-.bc-cta:hover { background:#26215C;transform:translateY(-2px);box-shadow:0 8px 20px rgba(83,74,183,0.3); }
-@media(max-width:900px){
-  .bc-stats{grid-template-columns:repeat(2,1fr);}
-  .bc-story{grid-template-columns:1fr;}
-  .bc-panel-grid{grid-template-columns:1fr;}
-}
-</style>
-
-  <!-- STATS -->
-  <div class="bc-label" style="text-align:center;">Trayectoria en números</div>
-  <div class="bc-stats reveal">
-    <div class="bc-stat">
-      <div class="bc-num bc-counter" data-target="18">18</div>
-      <div class="bc-stat-label">Años en empresa</div>
-      <div class="bc-stat-sub">Comercial · Dirección · Marketing</div>
-    </div>
-    <div class="bc-stat">
-      <div class="bc-num bc-counter" data-target="25">25</div>
-      <div class="bc-stat-label">Centros educativos</div>
-      <div class="bc-stat-sub">Región de Murcia</div>
-    </div>
-    <div class="bc-stat">
-      <div class="bc-num bc-counter" data-target="260">260</div>
-      <div class="bc-stat-label">Horas de prácticum</div>
-      <div class="bc-stat-sub">IES Pedro Guillén · FP</div>
-    </div>
-    <div class="bc-stat">
-      <div class="bc-num bc-counter" data-target="17">17</div>
-      <div class="bc-stat-label">Meses en Código Escuela</div>
-      <div class="bc-stat-sub">Enero 2025 – Junio 2026</div>
-    </div>
-  </div>
-
-  <!-- TRES MOMENTOS -->
-  <div class="bc-label" style="text-align:center;">El recorrido</div>
-  <div class="bc-story reveal d1">
-    <div class="bc-card purple">
-      <div class="bc-card-year">2004 – 2022</div>
-      <div class="bc-card-title">18 años en empresa</div>
-      <div class="bc-card-desc">Gestión comercial, dirección de equipos, administración y marketing. El contenido de los módulos, vivido desde dentro.</div>
-    </div>
-    <div class="bc-card teal">
-      <div class="bc-card-year">Enero 2025</div>
-      <div class="bc-card-title">Código Escuela 4.0</div>
-      <div class="bc-card-desc">Lo que empezó como colaboración se convirtió en vocación. Más de 25 centros. El aula encajó desde el primer día.</div>
-    </div>
-    <div class="bc-card purple">
-      <div class="bc-card-year">Junio 2026</div>
-      <div class="bc-card-title">MAES habilitado</div>
-      <div class="bc-card-desc">Formación seria para ejercer bien lo que ya funcionaba. Disponible jornada completa para el curso 2026-2027.</div>
-    </div>
-  </div>
-
-  <!-- MÓDULOS + DISPONIBILIDAD -->
-  <div class="bc-panel reveal d2">
-    <div class="bc-panel-grid">
-      <div>
-        <div class="bc-label">Ámbitos de especialización</div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Empresa e Iniciativa Emprendedora</span><span class="bc-tag green">FP · ESO · BACH</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Economía</span><span class="bc-tag green">ESO · BACH</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Economía de la Empresa</span><span class="bc-tag green">BACH</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Fundamentos de Administración y Gestión</span><span class="bc-tag green">BACH</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Gestión Administrativa</span><span class="bc-tag purple">FP GM</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Administración y Finanzas</span><span class="bc-tag purple">FP GS</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Marketing y Publicidad</span><span class="bc-tag purple">FP GS</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Gestión de Ventas y Espacios Comerciales</span><span class="bc-tag purple">FP GS</span></div>
-        <div class="bc-modulo"><span class="bc-modulo-name">Digitalización · IPE · Sostenibilidad</span><span class="bc-tag amber">Transversal</span></div>
-      </div>
-      <div class="bc-disponible">
-        <div class="bc-label">Estado actual</div>
-        <div class="bc-status">
-          <div class="bc-dot"></div>
-          <div class="bc-status-text">Disponible</div>
+<section id="hero" class="ed">
+  <div class="ed-wrap">
+    <div class="ed-hero-grid">
+      <div class="ed-hero-text">
+        <p class="ed-eyebrow ed-anim a1"><span>Profesor de Economía y Empresa</span>Formación Profesional · Bachillerato</p>
+        <h1 class="ed-title ed-anim a2">Llegué a la docencia sin buscarlo.<span class="ed-t2">Y me quedé porque descubrí que era donde mejor podía aplicar todo lo aprendido en la empresa.</span></h1>
+        <p class="ed-sub ed-anim a3">Diplomado en Ciencias Empresariales y MAES. Tras años trabajando en empresa, hoy diseño situaciones de aprendizaje para que el alumnado analice problemas reales, tome decisiones y aprenda a justificar sus propuestas con criterio.</p>
+        <div class="ed-actions ed-anim a4">
+          <button class="ed-btn" onclick="goto('en-el-aula')">Entrar en el aula <span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
         </div>
-        <div class="bc-item"><div class="bc-bullet"></div><span>Incorporación curso 2026-2027</span></div>
-        <div class="bc-item"><div class="bc-bullet"></div><span>Jornada completa</span></div>
-        <div class="bc-item"><div class="bc-bullet"></div><span>Región de Murcia</span></div>
-        <div class="bc-item"><div class="bc-bullet"></div><span>Referencias verificables disponibles</span></div>
-        <a href="#contacto" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'});return false;" class="bc-cta">Contactar ahora →</a>
+        <ul class="ed-notes ed-anim a5">
+          <li><span class="k">Región de Murcia</span><span class="v">Más de 25 centros educativos acompañados</span></li>
+          <li><span class="k">IES Pedro Guillén</span><span class="v">260 horas de prácticum en FP</span></li>
+          <li><span class="k">MAES</span><span class="v">Habilitado en junio de 2026</span></li>
+        </ul>
+      </div>
+      <div class="ed-hero-portrait ed-anim a3">
+        <div class="ed-portrait-frame">
+          <img src="foto_aula.jpg" alt="Juan Peco, profesor de Economía y Empresa, en el aula" onerror="this.closest('.ed-hero-portrait').style.display='none'">
+        </div>
+        <p class="ed-portrait-cap">Juan Peco · aula de FP</p>
       </div>
     </div>
   </div>
-
-</div>
-
-<script>
-(function(){
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.querySelectorAll('.bc-counter').forEach(el => {
-        const target = parseInt(el.dataset.target);
-        const dur = target > 100 ? 1800 : 1200;
-        const t0 = performance.now();
-        function tick(now) {
-          const p = Math.min((now-t0)/dur,1);
-          const ease = 1-Math.pow(1-p,3);
-          el.textContent = Math.round(ease*target);
-          if(p<1) requestAnimationFrame(tick);
-          else el.textContent = target;
-        }
-        requestAnimationFrame(tick);
-      });
-      obs.unobserve(e.target);
-    });
-  },{threshold:0.2});
-  document.addEventListener('DOMContentLoaded',()=>{
-    const s = document.getElementById('bloque-central');
-    if(s) obs.observe(s);
-  });
-})();
-</script>
-
+</section>
+<div class="divider"></div>
+<section id="manifiesto" class="ed ed-pin-section" style="background:#FAF9F6;position:relative;z-index:1;">
+  <div class="ed-pin-stage" id="pinStage">
+    <div class="ed-pin-sticky">
+      <div class="ed-pin-inner">
+        <div class="ed-pin-beat" data-w="70"><h2 class="ed-pin-title">Lo que intento<br>que ocurra</h2></div>
+        <div class="ed-pin-beat" data-w="95"><div class="ed-pin-intro"><p>No todas mis clases son iguales. Hay días de teoría, de ejercicios, de explicaciones largas, de correcciones. Y días en los que simplemente toca escuchar.</p><p>Pero cuando puedo decidir cómo diseñar una sesión, intento que ocurran algunas cosas.</p></div></div>
+        <div class="ed-pin-beat" data-w="80"><p class="ed-pin-dec">Que haya un problema<br>que merezca la pena pensar.</p></div>
+        <div class="ed-pin-beat" data-w="80"><p class="ed-pin-dec">Que una herramienta<br>no sustituya<br>una decisión.</p></div>
+        <div class="ed-pin-beat" data-w="80"><p class="ed-pin-dec">Que equivocarse<br>sirva para entender<br>algo mejor.</p></div>
+        <div class="ed-pin-beat" data-w="80"><p class="ed-pin-dec">Que una idea<br>tenga que defenderse<br>delante de otras personas.</p></div>
+        <div class="ed-pin-beat" data-w="150"><p class="ed-pin-dec ed-pin-dec-last">Y que, al terminar la clase,<br>el alumnado entienda<br>un poco mejor cómo funciona<br>el mundo fuera del aula.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="modulo-180" class="ed" style="background:#FAF9F6;padding:clamp(4.5rem,12vw,8rem) 2rem clamp(4.5rem,11vw,7rem);position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div id="exp180Gate" class="reveal d1"></div>
+  </div>
 </section>
 
-<div class="divider"></div>
+<!-- ═══ 180 MINUTOS · overlay inmersivo (la web cambia de ritmo, no de página) ═══ -->
+<div id="exp180Overlay" class="x180" aria-hidden="true">
+  <button id="x180Skip" class="x180-skip" onclick="Exp180.skip()">Saltar experiencia &times;</button>
 
-<!-- ── MAPA CENTROS ── -->
-<section id="mapa-centros" style="padding:5rem 2rem;background:#F5F4FE;;position:relative;z-index:1;">
+  <!-- Intro -->
+  <div id="x180Intro" class="x180-intro">
+    <p class="x180-eyebrow">Experiencia narrativa docente</p>
+    <h2 class="x180-title">Un día en mi aula</h2>
+    <p class="x180-quote">«No voy a explicarte cómo enseño.<br><b>Prefiero que lo experimentes.</b>»</p>
+    <p class="x180-note">3 minutos · situaciones de aprendizaje reales (LOMLOE)</p>
+    <button class="x180-cta" id="x180StartBtn" onclick="Exp180.begin()">Comenzar experiencia</button>
+  </div>
+
+  <!-- Escena -->
+  <div id="x180Scene" class="x180-scene">
+    <div class="x180-dots" id="x180Dots"></div>
+    <div class="x180-scenegrid">
+      <div class="x180-narrative">
+        <div id="x180Lines" class="x180-lines"></div>
+        <div id="x180Hint" class="x180-hint"><span class="x180-hint-dot"></span> toca o espera para continuar</div>
+        <div id="x180After" class="x180-after"></div>
+      </div>
+      <div class="x180-panel">
+        <p class="x180-panel-label" id="x180PanelLabel">Evidencia de esta escena</p>
+        <div class="x180-tabs">
+          <button class="x180-tab active" data-tab="sim">Ver el material</button>
+          <button class="x180-tab" data-tab="ped">Lectura pedagógica</button>
+        </div>
+        <div id="x180Sim" class="x180-tabpane"></div>
+        <div id="x180Ped" class="x180-tabpane" style="display:none;"></div>
+      </div>
+    </div>
+    <div class="x180-footer">
+      <button class="x180-navbtn" onclick="Exp180.prev()" title="Anterior">&larr;</button>
+      <button id="x180Play" class="x180-playbtn" onclick="Exp180.togglePlay()">Pausa</button>
+      <button class="x180-navbtn" onclick="Exp180.next()" title="Siguiente">&rarr;</button>
+      <span id="x180Status" class="x180-status"></span>
+    </div>
+  </div>
+
+  <!-- Cajón de evidencia -->
+  <div id="x180Drawer" class="x180-drawer">
+    <div class="x180-drawer-veil" onclick="Exp180.closeDrawer()"></div>
+    <aside class="x180-drawer-panel">
+      <div class="x180-drawer-head">
+        <span>Evidencias de aula</span>
+        <button onclick="Exp180.closeDrawer()">&times;</button>
+      </div>
+      <div id="x180DrawerBody"></div>
+      <button class="x180-drawer-back" onclick="Exp180.closeDrawer()">Volver a la película</button>
+    </aside>
+  </div>
+
+  <!-- Cierre -->
+  <div id="x180Final" class="x180-final">
+    <p id="x180FinalLine" class="x180-final-line"></p>
+    <button id="x180FinalExit" class="x180-final-exit" style="display:none;" onclick="Exp180.finish()">Explorar los materiales reales &rarr;</button>
+  </div>
+</div>
+<div class="divider"></div>
+<section id="en-el-aula" class="ed" style="padding:clamp(3.5rem,9vw,5.5rem) 2rem;background:#FAF9F6;position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div class="ed-sec-head reveal">
+      <p class="ed-kicker">En el aula</p>
+      <h2 class="ed-h2">Lo que ocurre en mis clases</h2>
+      <p class="ed-lead">Dinámicas que se repiten, no una sesión concreta. Cada una aparece cuando el contenido y el grupo la piden.</p>
+    </div>
+    <div class="ed-dyn-grid reveal d1">
+      <div class="ed-dyn"><p class="cat">Magistral</p><h3>Clase magistral</h3><p>Para definiciones y marcos, cuando el contenido lo pide.</p></div>
+      <div class="ed-dyn has-ph"><p class="cat">ABP</p><h3>Empresa simulada</h3><p>Constituyen y gestionan una empresa; deciden y defienden resultados.</p><img class="ed-dyn-ph" src="galeria_02.jpg" alt="Juan Peco explicando el modelo de negocio al grupo" loading="lazy"></div>
+      <div class="ed-dyn"><p class="cat">Comunicación</p><h3>Pitch de negocio</h3><p>Cinco minutos para convencer. Síntesis y presión real.</p></div>
+      <div class="ed-dyn"><p class="cat">Digital</p><h3>IA con criterio</h3><p>La IA como herramienta, no como atajo. Cada decisión, justificada.</p></div>
+      <div class="ed-dyn"><p class="cat">Argumentación</p><h3>Debate</h3><p>Posturas enfrentadas y argumentos preparados. Yo arbitro, no opino.</p></div>
+      <div class="ed-dyn has-ph"><p class="cat">Equipo</p><h3>Trabajo en equipo</h3><p>Roles diferenciados y responsabilidad compartida.</p><img class="ed-dyn-ph" src="galeria_06.jpg" alt="Juan Peco con un grupo de alumnos de FP" loading="lazy"></div>
+      <div class="ed-dyn"><p class="cat">Evaluación</p><h3>Evaluación continua</h3><p>El esfuerzo y la mejora cuentan desde el primer día.</p></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="especializacion" class="ed" style="background:#FAF9F6;padding:clamp(3.5rem,9vw,5.5rem) 2rem;position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div class="ed-sec-head reveal">
+      <p class="ed-kicker">Qué puedo impartir</p>
+      <h2 class="ed-h2">Especialización y forma de trabajar</h2>
+    </div>
+
+    <p class="ed-level-k reveal">01 · Ámbitos de especialización</p>
+    <div class="ed-amb reveal d1">
+      <div class="ed-amb-item"><h4>Empresa e Iniciativa Emprendedora</h4><p>FP · ESO · Bachillerato</p></div>
+      <div class="ed-amb-item"><h4>Economía</h4><p>ESO · Bachillerato</p></div>
+      <div class="ed-amb-item"><h4>Economía de la Empresa</h4><p>Bachillerato</p></div>
+      <div class="ed-amb-item"><h4>Fundamentos de Administración y Gestión</h4><p>Bachillerato</p></div>
+      <div class="ed-amb-item"><h4>Gestión Administrativa</h4><p>FP Grado Medio</p></div>
+      <div class="ed-amb-item"><h4>Administración y Finanzas</h4><p>FP Grado Superior</p></div>
+      <div class="ed-amb-item"><h4>Marketing y Publicidad</h4><p>FP Grado Superior</p></div>
+      <div class="ed-amb-item"><h4>Gestión de Ventas y Espacios Comerciales</h4><p>FP Grado Superior</p></div>
+      <div class="ed-amb-item"><h4>Digitalización · IPE · Sostenibilidad</h4><p>Transversal</p></div>
+    </div>
+
+    <p class="ed-level-k reveal">02 · Cómo me adapto</p>
+    <div class="ed-adapt reveal d1">
+      <div class="ed-adapt-item">
+        <h4>Cuando el grupo está apático</h4>
+        <p>Rompo la inercia con dinámicas de impacto inmediato y participación anónima inicial, para ganar confianza antes de pedir implicación.</p>
+      </div>
+      <div class="ed-adapt-item">
+        <h4>Cuando el aula es heterogénea</h4>
+        <p>Aplico Diseño Universal para el Aprendizaje: distintas vías de entrada al contenido y distintas formas de demostrar lo aprendido.</p>
+      </div>
+      <div class="ed-adapt-item">
+        <h4>Cuando el contenido es abstracto</h4>
+        <p>Aterrizo la teoría en un proyecto real. El alumnado hace para entender, no memoriza para repetir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="galeria" class="ed" style="background:#FAF9F6;">
+  <div class="ed-wrap">
+    <div class="ed-sec-head reveal">
+      <p class="ed-kicker">Evidencia profesional</p>
+      <h2 class="ed-h2">Trabajo real en el aula</h2>
+      <p class="ed-lead">No es una galería. Es un archivo. Cada imagen documenta algo que ocurrió de verdad.</p>
+    </div>
+
+    <div class="ed-photos reveal d1">
+      <figure class="ed-photo"><img src="galeria_01.jpg" alt="Juan Peco acompañando a un alumno en el aula" loading="lazy"><figcaption><span class="n">01</span>Acompañamiento individual durante el trabajo autónomo.</figcaption></figure>
+      <figure class="ed-photo"><img src="galeria_02.jpg" alt="Juan Peco explicando el modelo de negocio al grupo" loading="lazy"><figcaption><span class="n">02</span>Explicación de un modelo de negocio ante el grupo.</figcaption></figure>
+      <figure class="ed-photo"><img src="galeria_03.jpg" alt="Juan Peco resolviendo dudas en directo" loading="lazy"><figcaption><span class="n">03</span>Resolución de dudas en directo, sin guion.</figcaption></figure>
+      <figure class="ed-photo"><img src="galeria_04.jpg" alt="Juan Peco en trabajo práctico de taller de FP" loading="lazy"><figcaption><span class="n">04</span>Trabajo práctico en taller de FP.</figcaption></figure>
+      <figure class="ed-photo"><img src="galeria_05.jpg" alt="Juan Peco explicando contenidos de Economía en la pizarra" loading="lazy"><figcaption><span class="n">05</span>Contenidos de Economía, a mano, en la pizarra.</figcaption></figure>
+      <figure class="ed-photo"><img src="galeria_06.jpg" alt="Juan Peco con un grupo de alumnos de FP" loading="lazy"><figcaption><span class="n">06</span>Con un grupo de FP durante la sesión.</figcaption></figure>
+    </div>
+
+    <div class="ed-reels reveal d2">
+      <figure class="ed-reel"><iframe src="https://www.instagram.com/reel/DXZv7IEjZl0/embed/captioned/" height="520" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><figcaption><b>Robótica</b>Pensamiento computacional con mTiny en Primaria.</figcaption></figure>
+      <figure class="ed-reel"><iframe src="https://www.instagram.com/reel/DW0hmtgjZf2/embed/captioned/" height="520" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><figcaption><b>Aprendizaje activo</b>Trabajo colaborativo en empresa simulada.</figcaption></figure>
+      <figure class="ed-reel"><iframe src="https://www.instagram.com/reel/DUULWyoDKnk/embed/captioned/" height="520" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><figcaption><b>Tecnología educativa</b>Herramientas digitales en el aula de FP.</figcaption></figure>
+    </div>
+
+    <div class="ed-archive-foot reveal">
+      <p>Más evidencia de aula, en abierto.</p>
+      <a class="src" href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener">@juanpeco →</a>
+    </div>
+  </div>
+</section>
+<section id="mapa-centros" class="ed" style="padding:clamp(3.5rem,9vw,5.5rem) 2rem;background:#FAF9F6;position:relative;z-index:1;">
 <div class="container">
 
 <style>
@@ -961,603 +1361,123 @@ Con la programación</div>
 
 </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- ── EN EL AULA ── -->
-<section id="en-el-aula" style="padding:5rem 2rem;background:#F5F4FE;;position:relative;z-index:1;">
-<div class="container">
-
-<style>
-.aula-label2{font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.5rem;}
-.aula-heading2{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#26215C;margin:0 0 2.5rem;letter-spacing:-0.5px;}
-.ac-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:1.5rem;}
-.ac-card{background:#ffffff;border:1px solid #AFA9EC;border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.25s;}
-.ac-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(83,74,183,0.12);}
-.ac-card.ac-active{border:2px solid #534AB7;box-shadow:0 8px 24px rgba(83,74,183,0.15);}
-.ac-head{padding:1.2rem;display:flex;align-items:center;gap:12px;}
-.ac-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;}
-.ac-ico.p{background:#EEEDFE;}
-.ac-ico.t{background:#E1F5EE;}
-.ac-name{font-size:0.88rem;font-weight:700;color:#26215C;}
-.ac-sub{font-size:0.72rem;color:#7F77DD;margin-top:2px;}
-.ac-bar{height:3px;background:transparent;transition:background 0.25s;}
-.ac-card:hover .ac-bar.p, .ac-active .ac-bar.p{background:#534AB7;}
-.ac-card:hover .ac-bar.t, .ac-active .ac-bar.t{background:#1D9E75;}
-.ac-detail{background:#ffffff;border:1px solid #AFA9EC;border-radius:14px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;min-height:180px;}
-.ac-dtag{display:inline-block;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
-.ac-dtag.p{background:#EEEDFE;color:#3C3489;}
-.ac-dtag.t{background:#E1F5EE;color:#0F6E56;}
-.ac-dtitle{font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:#26215C;margin:0 0 8px;}
-.ac-ddesc{font-size:0.82rem;color:#7F77DD;line-height:1.6;margin:0;}
-.ac-items{display:flex;flex-direction:column;gap:8px;}
-.ac-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#F5F4FE;border:1px solid #AFA9EC;border-radius:9px;transition:all 0.2s;}
-.ac-item:hover{border-color:#534AB7;background:#EEEDFE;transform:translateX(4px);}
-.ac-iico{font-size:1rem;flex-shrink:0;margin-top:1px;}
-.ac-iico.p{color:#534AB7;}
-.ac-iico.t{color:#1D9E75;}
-.ac-itext{font-size:0.82rem;font-weight:600;color:#26215C;}
-.ac-isub{font-size:0.72rem;color:#7F77DD;margin-top:2px;}
-@media(max-width:700px){.ac-grid{grid-template-columns:1fr;}.ac-detail{grid-template-columns:1fr;}}
-</style>
-
-  <div class="reveal">
-    <p class="aula-label2">En el aula</p>
-    <h2 class="aula-heading2">Lo que ocurre en mis clases</h2>
-  </div>
-
-  <div class="ac-grid reveal d1">
-    <div class="ac-card ac-active" id="ac0" onclick="acSelect(0)">
-      <div class="ac-bar p"></div>
-      <div class="ac-head"><div class="ac-ico p"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div><div><div class="ac-name">Empresa simulada</div><div class="ac-sub">ABP · Roles profesionales</div></div></div>
+<section id="proyectos" class="ed" style="padding:clamp(3.5rem,9vw,5.5rem) 2rem 0;background:#FAF9F6;position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div class="ed-sec-head reveal">
+      <p class="ed-kicker">Lo que queda</p>
+      <h2 class="ed-h2">¿Qué queda cuando termina la clase?</h2>
+      <p class="ed-lead">Los materiales. La parte reutilizable del trabajo: lo que se usó en el aula y sirve para la siguiente vez.</p>
     </div>
-    <div class="ac-card" id="ac1" onclick="acSelect(1)">
-      <div class="ac-bar t"></div>
-      <div class="ac-head"><div class="ac-ico t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.2 6H8.2A7 7 0 0 1 5 9a7 7 0 0 1 7-7z"/></svg></div><div><div class="ac-name">Pitch de negocio</div><div class="ac-sub">Comunicación · Presión real</div></div></div>
-    </div>
-    <div class="ac-card" id="ac2" onclick="acSelect(2)">
-      <div class="ac-bar p"></div>
-      <div class="ac-head"><div class="ac-ico p"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 2v6M8 11h.01M16 11h.01M8 16h8"/><circle cx="12" cy="2" r="1"/></svg></div><div><div class="ac-name">IA con criterio</div><div class="ac-sub">Herramienta · No atajo</div></div></div>
-    </div>
-  </div>
-
-  <div class="ac-detail reveal d2" id="ac-detail"></div>
-
-  <script>
-  var acData=[
-    {tag:'Aprendizaje basado en proyectos',tcls:'p',title:'Empresa simulada',desc:'El alumnado constituye y gestiona una empresa ficticia desde cero: toma decisiones reales de negocio, resuelve conflictos internos y defiende los resultados ante el grupo.',items:[{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',cls:'p',text:'Plan de empresa estructurado',sub:'Análisis · Marketing · Operaciones'},{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',cls:'p',text:'Roles profesionales diferenciados',sub:'CEO · CFO · Marketing · Ventas'},{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>',cls:'p',text:'Defensa ante tribunal',sub:'Comunicación oral formal'}]},
-    {tag:'Comunicación profesional',tcls:'t',title:'Pitch de negocio',desc:'5 minutos para convencer a una audiencia real o simulada. El alumnado aprende a sintetizar, gestionar la presión y defender su propuesta de valor con claridad.',items:[{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.2 6H8.2A7 7 0 0 1 5 9a7 7 0 0 1 7-7z"/></svg>',cls:'t',text:'Propuesta de valor clara',sub:'Diferenciación · Mercado · Ventaja'},{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>',cls:'t',text:'Vídeo grabado y analizado',sub:'Retroalimentación objetiva'},{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',cls:'t',text:'Ficha de viabilidad básica',sub:'Números reales sobre la idea'}]},
-    {tag:'Competencia digital crítica',tcls:'p',title:'IA con criterio',desc:'IA generativa como herramienta profesional, no como atajo. El alumnado produce contenido real y justifica cada decisión con criterio propio.',items:[{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>',cls:'p',text:'Vídeo corporativo 30-60 seg.',sub:'Guion · Producción · Montaje'},{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>',cls:'p',text:'Criterio ético y pedagógico',sub:'Qué delegar · Qué no delegar'},{ico:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6M12 9v6"/></svg>',cls:'p',text:'Dossier justificativo propio',sub:'Decisiones documentadas'}]}
-  ];
-  function acSelect(i){
-    [0,1,2].forEach(function(j){document.getElementById('ac'+j).classList.toggle('ac-active',j===i);});
-    var d=acData[i];
-    document.getElementById('ac-detail').innerHTML='<div><span class="ac-dtag '+d.tcls+'">'+d.tag+'</span><h3 class="ac-dtitle">'+d.title+'</h3><p class="ac-ddesc">'+d.desc+'</p></div><div class="ac-items">'+d.items.map(function(it){return'<div class="ac-item"><span class="ac-iico '+it.cls+'">'+it.ico+'</span><div><div class="ac-itext">'+it.text+'</div><div class="ac-isub">'+it.sub+'</div></div></div>';}).join('')+'</div>';
-  }
-  acSelect(0);
-  </script>
-
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── EVIDENCIA DE AULA ── -->
-<section id="galeria">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Evidencia profesional</div>
-      <h2 class="sec-title">Trabajo real en el aula</h2>
-      <p class="sec-desc">Metodología aplicada en el aula: proyectos auténticos, aprendizaje activo y tecnología educativa en contexto real. El alumnado crea, decide y presenta ante audiencias reales.</p>
-    </div>
-    <div class="reveal d1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2.5rem;margin-bottom:3.5rem;">
-      <div style="border-radius:var(--r);overflow:hidden;border:1px solid var(--border);">
-        <img src="galeria_01.jpg" alt="Juan Peco acompañando a un alumno en el aula" style="width:100%;height:260px;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--r);overflow:hidden;border:1px solid var(--border);">
-        <img src="galeria_02.jpg" alt="Juan Peco explicando el modelo de negocio al grupo" style="width:100%;height:260px;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--r);overflow:hidden;border:1px solid var(--border);">
-        <img src="galeria_03.jpg" alt="Juan Peco resolviendo dudas en directo" style="width:100%;height:260px;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--r);overflow:hidden;border:1px solid var(--border);">
-        <img src="galeria_04.jpg" alt="Juan Peco en trabajo práctico de taller de FP" style="width:100%;height:260px;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--r);overflow:hidden;border:1px solid var(--border);">
-        <img src="galeria_05.jpg" alt="Juan Peco explicando contenidos de Economía en la pizarra" style="width:100%;height:260px;object-fit:cover;display:block;">
-      </div>
-      <div style="border-radius:var(--r);overflow:hidden;border:1px solid var(--border);">
-        <img src="galeria_06.jpg" alt="Juan Peco con un grupo de alumnos de FP" style="width:100%;height:260px;object-fit:cover;display:block;">
-      </div>
-    </div>
-    <div class="reveal d1" style="margin-top: 3rem; margin-bottom: 3.5rem;">
-      <div style="position:relative;width:100%;max-width:680px;margin:0 auto;">
-        <iframe src="https://www.instagram.com/reel/DXZv7IEjZl0/embed/captioned/" width="100%" height="680" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-      </div>
-      <div style="margin-top:1.2rem;text-align:center;">
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;">Robótica educativa · Pensamiento computacional</div>
-        <div style="font-size:0.88rem;color:var(--muted);line-height:1.6;max-width:560px;margin:0 auto;">Alumnado de 2.º construyendo historias con mTiny. Creatividad, resolución de problemas y trabajo cooperativo en contexto real de aula.</div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:3.5rem;">
-      <div class="reveal d2">
-        <iframe src="https://www.instagram.com/reel/DW0hmtgjZf2/embed/captioned/" width="100%" height="560" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        <div style="margin-top:1rem;"><div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Aprendizaje activo</div><div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Trabajo colaborativo en proyectos de empresa simulada con roles profesionales reales.</div></div>
-      </div>
-      <div class="reveal d3">
-        <iframe src="https://www.instagram.com/reel/DUULWyoDKnk/embed/captioned/" width="100%" height="560" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius:var(--r);border:1px solid var(--border);"></iframe>
-        <div style="margin-top:1rem;"><div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;">Tecnología educativa</div><div style="font-size:0.83rem;color:var(--muted);line-height:1.5;">Integración de herramientas digitales y pensamiento computacional en el aula de FP.</div></div>
-      </div>
-    </div>
-    <div class="reveal d1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem;">
-      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';"><div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Presentaciones profesionales</div><div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">El alumnado defiende sus proyectos ante audiencias reales o simuladas, desarrollando comunicación oral formal y capacidad de síntesis técnica.</div></div>
-      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';"><div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Competencia digital aplicada</div><div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Habilidades digitales integradas en contexto profesional de FP: herramientas de productividad, IA generativa con criterio y documentación técnica.</div></div>
-      <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:all 0.25s var(--ease);" onmouseover="this.style.borderColor='rgba(79,110,247,0.25)';this.style.transform='translateY(-3px)';" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)';"><div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Documentación de proyectos</div><div style="font-size:0.85rem;color:var(--slate);line-height:1.6;">Registro sistemático del trabajo desarrollado en actividades de empresa simulada, ciclos formativos y programas de innovación educativa.</div></div>
-    </div>
-    <div class="reveal" style="padding:1.5rem 2rem;background:var(--bg-soft);border-radius:var(--r);border-left:3px solid var(--accent);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-      <div style="font-size:0.85rem;color:var(--slate);line-height:1.6;flex:1;min-width:200px;">Más evidencia de aula en <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">@juanpeco</a> en Instagram.</div>
-      <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" style="padding:0.55rem 1.2rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.8rem;font-weight:600;color:var(--slate);white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--slate)';">Ver Instagram →</a>
+    <p class="ed-level-k reveal">01 · Recursos de aula</p>
+    <div class="ed-res reveal d1">
+      <div class="ed-res-item"><h3>Situaciones de aprendizaje y rúbricas</h3><p>Para evaluar lo que el alumnado hace, no lo que memoriza. Bajo LOMLOE.</p></div>
+      <div class="ed-res-item"><h3>Plantillas de documentos de empresa</h3><p>Para que se escriba como en una empresa: reglamento interno, atención al cliente, comunicaciones.</p></div>
+      <div class="ed-res-item"><h3>Guías y prompts de IA con criterio</h3><p>Para usar la IA con criterio y dejar por escrito cada decisión, en un dossier.</p></div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- ── PERFIL ── -->
-<section id="perfil">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Perfil profesional</div>
-      <h2 class="sec-title">Quién soy y de dónde vengo.</h2>
+<section id="tech-proyectos" class="ed" style="background:#FAF9F6;padding:0 2rem clamp(3.5rem,9vw,5.5rem);position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <p class="ed-level-k reveal">02 · ProyectoFP</p>
+    <div class="ed-pfp reveal d1">
+      <h3 class="ed-pfp-name">ProyectoFP</h3>
+      <p class="ed-pfp-lead">La consecuencia natural de trabajar así.</p>
+      <p class="ed-pfp-body">Nació de un problema concreto del trabajo docente: comprobar que cada Resultado de Aprendizaje y cada Criterio de Evaluación tiene cobertura real en la programación. Genera situaciones de aprendizaje, rúbricas y programaciones desde el currículo oficial de cada módulo, y verifica que esa cobertura es coherente y defendible ante cualquier revisión.</p>
+      <p class="ed-pfp-body">No es una herramienta aparte. Es el mismo sistema de trabajo que acabas de ver, ordenado.</p>
+      <a class="ed-link" href="proyectofp/" target="_blank" rel="noopener">Consultar la herramienta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></a>
     </div>
-    <div class="perfil-grid">
-      <div class="reveal d1">
-        <p class="perfil-text">Soy Profesor de Economía y Empresa para FP y Bachillerato, habilitado por MAES (especialidad Economía, Empresa y Turismo, junio 2026). Imparto Empresa, EIE, Economía y Marketing. Antes de la docencia fui comercial y director comercial en el sector financiero, y trabajé después en sectores muy distintos antes de encontrar en el aula un terreno donde esa experiencia encaja de forma directa. No ha sido un cambio de rumbo improvisado: es la evolución natural de dieciocho años de experiencia aplicados ahora al aula.</p>
-        <p class="perfil-text">Esa trayectoria no es el adorno del CV. Es lo que hace diferente lo que pasa en mi aula. Cuando explico qué es una cartera de clientes, lo explico desde dentro. Cuando hablo de toma de decisiones, de ética empresarial, de por qué fracasan los negocios, no estoy leyendo un caso práctico. Estoy contando algo que viví. <strong>Un alumno de FP que aprende empresa de alguien que ha gestionado empresas reales aprende diferente.</strong> Lo nota.</p>
-        <p class="perfil-text">También fui tartamudo de pequeño. Lo cuento porque la forma en que lo resolví —buscando sinónimos, aprendiendo a ir más despacio cuando el cerebro va más rápido que la boca— es exactamente el tipo de gestión personal que intento transmitir en el aula.</p>
-        <ul class="exec-bullets">
-          <li>MAES habilitado · Economía, Empresa y Turismo · junio 2026</li>
-          <li>260 h de prácticum autónomo en IES Pedro Guillén · FP Economía y Empresa</li>
-          <li>ACE Código Escuela 4.0 · centros públicos y concertados de la Región de Murcia</li>
+
+    <p class="ed-level-k reveal">03 · Aplicación práctica</p>
+    <p class="ed-apply reveal d1">Ninguna de estas piezas está aquí por ser nueva. Están porque, usadas en clase, mejoran cómo se aprende — y permiten demostrarlo.</p>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="perfil" class="ed" style="background:#FAF9F6;padding:clamp(3.5rem,9vw,5.5rem) 2rem clamp(2rem,5vw,3rem);position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div class="ed-sec-head reveal">
+      <h2 class="ed-h2">De la empresa al aula</h2>
+      <p class="ed-lead">Quién soy y de dónde vengo.</p>
+    </div>
+    <div class="ed-prose reveal d1">
+      <p>Antes de dedicarme a la docencia trabajé durante dieciocho años en distintos entornos empresariales. A lo largo de ese tiempo desempeñé responsabilidades comerciales, de dirección comercial, administración y marketing.</p>
+      <p>Cuando empecé a dar clase en Formación Profesional me di cuenta de que gran parte de lo que había aprendido durante esos años era precisamente lo que ahora iba a enseñar: una cartera de clientes, un plan de ventas, un organigrama, una cuenta de resultados.</p>
+      <p class="ed-strong">Esa trayectoria no es el adorno del CV. Es lo que cambia lo que ocurre dentro del aula.</p>
+      <p>Cuando explico qué es una cartera de clientes, no describo una definición: parto de experiencias que viví personalmente. Cuando hablo de una negociación, cuento cómo se sostiene una cuando la otra parte también sabe negociar. Cuando analizo por qué fracasa un negocio, no leo un caso del libro; recuerdo decisiones concretas y lo que costaron. Y cuando hablamos de ética empresarial, hablamos de momentos en los que había que elegir, no de un epígrafe.</p>
+      <p>No lo menciono por el currículum. Lo menciono porque condiciona la forma en que explico muchos de los contenidos del aula. Un alumno de FP nota la diferencia entre quien ha estudiado la empresa y quien la ha gestionado. Creo que esa diferencia también se percibe en clase.</p>
+    </div>
+    <p class="ed-pull reveal">No enseño empresa únicamente porque la estudié. También porque durante años formó parte de mi trabajo diario.</p>
+    <div class="ed-prose reveal">
+      <p>De pequeño fui tartamudo. Aprendí a ir más despacio cuando la cabeza iba más rápido que la boca, a buscar otra palabra cuando una se atascaba. Aquello me obligó a ordenar las ideas antes de decirlas. Con el tiempo entendí que pensar despacio suele dar mejores respuestas que responder deprisa. Es una idea que intento trasladar también al aula.</p>
+    </div>
+    <div class="ed-chrono reveal d1" style="margin-top:clamp(2.5rem,6vw,3.5rem);margin-bottom:0;">
+      <div class="ed-milestone"><p class="ed-when">2025 – 2026</p><div class="ed-what"><h3>Acompañante Código Escuela 4.0</h3><p>Programa de innovación educativa de la Región de Murcia. Intervención en más de veinticinco centros, adaptando cada actividad al aula real.</p></div></div>
+      <div class="ed-milestone"><p class="ed-when">2026</p><div class="ed-what"><h3>Prácticum del MAES · IES Pedro Guillén</h3><p>260 horas lectivas en módulos de Economía y Empresa. Grupo propio, evaluación por competencias, coordinación con el departamento.</p></div></div>
+      <div class="ed-milestone"><p class="ed-when">2004 – 2022</p><div class="ed-what"><h3>Experiencia profesional</h3><p>Trayectoria desarrollada en distintos entornos empresariales, desempeñando responsabilidades comerciales, de dirección comercial, administración y marketing. Muchos de los contenidos que hoy trabajo en el aula proceden de esa experiencia profesional.</p></div></div>
+    </div>
+  </div>
+</section>
+<section id="credenciales" class="ed" style="background:#FAF9F6;padding:clamp(1.5rem,4vw,2.5rem) 2rem clamp(3.5rem,9vw,5rem);position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div class="ed-cred reveal">
+      <p class="ed-cred-k">Credenciales</p>
+      <p class="ed-cred-list">Diplomado en Ciencias Empresariales · MAES (Economía, Empresa y Turismo) · Homologación MEC · Certificado de Profesionalidad Docencia FPE (SSCE0110) · Certificado de Profesionalidad Formador Ocupacional · Agente de Igualdad de Género (UEMC) · Inglés B1 · IA educativa y competencia digital docente · Microsoft Learn (IA generativa y Copilot aplicados al aula con criterio pedagógico, 2025)</p>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="referencias" class="ed" style="background:#FAF9F6;padding:clamp(2.5rem,7vw,4rem) 2rem clamp(3.5rem,9vw,5rem);position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div class="ed-refs reveal">
+      <p class="ed-refs-k">Referencias</p>
+      <p class="ed-refs-quote">«Persona trabajadora, muy agradable, colaboradora y predispuesta al trabajo.»</p>
+      <p class="ed-refs-who">Jordán Illescas Rubio, Jefe de Estudios · CPEIBas Arteaga (Sucina)</p>
+      <p class="ed-refs-more">Referencias también en San Juan Bautista (Campos del Río), Ntra. Sra. de la Consolación (Molina de Segura) y CEIP Campo (El Fenazar).</p>
+    </div>
+  </div>
+</section>
+<section id="encaje" class="ed">
+  <div class="ed-wrap">
+    <div class="ed-sec-head reveal">
+      <p class="ed-kicker">Para el equipo directivo</p>
+      <h2 class="ed-h2">Si me comprometo, llego hasta el final.</h2>
+      <p class="ed-lead">Me integro, me implico y me quedo.</p>
+    </div>
+    <div class="ed-tri reveal d1">
+      <div class="ed-ficha">
+        <p class="ed-ficha-k"><span class="n">01</span> · Con el claustro</p>
+        <ul class="ed-ficha-list">
+          <li>Me adapto rápido</li>
+          <li>Coordinación con el departamento y participación en lo que haga falta</li>
+          <li>Actitud proactiva y disposición para colaborar cuando el centro lo necesita</li>
         </ul>
       </div>
-      <div class="reveal d2">
-        <div class="credentials-list">
-          <div class="cred-item"><div class="cred-icon"></div><div class="cred-body"><div class="cred-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#EEEDFE;border-radius:10px;margin-bottom:0.8rem;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-
-ACE — Acompañante Código Escuela 4.0 · Consejería de Educación</div><div class="cred-sub">Programa oficial de innovación educativa de la Región de Murcia. Intervención itinerante en más de 25 centros públicos: situaciones de aprendizaje de la plataforma oficial del programa, adaptando la actividad sobre la marcha cuando los recursos del centro no permitían seguir lo previsto. Coordinación con el profesorado de cada centro.</div><span class="cred-badge">Enero 2025 – Junio 2026</span></div></div>
-          <div class="cred-item"><div class="cred-icon"></div><div class="cred-body"><div class="cred-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#EEEDFE;border-radius:10px;margin-bottom:0.8rem;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 10 12 8 18"/><path d="M15 6H8v12h7"/><path d="M19 6v12"/></svg></span>
-
-Jurado — Prisma Challenge 2026</div><div class="cred-sub">Competición educativa regional de robótica y programación.</div><span class="cred-badge">2026</span></div></div>
-          <div class="cred-item"><div class="cred-icon"></div><div class="cred-body"><div class="cred-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#EEEDFE;border-radius:10px;margin-bottom:0.8rem;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
-
-Prácticum MAES — IES Pedro Guillén</div><div class="cred-sub">260 h lectivas. Módulos de Economía y Empresa. Evaluación competencial y coordinación con el departamento.</div><span class="cred-badge">2026</span></div></div>
-          <div class="cred-item"><div class="cred-icon"></div><div class="cred-body"><div class="cred-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#EEEDFE;border-radius:10px;margin-bottom:0.8rem;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span>
-
-Experiencia empresarial · 18 años</div><div class="cred-sub">Comercial y director comercial en el sector financiero. Administración de empresas, consultoría de marketing digital y distintos entornos laborales (2004–2022). Aplicación directa a los módulos de EIE, Empresa en el Aula, Gestión Empresarial y Marketing y Publicidad.</div><span class="cred-badge">2004–2022</span></div></div>
-        </div>
+      <div class="ed-ficha">
+        <p class="ed-ficha-k"><span class="n">02</span> · Con el alumnado</p>
+        <ul class="ed-ficha-list">
+          <li>El esfuerzo, la participación y la mejora continua forman parte de la evaluación desde el primer día</li>
+          <li>Tutoría y acompañamiento real</li>
+          <li>Comunicación con las familias cuando hace falta</li>
+        </ul>
+      </div>
+      <div class="ed-ficha">
+        <p class="ed-ficha-k"><span class="n">03</span> · Con la programación</p>
+        <ul class="ed-ficha-list">
+          <li>Programaciones didácticas, situaciones de aprendizaje y rúbricas bajo LOMLOE</li>
+          <li>Lo trabajé en el prácticum en el Pedro Guillén</li>
+          <li>El marco normativo lo conozco. Y lo que no sepa, lo aprendo</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
-
-<!-- MÓDULO SESIÓN REAL -->
 <div class="divider"></div>
-<!-- ── SESIÓN REAL ── -->
-<section id="sesion-real" style="padding:5rem 2rem;background:#ffffff;position:relative;z-index:1;">
-<div class="container">
-<style>
-.sr-lbl2{font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.5rem;text-align:center;}
-.sr-heading2{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#26215C;text-align:center;margin:0 0 0.6rem;letter-spacing:-0.5px;}
-.sr-sub2{font-size:0.9rem;color:#7F77DD;text-align:center;max-width:520px;margin:0 auto 2rem;line-height:1.7;}
-.sr-selector2{display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;}
-.sr-btn2{padding:0.5rem 1.2rem;border:1.5px solid #AFA9EC;border-radius:100px;font-size:0.82rem;font-weight:600;color:#7F77DD;cursor:pointer;transition:all 0.2s;background:#ffffff;}
-.sr-btn2:hover{border-color:#534AB7;color:#534AB7;transform:translateY(-2px);}
-.sr-btn2.sr-on2{background:#534AB7;color:#ffffff;border-color:#534AB7;box-shadow:0 4px 14px rgba(83,74,183,0.25);}
-.sr-tl{position:relative;padding-left:28px;max-width:680px;margin:0 auto;}
-.sr-tl::before{content:'';position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#534AB7,#1D9E75);border-radius:2px;}
-.sr-step2{position:relative;margin-bottom:2px;cursor:pointer;}
-.sr-head2{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-radius:8px;transition:all 0.2s;padding-right:8px;}
-.sr-head2:hover{background:#F5F4FE;padding-left:8px;margin-left:-8px;}
-.sr-dot2{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:2px;margin-left:-28px;border:2px solid #ffffff;box-shadow:0 0 0 0 rgba(83,74,183,0);transition:all 0.25s;}
-.sr-step2.sr-open2 .sr-dot2{transform:scale(1.3);box-shadow:0 0 0 5px rgba(83,74,183,0.15);}
-.sr-time2{font-size:0.7rem;font-weight:700;color:#7F77DD;width:40px;flex-shrink:0;padding-top:2px;}
-.sr-info2{flex:1;}
-.sr-title2{font-size:0.88rem;font-weight:700;color:#26215C;margin-bottom:2px;transition:color 0.2s;}
-.sr-step2.sr-open2 .sr-title2{color:#534AB7;}
-.sr-tag2{font-size:0.72rem;color:#7F77DD;}
-.sr-detail2{display:none;margin-left:50px;margin-bottom:8px;padding-bottom:4px;}
-.sr-step2.sr-open2 .sr-detail2{display:block;animation:srIn 0.3s ease;}
-@keyframes srIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-.sr-detail-inner2{background:#F5F4FE;border-radius:10px;padding:1rem;border-left:3px solid #534AB7;}
-.sr-detail-desc2{font-size:0.82rem;color:#26215C;line-height:1.65;margin-bottom:8px;}
-.sr-detail-tags2{display:flex;flex-wrap:wrap;gap:5px;}
-.sr-dtag2{font-size:0.68rem;font-weight:600;padding:2px 8px;border-radius:100px;}
-.sr-dtag2.p{background:#EEEDFE;color:#3C3489;}
-.sr-dtag2.t{background:#E1F5EE;color:#0F6E56;}
-.sr-note2{background:#F5F4FE;border-radius:10px;padding:0.9rem 1.2rem;margin-top:1.5rem;font-size:0.78rem;color:#7F77DD;line-height:1.5;max-width:680px;margin-left:auto;margin-right:auto;text-align:center;}
-</style>
-
-<div class="reveal">
-  <p class="sr-lbl2">Una sesión real</p>
-  <h2 class="sr-heading2">Así transcurre una clase</h2>
-  <p class="sr-sub2">Selecciona el tipo de sesión y haz clic en cada momento para ver qué ocurre exactamente.</p>
-</div>
-
-<div class="sr-selector2 reveal d1">
-  <div class="sr-btn2 sr-on2" onclick="srLoad2(this,'empresa')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg> FP · Empresa simulada</div>
-  <div class="sr-btn2" onclick="srLoad2(this,'robotica')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 2v6M8 11h.01M16 11h.01M8 16h8"/><circle cx="12" cy="2" r="1"/></svg> Robótica · Código Escuela</div>
-  <div class="sr-btn2" onclick="srLoad2(this,'economia')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Economía · Bachillerato</div>
-</div>
-
-<div id="sr-tl2" class="sr-tl reveal d2"></div>
-<div class="sr-note2" id="sr-note2"></div>
-
-<script>
-var srD={
-empresa:{note:'Módulo: Empresa e Iniciativa Emprendedora · FP Grado Medio · 55 min · Empresa simulada en fase de lanzamiento',steps:[
-{t:'0–5\'',c:'#534AB7',title:'Arranque con un problema real',tag:'Activación · Sin manual',desc:'La sesión empieza con una situación concreta: "Vuestra empresa tiene que presentar el plan de ventas el viernes y el director comercial está de baja. ¿Qué hacéis?" El grupo reacciona antes de que yo diga nada.',tags:[['p','Situación real'],['p','Sin instrucciones previas']]},
-{t:'5–15\'',c:'#534AB7',title:'Briefing de rol y reparto de decisiones',tag:'Roles profesionales · Autonomía',desc:'Cada equipo revisa su organigrama interno. Quien ocupa el rol de director comercial esa semana toma la palabra. Los demás escuchan. Yo observo y anoto sin intervenir.',tags:[['p','Trabajo en equipo'],['t','Gestión de roles']]},
-{t:'15–30\'',c:'#1D9E75',title:'Trabajo autónomo con tensión real',tag:'Producción · Toma de decisiones',desc:'Los equipos trabajan. Hay discusiones, hay bloqueos, hay decisiones que se toman mal a propósito para aprender de las consecuencias. Yo paso por las mesas, pregunto, no resuelvo.',tags:[['t','Aprendizaje por error'],['p','Acompañamiento']]},
-{t:'30–45\'',c:'#1D9E75',title:'Puesta en común con fricción',tag:'Comunicación · Defensa de criterio',desc:'Cada empresa presenta sus decisiones en 2 minutos. Los otros equipos pueden preguntar y rebatir. Yo modera solo si se sale del tema. El objetivo no es la respuesta correcta, es la argumentación.',tags:[['t','Comunicación oral'],['p','Pensamiento crítico']]},
-{t:'45–53\'',c:'#534AB7',title:'Cierre con anclaje curricular',tag:'LOMLOE · RA y CE',desc:'En los últimos 8 minutos conecto lo que han hecho con el RA y los CE del módulo. "Lo que acabáis de hacer se llama planificación comercial táctica. Está en vuestro criterio de evaluación 3.2." El alumnado ve por qué importa.',tags:[['p','Trazabilidad curricular'],['p','LOMLOE']]},
-{t:'53–55\'',c:'#7F77DD',title:'Registro y reflexión',tag:'Evaluación formativa',desc:'Un minuto para que cada persona anote en su diario de empresa qué decisión tomó hoy y por qué. Evaluación formativa integrada en la actividad, no al final como examen.',tags:[['p','Evaluación continua'],['t','Metacognición']]}
-]},
-robotica:{note:'Programa: Código Escuela 4.0 · Primaria (3.º-4.º) · 60 min · Primera sesión con mTiny en el centro',steps:[
-{t:'0–5\'',c:'#534AB7',title:'Entrada sin presentación formal',tag:'Conexión inmediata',desc:'No me presento con PowerPoint. Entro con un robot en la mano y pregunto: "¿Alguien sabe qué hace este bicho?" El grupo se activa solo. En 30 segundos ya hay manos levantadas.',tags:[['p','Curiosidad'],['t','Sin barrera de entrada']]},
-{t:'5–15\'',c:'#1D9E75',title:'Exploración libre por equipos',tag:'Pensamiento computacional',desc:'Cada equipo recibe un robot y 10 minutos para descubrir cómo funciona sin instrucciones. Yo observo qué estrategias usan. Algunos prueban al azar, otros razonan. Ambos aprenden.',tags:[['t','Autonomía'],['p','Resolución de problemas']]},
-{t:'15–35\'',c:'#1D9E75',title:'Reto por niveles',tag:'Programación · Secuencias',desc:'Tres retos de dificultad creciente en tarjetas. Cada equipo avanza a su ritmo. El primero en terminar el nivel 1 puede ayudar a otro equipo, no resolverlo. Aprendizaje entre iguales integrado.',tags:[['t','Diferenciación'],['t','Aprendizaje cooperativo']]},
-{t:'35–50\'',c:'#534AB7',title:'Creación libre con narrativa',tag:'Creatividad · Storytelling',desc:'Con el tiempo que queda, cada equipo programa una historia corta con su robot. El robot es el protagonista. Tienen que contarla al final. Pensamiento computacional más comunicación oral en un solo producto.',tags:[['p','Creatividad'],['p','Comunicación']]},
-{t:'50–58\'',c:'#534AB7',title:'Puesta en escena',tag:'Presentación · Producto final',desc:'Cada equipo presenta su historia. 90 segundos máximo. El resto del grupo es la audiencia. El aplauso es real, no de protocolo. Eso importa más de lo que parece.',tags:[['t','Confianza'],['p','Producto final']]},
-{t:'58–60\'',c:'#7F77DD',title:'Cierre y coordinación con el centro',tag:'Coordinación con el claustro',desc:'Dos minutos con el tutor del grupo. Le cuento qué he observado de cada alumno: quién lideró, quién se bloqueó, quién sorprendió. Esa información va al equipo docente del centro.',tags:[['p','Coordinación'],['t','Seguimiento']]}
-]},
-economia:{note:'Asignatura: Economía · 2.º Bachillerato · 55 min · Tema: Mercado de trabajo y desempleo',steps:[
-{t:'0–5\'',c:'#534AB7',title:'Pregunta que descoloca',tag:'Activación · Sin respuesta fácil',desc:'"¿Cuánto vale tu trabajo?" Silencio. Nadie responde en 30 segundos. Eso es exactamente lo que busco. La incomodidad abre la sesión mejor que cualquier definición de salario mínimo.',tags:[['p','Pensamiento crítico'],['p','Economía aplicada']]},
-{t:'5–20\'',c:'#1D9E75',title:'Caso real con datos reales',tag:'Análisis · Fuentes oficiales',desc:'Datos reales del INE sobre desempleo juvenil en Murcia. No inventados, no del libro. El grupo trabaja con lo mismo que usan los economistas. Aprenden a leer tablas estadísticas en contexto.',tags:[['t','Datos reales'],['t','Competencia digital']]},
-{t:'20–35\'',c:'#534AB7',title:'Debate estructurado',tag:'Argumentación · Economía normativa',desc:'Dos grupos defienden posiciones opuestas sobre el salario mínimo: uno como empresarios, otro como sindicatos. 5 minutos para preparar argumentos. Yo arbitro, no opino.',tags:[['p','Debate'],['p','Pensamiento complejo']]},
-{t:'35–45\'',c:'#1D9E75',title:'Conexión con experiencia real',tag:'Empresa real · Credibilidad',desc:'"Cuando yo dirigía un equipo comercial, la decisión de contratar o no contratar dependía de esto exactamente." Un ejemplo real de 3 minutos vale más que 20 de teoría. El grupo lo sabe.',tags:[['t','Experiencia real'],['t','Contextualización']]},
-{t:'45–53\'',c:'#534AB7',title:'Síntesis conceptual',tag:'LOMLOE · Contenidos curriculares',desc:'Los últimos 8 minutos son de estructura: qué hemos visto, cómo encaja en el temario, qué pregunta podría salir en selectividad. Rigor académico después de la reflexión, no antes.',tags:[['p','Estructura'],['p','Preparación PAU']]},
-{t:'53–55\'',c:'#7F77DD',title:'Pregunta de salida',tag:'Evaluación formativa',desc:'Cada alumno escribe: "Una cosa que he entendido hoy y una que todavía no". Lo recojo. La siguiente sesión empieza respondiendo los "todavía no".',tags:[['t','Feedback inmediato'],['p','Evaluación continua']]}
-]}
-};
-
-function srLoad2(btn,key){
-  document.querySelectorAll('.sr-btn2').forEach(function(b){b.classList.remove('sr-on2');});
-  btn.classList.add('sr-on2');
-  var d=srD[key];
-  document.getElementById('sr-note2').textContent=d.note;
-  document.getElementById('sr-tl2').innerHTML=d.steps.map(function(s,i){
-    return'<div class="sr-step2" id="sr'+i+'" onclick="srTog('+i+')">'
-    +'<div class="sr-head2">'
-    +'<div class="sr-dot2" style="background:'+s.c+'"></div>'
-    +'<div class="sr-time2">'+s.t+'</div>'
-    +'<div class="sr-info2"><div class="sr-title2">'+s.title+'</div><div class="sr-tag2">'+s.tag+'</div></div>'
-    +'</div>'
-    +'<div class="sr-detail2">'
-    +'<div class="sr-detail-inner2" style="border-left-color:'+s.c+'">'
-    +'<div class="sr-detail-desc2">'+s.desc+'</div>'
-    +'<div class="sr-detail-tags2">'+s.tags.map(function(t){return'<span class="sr-dtag2 '+t[0]+'">'+t[1]+'</span>';}).join('')+'</div>'
-    +'</div></div></div>';
-  }).join('');
-}
-function srTog(i){
-  var el=document.getElementById('sr'+i);
-  var was=el.classList.contains('sr-open2');
-  document.querySelectorAll('.sr-step2').forEach(function(s){s.classList.remove('sr-open2');});
-  if(!was)el.classList.add('sr-open2');
-}
-srLoad2(document.querySelector('.sr-btn2'),'empresa');
-</script>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── METODOLOGÍA ── -->
-<section id="metodologia">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Metodología docente</div>
-      <h2 class="sec-title">Adaptación metodológica a situaciones reales de aula</h2>
-      <p class="sec-desc">La metodología se adapta al grupo, al módulo y al momento: el alumnado aprende haciendo, no memorizando. Siempre dentro del marco curricular y la programación del departamento.</p>
-    </div>
-    <div class="met-layout">
-      <div class="cases-nav reveal d1">
-        <button class="case-btn active" onclick="switchCase(this,'c1')"><span class="cb-emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><div class="cb-title">Grupo poco participativo</div><div class="cb-sub">Falta de implicación activa</div></div></button>
-        <button class="case-btn" onclick="switchCase(this,'c2')"><span class="cb-emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><div><div class="cb-title">Diferentes niveles</div><div class="cb-sub">Heterogeneidad y diversidad</div></div></button>
-        <button class="case-btn" onclick="switchCase(this,'c3')"><span class="cb-emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><div><div class="cb-title">Contenido muy denso</div><div class="cb-sub">Abstracción y complejidad</div></div></button>
-      </div>
-      <div class="case-content reveal d2">
-        <div id="c1" class="case-panel active"><div class="cp-header"><span class="cp-label">Escenario 01</span><h3 class="cp-title">Dinamización y gamificación</h3></div><p class="cp-desc">Cuando el grupo muestra apatía, rompo la inercia con dinámicas de impacto inmediato y herramientas digitales que fomentan la participación anónima inicial para ganar confianza.</p><div class="cp-grid"><div class="cp-box"><div class="cp-box-title">Acción</div><ul class="cp-box-list"><li>Gamificación con herramientas tipo Quizziz/Kahoot</li><li>Debates rápidos con roles asignados</li><li>Retos por equipos con recompensa simbólica</li></ul></div><div class="cp-box"><div class="cp-box-title">Logro</div><ul class="cp-box-list"><li>Aumento significativo de la participación espontánea y el compromiso con la tarea</li><li>Mejora del clima de aula y cohesión</li><li>Retroalimentación inmediata al alumnado sobre su nivel de comprensión</li></ul></div></div></div>
-        <div id="c2" class="case-panel"><div class="cp-header"><span class="cp-label">Escenario 02</span><h3 class="cp-title">Inclusión y Multinivel</h3></div><p class="cp-desc">En aulas heterogéneas, aplico el Diseño Universal para el Aprendizaje (DUA), ofreciendo diferentes vías de entrada al contenido y múltiples formas de expresar lo aprendido.</p><div class="cp-grid"><div class="cp-box"><div class="cp-box-title">Acción</div><ul class="cp-box-list"><li>Materiales en diversos formatos (visual, audio, texto)</li><li>Andamiaje específico para alumnado con dificultades</li><li>Proyectos con tareas de complejidad escalonada</li></ul></div><div class="cp-box"><div class="cp-box-title">Logro</div><ul class="cp-box-list"><li>Reducción de la frustración y el abandono temprano</li><li>Alumnado motivado con acompañamiento adaptado a su propio ritmo de aprendizaje</li><li>Mejora del rendimiento del alumnado con dificultades de acceso al contenido</li></ul></div></div></div>
-        <div id="c3" class="case-panel"><div class="cp-header"><span class="cp-label">Escenario 03</span><h3 class="cp-title">Aprendizaje Basado en Proyectos</h3></div><p class="cp-desc">Para conceptos abstractos de empresa o economía, aterrizamos la teoría en un proyecto real (ABP) donde el alumnado "hace" para "entender", conectando con su realidad.</p><div class="cp-grid"><div class="cp-box"><div class="cp-box-title">Acción</div><ul class="cp-box-list"><li>Simulación de entornos empresariales reales</li><li>Uso de software profesional en el aula</li><li>Creación de productos finales tangibles</li></ul></div><div class="cp-box"><div class="cp-box-title">Logro</div><ul class="cp-box-list"><li>Aprendizaje significativo y duradero</li><li>Desarrollo de soft skills (liderazgo, tiempo)</li><li>Portfolio de trabajo para el mercado laboral</li></ul></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── PROYECTOS ── -->
-<section id="proyectos" style="padding:5rem 2rem;background:#ffffff;position:relative;z-index:1;overflow:hidden;">
-<div class="container">
-
-<style>
-.pf-label{font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.5rem;text-align:center;}
-.pf-title{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#26215C;text-align:center;margin:0 0 0.6rem;letter-spacing:-0.5px;}
-.pf-sub{font-size:0.9rem;color:#7F77DD;text-align:center;max-width:520px;margin:0 auto 3rem;line-height:1.7;}
-.pf-tabs{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;}
-.pf-tab{padding:0.55rem 1.2rem;border:1.5px solid #AFA9EC;border-radius:100px;font-size:0.82rem;font-weight:600;color:#7F77DD;cursor:pointer;transition:all 0.2s;background:#ffffff;}
-.pf-tab:hover{border-color:#534AB7;color:#534AB7;transform:translateY(-2px);}
-.pf-tab.pf-active{background:#534AB7;color:#ffffff;border-color:#534AB7;box-shadow:0 4px 14px rgba(83,74,183,0.25);}
-.pf-panel{display:none;animation:pfIn 0.35s ease;}
-.pf-panel.pf-show{display:grid;grid-template-columns:1.1fr 0.9fr;gap:2.5rem;align-items:start;}
-@keyframes pfIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.pf-content{}
-.pf-ptag{display:inline-block;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;background:#EEEDFE;color:#3C3489;margin-bottom:10px;}
-.pf-ptitle{font-family:var(--font-h);font-size:1.4rem;font-weight:700;color:#26215C;margin:0 0 0.8rem;}
-.pf-pdesc{font-size:0.88rem;color:#7F77DD;line-height:1.7;margin:0 0 1.5rem;}
-.pf-section-label{font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.6rem;}
-.pf-list{list-style:none;display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem;}
-.pf-list li{font-size:0.85rem;color:#26215C;font-weight:500;padding-left:1rem;position:relative;}
-.pf-list li::before{content:'→';position:absolute;left:0;color:#1D9E75;font-size:0.78rem;top:1px;}
-.pf-visual{background:#F5F4FE;border:1.5px solid #AFA9EC;border-radius:16px;padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;text-align:center;position:relative;overflow:hidden;transition:all 0.3s;}
-.pf-visual:hover{border-color:#534AB7;box-shadow:0 12px 32px rgba(83,74,183,0.1);}
-.pf-visual-icon{font-size:3.5rem;margin-bottom:1rem;filter:drop-shadow(0 4px 12px rgba(83,74,183,0.15));}
-.pf-visual-title{font-size:0.85rem;font-weight:700;color:#26215C;margin-bottom:0.3rem;}
-.pf-visual-sub{font-size:0.75rem;color:#7F77DD;line-height:1.5;}
-
-.pf-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
-.pf-tag{padding:0.25rem 0.7rem;background:#E1F5EE;border-radius:100px;font-size:0.7rem;font-weight:600;color:#0F6E56;}
-@media(max-width:800px){.pf-panel.pf-show{grid-template-columns:1fr;}}
-</style>
-
-  <div class="reveal">
-    <p class="pf-label">Portfolio</p>
-    <h2 class="pf-title">Proyectos que realiza el alumnado</h2>
-    <p class="pf-sub">Proyectos curriculares reales: el alumnado diseña, desarrolla y defiende sus trabajos en situaciones que simulan entornos profesionales reales.</p>
-  </div>
-
-  <div class="pf-tabs reveal d1">
-    <div class="pf-tab pf-active" onclick="pfSelect(this,'pf1')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg> Empresa simulada</div>
-    <div class="pf-tab" onclick="pfSelect(this,'pf2')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.2 6H8.2A7 7 0 0 1 5 9a7 7 0 0 1 7-7z"/></svg> Pitch de negocio</div>
-    <div class="pf-tab" onclick="pfSelect(this,'pf3')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Contenido con IA</div>
-    <div class="pf-tab" onclick="pfSelect(this,'pf4')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Documentos de empresa</div>
-  </div>
-
-  <!-- PANEL 1 -->
-  <div id="pf1" class="pf-panel pf-show reveal d2">
-    <div class="pf-content">
-      <span class="pf-ptag">Aprendizaje basado en proyectos</span>
-      <h3 class="pf-ptitle">Empresa simulada</h3>
-      <p class="pf-pdesc">El alumnado constituye y gestiona una empresa ficticia desde cero: toma decisiones reales de negocio, resuelve conflictos internos y defiende los resultados ante el grupo.</p>
-      <div class="pf-section-label">Qué aprende</div>
-      <ul class="pf-list">
-        <li>Estructura organizativa y áreas funcionales de una empresa</li>
-        <li>Toma de decisiones estratégicas en contexto simulado</li>
-        <li>Trabajo cooperativo con roles profesionales diferenciados</li>
-      </ul>
-      <div class="pf-section-label">Qué produce</div>
-      <ul class="pf-list">
-        <li>Plan de empresa estructurado (análisis, marketing, operaciones)</li>
-        <li>Presentación técnica de defensa del proyecto</li>
-        <li>Organigrama corporativo y manual de funciones</li>
-      </ul>
-      <div class="pf-tags"><span class="pf-tag">ABP</span><span class="pf-tag">Trabajo en equipo</span><span class="pf-tag">Empresa real</span><span class="pf-tag">Evaluación competencial</span></div>
-    </div>
-    <div class="pf-visual">
-      <div style="width:100%;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;">
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;border-left:3px solid #534AB7;font-size:0.8rem;font-weight:600;color:#26215C;">Plan de empresa · Análisis DAFO · Financiero</div>
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;border-left:3px solid #1D9E75;font-size:0.8rem;font-weight:600;color:#26215C;">CEO · CFO · Dir. Marketing · Dir. Ventas</div>
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;border-left:3px solid #534AB7;font-size:0.8rem;font-weight:600;color:#26215C;">Defensa ante tribunal · Preguntas reales</div>
-        <div style="background:#EEEDFE;border-radius:9px;padding:0.75rem 1rem;text-align:center;font-size:0.75rem;color:#3C3489;font-weight:600;">Producto final tangible · Evaluación competencial</div>
-      </div>
-      <div class="pf-visual-title">Estructura · Decisiones · Presentación</div>
-      <div class="pf-visual-sub">Empresa simulada desde cero con roles reales</div>
-    </div>
-  </div>
-
-  <!-- PANEL 2 -->
-  <div id="pf2" class="pf-panel">
-    <div class="pf-content">
-      <span class="pf-ptag">Comunicación profesional</span>
-      <h3 class="pf-ptitle">Pitch de negocio</h3>
-      <p class="pf-pdesc">Los equipos defienden su propuesta de valor en 5 minutos ante una audiencia técnica o potenciales colaboradores.</p>
-      <div class="pf-section-label">Qué aprende</div>
-      <ul class="pf-list">
-        <li>Comunicación sintética y persuasiva de alto impacto</li>
-        <li>Propuesta de valor y ventaja competitiva diferencial</li>
-        <li>Presentación técnica ante tribunal de evaluación</li>
-      </ul>
-      <div class="pf-section-label">Qué produce</div>
-      <ul class="pf-list">
-        <li>Pitch grabado de 5 minutos de duración máxima</li>
-        <li>Soporte visual optimizado (máximo 10 diapositivas)</li>
-        <li>Ficha técnica con análisis de viabilidad básico</li>
-      </ul>
-      <div class="pf-tags"><span class="pf-tag">Comunicación oral</span><span class="pf-tag">Presión real</span><span class="pf-tag">Vídeo</span><span class="pf-tag">Propuesta de valor</span></div>
-    </div>
-    <div class="pf-visual">
-      <div style="width:100%;margin-bottom:1rem;">
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:12px;padding:1.2rem;margin-bottom:0.5rem;">
-          <div style="font-size:0.7rem;font-weight:700;color:#534AB7;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.4rem;">Estructura del pitch</div>
-          <div style="display:flex;flex-direction:column;gap:0.3rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#534AB7;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">1</span>Problema que resuelve</div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#534AB7;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">2</span>Propuesta de valor única</div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#1D9E75;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">3</span>Mercado objetivo</div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#1D9E75;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">4</span>Modelo de negocio</div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#26215C;"><span style="background:#534AB7;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">5</span>Call to action</div>
-          </div>
-        </div>
-        <div style="background:#E1F5EE;border-radius:9px;padding:0.75rem;text-align:center;font-size:0.75rem;color:#0F6E56;font-weight:600;">⏱ 5 minutos · Grabado en vídeo · Analizado en grupo</div>
-      </div>
-      <div class="pf-visual-title">Idea · Mercado · Diferencial</div>
-      <div class="pf-visual-sub">5 minutos para convencer</div>
-    </div>
-  </div>
-
-  <!-- PANEL 3 -->
-  <div id="pf3" class="pf-panel">
-    <div class="pf-content">
-      <span class="pf-ptag">Competencia digital crítica</span>
-      <h3 class="pf-ptitle">Marketing digital e IA aplicada</h3>
-      <p class="pf-pdesc">Producción de contenido audiovisual para canales digitales usando IA generativa, con enfoque de uso ético, crítico y productivo.</p>
-      <div class="pf-section-label">Qué aprende</div>
-      <ul class="pf-list">
-        <li>Uso funcional de herramientas de IA generativa aplicadas a la producción</li>
-        <li>Estructura narrativa y guionización para comunicación digital</li>
-        <li>Criterio ético y de calidad en la curación de contenidos generados</li>
-      </ul>
-      <div class="pf-section-label">Qué produce</div>
-      <ul class="pf-list">
-        <li>Vídeo de comunicación corporativa (30–60 segundos)</li>
-        <li>Guion literario, técnico y plan de producción documentado</li>
-        <li>Dossier justificativo del uso y criterios aplicados con IA</li>
-      </ul>
-      <div class="pf-tags"><span class="pf-tag">IA generativa</span><span class="pf-tag">Vídeo corporativo</span><span class="pf-tag">Ética digital</span><span class="pf-tag">Criterio propio</span></div>
-    </div>
-    <div class="pf-visual">
-      <div style="width:100%;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;">
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.8rem 1rem;">
-          <div style="font-size:0.7rem;font-weight:700;color:#534AB7;margin-bottom:0.4rem;">FLUJO DE PRODUCCIÓN</div>
-          <div style="display:flex;align-items:center;gap:0.3rem;flex-wrap:wrap;">
-            <span style="background:#EEEDFE;color:#3C3489;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Briefing</span>
-            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
-            <span style="background:#EEEDFE;color:#3C3489;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Guion</span>
-            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
-            <span style="background:#EEEDFE;color:#3C3489;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">IA</span>
-            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
-            <span style="background:#E1F5EE;color:#0F6E56;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Revisión</span>
-            <span style="color:#7F77DD;font-size:0.8rem;">→</span>
-            <span style="background:#E1F5EE;color:#0F6E56;padding:0.25rem 0.6rem;border-radius:100px;font-size:0.72rem;font-weight:600;">Vídeo final</span>
-          </div>
-        </div>
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;font-size:0.78rem;color:#26215C;"><span style="color:#534AB7;font-weight:700;">Criterio ético:</span> El alumnado decide qué delega y qué no. Justifica cada decisión.</div>
-        <div style="background:#EEEDFE;border-radius:9px;padding:0.75rem;text-align:center;font-size:0.75rem;color:#3C3489;font-weight:600;">Producto: vídeo 30-60 seg. + dossier justificativo</div>
-      </div>
-      <div class="pf-visual-title">Guion · IA · Montaje profesional</div>
-      <div class="pf-visual-sub">Contenido real con criterio pedagógico</div>
-    </div>
-  </div>
-
-  <!-- PANEL 4 -->
-  <div id="pf4" class="pf-panel">
-    <div class="pf-content">
-      <span class="pf-ptag">Redacción administrativa</span>
-      <h3 class="pf-ptitle">Documentos de empresa</h3>
-      <p class="pf-pdesc">Redacción y formalización de la documentación interna oficial de la empresa simulada, con rigor administrativo y comunicación escrita profesional.</p>
-      <div class="pf-section-label">Qué aprende</div>
-      <ul class="pf-list">
-        <li>Redacción administrativa formal y tono corporativo</li>
-        <li>Diseño y aplicación de políticas y reglamentos internos</li>
-        <li>Claridad y precisión en la comunicación empresarial escrita</li>
-      </ul>
-      <div class="pf-section-label">Qué produce</div>
-      <ul class="pf-list">
-        <li>Reglamento de régimen interno y normas de funcionamiento</li>
-        <li>Manual de política de atención al cliente</li>
-        <li>Modelos de comunicación externa, circulares e informes</li>
-      </ul>
-      <div class="pf-tags"><span class="pf-tag">Escritura formal</span><span class="pf-tag">Documentación real</span><span class="pf-tag">Corporativo</span><span class="pf-tag">LOMLOE</span></div>
-    </div>
-    <div class="pf-visual">
-      <div style="width:100%;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;">
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;display:flex;align-items:center;gap:0.75rem;border-left:3px solid #534AB7;"><span style="font-size:1.1rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><div><div style="font-size:0.8rem;font-weight:600;color:#26215C;">Reglamento de régimen interno</div><div style="font-size:0.72rem;color:#7F77DD;">Normas · Sanciones · Procedimientos</div></div></div>
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;display:flex;align-items:center;gap:0.75rem;border-left:3px solid #1D9E75;"><span style="font-size:1.1rem;"></span><div><div style="font-size:0.8rem;font-weight:600;color:#26215C;">Manual de atención al cliente</div><div style="font-size:0.72rem;color:#7F77DD;">Protocolos · Tono · Gestión de incidencias</div></div></div>
-        <div style="background:#ffffff;border:1px solid #AFA9EC;border-radius:9px;padding:0.75rem 1rem;display:flex;align-items:center;gap:0.75rem;border-left:3px solid #534AB7;"><span style="font-size:1.1rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><div><div style="font-size:0.8rem;font-weight:600;color:#26215C;">Comunicaciones externas</div><div style="font-size:0.72rem;color:#7F77DD;">Circulares · Informes · Cartas formales</div></div></div>
-        <div style="background:#EEEDFE;border-radius:9px;padding:0.75rem;text-align:center;font-size:0.75rem;color:#3C3489;font-weight:600;">Redacción formal real · Tono corporativo profesional</div>
-      </div>
-      <div class="pf-visual-title">Reglamento · Políticas · Comunicaciones</div>
-      <div class="pf-visual-sub">Documentación corporativa real</div>
-    </div>
-  </div>
-
-  <script>
-  function pfSelect(tab, panelId) {
-    document.querySelectorAll('.pf-tab').forEach(function(t){t.classList.remove('pf-active');});
-    document.querySelectorAll('.pf-panel').forEach(function(p){p.classList.remove('pf-show');});
-    tab.classList.add('pf-active');
-    document.getElementById(panelId).classList.add('pf-show');
-  }
-  </script>
-
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── PROYECTOS TECNOLÓGICOS ── -->
-<section id="tech-proyectos">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Innovación educativa</div>
-      <h2 class="sec-title">Proyecto de innovación curricular propio</h2>
-      <p class="sec-desc">Evidencia de dominio curricular avanzado: desarrollo de una herramienta de diagnóstico y gestión basada en el currículo oficial de FP, la normativa LOMLOE y la Ley Orgánica 3/2022.</p>
-    </div>
-    <div class="premium-card reveal d1" style="margin-top: 3rem;">
-      <div class="premium-info">
-        <h3 class="premium-title">ProyectoFP</h3>
-        <p class="premium-subtitle">Herramienta propia de diagnóstico curricular construida sobre los Reales Decretos de título de FP, los RA y CE oficiales y el marco LOMLOE.</p>
-        <p class="premium-desc">ProyectoFP nació de un problema concreto de trabajo docente: verificar que cada Resultado de Aprendizaje y Criterio de Evaluación de un módulo tiene cobertura real en la programación didáctica. Construirlo ha requerido trabajar en profundidad con los Reales Decretos de títulos de FP, la estructura de RA y CE de cada módulo y las exigencias de trazabilidad curricular de la LOMLOE.</p>
-        <p class="premium-desc">ProyectoFP es una herramienta de apoyo al trabajo curricular del docente de FP. Permite generar situaciones de aprendizaje, rúbricas analíticas, programaciones didácticas y casos prácticos directamente desde el currículo oficial de cada módulo, y verificar que la cobertura de Resultados de Aprendizaje y Criterios de Evaluación es coherente y defendible ante cualquier revisión educativa.</p>
-        <p class="premium-desc" style="font-size:0.85rem;color:var(--muted);">Ha sido construida con conocimiento directo del marco normativo de la FP española: LOMLOE, Ley Orgánica 3/2022, Reales Decretos de títulos de FP e instrucciones de la Consejería de Educación de la Región de Murcia.</p>
-        <div class="premium-actions" style="margin-top:1.5rem;">
-          <a href="/proyectofp/" target="_blank" rel="noopener" class="btn-primary"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Consultar la herramienta</a>
-        </div>
-      </div>
-      <div class="premium-visual">
-        <div class="premium-icon"></div>
-        <div style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Diagnóstico curricular · FP</div>
-        <div style="font-size:0.75rem;color:var(--muted);line-height:1.5;">LOMLOE · LO 3/2022<br>Reales Decretos de FP</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── EXPERIENCIA ── -->
-<section id="experiencia">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Trayectoria</div>
-      <h2 class="sec-title">Experiencia y formación</h2>
-    </div>
-    <div class="exp-grid">
-      <div class="reveal d1">
-        <h3 style="font-family:var(--font-h);font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:1.5rem">Experiencia docente y formativa</h3>
-        <div class="exp-timeline">
-          <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">Enero 2025 – Junio 2026</div><div class="exp-role">ACE — Acompañante Código Escuela 4.0</div><div class="exp-place">Programa oficial de innovación educativa · Consejería de Educación · Región de Murcia</div><div class="exp-desc">Intervención itinerante en más de 25 centros públicos de la Región de Murcia, trabajando situaciones de aprendizaje de la plataforma oficial del programa y adaptando la actividad sobre la marcha cuando los recursos del centro (dispositivos, calendario) no permitían seguir lo previsto. Coordinación con el profesorado de cada centro para alinear las actividades con los objetivos del aula.</div></div></div>
-          <div class="exp-item exp-active"><div class="exp-dot">▶</div><div class="exp-body"><div class="exp-year">2026</div><div class="exp-role">Docente (Prácticum MAES) — IES Pedro Guillén</div><div class="exp-place">260 horas lectivas · FP Economía y Empresa</div><div class="exp-desc">Gestión autónoma de grupo-clase en módulos de Economía y Empresa. Diseño y aplicación de situaciones de aprendizaje con evaluación por competencias bajo LOMLOE. Acompañamiento al alumnado en la realización de proyectos de empresa simulada, comunicación con familias y coordinación con el jefe de departamento.</div></div></div>
-          <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2010 – 2018</div><div class="exp-role">Formación interna en competencias profesionales y digitales</div><div class="exp-place">Empresa privada · formación a compañeros y compañeras en el puesto de trabajo (no reglada)</div><div class="exp-desc">Respaldada por Cert. Profesionalidad Formador Ocupacional (SERVEF, 2010, 389 h) y Docencia FPE SSCE0110 (SERVEF, 2017, 100 h, nota 9,3/10). Claves verificables.</div></div></div>
-          <div class="exp-item"><div class="exp-dot">◎</div><div class="exp-body"><div class="exp-year">2004 – 2022</div><div class="exp-role">Comercial · Director comercial · Administración y marketing</div><div class="exp-place">Sector privado · España y Venezuela</div><div class="exp-desc">Dieciocho años que abarcan desde la venta directa hasta la dirección comercial en el sector financiero, pasando por administración de empresas, consultoría de marketing digital y distintos entornos laborales. Experiencia directamente aplicable a los módulos de Empresa e Iniciativa Emprendedora, Empresa en el Aula, Gestión Empresarial y Marketing y Publicidad.</div></div></div>
-        </div>
-      </div>
-      <div class="reveal d2">
-        <h3 style="font-family:var(--font-h);font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:1.5rem">Formación académica y certificaciones</h3>
-        <div class="academic-list">
-          <div class="acad-item"><div class="acad-title">Máster en Formación del Profesorado (MAES)</div><div class="acad-sub">Esp. Economía, Empresa y Turismo</div><span class="acad-badge ab-green">Habilitación docente · junio 2026</span></div>
-          <div class="acad-item"><div class="acad-title">Diplomado en Ciencias Empresariales</div><div class="acad-sub">Homologado por el Ministerio de Educación de España · 2012 · Expediente: MEC<br><span style="color:var(--muted)">Licenciado en Administración de Empresas Turísticas · Universidad Alejandro de Humboldt, Venezuela</span></div><span class="acad-badge ab-gray">Homologado MEC · 2012</span></div>
-          <div class="acad-item"><div class="acad-title">Especialización en Agente de Igualdad de Género</div><div class="acad-sub">Universidad Europea Miguel de Cervantes (UEMC) · 2020 · 16 ECTS · 400 h</div><span class="acad-badge ab-gray">Título universitario propio</span></div>
-          <div class="acad-item"><div class="acad-title">Certificado de Profesionalidad en Docencia de la FPE — SSCE0110</div><div class="acad-sub">SERVEF · Generalitat Valenciana · 2017 · 100 h · Nota: 9,3/10 · Clave verificable: 14011D83</div></div>
-          <div class="acad-item"><div class="acad-title">Certificado de Profesionalidad — Formador Ocupacional</div><div class="acad-sub">SERVEF · Generalitat Valenciana · 2010 · 389 h lectivas + 90 h prácticas · Clave: CTI023DC2145D3EF5A2190</div></div>
-          <div class="acad-item"><div class="acad-title">Inglés — Nivel B1 (MCER)</div><div class="acad-sub">Academia Magister / Prueba institucional MAES · julio 2025</div></div>
-          <div class="acad-item"><div class="acad-title">IA educativa y competencia digital docente</div><div class="acad-sub">Microsoft Learn · Herramientas de IA generativa para el aula · Aplicación metodológica con criterio pedagógico</div></div>
-          <div class="acad-item"><div class="acad-title">Marketing digital y transformación digital</div><div class="acad-sub">Formación especializada · TAGO Centro de Estudios · 2014 · 625 h<br>Community Manager, SEO/SEM, E-Commerce, WordPress</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── CONTACTO ── -->
 <section id="contacto">
   <div class="container">
     <div class="contacto-inner reveal">
       <div class="sec-label" style="color:rgba(255,255,255,0.4)">Contacto</div>
-      <h2 class="sec-title">Disponible para el curso 2026-2027</h2>
+      <h2 class="sec-title">Hablemos</h2>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:1.2rem;">Región de Murcia · Disponible curso 2026-27</p>
       <p style="color:rgba(255,255,255,0.7);font-size:1.1rem;margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6">
         Si crees que puede haber encaje con tu proyecto educativo, escríbeme o llámame. Respondo en menos de 24 horas.
       </p>
@@ -1577,8 +1497,8 @@ srLoad2(document.querySelector('.sr-btn2'),'empresa');
           onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
         <input type="hidden" name="_subject" value="Candidatura docente · Juan Peco">
         <button type="submit"
-          style="padding:12px 24px;border-radius:8px;border:none;background:var(--accent);color:white;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.2s"
-          onmouseover="this.style.background='var(--accent2)'" onmouseout="this.style.background='var(--accent)'">
+          style="padding:12px 24px;border-radius:8px;border:none;background:#7C6CF2;color:white;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.2s"
+          onmouseover="this.style.background='#6D5BE8'" onmouseout="this.style.background='#7C6CF2'">
           Enviar mensaje
         </button>
         <div id="form-ok" style="display:none;color:#4ade80;font-size:0.9rem;text-align:center;padding:8px">✓ Mensaje enviado. Te respondo en menos de 24h.</div>
@@ -1594,6 +1514,8 @@ srLoad2(document.querySelector('.sr-btn2'),'empresa');
     </div>
   </div>
 </section>
+
+<!-- ── OCULTAS (pendientes de decisión en la lectura final) ── -->
 
 <footer>
   <div class="footer-left">
@@ -1647,5 +1569,524 @@ toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'sm
 if (window.instgrm) window.instgrm.Embeds.process();
 </script>
   <script defer src="https://www.instagram.com/embed.js"></script>
+<script>
+// ═══ Manifiesto · motor de escenario fijo (scroll-pin) ═══
+(function(){
+  var stage = document.getElementById('pinStage');
+  if(!stage) return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced) return; // el CSS ya resuelve el fallback estático
+
+  var beats = Array.prototype.slice.call(stage.querySelectorAll('.ed-pin-beat'));
+  var weights = beats.map(function(b){ return parseInt(b.getAttribute('data-w'), 10) || 100; });
+  var totalW = weights.reduce(function(a,b){ return a+b; }, 0);
+
+  function vh(v){ return v/100 * window.innerHeight; }
+
+  function layout(){
+    stage.style.height = (vh(totalW) + window.innerHeight) + 'px';
+  }
+  layout();
+  window.addEventListener('resize', layout);
+
+  var cum = [];
+  function recomputeCum(){
+    cum = []; var acc = 0;
+    weights.forEach(function(w){ cum.push([acc, acc+w]); acc += w; });
+  }
+  recomputeCum();
+
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var rect = stage.getBoundingClientRect();
+    var scrolled = -rect.top; // px avanzados dentro del stage
+    var maxScroll = vh(totalW);
+    if(scrolled < 0) scrolled = 0;
+    if(scrolled > maxScroll) scrolled = maxScroll;
+    var posW = scrolled / window.innerHeight * 100; // posición actual, en unidades "vh"
+
+    beats.forEach(function(beat, i){
+      var start = cum[i][0], end = cum[i][1];
+      var span = end - start;
+      var fade = Math.max(2, span * 0.22); // zona de entrada/salida, proporcional al peso
+      var op = 0, ty = 14;
+      if(posW >= start - fade && posW <= end + fade){
+        if(posW < start){ // entrando
+          var p = (posW - (start - fade)) / fade; op = p; ty = 8*(1-p);
+        } else if(posW > end){ // saliendo
+          var p = 1 - (posW - end) / fade; op = p; ty = -8*(1-p);
+        } else { op = 1; ty = 0; }
+      }
+      op = Math.max(0, Math.min(1, op));
+      beat.style.opacity = op;
+      beat.style.transform = 'translateY(' + ty.toFixed(1) + 'px)';
+      beat.style.pointerEvents = op > 0.5 ? 'auto' : 'none';
+    });
+  }
+  function onScroll(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  update();
+})();
+</script>
+<script>
+// ═══ 180 MINUTOS · motor fiel al original (TimelineExperience.tsx) ═══
+var Exp180 = (function(){
+
+  var SCENES = [
+    { time:"08:15", lines:["Llegan.","(...)","Todavía nadie habla.","(...)","Las mochilas caen sobre las mesas.","(...)","Empiezan a leer el papel.","(...)","Uno levanta la mano.","(...)","No respondo.","(...)","Durante unos minutos nadie sabe si va por el camino correcto."],
+      obs:"08:15 — No hay introducción teórica. Les entrega el reto en papel y se retira al fondo. Interesante ver cómo gestionan la primera parálisis sin que el profesor acuda al rescate.",
+      comp:["Autogestión activa","Tolerancia a la incertidumbre","Iniciativa autónoma"],
+      ev:{cat:"Situación de Aprendizaje (ABP)", title:"Reto de Aula nº 4: Fijación de precios y churn rate para StreamFlow",
+          saber:"Fijación de precios, costes fijos y variables, e impacto del valor del ciclo de vida del cliente (CLV).",
+          crit:"CE 2.3 — Evaluación de viabilidad de propuestas de negocio de forma realista.",
+          desc:"Un documento de entrega real donde se plantea una subida repentina del coste de servidores y exige a los alumnos de FP diseñar una estrategia comercial justificable para evitar la deserción.",
+          url:"proyectofp/"},
+      sim:"challenge" },
+    { time:"08:35", lines:["Empiezan a hablar.","(...)","Se organizan de cuatro en cuatro sin que nadie lo pida.","(...)","Se enciende alguna tablet.","(...)","La IA está abierta en una pestaña de fondo.","(...)","Nadie teclea todavía.","(...)","Discuten la primera idea a lápiz.","(...)","Saben que si copian la respuesta, se nota en cinco segundos."],
+      obs:"08:35 — La IA está presente, pero no como atajo. Debaten la lógica del negocio antes de escribir un solo prompt. La tecnología no sustituye al pensamiento; lo acelera.",
+      comp:["Pensamiento reflexivo","Cohesión de equipo","Competencia digital crítica"],
+      ev:{cat:"Metodología Digital", title:"Guía de Prompts Socráticos para IA en el Aula de FP",
+          saber:"Competencia digital crítica en la investigación comercial.",
+          crit:"CE 3.2 — Utilización crítica y productiva de IA generativa sin caída en atajos cognitivos.",
+          desc:"Conjunto de instrucciones que los alumnos aplican en su interacción con modelos de lenguaje para recibir orientación conceptual y preguntas socráticas en lugar de textos listos para copiar.",
+          url:"tech-proyectos"},
+      sim:"ai" },
+    { time:"09:05", lines:["Aparece el primer error.","(...)","Se han dejado fuera de la fórmula el coste de adquisición del cliente.","(...)","En la pantalla, el gráfico de rentabilidad se desploma a rojo.","(...)","Me miran de reojo para ver si me doy cuenta.","(...)","Me acerco, miro la pantalla, no digo nada y sigo andando.","(...)","Silencio de tres segundos.","(...)","Alguien suspira, borra la celda y empieza a recalcular."],
+      obs:"09:05 — Detecto un error grave en sus previsiones. Peco pasa por su mesa, observa el fallo y sigue de largo en silencio. El aprendizaje ocurre en el instante en que descubren solos el desvío.",
+      comp:["Análisis de desviaciones","Resiliencia técnica","Pivotaje estratégico"],
+      ev:{cat:"Evaluación Formativa", title:"Diario de Decisiones de Alumnos y Registro de Pivotaje",
+          saber:"Análisis de desviaciones, costes imprevistos y gestión del riesgo.",
+          crit:"CE 3.4 — Diagnóstico e identificación de errores en proyecciones comerciales.",
+          desc:"Plantilla real del aula donde los alumnos de ciclos formativos registran qué supuestos fallaron en su planteamiento inicial (ej: confundir margen bruto con neto) y cómo lo corrigieron.",
+          url:"experiencia"},
+      sim:"errors" },
+    { time:"09:45", lines:["Las ideas empiezan a encajar.","(...)","Las mesas ya no están ordenadas.","(...)","Hay tres folios llenos de tachaduras y un café frío.","(...)","Ya nadie habla de «segmentación» de libro de texto.","(...)","Discuten si un chico de su edad en Murcia pagaría diez euros al mes por esto.","(...)","O si preferiría gastárselo en otra cosa.","(...)","La respuesta no está en el PDF.","(...)","Está en el audio que les acaba de enviar un amigo por WhatsApp."],
+      obs:"09:45 — Desaparece el lenguaje académico impostado. Discuten sobre viabilidad real con el mismo tono que usarían fuera de clase. La economía explicada desde el suelo, no desde la pizarra.",
+      comp:["Investigación cualitativa","Validación de hipótesis","Conexión con el entorno"],
+      ev:{cat:"Herramienta Didáctica", title:"Lienzo Business Model Canvas de Aula",
+          saber:"Propuesta de valor, canales, segmentación de clientes y costes.",
+          crit:"CE 2.2 — Segmentación y validación de hipótesis de negocio.",
+          desc:"Un lienzo conceptual donde cada equipo fundamenta su propuesta de valor con encuestas reales de campo y análisis de la competencia en el mercado regional.",
+          url:"proyectos"},
+      sim:"canvas" },
+    { time:"10:30", lines:["Presentan.","(...)","De pie, apoyados en la esquina de la pizarra.","(...)","No hay diapositivas con viñetas infinitas.","(...)","Muestran la hoja de cálculo con el margen comercial.","(...)","Desde el fondo, otro alumno duda de que esos números sean reales.","(...)","Silencio de dos segundos.","(...)","El que expone mira la tabla, asiente y dice: «Ahí nos has pillado. Hay que recalcular».","(...)","No hay defensas numantinas. Hay honestidad profesional."],
+      obs:"10:30 — No hay rastro de la típica exposición escolar memorizada. Defienden su proyecto frente a las dudas de sus compañeros con solidez. Sorprendente madurez al aceptar críticas técnicas.",
+      comp:["Oratoria y síntesis","Capacidad de réplica","Flexibilidad cognitiva"],
+      ev:{cat:"Evaluación Competencial", title:"Rúbrica de Pitch de Negocio y Defensa Oral",
+          saber:"Comunicación técnica, oratoria y retórica comercial.",
+          crit:"CE 4.3 — Exposición oral sintética de propuestas comerciales frente a un tribunal.",
+          desc:"Instrumento detallado de evaluación que mide la seguridad discursiva, el uso de datos en lugar de suposiciones, y la capacidad de responder a preguntas desafiantes del resto de alumnos.",
+          url:"galeria"},
+      sim:"pitch" },
+    { time:"11:15", lines:["Reflexionan.","(...)","Silencio de recogida.","(...)","Las mochilas vuelven a cerrarse.","(...)","En las pantallas abiertas queda el formulario de coevaluación.","(...)","Se puntúan entre ellos sin rodeos, pero con respeto.","(...)","Se escuchan risas bajas por algún comentario.","(...)","El timbre suena de fondo.","(...)","Nadie sale corriendo."],
+      obs:"11:15 — El proceso de coevaluación se asume con total seriedad. No buscan agradar, se miden con rigor profesional. El aula se autorregula sola antes de que suene el timbre.",
+      comp:["Autoevaluación continua","Pensamiento crítico formativo","Regulación del aprendizaje"],
+      ev:{cat:"Evaluación Formativa", title:"Rúbrica de Coevaluación Digital DUA",
+          saber:"Metacognición, trabajo cooperativo y autorregulación del aprendizaje.",
+          crit:"CE 1.4 — Coevaluación interactiva orientada a la identificación de fortalezas.",
+          desc:"Instrumento en tiempo real donde los compañeros califican las competencias blandas y técnicas del equipo de forma anónima, comprometiéndose a planes de mejora específicos.",
+          url:"proyectos"},
+      sim:"eval" }
+  ];
+
+  var FINAL_LINES = ["Hay muchas formas de medir una clase.","Yo solo me hago una pregunta cuando termina.","¿Hoy han pensado más que ayer?"];
+
+  var CHALLENGE = { title:"El dilema del precio de suscripción",
+    context:"La plataforma de streaming «StreamFlow» ha visto cómo sus costes de servidor han aumentado un 40% debido al tráfico en alta definición. El CFO propone subir el precio de la suscripción estándar de 9,99&nbsp;€ a 12,99&nbsp;€ inmediatamente para evitar pérdidas.",
+    question:"¿Qué efecto tendrá esta subida inmediata en la tasa de cancelación (churn rate) y en el valor del ciclo de vida del cliente (CLV)? Diseñad una alternativa que cubra el aumento de costes sin ahuyentar a los usuarios actuales.",
+    doc:"Instrucciones de entrega: proyección financiera simplificada a 3 meses y diseño de la campaña de comunicación para los suscriptores actuales." };
+
+  var AI_PROMPTS = [
+    {id:"idea", label:"Idea de negocio", q:"Danos la idea de negocio ya hecha para un proyecto de FP sobre economía circular en Murcia.",
+     a:"No puedo daros la idea de negocio ya diseñada, porque el valor de este módulo es vuestro propio descubrimiento. Respondedme a estas tres preguntas: ¿qué residuo se genera masivamente en vuestro municipio en esta época del año? ¿Quién pagaría por verlo convertido en materia prima útil? ¿Qué recursos locales infrautilizados podríais usar para transformarlo?",
+     ped:"Fomenta la indagación local y la observación del entorno real antes de buscar respuestas abstractas."},
+    {id:"finance", label:"Plan financiero", q:"Escribe la tabla de costes fijos y variables para una cafetería de especialidad móvil por mí.",
+     a:"Para que vuestro plan financiero sea real, debéis hacer una estimación realista. Buscad el coste mensual de renting de una furgoneta adaptada, e investigad el precio del kilo de café en grano de especialidad al por mayor. Con esos dos datos, calculamos juntos vuestro punto de equilibrio.",
+     ped:"Enseña a buscar datos en fuentes reales de mercado en lugar de aceptar datos estándar inventados."},
+    {id:"pitch", label:"Plan de marketing", q:"Redacta el texto completo del pitch de venta para nuestro simulador de empresa.",
+     a:"Un pitch potente debe sonar a vosotros, no a un texto corporativo robótico. Responded en una frase: ¿cuál es el mayor problema de vuestro cliente? ¿Cómo lo soluciona vuestra propuesta mejor que la competencia? ¿Qué queréis que haga el director al terminar la presentación?",
+     ped:"Alinea la estructura de comunicación con la autenticidad del alumno, delegando solo el pulido final de estilo."}
+  ];
+
+  var ERRORS = [
+    {id:"pricing", label:"Error de precios", wrong:"Calcular el precio de venta sumando simplemente un 30% al coste del producto.",
+     impact:"No se contemplan el coste de adquisición de cliente (CAC), el IVA, ni si la competencia vende a mitad de precio.",
+     q:"¿Habéis calculado cuánto os cuesta captar a un solo cliente mediante anuncios? Si vuestro coste total real con CAC es de 8&nbsp;€, ¿sigue siendo rentable vuestro precio de 10&nbsp;€?",
+     ce:"CE 3.4 — Evaluación de la viabilidad económica y financiera del modelo de negocio."},
+    {id:"marketing", label:"Error de promoción", wrong:"Gastar todo el presupuesto simulado en una campaña publicitaria masiva en televisión nacional.",
+     impact:"Para una microempresa local en fase de lanzamiento, el presupuesto se agota en un día con cero ventas reales.",
+     q:"¿Vuestro público objetivo ve la televisión nacional? ¿No sería más eficiente una campaña hiperlocalizada con microinfluencers del sector?",
+     ce:"CE 4.1 — Diseño del plan de comunicación y marketing adaptado al público objetivo."},
+    {id:"legal", label:"Error de estructura", wrong:"Elegir la forma jurídica de Sociedad Anónima (S.A.) para abrir una pequeña asesoría local con dos socios.",
+     impact:"Exigencia de un capital mínimo de 60.000&nbsp;€ bloqueado en banco y una burocracia desproporcionada para empezar.",
+     q:"¿Disponéis de 60.000&nbsp;€ de capital inicial? ¿Por qué no empezar como Sociedad de Responsabilidad Limitada, con un capital mínimo más flexible?",
+     ce:"CE 1.2 — Selección de la forma jurídica de la empresa analizando ventajas y obligaciones."}
+  ];
+
+  var CANVAS = [
+    {id:"value", label:"Propuesta de valor", text:"Servicio de suscripción de comida preparada saludable con excedentes de cooperativas agrícolas de la huerta de Murcia, reduciendo el desperdicio alimentario y abaratando costes para estudiantes de FP.", ce:"CE 2.1 — Diseña productos y servicios que aportan valor social y sostenibilidad al entorno."},
+    {id:"segments", label:"Segmentos de cliente", text:"Estudiantes y trabajadores de centros educativos de Murcia que no disponen de tiempo para cocinar pero demandan alimentación equilibrada y de proximidad con presupuesto ajustado.", ce:"CE 2.2 — Identifica las necesidades de los clientes potenciales mediante encuestas reales de campo."},
+    {id:"costs", label:"Estructura de costes", text:"Materia prima de cooperativas a coste reducido, envases compostables, logística de reparto agrupada por centros educativos, y canon de alquiler de cocina compartida.", ce:"CE 3.2 — Elaboración de presupuestos y previsión de flujos de caja y tesorería."},
+    {id:"revenue", label:"Fuentes de ingresos", text:"Cobro por suscripción semanal (packs de 5 menús) y catering ocasional para eventos de emprendimiento o reuniones de departamentos de centros de FP de la zona.", ce:"CE 3.3 — Identificación de vías de financiación alternativas y cálculo del umbral de rentabilidad."}
+  ];
+
+  var PITCH_ROLES = [
+    {id:"ceo", name:"Marta G. — CEO", focus:"Estrategia y posicionamiento",
+     text:"Nuestra propuesta no compite en precio bajo con las grandes multinacionales. Hemos posicionado el modelo en un nicho de proximidad y sostenibilidad en Murcia. El testeo demuestra que el cliente paga un 15% más por un menú si certificamos que se ha evitado el desperdicio de comida de agricultores de la zona.",
+     note:"Demuestra pensamiento crítico, segmentación estratégica y un sólido análisis de valor diferencial."},
+    {id:"cfo", name:"Alejandro M. — CFO", focus:"Estructura financiera y viabilidad",
+     text:"Frente a pedir un préstamo de 30.000&nbsp;€ que nos habría ahogado en intereses, adoptamos bootstrapping: subcontratamos la cocina compartida por horas de uso, reduciendo costes fijos iniciales un 80%. Con un precio medio de 35&nbsp;€ semanales, el punto de equilibrio está en solo 42 clientes activos al mes.",
+     note:"Demuestra manejo impecable de conceptos financieros: bootstrapping, costes fijos, umbral de rentabilidad."},
+    {id:"cmo", name:"Sofía T. — CMO", focus:"Adquisición de clientes y canales",
+     text:"Descartamos las campañas publicitarias de pago porque el CAC se disparaba a 14&nbsp;€. En su lugar, diseñamos un programa de recomendación local en tres centros educativos: por cada amigo recomendado, ambos obtienen un 10% de descuento. Esto baja nuestro CAC real a solo 2,50&nbsp;€ por suscriptor.",
+     note:"Demuestra comprensión de métricas de marketing modernas (CAC, ROI, marketing de recomendación)."}
+  ];
+
+  var EVAL_CRITERIA = [
+    {id:"collab", name:"Cooperación y liderazgo", desc:"Reparto equitativo de tareas, ayuda mutua en bloqueos de rol.", score:8},
+    {id:"rigor", name:"Rigor técnico y analítico", desc:"Uso de datos reales de mercado, cálculos financieros sin alucinaciones.", score:9},
+    {id:"comm", name:"Calidad de comunicación", desc:"Defensa oral, síntesis técnica, control de los tiempos del pitch.", score:7}
+  ];
+
+  var sceneIndex = -1, revealed = 1, playing = true, sceneFinished = false, finalStep = -1, timer = null;
+  var el = {}, evalScores = {};
+
+  function q(id){ return document.getElementById(id); }
+
+  function init(){
+    el.overlay = q('exp180Overlay'); el.gate = q('exp180Gate');
+    renderGate();
+
+    // 1) Enlace DIRECTO del botón interior (no depende de onclick inline)
+    var startBtn = q('x180StartBtn');
+    if(startBtn){
+      startBtn.addEventListener('click', function(ev){ ev.preventDefault(); ev.stopPropagation(); startClassroom(); });
+    }
+    // Pestañas del panel (robusto)
+    document.querySelectorAll('.x180-tab').forEach(function(b){
+      b.addEventListener('click', function(ev){ ev.preventDefault(); switchTab(b.dataset.tab); });
+    });
+    // Clic en la zona narrativa = adelantar a la siguiente frase
+    var narr = q('x180Lines');
+    if(narr){
+      var narrParent = narr.parentNode; // .x180-narrative
+      narrParent.addEventListener('click', function(ev){
+        if(ev.target.closest('.x180-after')) return; // no interferir con los enlaces finales
+        if(el.overlay.classList.contains('state-scene')) advanceLine();
+      });
+    }
+
+    // 2) Red de seguridad: un clic en cualquier parte de la pantalla de intro arranca la experiencia
+    var introEl = q('x180Intro');
+    if(introEl){
+      introEl.addEventListener('click', function(ev){
+        // si el estado es intro, cualquier clic (salvo el de "saltar") entra en la experiencia
+        if(el.overlay.classList.contains('state-intro')){ startClassroom(); }
+      });
+    }
+
+    // 3) Delegación global como tercera capa (inmune a timing/re-render)
+    document.addEventListener('click', function(ev){
+      var t = ev.target;
+      while(t && t !== document){
+        if(t.id === 'x180StartBtn'){ ev.preventDefault(); startClassroom(); return; }
+        if(t.classList && t.classList.contains('x180-gate-btn')){ enter(); return; }
+        t = t.parentNode;
+      }
+    }, true);
+  }
+
+  function seen(){ try { return localStorage.getItem('exp180_seen') === '1'; } catch(e){ return false; } }
+  function markSeen(){ try { localStorage.setItem('exp180_seen','1'); } catch(e){} }
+
+  function renderGate(){
+    if(seen()){
+      el.gate.innerHTML =
+        '<h2 class="x180-gate-title">180 minutos</h2>' +
+        '<p class="x180-gate-seen">Ya conoces esta experiencia.</p>' +
+        '<button class="x180-gate-btn" onclick="Exp180.enter()">Volver a vivirla</button>' +
+        '<p class="x180-gate-more">o sigue leyendo &darr;</p>';
+    } else {
+      el.gate.innerHTML =
+        '<h2 class="x180-gate-title">180 minutos</h2>' +
+        '<p class="x180-gate-open">«No voy a explicarte cómo enseño.<br>Prefiero que lo experimentes.»</p>' +
+        '<p class="x180-gate-note">Verás el error real que no corregí, y por qué. Y la pregunta con la que cierro cada clase. 3 minutos.</p>' +
+        '<button class="x180-gate-btn" onclick="Exp180.enter()">Comenzar experiencia</button>';
+    }
+  }
+
+  function lockBody(lock){ document.body.classList.toggle('x180-lock', lock); }
+
+  function enter(){
+    markSeen();
+    el.overlay.classList.add('is-active');
+    lockBody(true);
+    setState('intro');
+  }
+
+  function setState(s){
+    el.overlay.classList.remove('state-intro','state-scene','state-final');
+    el.overlay.classList.add('state-'+s);
+  }
+
+  function startClassroom(){
+    sceneIndex = 0; revealed = 1; playing = true; sceneFinished = false;
+    setState('scene');
+    renderScene();
+    runLineTimer();
+  }
+
+  function renderDots(){
+    var html = '<b>'+SCENES[sceneIndex].time+'</b>';
+    SCENES.forEach(function(s,i){ html += '<span class="dot'+(i===sceneIndex?' on':'')+'">'+(i===sceneIndex?'●':'○')+'</span> '; });
+    q('x180Dots').innerHTML = html;
+  }
+
+  function renderScene(){
+    renderDots();
+    var sc = SCENES[sceneIndex];
+    var linesHtml = sc.lines.map(function(l,i){
+      var cls = (l==="(...)") ? "ln pause" : "ln";
+      return '<div class="'+cls+'" data-i="'+i+'">'+(l==="(...)"?"":l)+'</div>';
+    }).join('');
+    q('x180Lines').innerHTML = linesHtml;
+    q('x180Scene').classList.remove('hide-hint');
+    q('x180After').innerHTML = '';
+    revealLinesUpTo(revealed);
+    renderSimTab(sc);
+    renderPedTab(sc);
+    var lbl = q('x180PanelLabel');
+    if(lbl) lbl.textContent = sc.ev.cat;
+    q('x180Status').textContent = 'Escena ' + (sceneIndex+1) + ' de 6';
+    switchTab('sim');
+  }
+
+  function revealLinesUpTo(n){
+    // Solo la línea actual visible; las anteriores se diluyen (una cada vez)
+    var idx = n - 1;
+    var lns = document.querySelectorAll('#x180Lines .ln');
+    lns.forEach(function(ln,i){ ln.classList.toggle('on', i === idx); });
+  }
+
+  function runLineTimer(){
+    clearTimeout(timer);
+    if(!playing) return;
+    var sc = SCENES[sceneIndex];
+    if(revealed >= sc.lines.length){ finishScene(); return; }
+    var curLine = sc.lines[revealed - 1];
+    // Ritmo más ágil: pausa corta en "(...)", y lectura proporcional pero más rápida
+    var delay = (curLine === "(...)") ? 900 : Math.max(1500, (curLine.split(' ').length/3.5)*1000 + 900);
+    timer = setTimeout(function(){
+      revealed++;
+      revealLinesUpTo(revealed);
+      runLineTimer();
+    }, delay);
+  }
+
+  // Avance manual: adelantar a la siguiente frase (si vas con prisa o lees rápido)
+  function advanceLine(){
+    var sc = SCENES[sceneIndex];
+    if(revealed >= sc.lines.length){ return; }
+    clearTimeout(timer);
+    revealed++;
+    revealLinesUpTo(revealed);
+    if(revealed >= sc.lines.length){ finishScene(); }
+    else if(playing){ runLineTimer(); }
+  }
+
+  function finishScene(){
+    sceneFinished = true;
+    q('x180Scene').classList.add('hide-hint');
+    var after = q('x180After');
+    after.innerHTML =
+      '<a onclick="Exp180.openDrawer()">Ver evidencia real</a>' +
+      (sceneIndex < 5 ? '<button class="next" onclick="Exp180.next()">Siguiente escena &rarr;</button>' : '<button class="next" onclick="Exp180.next()">Ver cierre &rarr;</button>');
+  }
+
+  function togglePlay(){
+    playing = !playing;
+    q('x180Play').textContent = playing ? 'Pausa' : 'Reanudar';
+    if(playing) runLineTimer(); else clearTimeout(timer);
+  }
+
+  function prevScene(){
+    clearTimeout(timer);
+    if(sceneIndex === 0){ closeOverlay(); return; }
+    sceneIndex--; revealed = 1; playing = true; sceneFinished = false;
+    q('x180Play').textContent = 'Pausa';
+    renderScene(); runLineTimer();
+  }
+  function nextScene(){
+    clearTimeout(timer);
+    if(sceneIndex < 5){
+      sceneIndex++; revealed = 1; playing = true; sceneFinished = false;
+      q('x180Play').textContent = 'Pausa';
+      renderScene(); runLineTimer();
+    } else {
+      startFinal();
+    }
+  }
+
+  function switchTab(t){
+    document.querySelectorAll('.x180-tab').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===t); });
+    q('x180Sim').style.display = t==='sim' ? '' : 'none';
+    q('x180Ped').style.display = t==='ped' ? '' : 'none';
+  }
+
+  function renderPedTab(sc){
+    var html = '<div class="xped">';
+    if(sceneFinished || revealed >= sc.lines.length){
+      html += '<span class="xped-k">Observación del director</span><p>'+sc.obs+'</p>';
+      html += '<span class="xped-k">Competencias observadas</span><div class="xped-tags">'+sc.comp.map(function(c){return '<span>'+c+'</span>';}).join('')+'</div>';
+    } else {
+      html += '<p class="muted">La ficha se completa al terminar la escena.</p>';
+    }
+    html += '</div>';
+    q('x180Ped').innerHTML = html;
+  }
+
+  function renderSimTab(sc){
+    var box = q('x180Sim');
+    if(sc.sim === 'challenge') box.innerHTML = simChallenge();
+    else if(sc.sim === 'ai') box.innerHTML = simAI('idea');
+    else if(sc.sim === 'errors') box.innerHTML = simErrors('pricing');
+    else if(sc.sim === 'canvas') box.innerHTML = simCanvas('value');
+    else if(sc.sim === 'pitch') box.innerHTML = simPitch('ceo');
+    else if(sc.sim === 'eval') box.innerHTML = simEval();
+  }
+
+  function simChallenge(){
+    return '<div class="xsim"><span class="xsim-eyebrow">Material de aula real</span>' +
+      '<h4>'+CHALLENGE.title+'</h4><p>'+CHALLENGE.context+'</p>' +
+      '<p><b>Pregunta:</b> '+CHALLENGE.question+'</p>' +
+      '<p class="muted">'+CHALLENGE.doc+'</p></div>';
+  }
+
+  function simAI(activeId){
+    var p = AI_PROMPTS.find(function(x){return x.id===activeId;});
+    var tabs = AI_PROMPTS.map(function(x){return '<button class="'+(x.id===activeId?'active':'')+'" onclick="Exp180._aiTab(&quot;'+x.id+'&quot;)">'+x.label+'</button>';}).join('');
+    window.Exp180._aiTab = function(id){ q('x180Sim').innerHTML = simAI(id); };
+    return '<div class="xsim"><span class="xsim-eyebrow">Prompts socráticos</span>' +
+      '<div class="xsim-subtabs">'+tabs+'</div>' +
+      '<p class="xsim-q">«'+p.q+'»</p><p>'+p.a+'</p><p class="muted">'+p.ped+'</p></div>';
+  }
+
+  function simErrors(activeId){
+    var e = ERRORS.find(function(x){return x.id===activeId;});
+    var tabs = ERRORS.map(function(x){return '<button class="'+(x.id===activeId?'active':'')+'" onclick="Exp180._errTab(&quot;'+x.id+'&quot;)">'+x.label+'</button>';}).join('');
+    window.Exp180._errTab = function(id){ q('x180Sim').innerHTML = simErrors(id); };
+    return '<div class="xsim"><span class="xsim-eyebrow">Registro de decisiones</span>' +
+      '<div class="xsim-subtabs">'+tabs+'</div>' +
+      '<p><b>Acción errónea:</b> '+e.wrong+'</p><p><b>Impacto:</b> '+e.impact+'</p>' +
+      '<p class="xsim-q">«'+e.q+'»</p><p class="muted">'+e.ce+'</p></div>';
+  }
+
+  function simCanvas(activeId){
+    var c = CANVAS.find(function(x){return x.id===activeId;});
+    var tabs = CANVAS.map(function(x){return '<button class="'+(x.id===activeId?'active':'')+'" onclick="Exp180._cvTab(&quot;'+x.id+'&quot;)">'+x.label+'</button>';}).join('');
+    window.Exp180._cvTab = function(id){ q('x180Sim').innerHTML = simCanvas(id); };
+    return '<div class="xsim"><span class="xsim-eyebrow">Business Model Canvas</span>' +
+      '<div class="xsim-subtabs">'+tabs+'</div>' +
+      '<h4>'+c.label+'</h4><p>'+c.text+'</p><p class="muted">'+c.ce+'</p></div>';
+  }
+
+  function simPitch(activeId){
+    var r = PITCH_ROLES.find(function(x){return x.id===activeId;});
+    var tabs = PITCH_ROLES.map(function(x){return '<button class="'+(x.id===activeId?'active':'')+'" onclick="Exp180._pitchTab(&quot;'+x.id+'&quot;)">'+x.name.split(' — ')[0]+'</button>';}).join('');
+    window.Exp180._pitchTab = function(id){ q('x180Sim').innerHTML = simPitch(id); };
+    return '<div class="xsim"><span class="xsim-eyebrow">Tribunal de defensa de proyecto</span>' +
+      '<div class="xsim-subtabs">'+tabs+'</div>' +
+      '<h4>'+r.name+' · '+r.focus+'</h4><p>«'+r.text+'»</p><p class="muted">'+r.note+'</p></div>';
+  }
+
+  function simEval(){
+    EVAL_CRITERIA.forEach(function(c){ if(!(c.id in evalScores)) evalScores[c.id] = c.score; });
+    var rows = EVAL_CRITERIA.map(function(c){
+      return '<div class="xsim-crit"><div class="xsim-crit-head"><span>'+c.name+'</span><span id="xev_'+c.id+'_v">'+evalScores[c.id]+'</span></div>' +
+        '<input type="range" min="0" max="10" value="'+evalScores[c.id]+'" oninput="Exp180._evalChange(&quot;'+c.id+'&quot;,this.value)">' +
+        '<p class="muted" style="margin-top:.3rem;">'+c.desc+'</p></div>';
+    }).join('');
+    window.Exp180._evalChange = function(id,v){ evalScores[id] = parseFloat(v); q('xev_'+id+'_v').textContent = v; updateEvalGrade(); };
+    setTimeout(updateEvalGrade, 0);
+    return '<div class="xsim"><span class="xsim-eyebrow">Coevaluación y rúbricas</span>' + rows +
+      '<div class="xsim-grade" id="xevalGrade"></div></div>';
+  }
+  function updateEvalGrade(){
+    var vals = EVAL_CRITERIA.map(function(c){return evalScores[c.id];});
+    var avg = (vals.reduce(function(a,b){return a+b;},0)/vals.length).toFixed(1);
+    var grade = avg>=9?'Sobresaliente (Competencialmente Excelente)': avg>=7?'Notable (Alta Competencia Adquirida)': avg>=5?'Aprobado (Competencia Básica)':'No Alcanzado (Requiere Plan de Mejora)';
+    var g = q('xevalGrade'); if(g) g.textContent = 'Media: '+avg+' · '+grade;
+  }
+
+  function openDrawer(){
+    clearTimeout(timer);
+    var sc = SCENES[sceneIndex], e = sc.ev;
+    q('x180DrawerBody').innerHTML =
+      '<span class="cat">'+e.cat+'</span><h3>'+e.title+'</h3><p>'+e.desc+'</p>' +
+      '<span class="lbl">Saberes básicos asociados</span><p>'+e.saber+'</p>' +
+      '<span class="lbl">Criterio de evaluación LOMLOE</span><p>'+e.crit+'</p>' +
+      '<div class="ctx">Evaluación competencial trazada de acuerdo con el marco legislativo de la Consejería de Educación de la Región de Murcia.</div>' +
+      '<a class="x180-drawer-link" href="#'+e.url+'" onclick="Exp180.closeDrawer(); Exp180.finish();">Ver materiales relacionados</a>';
+    q('x180Drawer').classList.add('open');
+  }
+  function closeDrawer(){ q('x180Drawer').classList.remove('open'); playing = true; runLineTimer(); }
+
+  function startFinal(){
+    setState('final');
+    finalStep = -1;
+    nextFinalLine();
+  }
+  function nextFinalLine(){
+    finalStep++;
+    var lineEl = q('x180FinalLine');
+    if(finalStep < FINAL_LINES.length){
+      lineEl.textContent = FINAL_LINES[finalStep];
+      lineEl.classList.remove('on'); void lineEl.offsetWidth; lineEl.classList.add('on');
+      var d = finalStep===0?3500:finalStep===1?3500:4000;
+      setTimeout(nextFinalLine, d);
+    } else if(finalStep === FINAL_LINES.length){
+      lineEl.classList.remove('on');
+      setTimeout(function(){
+        lineEl.textContent = 'Silencio.'; lineEl.style.opacity='.3'; lineEl.style.fontStyle='italic'; lineEl.style.fontSize='.9rem';
+        lineEl.classList.add('on');
+        q('x180FinalExit').style.display = 'inline-block';
+        // Cierre automático: devuelve al recorrido de la web tras un último respiro
+        setTimeout(function(){
+          if(el.overlay.classList.contains('state-final')){ closeOverlay(); }
+        }, 3200);
+      }, 1400);
+    }
+  }
+
+  function closeOverlay(){
+    clearTimeout(timer);
+    el.overlay.classList.remove('is-active','state-intro','state-scene','state-final');
+    lockBody(false);
+    renderGate();
+  }
+
+  window.Exp180 = {
+    enter: enter,
+    begin: startClassroom,
+    advance: advanceLine,
+    skip: function(){ closeOverlay(); },
+    prev: prevScene,
+    next: nextScene,
+    togglePlay: togglePlay,
+    tab: switchTab,
+    openDrawer: openDrawer,
+    closeDrawer: closeDrawer,
+    finish: closeOverlay
+  };
+
+  init();
+  return window.Exp180;
+})();
+</script>
 </body>
+
+
 </html>
