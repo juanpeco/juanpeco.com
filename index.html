@@ -670,9 +670,32 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 #en-el-aula.ed, #sesion-real.ed{ background:var(--ed-paper); }
 
 /* En el aula · dinámicas */
-.ed .ed-dyn-grid{ display:grid; grid-template-columns:1fr; gap:clamp(1.6rem,4vw,2.1rem) clamp(2rem,4vw,3rem); }
-@media(min-width:620px){ .ed .ed-dyn-grid{ grid-template-columns:1fr 1fr; } }
-@media(min-width:980px){ .ed .ed-dyn-grid{ grid-template-columns:1fr 1fr 1fr; } }
+/* Masonry editorial: cada tarjeta mide lo que su contenido necesita, sin encajar filas */
+.ed .ed-dyn-grid{ column-count:1; column-gap:clamp(2rem,4vw,3rem); }
+@media(min-width:620px){ .ed .ed-dyn-grid{ column-count:2; } }
+@media(min-width:980px){ .ed .ed-dyn-grid{ column-count:3; } }
+.ed .ed-dyn{ break-inside:avoid; -webkit-column-break-inside:avoid; display:inline-block; width:100%; margin-bottom:clamp(1.8rem,4vw,2.4rem); vertical-align:top; }
+/* En masonry ninguna tarjeta necesita ocupar doble ancho: su altura ya la distingue */
+.ed .ed-dyn-span2{ }
+
+/* Evidencia: foto real */
+.ed .ed-dyn-photo img{ width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:4px; margin-top:1rem; filter:grayscale(.06); }
+.ed .ed-dyn-photo-lead img{ aspect-ratio:4/3; }
+
+/* Evidencia: cita real de aula, partida en dos líneas de impacto */
+.ed .ed-dyn-quote{ display:flex; flex-direction:column; }
+.ed .ed-dyn-q{ font-family:var(--ed-fh); font-style:italic; font-weight:500; font-size:clamp(1.5rem,3vw,2rem); color:var(--ed-navy); line-height:1.3; margin-top:1.3rem; max-width:24ch; }
+.ed .ed-dyn-attr{ display:block; font-family:var(--ed-fm); font-style:normal; font-size:.66rem; letter-spacing:.03em; color:var(--ed-ink2); margin-top:.9rem; text-transform:none; }
+
+/* Etiqueta variada: Alumno / Profesor / Rúbrica... nunca la misma palabra */
+.ed .ed-dyn-tag{ display:block; font-family:var(--ed-fm); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-lav); margin-bottom:.5rem; font-weight:600; }
+
+/* Evidencia: fragmento real (prompt / respuesta / rúbrica) */
+.ed .ed-dyn-frag{ margin-top:1rem; padding-top:.9rem; border-top:1px dashed var(--ed-border); font-family:var(--ed-fm); font-size:.78rem; color:var(--ed-ink); line-height:1.6; }
+.ed .ed-dyn-frag-reply{ border-top:none; margin-top:.8rem; padding-top:0; padding-left:.9rem; border-left:2px solid var(--ed-lav-light); }
+.ed .ed-dyn-check{ list-style:none; }
+.ed .ed-dyn-check li{ position:relative; padding-left:1.2rem; margin-bottom:.4rem; }
+.ed .ed-dyn-check li::before{ content:'✓'; position:absolute; left:0; color:var(--ed-lav); font-weight:700; }
 .ed .ed-dyn{ padding-top:1.1rem; border-top:1px solid var(--ed-border); }
 .ed .ed-dyn .cat{ font-family:var(--ed-fm); font-size:.66rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-lav); margin-bottom:.7rem; }
 .ed .ed-dyn h3{ font-family:var(--ed-fh); font-weight:500; font-size:1.2rem; color:var(--ed-navy); letter-spacing:-.01em; margin-bottom:.4rem; }
@@ -1157,12 +1180,24 @@ body.x180-lock{ overflow:hidden; }
     </div>
     <div class="ed-dyn-grid reveal d1">
       <div class="ed-dyn"><p class="cat">Magistral</p><h3>Clase magistral</h3><p>Para definiciones y marcos, cuando el contenido lo pide.</p></div>
-      <div class="ed-dyn has-ph"><p class="cat">ABP</p><h3>Empresa simulada</h3><p>Constituyen y gestionan una empresa; deciden y defienden resultados.</p><img class="ed-dyn-ph" src="galeria_02.jpg" alt="Juan Peco explicando el modelo de negocio al grupo" loading="lazy"></div>
-      <div class="ed-dyn"><p class="cat">Comunicación</p><h3>Pitch de negocio</h3><p>Cinco minutos para convencer. Síntesis y presión real.</p></div>
-      <div class="ed-dyn"><p class="cat">Digital</p><h3>IA con criterio</h3><p>La IA como herramienta, no como atajo. Cada decisión, justificada.</p></div>
+
+      <div class="ed-dyn ed-dyn-span2 ed-dyn-photo ed-dyn-photo-lead"><p class="cat">ABP</p><h3>Empresa simulada</h3><p>Constituyen y gestionan una empresa; deciden y defienden resultados.</p><img src="galeria_02.jpg" alt="Juan Peco explicando el modelo de negocio al grupo" loading="lazy"></div>
+
+      <div class="ed-dyn ed-dyn-span2 ed-dyn-quote"><p class="cat">Comunicación</p><h3>Pitch de negocio</h3><p>Cinco minutos para convencer. Síntesis y presión real.</p><p class="ed-dyn-q"><span class="ed-dyn-tag">Alumno</span>«Ahí nos has pillado.»<br>Hay que recalcular.<span class="ed-dyn-attr">— durante la defensa del proyecto</span></p></div>
+
+      <div class="ed-dyn ed-dyn-prompt"><p class="cat">Digital</p><h3>IA con criterio</h3><p>La IA como herramienta, no como atajo. Cada decisión, justificada.</p>
+      <div class="ed-dyn-frag"><span class="ed-dyn-tag">Alumno</span>«Danos la idea de negocio ya hecha para un proyecto de FP sobre economía circular en Murcia.»</div>
+      <div class="ed-dyn-frag ed-dyn-frag-reply"><span class="ed-dyn-tag">Profesor</span>«No puedo daros la idea de negocio ya diseñada, porque el valor de este módulo es vuestro propio descubrimiento.»</div>
+      </div>
+
       <div class="ed-dyn"><p class="cat">Argumentación</p><h3>Debate</h3><p>Posturas enfrentadas y argumentos preparados. Yo arbitro, no opino.</p></div>
-      <div class="ed-dyn has-ph"><p class="cat">Equipo</p><h3>Trabajo en equipo</h3><p>Roles diferenciados y responsabilidad compartida.</p><img class="ed-dyn-ph" src="galeria_06.jpg" alt="Juan Peco con un grupo de alumnos de FP" loading="lazy"></div>
-      <div class="ed-dyn"><p class="cat">Evaluación</p><h3>Evaluación continua</h3><p>El esfuerzo y la mejora cuentan desde el primer día.</p></div>
+
+      <div class="ed-dyn ed-dyn-span2 ed-dyn-photo"><p class="cat">Equipo</p><h3>Trabajo en equipo</h3><p>Roles diferenciados y responsabilidad compartida.</p><img src="galeria_06.jpg" alt="Juan Peco con un grupo de alumnos de FP" loading="lazy"></div>
+
+      <div class="ed-dyn ed-dyn-rubric"><p class="cat">Evaluación</p><h3>Evaluación continua</h3><p>El esfuerzo y la mejora cuentan desde el primer día.</p>
+      <div class="ed-dyn-frag"><span class="ed-dyn-tag">Rúbrica</span>
+        <ul class="ed-dyn-check"><li>Cooperación y liderazgo</li><li>Rigor técnico y analítico</li><li>Calidad de comunicación</li></ul>
+      </div></div>
     </div>
   </div>
 </section>
