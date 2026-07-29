@@ -1934,7 +1934,9 @@ var Exp180 = (function(){
     el.overlay.classList.add('state-'+s);
   }
 
+  var classroomStartedAt = 0;
   function startClassroom(){
+    classroomStartedAt = Date.now();
     sceneIndex = 0; revealed = 1; playing = true; sceneFinished = false;
     setState('scene');
     renderScene();
@@ -2029,7 +2031,10 @@ var Exp180 = (function(){
     clearTimeout(timer);
     if(!playing) return;
     var sc = SCENES[sceneIndex];
-    if(revealed >= sc.lines.length){ finishScene(); return; }
+    if(revealed >= sc.lines.length){
+      console.trace('[180-TIMER] finishScene() invocada desde runLineTimer (ruta automática)');
+      finishScene(); return;
+    }
     var curLine = sc.lines[revealed - 1];
     // Ritmo más ágil: pausa corta en "(...)", y lectura proporcional pero más rápida
     var delay = (curLine === "(...)") ? 900 : Math.max(1500, (curLine.split(' ').length/3.5)*1000 + 900);
@@ -2047,11 +2052,22 @@ var Exp180 = (function(){
     clearTimeout(timer);
     revealed++;
     revealLinesUpTo(revealed);
-    if(revealed >= sc.lines.length){ finishScene(); }
+    if(revealed >= sc.lines.length){
+      console.trace('[180-TIMER] finishScene() invocada desde advanceLine (avance manual)');
+      finishScene();
+    }
     else if(playing){ runLineTimer(); }
   }
 
   function finishScene(){
+    debugger;
+    console.trace('[180-TIMER] finishScene()');
+    var _sc = SCENES[sceneIndex];
+    console.log('[180-TIMER] revealed (frase actual) =', revealed);
+    console.log('[180-TIMER] total frases de la escena =', _sc.lines.length);
+    console.log('[180-TIMER] sceneIndex =', sceneIndex);
+    console.log('[180-TIMER] playing =', playing);
+    console.log('[180-TIMER] ms desde inicio de la experiencia =', Date.now() - classroomStartedAt);
     console.log('[180-DEBUG 7] finishScene() — fin de la narración, aquí se revelan los paneles');
     sceneFinished = true;
     q('x180Scene').classList.add('hide-hint');
