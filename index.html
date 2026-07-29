@@ -652,6 +652,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 /* En el aula · dinámicas */
 /* Masonry editorial: cada tarjeta mide lo que su contenido necesita, sin encajar filas */
 /* ═══ Pieza grande: rompe la cuadrícula a propósito, ancho completo ═══ */
+
 .ed .ed-dyn-hero{ margin-bottom:clamp(3rem,7vw,4.5rem); }
 .ed .ed-dyn-hero .cat{ font-family:var(--ed-fm); font-size:.68rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-lav); margin-bottom:.5rem; }
 .ed .ed-dyn-hero h3{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(1.6rem,3.4vw,2.3rem); color:var(--ed-navy); margin-bottom:.5rem; }
@@ -1857,6 +1858,16 @@ var Exp180 = (function(){
   function seen(){ try { return localStorage.getItem('exp180_seen') === '1'; } catch(e){ return false; } }
   function markSeen(){ try { localStorage.setItem('exp180_seen','1'); } catch(e){} }
 
+  // Memoria POR BLOQUE (independiente de si ya se vio la experiencia entera):
+  // primera vez en cada escena -> modo inmersivo solo-frases.
+  function isBlockSeen(i){
+    try { return localStorage.getItem('180-bloque-'+(i+1)) === '1'; }
+    catch(e){ return true; } // si el storage falla, no forzar inmersivo: mostrar todo (degradación segura)
+  }
+  function markBlockSeen(i){
+    try { localStorage.setItem('180-bloque-'+(i+1), '1'); } catch(e){}
+  }
+
   var TEASER_LINES = [
     "Las mochilas caen sobre las mesas.",
     "El gráfico de rentabilidad se desploma a rojo.",
@@ -1910,6 +1921,7 @@ var Exp180 = (function(){
   function lockBody(lock){ document.body.classList.toggle('x180-lock', lock); }
 
   function enter(){
+    console.log('[180-DEBUG 1] Botón pulsado — enter()');
     stopTeaser();
     markSeen();
     el.overlay.classList.add('is-active');
@@ -1935,9 +1947,40 @@ var Exp180 = (function(){
     q('x180Dots').innerHTML = html;
   }
 
+  function hideIntroZone(el){
+    if(!el) return;
+    el.style.transition = 'none';   // ocultación instantánea: nunca un fundido de salida visible
+    el.style.opacity = '0';
+    el.style.pointerEvents = 'none';
+  }
+  function showIntroZone(el){
+    if(!el) return;
+    el.style.transition = 'opacity .4s ease';
+    el.style.opacity = '1';
+    el.style.pointerEvents = '';
+  }
+  function setIntroVisibility(hidden){
+    console.log('[180-DEBUG 6] setIntroVisibility(' + hidden + ') → ' + (hidden ? 'OCULTANDO paneles' : 'MOSTRANDO paneles'));
+    var panel = document.querySelector('.x180-panel');
+    var footer = document.querySelector('.x180-footer');
+    var after = q('x180After');
+    [panel, footer, after].forEach(hidden ? hideIntroZone : showIntroZone);
+  }
+
   function renderScene(){
     renderDots();
     var sc = SCENES[sceneIndex];
+    console.log('[180-DEBUG 2] renderScene() — antes de calcular firstTimeHere, sceneIndex=' + sceneIndex);
+    try {
+      console.log('[180-DEBUG 3] localStorage.getItem(180-bloque-' + (sceneIndex+1) + ') = ' + JSON.stringify(localStorage.getItem('180-bloque-'+(sceneIndex+1))));
+    } catch(e) {
+      console.log('[180-DEBUG 3] localStorage LANZA EXCEPCIÓN: ' + e.message);
+    }
+    var seenResult = isBlockSeen(sceneIndex);
+    console.log('[180-DEBUG 4] isBlockSeen(' + sceneIndex + ') = ' + seenResult);
+    var firstTimeHere = !seenResult;
+    console.log('[180-DEBUG 5] firstTimeHere = ' + firstTimeHere);
+    setIntroVisibility(firstTimeHere);
     var linesHtml = sc.lines.map(function(l,i){
       var cls = (l==="(...)") ? "ln pause" : "ln";
       return '<div class="'+cls+'" data-i="'+i+'">'+(l==="(...)"?"":l)+'</div>';
@@ -1996,12 +2039,19 @@ var Exp180 = (function(){
   }
 
   function finishScene(){
+    console.log('[180-DEBUG 7] finishScene() — fin de la narración, aquí se revelan los paneles');
     sceneFinished = true;
     q('x180Scene').classList.add('hide-hint');
+    var wasFirstTime = !isBlockSeen(sceneIndex);
     var after = q('x180After');
     after.innerHTML =
       '<a onclick="Exp180.openDrawer()">Ver evidencia real</a>' +
       (sceneIndex < 5 ? '<button class="next" onclick="Exp180.next()">Siguiente escena &rarr;</button>' : '<button class="next" onclick="Exp180.next()">Ver cierre &rarr;</button>');
+    // Si esta era la primera vez en el bloque, revelar con fundido y recordarlo
+    if(wasFirstTime){
+      markBlockSeen(sceneIndex);
+      setIntroVisibility(false);
+    }
   }
 
   function togglePlay(){
