@@ -1688,7 +1688,6 @@ if (window.instgrm) window.instgrm.Embeds.process();
 })();
 </script>
 <script>
-console.log('[180-BUILD] v-diagnostico-timer — si ves esta línea, el archivo servido ES el instrumentado');
 // ═══ 180 MINUTOS · motor fiel al original (TimelineExperience.tsx) ═══
 var Exp180 = (function(){
 
@@ -1922,7 +1921,6 @@ var Exp180 = (function(){
   function lockBody(lock){ document.body.classList.toggle('x180-lock', lock); }
 
   function enter(){
-    console.log('[180-DEBUG 1] Botón pulsado — enter()');
     stopTeaser();
     markSeen();
     el.overlay.classList.add('is-active');
@@ -1963,39 +1961,16 @@ var Exp180 = (function(){
     el.style.pointerEvents = '';
   }
   function setIntroVisibility(hidden){
-    console.log('[180-DEBUG 6] setIntroVisibility(' + hidden + ') → ' + (hidden ? 'OCULTANDO paneles' : 'MOSTRANDO paneles'));
     var panel = document.querySelector('.x180-panel');
     var footer = document.querySelector('.x180-footer');
     var after = q('x180After');
     [panel, footer, after].forEach(hidden ? hideIntroZone : showIntroZone);
-    // ═══ [180-DOM] inspección del DOM real tras aplicar los estilos ═══
-    console.log('[180-DOM] nº de .x180-panel en el documento:', document.querySelectorAll('.x180-panel').length);
-    console.log('[180-DOM] nº de .x180-footer en el documento:', document.querySelectorAll('.x180-footer').length);
-    [['panel', panel], ['footer', footer], ['after', after]].forEach(function(pair){
-      var name = pair[0], node = pair[1];
-      if(!node){ console.log('[180-DOM] ' + name + ': NODO NO ENCONTRADO'); return; }
-      console.log('[180-DOM] ' + name + ' nodo:', node);
-      var cs = getComputedStyle(node);
-      console.log('[180-DOM] ' + name + ' computed → opacity:', cs.opacity, '| display:', cs.display, '| visibility:', cs.visibility);
-      console.log('[180-DOM] ' + name + ' inline → opacity:', JSON.stringify(node.style.opacity), '| transition:', JSON.stringify(node.style.transition));
-      var r = node.getBoundingClientRect();
-      console.log('[180-DOM] ' + name + ' rect → x:', Math.round(r.x), 'y:', Math.round(r.y), 'w:', Math.round(r.width), 'h:', Math.round(r.height));
-    });
   }
 
   function renderScene(){
     renderDots();
     var sc = SCENES[sceneIndex];
-    console.log('[180-DEBUG 2] renderScene() — antes de calcular firstTimeHere, sceneIndex=' + sceneIndex);
-    try {
-      console.log('[180-DEBUG 3] localStorage.getItem(180-bloque-' + (sceneIndex+1) + ') = ' + JSON.stringify(localStorage.getItem('180-bloque-'+(sceneIndex+1))));
-    } catch(e) {
-      console.log('[180-DEBUG 3] localStorage LANZA EXCEPCIÓN: ' + e.message);
-    }
-    var seenResult = isBlockSeen(sceneIndex);
-    console.log('[180-DEBUG 4] isBlockSeen(' + sceneIndex + ') = ' + seenResult);
-    var firstTimeHere = !seenResult;
-    console.log('[180-DEBUG 5] firstTimeHere = ' + firstTimeHere);
+    var firstTimeHere = !isBlockSeen(sceneIndex);
     setIntroVisibility(firstTimeHere);
     var linesHtml = sc.lines.map(function(l,i){
       var cls = (l==="(...)") ? "ln pause" : "ln";
@@ -2031,15 +2006,15 @@ var Exp180 = (function(){
   function runLineTimer(){
     clearTimeout(timer);
     if(!playing) return;
+    if(sceneFinished) return;
     var sc = SCENES[sceneIndex];
-    if(revealed >= sc.lines.length){
-      console.trace('[180-TIMER] finishScene() invocada desde runLineTimer (ruta automática)');
-      finishScene(); return;
-    }
     var curLine = sc.lines[revealed - 1];
     // Ritmo más ágil: pausa corta en "(...)", y lectura proporcional pero más rápida
     var delay = (curLine === "(...)") ? 900 : Math.max(1500, (curLine.split(' ').length/3.5)*1000 + 900);
     timer = setTimeout(function(){
+      // La comprobación terminal vive AQUÍ: así la última frase disfruta
+      // de su tiempo de lectura antes de revelar los paneles.
+      if(revealed >= sc.lines.length){ finishScene(); return; }
       revealed++;
       revealLinesUpTo(revealed);
       runLineTimer();
@@ -2053,23 +2028,11 @@ var Exp180 = (function(){
     clearTimeout(timer);
     revealed++;
     revealLinesUpTo(revealed);
-    if(revealed >= sc.lines.length){
-      console.trace('[180-TIMER] finishScene() invocada desde advanceLine (avance manual)');
-      finishScene();
-    }
+    if(revealed >= sc.lines.length){ finishScene(); }
     else if(playing){ runLineTimer(); }
   }
 
   function finishScene(){
-    debugger;
-    console.trace('[180-TIMER] finishScene()');
-    var _sc = SCENES[sceneIndex];
-    console.log('[180-TIMER] revealed (frase actual) =', revealed);
-    console.log('[180-TIMER] total frases de la escena =', _sc.lines.length);
-    console.log('[180-TIMER] sceneIndex =', sceneIndex);
-    console.log('[180-TIMER] playing =', playing);
-    console.log('[180-TIMER] ms desde inicio de la experiencia =', Date.now() - classroomStartedAt);
-    console.log('[180-DEBUG 7] finishScene() — fin de la narración, aquí se revelan los paneles');
     sceneFinished = true;
     q('x180Scene').classList.add('hide-hint');
     var wasFirstTime = !isBlockSeen(sceneIndex);
