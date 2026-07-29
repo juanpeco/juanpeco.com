@@ -1119,7 +1119,7 @@ body.x180-lock{ overflow:hidden; }
     <h2 class="x180-title">Un día en mi aula</h2>
     <p class="x180-quote">«No voy a explicarte cómo enseño.<br><b>Prefiero que lo experimentes.</b>»</p>
     <p class="x180-note">3 minutos · situaciones de aprendizaje reales (LOMLOE)</p>
-    <button class="x180-cta" id="x180StartBtn" onclick="Exp180.begin()">Comenzar experiencia</button>
+    <button class="x180-cta" id="x180StartBtn" type="button">Comenzar experiencia</button>
   </div>
 
   <!-- Escena -->
@@ -1904,7 +1904,7 @@ var Exp180 = (function(){
         '<p class="x180-gate-sub">Un día en mi aula</p>' +
         '<p class="x180-gate-open">«No voy a explicarte cómo enseño.<br>Prefiero que lo experimentes.»</p>' +
         '<p class="x180-gate-seen">Ya conoces esta experiencia.</p>' +
-        '<button class="x180-gate-btn" onclick="Exp180.enter()">Volver a vivirla</button>' +
+        '<button class="x180-gate-btn" type="button">Volver a vivirla</button>' +
         '<p class="x180-gate-more">o sigue leyendo &darr;</p>';
     } else {
       el.gate.innerHTML =
@@ -1913,7 +1913,7 @@ var Exp180 = (function(){
         '<p class="x180-gate-sub">Un día en mi aula</p>' +
         '<p class="x180-gate-open">«No voy a explicarte cómo enseño.<br>Prefiero que lo experimentes.»</p>' +
         '<p id="x180Teaser" class="x180-gate-teaser"></p>' +
-        '<button class="x180-gate-btn" onclick="Exp180.enter()">Comenzar experiencia</button>';
+        '<button class="x180-gate-btn" type="button">Comenzar experiencia</button>';
       startTeaser();
     }
   }
@@ -1965,6 +1965,19 @@ var Exp180 = (function(){
     var footer = document.querySelector('.x180-footer');
     var after = q('x180After');
     [panel, footer, after].forEach(hidden ? hideIntroZone : showIntroZone);
+    // ═══ [180-DOM] inspección del DOM real tras aplicar los estilos ═══
+    console.log('[180-DOM] nº de .x180-panel en el documento:', document.querySelectorAll('.x180-panel').length);
+    console.log('[180-DOM] nº de .x180-footer en el documento:', document.querySelectorAll('.x180-footer').length);
+    [['panel', panel], ['footer', footer], ['after', after]].forEach(function(pair){
+      var name = pair[0], node = pair[1];
+      if(!node){ console.log('[180-DOM] ' + name + ': NODO NO ENCONTRADO'); return; }
+      console.log('[180-DOM] ' + name + ' nodo:', node);
+      var cs = getComputedStyle(node);
+      console.log('[180-DOM] ' + name + ' computed → opacity:', cs.opacity, '| display:', cs.display, '| visibility:', cs.visibility);
+      console.log('[180-DOM] ' + name + ' inline → opacity:', JSON.stringify(node.style.opacity), '| transition:', JSON.stringify(node.style.transition));
+      var r = node.getBoundingClientRect();
+      console.log('[180-DOM] ' + name + ' rect → x:', Math.round(r.x), 'y:', Math.round(r.y), 'w:', Math.round(r.width), 'h:', Math.round(r.height));
+    });
   }
 
   function renderScene(){
