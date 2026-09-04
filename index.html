@@ -1,13 +1,10 @@
 <!doctype html>
 <html lang="es" class="h-full">
 <head>
-  <meta name="description" content="Juan Peco. De la empresa al aula. 
-Formación Profesional en Empresa, Marketing, Comercio Internacional y Digitalización. 
-
-Varios años de experiencia profesional convertidos en aprendizaje práctico, pensamiento crítico y preparación para el mundo real.">
+  <meta name="description" content="Juan Peco. Docente de Formación Profesional con experiencia empresarial. Escribo sobre FP, aprendizaje, empresa, comercio internacional y digitalización a partir del trabajo real en el aula.">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Peco | Profesor de Economía y Empresa — FP y Bachillerato · Región de Murcia</title>
+  <title>Juan Peco | Formación Profesional, empresa y aprendizaje</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -57,16 +54,15 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
 
 .nav-logo {
   display: flex; align-items: center; gap: 0.75rem;
-  font-family: var(--font-h); font-weight: 700; font-size: 1.3rem;
+  font-family: var(--font-h); font-weight: 700; font-size: 1.05rem;
   color: var(--navy);
 }
 .nav-logo-badge {
   width: 38px; height: 38px;
-  display: block;
-  object-fit: contain;
-}
-.nl-init {
-  font-variation-settings: 'opsz' 144;
+  background: var(--navy);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-h); font-weight: 700; font-size: 0.95rem; color: #fff;
 }
 
 .nav-links {
@@ -998,27 +994,38 @@ body.x180-lock{ overflow:hidden; }
 .doc-head button:hover{ border-color:#1A2744; }
 .doc-panel iframe{ flex:1; width:100%; border:none; background:#fff; }
 @media(max-width:720px){ .doc-panel{ top:0; left:0; transform:none; width:100vw; height:100vh; border-radius:0; } }
+
+<style id="ed-ideas">
+#ideas.ed{ background:var(--ed-paper); }
+.ed .ed-ideas-intro{ max-width:62ch; margin-bottom:clamp(2.8rem,6vw,4rem); }
+.ed .ed-ideas-grid{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--ed-border); border-top:1px solid var(--ed-border); border-bottom:1px solid var(--ed-border); }
+@media(min-width:760px){ .ed .ed-ideas-grid{ grid-template-columns:1fr 1fr; } }
+.ed .ed-idea{ background:var(--ed-paper); padding:clamp(1.6rem,4vw,2.25rem); min-height:100%; }
+.ed .ed-idea-index{ font-family:var(--ed-fm); font-size:.65rem; letter-spacing:.12em; color:var(--ed-lav); margin-bottom:.8rem; }
+.ed .ed-idea h3{ font-family:var(--ed-fh); font-weight:500; font-size:clamp(1.35rem,2.6vw,1.7rem); color:var(--ed-navy); line-height:1.18; margin-bottom:.8rem; }
+.ed .ed-idea p{ font-family:var(--ed-fb); font-size:.94rem; color:var(--ed-ink2); line-height:1.62; max-width:55ch; }
+.ed .ed-idea .ed-idea-test{ margin-top:1rem; padding-top:.9rem; border-top:1px dashed var(--ed-border); font-family:var(--ed-fm); font-size:.7rem; color:var(--ed-ink2); line-height:1.6; }
+.ed .ed-idea .ed-idea-test b{ color:var(--ed-navy); font-weight:600; }
+.ed .ed-ideas-note{ margin-top:2rem; max-width:62ch; font-size:.86rem; color:var(--ed-ink2); line-height:1.65; }
+</style>
 </style>
 </head>
 <body class="h-full">
 
 <nav id="main-nav">
   <div class="nav-logo">
-    <img src="data:image/png;base64,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" alt="Juan Peco" class="nav-logo-badge">
-    <span><span class="nl-init">J</span>uan <span class="nl-init">P</span>eco</span>
+    <div class="nav-logo-badge">JP</div>
+    <span>Juan Peco</span>
   </div>
   <ul class="nav-links">
     <li><button onclick="goto('hero')">Inicio</button></li>
-    <li><button onclick="goto('en-el-aula')">El aula</button></li>
-    <li><button onclick="goto('modulo-180')">180 minutos</button></li>
-    <li><button onclick="goto('especializacion')">Qué imparto</button></li>
+    <li><button onclick="goto('ideas')">Ideas</button></li>
+    <li><button onclick="goto('en-el-aula')">Aula</button></li>
     <li><button onclick="goto('galeria')">Archivo</button></li>
-    <li><button onclick="goto('proyectos')">Recursos</button></li>
     <li><button onclick="goto('perfil')">Quién soy</button></li>
   </ul>
   <div style="display:flex;align-items:center;gap:8px">
-    <a href="proyectofp/" target="_blank" style="font-size:12px;font-weight:500;padding:7px 10px;color:var(--muted);text-decoration:none;white-space:nowrap" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--muted)'">ProyectoFP</a>
-    <button id="nav-cta" class="nav-contact" onclick="goto('contacto')">Contactar</button>
+    <button id="nav-cta" class="nav-contact" onclick="goto('contacto')">Contacto</button>
   </div>
   
   <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -1028,19 +1035,16 @@ body.x180-lock{ overflow:hidden; }
 
 <div id="mobile-menu">
   <div class="mob-header">
-    <div class="nav-logo"><img src="data:image/png;base64,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" alt="Juan Peco" class="nav-logo-badge"><span><span class="nl-init">J</span>uan <span class="nl-init">P</span>eco</span></div>
+    <div class="nav-logo"><div class="nav-logo-badge">JP</div><span>Juan Peco</span></div>
     <button onclick="this.parentElement.parentElement.classList.remove('open')" style="font-size:2rem;color:var(--navy)">×</button>
   </div>
   <div class="mob-links">
     <button class="mob-link" onclick="goto('hero')">Inicio</button>
-    <button class="mob-link" onclick="goto('en-el-aula')">El aula</button>
-    <button class="mob-link" onclick="goto('modulo-180')">180 minutos</button>
-    <button class="mob-link" onclick="goto('especializacion')">Qué imparto</button>
+    <button class="mob-link" onclick="goto('ideas')">Ideas</button>
+    <button class="mob-link" onclick="goto('en-el-aula')">Aula</button>
     <button class="mob-link" onclick="goto('galeria')">Archivo</button>
-    <button class="mob-link" onclick="goto('proyectos')">Recursos</button>
     <button class="mob-link" onclick="goto('perfil')">Quién soy</button>
     <button class="mob-link" onclick="goto('contacto')" style="color:#7C6CF2">Contacto</button>
-    <a href="proyectofp/" target="_blank" class="mob-link" style="color:var(--muted);font-weight:500;font-size:1rem;text-decoration:none;display:block">ProyectoFP</a>
   </div>
 </div>
 
@@ -1073,24 +1077,96 @@ body.x180-lock{ overflow:hidden; }
 
 <section id="index-editorial" class="ed" style="background:#FAF9F6;padding:clamp(2.5rem,6vw,3.5rem) 2rem;position:relative;z-index:1;">
   <div class="ed-wrap">
-    <p class="ed-idx-k">Tres formas de conocerme</p>
+    <p class="ed-idx-k">Tres formas de conocer mi trabajo</p>
     <nav class="ed-idx-nav">
-      <button class="ed-idx-item" onclick="goto('modulo-180')">
+      <button class="ed-idx-item" onclick="goto('ideas')">
         <span class="ed-idx-arrow">&rarr;</span>
-        <span class="ed-idx-label">Ver una clase real</span>
-        <span class="ed-idx-time">3 min</span>
+        <span class="ed-idx-label">Leer cómo estoy pensando la FP</span>
+        <span class="ed-idx-time">5 min</span>
+      </button>
+      <button class="ed-idx-item" onclick="goto('en-el-aula')">
+        <span class="ed-idx-arrow">&rarr;</span>
+        <span class="ed-idx-label">Ver qué ocurre cuando doy clase</span>
+        <span class="ed-idx-time">4 min</span>
       </button>
       <button class="ed-idx-item" onclick="goto('galeria')">
         <span class="ed-idx-arrow">&rarr;</span>
-        <span class="ed-idx-label">Ver evidencias</span>
-        <span class="ed-idx-time">2 min</span>
-      </button>
-      <button class="ed-idx-item" onclick="goto('manifiesto')">
-        <span class="ed-idx-arrow">&rarr;</span>
-        <span class="ed-idx-label">Leer mi forma de entender la enseñanza</span>
-        <span class="ed-idx-time">2 min</span>
+        <span class="ed-idx-label">Consultar evidencias y materiales</span>
+        <span class="ed-idx-time">3 min</span>
       </button>
     </nav>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="ideas" class="ed" style="background:#FAF9F6;padding:clamp(4.5rem,10vw,7rem) 2rem;position:relative;z-index:1;">
+  <div class="ed-wrap">
+    <div class="ed-sec-head reveal">
+      <p class="ed-kicker">Ideas</p>
+      <h2 class="ed-h2">Preguntas que estoy intentando responder.</h2>
+      <div class="ed-ideas-intro">
+        <p class="ed-lead">Aquí reúno algunas ideas sobre Formación Profesional, aprendizaje, empresa y digitalización. No son verdades absolutas. Son conclusiones provisionales construidas a partir de la experiencia profesional, la observación y el trabajo diario en el aula.</p>
+      </div>
+    </div>
+
+    <div class="ed-ideas-grid reveal d1">
+      <article class="ed-idea">
+        <p class="ed-idea-index">01 · Currículo</p>
+        <h3>Un currículo puede estar cubierto y, aun así, producir una mala experiencia de aprendizaje.</h3>
+        <p>El currículo define lo que debe aprenderse. La parte difícil empieza después: decidir qué merece una explicación, qué conviene convertir en problema y qué debe demostrar el alumnado.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> encontrar contextos en los que una cobertura curricular muy explícita produzca mejores resultados sin necesidad de una transformación didáctica adicional.</p>
+      </article>
+
+      <article class="ed-idea">
+        <p class="ed-idea-index">02 · Diseño</p>
+        <h3>Una sesión puede fracasar aunque el contenido sea impecable.</h3>
+        <p>Una explicación correcta no garantiza que el alumno necesite pensar, decidir o recordar. Me interesa más la secuencia de decisiones que organiza una sesión que la cantidad de contenido que consigue introducir.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> comprobar que, en determinados contenidos, la explicación directa y rigurosa produce aprendizajes más estables que una secuencia más experiencial.</p>
+      </article>
+
+      <article class="ed-idea">
+        <p class="ed-idea-index">03 · Permanencia</p>
+        <h3>Una buena sesión debería dejar algo que siga ahí una semana después.</h3>
+        <p>La pregunta que intento hacerme no es solo qué expliqué. Es qué queda: una decisión, una distinción, una pregunta, una forma de resolver un problema o una idea que el alumno puede reutilizar.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> descubrir que la permanencia de una impresión o un recuerdo no guarda relación relevante con el aprendizaje que buscaba provocar.</p>
+      </article>
+
+      <article class="ed-idea">
+        <p class="ed-idea-index">04 · Tecnología</p>
+        <h3>La tecnología amplifica lo que ya existe en una actividad.</h3>
+        <p>Una herramienta puede ahorrar tiempo, ampliar el acceso a información o permitir nuevas formas de producir. Pero también puede acelerar una actividad mal planteada y hacer más eficiente un atajo cognitivo.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> encontrar usos en los que la herramienta cambie por sí misma la calidad del aprendizaje sin que haya una decisión didáctica relevante detrás.</p>
+      </article>
+
+      <article class="ed-idea">
+        <p class="ed-idea-index">05 · Empresa</p>
+        <h3>La empresa real debería entrar más veces en el aula de FP.</h3>
+        <p>Hay conceptos que cambian cuando se ven como decisiones reales: un precio, una negociación, un cliente que se pierde, un margen que no cuadra. Mi experiencia empresarial me obliga a no separar demasiado la teoría de esas consecuencias.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> observar que una conexión sistemática con situaciones empresariales reales distrae del concepto que se pretendía aprender o genera una transferencia peor.</p>
+      </article>
+
+      <article class="ed-idea">
+        <p class="ed-idea-index">06 · Evaluación</p>
+        <h3>Una evaluación precisa no corrige un diseño didáctico deficiente.</h3>
+        <p>Una rúbrica puede hacer visible el resultado. No puede convertir una actividad irrelevante en una experiencia de aprendizaje valiosa. Por eso intento diseñar primero qué merece la pena hacer y después cómo demostrarlo.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> encontrar casos en los que un rediseño de la evaluación, manteniendo intacta la actividad, transforme de forma consistente lo que el alumnado aprende.</p>
+      </article>
+
+      <article class="ed-idea">
+        <p class="ed-idea-index">07 · Pensamiento</p>
+        <h3>Enseñar es diseñar decisiones.</h3>
+        <p>Qué explicar. Cuándo callar. Qué problema plantear. Qué información entregar. Qué error permitir. Qué pedir que se defienda. Qué evidencia considerar suficiente. Cada sesión está llena de decisiones antes de que empiece la clase.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> comprobar que la calidad de una clase depende más de factores que no puedo controlar que de las decisiones que tomo al diseñarla.</p>
+      </article>
+
+      <article class="ed-idea">
+        <p class="ed-idea-index">08 · IA</p>
+        <h3>La IA puede ayudar a producir materiales. No decide qué merece la pena aprender.</h3>
+        <p>Mi interés no está en enseñar a usar una herramienta concreta. Está en decidir cuándo la herramienta aporta valor, qué parte del trabajo debe seguir siendo del alumno y cómo detectar cuándo la asistencia se ha convertido en sustitución.</p>
+        <p class="ed-idea-test"><b>Qué podría hacerme cambiar de opinión:</b> encontrar tareas en las que delegar una parte creciente del trabajo intelectual produzca mejor aprendizaje sin pérdida relevante de autonomía o comprensión.</p>
+      </article>
+    </div>
+
+    <p class="ed-ideas-note reveal d2">Estas ideas no forman un manifiesto cerrado. Las iré revisando cuando la práctica, la evidencia o una experiencia concreta me obliguen a matizarlas.</p>
   </div>
 </section>
 <div class="divider"></div>
@@ -1121,10 +1197,10 @@ body.x180-lock{ overflow:hidden; }
 
   <!-- Intro -->
   <div id="x180Intro" class="x180-intro">
-    <p class="x180-eyebrow">Experiencia narrativa docente</p>
+    <p class="x180-eyebrow">Caso narrativo de aula</p>
     <h2 class="x180-title">Un día en mi aula</h2>
     <p class="x180-quote">«No voy a explicarte cómo enseño.<br><b>Prefiero que lo experimentes.</b>»</p>
-    <p class="x180-note">3 minutos · situaciones de aprendizaje reales (LOMLOE)</p>
+    <p class="x180-note">3 minutos · una experiencia de aula documentada</p>
     <button class="x180-cta" id="x180StartBtn" type="button">Comenzar experiencia</button>
   </div>
 
@@ -1219,41 +1295,17 @@ body.x180-lock{ overflow:hidden; }
 <section id="especializacion" class="ed" style="background:#FAF9F6;padding:clamp(3.5rem,9vw,5.5rem) 2rem;position:relative;z-index:1;">
   <div class="ed-wrap">
     <div class="ed-sec-head reveal">
-      <p class="ed-kicker">Qué problema te resuelvo</p>
-      <h2 class="ed-h2">Si el departamento necesita cubrir esto, puedo entrar</h2>
-      <p class="ed-lead">No es una lista de lo que sé. Es lo que ya puedo asumir si hace falta, sin curva de arranque.</p>
+      <p class="ed-kicker">Ámbitos de trabajo</p>
+      <h2 class="ed-h2">Donde estoy construyendo mi práctica docente.</h2>
+      <p class="ed-lead">Hoy mi trabajo se concentra especialmente en Formación Profesional, con un pie en la empresa y otro en la transformación digital del aula.</p>
     </div>
-
-    <p class="ed-level-k reveal">01 · Módulos que puedo cubrir</p>
     <div class="ed-amb reveal d1">
-      <div class="ed-amb-item"><h4>Empresa e Iniciativa Emprendedora</h4><p>FP · ESO · Bachillerato</p></div>
-      <div class="ed-amb-item"><h4>Economía</h4><p>ESO · Bachillerato</p></div>
-      <div class="ed-amb-item"><h4>Economía de la Empresa</h4><p>Bachillerato</p></div>
-      <div class="ed-amb-item"><h4>Fundamentos de Administración y Gestión</h4><p>Bachillerato</p></div>
-      <div class="ed-amb-item"><h4>Gestión Administrativa</h4><p>FP Grado Medio</p></div>
-      <div class="ed-amb-item"><h4>Administración y Finanzas</h4><p>FP Grado Superior</p></div>
-      <div class="ed-amb-item"><h4>Marketing y Publicidad</h4><p>FP Grado Superior</p></div>
-      <div class="ed-amb-item"><h4>Gestión de Ventas y Espacios Comerciales</h4><p>FP Grado Superior</p></div>
-      <div class="ed-amb-item"><h4>Digitalización · IPE · Sostenibilidad</h4><p>Transversal</p></div>
-      <div class="ed-amb-item"><h4>Empresa en el Aula</h4><p>FP</p></div>
-      <div class="ed-amb-item"><h4>Investigación de Mercados</h4><p>FP</p></div>
-      <div class="ed-amb-item"><h4>Emprendimiento y Educación Financiera</h4><p>ESO · Bachillerato</p></div>
-    </div>
-
-    <p class="ed-level-k reveal">02 · Cómo me adapto</p>
-    <div class="ed-adapt reveal d1">
-      <div class="ed-adapt-item">
-        <h4>Cuando el grupo está apático</h4>
-        <p>Rompo la inercia con dinámicas de impacto inmediato y participación anónima inicial, para ganar confianza antes de pedir implicación.</p>
-      </div>
-      <div class="ed-adapt-item">
-        <h4>Cuando el aula es heterogénea</h4>
-        <p>Aplico Diseño Universal para el Aprendizaje: distintas vías de entrada al contenido y distintas formas de demostrar lo aprendido.</p>
-      </div>
-      <div class="ed-adapt-item">
-        <h4>Cuando el contenido es abstracto</h4>
-        <p>Aterrizo la teoría en un proyecto real. El alumnado hace para entender, no memoriza para repetir.</p>
-      </div>
+      <div class="ed-amb-item"><h4>Comercio Internacional</h4><p>Decisiones de mercado, operaciones y contexto empresarial.</p></div>
+      <div class="ed-amb-item"><h4>Marketing Internacional</h4><p>Mercados, clientes, propuesta de valor y decisiones comerciales.</p></div>
+      <div class="ed-amb-item"><h4>Financiación y medios de pago</h4><p>Riesgo, financiación y operaciones vinculadas al comercio internacional.</p></div>
+      <div class="ed-amb-item"><h4>Negociación internacional</h4><p>Preparación, intereses, argumentos y decisiones en contextos de negociación.</p></div>
+      <div class="ed-amb-item"><h4>Digitalización aplicada</h4><p>Tecnología entendida desde el proceso y la decisión profesional.</p></div>
+      <div class="ed-amb-item"><h4>IPE II</h4><p>Empleabilidad, toma de decisiones y conexión con el mundo profesional.</p></div>
     </div>
   </div>
 </section>
@@ -1430,19 +1482,19 @@ body.x180-lock{ overflow:hidden; }
     <div class="ed-res reveal d1">
       <div class="ed-res-item"><h3>Situaciones de aprendizaje y rúbricas</h3><p>Para evaluar lo que el alumnado hace, no lo que memoriza. Bajo LOMLOE.</p></div>
       <div class="ed-res-item"><h3>Plantillas de documentos de empresa</h3><p>Para que se escriba como en una empresa: reglamento interno, atención al cliente, comunicaciones.</p></div>
-      <div class="ed-res-item"><h3>Guías y prompts de IA con criterio</h3><p>Para usar la IA con criterio y dejar por escrito cada decisión, en un dossier.</p></div>
+      <div class="ed-res-item"><h3>Herramientas digitales y IA</h3><p>Cuando aportan algo concreto al aprendizaje y dejan visible qué parte del trabajo sigue siendo del alumno.</p></div>
     </div>
   </div>
 </section>
 <section id="tech-proyectos" class="ed" style="background:#FAF9F6;padding:0 2rem clamp(3.5rem,9vw,5.5rem);position:relative;z-index:1;">
   <div class="ed-wrap">
-    <p class="ed-level-k reveal">02 · ProyectoFP</p>
+    <p class="ed-level-k reveal">02 · Sistema de trabajo</p>
     <div class="ed-pfp reveal d1">
       <h3 class="ed-pfp-name">ProyectoFP</h3>
-      <p class="ed-pfp-lead">La consecuencia natural de trabajar así.</p>
+      <p class="ed-pfp-lead">Una consecuencia práctica del trabajo docente.</p>
       <p class="ed-pfp-body">Nació de un problema concreto del trabajo docente: comprobar que cada Resultado de Aprendizaje y cada Criterio de Evaluación tiene cobertura real en la programación. Genera situaciones de aprendizaje, rúbricas y programaciones desde el currículo oficial de cada módulo, y verifica que esa cobertura es coherente y defendible ante cualquier revisión.</p>
-      <p class="ed-pfp-body">No es una herramienta aparte. Es el mismo sistema de trabajo que acabas de ver, ordenado.</p>
-      <a class="ed-link" href="proyectofp/" target="_blank" rel="noopener">Consultar la herramienta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      <p class="ed-pfp-body">No lo presento como un producto. Es una forma de ordenar el trabajo para que currículo, diseño de sesión, evidencias y evaluación mantengan una relación trazable.</p>
+      <a class="ed-link" href="proyectofp/" target="_blank" rel="noopener">Ver el sistema de trabajo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></a>
     </div>
 
     <p class="ed-level-k reveal">03 · Aplicación práctica</p>
@@ -1493,50 +1545,16 @@ body.x180-lock{ overflow:hidden; }
     </div>
   </div>
 </section>
-<section id="encaje" class="ed">
-  <div class="ed-wrap">
-    <div class="ed-sec-head reveal">
-      <p class="ed-kicker">Para el equipo directivo</p>
-      <h2 class="ed-h2">Si me comprometo, llego hasta el final.</h2>
-      <p class="ed-lead">Me integro, me implico y me quedo.</p>
-    </div>
-    <div class="ed-tri reveal d1">
-      <div class="ed-ficha">
-        <p class="ed-ficha-k"><span class="n">01</span> · Con el claustro</p>
-        <ul class="ed-ficha-list">
-          <li>Me adapto rápido</li>
-          <li>Coordinación con el departamento y participación en lo que haga falta</li>
-          <li>Actitud proactiva y disposición para colaborar cuando el centro lo necesita</li>
-        </ul>
-      </div>
-      <div class="ed-ficha">
-        <p class="ed-ficha-k"><span class="n">02</span> · Con el alumnado</p>
-        <ul class="ed-ficha-list">
-          <li>El esfuerzo, la participación y la mejora continua forman parte de la evaluación desde el primer día</li>
-          <li>Tutoría y acompañamiento real</li>
-          <li>Comunicación con las familias cuando hace falta</li>
-        </ul>
-      </div>
-      <div class="ed-ficha">
-        <p class="ed-ficha-k"><span class="n">03</span> · Con la programación</p>
-        <ul class="ed-ficha-list">
-          <li>Programaciones didácticas, situaciones de aprendizaje y rúbricas bajo LOMLOE</li>
-          <li>Lo trabajé en el prácticum en el Pedro Guillén</li>
-          <li>El marco normativo lo conozco. Y lo que no sepa, lo aprendo</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+
 <div class="divider"></div>
 <section id="contacto">
   <div class="container">
     <div class="contacto-inner reveal">
       <div class="sec-label" style="color:rgba(255,255,255,0.4)">Contacto</div>
       <h2 class="sec-title">Hablemos</h2>
-      <p style="font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:1.2rem;">Región de Murcia · Disponible curso 2026-27</p>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:1.2rem;">Murcia · Formación Profesional · Empresa</p>
       <p style="color:rgba(255,255,255,0.7);font-size:1.1rem;margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6">
-        Si crees que puede haber encaje con tu proyecto educativo, escríbeme o llámame. Respondo en menos de 24 horas.
+        Este sitio es también una forma de mantener una conversación profesional sobre Formación Profesional, aprendizaje y empresa. Para cuestiones profesionales, escríbeme.
       </p>
 
       <form action="https://formspree.io/f/xpqeblez" method="POST" style="max-width:480px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px" onsubmit="handleFormSubmit(event)">
@@ -1552,13 +1570,13 @@ body.x180-lock{ overflow:hidden; }
         <textarea name="mensaje" placeholder="Mensaje" rows="4" required
           style="padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);font-size:1rem;font-family:inherit;background:rgba(255,255,255,0.1);color:white;outline:none;resize:vertical"
           onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
-        <input type="hidden" name="_subject" value="Candidatura docente · Juan Peco">
+        <input type="hidden" name="_subject" value="Contacto profesional · Juan Peco">
         <button type="submit"
           style="padding:12px 24px;border-radius:8px;border:none;background:#7C6CF2;color:white;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.2s"
           onmouseover="this.style.background='#6D5BE8'" onmouseout="this.style.background='#7C6CF2'">
           Enviar mensaje
         </button>
-        <div id="form-ok" style="display:none;color:#4ade80;font-size:0.9rem;text-align:center;padding:8px">✓ Mensaje enviado. Te respondo en menos de 24h.</div>
+        <div id="form-ok" style="display:none;color:#4ade80;font-size:0.9rem;text-align:center;padding:8px">✓ Mensaje enviado.</div>
         <div id="form-err" style="display:none;color:#f87171;font-size:0.9rem;text-align:center;padding:8px">Algo ha ido mal. Escríbeme directamente a hola@juanpeco.com</div>
       </form>
 
@@ -1567,7 +1585,7 @@ body.x180-lock{ overflow:hidden; }
         <a href="https://wa.me/34647033746" target="_blank" rel="noopener" class="clink"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span> 647 033 746</a>
         <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="clink"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span> LinkedIn</a>
       </div>
-      <div class="contacto-note">Juan Peco · Murcia · Formación Profesional · LOMLOE · Innovación curricular</div>
+      <div class="contacto-note">Juan Peco · Murcia · Formación Profesional · empresa · aprendizaje</div>
     </div>
   </div>
 </section>
@@ -1577,7 +1595,7 @@ body.x180-lock{ overflow:hidden; }
 <footer>
   <div class="footer-left">
     <div class="footer-name">Juan Peco</div>
-    <div class="footer-role">Profesor de Economía y Empresa · FP y Bachillerato</div>
+    <div class="footer-role">Formación Profesional · empresa · aprendizaje</div>
   </div>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
@@ -1905,7 +1923,7 @@ var Exp180 = (function(){
     stopTeaser();
     if(seen()){
       el.gate.innerHTML =
-        '<p class="x180-gate-eyebrow">Experiencia narrativa docente</p>' +
+        '<p class="x180-gate-eyebrow">Caso narrativo de aula</p>' +
         '<h2 class="x180-gate-title">180 minutos</h2>' +
         '<p class="x180-gate-sub">Un día en mi aula</p>' +
         '<p class="x180-gate-open">«No voy a explicarte cómo enseño.<br>Prefiero que lo experimentes.»</p>' +
@@ -1914,7 +1932,7 @@ var Exp180 = (function(){
         '<p class="x180-gate-more">o sigue leyendo &darr;</p>';
     } else {
       el.gate.innerHTML =
-        '<p class="x180-gate-eyebrow">Experiencia narrativa docente</p>' +
+        '<p class="x180-gate-eyebrow">Caso narrativo de aula</p>' +
         '<h2 class="x180-gate-title">180 minutos</h2>' +
         '<p class="x180-gate-sub">Un día en mi aula</p>' +
         '<p class="x180-gate-open">«No voy a explicarte cómo enseño.<br>Prefiero que lo experimentes.»</p>' +
