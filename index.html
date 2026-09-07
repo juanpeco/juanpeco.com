@@ -631,20 +631,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 /* Bloque central · módulos + estado */
 @media(min-width:820px){ }
 
-/* Mapa · solo piel (interacción y datos intactos) */
-#mapa-centros.ed .mp-lbl2{ font-family:var(--ed-fm); color:var(--ed-ink2); letter-spacing:.14em; }
-#mapa-centros.ed .mp-heading2{ font-family:var(--ed-fh); color:var(--ed-navy); font-weight:500; }
-#mapa-centros.ed .mp-sub2{ font-family:var(--ed-fb); color:var(--ed-ink2); }
-#mapa-centros.ed .mp-svg-wrap2, #mapa-centros.ed .mp-panel{ background:var(--ed-paper); border:1px solid var(--ed-border); border-radius:12px; }
-#mapa-centros.ed .mp-panel-default{ color:var(--ed-ink2); }
-#mapa-centros.ed .mp-panel-title{ font-family:var(--ed-fh); color:var(--ed-navy); font-weight:500; }
-#mapa-centros.ed .mp-panel-muni{ color:var(--ed-ink2); font-family:var(--ed-fm); font-size:.72rem; letter-spacing:.04em; }
-#mapa-centros.ed .mp-panel-key{ font-family:var(--ed-fm); color:var(--ed-ink2); }
-#mapa-centros.ed .mp-panel-val{ font-family:var(--ed-fm); color:var(--ed-navy); }
-#mapa-centros.ed .mp-ver-btn{ font-family:var(--ed-fm); color:var(--ed-navy); border:1px solid var(--ed-border); border-radius:8px; }
-#mapa-centros.ed .mp-ver-btn:hover{ border-color:var(--ed-navy); background:transparent; }
-#mapa-centros.ed .mp-total2{ background:var(--ed-lav-light); color:var(--ed-navy); font-family:var(--ed-fm); letter-spacing:.04em; }
-#mapa-centros.ed .mp-leg2{ font-family:var(--ed-fm); color:var(--ed-ink2); font-size:.68rem; letter-spacing:.05em; }
 </style>
 
 <style id="ed-phase3">
@@ -1338,136 +1324,84 @@ body.x180-lock{ overflow:hidden; }
     </div>
   </div>
 </section>
-<section id="mapa-centros" class="ed" style="padding:clamp(3.5rem,9vw,5.5rem) 2rem;background:#FAF9F6;position:relative;z-index:1;">
-<div class="container">
-
+<section id="trayectoria-comercio-internacional" class="ed" style="padding:clamp(4rem,10vw,6.5rem) 2rem;background:#1a2744;position:relative;z-index:1;overflow:hidden;">
 <style>
-.mp-lbl2{font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#534AB7;margin-bottom:0.5rem;text-align:center;}
-.mp-heading2{font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#26215C;text-align:center;margin:0 0 0.6rem;letter-spacing:-0.5px;}
-.mp-sub2{font-size:0.9rem;color:#7F77DD;text-align:center;max-width:520px;margin:0 auto 2.5rem;line-height:1.7;}
-.mp-layout2{display:grid;grid-template-columns:1fr 260px;gap:1.5rem;align-items:start;}
-.mp-svg-wrap2{background:#ffffff;border:1.5px solid #AFA9EC;border-radius:16px;overflow:hidden;}
-.mp-panel{background:#ffffff;border:1.5px solid #AFA9EC;border-radius:14px;padding:1.2rem;}
-.mp-panel-default{font-size:0.82rem;color:#7F77DD;line-height:1.6;}
-.mp-panel-title{font-size:0.95rem;font-weight:700;color:#26215C;margin-bottom:3px;}
-.mp-panel-muni{font-size:0.78rem;color:#534AB7;font-weight:600;margin-bottom:10px;}
-.mp-panel-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #EEEDFE;}
-.mp-panel-row:last-child{border-bottom:none;}
-.mp-panel-key{font-size:0.75rem;color:#7F77DD;}
-.mp-panel-val{font-size:0.75rem;font-weight:700;color:#26215C;}
-.mp-ver-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:0.75rem;color:#534AB7;font-weight:600;text-decoration:none;padding:5px 10px;border:1px solid #AFA9EC;border-radius:7px;transition:all 0.2s;}
-.mp-ver-btn:hover{background:#EEEDFE;border-color:#534AB7;}
-.mp-total2{background:#EEEDFE;border-radius:8px;padding:7px 10px;font-size:0.72rem;color:#3C3489;margin-top:10px;text-align:center;font-weight:600;}
-.mp-legend2{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;justify-content:center;}
-.mp-leg2{display:flex;align-items:center;gap:5px;font-size:0.72rem;color:#7F77DD;}
-.mp-leg2-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
-.mp-list2{margin-top:12px;max-height:320px;overflow-y:auto;}
-.mp-list2::-webkit-scrollbar{width:3px;}
-.mp-list2::-webkit-scrollbar-thumb{background:#AFA9EC;border-radius:2px;}
-.mp-list-item2{display:flex;align-items:flex-start;gap:7px;padding:5px 4px;border-bottom:1px solid #EEEDFE;cursor:pointer;border-radius:6px;transition:background 0.15s;}
-.mp-list-item2:last-child{border-bottom:none;}
-.mp-list-item2:hover{background:#EEEDFE;}
-.mp-list-dot2{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px;}
-@media(max-width:800px){.mp-layout2{grid-template-columns:1fr;}}
-@keyframes mpPulse2{0%,100%{opacity:0.25}50%{opacity:0}}
+#trayectoria-comercio-internacional .spec-glow{position:absolute;top:-20%;right:-10%;width:60%;height:80%;background:radial-gradient(circle,rgba(124,108,242,0.22) 0%,rgba(26,39,68,0) 70%);filter:blur(40px);pointer-events:none;z-index:0;}
+#trayectoria-comercio-internacional .spec-glow2{position:absolute;bottom:-25%;left:-10%;width:50%;height:70%;background:radial-gradient(circle,rgba(6,182,160,0.10) 0%,rgba(26,39,68,0) 70%);filter:blur(50px);pointer-events:none;z-index:0;}
+#trayectoria-comercio-internacional .spec-inner{position:relative;z-index:1;}
+#trayectoria-comercio-internacional .spec-kicker{font-family:var(--ed-fm,'JetBrains Mono',monospace);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem;}
+#trayectoria-comercio-internacional .spec-kicker::before{content:'';width:24px;height:1px;background:rgba(255,255,255,0.5);flex:none;}
+#trayectoria-comercio-internacional .spec-title{font-family:var(--font-h,'Fraunces',serif);font-weight:500;font-size:clamp(1.7rem,4vw,2.5rem);color:#fff;letter-spacing:-.015em;line-height:1.16;max-width:22ch;margin-bottom:1rem;}
+#trayectoria-comercio-internacional .spec-lead{font-family:var(--font-b,'DM Sans',sans-serif);font-size:1rem;color:rgba(255,255,255,0.62);max-width:56ch;line-height:1.7;margin-bottom:clamp(2.8rem,6vw,4rem);}
+
+#trayectoria-comercio-internacional .spec-grid{display:grid;grid-template-columns:1fr;gap:1.75rem;}
+@media(min-width:860px){#trayectoria-comercio-internacional .spec-grid{grid-template-columns:1.15fr .85fr;gap:2.25rem;align-items:start;}}
+
+#trayectoria-comercio-internacional .spec-card{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:clamp(1.8rem,4vw,2.6rem);}
+#trayectoria-comercio-internacional .spec-main{background:rgba(255,255,255,0.045);}
+#trayectoria-comercio-internacional .spec-eyebrow{font-family:var(--ed-fm,'JetBrains Mono',monospace);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7C6CF2;margin-bottom:.6rem;}
+#trayectoria-comercio-internacional .spec-heading{font-family:var(--font-h,'Fraunces',serif);font-weight:600;font-size:clamp(1.3rem,2.6vw,1.6rem);color:#fff;margin-bottom:1.5rem;letter-spacing:-.01em;}
+#trayectoria-comercio-internacional .spec-mod-list{list-style:none;display:flex;flex-direction:column;gap:0;margin:0;padding:0;}
+#trayectoria-comercio-internacional .spec-mod-list li{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.85rem 0;border-top:1px solid rgba(255,255,255,.1);font-family:var(--font-b,'DM Sans',sans-serif);font-size:.9rem;color:rgba(255,255,255,0.88);line-height:1.4;}
+#trayectoria-comercio-internacional .spec-mod-list li:last-child{border-bottom:1px solid rgba(255,255,255,.1);}
+#trayectoria-comercio-internacional .spec-mod-list li span{font-family:var(--ed-fm,'JetBrains Mono',monospace);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;flex-shrink:0;}
+
+#trayectoria-comercio-internacional .spec-secondary{opacity:.68;}
+#trayectoria-comercio-internacional .spec-secondary .spec-eyebrow{color:rgba(255,255,255,0.55);}
+#trayectoria-comercio-internacional .spec-secondary .spec-heading{font-size:clamp(1.1rem,2.2vw,1.3rem);color:rgba(255,255,255,0.85);}
+#trayectoria-comercio-internacional .spec-archive{display:flex;flex-direction:column;gap:0;}
+#trayectoria-comercio-internacional .spec-archive-item{padding:1rem 0;border-top:1px solid rgba(255,255,255,.1);}
+#trayectoria-comercio-internacional .spec-archive-item:last-child{border-bottom:1px solid rgba(255,255,255,.1);}
+#trayectoria-comercio-internacional .spec-archive-when{font-family:var(--ed-fm,'JetBrains Mono',monospace);font-size:.66rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:.4rem;}
+#trayectoria-comercio-internacional .spec-archive-what{font-family:var(--font-b,'DM Sans',sans-serif);font-size:.85rem;color:rgba(255,255,255,0.7);line-height:1.55;}
 </style>
 
+<div class="spec-glow"></div>
+<div class="spec-glow2"></div>
+
+<div class="ed-wrap spec-inner">
   <div class="reveal">
-    <p class="mp-lbl2">Presencia educativa</p>
-    <h2 class="mp-heading2">Mis centros en la Región de Murcia</h2>
-    <p class="mp-sub2">Haz clic en cualquier punto para ver el centro. Datos reales del programa Código Escuela 4.0 · Consejería de Educación de la Región de Murcia.</p>
+    <p class="spec-kicker">Trayectoria</p>
+    <h2 class="spec-title">De acompañar 25 centros a especializarme en Comercio Internacional</h2>
+    <p class="spec-lead">Este curso concentro el trabajo en un único ciclo formativo, con la trayectoria previa como base y no como titular.</p>
   </div>
 
-  <div class="mp-layout2 reveal d1">
-    <div class="mp-svg-wrap2">
-      <svg id="mapa2" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
-        <rect width="500" height="380" fill="transparent"/>
-        <path d="M 60,80 L 80,60 L 120,50 L 160,45 L 200,42 L 250,40 L 300,42 L 350,38 L 400,45 L 440,55 L 460,75 L 470,100 L 465,130 L 455,160 L 440,190 L 420,220 L 400,250 L 370,280 L 340,300 L 310,320 L 280,335 L 250,340 L 220,335 L 190,320 L 165,300 L 140,275 L 115,245 L 90,210 L 70,175 L 55,140 L 50,110 Z"
-          fill="rgba(83,74,183,0.05)" stroke="#AFA9EC" stroke-width="1.5"/>
-        <text x="250" y="190" text-anchor="middle" font-size="9" fill="#AFA9EC" font-family="Arial">Región de Murcia</text>
-      </svg>
+  <div class="spec-grid reveal d1">
+    <div class="spec-card spec-main">
+      <p class="spec-eyebrow">CESUR · Curso actual</p>
+      <h3 class="spec-heading">Comercio Internacional</h3>
+      <ul class="spec-mod-list">
+        <li>Negociación Internacional <span>MP0824</span></li>
+        <li>Financiación Internacional <span>MP0825</span></li>
+        <li>Medios de Pago Internacionales <span>MP0826</span></li>
+        <li>Comercio Digital Internacional <span>MP0827</span></li>
+        <li>Marketing Internacional <span>0823</span></li>
+        <li>Gestión Aduanera <span>Optativa</span></li>
+        <li>Logística de Almacenamiento <span>0625</span></li>
+        <li>Digitalización aplicada a los sectores productivos <span>1665</span></li>
+        <li>IPE II <span>1710</span></li>
+      </ul>
     </div>
 
-    <div>
-      <div class="mp-panel" id="mp-panel2">
-        <div class="mp-panel-default">
-          <strong style="color:#26215C;font-size:0.85rem;">+25 centros visitados</strong><br><br>
-          Haz clic en cualquier punto del mapa o en la lista para ver los detalles del centro.
+    <div class="spec-card spec-secondary">
+      <p class="spec-eyebrow">De dónde vengo</p>
+      <h3 class="spec-heading">Archivo · trayectoria</h3>
+      <div class="spec-archive">
+        <div class="spec-archive-item">
+          <p class="spec-archive-when">Antes de la docencia</p>
+          <p class="spec-archive-what">Empresa privada en distintos entornos empresariales: responsabilidades comerciales, de dirección comercial, administración y marketing.</p>
         </div>
-        <div class="mp-total2">Enero 2025 – Junio 2026 · Código Escuela 4.0</div>
+        <div class="spec-archive-item">
+          <p class="spec-archive-when">2025 – 2026</p>
+          <p class="spec-archive-what">Acompañante Código Escuela 4.0 · Región de Murcia. Intervención en más de 25 centros educativos.</p>
+        </div>
+        <div class="spec-archive-item">
+          <p class="spec-archive-when">2026</p>
+          <p class="spec-archive-what">Prácticum del MAES · IES Pedro Guillén. 260 horas lectivas en Economía y Empresa.</p>
+        </div>
       </div>
-
-      <div class="mp-legend2">
-        <div class="mp-leg2"><div class="mp-leg2-dot" style="background:#534AB7;"></div>Este curso</div>
-        <div class="mp-leg2"><div class="mp-leg2-dot" style="background:#1D9E75;"></div>Curso anterior</div>
-        <div class="mp-leg2"><div class="mp-leg2-dot" style="background:#7F77DD;"></div>Ambos cursos</div>
-      </div>
-
-
     </div>
   </div>
-
-  <script>
-  var mpCentros=[
-    {nombre:'CE Ntra. Sra. de los Remedios',municipio:'Albudeite',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipremedios',x:148,y:195},
-    {nombre:'CE Monte Anaor',municipio:'Alguazas',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipmonteanaor',x:198,y:182},
-    {nombre:'CE Ntra. Sra. del Carmen',municipio:'Alguazas',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipntrasdadelcarmenalguazas',x:205,y:190},
-    {nombre:'CE Miguel Medina',municipio:'Archena',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipmigelmedina',x:240,y:165},
-    {nombre:'CE José Alcolea Lacal',municipio:'Archena',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipjosealcolealacal',x:248,y:158},
-    {nombre:'CE San Juan Bautista',municipio:'Campos del Río',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipsanjuanbautistacamposdelrio',x:175,y:172},
-    {nombre:'CE Campo de Molina de Segura',municipio:'Fenazar · Molina de Segura',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://www.murciaeduca.es/ceipampomolina',x:220,y:205},
-    {nombre:'CE Ntra. Sra. de la Consolación',municipio:'Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipconsolacion',x:228,y:213},
-    {nombre:'CE Gregorio Miñano',municipio:'Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipgregoriominiano',x:236,y:218},
-    {nombre:'CE Vega del Segura',municipio:'Ribera de Molina · Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipvegadelsegura',x:243,y:202},
-    {nombre:'CPEIBas Arteaga',municipio:'Sucina · Murcia',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://www.murciaeduca.es/cpeibasarteaga',x:340,y:285},
-    {nombre:'CPR Severo Ochoa',municipio:'Los Garres · Murcia',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://colegioseveroochoa.net',x:290,y:252},
-    {nombre:'CE Francisco Cobacho',municipio:'Algezares · Murcia',curso:'Curso 2025-2026',fechas:'Curso 2025-2026',color:'#534AB7',web:'https://www.murciaeduca.es/ceipfranciscocobacho',x:272,y:258},
-    {nombre:'CE El Sifón',municipio:'Molina de Segura',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.murciaeduca.es/ceipelsifonmolina',x:230,y:222},
-    {nombre:'CPR Colegio El OPE',municipio:'Archena',curso:'Ambos cursos',fechas:'Curso 2024-2025 · Curso 2025-2026',color:'#7F77DD',web:'https://www.colegioelOPE.es',x:255,y:160},
-    {nombre:'CES Vega Media',municipio:'Alguazas',curso:'Curso 2024-2025',fechas:'Curso 2024-2025',color:'#1D9E75',web:'https://www.murciaeduca.es/cesvegamedia',x:193,y:186},
-    {nombre:'CE Ntra. Sra. de Fátima',municipio:'Murcia',curso:'Curso 2024-2025',fechas:'Curso 2024-2025',color:'#1D9E75',web:'https://www.murciaeduca.es/ceipfatimamurcia',x:275,y:245},
-  ];
-
-  var svg2=document.getElementById('mapa2');
-  var panel=document.getElementById('mp-panel2');
-
-
-  function mpShow(c){
-    panel.innerHTML='<div class="mp-panel-title">'+c.nombre+'</div>'
-      +'<div class="mp-panel-muni">'+c.municipio+'</div>'
-      +'<div class="mp-panel-row"><span class="mp-panel-key">Curso</span><span class="mp-panel-val" style="color:'+c.color+'">'+c.curso+'</span></div>'
-      +'<div class="mp-panel-row"><span class="mp-panel-key">Fechas</span><span class="mp-panel-val">'+c.fechas+'</span></div>'
-      +'<div class="mp-panel-row"><span class="mp-panel-key">Programa</span><span class="mp-panel-val">Código Escuela 4.0</span></div>'
-      +'<div class="mp-panel-row"><span class="mp-panel-key">Entidad</span><span class="mp-panel-val">Consejería de Educación</span></div>'
-      +'<a href="'+c.web+'" target="_blank" rel="noopener" class="mp-ver-btn">Ver centro →</a>'
-      +'<div class="mp-total2" style="margin-top:8px;">Región de Murcia · Acreditado</div>';
-  }
-
-  mpCentros.forEach(function(c){
-    var g=document.createElementNS('http://www.w3.org/2000/svg','g');
-    g.style.cursor='pointer';
-
-    var pulse=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    pulse.setAttribute('cx',c.x);pulse.setAttribute('cy',c.y);
-    pulse.setAttribute('r','10');pulse.setAttribute('fill',c.color);
-    pulse.setAttribute('opacity','0.2');
-    pulse.style.animation='mpPulse2 '+(1.8+Math.random()*0.8)+'s ease-in-out infinite';
-
-    var dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    dot.setAttribute('cx',c.x);dot.setAttribute('cy',c.y);
-    dot.setAttribute('r','5');dot.setAttribute('fill',c.color);
-    dot.setAttribute('stroke','white');dot.setAttribute('stroke-width','1.5');
-
-    g.appendChild(pulse);g.appendChild(dot);
-    g.addEventListener('click',function(){mpShow(c);});
-    g.addEventListener('mouseenter',function(){dot.setAttribute('r','7');});
-    g.addEventListener('mouseleave',function(){dot.setAttribute('r','5');});
-    svg2.appendChild(g);
-  });
-
-
-  </script>
-
 </div>
 </section>
 <div class="divider"></div>
@@ -1509,7 +1443,7 @@ body.x180-lock{ overflow:hidden; }
       <p class="ed-lead">Quién soy y de dónde vengo.</p>
     </div>
     <div class="ed-prose reveal d1">
-      <p>Antes de dedicarme a la docencia trabajé durante dieciocho años en distintos entornos empresariales. A lo largo de ese tiempo desempeñé responsabilidades comerciales, de dirección comercial, administración y marketing.</p>
+      <p>Antes de dedicarme a la docencia trabajé en empresa privada en distintos entornos empresariales, desempeñando responsabilidades comerciales, de dirección comercial, administración y marketing.</p>
       <p>Cuando empecé a dar clase en Formación Profesional me di cuenta de que gran parte de lo que había aprendido durante esos años era precisamente lo que ahora iba a enseñar: una cartera de clientes, un plan de ventas, un organigrama, una cuenta de resultados.</p>
       <p class="ed-strong">Esa trayectoria no es el adorno del CV. Es lo que cambia lo que ocurre dentro del aula.</p>
       <p>Cuando explico qué es una cartera de clientes, no describo una definición: parto de experiencias que viví personalmente. Cuando hablo de una negociación, cuento cómo se sostiene una cuando la otra parte también sabe negociar. Cuando analizo por qué fracasa un negocio, no leo un caso del libro; recuerdo decisiones concretas y lo que costaron. Y cuando hablamos de ética empresarial, hablamos de momentos en los que había que elegir, no de un epígrafe.</p>
@@ -1522,15 +1456,34 @@ body.x180-lock{ overflow:hidden; }
     <div class="ed-chrono reveal d1" style="margin-top:clamp(2.5rem,6vw,3.5rem);margin-bottom:0;">
       <div class="ed-milestone"><p class="ed-when">2025 – 2026</p><div class="ed-what"><h3>Acompañante Código Escuela 4.0</h3><p>Programa de innovación educativa de la Región de Murcia. Intervención en más de veinticinco centros, adaptando cada actividad al aula real.</p></div></div>
       <div class="ed-milestone"><p class="ed-when">2026</p><div class="ed-what"><h3>Prácticum del MAES · IES Pedro Guillén</h3><p>260 horas lectivas en módulos de Economía y Empresa. Grupo propio, evaluación por competencias, coordinación con el departamento.</p></div></div>
-      <div class="ed-milestone"><p class="ed-when">2004 – 2022</p><div class="ed-what"><h3>Experiencia profesional</h3><p>Trayectoria desarrollada en distintos entornos empresariales, desempeñando responsabilidades comerciales, de dirección comercial, administración y marketing. Muchos de los contenidos que hoy trabajo en el aula proceden de esa experiencia profesional.</p></div></div>
+      <div class="ed-milestone"><p class="ed-when">Antes de la docencia</p><div class="ed-what"><h3>Experiencia profesional</h3><p>Antes de dedicarme a la docencia trabajé en empresa privada en distintos entornos empresariales, desempeñando responsabilidades comerciales, de dirección comercial, administración y marketing. Muchos de los contenidos que hoy trabajo en el aula proceden de esa experiencia profesional.</p></div></div>
     </div>
   </div>
 </section>
 <section id="credenciales" class="ed" style="background:#FAF9F6;padding:clamp(1.5rem,4vw,2.5rem) 2rem clamp(3.5rem,9vw,5rem);position:relative;z-index:1;">
+  <style>
+  .ed-cred-details{ border-top:1px solid var(--ed-border); }
+  .ed-cred-details:last-of-type{ border-bottom:1px solid var(--ed-border); }
+  .ed-cred-details summary{ list-style:none; cursor:pointer; padding:1.1rem 0; display:flex; align-items:center; justify-content:space-between; gap:1rem; font-family:var(--ed-fm); font-size:.7rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ed-navy); }
+  .ed-cred-details summary::-webkit-details-marker{ display:none; }
+  .ed-cred-details summary::after{ content:'+'; font-family:var(--ed-fb); font-size:1.1rem; font-weight:400; color:var(--ed-ink2); transition:transform .25s var(--ed-ease); }
+  .ed-cred-details[open] summary::after{ transform:rotate(45deg); }
+  .ed-cred-details .ed-cred-list{ padding-bottom:1.3rem; margin:0; }
+  </style>
   <div class="ed-wrap">
     <div class="ed-cred reveal">
       <p class="ed-cred-k">Credenciales</p>
-      <p class="ed-cred-list">Diplomado en Ciencias Empresariales · MAES (Economía, Empresa y Turismo) · Homologación MEC · Certificado de Profesionalidad Docencia FPE (SSCE0110) · Certificado de Profesionalidad Formador Ocupacional · Agente de Igualdad de Género (UEMC) · Inglés B1 · IA educativa y competencia digital docente · Microsoft Learn (IA generativa y Copilot aplicados al aula con criterio pedagógico, 2025)</p>
+
+      <details class="ed-cred-details" open>
+        <summary>Ver credenciales principales</summary>
+        <p class="ed-cred-list">Diplomado en Ciencias Empresariales · MAES (Economía, Empresa y Turismo) · Homologación MEC · Certificado de Profesionalidad Docencia FPE (SSCE0110) · Certificado de Profesionalidad Formador Ocupacional</p>
+      </details>
+
+      <details class="ed-cred-details">
+        <summary>Otras formaciones</summary>
+        <p class="ed-cred-list">Agente de Igualdad de Género (UEMC) · Inglés B1 · IA educativa y competencia digital docente · Microsoft Learn (IA generativa y Copilot aplicados al aula con criterio pedagógico, 2025)</p>
+      </details>
+
     </div>
   </div>
 </section>
