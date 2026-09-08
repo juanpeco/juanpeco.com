@@ -761,10 +761,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 2r
 @media(min-width:760px){ .ed .ed-reels{ grid-template-columns:1fr 1fr 1fr; } }
 .ed figure.ed-reel{ margin:0; }
 .ed .ed-reel iframe{ width:100%; border:1px solid var(--ed-border); border-radius:8px; display:block; background:var(--ed-lav-light); }
-.ed .ed-reel-facade{ width:100%; height:520px; border:1px solid var(--ed-border); border-radius:8px; background:var(--ed-lav-light); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.7rem; cursor:pointer; transition:background .2s var(--ed-ease); }
-.ed .ed-reel-facade:hover{ background:var(--ed-lav-mid); }
-.ed .ed-reel-play{ width:52px; height:52px; border-radius:50%; background:var(--ed-navy); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
-.ed .ed-reel-hint{ font-family:var(--ed-fm); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ed-ink2); }
 .ed .ed-reel figcaption{ font-family:var(--ed-fm); font-size:.72rem; letter-spacing:.03em; color:var(--ed-ink2); margin-top:.8rem; line-height:1.5; }
 .ed .ed-reel figcaption b{ color:var(--ed-navy); font-weight:600; display:block; text-transform:uppercase; letter-spacing:.09em; font-size:.66rem; margin-bottom:.3rem; }
 
@@ -1352,6 +1348,8 @@ body.x180-lock{ overflow:hidden; }
       <div class="ed-amb-item"><h4>Financiación y medios de pago</h4><p>Riesgo, financiación y operaciones vinculadas al comercio internacional.</p></div>
       <div class="ed-amb-item"><h4>Negociación internacional</h4><p>Preparación, intereses, argumentos y decisiones en contextos de negociación.</p></div>
       <div class="ed-amb-item"><h4>Digitalización aplicada</h4><p>Tecnología entendida desde el proceso y la decisión profesional.</p></div>
+      <div class="ed-amb-item"><h4>Gestión Aduanera</h4><p>Trámites, documentación y procedimientos del comercio exterior.</p></div>
+      <div class="ed-amb-item"><h4>Logística de Almacenamiento</h4><p>Flujo de mercancía, gestión de stock y cadena de suministro.</p></div>
       <div class="ed-amb-item"><h4>IPE II</h4><p>Empleabilidad, toma de decisiones y conexión con el mundo profesional.</p></div>
     </div>
   </div>
@@ -1374,26 +1372,10 @@ body.x180-lock{ overflow:hidden; }
     </div>
 
     <div class="ed-reels reveal d2">
-      <figure class="ed-reel"><div class="ed-reel-facade" data-src="https://www.instagram.com/reel/DXZv7IEjZl0/embed/captioned/" onclick="loadReel(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')loadReel(this)" aria-label="Reproducir reel: Robótica"><div class="ed-reel-play">▶</div><p class="ed-reel-hint">Ver en Instagram</p></div><figcaption><b>Robótica</b>Pensamiento computacional con mTiny en Primaria.</figcaption></figure>
-      <figure class="ed-reel"><div class="ed-reel-facade" data-src="https://www.instagram.com/reel/DW0hmtgjZf2/embed/captioned/" onclick="loadReel(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')loadReel(this)" aria-label="Reproducir reel: Aprendizaje activo"><div class="ed-reel-play">▶</div><p class="ed-reel-hint">Ver en Instagram</p></div><figcaption><b>Aprendizaje activo</b>Trabajo colaborativo en empresa simulada.</figcaption></figure>
-      <figure class="ed-reel"><div class="ed-reel-facade" data-src="https://www.instagram.com/reel/DUULWyoDKnk/embed/captioned/" onclick="loadReel(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')loadReel(this)" aria-label="Reproducir reel: Tecnología educativa"><div class="ed-reel-play">▶</div><p class="ed-reel-hint">Ver en Instagram</p></div><figcaption><b>Tecnología educativa</b>Herramientas digitales en el aula de FP.</figcaption></figure>
+      <figure class="ed-reel"><iframe src="https://www.instagram.com/reel/DXZv7IEjZl0/embed/captioned/" height="520" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><figcaption><b>Robótica</b>Pensamiento computacional con mTiny en Primaria.</figcaption></figure>
+      <figure class="ed-reel"><iframe src="https://www.instagram.com/reel/DW0hmtgjZf2/embed/captioned/" height="520" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><figcaption><b>Aprendizaje activo</b>Trabajo colaborativo en empresa simulada.</figcaption></figure>
+      <figure class="ed-reel"><iframe src="https://www.instagram.com/reel/DUULWyoDKnk/embed/captioned/" height="520" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><figcaption><b>Tecnología educativa</b>Herramientas digitales en el aula de FP.</figcaption></figure>
     </div>
-    <script>
-    function loadReel(el){
-      var src = el.getAttribute('data-src');
-      var iframe = document.createElement('iframe');
-      iframe.src = src;
-      iframe.height = 520;
-      iframe.setAttribute('frameborder','0');
-      iframe.setAttribute('scrolling','no');
-      iframe.setAttribute('allowtransparency','true');
-      iframe.style.width = '100%';
-      iframe.style.border = '1px solid var(--ed-border)';
-      iframe.style.borderRadius = '8px';
-      iframe.style.display = 'block';
-      el.replaceWith(iframe);
-    }
-    </script>
 
     <div class="ed-archive-foot reveal">
       <p>Más evidencia de aula, en abierto.</p>
@@ -1476,6 +1458,10 @@ body.x180-lock{ overflow:hidden; }
           <p class="spec-archive-when">2026</p>
           <p class="spec-archive-what">Prácticum del MAES · IES Pedro Guillén. 260 horas lectivas en Economía y Empresa.</p>
         </div>
+        <div class="spec-archive-item">
+          <p class="spec-archive-when">2026 – Actualidad</p>
+          <p class="spec-archive-what">Profesor · CESUR Murcia Centro. Comercio Internacional.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1531,6 +1517,7 @@ body.x180-lock{ overflow:hidden; }
       <p>De pequeño fui tartamudo. Aprendí a ir más despacio cuando la cabeza iba más rápido que la boca, a buscar otra palabra cuando una se atascaba. Aquello me obligó a ordenar las ideas antes de decirlas. Con el tiempo entendí que pensar despacio suele dar mejores respuestas que responder deprisa. Es una idea que intento trasladar también al aula.</p>
     </div>
     <div class="ed-chrono reveal d1" style="margin-top:clamp(2.5rem,6vw,3.5rem);margin-bottom:0;">
+      <div class="ed-milestone"><p class="ed-when">2026 – Actualidad</p><div class="ed-what"><h3>Profesor · CESUR Murcia Centro</h3><p>Comercio Internacional. Nueve módulos del ciclo, entre ellos Negociación, Financiación y Medios de Pago Internacionales.</p></div></div>
       <div class="ed-milestone"><p class="ed-when">2025 – 2026</p><div class="ed-what"><h3>Acompañante Código Escuela 4.0</h3><p>Programa de innovación educativa de la Región de Murcia. Intervención en más de veinticinco centros, adaptando cada actividad al aula real.</p></div></div>
       <div class="ed-milestone"><p class="ed-when">2026</p><div class="ed-what"><h3>Prácticum del MAES · IES Pedro Guillén</h3><p>260 horas lectivas en módulos de Economía y Empresa. Grupo propio, evaluación por competencias, coordinación con el departamento.</p></div></div>
       <div class="ed-milestone"><p class="ed-when">Antes de la docencia</p><div class="ed-what"><h3>Experiencia profesional</h3><p>Antes de dedicarme a la docencia trabajé en empresa privada en distintos entornos empresariales, desempeñando responsabilidades comerciales, de dirección comercial, administración y marketing. Muchos de los contenidos que hoy trabajo en el aula proceden de esa experiencia profesional.</p></div></div>
@@ -1612,7 +1599,6 @@ body.x180-lock{ overflow:hidden; }
 
       <div class="contacto-links">
         <a href="CV_Juan_Peco.pdf" target="_blank" class="clink"><span>↓</span> Descargar CV</a>
-        <a href="https://wa.me/34647033746" target="_blank" rel="noopener" class="clink"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span> 647 033 746</a>
         <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="clink"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span> LinkedIn</a>
       </div>
       <div class="contacto-note">Juan Peco · Murcia · Formación Profesional · empresa · aprendizaje</div>
