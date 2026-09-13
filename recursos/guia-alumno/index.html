@@ -26,688 +26,312 @@
     --chrome-hover:#1E2438;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{
-    scroll-behavior:smooth;
-    scroll-snap-type:y mandatory;
-    height:100%;
-    overflow-y:scroll;
-  }
-  body{
-    font-family:"DM Sans",sans-serif; background:var(--chrome-bg); color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-  }
+  html{scroll-behavior:smooth; scroll-snap-type:y mandatory; height:100%; overflow-y:scroll;}
+  body{font-family:"DM Sans",sans-serif; background:var(--chrome-bg); color:var(--ink); -webkit-font-smoothing:antialiased;}
   a{color:inherit;}
-
-  /* ---------- progress bar ---------- */
-  .progress-track{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:60;}
+  .progress-track{position:fixed;top:0;left:0;right:0;height:4px;background:transparent;z-index:60;}
   .progress-fill{height:100%;width:0%;background:var(--lavender);transition:width .08s linear;}
-
-  /* ---------- top bar (mobile) ---------- */
-  .topbar{
-    position:fixed;top:0;left:0;right:0;height:52px;z-index:50;
-    background:var(--chrome-bg);border-bottom:1px solid var(--chrome-border);
-    display:none;align-items:center;justify-content:space-between;padding:0 16px;
-  }
-  .topbar .tb-label{font-size:12px;color:var(--chrome-text);opacity:.65;font-family:"JetBrains Mono",monospace;}
-  .menu-btn{
-    width:36px;height:36px;border-radius:8px;border:1px solid var(--chrome-border);
-    background:none;color:var(--chrome-text);display:flex;align-items:center;justify-content:center;cursor:pointer;
-  }
+  .topbar{position:fixed;top:0;left:0;right:0;height:56px;z-index:50;background:var(--chrome-bg);border-bottom:1px solid var(--chrome-border);display:none;align-items:center;justify-content:space-between;padding:0 18px;}
+  .topbar .tb-label{font-size:13px;color:var(--chrome-text);opacity:.7;font-family:"JetBrains Mono",monospace;}
+  .menu-btn{width:38px;height:38px;border-radius:8px;border:1px solid var(--chrome-border);background:none;color:var(--chrome-text);display:flex;align-items:center;justify-content:center;cursor:pointer;}
   .menu-btn svg{width:18px;height:18px;}
-
-  /* ---------- sidebar nav (desktop) ---------- */
-  .nav{
-    position:fixed;top:0;left:0;bottom:0;width:280px;
-    background:var(--chrome-bg);border-right:1px solid var(--chrome-border);
-    overflow-y:auto;z-index:40;padding:28px 0 28px 0;
-  }
+  .nav{position:fixed;top:0;left:0;bottom:0;width:300px;background:var(--chrome-bg);border-right:1px solid var(--chrome-border);overflow-y:auto;z-index:40;padding:28px 0;}
   .nav-head{padding:0 24px 20px 24px;border-bottom:1px solid var(--chrome-border);margin-bottom:8px;}
-  .nav-head .n-name{font-family:"Fraunces",serif;font-weight:600;font-size:17px;color:var(--chrome-text);}
-  .nav-head .n-sub{font-size:12px;color:var(--chrome-text);opacity:.6;margin-top:2px;}
+  .nav-head .n-name{font-family:"Fraunces",serif;font-weight:600;font-size:18px;color:var(--chrome-text);}
+  .nav-head .n-sub{font-size:13px;color:var(--chrome-text);opacity:.6;margin-top:4px;line-height:1.4;}
   .nav ol{list-style:none;padding:8px 12px;}
-  .nav li{margin:1px 0;}
-  .nav button{
-    all:unset;display:flex;gap:10px;align-items:baseline;width:100%;
-    padding:8px 12px;border-radius:8px;cursor:pointer;color:var(--chrome-text);
-  }
+  .nav li{margin:2px 0;}
+  .nav button{all:unset;display:flex;gap:10px;align-items:baseline;width:100%;padding:9px 12px;border-radius:8px;cursor:pointer;color:var(--chrome-text);}
   .nav button:hover{background:var(--chrome-hover);}
   .nav button.active{background:var(--chrome-hover);}
   .nav .n-num{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--lavender);opacity:.85;min-width:20px;}
-  .nav .n-title{font-size:13.5px;line-height:1.3;opacity:.9;}
+  .nav .n-title{font-size:14px;line-height:1.3;opacity:.9;}
   .nav button.active .n-title{opacity:1;font-weight:500;}
-
-  /* ---------- mobile drawer overlay ---------- */
   .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:45;display:none;}
   .nav-overlay.open{display:block;}
-
-  /* ---------- main content ---------- */
-  main{margin-left:280px;}
-  .sec{
-    height:100vh; display:flex; flex-direction:column; justify-content:center;
-    padding:52px 72px; position:relative;
-    scroll-snap-align:start; scroll-snap-stop:always;
-    overflow-y:auto;
-  }
+  main{margin-left:300px;}
+  .sec{min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:70px 84px; position:relative; scroll-snap-align:start; scroll-snap-stop:always; overflow-y:auto;}
   .sec.cream{background:var(--cream);color:var(--navy);}
   .sec.navy{background:var(--navy);color:var(--white);}
-  .sec-inner{max-width:800px;width:100%;}
-  .sec.navy .sec-inner{max-width:860px;}
-
-  .eyebrow{
-    font-family:"JetBrains Mono",monospace;font-weight:500;font-size:12px;
-    letter-spacing:.06em;margin-bottom:14px;
-  }
+  .sec-inner{max-width:880px;width:100%;}
+  .sec.navy .sec-inner{max-width:900px;}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:13px;letter-spacing:.08em;margin-bottom:18px; text-transform:uppercase;}
   .sec.cream .eyebrow{color:var(--lavender);}
   .sec.navy .eyebrow{color:#9C90F5;}
-
-  h1.hero{font-family:"Fraunces",serif;font-weight:600;font-size:56px;line-height:1.08;letter-spacing:-.01em;}
-  h2.sec-title{font-family:"Fraunces",serif;font-weight:600;font-size:40px;line-height:1.1;margin-bottom:26px;letter-spacing:-.01em;}
-  .tag{font-family:"DM Sans";font-weight:500;font-size:15px;color:var(--lavender);letter-spacing:.02em;margin-bottom:8px;}
-  .taglist{font-size:14px;letter-spacing:.02em;opacity:.8;}
-
-  .quote{font-family:"Fraunces",serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.42;}
+  h1.hero{font-family:"Fraunces",serif;font-weight:600;font-size:64px;line-height:1.05;letter-spacing:-.015em;}
+  h2.sec-title{font-family:"Fraunces",serif;font-weight:600;font-size:50px;line-height:1.08;margin-bottom:28px;letter-spacing:-.015em;}
+  .quote{font-family:"Fraunces",serif;font-style:italic;font-weight:400;font-size:28px;line-height:1.35;}
   .sec.cream .quote{color:var(--lavender);}
   .sec.navy .quote{color:#B9AFFA;}
-
-  p.body-text{font-size:16.5px;line-height:1.62;margin-top:18px;max-width:66ch;}
+  p.body-text{font-size:22px;line-height:1.6;margin-top:20px;max-width:62ch; letter-spacing:-.01em;}
   .sec.navy p.body-text{color:#D7D9EA;}
   .sec.cream p.body-text{color:var(--ink);}
-
-  .signoff{font-family:"Fraunces",serif;font-style:italic;font-size:15px;margin-top:26px;}
-
-  /* portada */
+  p.body-text strong{font-weight:700;}
+  .signoff{font-family:"Fraunces",serif;font-style:italic;font-size:18px;margin-top:28px;}
   #s1{align-items:center;text-align:center;}
-  #s1 .sec-inner{max-width:820px;}
-  #s1 .n-name{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:13px;letter-spacing:.22em;color:#9C90F5;margin-bottom:26px;}
-  #s1 h1.hero{font-size:52px;margin-bottom:26px;}
-  #s1 .tagline{font-size:14px;color:#9C90F5;letter-spacing:.02em;}
-  #s1 .yr{font-size:12px;color:#7E86A3;margin-top:6px;font-family:"JetBrains Mono",monospace;}
-
-  /* two-col card (quien soy, por que importa) */
-  .twocol{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;margin-top:24px;align-items:start;}
-  .card{padding:26px 28px;border-radius:4px;}
-  .card.dark{background:var(--navy);color:var(--white);}
-  .card p{font-size:15px;line-height:1.6;color:#D7D9EA;margin-top:12px;}
+  #s1 .sec-inner{max-width:880px;}
+  #s1 .n-name{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:14px;letter-spacing:.22em;color:#9C90F5;margin-bottom:28px;}
+  #s1 h1.hero{font-size:60px;margin-bottom:28px;}
+  #s1 .tagline{font-size:20px;color:#B9AFFA;letter-spacing:.01em; max-width:38ch; margin:0 auto; line-height:1.5;}
+  #s1 .yr{font-size:13px;color:#7E86A3;margin-top:18px;font-family:"JetBrains Mono",monospace;}
+  .twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:28px;align-items:start;}
+  .card{padding:28px 30px;border-radius:8px;}
+  .card.dark{background:#121B31;color:var(--white); border:1px solid #26314F;}
+  .card p{font-size:19px;line-height:1.55;color:#D7D9EA;margin-top:12px;}
   .card p:first-of-type{margin-top:0;}
-  .card.light{border:1px solid var(--divider);}
+  .card.light{border:1px solid var(--divider); background:#FFFFFF;}
   .card.light p{color:var(--ink);}
-
-  /* numbered rows (como aprenderemos, protocolo, ruta) */
-  .rows{margin-top:26px;}
-  .row{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--divider);}
+  .rows{margin-top:28px;}
+  .row{display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--divider);}
   .sec.navy .row{border-top-color:#2B3654;}
   .row:last-child{border-bottom:1px solid var(--divider);}
   .sec.navy .row:last-child{border-bottom-color:#2B3654;}
-  .row .rn{
-    font-family:"Fraunces",serif;font-weight:600;font-size:22px;color:var(--lavender);
-    min-width:44px;
-  }
-  .row .rlabel-wrap{flex:1;}
-  .row .rlabel{font-weight:700;font-size:15.5px;margin-bottom:3px;}
-  .row .rdesc{font-size:14.5px;line-height:1.5;opacity:.85;}
-
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;}
-  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px;}
-  .tool-card{border:1px solid var(--divider);border-radius:4px;padding:18px 20px;}
-  .tool-card .tn{font-weight:700;font-size:14px;letter-spacing:.02em;margin-bottom:8px;}
-  .tool-card .td{font-size:13.5px;line-height:1.45;color:var(--ink);opacity:.8;}
-
-  .goldbox{border:1.5px solid var(--lavender);border-radius:4px;padding:22px 24px;margin-top:22px;}
-  .goldbox .gtag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;color:#9C90F5;margin-bottom:10px;}
-  .goldbox .gtext{font-family:"Fraunces",serif;font-size:20px;line-height:1.4;}
-
-  .mutual{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px;}
-  .mutual .m-h{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;color:#9C90F5;margin-bottom:14px;}
-  .mutual .m-t{font-size:15px;line-height:1.6;color:#D7D9EA;}
-  .mutual .col{border-left:1px solid #2B3654;padding-left:24px;}
-  .mutual .col:first-child{border-left:none;padding-left:0;}
-
-  .checklist{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;margin-top:26px;}
-  .check-item{display:flex;gap:12px;align-items:flex-start;}
-  .check-item .cdot{
-    width:22px;height:22px;border-radius:50%;background:var(--lavender);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px;
-  }
-  .check-item span{font-size:15px;}
-
-  /* FAQ accordion */
+  .r-num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--lavender);min-width:30px;padding-top:3px;font-weight:500;}
+  .sec.navy .r-num{color:#9C90F5;}
+  .r-title{font-weight:700;font-size:20px;margin-bottom:6px; line-height:1.2;}
+  .r-desc{font-size:18px;line-height:1.5;opacity:.88;}
+  .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;}
+  .path-card{border:1px solid var(--divider);padding:26px 26px;border-radius:10px;background:#fff;}
+  .sec.navy .path-card{background:#1E2B4A;border-color:#2B3654;}
+  .path-card .pc-title{font-weight:700;font-size:19px;margin-bottom:8px; line-height:1.2;}
+  .path-card .pc-desc{font-size:17px;line-height:1.45;opacity:.85;}
+  .callout{margin-top:28px;padding:22px 26px;background:var(--callout);border:1px solid var(--divider);border-radius:10px;font-size:18px;line-height:1.6;}
+  .sec.navy .callout{background:#19233E;border-color:#2B3654;color:#D7D9EA;}
+  .callout strong{font-weight:700;}
+  .faq-list{margin-top:28px;}
   .faq-item{border-top:1px solid var(--divider);}
+  .sec.navy .faq-item{border-top-color:#2B3654;}
   .faq-item:last-child{border-bottom:1px solid var(--divider);}
-  .faq-q{
-    all:unset;display:flex;justify-content:space-between;align-items:center;gap:16px;
-    width:100%;padding:18px 2px;cursor:pointer;font-family:"Fraunces",serif;font-style:italic;
-    font-size:17px;color:var(--navy);
-  }
-  .faq-q .chev{transition:transform .2s ease;flex-shrink:0;color:var(--lavender);}
-  .faq-item.open .faq-q .chev{transform:rotate(45deg);}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
-  .faq-a-inner{padding:0 2px 18px 2px;font-size:14.5px;line-height:1.55;color:var(--ink);opacity:.85;max-width:62ch;}
-
-  /* recursos */
-  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px;}
-  .res-card{padding-top:2px;}
-  .res-icon{
-    width:52px;height:52px;border-radius:50%;background:rgba(124,108,242,.1);
-    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
-    transition:background .2s ease, transform .2s ease;
-  }
-  .res-icon svg{width:22px;height:22px;stroke:var(--lavender);}
-  .res-card .rlabel{font-weight:700;font-size:13px;letter-spacing:.05em;color:var(--navy);margin-bottom:8px;text-transform:uppercase;}
-  .res-card .rdesc{font-size:14px;line-height:1.5;color:var(--ink);opacity:.75;}
-  .res-card .rtag{
-    display:inline-block;margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:10.5px;
-    letter-spacing:.03em;color:var(--lavender);opacity:.75;
-  }
-  a.res-card{display:block;text-decoration:none;color:inherit;border-radius:6px;margin:-10px;padding:10px;transition:background .2s ease;}
-  a.res-card:hover{background:rgba(124,108,242,.06);}
-  a.res-card:hover .res-icon{background:var(--lavender);transform:scale(1.05);}
-  a.res-card:hover .res-icon svg{stroke:#fff;}
-  a.res-card .rlabel{display:flex;align-items:center;gap:6px;}
-  a.res-card .rlabel .go{opacity:0;transform:translateX(-3px);transition:all .2s ease;color:var(--lavender);}
-  a.res-card:hover .rlabel .go{opacity:1;transform:translateX(0);}
-
-  /* closing */
-  #s16 .sec-inner{max-width:760px;}
-  #s16 .final-q{font-family:"Fraunces",serif;font-size:26px;line-height:1.35;}
-  #s16 .bienvenido{font-family:"Fraunces",serif;font-size:44px;margin-top:30px;}
-  #s16 .sig{margin-top:16px;}
-  #s16 .sig .who{font-family:"Fraunces",serif;font-style:italic;color:#B9AFFA;font-size:16px;}
-  #s16 .sig .role{font-size:13px;color:#7E86A3;margin-top:2px;}
-
-  footer.credit{
-    text-align:center;padding:26px 20px 60px 20px;font-size:12px;color:var(--muted);
-  }
-
-  /* ---------- pager controls ---------- */
-  .pager{
-    position:fixed; right:28px; bottom:24px; z-index:55;
-    display:flex; align-items:center; gap:10px;
-    font-family:"JetBrains Mono",monospace;
-  }
-  .pager .count{
-    font-size:12px; color:var(--chrome-text); opacity:.65; min-width:52px; text-align:center;
-    background:var(--chrome-bg); padding:4px 8px; border-radius:6px; border:1px solid var(--chrome-border);
-  }
-  .pager button{
-    all:unset; width:42px;height:42px;border-radius:50%;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--chrome-bg); border:1px solid var(--chrome-border); color:var(--chrome-text);
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-  }
-  .pager button:hover{background:var(--chrome-hover);}
-  .pager button:disabled{opacity:.3;cursor:default;}
-  .pager button svg{width:18px;height:18px;}
-  .pager .next-btn{background:var(--lavender);border-color:var(--lavender);color:#fff;}
-  .pager .next-btn:hover{background:#6C5CE0;}
-  @media (max-width:980px){
-    .pager{right:18px;bottom:18px;}
-    .pager .count{display:none;}
-  }
-
-  /* ---------- responsive ---------- */
+  .sec.navy .faq-item:last-child{border-bottom-color:#2B3654;}
+  .faq-q{all:unset;display:flex;justify-content:space-between;align-items:center;width:100%;padding:18px 0;cursor:pointer;font-weight:600;font-size:19px;}
+  .faq-a{overflow:hidden;max-height:0;transition:max-height .28s ease;}
+  .faq-a-inner{padding:0 0 18px 0;font-size:18px;line-height:1.55;opacity:.9;max-width:64ch;}
+  .chev{transition:transform .2s ease;}
+  .faq-item.open .chev{transform:rotate(45deg);}
+  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;}
+  .res-card{border:1px solid var(--divider);border-radius:10px;padding:20px 20px;background:#fff;text-decoration:none;display:block;}
+  .sec.navy .res-card{background:#1E2B4A;border-color:#2B3654;}
+  .res-icon{width:32px;height:32px;color:var(--lavender);margin-bottom:14px;}
+  .sec.navy .res-icon{color:#9C90F5;}
+  .res-icon svg{width:100%;height:100%;stroke:currentColor;}
+  .rlabel{font-weight:700;font-size:16px;}
+  .rlabel .go{margin-left:6px;opacity:.6;}
+  .rdesc{font-size:15px;line-height:1.5;opacity:.75;margin-top:6px;}
+  .rtag{font-family:"JetBrains Mono",monospace;font-size:12px;margin-top:10px;opacity:.6;}
+  .pager{position:fixed;right:24px;bottom:24px;z-index:30;display:flex;align-items:center;gap:10px;background:var(--chrome-bg);border:1px solid var(--chrome-border);border-radius:999px;padding:7px 10px 7px 16px;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+  .pager-count{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--chrome-text);opacity:.7;min-width:58px;}
+  .pager button{width:36px;height:36px;border-radius:50%;border:1px solid var(--chrome-border);background:var(--chrome-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
+  .pager button:disabled{opacity:.35;cursor:default;}
   @media (max-width: 980px){
-    .nav{display:none;}
-    main{margin-left:0;}
     .topbar{display:flex;}
-    .sec{padding:92px 24px 90px 24px;}
-    h1.hero{font-size:36px;}
-    h2.sec-title{font-size:30px;}
+    .nav{transform:translateX(-100%);transition:transform .22s ease; width:320px;}
+    .nav.mobile-open{transform:translateX(0);}
+    main{margin-left:0;}
+    .sec{padding:88px 22px 44px 22px; height:auto; min-height:100vh; scroll-snap-align:none;}
     .twocol{grid-template-columns:1fr;}
-    .mutual{grid-template-columns:1fr;gap:24px;}
-    .mutual .col{border-left:none;padding-left:0;border-top:1px solid #2B3654;padding-top:20px;}
-    .mutual .col:first-child{border-top:none;padding-top:0;}
-    .checklist{grid-template-columns:1fr;}
-    .grid-3{grid-template-columns:1fr;}
-    .grid-2{grid-template-columns:1fr;}
-    .res-grid{grid-template-columns:1fr;gap:28px;}
-    .nav.mobile-open{display:block;width:82vw;max-width:320px;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{transition:none !important;}
+    .path-grid{grid-template-columns:1fr;}
+    .res-grid{grid-template-columns:1fr;}
+    h1.hero{font-size:40px;}
+    h2.sec-title{font-size:36px;}
+    p.body-text{font-size:19px;}
+    .r-title{font-size:18px;}
+    .r-desc{font-size:17px;}
   }
 </style>
 </head>
 <body>
-
 <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-
-<div class="topbar">
-  <button class="menu-btn" id="menuBtn" aria-label="Abrir índice">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-  </button>
-  <span class="tb-label" id="tbLabel">01 · PORTADA</span>
-  <span style="width:36px"></span>
-</div>
-
+<div class="topbar"><div class="tb-label" id="tbLabel">01 · PORTADA</div><button class="menu-btn" id="menuBtn" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div>
 <div class="nav-overlay" id="navOverlay"></div>
+<nav class="nav" id="navPanel"><div class="nav-head"><div class="n-name">Juan Peco</div><div class="n-sub">CFGS Comercio Internacional — Guía del alumno 25/26</div></div><ol id="navList"></ol></nav>
+<main id="main">
 
-<nav class="nav" id="navPanel">
-  <div class="nav-head">
-    <div class="n-name">Juan Peco</div>
-    <div class="n-sub">CFGS Comercio Internacional · 2026–27</div>
-  </div>
-  <ol id="navList"></ol>
-</nav>
+<section class="sec navy" id="s1"><div class="sec-inner"><div class="n-name">CFGS COMERCIO INTERNACIONAL</div><h1 class="hero">Bienvenido a un curso diferente.</h1><p class="tagline">No es para memorizar palabras raras. Es para aprender a traer y llevar productos de un país a otro cuando las cosas se complican.</p><div class="yr">Guía del alumno · 2025 / 2026 · Versión auditorio</div></div></section>
 
-<main>
+<section class="sec cream" id="s2"><div class="sec-inner"><div class="eyebrow">02 · Para qué existe</div><h2 class="sec-title">¿Por qué existe este ciclo?</h2><p class="body-text">Todo lo que usas viene de otro país. Alguien lo compra, lo trae, lo pasa por aduana y hace que llegue.</p><p class="body-text">Este ciclo existe porque las empresas necesitan personas que hagan eso bien y sin perder dinero por un papel mal hecho.</p></div></section>
 
-  <section class="sec navy" id="s1">
-    <div class="sec-inner">
-      <div class="n-name">JUAN PECO</div>
-      <h1 class="hero">Bienvenido a un curso diferente</h1>
-      <div class="tagline">ECONOMÍA · EMPRESA · MARKETING · COMERCIO INTERNACIONAL · COMPETENCIA DIGITAL</div>
-      <div class="yr">CURSO 2026 – 2027</div>
-    </div>
-  </section>
+<section class="sec navy" id="s3"><div class="sec-inner"><div class="eyebrow">03 · Trabajo diario</div><h2 class="sec-title">¿Qué hace esta persona en su día a día?</h2><p class="body-text">Cosas muy concretas. Nada abstracto.</p><div class="rows">
+<div class="row"><div class="r-num">01</div><div><div class="r-title">Habla con un proveedor de China</div><div class="r-desc">Pide precio, plazo y muestras. Lo deja todo por escrito.</div></div></div>
+<div class="row"><div class="r-num">02</div><div><div class="r-title">Mira si un producto encaja en Francia</div><div class="r-desc">¿Se puede vender allí con beneficio o no?</div></div></div>
+<div class="row"><div class="r-num">03</div><div><div class="r-title">Prepara los papeles de una exportación</div><div class="r-desc">Factura, lista de bultos, aduana. Si falla algo, el camión no sale.</div></div></div>
+<div class="row"><div class="r-num">04</div><div><div class="r-title">Organiza el transporte</div><div class="r-desc">Pide precios, compara y hace el seguimiento del contenedor.</div></div></div>
+<div class="row"><div class="r-num">05</div><div><div class="r-title">Busca clientes fuera</div><div class="r-desc">Escribe, hace seguimiento y prepara la primera reunión.</div></div></div>
+</div></div></section>
 
-  <section class="sec cream" id="s2">
-    <div class="sec-inner">
-      <div class="eyebrow">02 — ¿QUÉ QUIERO DECIRTE ANTES DE EMPEZAR?</div>
-      <h2 class="sec-title">Antes de empezar</h2>
-      <div class="quote">"No voy a prometerte que este curso sea fácil. Prefiero prometerte algo más difícil de cumplir: que todo lo que hagamos aquí va a tener un motivo."</div>
-      <p class="body-text">Antes de que empecemos, quiero decirte tres cosas.</p>
-      <p class="body-text">La primera: no voy a prometerte que este curso sea fácil. Prefiero prometerte otra cosa, más difícil de cumplir pero más honesta — que todo lo que hagamos aquí va a tener un motivo, y que si en algún momento dejas de verlo, puedes preguntármelo directamente.</p>
-      <p class="body-text">La segunda: este documento no es un reglamento ni una programación resumida. Es mi forma de contarte, antes de trabajar juntos, cómo entiendo lo que hacemos en este ciclo, qué papel va a tener la inteligencia artificial en tus clases y qué puedes esperar de mí durante el curso.</p>
-      <p class="body-text">La tercera, y la más importante: nada de esto funciona si tú te quedas al margen. Puedo diseñar el mejor método del mundo, pero la parte que decide si sirve de algo la pones tú, cada día, con la actitud con la que te sientas en clase.</p>
-      <p class="body-text">No hace falta que memorices nada de lo que viene a continuación. Guarda este documento, vuelve a él cuando tengas dudas, y pregunta lo que no quede claro.</p>
-      <div class="signoff">Bienvenido.<br>Juan Peco</div>
-    </div>
-  </section>
+<section class="sec cream" id="s4"><div class="sec-inner"><div class="eyebrow">04 · Sentido para ti</div><h2 class="sec-title">¿Por qué te puede interesar?</h2><p class="body-text">Porque no dependes de un solo sector. Aprendes a mover productos. Eso sirve en fruta, en moda o en piezas industriales.</p><div class="rows">
+<div class="row"><div class="r-num">→</div><div><div class="r-title">Aprendes a decidir aunque falte información</div></div></div>
+<div class="row"><div class="r-num">→</div><div><div class="r-title">Aprendes a usar la IA sin que decida por ti</div></div></div>
+</div></div></section>
 
-  <section class="sec cream" id="s3">
-    <div class="sec-inner">
-      <div class="eyebrow">03 — ¿QUIÉN ES ESTE PROFESOR?</div>
-      <h2 class="sec-title">Quién soy</h2>
-      <div class="quote" style="font-size:19px">"Recuerdo una reunión de casi una hora hablando de precios, publicidad y competencia. Nadie preguntó lo más básico: ¿tenemos alguna evidencia de que el cliente quiera esto?"</div>
-      <p class="body-text">Antes de dar clase pasé años en administración, gestión comercial y marketing, en España y en Venezuela.</p>
-      <p class="body-text">Han pasado años y sigo pensando en esa reunión: se decidió sin comprobar lo único que de verdad importaba.</p>
-      <p class="body-text" style="font-style:italic;opacity:.75">Eso es lo que vas a encontrar en lo que sigue.</p>
-    </div>
-  </section>
+<section class="sec navy" id="s5"><div class="sec-inner"><div class="eyebrow">05 · A dónde lleva</div><h2 class="sec-title">¿Dónde puedes trabajar?</h2><p class="body-text">En empresas que compran y venden fuera. Desde el primer mes con tareas reales.</p><div class="path-grid">
+<div class="path-card"><div class="pc-title">Exportación</div><div class="pc-desc">Llevas pedidos de aquí a otros países. Hablas con clientes, preparas precios y papeles.</div></div>
+<div class="path-card"><div class="pc-title">Logística</div><div class="pc-desc">Organizas cómo viaja la mercancía. Camión, barco o avión.</div></div>
+<div class="path-card"><div class="pc-title">Compras</div><div class="pc-desc">Buscas proveedores en otros países y negocias con ellos.</div></div>
+<div class="path-card"><div class="pc-title">Aduanas</div><div class="pc-desc">Te aseguras de que todo pase la aduana sin pararse y sin costes extra.</div></div>
+</div>
+<div class="callout"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;margin-bottom:10px;opacity:.7;">SUELDO ORIENTATIVO</div><div style="font-size:18px;line-height:1.6;">Inicio: 18k–25k<br>Con experiencia: 25k–40k<br>Con responsabilidad: 40k+<br><br>Sube con idiomas y con capacidad para decidir y asumir responsabilidad.</div></div></div></section>
 
-  <section class="sec cream" id="s4">
-    <div class="sec-inner" style="max-width:920px">
-      <div class="eyebrow">04 — ¿QUÉ GANO YO AQUÍ?</div>
-      <h2 class="sec-title">Por qué esto importa</h2>
-      <div class="twocol">
-        <div class="card light">
-          <div class="tag" style="margin-bottom:14px">LO QUE VAS A GANAR</div>
-          <p style="color:var(--ink)">No siempre vas a tener todos los datos. Vas a aprender a distinguir una opinión rápida de una decisión bien fundamentada.</p>
-        </div>
-        <div class="card dark">
-          <div class="tag" style="margin-bottom:14px;color:#B9AFFA">MI VISIÓN DE LA FP</div>
-          <p>Preparar para actuar, no solo para saber. Actividades con contexto real, no ejercicios cerrados con una única respuesta posible.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="sec cream" id="s6"><div class="sec-inner"><div class="eyebrow">06 · Diferencia real</div><h2 class="sec-title">Lo que de verdad importa</h2><p class="body-text">El título dice que puedes hacer el trabajo. Esto es lo que te hace avanzar:</p><div class="rows">
+<div class="row"><div class="r-num">01</div><div><div class="r-title">Saber analizar</div><div class="r-desc">Quedarte con lo importante cuando tienes muchos datos.</div></div></div>
+<div class="row"><div class="r-num">02</div><div><div class="r-title">Saber explicar por qué decides algo</div></div></div>
+<div class="row"><div class="r-num">03</div><div><div class="r-title">Usar herramientas con criterio</div><div class="r-desc">La IA ayuda, tú decides.</div></div></div>
+</div></div></section>
 
-  <section class="sec navy" id="s5">
-    <div class="sec-inner">
-      <div class="eyebrow">05 — ¿CÓMO ENTIENDO LA FP?</div>
-      <p class="body-text" style="margin-top:0;font-size:19px;line-height:1.5;max-width:56ch;color:#E7E8F2">Entiendo la Formación Profesional como una preparación para actuar, no solo para saber. Menos ejercicios cerrados con una única respuesta posible, y más situaciones donde falta información, hay plazos, y las decisiones tienen consecuencias que no desaparecen al entregar la tarea.</p>
-      <div class="quote" style="margin-top:32px">¿Para qué sirve esto fuera del aula?</div>
-    </div>
-  </section>
+<section class="sec navy" id="s7"><div class="sec-inner"><div class="eyebrow">07 · Quién está detrás</div><h2 class="sec-title">Quién soy y por qué enseño así</h2><div class="twocol"><div><p class="body-text">Soy Juan Peco. He trabajado en administración, ventas y marketing en España y Venezuela.</p><p class="body-text">Vi muchas reuniones donde se hablaba una hora sin preguntar lo esencial: ¿el cliente quiere esto?</p><p class="body-text">Por eso enseño así. Menos opinión rápida, más decisión con fundamento.</p></div><div class="card dark"><p><strong>No soy tu jefe. No soy tu colega.</strong></p><p>Te voy a pedir que pienses antes de preguntar a la IA, que entregues a tiempo y que digas “aquí me equivoqué” sin miedo.</p></div></div></div></section>
 
-  <section class="sec cream" id="s6">
-    <div class="sec-inner" style="max-width:900px">
-      <div class="eyebrow">06 — ¿CÓMO SERÁN LAS CLASES?</div>
-      <h2 class="sec-title">Cómo aprenderemos</h2>
-      <p class="body-text" style="margin-top:0">La mayoría de nuestras sesiones no van a empezar por una explicación. Van a empezar por un problema sin resolver.</p>
-      <div class="rows" id="rows-6"></div>
-      <p class="body-text">Este recorrido se repite, con variaciones, en casi todas las sesiones del curso. Al principio se nota como una estructura consciente. Con el tiempo se convierte en la forma natural en que te enfrentas a cualquier problema.</p>
-    </div>
-  </section>
+<section class="sec cream" id="s8"><div class="sec-inner"><div class="eyebrow">08 · Método</div><h2 class="sec-title">Cómo vamos a aprender</h2><p class="body-text">Con metodología activa. Poco rollo, mucho caso.</p><div class="rows">
+<div class="row"><div class="r-num">01</div><div><div class="r-title">Debate corto para empezar</div><div class="r-desc">6 minutos para romper hielo y pensar.</div></div></div>
+<div class="row"><div class="r-num">02</div><div><div class="r-title">Caso real con empresa hilo</div><div class="r-desc">AGRO-LEVANTE. Producto no es una sola cosa: hay familias, gamas y líneas.</div></div></div>
+<div class="row"><div class="r-num">03</div><div><div class="r-title">Explicas cómo has pensado</div><div class="r-desc">Auditoría cognitiva: qué entendiste, qué descartaste y por qué.</div></div></div>
+</div></div></section>
 
-  <section class="sec navy" id="s7">
-    <div class="sec-inner">
-      <div class="eyebrow">07 — ¿QUÉ PAPEL TENDRÁ LA IA?</div>
-      <h2 class="sec-title">IA y Auditoría Cognitiva</h2>
-      <p class="body-text" style="margin-top:0">En este curso vas a usar inteligencia artificial de forma habitual — no como una excepción puntual, sino como parte normal del trabajo. No tendría sentido pretender que no existe: ya está presente en cualquier entorno profesional que vayas a pisar.</p>
-      <p class="body-text">Pero usarla de forma habitual no significa usarla sin cuestionarla. Una respuesta generada por una inteligencia artificial puede sonar completamente segura de sí misma y estar equivocada al mismo tiempo. Cuanto mejor redactada esté, más fácil resulta bajar la guardia.</p>
-      <p class="body-text">A esa competencia — revisar críticamente cualquier respuesta antes de aceptarla — la llamamos Auditoría Cognitiva. Va a estar presente cada vez que abramos una de estas herramientas, sea cual sea la tarea.</p>
-      <div class="goldbox">
-        <div class="gtag">REGLA DE ORO</div>
-        <div class="gtext">Nunca aceptamos una respuesta únicamente porque la haya generado una inteligencia artificial.</div>
-      </div>
-    </div>
-  </section>
+<section class="sec navy" id="s9"><div class="sec-inner"><div class="eyebrow">09 · Núcleo</div><h2 class="sec-title">Auditoría Cognitiva</h2><p class="quote">“No me digas qué has hecho. Dime cómo has pensado.”</p><p class="body-text">Si sabes explicar tu razonamiento, sabes. Si solo lees lo que te dio la IA, no sabes.</p></div></section>
 
-  <section class="sec cream" id="s8">
-    <div class="sec-inner" style="max-width:900px">
-      <div class="eyebrow">08 — ¿CÓMO SE CUESTIONA UNA RESPUESTA DE IA?</div>
-      <h2 class="sec-title">El protocolo</h2>
-      <div class="rows" id="rows-8"></div>
-    </div>
-  </section>
+<section class="sec cream" id="s10"><div class="sec-inner"><div class="eyebrow">10 · IA</div><h2 class="sec-title">IA: ayuda, no sustituto</h2><p class="body-text">La vas a usar. Yo también.</p><div class="rows">
+<div class="row"><div class="r-num">✓</div><div><div class="r-title">Para ir más rápido</div><div class="r-desc">Buscar datos, traducir, hacer un primer borrador.</div></div></div>
+<div class="row"><div class="r-num">✗</div><div><div class="r-title">No para que piense por ti</div></div></div>
+</div><p class="body-text">Si la usas, enseña qué le pediste y qué cambiaste. La transparencia suma.</p></div></section>
 
-  <section class="sec cream" id="s9">
-    <div class="sec-inner">
-      <div class="eyebrow">09 — ¿CÓMO SABRÉ QUE ESTOY PROGRESANDO?</div>
-      <h2 class="sec-title">Qué significa aprobar</h2>
-      <p class="body-text" style="margin-top:0">Aprobar no significa haber entregado todo a tiempo. Significa haber demostrado que sabes analizar una situación y sostener con argumentos la decisión que tomas frente a ella.</p>
-      <div class="grid-2">
-        <div class="tool-card" style="text-align:center"><div class="tn">Actividad práctica</div></div>
-        <div class="tool-card" style="text-align:center"><div class="tn">Caso en equipo</div></div>
-        <div class="tool-card" style="text-align:center"><div class="tn">Exposición</div></div>
-        <div class="tool-card" style="text-align:center"><div class="tn">Prueba individual</div></div>
-      </div>
-      <p class="body-text">Lo que sí te puedo garantizar, en cualquier módulo y en cualquier momento del curso, es transparencia: vas a saber con antelación qué se espera de ti y con qué se va a valorar.</p>
-      <div class="quote" style="margin-top:24px;font-size:19px">"Progresar se nota antes en cómo argumentas una decisión que en la nota de una actividad concreta."</div>
-    </div>
-  </section>
+<section class="sec navy" id="s11"><div class="sec-inner"><div class="eyebrow">11 · Clase real - 58 min</div><h2 class="sec-title">Cómo es una clase de verdad</h2><p class="body-text">Te pongo la primera como ejemplo. Sin teoría antes. Con una empresa real: AGRO-LEVANTE.</p><div class="rows">
+<div class="row"><div class="r-num">0-6'</div><div><div class="r-title">Pregunta para romper hielo</div><div class="r-desc">Debate corto: ¿alguna vez compraste algo solo por cómo estaba presentado?</div></div></div>
+<div class="row"><div class="r-num">6-18'</div><div><div class="r-title">Caso de apertura</div><div class="r-desc">¿Qué producto lleva AGRO-LEVANTE a un mercado nuevo? Recogemos respuestas, aunque sean vagas.</div></div></div>
+<div class="row"><div class="r-num">18-43'</div><div><div class="r-title">Desarrollo - las muñecas rusas</div><div class="r-desc">Familia, gama, línea y marca. Cada nivel vive dentro del anterior. Confundirlos es hablar de cosas distintas sin saberlo.</div></div></div>
+<div class="row"><div class="r-num">43-58'</div><div><div class="r-title">Cierre</div><div class="r-desc">Idea clara: antes de decidir nada de marketing, di de qué nivel hablas. Mañana clasificas el catálogo real.</div></div></div>
+</div><div class="callout">No hay material extra esta sesión. Sin IA para el catálogo real. Eso es mañana, con tu criterio.</div></div></section>
 
-  <section class="sec cream" id="s10">
-    <div class="sec-inner" style="max-width:920px">
-      <div class="eyebrow">10 — ¿QUÉ HERRAMIENTAS UTILIZAREMOS?</div>
-      <h2 class="sec-title">Herramientas digitales</h2>
-      <div class="grid-3" id="tools-grid"></div>
-    </div>
-  </section>
+<section class="sec cream" id="s12"><div class="sec-inner"><div class="eyebrow">12 · Herramientas</div><h2 class="sec-title">Con qué trabajaremos</h2><div class="path-grid">
+<div class="path-card"><div class="pc-title">Drive del curso</div><div class="pc-desc">Todo el material está ahí.</div></div>
+<div class="path-card"><div class="pc-title">Taric</div><div class="pc-desc">Para mirar aranceles.</div></div>
+<div class="path-card"><div class="pc-title">Plantillas</div><div class="pc-desc">Para calcular costes de verdad.</div></div>
+<div class="path-card"><div class="pc-title">Tu portfolio</div><div class="pc-desc">Donde guardas cómo piensas. Es tu mejor CV.</div></div>
+</div></div></section>
 
-  <section class="sec navy" id="s11">
-    <div class="sec-inner" style="max-width:900px">
-      <div class="eyebrow">11 — ¿QUÉ PODEMOS ESPERAR UNOS DE OTROS?</div>
-      <h2 class="sec-title" style="color:#fff">Compromiso mutuo</h2>
-      <div class="mutual">
-        <div class="col">
-          <div class="m-h">DE MI PARTE</div>
-          <div class="m-t">Llegar preparado a cada sesión. Un curso organizado con claridad. Hablarte sin rodeos. Feedback que sirva de verdad. Respeto, incluso en desacuerdo.</div>
-        </div>
-        <div class="col">
-          <div class="m-h">DE TU PARTE</div>
-          <div class="m-t">Participación activa, no solo presencia. Responsabilidad con los plazos. Honestidad cuando algo no salga bien. Disposición a corregir lo que haga falta.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="sec navy" id="s13"><div class="sec-inner"><div class="eyebrow">13 · Evaluación</div><h2 class="sec-title">Cómo se evalúa</h2><div class="rows">
+<div class="row"><div class="r-num">60%</div><div><div class="r-title">Cómo decides y cómo lo explicas</div></div></div>
+<div class="row"><div class="r-num">25%</div><div><div class="r-title">Papeles bien hechos</div></div></div>
+<div class="row"><div class="r-num">15%</div><div><div class="r-title">Actitud profesional</div></div></div>
+</div></div></section>
 
-  <section class="sec cream" id="s12">
-    <div class="sec-inner" style="max-width:900px">
-      <div class="eyebrow">12 — ¿CUÁL SERÁ MI RECORRIDO?</div>
-      <h2 class="sec-title">Ruta de aprendizaje</h2>
-      <div class="rows" id="rows-12"></div>
-      <p class="body-text">No todo el mundo recorre estos tres momentos al mismo ritmo, y eso está previsto.</p>
-    </div>
-  </section>
+<section class="sec cream" id="s14"><div class="sec-inner"><div class="eyebrow">14 · Ruta</div><h2 class="sec-title">Ruta del curso</h2><div class="rows">
+<div class="row"><div class="r-num">1T</div><div><div class="r-title">Aprender a mirar</div><div class="r-desc">Entiendes cómo funciona una operación completa.</div></div></div>
+<div class="row"><div class="r-num">2T-3T</div><div><div class="r-title">Operar con criterio</div></div></div>
+<div class="row"><div class="r-num">2º</div><div><div class="r-title">Trabajar con autonomía</div><div class="r-desc">Llevas operaciones y vas a empresa real.</div></div></div>
+</div></div></section>
 
-  <section class="sec cream" id="s13">
-    <div class="sec-inner" style="max-width:900px">
-      <div class="eyebrow">13 — ¿EN QUÉ TIPO DE PROFESIONAL ME ESTOY CONVIRTIENDO?</div>
-      <h2 class="sec-title">Perfil profesional</h2>
-      <div class="checklist" id="checklist-13"></div>
-      <p class="body-text">Ninguna de estas capacidades aparece de golpe. Se construyen despacio, y muchas veces solo se notan cuando miras hacia atrás.</p>
-    </div>
-  </section>
+<section class="sec navy" id="s15"><div class="sec-inner"><div class="eyebrow">15 · Reglas</div><h2 class="sec-title">Qué espero de ti y qué puedes esperar de mí</h2><div class="twocol"><div><p class="body-text"><strong>De ti:</strong> que vengas a pensar, que preguntes a tiempo y que entregues a tiempo.</p></div><div><p class="body-text"><strong>De mí:</strong> feedback útil, decirte la verdad y explicar el porqué de todo.</p></div></div></div></section>
 
-  <section class="sec cream" id="s14">
-    <div class="sec-inner" style="max-width:900px">
-      <div class="eyebrow">14 — ¿QUÉ DUDAS SUELEN APARECER?</div>
-      <h2 class="sec-title">Preguntas frecuentes</h2>
-      <p class="body-text" style="margin-top:0">Estas son las preguntas que más se repiten cada mes de septiembre. Toca cada una para leer la respuesta.</p>
-      <div id="faq-list" style="margin-top:14px"></div>
-    </div>
-  </section>
+<section class="sec cream" id="s16"><div class="sec-inner"><div class="eyebrow">16 · Accesos</div><h2 class="sec-title">Recursos</h2><div class="res-grid" id="res-grid"></div></div></section>
 
-  <section class="sec cream" id="s15">
-    <div class="sec-inner" style="max-width:920px">
-      <div class="eyebrow">15 — ¿DÓNDE PUEDO SEGUIR APRENDIENDO?</div>
-      <h2 class="sec-title">Recursos y consulta</h2>
-      <div class="res-grid" id="res-grid"></div>
-      <p class="body-text">Nada de esto sustituye a preguntar en clase.</p>
-    </div>
-  </section>
+<section class="sec navy" id="s17"><div class="sec-inner"><div class="eyebrow">17 · Dudas</div><h2 class="sec-title">FAQ</h2><div class="faq-list" id="faq-list"></div></div></section>
 
-  <section class="sec navy" id="s16">
-    <div class="sec-inner">
-      <div class="eyebrow">16 — ¿QUÉ IDEA QUIERO QUE RECUERDES?</div>
-      <div class="final-q">Creo que la Formación Profesional funciona mejor cuando conecta con problemas reales.<br><br>Creo que la inteligencia artificial exige más pensamiento crítico, no menos.<br><br>Creo que una decisión bien argumentada vale más que una respuesta correcta que nadie sabe explicar.</div>
-      <p class="body-text">Hoy generar una respuesta ya no cuesta ningún esfuerzo. Lo que sigue costando esfuerzo — y lo que va a seguir marcando la diferencia — es saber cuál de todas las respuestas posibles merece la pena seguir.</p>
-      <div class="bienvenido">Bienvenido.</div>
-      <div class="sig">
-        <div class="who">Juan Peco</div>
-        <div class="role">Profesor de Formación Profesional</div>
-      </div>
-    </div>
-  </section>
+<section class="sec cream" id="s18"><div class="sec-inner"><div class="eyebrow">18 · Cierre</div><h2 class="sec-title">No es fácil. Es útil.</h2><p class="body-text">Si trabajas con honestidad y aprendes a explicar cómo piensas, en dos años tendrás criterio. Eso se nota.</p><p class="signoff">Nos vemos en clase. — Juan Peco</p></div></section>
 
-  <footer class="credit">CFGS Comercio Internacional · Curso 2026 – 2027</footer>
 </main>
 
-<div class="pager">
-  <button class="prev-btn" id="prevBtn" aria-label="Anterior">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
-  <span class="count" id="pagerCount">01 / 16</span>
-  <button class="next-btn" id="nextBtn" aria-label="Siguiente">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-</div>
+<div class="pager" id="pager"><span class="pager-count" id="pagerCount">01 / 18</span><button id="prevBtn" aria-label="Anterior">↑</button><button id="nextBtn" aria-label="Siguiente">↓</button></div>
 
 <script>
 const SECTIONS = [
   {id:'s1', num:'01', title:'Portada'},
-  {id:'s2', num:'02', title:'Antes de empezar'},
-  {id:'s3', num:'03', title:'Quién soy'},
-  {id:'s4', num:'04', title:'Por qué esto importa'},
-  {id:'s5', num:'05', title:'Cómo entiendo la FP'},
-  {id:'s6', num:'06', title:'Cómo aprenderemos'},
-  {id:'s7', num:'07', title:'IA y Auditoría Cognitiva'},
-  {id:'s8', num:'08', title:'El protocolo'},
-  {id:'s9', num:'09', title:'Qué significa aprobar'},
-  {id:'s10', num:'10', title:'Herramientas digitales'},
-  {id:'s11', num:'11', title:'Compromiso mutuo'},
-  {id:'s12', num:'12', title:'Ruta de aprendizaje'},
-  {id:'s13', num:'13', title:'Perfil profesional'},
-  {id:'s14', num:'14', title:'Preguntas frecuentes'},
-  {id:'s15', num:'15', title:'Recursos y consulta'},
-  {id:'s16', num:'16', title:'Idea final'},
+  {id:'s2', num:'02', title:'¿Por qué existe este ciclo?'},
+  {id:'s3', num:'03', title:'¿Qué hace realmente un profesional?'},
+  {id:'s4', num:'04', title:'¿Por qué te puede interesar?'},
+  {id:'s5', num:'05', title:'¿Dónde puedes trabajar?'},
+  {id:'s6', num:'06', title:'Lo que de verdad importa'},
+  {id:'s7', num:'07', title:'Quién soy y por qué enseño así'},
+  {id:'s8', num:'08', title:'Cómo vamos a aprender'},
+  {id:'s9', num:'09', title:'Auditoría Cognitiva'},
+  {id:'s10', num:'10', title:'IA: ayuda, no sustituto'},
+  {id:'s11', num:'11', title:'Cómo funciona la clase'},
+  {id:'s12', num:'12', title:'Con qué trabajaremos'},
+  {id:'s13', num:'13', title:'Cómo se evalúa'},
+  {id:'s14', num:'14', title:'Ruta del curso'},
+  {id:'s15', num:'15', title:'Qué espero de ti y qué puedes esperar de mí'},
+  {id:'s16', num:'16', title:'Recursos'},
+  {id:'s17', num:'17', title:'FAQ'},
+  {id:'s18', num:'18', title:'Cierre'},
 ];
-
-// build nav
 const navList = document.getElementById('navList');
-SECTIONS.forEach(s=>{
+SECTIONS.forEach((s,i)=>{
   const li = document.createElement('li');
-  const btn = document.createElement('button');
-  btn.dataset.target = s.id;
-  btn.innerHTML = `<span class="n-num">${s.num}</span><span class="n-title">${s.title}</span>`;
-  li.appendChild(btn);
+  li.innerHTML = '<button data-i="'+i+'"><span class="n-num">'+s.num+'</span><span class="n-title">'+s.title+'</span></button>';
   navList.appendChild(li);
 });
-
-// dynamic content: rows for step-lists
-function renderRows(containerId, items){
-  const el = document.getElementById(containerId);
-  el.innerHTML = items.map((it,i)=>`
-    <div class="row">
-      <div class="rn">${String(i+1).padStart(2,'0')}</div>
-      <div class="rlabel-wrap">
-        <div class="rlabel">${it.t}</div>
-        <div class="rdesc">${it.d}</div>
-      </div>
-    </div>`).join('');
-}
-renderRows('rows-6', [
-  {t:'Situación', d:'Un caso, un reto, una decisión que hay que tomar con la información que exista.'},
-  {t:'Análisis', d:'Buscar datos, contrastarlos, hacerse preguntas antes de responder.'},
-  {t:'Herramientas', d:'Lo que haga falta para avanzar, incluida la IA cuando aporte algo real.'},
-  {t:'Decisión', d:'Tomar una postura concreta, no una respuesta genérica.'},
-  {t:'Defensa', d:'Explicar por qué esa opción y no otra, delante del grupo o de mí.'},
-  {t:'Revisión', d:'Volver atrás: qué funcionó, qué se habría hecho de otra forma.'},
-]);
-renderRows('rows-8', [
-  {t:'¿Qué información utiliza?', d:'Toda respuesta se apoya en algo, aunque no lo mencione. Hay que identificar en qué se basa realmente.'},
-  {t:'¿Qué información falta?', d:'Ninguna respuesta parte de datos completos. El hueco que deja fuera suele decir tanto como lo que sí incluye.'},
-  {t:'¿Qué riesgos existen?', d:'Si actuamos siguiendo esa respuesta, algo concreto puede salir mal. Nombrarlo antes de decidir cambia por completo cómo se usa la información.'},
-  {t:'¿Qué fuentes respaldan la respuesta?', d:'Si no se puede rastrear el origen, no se puede valorar en serio si es fiable, por convincente que suene.'},
-  {t:'¿Qué alternativas podrían existir?', d:'Una respuesta plausible casi nunca es la única posible.'},
-]);
-renderRows('rows-12', [
-  {t:'BASE', d:'El foco está en construir una base común. Antes de exigir autonomía hace falta asegurarse de que tenéis las herramientas mínimas para trabajar con soltura.'},
-  {t:'CASOS', d:'La parte más larga del curso: enfrentarte a situaciones concretas, con el protocolo de Auditoría Cognitiva ya incorporado como parte natural del trabajo.'},
-  {t:'AUTONOMÍA', d:'El curso pide más autonomía de la que has tenido hasta entonces: menos indicaciones paso a paso, más responsabilidad sobre tus propias decisiones.'},
-]);
-
-// tools
-const TOOLS = [
-  ['CHATGPT','Primer borrador para explorar un problema.'],
-  ['CLAUDE','Sintetizar y revisar con ojo crítico.'],
-  ['GEMINI','Integrar varias fuentes a la vez.'],
-  ['CANVA','Comunicar visualmente lo que analizas.'],
-  ['EXCEL','Organizar datos y apoyar decisiones.'],
-  ['GOOGLE WORKSPACE','El lugar donde vive el trabajo compartido.'],
-];
-document.getElementById('tools-grid').innerHTML = TOOLS.map(([n,d])=>
-  `<div class="tool-card"><div class="tn">${n}</div><div class="td">${d}</div></div>`).join('');
-
-// checklist
-const CHECKS = [
-  'Analizar con criterio','Resolver con autonomía','Comunicar con claridad',
-  'Usar tecnología sin depender de ella','Colaborar de verdad','Aprender por tu cuenta',
-  'Decidir y defenderlo'
-];
-document.getElementById('checklist-13').innerHTML = CHECKS.map(c=>
-  `<div class="check-item"><div class="cdot">✓</div><span>${c}</span></div>`).join('');
-
-// FAQ accordion
 const FAQS = [
-  ['¿Necesito conocimientos previos?','No. Y si alguien te dice que sí hace falta llegar sabiendo cosas, no le hagas mucho caso. La nivelación va integrada en las primeras actividades, no como un aparte que te haga sentir un escalón por debajo del resto.'],
-  ['¿Puedo usar IA para las actividades?','Sí. Más que permitido, esperado. La única condición es que sepas explicar cómo llegaste a esa respuesta: qué preguntaste, qué te devolvió, qué comprobaste después.'],
-  ['¿Vamos a trabajar mucho en equipo?','Bastante. Casi ninguna decisión importante en un trabajo real la toma una sola persona encerrada en su despacho.'],
-  ['¿Qué pasa si me equivoco?','No es una excepción vergonzosa, es parte del trato. Me interesa que sepas señalar qué falló en el razonamiento y corregirlo.'],
-  ['¿Y si no estoy de acuerdo con una valoración tuya?','Dímelo, y dime por qué. No siempre cambiaré la nota, pero siempre te explicaré el motivo con el mismo detalle con el que tú me lo plantees.'],
-  ['¿Cuánto tiempo fuera de clase exige esto?','Está pensado para caber en un horario razonable. Si notas que se te dispara, dímelo antes de que se convierta en un problema — no cuando ya lo sea.'],
-  ['¿Qué pasa si suspendo?','No cierra ninguna puerta, cierra una entrega. Existen mecanismos de recuperación, distintos según el módulo. Suspender significa que toca repetirlo, no que se acabó.'],
-  ['¿La IA sustituye el estudio o el esfuerzo propio?','No, y si alguien lo intenta se nota enseguida. La parte que de verdad se evalúa, decidir y justificar, no se puede delegar sin que se note.'],
-  ['¿Y si tengo una circunstancia personal que me afecta?','Habla conmigo cuanto antes, no cuando ya sea tarde. Puedo mover un plazo o cambiar una forma de trabajo si me entero a tiempo.'],
-  ['¿En qué se nota que este curso es distinto?','En que casi nunca vas a tener toda la información antes de decidir. Las primeras semanas incomoda. Después se parece bastante a lo que te vas a encontrar cuando salgas de aquí.'],
+  ['¿Necesito mucho inglés?','No para empezar. Pero sin inglés llegarás menos lejos. Lo trabajamos aquí.'],
+  ['¿Y si no se me dan bien los números?','No es matemática difícil. Es orden y calculadora.'],
+  ['¿La IA hace el trabajo por mí?','No. Se nota enseguida. Aquí se evalúa cómo piensas, no qué copias.'],
+  ['¿Hay trabajo de esto en Murcia?','Sí. En empresas que exportan. Hay muchas más de lo que parece.'],
 ];
 const faqList = document.getElementById('faq-list');
-FAQS.forEach(([q,a])=>{
-  const item = document.createElement('div');
+FAQS.forEach(function(pair){
+  var q = pair[0]; var a = pair[1];
+  var item = document.createElement('div');
   item.className = 'faq-item';
-  item.innerHTML = `
-    <button class="faq-q">
-      <span>${q}</span>
-      <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-    </button>
-    <div class="faq-a"><div class="faq-a-inner">${a}</div></div>`;
-  const btn = item.querySelector('.faq-q');
-  const ans = item.querySelector('.faq-a');
-  btn.addEventListener('click', ()=>{
-    const isOpen = item.classList.contains('open');
-    // close all others
-    document.querySelectorAll('.faq-item.open').forEach(o=>{
-      if(o!==item){ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; }
-    });
+  item.innerHTML = '<button class="faq-q"><span>'+q+'</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">'+a+'</div></div>';
+  var btn = item.querySelector('.faq-q');
+  var ans = item.querySelector('.faq-a');
+  btn.addEventListener('click', function(){
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(o){ if(o!==item){ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; }});
     if(isOpen){ item.classList.remove('open'); ans.style.maxHeight = null; }
     else{ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
   });
   faqList.appendChild(item);
 });
-
-// recursos — tarjetas de enlace, no QR: esto ya es una página web
 const ICONS = {
   portfolio: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>',
   drive: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H12l-2-2H4a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1Z"/></svg>',
   contacto: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
 };
 const RES = [
-  {icon:'portfolio', label:'Portfolio', desc:'Trayectoria profesional completa.', url:'https://juanpeco.com', tag:null},
-  {icon:'drive', label:'Drive del curso', desc:'Material ampliado, calendario y documentación de cada módulo.', url:null, tag:'Enlace compartido en la 1.ª semana'},
-  {icon:'contacto', label:'Contacto', desc:'Canal directo para dudas fuera de clase.', url:null, tag:'Se comparte en la 1.ª semana'},
+  {icon:'portfolio', label:'Portfolio', desc:'Quién soy y qué he hecho.', url:'https://juanpeco.com', tag:null},
+  {icon:'drive', label:'Drive del curso', desc:'Todo el material del curso.', url:null, tag:'Enlace 1.ª semana'},
+  {icon:'contacto', label:'Contacto', desc:'Para dudas fuera de clase.', url:null, tag:'Se comparte en clase'},
 ];
-document.getElementById('res-grid').innerHTML = RES.map(r=>{
-  const inner = `
-    <div class="res-icon">${ICONS[r.icon]}</div>
-    <div class="rlabel">${r.label}${r.url ? '<span class="go">↗</span>' : ''}</div>
-    <div class="rdesc">${r.desc}</div>
-    ${r.tag ? `<div class="rtag">${r.tag}</div>` : ''}`;
-  return r.url
-    ? `<a class="res-card" href="${r.url}" target="_blank" rel="noopener">${inner}</a>`
-    : `<div class="res-card">${inner}</div>`;
+document.getElementById('res-grid').innerHTML = RES.map(function(r){
+  var inner = '<div class="res-icon">'+ICONS[r.icon]+'</div><div class="rlabel">'+r.label+(r.url ? '<span class="go">↗</span>' : '')+'</div><div class="rdesc">'+r.desc+'</div>'+(r.tag ? '<div class="rtag">'+r.tag+'</div>' : '');
+  return r.url ? '<a class="res-card" href="'+r.url+'" target="_blank" rel="noopener">'+inner+'</a>' : '<div class="res-card">'+inner+'</div>';
 }).join('');
-
-// ---------- scroll spy + progress ----------
 const navButtons = Array.from(document.querySelectorAll('.nav button'));
-const secEls = SECTIONS.map(s=>document.getElementById(s.id));
+const secEls = SECTIONS.map(function(s){return document.getElementById(s.id);});
 const tbLabel = document.getElementById('tbLabel');
-
 function onScroll(){
-  const doc = document.documentElement;
-  const scrollTop = doc.scrollTop || document.body.scrollTop;
-  const scrollHeight = doc.scrollHeight - doc.clientHeight;
-  const pct = scrollHeight > 0 ? (scrollTop/scrollHeight)*100 : 0;
+  var doc = document.documentElement;
+  var scrollTop = doc.scrollTop || document.body.scrollTop;
+  var scrollHeight = doc.scrollHeight - doc.clientHeight;
+  var pct = scrollHeight > 0 ? (scrollTop/scrollHeight)*100 : 0;
   document.getElementById('progressFill').style.width = pct + '%';
-
-  let current = 0;
-  const mid = window.innerHeight * 0.4;
-  for(let i=0;i<secEls.length;i++){
-    const r = secEls[i].getBoundingClientRect();
-    if(r.top <= mid) current = i;
-  }
-  navButtons.forEach((b,i)=>b.classList.toggle('active', i===current));
-  const s = SECTIONS[current];
-  tbLabel.textContent = `${s.num} · ${s.title.toUpperCase()}`;
+  var current = 0;
+  var mid = window.innerHeight * 0.4;
+  for(var i=0;i<secEls.length;i++){ var r = secEls[i].getBoundingClientRect(); if(r.top <= mid) current = i; }
+  navButtons.forEach(function(b,i){ b.classList.toggle('active', i===current); });
+  var s = SECTIONS[current];
+  tbLabel.textContent = s.num + ' · ' + s.title.toUpperCase();
 }
 document.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
-
-// ---------- mobile nav ----------
-const navPanel = document.getElementById('navPanel');
-const overlay = document.getElementById('navOverlay');
+var navPanel = document.getElementById('navPanel');
+var overlay = document.getElementById('navOverlay');
 function openMobileNav(){ navPanel.classList.add('mobile-open'); overlay.classList.add('open'); }
 function closeMobileNav(){ navPanel.classList.remove('mobile-open'); overlay.classList.remove('open'); }
 document.getElementById('menuBtn').addEventListener('click', openMobileNav);
 overlay.addEventListener('click', closeMobileNav);
-
-// ---------- pager: next / prev / keyboard / direct jump ----------
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const pagerCount = document.getElementById('pagerCount');
-
-function currentIndex(){
-  const mid = window.innerHeight * 0.4;
-  let idx = 0;
-  for(let i=0;i<secEls.length;i++){
-    const r = secEls[i].getBoundingClientRect();
-    if(r.top <= mid) idx = i;
-  }
-  return idx;
-}
-
-function goTo(index){
-  index = Math.max(0, Math.min(SECTIONS.length-1, index));
-  secEls[index].scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-nextBtn.addEventListener('click', ()=> goTo(currentIndex()+1));
-prevBtn.addEventListener('click', ()=> goTo(currentIndex()-1));
-
-document.addEventListener('keydown', (e)=>{
-  // don't hijack arrow keys while typing or while a FAQ item just toggled focus on a button is fine
-  const tag = (document.activeElement && document.activeElement.tagName) || '';
+var prevBtn = document.getElementById('prevBtn');
+var nextBtn = document.getElementById('nextBtn');
+var pagerCount = document.getElementById('pagerCount');
+function currentIndex(){ var mid = window.innerHeight * 0.4; var idx = 0; for(var i=0;i<secEls.length;i++){ var r = secEls[i].getBoundingClientRect(); if(r.top <= mid) idx = i; } return idx; }
+function goTo(index){ index = Math.max(0, Math.min(SECTIONS.length-1, index)); secEls[index].scrollIntoView({behavior:'smooth', block:'start'}); }
+nextBtn.addEventListener('click', function(){ goTo(currentIndex()+1); });
+prevBtn.addEventListener('click', function(){ goTo(currentIndex()-1); });
+document.addEventListener('keydown', function(e){
+  var tag = (document.activeElement && document.activeElement.tagName) || '';
   if(tag === 'INPUT' || tag === 'TEXTAREA') return;
-  if(e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' '){
-    e.preventDefault(); goTo(currentIndex()+1);
-  } else if(e.key === 'ArrowUp' || e.key === 'PageUp'){
-    e.preventDefault(); goTo(currentIndex()-1);
-  }
+  if(e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); goTo(currentIndex()+1); }
+  else if(e.key === 'ArrowUp' || e.key === 'PageUp'){ e.preventDefault(); goTo(currentIndex()-1); }
 });
-
-// make the left-menu jump straight to the target slide (no visible intermediate scroll)
-navButtons.forEach((b,i)=>{
-  b.addEventListener('click', ()=>{ goTo(i); closeMobileNav(); });
-});
-
-function updatePager(){
-  const idx = currentIndex();
-  pagerCount.textContent = `${SECTIONS[idx].num} / 16`;
-  prevBtn.disabled = idx === 0;
-  nextBtn.disabled = idx === SECTIONS.length-1;
-}
+navButtons.forEach(function(b,i){ b.addEventListener('click', function(){ goTo(i); closeMobileNav(); }); });
+function updatePager(){ var idx = currentIndex(); pagerCount.textContent = SECTIONS[idx].num + ' / ' + String(SECTIONS.length).padStart(2,'0'); prevBtn.disabled = idx === 0; nextBtn.disabled = idx === SECTIONS.length-1; }
 document.addEventListener('scroll', updatePager, {passive:true});
 updatePager();
 </script>
