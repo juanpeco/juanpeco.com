@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bienvenido a un curso diferente — Juan Peco</title>
+<title>Presentación personal — Juan Peco</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -266,6 +266,56 @@
     html{scroll-behavior:auto;}
     *{transition:none !important;}
   }
+
+  /* ---------- premium entrance animation per section ---------- */
+  .sec-inner{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  }
+  .sec.in-view .sec-inner{
+    opacity:1;
+    transform:translateY(0);
+  }
+  /* stagger the inner blocks slightly for a more deliberate reveal */
+  .sec .rows .row, .sec .grid-3 .tool-card, .sec .checklist .check-item,
+  .sec .res-grid .res-card, .sec .faq-item, .sec .mutual .col{
+    opacity:0; transform:translateY(14px);
+    transition:opacity .55s ease, transform .55s ease;
+  }
+  .sec.in-view .rows .row, .sec.in-view .grid-3 .tool-card, .sec.in-view .checklist .check-item,
+  .sec.in-view .res-grid .res-card, .sec.in-view .faq-item, .sec.in-view .mutual .col{
+    opacity:1; transform:translateY(0);
+  }
+  .sec.in-view .rows .row:nth-child(1){transition-delay:.08s;}
+  .sec.in-view .rows .row:nth-child(2){transition-delay:.14s;}
+  .sec.in-view .rows .row:nth-child(3){transition-delay:.20s;}
+  .sec.in-view .rows .row:nth-child(4){transition-delay:.26s;}
+  .sec.in-view .rows .row:nth-child(5){transition-delay:.32s;}
+  .sec.in-view .rows .row:nth-child(6){transition-delay:.38s;}
+  .sec.in-view .grid-3 .tool-card:nth-child(1),.sec.in-view .checklist .check-item:nth-child(1),
+  .sec.in-view .res-grid .res-card:nth-child(1){transition-delay:.10s;}
+  .sec.in-view .grid-3 .tool-card:nth-child(2),.sec.in-view .checklist .check-item:nth-child(2),
+  .sec.in-view .res-grid .res-card:nth-child(2){transition-delay:.16s;}
+  .sec.in-view .grid-3 .tool-card:nth-child(3),.sec.in-view .checklist .check-item:nth-child(3),
+  .sec.in-view .res-grid .res-card:nth-child(3){transition-delay:.22s;}
+  .sec.in-view .grid-3 .tool-card:nth-child(4),.sec.in-view .checklist .check-item:nth-child(4){transition-delay:.28s;}
+  .sec.in-view .grid-3 .tool-card:nth-child(5),.sec.in-view .checklist .check-item:nth-child(5){transition-delay:.34s;}
+  .sec.in-view .grid-3 .tool-card:nth-child(6),.sec.in-view .checklist .check-item:nth-child(6){transition-delay:.40s;}
+  .sec.in-view .mutual .col:nth-child(1){transition-delay:.10s;}
+  .sec.in-view .mutual .col:nth-child(2){transition-delay:.20s;}
+
+  /* portada: subtle first-paint entrance, independent of scroll observer */
+  #s1 .n-name{animation:fadeUp .8s .1s cubic-bezier(.22,.61,.36,1) both;}
+  #s1 h1.hero{animation:fadeUp .9s .22s cubic-bezier(.22,.61,.36,1) both;}
+  #s1 .tagline{animation:fadeUp .8s .38s cubic-bezier(.22,.61,.36,1) both;}
+  #s1 .yr{animation:fadeUp .8s .46s cubic-bezier(.22,.61,.36,1) both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+  /* refined hover lift on interactive elements already defined; add subtle focus ring for a11y */
+  .nav button:focus-visible, .pager button:focus-visible, .faq-q:focus-visible, a.res-card:focus-visible{
+    outline:2px solid var(--lavender); outline-offset:2px;
+  }
 </style>
 </head>
 <body>
@@ -295,7 +345,7 @@
   <section class="sec navy" id="s1">
     <div class="sec-inner">
       <div class="n-name">JUAN PECO</div>
-      <h1 class="hero">Bienvenido a un curso diferente</h1>
+      <h1 class="hero">Bienvenido a una forma distinta de trabajar</h1>
       <div class="tagline">ECONOMÍA · EMPRESA · MARKETING · COMERCIO INTERNACIONAL · COMPETENCIA DIGITAL</div>
       <div class="yr">CURSO 2026 – 2027</div>
     </div>
@@ -305,10 +355,10 @@
     <div class="sec-inner">
       <div class="eyebrow">02 — ¿QUÉ QUIERO DECIRTE ANTES DE EMPEZAR?</div>
       <h2 class="sec-title">Antes de empezar</h2>
-      <div class="quote">"No voy a prometerte que este curso sea fácil. Prefiero prometerte algo más difícil de cumplir: que todo lo que hagamos aquí va a tener un motivo."</div>
+      <div class="quote">"No voy a prometerte que este módulo sea fácil. Prefiero prometerte algo más difícil de cumplir: que todo lo que hagamos aquí va a tener un motivo."</div>
       <p class="body-text">Antes de que empecemos, quiero decirte tres cosas.</p>
-      <p class="body-text">La primera: no voy a prometerte que este curso sea fácil. Prefiero prometerte otra cosa, más difícil de cumplir pero más honesta — que todo lo que hagamos aquí va a tener un motivo, y que si en algún momento dejas de verlo, puedes preguntármelo directamente.</p>
-      <p class="body-text">La segunda: este documento no es un reglamento ni una programación resumida. Es mi forma de contarte, antes de trabajar juntos, cómo entiendo lo que hacemos en este ciclo, qué papel va a tener la inteligencia artificial en tus clases y qué puedes esperar de mí durante el curso.</p>
+      <p class="body-text">La primera: no voy a prometerte que este módulo sea fácil. Prefiero prometerte otra cosa, más difícil de cumplir pero más honesta — que todo lo que hagamos aquí va a tener un motivo, y que si en algún momento dejas de verlo, puedes preguntármelo directamente.</p>
+      <p class="body-text">La segunda: este documento no es un reglamento ni una programación resumida. Es mi forma de contarte, antes de trabajar juntos, cómo entiendo lo que hacemos en este ciclo, qué papel va a tener la inteligencia artificial en tus clases y qué puedes esperar de mí durante el módulo.</p>
       <p class="body-text">La tercera, y la más importante: nada de esto funciona si tú te quedas al margen. Puedo diseñar el mejor método del mundo, pero la parte que decide si sirve de algo la pones tú, cada día, con la actitud con la que te sientas en clase.</p>
       <p class="body-text">No hace falta que memorices nada de lo que viene a continuación. Guarda este documento, vuelve a él cuando tengas dudas, y pregunta lo que no quede claro.</p>
       <div class="signoff">Bienvenido.<br>Juan Peco</div>
@@ -365,7 +415,7 @@
     <div class="sec-inner">
       <div class="eyebrow">07 — ¿QUÉ PAPEL TENDRÁ LA IA?</div>
       <h2 class="sec-title">IA y Auditoría Cognitiva</h2>
-      <p class="body-text" style="margin-top:0">En este curso vas a usar inteligencia artificial de forma habitual — no como una excepción puntual, sino como parte normal del trabajo. No tendría sentido pretender que no existe: ya está presente en cualquier entorno profesional que vayas a pisar.</p>
+      <p class="body-text" style="margin-top:0">En este módulo vas a usar inteligencia artificial de forma habitual — no como una excepción puntual, sino como parte normal del trabajo. No tendría sentido pretender que no existe: ya está presente en cualquier entorno profesional que vayas a pisar.</p>
       <p class="body-text">Pero usarla de forma habitual no significa usarla sin cuestionarla. Una respuesta generada por una inteligencia artificial puede sonar completamente segura de sí misma y estar equivocada al mismo tiempo. Cuanto mejor redactada esté, más fácil resulta bajar la guardia.</p>
       <p class="body-text">A esa competencia — revisar críticamente cualquier respuesta antes de aceptarla — la llamamos Auditoría Cognitiva. Va a estar presente cada vez que abramos una de estas herramientas, sea cual sea la tarea.</p>
       <div class="goldbox">
@@ -387,15 +437,16 @@
     <div class="sec-inner">
       <div class="eyebrow">09 — ¿CÓMO SABRÉ QUE ESTOY PROGRESANDO?</div>
       <h2 class="sec-title">Qué significa aprobar</h2>
-      <p class="body-text" style="margin-top:0">Aprobar no significa haber entregado todo a tiempo. Significa haber demostrado que sabes analizar una situación y sostener con argumentos la decisión que tomas frente a ella.</p>
+      <p class="body-text" style="margin-top:0">La evaluación se organiza por RA — Resultados de Aprendizaje. Cada uno cierra con su propia prueba, que funciona como parcial.</p>
       <div class="grid-2">
-        <div class="tool-card" style="text-align:center"><div class="tn">Actividad práctica</div></div>
-        <div class="tool-card" style="text-align:center"><div class="tn">Caso en equipo</div></div>
-        <div class="tool-card" style="text-align:center"><div class="tn">Exposición</div></div>
-        <div class="tool-card" style="text-align:center"><div class="tn">Prueba individual</div></div>
+        <div class="tool-card" style="text-align:center"><div class="tn">Examen</div></div>
+        <div class="tool-card" style="text-align:center"><div class="tn">Prueba oral</div></div>
+        <div class="tool-card" style="text-align:center"><div class="tn">Trabajo</div></div>
+        <div class="tool-card" style="text-align:center"><div class="tn">Otro formato, según el RA</div></div>
       </div>
-      <p class="body-text">Lo que sí te puedo garantizar, en cualquier módulo y en cualquier momento del curso, es transparencia: vas a saber con antelación qué se espera de ti y con qué se va a valorar.</p>
-      <div class="quote" style="margin-top:24px;font-size:19px">"Progresar se nota antes en cómo argumentas una decisión que en la nota de una actividad concreta."</div>
+      <p class="body-text">Si un RA queda suspendido, solo se recupera ese — en una sesión al final del trimestre, y solo para quien no lo haya superado. Los criterios de cada módulo se comparten en Teams, y hay que marcarlos como recibidos. Los exámenes se revisan siempre en la sesión siguiente.</p>
+      <p class="body-text" style="opacity:.75;font-size:14px">En los módulos de segundo curso, la calificación final combina la nota del centro y la de la empresa.</p>
+      <div class="quote" style="margin-top:22px;font-size:18px">"Progresar se nota antes en cómo argumentas una decisión que en la nota de una actividad concreta."</div>
     </div>
   </section>
 
@@ -414,7 +465,7 @@
       <div class="mutual">
         <div class="col">
           <div class="m-h">DE MI PARTE</div>
-          <div class="m-t">Llegar preparado a cada sesión. Un curso organizado con claridad. Hablarte sin rodeos. Feedback que sirva de verdad. Respeto, incluso en desacuerdo.</div>
+          <div class="m-t">Llegar preparado a cada sesión. Un módulo organizado con claridad. Hablarte sin rodeos. Feedback que sirva de verdad. Respeto, incluso en desacuerdo. Adaptar materiales y exámenes a quien lo necesite, sin que tengas que pedirlo aparte.</div>
         </div>
         <div class="col">
           <div class="m-h">DE TU PARTE</div>
@@ -547,7 +598,7 @@ renderRows('rows-8', [
 renderRows('rows-12', [
   {t:'BASE', d:'El foco está en construir una base común. Antes de exigir autonomía hace falta asegurarse de que tenéis las herramientas mínimas para trabajar con soltura.'},
   {t:'CASOS', d:'La parte más larga del curso: enfrentarte a situaciones concretas, con el protocolo de Auditoría Cognitiva ya incorporado como parte natural del trabajo.'},
-  {t:'AUTONOMÍA', d:'El curso pide más autonomía de la que has tenido hasta entonces: menos indicaciones paso a paso, más responsabilidad sobre tus propias decisiones.'},
+  {t:'AUTONOMÍA', d:'El módulo pide más autonomía de la que has tenido hasta entonces: menos indicaciones paso a paso, más responsabilidad sobre tus propias decisiones.'},
 ]);
 
 // tools
@@ -582,7 +633,7 @@ const FAQS = [
   ['¿Qué pasa si suspendo?','No cierra ninguna puerta, cierra una entrega. Existen mecanismos de recuperación, distintos según el módulo. Suspender significa que toca repetirlo, no que se acabó.'],
   ['¿La IA sustituye el estudio o el esfuerzo propio?','No, y si alguien lo intenta se nota enseguida. La parte que de verdad se evalúa, decidir y justificar, no se puede delegar sin que se note.'],
   ['¿Y si tengo una circunstancia personal que me afecta?','Habla conmigo cuanto antes, no cuando ya sea tarde. Puedo mover un plazo o cambiar una forma de trabajo si me entero a tiempo.'],
-  ['¿En qué se nota que este curso es distinto?','En que casi nunca vas a tener toda la información antes de decidir. Las primeras semanas incomoda. Después se parece bastante a lo que te vas a encontrar cuando salgas de aquí.'],
+  ['¿En qué se nota que este módulo es distinto?','En que casi nunca vas a tener toda la información antes de decidir. Las primeras semanas incomoda. Después se parece bastante a lo que te vas a encontrar cuando salgas de aquí.'],
 ];
 const faqList = document.getElementById('faq-list');
 FAQS.forEach(([q,a])=>{
@@ -710,6 +761,18 @@ function updatePager(){
 }
 document.addEventListener('scroll', updatePager, {passive:true});
 updatePager();
+
+// ---------- premium entrance: reveal each section as it becomes active ----------
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && entry.intersectionRatio > 0.55){
+      entry.target.classList.add('in-view');
+    }
+  });
+}, {threshold:[0, 0.55, 1]});
+secEls.forEach(el => revealObserver.observe(el));
+// portada is visible on first paint — reveal immediately, no need to wait for scroll
+secEls[0].classList.add('in-view');
 </script>
 </body>
 </html>
