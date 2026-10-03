@@ -26,8 +26,8 @@
   <meta name="twitter:description" content="Docente de Formación Profesional con experiencia empresarial. Escribo sobre FP, empresa, comercio internacional y digitalización a partir del trabajo real en el aula.">
   <meta name="twitter:image" content="https://juanpeco.com/foto_aula.jpg">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -121,6 +121,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,39,68,0.08); }
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-h); font-weight: 700; font-size: 0.95rem; color: #fff;
 }
+.nav-logo-img { height: 38px; width: auto; display: block; }
 
 .nav-links {
   display: flex; align-items: center; gap: 0.25rem;
@@ -1058,8 +1059,7 @@ body.x180-lock{ overflow:hidden; }
 
 <nav id="main-nav">
   <div class="nav-logo">
-    <div class="nav-logo-badge">JP</div>
-    <span>Juan Peco</span>
+    <img class="nav-logo-img" src="logotipo-juan-peco.svg" alt="Juan Peco">
   </div>
   <ul class="nav-links">
     <li><button onclick="goto('hero')">Inicio</button></li>
@@ -1079,7 +1079,7 @@ body.x180-lock{ overflow:hidden; }
 
 <div id="mobile-menu">
   <div class="mob-header">
-    <div class="nav-logo"><div class="nav-logo-badge">JP</div><span>Juan Peco</span></div>
+    <div class="nav-logo"><img class="nav-logo-img" src="logotipo-juan-peco.svg" alt="Juan Peco"></div>
     <button onclick="this.parentElement.parentElement.classList.remove('open')" style="font-size:2rem;color:var(--navy)">×</button>
   </div>
   <div class="mob-links">
