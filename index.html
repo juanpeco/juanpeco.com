@@ -27,7 +27,6 @@
   <meta name="twitter:image" content="https://juanpeco.com/foto_aula.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1040,6 +1039,7 @@ body.x180-lock{ overflow:hidden; }
 .doc-panel iframe{ flex:1; width:100%; border:none; background:#fff; }
 @media(max-width:720px){ .doc-panel{ top:0; left:0; transform:none; width:100vw; height:100vh; border-radius:0; } }
 
+</style>
 <style id="ed-ideas">
 #ideas.ed{ background:var(--ed-paper); }
 .ed .ed-ideas-intro{ max-width:62ch; margin-bottom:clamp(2.8rem,6vw,4rem); }
@@ -1053,14 +1053,26 @@ body.x180-lock{ overflow:hidden; }
 .ed .ed-idea .ed-idea-test b{ color:var(--ed-navy); font-weight:600; }
 .ed .ed-ideas-note{ margin-top:2rem; max-width:62ch; font-size:.86rem; color:var(--ed-ink2); line-height:1.65; }
 </style>
+<style id="brand-kit">
+/* ═══ Kit de marca v2 · logotipo JP (inline, hereda color y tipografía de la web) ═══ */
+:root{ --lav:#7C6CF2; --lav-bg:#E3E4FA; }
+body{ background:#FAF9F6; }
+nav{ background:rgba(250,249,246,0.92); border-bottom:1px solid #E8E8EF; height:66px; }
+.brand-lockup{ display:inline-flex; align-items:center; gap:.8rem; color:var(--navy); text-decoration:none; transition:opacity .2s; }
+.brand-lockup:hover{ opacity:.85; }
+.brand-lockup svg{ height:32px; width:auto; flex-shrink:0; display:block; }
+.brand-wordmark{ font-family:var(--font-b); font-weight:700; font-size:.96rem; letter-spacing:.09em; text-transform:uppercase; line-height:1; }
+.footer-brand{ display:flex; align-items:center; gap:.8rem; color:#fff; margin-bottom:.5rem; }
+.footer-brand svg{ height:30px; width:auto; flex-shrink:0; }
+.footer-name{ font-family:var(--font-b); font-size:.95rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:#fff; margin-bottom:0; }
+#mobile-menu{ background:#FAF9F6; }
+@media (max-width:900px){ .footer-brand{ justify-content:center; } }
 </style>
 </head>
 <body class="h-full">
 
 <nav id="main-nav">
-  <div class="nav-logo">
-    <img class="nav-logo-img" src="logotipo-juan-peco.svg" alt="Juan Peco">
-  </div>
+  <a href="#hero" class="brand-lockup" aria-label="Juan Peco - Inicio"><svg viewBox="0 0 774 552" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M 700 74 L 463 74 L 463 218 L 502 218 L 502 113 L 659 113 L 659 252 L 388 252 L 388 551 L 428 551 L 428 292 L 700 292 Z M 113 74 L 113 113 L 235 113 L 235 437 L 114 437 L 114 337 L 74 337 L 74 478 L 273 478 L 273 74 Z M 773 0 L 388 0 L 388 218 L 428 218 L 428 39 L 734 39 L 734 325 L 463 325 L 463 551 L 502 551 L 502 365 L 773 365 Z M 113 0 L 113 39 L 309 39 L 309 511 L 40 511 L 40 337 L 0 337 L 0 551 L 348 551 L 348 0 Z"/></svg><span class="brand-wordmark">JUAN PECO</span></a>
   <ul class="nav-links">
     <li><button onclick="goto('hero')">Inicio</button></li>
     <li><button onclick="goto('ideas')">Ideas</button></li>
@@ -1079,7 +1091,7 @@ body.x180-lock{ overflow:hidden; }
 
 <div id="mobile-menu">
   <div class="mob-header">
-    <div class="nav-logo"><img class="nav-logo-img" src="logotipo-juan-peco.svg" alt="Juan Peco"></div>
+    <a href="#hero" class="brand-lockup" aria-label="Juan Peco - Inicio" onclick="document.getElementById('mobile-menu').classList.remove('open')"><svg viewBox="0 0 774 552" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M 700 74 L 463 74 L 463 218 L 502 218 L 502 113 L 659 113 L 659 252 L 388 252 L 388 551 L 428 551 L 428 292 L 700 292 Z M 113 74 L 113 113 L 235 113 L 235 437 L 114 437 L 114 337 L 74 337 L 74 478 L 273 478 L 273 74 Z M 773 0 L 388 0 L 388 218 L 428 218 L 428 39 L 734 39 L 734 325 L 463 325 L 463 551 L 502 551 L 502 365 L 773 365 Z M 113 0 L 113 39 L 309 39 L 309 511 L 40 511 L 40 337 L 0 337 L 0 551 L 348 551 L 348 0 Z"/></svg><span class="brand-wordmark">JUAN PECO</span></a>
     <button onclick="this.parentElement.parentElement.classList.remove('open')" style="font-size:2rem;color:var(--navy)">×</button>
   </div>
   <div class="mob-links">
@@ -1613,11 +1625,11 @@ body.x180-lock{ overflow:hidden; }
 
 <footer>
   <div class="footer-left">
-    <div class="footer-name">Juan Peco</div>
+    <div class="footer-brand"><svg viewBox="0 0 774 552" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M 700 74 L 463 74 L 463 218 L 502 218 L 502 113 L 659 113 L 659 252 L 388 252 L 388 551 L 428 551 L 428 292 L 700 292 Z M 113 74 L 113 113 L 235 113 L 235 437 L 114 437 L 114 337 L 74 337 L 74 478 L 273 478 L 273 74 Z M 773 0 L 388 0 L 388 218 L 428 218 L 428 39 L 734 39 L 734 325 L 463 325 L 463 551 L 502 551 L 502 365 L 773 365 Z M 113 0 L 113 39 L 309 39 L 309 511 L 40 511 L 40 337 L 0 337 L 0 551 L 348 551 L 348 0 Z"/></svg><div class="footer-name">JUAN PECO</div></div>
     <div class="footer-role">Formación Profesional · empresa · aprendizaje</div>
   </div>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+    <a href="https://www.linkedin.com/in/juanpeco" target="_blank" rel="noopener" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
     <a href="https://www.instagram.com/juanpeco" target="_blank" rel="noopener" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
     <a href="mailto:hola@juanpeco.com" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a>
     <a href="CV_Juan_Peco.pdf" target="_blank" class="footer-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>CV PDF</a>
@@ -1742,7 +1754,7 @@ var Exp180 = (function(){
           saber:"Fijación de precios, costes fijos y variables, e impacto del valor del ciclo de vida del cliente (CLV).",
           crit:"CE 2.3 — Evaluación de viabilidad de propuestas de negocio de forma realista.",
           desc:"Un documento de entrega real donde se plantea una subida repentina del coste de servidores y exige a los alumnos de FP diseñar una estrategia comercial justificable para evitar la deserción.",
-          url:"proyectofp/"},
+          url:"tech-proyectos"},
       sim:"challenge" },
     { time:"08:35", lines:["Empiezan a hablar.","(...)","Se organizan de cuatro en cuatro sin que nadie lo pida.","(...)","Se enciende alguna tablet.","(...)","La IA está abierta en una pestaña de fondo.","(...)","Nadie teclea todavía.","(...)","Discuten la primera idea a lápiz.","(...)","Saben que si copian la respuesta, se nota en cinco segundos."],
       obs:"08:35 — La IA está presente, pero no como atajo. Debaten la lógica del negocio antes de escribir un solo prompt. La tecnología no sustituye al pensamiento; lo acelera.",
@@ -1751,7 +1763,7 @@ var Exp180 = (function(){
           saber:"Competencia digital crítica en la investigación comercial.",
           crit:"CE 3.2 — Utilización crítica y productiva de IA generativa sin caída en atajos cognitivos.",
           desc:"Conjunto de instrucciones que los alumnos aplican en su interacción con modelos de lenguaje para recibir orientación conceptual y preguntas socráticas en lugar de textos listos para copiar.",
-          url:"tech-proyectos"},
+          url:"en-el-aula"},
       sim:"ai" },
     { time:"09:05", lines:["Aparece el primer error.","(...)","Se han dejado fuera de la fórmula el coste de adquisición del cliente.","(...)","En la pantalla, el gráfico de rentabilidad se desploma a rojo.","(...)","Me miran de reojo para ver si me doy cuenta.","(...)","Me acerco, miro la pantalla, no digo nada y sigo andando.","(...)","Silencio de tres segundos.","(...)","Alguien suspira, borra la celda y empieza a recalcular."],
       obs:"09:05 — Detecto un error grave en sus previsiones. Peco pasa por su mesa, observa el fallo y sigue de largo en silencio. El aprendizaje ocurre en el instante en que descubren solos el desvío.",
@@ -1760,7 +1772,7 @@ var Exp180 = (function(){
           saber:"Análisis de desviaciones, costes imprevistos y gestión del riesgo.",
           crit:"CE 3.4 — Diagnóstico e identificación de errores en proyecciones comerciales.",
           desc:"Plantilla real del aula donde los alumnos de ciclos formativos registran qué supuestos fallaron en su planteamiento inicial (ej: confundir margen bruto con neto) y cómo lo corrigieron.",
-          url:"experiencia"},
+          url:"en-el-aula"},
       sim:"errors" },
     { time:"09:45", lines:["Las ideas empiezan a encajar.","(...)","Las mesas ya no están ordenadas.","(...)","Hay tres folios llenos de tachaduras y un café frío.","(...)","Ya nadie habla de «segmentación» de libro de texto.","(...)","Discuten si un chico de su edad en Murcia pagaría diez euros al mes por esto.","(...)","O si preferiría gastárselo en otra cosa.","(...)","La respuesta no está en el PDF.","(...)","Está en el audio que les acaba de enviar un amigo por WhatsApp."],
       obs:"09:45 — Desaparece el lenguaje académico impostado. Discuten sobre viabilidad real con el mismo tono que usarían fuera de clase. La economía explicada desde el suelo, no desde la pizarra.",
@@ -1769,7 +1781,7 @@ var Exp180 = (function(){
           saber:"Propuesta de valor, canales, segmentación de clientes y costes.",
           crit:"CE 2.2 — Segmentación y validación de hipótesis de negocio.",
           desc:"Un lienzo conceptual donde cada equipo fundamenta su propuesta de valor con encuestas reales de campo y análisis de la competencia en el mercado regional.",
-          url:"proyectos"},
+          url:"en-el-aula"},
       sim:"canvas" },
     { time:"10:30", lines:["Presentan.","(...)","De pie, apoyados en la esquina de la pizarra.","(...)","No hay diapositivas con viñetas infinitas.","(...)","Muestran la hoja de cálculo con el margen comercial.","(...)","Desde el fondo, otro alumno duda de que esos números sean reales.","(...)","Silencio de dos segundos.","(...)","El que expone mira la tabla, asiente y dice: «Ahí nos has pillado. Hay que recalcular».","(...)","No hay defensas numantinas. Hay honestidad profesional."],
       obs:"10:30 — No hay rastro de la típica exposición escolar memorizada. Defienden su proyecto frente a las dudas de sus compañeros con solidez. Sorprendente madurez al aceptar críticas técnicas.",
@@ -1778,7 +1790,7 @@ var Exp180 = (function(){
           saber:"Comunicación técnica, oratoria y retórica comercial.",
           crit:"CE 4.3 — Exposición oral sintética de propuestas comerciales frente a un tribunal.",
           desc:"Instrumento detallado de evaluación que mide la seguridad discursiva, el uso de datos en lugar de suposiciones, y la capacidad de responder a preguntas desafiantes del resto de alumnos.",
-          url:"galeria"},
+          url:"en-el-aula"},
       sim:"pitch" },
     { time:"11:15", lines:["Reflexionan.","(...)","Silencio de recogida.","(...)","Las mochilas vuelven a cerrarse.","(...)","En las pantallas abiertas queda el formulario de coevaluación.","(...)","Se puntúan entre ellos sin rodeos, pero con respeto.","(...)","Se escuchan risas bajas por algún comentario.","(...)","El timbre suena de fondo.","(...)","Nadie sale corriendo."],
       obs:"11:15 — El proceso de coevaluación se asume con total seriedad. No buscan agradar, se miden con rigor profesional. El aula se autorregula sola antes de que suene el timbre.",
