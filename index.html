@@ -27,6 +27,7 @@
   <meta name="twitter:image" content="https://juanpeco.com/foto_aula.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1068,6 +1069,37 @@ nav{ background:rgba(250,249,246,0.92); border-bottom:1px solid #E8E8EF; height:
 #mobile-menu{ background:#FAF9F6; }
 @media (max-width:900px){ .footer-brand{ justify-content:center; } }
 </style>
+<style id="jp-proof">
+/* Testimonios y recurso: se muestran solo si hay datos en JP_PROOF (ver script al final) */
+.jp-tests{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin-top:3rem; }
+.jp-tests blockquote{ margin:0; padding:1.5rem 1.6rem; background:#fff; border:1px solid #E8E8EF; border-left:3px solid var(--lav); border-radius:8px; }
+.jp-tests blockquote p{ margin:0 0 1rem; font-family:var(--font-d,Georgia,serif); font-size:1.12rem; line-height:1.55; color:var(--navy); }
+.jp-tests .jp-who{ font-size:.82rem; line-height:1.4; color:#5B6478; }
+.jp-tests .jp-who strong{ display:block; color:var(--navy); font-weight:700; }
+.jp-recurso{ margin-top:3rem; padding:1.8rem 2rem; background:var(--lav-bg); border-radius:10px; display:flex; flex-wrap:wrap; gap:1.2rem 2rem; align-items:center; justify-content:space-between; }
+.jp-recurso h3{ margin:0 0 .4rem; font-family:var(--font-d,Georgia,serif); font-size:1.3rem; color:var(--navy); }
+.jp-recurso p{ margin:0; max-width:46ch; font-size:.98rem; line-height:1.55; color:#2E3A57; }
+.jp-recurso a{ display:inline-block; padding:.8rem 1.4rem; background:var(--navy); color:#fff; border-radius:8px; font-weight:700; text-decoration:none; }
+.jp-recurso a:hover,.jp-recurso a:focus-visible{ background:#0F1830; }
+</style>
+<style id="jp-conv">
+.jp-cta-row{ display:flex; flex-wrap:wrap; align-items:center; gap:.9rem 1.2rem; }
+.ed .ed-btn.jp-ghost{ background:transparent; color:var(--ed-navy); border:1.5px solid var(--ed-navy); text-decoration:none; }
+.ed .ed-btn.jp-ghost:hover{ background:var(--ed-navy); color:var(--ed-paper); }
+.jp-link{ background:none; border:0; padding:.4rem 0; font:inherit; font-weight:600; color:var(--ed-navy); cursor:pointer; text-decoration:none; border-bottom:1px solid currentColor; }
+.jp-link:hover{ color:var(--lav); }
+.jp-sel{ padding:12px 16px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); font-size:1rem; font-family:inherit; background:rgba(255,255,255,0.1); color:#fff; outline:none; }
+.jp-sel option{ color:#1A2744; background:#fff; }
+</style>
+<style id="jp-ia">
+#ia-en-el-reto{ background:#FAF9F6; padding:clamp(1.5rem,4vw,2.5rem) 2rem clamp(2.5rem,6vw,4rem); position:relative; z-index:1; }
+.jp-ia{ border-top:1px solid #E8E8EF; padding-top:2rem; max-width:860px; }
+.jp-ia-q{ margin:0 0 1.4rem; font-family:var(--ed-fh,Georgia,serif); font-size:clamp(1.3rem,3vw,1.8rem); line-height:1.35; color:var(--navy); }
+.jp-ia-steps{ margin:0 0 1.6rem; padding-left:1.2rem; color:#2E3A57; line-height:1.6; }
+.jp-ia-steps li{ margin-bottom:.4rem; }
+.jp-ia-link{ color:var(--navy); font-weight:600; border-bottom:1px solid currentColor; text-decoration:none; }
+.jp-ia-link:hover,.jp-ia-link:focus-visible{ color:var(--lav); }
+</style>
 </head>
 <body class="h-full">
 
@@ -1112,8 +1144,9 @@ nav{ background:rgba(250,249,246,0.92); border-bottom:1px solid #E8E8EF; height:
         <p class="ed-eyebrow ed-anim a1"><span>Profesor de Economía y Empresa</span>Formación Profesional · Bachillerato</p>
         <h1 class="ed-title ed-anim a2">Llegué a la docencia sin buscarlo.<span class="ed-t2">Y me quedé porque descubrí que era donde mejor podía aplicar todo lo aprendido en la empresa.</span></h1>
         <p class="ed-sub ed-anim a3">Diplomado en Ciencias Empresariales y MAES. Tras años trabajando en empresa, hoy diseño situaciones de aprendizaje para que el alumnado analice problemas reales, tome decisiones y aprenda a justificar sus propuestas con criterio.</p>
-        <div class="ed-actions ed-anim a4">
+        <div class="ed-actions ed-anim a4 jp-cta-row">
           <button class="ed-btn" onclick="goto('en-el-aula')">Entrar en el aula <span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
+          <button class="jp-link" onclick="goto('contacto')">Hablemos &rarr;</button>
         </div>
         <ul class="ed-notes ed-anim a5">
           <li><span class="k">Región de Murcia</span><span class="v">Más de 25 centros educativos acompañados</span></li>
@@ -1348,6 +1381,21 @@ nav{ background:rgba(250,249,246,0.92); border-bottom:1px solid #E8E8EF; height:
   </div>
 </section>
 <div class="divider"></div>
+<section id="ia-en-el-reto" class="ed" aria-label="Cómo uso la IA en un reto">
+  <div class="ed-wrap">
+    <div class="jp-ia reveal">
+      <p class="ed-refs-k">Cómo uso la IA en un reto</p>
+      <p class="jp-ia-q">Dejo que el alumnado se prepare con la IA que prefiera. Después tiene que contarme cómo cerró el acuerdo y qué no se creyó de lo que ella le dijo.</p>
+      <ol class="jp-ia-steps">
+        <li><b>Investigan empresas reales</b> y cada dato lleva fuente y fecha.</li>
+        <li><b>Se preparan con su IA</b> y deciden ellos qué aceptan y qué cambian.</li>
+        <li><b>Negocian y lo cuentan:</b> qué propuso la IA, qué falló y cómo cerraron.</li>
+      </ol>
+      <a class="jp-ia-link" href="recursos/Reto_Negociacion_Alumnado.pdf" download>Descargar el reto «El contrato que nadie quería perder» (PDF)</a>
+    </div>
+  </div>
+</section>
+
 <section id="especializacion" class="ed" style="background:#FAF9F6;padding:clamp(3.5rem,9vw,5.5rem) 2rem;position:relative;z-index:1;">
   <div class="ed-wrap">
     <div class="ed-sec-head reveal">
@@ -1575,6 +1623,8 @@ nav{ background:rgba(250,249,246,0.92); border-bottom:1px solid #E8E8EF; height:
       <p class="ed-refs-who">Jordán Illescas Rubio, Jefe de Estudios · CPEIBas Arteaga (Sucina)</p>
       <p class="ed-refs-more">Referencias también en San Juan Bautista (Campos del Río), Ntra. Sra. de la Consolación (Molina de Segura) y CEIP Campo (El Fenazar).</p>
     </div>
+    <div id="jp-testimonios" class="jp-tests" hidden aria-label="Testimonios"></div>
+    <aside id="jp-recurso" class="jp-recurso" hidden></aside>
   </div>
 </section>
 
@@ -1596,6 +1646,8 @@ nav{ background:rgba(250,249,246,0.92); border-bottom:1px solid #E8E8EF; height:
         <input type="text" name="centro" placeholder="Centro educativo (opcional)"
           style="padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);font-size:1rem;font-family:inherit;background:rgba(255,255,255,0.1);color:white;outline:none"
           onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+        <select name="tipo_centro" aria-label="Tipo de centro (opcional)" class="jp-sel"><option value="" selected>Tipo de centro (opcional)</option><option>Centro público</option><option>Centro concertado</option><option>Centro privado</option><option>Empresa o entidad</option><option>Otro</option></select>
+        <select name="necesidad" aria-label="Qué necesitas (opcional)" class="jp-sel"><option value="" selected>Qué necesitas (opcional)</option><option>Docencia estable</option><option>Sustitución o interinidad</option><option>Colaboración puntual</option><option>Formación o ponencia</option><option>Otro</option></select>
         <input type="email" name="email" placeholder="Tu email" required
           style="padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);font-size:1rem;font-family:inherit;background:rgba(255,255,255,0.1);color:white;outline:none"
           onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
@@ -2314,6 +2366,33 @@ var Doc = (function(){
     if(e.key === 'Escape') close();
   });
   return { open: open, close: close };
+})();
+</script>
+<script id="jp-proof-js">
+/* ═══ Prueba social y recurso descargable ═══════════════════════════════
+   Rellena solo con contenido REAL y con permiso por escrito de quien firma.
+   Mientras los datos estén vacíos, nada de esto aparece en la web.
+   testimonios: [{ texto:"…", nombre:"Nombre Apellido", cargo:"Cargo · Centro o empresa" }]
+   recurso: { titulo:"…", descripcion:"…", url:"recursos/archivo.pdf", boton:"Descargar PDF (gratis)" }  */
+var JP_PROOF = { testimonios: [], recurso: null };
+(function(){
+  try{
+    var T = document.getElementById('jp-testimonios'), R = document.getElementById('jp-recurso');
+    if(T && JP_PROOF.testimonios.length){
+      JP_PROOF.testimonios.forEach(function(x){
+        var q=document.createElement('blockquote'), p=document.createElement('p'), f=document.createElement('div'); f.className='jp-who', s=document.createElement('strong');
+        p.textContent='\u00AB'+x.texto+'\u00BB'; s.textContent=x.nombre; f.appendChild(s); f.appendChild(document.createTextNode(x.cargo||''));
+        q.appendChild(p); q.appendChild(f); T.appendChild(q);
+      });
+      T.hidden=false;
+    }
+    if(R && JP_PROOF.recurso && JP_PROOF.recurso.url){
+      var r=JP_PROOF.recurso, d=document.createElement('div'), h=document.createElement('h3'), p2=document.createElement('p'), a=document.createElement('a');
+      h.textContent=r.titulo; p2.textContent=r.descripcion; d.appendChild(h); d.appendChild(p2);
+      a.href=r.url; a.textContent=r.boton||'Descargar'; a.setAttribute('download','');
+      R.appendChild(d); R.appendChild(a); R.hidden=false;
+    }
+  }catch(e){}
 })();
 </script>
 </body>
